@@ -41,7 +41,50 @@ You'll find that you need to run the first task in each of these packages once, 
 
 There is one bug: the UN Population connector has not been parameterised so it will fail, expecting to find the relevant CSV input file in the wrong place. You can either parameterise it properly or edit manually with the new location of this CSV file. Again, if you fix this and push it up to the repository, that would be a nice gesture.
 
-That's it, basically. Let me know if you run into problems.
+That's it, basically. Let me know if you run into problems. Some technical stuff below, somewhat outdated by the widespread use of DAX and other table-transforming software. But it could be a useful place to start.
+
+## What is OLAP technology?
+
+OLAP technology, which underlies this project, provides (reduced to its simplest elements) three features that have slowly emerged from preceding database technologies usually referred - somewhat confusingly - as ROLAP, short for Relational Online Analysis Processing. 
+
+See [This Article ](https://searchoracle.techtarget.com/definition/relational-online-analytical-processing)for more information (there are many others)
+
+OLAP servers generally distinguish between the quantitative information in the data, which it terms **measures**, and the qualitative description of these measures, termed **dimensions**. A further sophistication is offered by **hierarchies** which organise the qualitative information in the dimensions in human-friendly structures, so that users can interrogate the data in conceptually natural ways.
+
+Quite recently, Microsoft has made the basic functionality of OLAP servers available to most users of its Office suite, by incorporating a facility it calls 'Power Pivot' in its spreadsheet product, Excel. However, data stored in Excel spreadsheets is not shared (unlike Wikipedia) so it's still not possible for a community of users to interact with the data, discuss it, try out various changes to it, and compare the results. This is our eventual aim.
+
+Moreover, Excel is not very good at 'uploading' data from a range of sources, a process known by the jargon word 'ETL', short for 'Electronic Transfer and Load'. This facility is however available with more sophisticated products, in particular Microsoft SQL Server (MSSQL Server), which is currently used to construct the data.
+
+In what follows below we provide a bit more detail on how MSSQL Server is used; you don't need to know this unless you intend to work on the project as a developer.
+
+### MSSQL services and the "Tabular" model
+
+The project uses two services provided by Microsoft SQL server: Database services and ETL, which Microsoft refers to as 'SSDS' or sometimes 'SSIS'. To implement the project, at least one instance of MSSQL server providing database services is required, and Microsoft's IDE, called 'Visual Studio' is needed to build the ETL packages.
+
+### Visual Studio and ETL
+
+The project is implemented on Visual Studio (2017) with SSDS (Short for SQL Server Data Services). This allowed me to implement a set of ETL procedures which take raw data, from a variety of sources, and transform it into a standard form.
+
+16 February update: the procedures are now more portable. If you have an SQL server instance running, and have installed Visual Studio with the SSDT add-in, the steps needed are as follows:
+
+1. Create two databases (easiest is to put them on one server but they can be on two) called OLTP and ROLAP.
+
+2. Open 'Macrohistory.sln' in Visual Studio
+
+3. Open 'Project Parameters' and modify the server and root directory properties so that the project can find your server and the source files, at the location where you have downloaded them into your setup
+
+The ETL files contain all the setup objects needed to load the server, using Visual Studio 2017 (VS) or later.
+This includes a set of Sequel Server Data Transformation Services (Sequel Server Information Services, SSIS) packages which, when run from within VS, construct the service.
+
+The ETL procedures transform the raw DATA/SOURCE into the above form. The raw DATA/SOURCE is all in the public domain; the project's copy of this data is stored in the *DATA/SOURCE* folder.
+
+#STATUS
+
+We will use this section to report the current state of the dataset, including bugs and changes.
+
+>17/04/2019 Snapshot of the dataset stored in /ARCHIVES/20190417 SNAPSHOT. This includes the first draft of Working paper 2 on International Inequality, together with all the data, calculations, charts and tables for this draft. Work will now start on updates to the dataset which will therefore start to get out of sync with this draft.
+
+
 
 
 
