@@ -1,4 +1,6 @@
 -- Create a view which reduces the year by one, to use in calculating annual growth
+-- As of 29 November 2019 not used, but code kept in case useful
+-- This work should now be done using DAX
 
 BEGIN TRY 
 DROP VIEW [dbo].[DeltaBackOne] 
@@ -39,7 +41,7 @@ AS
 SELECT
  dbo.FactQuery.SourceName,
  DeltaBackOne.SourceName as DeltaSourceName,
- dbo.FactQuery.DefinitionName+N'-EXTENDED' as NewDefinitionName,
+ N'CLEANED' as NewDefinitionName,
  DeltaBackOne.DefinitionName as DeltaDefinitionName,
  dbo.FactQuery.IndicatorStandardCode,
  DeltaBackOne.IndicatorStandardCode+N'-GROWTH' as DeltaIndicatorStandardCode,

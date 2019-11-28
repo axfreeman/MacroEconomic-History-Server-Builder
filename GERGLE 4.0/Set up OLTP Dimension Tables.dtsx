@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{1E4643CF-DBC0-4F8B-A7AB-1E0777E3C372}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1900.78"
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{3BD9B4AA-26C1-4A8D-9BF2-C268F18C39DC}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{DBC8F5CD-52C2-4B4B-8F31-8712DF2946BA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -54,6 +54,88 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Populate  DimDefinitions OLTP Table\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input].Columns[DefinitionName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DefinitionName"
+                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]"
+                      name="DefinitionName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEFT](#{Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]},100)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(DefinitionName,100)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet"
               componentClassID="Microsoft.ExcelSource"
@@ -127,36 +209,6 @@
                       lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[LongDescription]"
                       name="LongDescription"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[SourceFile]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFile]"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[SourceFile]"
-                      name="SourceFile"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[Source Notes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Source Notes]"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[Source Notes]"
-                      name="Source Notes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Data Notes]"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]"
-                      name="Data Notes"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -170,21 +222,6 @@
                       dataType="wstr"
                       length="255"
                       name="LongDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceFile" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Data Notes" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -204,24 +241,6 @@
                       length="255"
                       lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[LongDescription]"
                       name="LongDescription" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFile]"
-                      name="SourceFile" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[Source Notes]"
-                      name="Source Notes" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[Data Notes]"
-                      name="Data Notes" />
                     <outputColumn
                       refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -319,33 +338,12 @@
                       externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[LongDescription]"
                       lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[LongDescription]" />
                     <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceFile]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceFile"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[SourceFile]" />
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].Columns[Source Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Source Notes"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[Source Notes]" />
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].Columns[ShortDataNotes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="ShortDataNotes"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output].Columns[ShortDataNotes]" />
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].Columns[ShortDefinition]"
+                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
                       cachedLength="100"
-                      cachedName="ShortDefinition"
+                      cachedName="DefinitionName"
                       externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output].Columns[ShortDefinition]" />
+                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -354,21 +352,6 @@
                       dataType="wstr"
                       length="255"
                       name="LongDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceFile" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       dataType="wstr"
@@ -406,127 +389,16 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Temporary Fix until OLTP fields made larger"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Inputs[Derived Column Input].Columns[Data Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Data Notes"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]" />
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Inputs[Derived Column Input].Columns[DefinitionName]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="DefinitionName"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output].Columns[ShortDataNotes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output].Columns[ShortDataNotes]"
-                      name="ShortDataNotes"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]},255)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">LEFT([Data Notes],255)</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output].Columns[ShortDefinition]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output].Columns[ShortDefinition]"
-                      name="ShortDefinition"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]},100)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">LEFT(DefinitionName,100)</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Populate  DimDefinitions OLTP Table.Paths[Derived Column Output]"
               endId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Outputs[Derived Column Output]" />
+              startId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Populate  DimDefinitions OLTP Table.Paths[Excel Source Output]"
-              endId="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger.Inputs[Derived Column Input]"
+              endId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]"
               name="Excel Source Output"
               startId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output]" />
           </paths>
@@ -1720,26 +1592,6 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Qualifier]"
                       name="Qualifier"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Use Case]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Use Case]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Use Case]"
-                      name="Use Case"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Add Calculated Growth]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Add Calculated Growth]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Add Calculated Growth]"
-                      name="Add Calculated Growth"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1773,16 +1625,6 @@
                       dataType="wstr"
                       length="255"
                       name="Qualifier" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Use Case]"
-                      dataType="wstr"
-                      length="255"
-                      name="Use Case" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Add Calculated Growth]"
-                      dataType="wstr"
-                      length="255"
-                      name="Add Calculated Growth" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1826,18 +1668,6 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Qualifier]"
                       name="Qualifier" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Use Case]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Use Case]"
-                      name="Use Case" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Add Calculated Growth]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Add Calculated Growth]"
-                      name="Add Calculated Growth" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1969,20 +1799,6 @@
                       cachedName="Unit"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Unit]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[ShortUseCasel]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="ShortUseCasel"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[UseCase]"
-                      lineageId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output].Columns[ShortUseCasel]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[ShortAddCalculatedGrowth]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="ShortAddCalculatedGrowth"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Add Calculated Growth]"
-                      lineageId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output].Columns[ShortAddCalculatedGrowth]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2011,11 +1827,6 @@
                       length="255"
                       name="Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[UseCase]"
-                      dataType="wstr"
-                      length="20"
-                      name="UseCase" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
                       dataType="wstr"
                       length="255"
@@ -2025,11 +1836,6 @@
                       dataType="wstr"
                       length="255"
                       name="Unit" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Add Calculated Growth]"
-                      dataType="wstr"
-                      length="10"
-                      name="Add Calculated Growth" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2058,127 +1864,11 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Populate DimIndicator\Shorten Use Case"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Shorten Use Case"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Populate DimIndicator\Shorten Use Case.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\Shorten Use Case.Inputs[Derived Column Input].Columns[Use Case]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Use Case"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Use Case]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\Shorten Use Case.Inputs[Derived Column Input].Columns[Add Calculated Growth]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Add Calculated Growth"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Add Calculated Growth]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Populate DimIndicator\Shorten Use Case.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output].Columns[ShortUseCasel]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="20"
-                      lineageId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output].Columns[ShortUseCasel]"
-                      name="ShortUseCasel"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Use Case]},20)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">LEFT([Use Case],20)</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output].Columns[ShortAddCalculatedGrowth]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="10"
-                      lineageId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output].Columns[ShortAddCalculatedGrowth]"
-                      name="ShortAddCalculatedGrowth"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Add Calculated Growth]},10)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">LEFT([Add Calculated Growth],10)</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Populate DimIndicator\Shorten Use Case.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
-              refId="Package\Populate DimIndicator.Paths[Derived Column Output]"
-              endId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Populate DimIndicator\Shorten Use Case.Outputs[Derived Column Output]" />
-            <path
               refId="Package\Populate DimIndicator.Paths[Excel Source Output]"
-              endId="Package\Populate DimIndicator\Shorten Use Case.Inputs[Derived Column Input]"
+              endId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
               startId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output]" />
           </paths>
@@ -3755,96 +3445,92 @@
     design-time-name="Package\Populate  DimDefinitions OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="287,42"
-          Id="Package\Populate  DimDefinitions OLTP Table\Temporary Fix until OLTP fields made larger"
-          TopLeft="287,111" />
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table"
-          TopLeft="97,192" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="226,42"
           Id="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet"
           TopLeft="111,22" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table"
+          TopLeft="121,192.5" />
+        <NodeLayout
+          Size="154.5,42"
+          Id="Package\Populate  DimDefinitions OLTP Table\Derived Column"
+          TopLeft="410.833333333333,130.45138824093" />
         <EdgeLayout
           Id="Package\Populate  DimDefinitions OLTP Table.Paths[Excel Source Output]"
           TopLeft="224,64">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="206.5,47"
+              EndConnector="264.083333333333,66.4513882409298"
               Start="0,0"
-              End="206.5,39.5">
+              End="264.083333333333,58.9513882409298">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,29.2256941204649" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="4,23.5" />
+                    Point1="0,29.2256941204649"
+                    Point2="0,33.2256941204649"
+                    Point3="4,33.2256941204649" />
                   <mssgle:LineSegment
-                    End="202.5,23.5" />
+                    End="260.083333333333,33.2256941204649" />
                   <mssgle:CubicBezierSegment
-                    Point1="202.5,23.5"
-                    Point2="206.5,23.5"
-                    Point3="206.5,27.5" />
+                    Point1="260.083333333333,33.2256941204649"
+                    Point2="264.083333333333,33.2256941204649"
+                    Point3="264.083333333333,37.2256941204649" />
                   <mssgle:LineSegment
-                    End="206.5,39.5" />
+                    End="264.083333333333,58.9513882409298" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Populate  DimDefinitions OLTP Table.Paths[Derived Column Output]"
-          TopLeft="430.5,153">
+          TopLeft="410.833333333333,151.45138824093">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-231,39"
+              EndConnector="-84.8333333333334,62.0486117590702"
               Start="0,0"
-              End="-231,31.5">
+              End="-77.3333333333334,62.0486117590702">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="-38.4166666666667,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="-4,19.5" />
+                    Point1="-38.4166666666667,0"
+                    Point2="-42.4166666666667,0"
+                    Point3="-42.4166666666667,4" />
                   <mssgle:LineSegment
-                    End="-227,19.5" />
+                    End="-42.4166666666667,58.0486117590702" />
                   <mssgle:CubicBezierSegment
-                    Point1="-227,19.5"
-                    Point2="-231,19.5"
-                    Point3="-231,23.5" />
+                    Point1="-42.4166666666667,58.0486117590702"
+                    Point2="-42.4166666666667,62.0486117590702"
+                    Point3="-46.4166666666667,62.0486117590702" />
                   <mssgle:LineSegment
-                    End="-231,31.5" />
+                    End="-77.3333333333334,62.0486117590702" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table">
+    design-time-name="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3857,7 +3543,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet">
+    design-time-name="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4029,94 +3715,66 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="197,42"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
           TopLeft="304,238" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Populate DimIndicator\Shorten Use Case"
-          TopLeft="539,138" />
         <NodeLayout
           Size="197,42"
           Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
           TopLeft="306,40" />
         <EdgeLayout
           Id="Package\Populate DimIndicator.Paths[Excel Source Output]"
-          TopLeft="404.5,82">
+          TopLeft="403.5,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="215.5,56"
+              EndConnector="0,156"
               Start="0,0"
-              End="215.5,48.5">
+              End="0,148.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="4,28" />
-                  <mssgle:LineSegment
-                    End="211.5,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="211.5,28"
-                    Point2="215.5,28"
-                    Point3="215.5,32" />
-                  <mssgle:LineSegment
-                    End="215.5,48.5" />
+                    End="0,148.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate DimIndicator.Paths[Derived Column Output]"
-          TopLeft="620,180">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-217.5,58"
-              Start="0,0"
-              End="-217.5,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="-4,29" />
-                  <mssgle:LineSegment
-                    End="-213.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-213.5,29"
-                    Point2="-217.5,29"
-                    Point3="-217.5,33" />
-                  <mssgle:LineSegment
-                    End="-217.5,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate DimIndicator\DimIndicator Excel Sheet">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate DimIndicator\DimIndicator OLTP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Populate DimSource OLTP  Table">
     <LayoutInfo>

@@ -151,9 +151,7 @@ CREATE TABLE [dbo].[DimIndicator](
 	[IndicatorName] [nvarchar](255) NULL, 
 	[Unit][nvarchar](255)NULL,
 	[Measure] [nvarchar](255) NULL,
-	[Qualifier] [nvarchar] (255) NULL,
-	[UseCase][nvarchar] (20) NULL,
-	[Add Calculated Growth] [nvarchar] (10) NULL,
+	[Qualifier] [nvarchar] (255) NULL 
  CONSTRAINT [IX_IndicatorStandardCode] UNIQUE(IndicatorStandardCode),	
  CONSTRAINT [PK_DimIndicator] PRIMARY KEY CLUSTERED 
 (
@@ -198,10 +196,7 @@ GO
 CREATE TABLE [dbo].[DimDefinitions](
 [DimDefinitionID] int NOT NULL IDENTITY (1,1),
 [DefinitionName] [nvarchar](100),
-[LongDescription]	[nvarchar] (255),
-[SourceFile]	[nvarchar] (255),
-[Source Notes] [nvarchar] (255),
-[Data Notes] [nvarchar] (255)
+[LongDescription]	[nvarchar] (255)
 CONSTRAINT [PK_Definition] PRIMARY KEY CLUSTERED 
 (
 	[DimDefinitionID] ASC

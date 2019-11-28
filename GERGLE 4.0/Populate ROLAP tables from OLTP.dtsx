@@ -7,34 +7,16 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{F3DC81F9-29F3-4F0C-86E2-61CBA8759A66}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1900.78"
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="196"
-  DTS:VersionGUID="{105F186F-215C-4E25-B6FD-DDA80D8989DD}">
+  DTS:VersionBuild="199"
+  DTS:VersionGUID="{E17179D0-96BD-4CD9-BD8D-F66AB07730E4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Add Growth Definitions"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{10a1bc49-f5ba-42e2-9036-e9b71237cdff}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Add Growth Definitions"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="Define Growth Additions.SQL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Add PENN GDP in USD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -72,13 +54,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Create deduplicated -EXTENDED definitions"
+      DTS:refId="Package\Create deduplicated entries for the CLEANED defintion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{b6ba5743-b4eb-4371-b887-52c6252ff859}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Create deduplicated -EXTENDED definitions"
+      DTS:ObjectName="Create deduplicated entries for the CLEANED defintion"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -549,36 +531,6 @@
                       name="LongDescription"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFile]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
-                      length="255"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFile]"
-                      name="SourceFile"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[Source Notes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Source Notes]"
-                      length="255"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[Source Notes]"
-                      name="Source Notes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[Data Notes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Data Notes]"
-                      length="255"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[Data Notes]"
-                      name="Data Notes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[DefinitionName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -605,21 +557,6 @@
                       dataType="wstr"
                       length="255"
                       name="LongDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceFile" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DefinitionName]"
                       dataType="wstr"
@@ -653,24 +590,6 @@
                       length="255"
                       lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[LongDescription]"
                       name="LongDescription" />
-                    <outputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
-                      name="SourceFile" />
-                    <outputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[Source Notes]"
-                      name="Source Notes" />
-                    <outputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[Data Notes]"
-                      name="Data Notes" />
                     <outputColumn
                       refId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -768,27 +687,6 @@
                       externalMetadataColumnId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[LongDescription]"
                       lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[LongDescription]" />
                     <inputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceFile]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceFile"
-                      externalMetadataColumnId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFile]" />
-                    <inputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].Columns[Source Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Source Notes"
-                      externalMetadataColumnId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[Source Notes]" />
-                    <inputColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].Columns[Data Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Data Notes"
-                      externalMetadataColumnId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      lineageId="Package\Populate DimDefinitions\DimDefinitions OLTP Table.Outputs[OLE DB Source Output].Columns[Data Notes]" />
-                    <inputColumn
                       refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
                       cachedLength="100"
@@ -809,21 +707,6 @@
                       dataType="wstr"
                       length="255"
                       name="LongDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceFile" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate DimDefinitions\DimDefinitions ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       dataType="wstr"
@@ -1637,16 +1520,6 @@
                       name="Type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[UseCase]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[UseCase]"
-                      length="20"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[UseCase]"
-                      name="UseCase"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1665,16 +1538,6 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]"
                       name="Unit"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Add Calculated Growth]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Add Calculated Growth]"
-                      length="10"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Add Calculated Growth]"
-                      name="Add Calculated Growth"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1704,11 +1567,6 @@
                       length="255"
                       name="Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[UseCase]"
-                      dataType="wstr"
-                      length="20"
-                      name="UseCase" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorName]"
                       dataType="wstr"
                       length="255"
@@ -1718,11 +1576,6 @@
                       dataType="wstr"
                       length="255"
                       name="Unit" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Add Calculated Growth]"
-                      dataType="wstr"
-                      length="10"
-                      name="Add Calculated Growth" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1771,18 +1624,6 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Type]"
                       name="Type" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[UseCase]"
-                      dataType="wstr"
-                      length="20"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[UseCase]"
-                      name="UseCase" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Add Calculated Growth]"
-                      dataType="wstr"
-                      length="10"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Add Calculated Growth]"
-                      name="Add Calculated Growth" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1907,13 +1748,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Type]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[UseCase]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="UseCase"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[UseCase]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[UseCase]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[IndicatorName]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1927,13 +1761,6 @@
                       cachedName="Unit"
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Add Calculated Growth]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="Add Calculated Growth"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Add Calculated Growth]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Add Calculated Growth]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1962,11 +1789,6 @@
                       length="255"
                       name="Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[UseCase]"
-                      dataType="wstr"
-                      length="20"
-                      name="UseCase" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
                       dataType="wstr"
                       length="255"
@@ -1976,11 +1798,6 @@
                       dataType="wstr"
                       length="255"
                       name="Unit" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Add Calculated Growth]"
-                      dataType="wstr"
-                      length="20"
-                      name="Add Calculated Growth" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3197,7 +3014,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
       DTS:DTSID="{01FA5811-CC25-4677-A94A-2FB365E13426}"
-      DTS:From="Package\Create deduplicated -EXTENDED definitions"
+      DTS:From="Package\Create deduplicated entries for the CLEANED defintion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
       DTS:To="Package\WID extensions" />
@@ -3264,15 +3081,7 @@
       DTS:From="Package\Add PENN GDP in USD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Create deduplicated -EXTENDED definitions" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
-      DTS:CreationName=""
-      DTS:DTSID="{265FD21E-AF3B-474F-B795-17430868465A}"
-      DTS:From="Package\Deindex Barro-Ursua and MacroHistory"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Add Growth Definitions" />
+      DTS:To="Package\Create deduplicated entries for the CLEANED defintion" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3287,10 +3096,6 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188,42"
-          Id="Package\Add Growth Definitions"
-          TopLeft="572.051294903314,415" />
-        <NodeLayout
           Size="185,42"
           Id="Package\Add PENN GDP in USD"
           TopLeft="604.051294903314,256" />
@@ -3299,8 +3104,8 @@
           Id="Package\Correct for IFS Seasonal Adjustment"
           TopLeft="317.051294903314,259" />
         <NodeLayout
-          Size="283,42"
-          Id="Package\Create deduplicated -EXTENDED definitions"
+          Size="335,42"
+          Id="Package\Create deduplicated entries for the CLEANED defintion"
           TopLeft="44.051294903314,339" />
         <NodeLayout
           Size="262,42"
@@ -3396,18 +3201,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="327.051294903314,358.5">
+          TopLeft="211.551294903314,381">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.948705096686,0"
+              EndConnector="274.115371763353,-3"
               Start="0,0"
-              End="50.448705096686,0">
+              End="274.115371763353,4.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="50.448705096686,0" />
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="270.115371763353,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="270.115371763353,22.5"
+                    Point2="274.115371763353,22.5"
+                    Point3="274.115371763353,18.5" />
+                  <mssgle:LineSegment
+                    End="274.115371763353,4.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3588,9 +3405,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-511,41"
+              EndConnector="-485,41"
               Start="0,0"
-              End="-511,33.5">
+              End="-485,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3601,35 +3418,13 @@
                     Point2="0,20.5"
                     Point3="-4,20.5" />
                   <mssgle:LineSegment
-                    End="-507,20.5" />
+                    End="-481,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-507,20.5"
-                    Point2="-511,20.5"
-                    Point3="-511,24.5" />
+                    Point1="-481,20.5"
+                    Point2="-485,20.5"
+                    Point3="-485,24.5" />
                   <mssgle:LineSegment
-                    End="-511,33.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="294.051294903314,437">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="278,0"
-              Start="0,0"
-              End="270.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="270.5,0" />
+                    End="-485,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3711,7 +3506,7 @@
     design-time-name="Package\Populate DimDefinitions">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="204,42"
           Id="Package\Populate DimDefinitions\DimDefinitions OLTP Table"
@@ -3739,9 +3534,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3777,7 +3570,7 @@
     design-time-name="Package\Populate DimGeo">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Populate DimGeo\OLTP DimGeo"
@@ -3805,7 +3598,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3841,7 +3636,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="175,42"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
@@ -3869,9 +3664,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

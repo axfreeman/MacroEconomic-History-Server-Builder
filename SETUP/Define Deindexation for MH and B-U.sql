@@ -1,15 +1,15 @@
-/* The queries below create four -EXTENDED Definitions:
+/* The queries below create four CLEANED Definitions:
 
- MACROHIST_EXTENDED:rgdppc_deindexed reconstructs GDP per capita from MACROHIST:rgdppc, which is indexed to the year 2005,
+ MACROHIST:rgdppc_deindexed reconstructs GDP per capita from MACROHIST:rgdppc, which is indexed to the year 2005,
  by multiplying it by WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT[@2005].
  
- MACROHIST_EXTENDED:rgdp multiplies this by MADDISON:pop to obtain a long real GDP series calibrated with 
+ MACROHIST:rgdp multiplies this by popularion to obtain a long real GDP series calibrated with 
  WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT for the years above 1960
  
- BARRO_URSUA_EXTENDED:gdp_deindexed reconstructs GDP per capita from BARRO_URSUA:GDP per Capita, 2006=100 which is indexed to the year 2006,
+ BARRO_URSUA:gdp_deindexed reconstructs GDP per capita from BARRO_URSUA:GDP per Capita, 2006=100 which is indexed to the year 2006,
  by multiplying it by WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT[@2006].
  
- BARRO_URSUA_EXTENDED:gdp multiplies this by MACROHIST:pop to obtain a long real GDP series calibrated with 
+ BARRO_URSUA:gdp multiplies this by MACROHIST:pop to obtain a long real GDP series calibrated with 
  WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT for the years above 1960
 */
 
@@ -32,7 +32,7 @@ SELECT
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='MACROHIST' and [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2005'
+ WHERE [FactQuery].SourceName='MACROHIST' and [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2005'
  GO
  
  
@@ -55,7 +55,7 @@ SELECT
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='BARRO-URSUA' and [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2006'
+ WHERE [FactQuery].SourceName='BARRO-URSUA' and [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2006'
  GO
  
 -- Create a View with MADDISON:Population in it
@@ -77,7 +77,7 @@ SELECT
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='MADDISON' and [FactQuery].IndicatorStandardCode='Population'
+ WHERE [FactQuery].SourceName='MADDISON' and [FactQuery].IndicatorStandardCode='Population'
  GO
  
 -- [WDI2018_2005_REALGDP_BASE]contains, for each GeoID, the real GDP per capita taken from 
@@ -98,7 +98,7 @@ SELECT
  N'COPY OF WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT FOR YEAR 2005' AS IndicatorStandardCode,
  [Value]
  FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='WDI2018' 
+ WHERE [FactQuery].SourceName='WDI2018' 
  AND [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
  AND [FactQuery].Year=2005
 GO
@@ -122,7 +122,7 @@ SELECT
  N'COPY OF WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT FOR YEAR 2006' AS IndicatorStandardCode,
  [Value]
  FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='WDI2018' 
+ WHERE [FactQuery].SourceName='WDI2018' 
  AND [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
  AND [FactQuery].Year=2006
 GO
@@ -173,20 +173,20 @@ FROM dbo.Barro_Ursua_Indexed_gdp LEFT OUTER JOIN
   dbo.WDI2018_2006_REALGDP_BASE.DimGeoID = dbo.Barro_Ursua_Indexed_gdp.DimGeoID
 GO
 
--- [Macrohist_extended] uses [Macrohist_WDI2018_Deindexed] and Macrohist itself to construct [Macrohist_WDI2018_rgdp]
+-- use [Macrohist_WDI2018_Deindexed] and Macrohist itself to construct [Macrohist_WDI2018_rgdp]
 
 BEGIN TRY
-DROP VIEW [dbo].[Macrohist_extended]
+DROP VIEW [dbo].[Macrohist_cleaner]
 END TRY
 BEGIN CATCH
 END CATCH
 GO
 
-CREATE VIEW [dbo].[Macrohist_extended]
+CREATE VIEW [dbo].[Macrohist_cleaner]
 AS
 SELECT 
  N'MACROHIST' AS SourceName,
- N'MACROHIST-EXTENDED' AS DefinitionName,
+ N'CLEANED' AS DefinitionName,
  dbo.Macrohist_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
  N'GDP-TOTAL-LCU-CONSTANT2010' AS IndicatorStandardCode,
@@ -201,20 +201,20 @@ FROM dbo.Macrohist_WDI2018_Deindexed LEFT OUTER JOIN
   dbo.DimIndicator.IndicatorStandardCode='GDP-TOTAL-LCU-CONSTANT2010'
 GO
 
--- [Barro_Ursua_extended] uses Barro_Ursua_WDI2018_Deindexed] and Barro_Ursua itself to construct [Barro_Ursua_WDI2018_rgdp]
+-- [Barro_Ursua_cleaner] uses Barro_Ursua_WDI2018_Deindexed] and Barro_Ursua itself to construct [Barro_Ursua_WDI2018_rgdp]
 
 BEGIN TRY
-DROP VIEW [dbo].[Barro_Ursua_extended]
+DROP VIEW [dbo].[Barro_Ursua_cleaner]
 END TRY
 BEGIN CATCH
 END CATCH
 GO
 
-CREATE VIEW [dbo].[Barro_Ursua_extended]
+CREATE VIEW [dbo].[Barro_Ursua_cleaner]
 AS
 SELECT 
  N'BARRO-URSUA' AS SourceName,
- N'BARRO-URSUA-EXTENDED' AS DefinitionName,
+ N'CLEANED' AS DefinitionName,
  dbo.Barro_Ursua_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
  N'GDP-TOTAL-LCU-CONSTANT2010' AS IndicatorStandardCode,
@@ -246,7 +246,7 @@ SELECT
  [DimIndicatorID],
  [YearAsDate],
  [Value]
-FROM [dbo].[Macrohist_extended]
+FROM [dbo].[Macrohist_cleaner]
 UNION
 SELECT 
  [SourceName],
@@ -255,7 +255,7 @@ SELECT
  [DimIndicatorID],
  [YearAsDate],
  [Value]
-FROM [dbo].[Barro_Ursua_extended]
+FROM [dbo].[Barro_Ursua_cleaner]
 GO
 
 -- we have to now recover the indexes for source and definition before finally putting the result into the fact file.

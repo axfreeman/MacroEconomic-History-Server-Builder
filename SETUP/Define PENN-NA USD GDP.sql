@@ -14,14 +14,14 @@ AS
 -- Select all GDP-USD-CURRENT from PENN
 SELECT
  [DimSourceID],
-  N'PENN-EXTENDED' as DefinitionName, 
+  N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'EXCHANGE_RATE_TEMP' AS IndicatorStandardCode,
  [YearAsDate],
  [Value]
  FROM [FactQuery]
 	WHERE 
-	([FactQuery].DefinitionName = N'PENN') 
+	([FactQuery].SourceName = N'PENN') 
 	and [FactQuery].IndicatorStandardCode='EXCHANGE-RATE-LCUperUSD-PENNMARKET+ESTIMATE'
 GO
 
@@ -38,7 +38,7 @@ CREATE VIEW [PENN_USD_Calculated]
 AS
 SELECT
  [FactQuery]. [DimSourceID],
-  N'PENN-EXTENDED' as DefinitionName, 
+  N'CLEANED' as DefinitionName, 
   N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardCode,
  [FactQuery].[DimGeoID],
  [FactQuery].[YearAsDate],
@@ -49,7 +49,7 @@ SELECT
  FactQuery.YearAsDate=PENN_ExchangeRates.YearAsDate 
 	WHERE 
 	[FactQuery].IndicatorStandardCode='GDP-TOTAL-LCU-CURRENT' AND
-	[FactQuery].DefinitionName='PENN'
+	[FactQuery].SourceName='PENN'
 GO
 
 BEGIN TRY

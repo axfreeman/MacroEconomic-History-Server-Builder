@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANYNAPBhzTECEipq9u5mbUwAAAAACAAAAAAAQZgAAAAEAACAAAAAw7t8T7+qlQ6R4utASwismbTM11ihPzN6tqlCCdc+/pQAAAAAOgAAAAAIAACAAAAC1sxIZNmqs7YbU37jxNbwZxtKSFac+1B53UXgJsBWp+5AAAACc0v9WzU96f8aydWXeeBeKZYnNqDcO/Sz483Eypod5AkMt8MfPCq2ST4cC+OJGqkwcLKipsm29lonFKXBJV1jyUAnFi/0MaBdKc6LjZN7igblvzVdSTQd/cc20OPjlw/z9Ddio0HTm8ozPkWdF+jmqHA408Y0Lynj9yHc5u4uOmKpkfJSzOEdipvbQFsaRqzpAAAAAGmiGb/2YIXayGKhVqavZL+HepwtVZV1ZhMsaY1/nZ0EzN0/4jysQyyZiMZRN1yx7+5+wPX/UVFL5Ne0fam8EGQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANYNAPBhzTECEipq9u5mbUwAAAAACAAAAAAAQZgAAAAEAACAAAAAxcoVNMGbdMptbtlQoBqNkwT6uVUbQ7VVtwo8HkyRSugAAAAAOgAAAAAIAACAAAADGqPVVA/8gxBBvhP0eKI4hZmB/Vr8W0DhIEwB4PaywI5AAAADnTo2HMv5qoCkB5f+CheAoV3hVieOKIVN672EwH/UjLYo3Zq8uuHH8C5ni8fABC8WgjKq+a3djWfPTNq0M2yR76QnmAplnGwXAzArZS/HNAbaf/5oNVksl/UduCVOAK5VKoBPVkm8HcKF+dfpxUwzXnFezrmakPsEEkBqyAiKVWvLmLBsOHJJj2aujymFqZzFAAAAAu8VOhS398YXcoXo2dHs3U3R4IEKysxX3dL0or9+BHMTPinacN86zGNW0jC+jRQG2CYWgKmv7j3PU8cDKcQyaqA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -1356,7 +1356,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\GERG\Documents\GitHub\Economic-History\SETUP\Meta.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\GERG\Documents\GitHub\MacroEconomic-History-Server-Builder\SETUP\Meta.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1429,7 +1429,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\GERG\Documents\GitHub\Economic-History\SETUP\Meta.xls</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Users\GERG\Documents\GitHub\MacroEconomic-History-Server-Builder\SETUP\Meta.xls</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -2957,21 +2957,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.UN Population.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\GERG\Documents\GitHub\Economic-History\DATA\SOURCE\UN2018 Population from UN Population Division (preprocessed, see DimSource).csv</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.UN Population.DataRowsToSkip">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -3648,10 +3633,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">25</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3BD9B4AA-26C1-4A8D-9BF2-C268F18C39DC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DBC8F5CD-52C2-4B4B-8F31-8712DF2946BA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3665,10 +3650,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">98</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">107</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CFD13D66-813D-4417-921F-55CF2F2A7397}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8E2A2472-7A71-4357-BDA5-AEFB338D735D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3682,10 +3667,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">193</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">197</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{78484214-8E52-42B4-B3DB-284CC3EF97E2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{165946E3-FD0D-4368-B165-37C628D9F7AB}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

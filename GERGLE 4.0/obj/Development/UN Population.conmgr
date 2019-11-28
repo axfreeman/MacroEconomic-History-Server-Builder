@@ -1,8 +1,10 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="UN Population"
   DTS:DTSID="{F05C4D31-BF0A-4F07-86E0-509F69C41F21}"
   DTS:CreationName="FLATFILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\DATA\\SOURCE\\UN2018 Population from UN Population Division (preprocessed, see DimSource).csv"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"
@@ -12,7 +14,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0022_"
       DTS:CodePage="65001"
-      DTS:ConnectionString="C:\Users\GERG\Documents\GitHub\Economic-History\DATA\SOURCE\UN2018 Population from UN Population Division (preprocessed, see DimSource).csv">
+      DTS:ConnectionString="C:\Users\GERG\Documents\GitHub\MacroEconomic-History-Server-Builder\DATA\SOURCE\UN2018 Population from UN Population Division (preprocessed, see DimSource).csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"

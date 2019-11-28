@@ -15,14 +15,14 @@ AS
 -- Select all GDP-USD-CURRENT from IFS before 1970 (not present in UN2018)
 SELECT
  [DimSourceID],
-  N'IFS2018-EXTENDED' as DefinitionName, 
+  N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardCode,
  [YearAsDate],
  [Value]
  FROM [FactQuery]
 	WHERE 
-	([FactQuery].DefinitionName = N'IFS2018') 
+	([FactQuery].SourceName = N'IFS2018') 
 	and [FactQuery].IndicatorStandardCode='GDP-TOTAL-USD-CURRENT'
 -- for UK and former colonies, and Mexico, use the seasonally-adjusted series, which goes back further in time
 	and [FactQuery].GeoStandardName!='United States'
@@ -34,14 +34,14 @@ SELECT
 UNION
 SELECT
  [DimSourceID],
-  N'IFS2018-EXTENDED' as DefinitionName, 
+  N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardCode,
  [YearAsDate],
  [Value]
  FROM [FactQuery]
 	WHERE 
-	([FactQuery].DefinitionName = N'IFS2018') 
+	([FactQuery].SourceName = N'IFS2018') 
 	and [FactQuery].IndicatorStandardCode='GDP-TOTAL-USD-CURRENT-SA'
 	and (
 -- for UK and former colonies, and Mexico, use the seasonally-adjusted series, which goes back further in time

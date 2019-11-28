@@ -16,20 +16,20 @@ AS
 
 SELECT 
  [DimSourceID],
- N'UN2018-EXTENDED' as DefinitionName, 
+ N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [DimIndicatorID],
  [Year],
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='UN2018' AND 
+ WHERE [FactQuery].SourceName='UN2018' AND 
  ([FactQuery].IndicatorStandardCode='GDP-TOTAL-USD-CURRENT' OR
   [FactQuery].IndicatorStandardCode='POPULATION')
 UNION
 SELECT 
  [DimSourceID],
- N'UN2018-EXTENDED' as DefinitionName, 
+ N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [DimIndicatorID],
  [Year],
@@ -43,7 +43,7 @@ FROM [FactQuery]
   [FactQuery].IndicatorStandardCode='POPULATION')
 GO
 
--- plonk the UN definitions into a temporary file so we can edit out the duplicates
+-- plonk the UN entries into a temporary file so we can edit out the duplicates
  
 BEGIN TRY 
 DROP TABLE [dbo].[UN_TD_File] 
@@ -165,7 +165,7 @@ AS
 -- Select all MADDISON Records
 SELECT 
  [DimSourceID],
- N'MADDISON-EXTENDED' as DefinitionName, 
+ N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
@@ -173,7 +173,7 @@ SELECT
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='MADDISON' 
+ WHERE [FactQuery].SourceName='MADDISON' 
 GO
 
 -- plonk the MADDISON definitions into a temporary file so we can edit out the duplicates
@@ -270,7 +270,7 @@ AS
 -- Select all WID Records
 SELECT 
  [DimSourceID],
- N'WID-EXTENDED' as DefinitionName, 
+ N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
@@ -279,7 +279,7 @@ SELECT
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].DefinitionName='WID'
+ WHERE [FactQuery].SourceName='WID'
   AND IndicatorStandardCode='GDP-NET-TOTAL-LCU-CURRENT'
   or IndicatorStandardCode='GDP-FOREIGN-INCOME-LCU'
 GO

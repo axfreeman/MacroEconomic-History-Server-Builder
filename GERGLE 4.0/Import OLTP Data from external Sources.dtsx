@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{B4B32181-FC55-45CD-89D6-54633869D5ED}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LastModifiedProductVersion="15.0.1900.78"
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{F8E5ECC6-3D3F-436E-9FB5-E39D27B1797C}">
+  DTS:VersionBuild="107"
+  DTS:VersionGUID="{8E2A2472-7A71-4357-BDA5-AEFB338D735D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -82,7 +82,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="11"
+                      length="8"
                       lineageId="Package\Barro-Ursua Dataset\Add Source, Definition and Indicator.Outputs[Derived Column Output].Columns[DefinitionName]"
                       name="DefinitionName"
                       truncationRowDisposition="FailComponent">
@@ -91,13 +91,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"BARRO-URSUA"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"BARRO-URSUA"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1349,7 +1349,7 @@
                     <inputColumn
                       refId="Package\Barro-Ursua Dataset\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
-                      cachedLength="11"
+                      cachedLength="8"
                       cachedName="DefinitionName"
                       externalMetadataColumnId="Package\Barro-Ursua Dataset\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\Barro-Ursua Dataset\Add Source, Definition and Indicator.Outputs[Derived Column Output].Columns[DefinitionName]" />
@@ -2364,7 +2364,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="7"
+                      length="8"
                       lineageId="Package\IFS2018\Add Source and Definition.Outputs[Derived Column Output].Columns[DefinitionName]"
                       name="DefinitionName"
                       truncationRowDisposition="FailComponent">
@@ -2373,13 +2373,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"IFS2018"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"IFS2018"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -4874,7 +4874,7 @@
                     <inputColumn
                       refId="Package\IFS2018\PivotedSources OLTP Table.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
-                      cachedLength="7"
+                      cachedLength="8"
                       cachedName="DefinitionName"
                       externalMetadataColumnId="Package\IFS2018\PivotedSources OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\IFS2018\Add Source and Definition.Outputs[Derived Column Output].Columns[DefinitionName]" />
@@ -5315,7 +5315,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="9"
+                      length="8"
                       lineageId="Package\Macrohistory\Add Source, definition and scale where appropriate.Outputs[Derived Column Output].Columns[DefinitionName]"
                       name="DefinitionName"
                       truncationRowDisposition="FailComponent">
@@ -5324,13 +5324,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"MACROHIST"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"MACROHIST"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -6348,7 +6348,7 @@
                     <inputColumn
                       refId="Package\Macrohistory\MacroHistory OLTP database.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
-                      cachedLength="9"
+                      cachedLength="8"
                       cachedName="DefinitionName"
                       externalMetadataColumnId="Package\Macrohistory\MacroHistory OLTP database.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\Macrohistory\Add Source, definition and scale where appropriate.Outputs[Derived Column Output].Columns[DefinitionName]" />
@@ -6601,13 +6601,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"MADDISON"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"MADDISON"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -7142,13 +7142,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"MADDISON"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"MADDISON"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -7699,13 +7699,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"MADDISON"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"MADDISON"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -8199,7 +8199,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="4"
+                      length="8"
                       lineageId="Package\OECD Capital Stock\Add Source and Definition.Outputs[Derived Column Output].Columns[Definition]"
                       name="Definition"
                       truncationRowDisposition="FailComponent">
@@ -8208,13 +8208,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"OECD"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"OECD"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -8346,7 +8346,7 @@
                     <inputColumn
                       refId="Package\OECD Capital Stock\FactSource.Inputs[OLE DB Destination Input].Columns[Definition]"
                       cachedDataType="wstr"
-                      cachedLength="4"
+                      cachedLength="8"
                       cachedName="Definition"
                       externalMetadataColumnId="Package\OECD Capital Stock\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\OECD Capital Stock\Add Source and Definition.Outputs[Derived Column Output].Columns[Definition]" />
@@ -8697,7 +8697,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="6"
+                      length="8"
                       lineageId="Package\Palgrave USA\Add Source, Definition, Indicator, Geo Fields.Outputs[Derived Column Output].Columns[DefinitionName]"
                       name="DefinitionName"
                       truncationRowDisposition="FailComponent">
@@ -8706,13 +8706,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"PAL_US"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"PAL_US"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -8890,7 +8890,7 @@
                     <inputColumn
                       refId="Package\Palgrave USA\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
-                      cachedLength="6"
+                      cachedLength="8"
                       cachedName="DefinitionName"
                       externalMetadataColumnId="Package\Palgrave USA\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\Palgrave USA\Add Source, Definition, Indicator, Geo Fields.Outputs[Derived Column Output].Columns[DefinitionName]" />
@@ -9465,7 +9465,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="4"
+                      length="8"
                       lineageId="Package\Penn Full\Add  Source and Destination, and scale.Outputs[Derived Column Output].Columns[Definition]"
                       name="Definition"
                       truncationRowDisposition="FailComponent">
@@ -9474,13 +9474,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"PENN"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"PENN"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -10239,7 +10239,7 @@
                     <inputColumn
                       refId="Package\Penn Full\Penn OLTP Table.Inputs[OLE DB Destination Input].Columns[Definition]"
                       cachedDataType="wstr"
-                      cachedLength="4"
+                      cachedLength="8"
                       cachedName="Definition"
                       externalMetadataColumnId="Package\Penn Full\Penn OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\Penn Full\Add  Source and Destination, and scale.Outputs[Derived Column Output].Columns[Definition]" />
@@ -10448,7 +10448,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="4"
+                      length="8"
                       lineageId="Package\Penn_na\Add Source and Definition.Outputs[Derived Column Output].Columns[Definition]"
                       name="Definition"
                       truncationRowDisposition="FailComponent">
@@ -10457,13 +10457,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"PENN"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"PENN"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -11274,7 +11274,7 @@
                     <inputColumn
                       refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[Definition]"
                       cachedDataType="wstr"
-                      cachedLength="4"
+                      cachedLength="8"
                       cachedName="Definition"
                       externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\Penn_na\Add Source and Definition.Outputs[Derived Column Output].Columns[Definition]" />
@@ -11485,7 +11485,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="3"
+                      length="8"
                       lineageId="Package\PPP2011 from ICP\Add Source, Definition, Indicator, Year.Outputs[Derived Column Output].Columns[DefinitionName]"
                       name="DefinitionName"
                       truncationRowDisposition="FailComponent">
@@ -11494,13 +11494,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"ICP"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"ICP"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -11664,7 +11664,7 @@
                     <inputColumn
                       refId="Package\PPP2011 from ICP\FactSource.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
-                      cachedLength="3"
+                      cachedLength="8"
                       cachedName="DefinitionName"
                       externalMetadataColumnId="Package\PPP2011 from ICP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\PPP2011 from ICP\Add Source, Definition, Indicator, Year.Outputs[Derived Column Output].Columns[DefinitionName]" />
@@ -11973,7 +11973,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="6"
+                      length="8"
                       lineageId="Package\UN Population\Derived Column.Outputs[Derived Column Output].Columns[Definition]"
                       name="Definition"
                       truncationRowDisposition="FailComponent">
@@ -11982,13 +11982,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"UN2018"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"UN2018"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -12539,7 +12539,7 @@
                     <inputColumn
                       refId="Package\UN Population\Pivoted Sources.Inputs[OLE DB Destination Input].Columns[Definition]"
                       cachedDataType="wstr"
-                      cachedLength="6"
+                      cachedLength="8"
                       cachedName="Definition"
                       externalMetadataColumnId="Package\UN Population\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\UN Population\Derived Column.Outputs[Derived Column Output].Columns[Definition]" />
@@ -15175,7 +15175,7 @@
                     <inputColumn
                       refId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].Columns[Definition]"
                       cachedDataType="wstr"
-                      cachedLength="11"
+                      cachedLength="8"
                       cachedName="Definition"
                       externalMetadataColumnId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\UN-OFFICIAL\Source and Definition.Outputs[Derived Column Output].Columns[Definition]" />
@@ -15581,7 +15581,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="11"
+                      length="8"
                       lineageId="Package\UN-OFFICIAL\Source and Definition.Outputs[Derived Column Output].Columns[Definition]"
                       name="Definition"
                       truncationRowDisposition="FailComponent">
@@ -15590,13 +15590,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"UN-OFFICIAL"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"UN-OFFICIAL"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -17618,7 +17618,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="6"
+                      length="8"
                       lineageId="Package\UN2018(new)\Derived Column.Outputs[Derived Column Output].Columns[Definition]"
                       name="Definition"
                       truncationRowDisposition="FailComponent">
@@ -17627,13 +17627,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"UN2018"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"UN2018"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -17772,7 +17772,7 @@
                     <inputColumn
                       refId="Package\UN2018(new)\Fact.Inputs[OLE DB Destination Input].Columns[Definition]"
                       cachedDataType="wstr"
-                      cachedLength="6"
+                      cachedLength="8"
                       cachedName="Definition"
                       externalMetadataColumnId="Package\UN2018(new)\Fact.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\UN2018(new)\Derived Column.Outputs[Derived Column Output].Columns[Definition]" />
@@ -25179,7 +25179,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="7"
+                      length="8"
                       lineageId="Package\WDI2018\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]"
                       name="DefinitionName"
                       truncationRowDisposition="FailComponent">
@@ -25188,13 +25188,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"WDI2018"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"WDI2018"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -25692,7 +25692,7 @@
                     <inputColumn
                       refId="Package\WDI2018\PivotedSources OLTP Table.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
-                      cachedLength="7"
+                      cachedLength="8"
                       cachedName="DefinitionName"
                       externalMetadataColumnId="Package\WDI2018\PivotedSources OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\WDI2018\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]" />
@@ -27668,7 +27668,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="7"
+                      length="8"
                       lineageId="Package\WEO2002\Add Source and Definition.Outputs[Derived Column Output].Columns[DefinitionName]"
                       name="DefinitionName"
                       truncationRowDisposition="FailComponent">
@@ -27677,13 +27677,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"WEO2002"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"WEO2002"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -28007,7 +28007,7 @@
                     <inputColumn
                       refId="Package\WEO2002\PivotedSources.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
                       cachedDataType="wstr"
-                      cachedLength="7"
+                      cachedLength="8"
                       cachedName="DefinitionName"
                       externalMetadataColumnId="Package\WEO2002\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\WEO2002\Add Source and Definition.Outputs[Derived Column Output].Columns[DefinitionName]" />
@@ -29433,13 +29433,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"WEO2018O"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"WEO2018O"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -31519,7 +31519,7 @@
                     <inputColumn
                       refId="Package\World Inequality Database\Fact Source OLTP Table.Inputs[OLE DB Destination Input].Columns[Definition]"
                       cachedDataType="wstr"
-                      cachedLength="3"
+                      cachedLength="8"
                       cachedName="Definition"
                       externalMetadataColumnId="Package\World Inequality Database\Fact Source OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
                       lineageId="Package\World Inequality Database\Supply Source, Definition.Outputs[Derived Column Output].Columns[Definition]" />
@@ -31644,7 +31644,7 @@
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="3"
+                      length="8"
                       lineageId="Package\World Inequality Database\Supply Source, Definition.Outputs[Derived Column Output].Columns[Definition]"
                       name="Definition"
                       truncationRowDisposition="FailComponent">
@@ -31653,13 +31653,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"WID"</property>
+                          name="Expression">"ORIGINAL"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"WID"</property>
+                          name="FriendlyExpression">"ORIGINAL"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -32075,7 +32075,7 @@
           Id="Package\Barro-Ursua Dataset"
           TopLeft="500.611111111111,401.833333333333" />
         <NodeLayout
-          Size="199,42"
+          Size="217,42"
           Id="Package\CalculatePivotedAdditions"
           TopLeft="157.055555555555,170.722222222222" />
         <NodeLayout
@@ -32098,6 +32098,10 @@
           Size="176,42"
           Id="Package\Maddison Population"
           TopLeft="479,241.111111111111" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\OECD Capital Stock"
+          TopLeft="332,603" />
         <NodeLayout
           Size="198,42"
           Id="Package\OLTP Data Tables Set Up"
@@ -32127,7 +32131,7 @@
           Id="Package\UN2018(new)"
           TopLeft="413.333333333333,19.8055555555556" />
         <NodeLayout
-          Size="142,42"
+          Size="171,42"
           Id="Package\UN-OFFICIAL"
           TopLeft="407,99" />
         <NodeLayout
@@ -32151,11 +32155,11 @@
           Id="Package\WDI2018"
           TopLeft="252.5,18.5833333333337" />
         <NodeLayout
-          Size="125,42"
+          Size="140.5,42"
           Id="Package\WEO2002"
           TopLeft="25.5,98.5" />
         <NodeLayout
-          Size="133,42"
+          Size="151,42"
           Id="Package\WEO2018O"
           TopLeft="210.055555555556,96.166666666666" />
         <NodeLayout
@@ -32330,30 +32334,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="667.5,137.5">
+          TopLeft="644.5,137.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-410.944444444445,33.222222222222"
+              EndConnector="-378.944444444445,33.222222222222"
               Start="0,0"
-              End="-410.944444444445,25.722222222222">
+              End="-378.944444444445,25.722222222222">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.611111111111" />
+                    End="0,9.50496838301707" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.611111111111"
-                    Point2="0,16.611111111111"
-                    Point3="-4,16.611111111111" />
+                    Point1="0,9.50496838301707"
+                    Point2="0,13.5049683830171"
+                    Point3="-4,13.5049683830171" />
                   <mssgle:LineSegment
-                    End="-406.944444444445,16.611111111111" />
+                    End="-374.944444444445,13.5049683830171" />
                   <mssgle:CubicBezierSegment
-                    Point1="-406.944444444445,16.611111111111"
-                    Point2="-410.944444444445,16.611111111111"
-                    Point3="-410.944444444445,20.611111111111" />
+                    Point1="-374.944444444445,13.5049683830171"
+                    Point2="-378.944444444445,13.5049683830171"
+                    Point3="-378.944444444445,17.5049683830171" />
                   <mssgle:LineSegment
-                    End="-410.944444444445,25.722222222222" />
+                    End="-378.944444444445,25.722222222222" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -32398,6 +32402,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="-113.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 17]"
+          TopLeft="589.555555555556,538.222222222222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-172.555555555556,64.7777777777781"
+              Start="0,0"
+              End="-172.555555555556,57.2777777777781">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.388888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.388888888889"
+                    Point2="0,32.388888888889"
+                    Point3="-4,32.388888888889" />
+                  <mssgle:LineSegment
+                    End="-168.555555555556,32.388888888889" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-168.555555555556,32.388888888889"
+                    Point2="-172.555555555556,32.388888888889"
+                    Point3="-172.555555555556,36.388888888889" />
+                  <mssgle:LineSegment
+                    End="-172.555555555556,57.2777777777781" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -32452,18 +32490,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="343.055555555556,118.583333333333">
+          TopLeft="361.055555555556,118.583333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63.944444444444,0"
+              EndConnector="45.944444444444,0"
               Start="0,0"
-              End="56.444444444444,0">
+              End="38.444444444444,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.444444444444,0" />
+                    End="38.444444444444,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -32496,18 +32534,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="549,118.25">
+          TopLeft="492.5,141">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.5,0"
+              EndConnector="198,-3.5"
               Start="0,0"
-              End="38,0">
+              End="198,4">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="38,0" />
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="194,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="194,22.5"
+                    Point2="198,22.5"
+                    Point3="198,18.5" />
+                  <mssgle:LineSegment
+                    End="198,4" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -32544,9 +32594,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-560.5,35.7777777777774"
+              EndConnector="-552.75,35.7777777777774"
               Start="0,0"
-              End="-560.5,28.2777777777774">
+              End="-552.75,28.2777777777774">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -32557,13 +32607,13 @@
                     Point2="0,17.8888888888887"
                     Point3="-4,17.8888888888887" />
                   <mssgle:LineSegment
-                    End="-556.5,17.8888888888887" />
+                    End="-548.75,17.8888888888887" />
                   <mssgle:CubicBezierSegment
-                    Point1="-556.5,17.8888888888887"
-                    Point2="-560.5,17.8888888888887"
-                    Point3="-560.5,21.8888888888887" />
+                    Point1="-548.75,17.8888888888887"
+                    Point2="-552.75,17.8888888888887"
+                    Point3="-552.75,21.8888888888887" />
                   <mssgle:LineSegment
-                    End="-560.5,28.2777777777774" />
+                    End="-552.75,28.2777777777774" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -32574,18 +32624,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="356.055555555555,189.944444444444">
+          TopLeft="265.555555555555,212.722222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="39.000000000001,0"
+              EndConnector="194.500000000001,-3.555555555556"
               Start="0,0"
-              End="31.500000000001,0">
+              End="194.500000000001,3.944444444444">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31.500000000001,0" />
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="190.500000000001,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="190.500000000001,22.5"
+                    Point2="194.500000000001,22.5"
+                    Point3="194.500000000001,18.5" />
+                  <mssgle:LineSegment
+                    End="194.500000000001,3.944444444444" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -32596,18 +32658,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="150.5,118.333333333333">
+          TopLeft="166,118.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="59.555555555556,0"
+              EndConnector="44.055555555556,0"
               Start="0,0"
-              End="52.055555555556,0">
+              End="36.555555555556,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.055555555556,0" />
+                    End="36.555555555556,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -32682,44 +32744,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\OECD Capital Stock"
-          TopLeft="332,603" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="589.555555555556,538.222222222222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-172.555555555556,64.7777777777781"
-              Start="0,0"
-              End="-172.555555555556,57.2777777777781">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.388888888889" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.388888888889"
-                    Point2="0,32.388888888889"
-                    Point3="-4,32.388888888889" />
-                  <mssgle:LineSegment
-                    End="-168.555555555556,32.388888888889" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-168.555555555556,32.388888888889"
-                    Point2="-172.555555555556,32.388888888889"
-                    Point3="-172.555555555556,36.388888888889" />
-                  <mssgle:LineSegment
-                    End="-172.555555555556,57.2777777777781" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -32727,7 +32751,7 @@
     design-time-name="Package\Barro-Ursua Dataset">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="115,42"
           Id="Package\Barro-Ursua Dataset\Unpivot"
@@ -32763,9 +32787,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -32787,9 +32809,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -32811,9 +32831,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -32823,7 +32841,7 @@
     design-time-name="Package\IFS2018">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="208,42"
           Id="Package\IFS2018\PivotedSources OLTP Table"
@@ -32855,9 +32873,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -32879,9 +32895,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -32904,7 +32918,7 @@
     design-time-name="Package\Macrohistory">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="214,42"
           Id="Package\Macrohistory\MacroHistory OLTP database"
@@ -32936,9 +32950,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -32960,9 +32972,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -32972,7 +32982,7 @@
     design-time-name="Package\Maddison GDP">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="146,42"
           Id="Package\Maddison GDP\Maddison CSV"
@@ -33004,9 +33014,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33028,9 +33036,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33040,7 +33046,7 @@
     design-time-name="Package\Maddison GDP Multiple Benchmarks">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="146,42"
           Id="Package\Maddison GDP Multiple Benchmarks\Maddison CSV"
@@ -33072,9 +33078,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33096,9 +33100,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33108,7 +33110,7 @@
     design-time-name="Package\Maddison Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="124,42"
           Id="Package\Maddison Population\Maddison"
@@ -33140,9 +33142,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33164,19 +33164,94 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <TaskHost
+    design-time-name="Package\OECD Capital Stock">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="212,42"
+          Id="Package\OECD Capital Stock\OECD Capital Stock CSV File"
+          TopLeft="196,24" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\OECD Capital Stock\Add Source and Definition"
+          TopLeft="196,149" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\OECD Capital Stock\FactSource"
+          TopLeft="224,320" />
+        <EdgeLayout
+          Id="Package\OECD Capital Stock.Paths[Derived Column Output]"
+          TopLeft="293.25,191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,129"
+              Start="0,0"
+              End="0,121.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,121.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\OECD Capital Stock.Paths[Flat File Source Output]"
+          TopLeft="299.5,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,83"
+              Start="0,0"
+              End="0,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\OECD Capital Stock\FactSource">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Palgrave USA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="142,42"
           Id="Package\Palgrave USA\Palgrave USA"
@@ -33208,9 +33283,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33232,9 +33305,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33244,7 +33315,7 @@
     design-time-name="Package\Penn Full">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="144,42"
           Id="Package\Penn Full\Penn CSV File"
@@ -33288,9 +33359,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33324,9 +33393,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33336,7 +33403,7 @@
     design-time-name="Package\Penn_na">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="228,42"
           Id="Package\Penn_na\Penn_na Unpivoted OLTP Table"
@@ -33380,9 +33447,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33416,9 +33481,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33430,13 +33493,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="179,42"
-          Id="Package\PPP2011 from ICP\PPP2011 ICP CSV file"
-          TopLeft="274,36" />
+          Size="158,42"
+          Id="Package\PPP2011 from ICP\FactSource"
+          TopLeft="280.5,303.5" />
         <NodeLayout
           Size="260,42"
           Id="Package\PPP2011 from ICP\Add Source, Definition, Indicator, Year"
           TopLeft="227,161" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\PPP2011 from ICP\PPP2011 ICP CSV file"
+          TopLeft="274,36" />
         <EdgeLayout
           Id="Package\PPP2011 from ICP.Paths[Flat File Source Output]"
           TopLeft="360.25,78">
@@ -33459,24 +33526,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="131,42"
-          Id="Package\PPP2011 from ICP\FactSource"
-          TopLeft="294,304" />
         <EdgeLayout
           Id="Package\PPP2011 from ICP.Paths[Derived Column Output]"
           TopLeft="358.25,203">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,101"
+              EndConnector="0,100.5"
               Start="0,0"
-              End="0,93.5">
+              End="0,93">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,93.5" />
+                    End="0,93" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -33505,7 +33568,7 @@
     design-time-name="Package\UN Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154,42"
           Id="Package\UN Population\Pivoted Sources"
@@ -33537,9 +33600,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33561,9 +33622,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33586,7 +33645,7 @@
     design-time-name="Package\UN2018(new)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="189,42"
           Id="Package\UN2018(new)\UN2018 (new) CSV File"
@@ -33630,9 +33689,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33666,9 +33723,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33691,7 +33746,7 @@
     design-time-name="Package\UN-OFFICIAL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="180,42"
           Id="Package\UN-OFFICIAL\Source and Definition"
@@ -33723,9 +33778,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33747,9 +33800,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33772,7 +33823,7 @@
     design-time-name="Package\Unpivot into FactSource">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114,42"
           Id="Package\Unpivot into FactSource\Unpivot"
@@ -33782,31 +33833,29 @@
           Id="Package\Unpivot into FactSource\Pivoted Sources"
           TopLeft="52.600005501967,14.3999995303876" />
         <NodeLayout
-          Size="130,42"
+          Size="172.5,42"
           Id="Package\Unpivot into FactSource\FactSource"
-          TopLeft="66.1538485803549,175.224248754048" />
+          TopLeft="43.6538485803549,173.224248754048" />
         <EdgeLayout
           Id="Package\Unpivot into FactSource.Paths[Unpivot Output]"
-          TopLeft="130.200002530905,130.945457772972">
+          TopLeft="129.375002530905,131.345457772972">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.2787909810757"
+              EndConnector="0,41.8787909810757"
               Start="0,0"
-              End="0,36.7787909810757">
+              End="0,34.3787909810757">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.7787909810757" />
+                    End="0,34.3787909810757" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -33828,9 +33877,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33866,7 +33913,7 @@
     design-time-name="Package\Unpivot MacroHistory">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="115,42"
           Id="Package\Unpivot MacroHistory\Unpivot"
@@ -33876,7 +33923,7 @@
           Id="Package\Unpivot MacroHistory\Macrohistory"
           TopLeft="53.600005501967,15.3999995303876" />
         <NodeLayout
-          Size="131,42"
+          Size="145,42"
           Id="Package\Unpivot MacroHistory\FactSource"
           TopLeft="59,210" />
         <EdgeLayout
@@ -33898,14 +33945,12 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Unpivot MacroHistory.Paths[Unpivot Output]"
-          TopLeft="125.5,144">
+          TopLeft="129,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -33922,9 +33967,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -33934,7 +33977,7 @@
     design-time-name="Package\Unpivot Penn">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="115,42"
           Id="Package\Unpivot Penn\Unpivot"
@@ -33978,9 +34021,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34014,9 +34055,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -34026,7 +34065,7 @@
     design-time-name="Package\Unpivot Penn_na">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="214,42"
           Id="Package\Unpivot Penn_na\Penn_NA pivoted OLTP table"
@@ -34074,9 +34113,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34098,9 +34135,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34134,9 +34169,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -34146,7 +34179,7 @@
     design-time-name="Package\WDI2018">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="145,42"
           Id="Package\WDI2018\WDI2018 CSV"
@@ -34178,9 +34211,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34214,9 +34245,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -34239,7 +34268,7 @@
     design-time-name="Package\WEO2002">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="165,42"
           Id="Package\WEO2002\WEO2002 CSV file"
@@ -34271,9 +34300,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34295,9 +34322,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -34368,9 +34393,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -34428,9 +34451,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -34468,10 +34489,6 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="122,42"
-          Id="Package\World Inequality Database\WID CSV"
-          TopLeft="213,34" />
-        <NodeLayout
           Size="197,42"
           Id="Package\World Inequality Database\Supply Source, Definition"
           TopLeft="174,149" />
@@ -34479,28 +34496,10 @@
           Size="191,42"
           Id="Package\World Inequality Database\Fact Source OLTP Table"
           TopLeft="174,292" />
-        <EdgeLayout
-          Id="Package\World Inequality Database.Paths[Flat File Source Output]"
-          TopLeft="273.25,76">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,73"
-              Start="0,0"
-              End="0,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="122,42"
+          Id="Package\World Inequality Database\WID CSV"
+          TopLeft="213,34" />
         <EdgeLayout
           Id="Package\World Inequality Database.Paths[Derived Column Output]"
           TopLeft="271,191">
@@ -34523,88 +34522,33 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\World Inequality Database.Paths[Flat File Source Output]"
+          TopLeft="273.25,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\World Inequality Database\Fact Source OLTP Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\OECD Capital Stock">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="212,42"
-          Id="Package\OECD Capital Stock\OECD Capital Stock CSV File"
-          TopLeft="196,24" />
-        <NodeLayout
-          Size="202,42"
-          Id="Package\OECD Capital Stock\Add Source and Definition"
-          TopLeft="196,149" />
-        <EdgeLayout
-          Id="Package\OECD Capital Stock.Paths[Flat File Source Output]"
-          TopLeft="299.5,66">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,83"
-              Start="0,0"
-              End="0,75.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,75.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="131,42"
-          Id="Package\OECD Capital Stock\FactSource"
-          TopLeft="224,320" />
-        <EdgeLayout
-          Id="Package\OECD Capital Stock.Paths[Derived Column Output]"
-          TopLeft="293.25,191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,129"
-              Start="0,0"
-              End="0,121.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,121.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\OECD Capital Stock\FactSource">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
