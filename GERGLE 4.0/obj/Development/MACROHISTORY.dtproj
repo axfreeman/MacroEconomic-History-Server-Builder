@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANYNAPBhzTECEipq9u5mbUwAAAAACAAAAAAAQZgAAAAEAACAAAAAxcoVNMGbdMptbtlQoBqNkwT6uVUbQ7VVtwo8HkyRSugAAAAAOgAAAAAIAACAAAADGqPVVA/8gxBBvhP0eKI4hZmB/Vr8W0DhIEwB4PaywI5AAAADnTo2HMv5qoCkB5f+CheAoV3hVieOKIVN672EwH/UjLYo3Zq8uuHH8C5ni8fABC8WgjKq+a3djWfPTNq0M2yR76QnmAplnGwXAzArZS/HNAbaf/5oNVksl/UduCVOAK5VKoBPVkm8HcKF+dfpxUwzXnFezrmakPsEEkBqyAiKVWvLmLBsOHJJj2aujymFqZzFAAAAAu8VOhS398YXcoXo2dHs3U3R4IEKysxX3dL0or9+BHMTPinacN86zGNW0jC+jRQG2CYWgKmv7j3PU8cDKcQyaqA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANYNAPBhzTECEipq9u5mbUwAAAAACAAAAAAAQZgAAAAEAACAAAAB5wGZiubVQU7KKU+rHYJGQA6TcDGkFv5BDNxg/vunbGAAAAAAOgAAAAAIAACAAAAD4ZCXkqy04Y8Ryt9P3AxUfC7KZChQ+FLtOY0KJfaKM7ZAAAABQsMbotaZZcFTE0ojmE+ayj/JPOLAVxR2lKjGxK/l0qGJ/vVxUfukNnGsQjpWtuxa+WI1X7jq1l6KEhnQzQgoacyryByIKy1L2B2Q1UcNlH0VnHsLzCAF9C4qjjsDVJAWrHashQ6pPWE0gDe37sub5BFf90bn5dxLtQc/7fpd/1hah7jUuutebbhZSn70reqFAAAAANeLSwaJP+H4fnzmN2w2Duc3m3Z4MWAAkjhd7jOWqJ111fG2vAiibXZtmyl44M3x3F4uycWX3zdAC92qJxEW+uw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -61,13 +61,14 @@
           <SSIS:ConnectionManager SSIS:Name="Define IFS Seasonal Adjustment Removals.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Deindexation for MH and B-U.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Growth Additions.SQL.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Define PENN-NA USD GDP.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="UN Population.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Duplicate Removals.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="WID CSV.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define WID Transforms and deduplication.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="PPP2011 ICP CSV file.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="OECD Capital Stock.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Define PENN USD GDP.sql.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Define PENN USD Calculator.sql.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -3633,10 +3634,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">25</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DBC8F5CD-52C2-4B4B-8F31-8712DF2946BA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3BD9B4AA-26C1-4A8D-9BF2-C268F18C39DC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3650,10 +3651,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">107</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">109</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8E2A2472-7A71-4357-BDA5-AEFB338D735D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7230C00C-0CF3-464B-925D-3681C82713AF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3667,10 +3668,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">197</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">202</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{165946E3-FD0D-4368-B165-37C628D9F7AB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6E7534AE-B52A-417C-BFD0-E6867D7CE8A6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANYNAPBhzTECEipq9u5mbUwAAAAACAAAAAAAQZgAAAAEAACAAAADyUy1cXfef6iIHmrItwBJGIKLSKwQ96Ep+EHRaNObIOgAAAAAOgAAAAAIAACAAAACNpc2ceiG2y45p/nQGaqERUgp77us/6ZyWE9HGGGxtbJAAAACPDPCunzbXScEeq7jiXiyOHx9rVQGMFUMtA2K3W9ignqxYsqSR7SLXY40apBK/K80Q3RrrkT7/qaWZa+6OoHKrwSEdZwZ6PAmrS7/l0U8ZtoJ5NUc60x4Lr2EM2v6RTN+qAJFQaKPYBTF7iEF1isqQgcSzCqNAloqqXPH8Lsz9F5iGJ3tHIG2xHYU+8mBsi8JAAAAAlF/SyKFOWtIgad/uW1LwKkTx3EbY60DKaJ10tCiBqy3bTtkHZQO12c8sth6KCmWcMGaxg+JOwn7P6PrJsLZtog==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANYNAPBhzTECEipq9u5mbUwAAAAACAAAAAAAQZgAAAAEAACAAAAC/7S5t3zW3UKkcP3EWDWIqc5TwrR/lxwmUdjrhD0lUxAAAAAAOgAAAAAIAACAAAADn+ngjkdSnYn/QjwVNC21zLi43nZk87MDJqRq32M3RK5AAAACaRqkdD+a8M3IlZYSgYN5e38mty7N7oj3TjrHqng/7HDgZjInpQUccVWFP2gLVU3by+NANLlNiq3xY/TqZNboRt/WSOY2xipKFVnGbgrLX4aiPf78mdgjHVNLG9K8VX6MN1efyAayetz9LkQrCPEgzAOc0wdOTQieNAY7WgsZb8Bhkio8wv08EAGyWG/N/MedAAAAA0wiRP6+6RlbSyxJfSbPi2eJ2N1IwcWIPGDlvzlakhYOnyZtMc48Dgp4D6MFAdfCZl0v9SEtLcB1FtF7ph8NRDg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -61,13 +61,14 @@
           <SSIS:ConnectionManager SSIS:Name="Define IFS Seasonal Adjustment Removals.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Deindexation for MH and B-U.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Growth Additions.SQL.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Define PENN-NA USD GDP.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="UN Population.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Duplicate Removals.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="WID CSV.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define WID Transforms and deduplication.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="PPP2011 ICP CSV file.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="OECD Capital Stock.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Define PENN USD GDP.sql.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Define PENN USD Calculator.sql.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -1356,7 +1357,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\GERG\Documents\GitHub\Economic-History\SETUP\Meta.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\GERG\Documents\GitHub\MacroEconomic-History-Server-Builder\SETUP\Meta.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1429,7 +1430,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\GERG\Documents\GitHub\Economic-History\SETUP\Meta.xls</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Users\GERG\Documents\GitHub\MacroEconomic-History-Server-Builder\SETUP\Meta.xls</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -2957,21 +2958,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.UN Population.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\afree\source\repos\MACROHISTORY\DATA\SOURCE\UN2018 Population from UN Population Division (preprocessed, see DimSource).csv</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.UN Population.DataRowsToSkip">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -3640,6 +3626,21 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.Define PENN USD Calculator.sql.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Users\GERG\Documents\GitHub\MacroEconomic-History-Server-Builder\SETUP\Define PENN USD Calculator.sql</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="Set up OLTP Dimension Tables.dtsx">
@@ -3665,10 +3666,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">98</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">109</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CFD13D66-813D-4417-921F-55CF2F2A7397}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7230C00C-0CF3-464B-925D-3681C82713AF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -3682,10 +3683,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">193</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">200</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{78484214-8E52-42B4-B3DB-284CC3EF97E2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A9E79B86-ACBD-4EEB-8A97-92EF06941417}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

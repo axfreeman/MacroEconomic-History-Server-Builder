@@ -11,30 +11,12 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="197"
-  DTS:VersionGUID="{165946E3-FD0D-4368-B165-37C628D9F7AB}">
+  DTS:VersionBuild="202"
+  DTS:VersionGUID="{6E7534AE-B52A-417C-BFD0-E6867D7CE8A6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Add Growth Definitions"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{10a1bc49-f5ba-42e2-9036-e9b71237cdff}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Add Growth Definitions"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="Define Growth Additions.SQL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Add PENN GDP in USD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -50,7 +32,7 @@
           SQLTask:Connection="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}"
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="Define PENN-NA USD GDP.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="Define PENN USD GDP sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -72,13 +54,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Create deduplicated -EXTENDED definitions"
+      DTS:refId="Package\Create deduplicated entries for the CLEANED defintion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{b6ba5743-b4eb-4371-b887-52c6252ff859}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Create deduplicated -EXTENDED definitions"
+      DTS:ObjectName="Create deduplicated entries for the CLEANED defintion"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -87,6 +69,24 @@
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStmtSourceType="FileConnection"
           SQLTask:SqlStatementSource="Define Duplicate Removals sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Define PENN USD Calculators"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DC2EF125-67B6-4623-B8FB-BE426D6CCB07}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Define PENN USD Calculators"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="Define PENN USD Calculator.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -3032,7 +3032,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
       DTS:DTSID="{01FA5811-CC25-4677-A94A-2FB365E13426}"
-      DTS:From="Package\Create deduplicated -EXTENDED definitions"
+      DTS:From="Package\Create deduplicated entries for the CLEANED defintion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
       DTS:To="Package\WID extensions" />
@@ -3079,11 +3079,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{BBB81F81-023A-4A84-8939-0686789CEE76}"
+      DTS:DTSID="{8DF48FE6-655B-4EA9-A514-0F1FAD4C58B1}"
       DTS:From="Package\Correct for IFS Seasonal Adjustment"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Add PENN GDP in USD" />
+      DTS:To="Package\Define PENN USD Calculators" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
@@ -3099,15 +3099,15 @@
       DTS:From="Package\Add PENN GDP in USD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Create deduplicated -EXTENDED definitions" />
+      DTS:To="Package\Create deduplicated entries for the CLEANED defintion" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{265FD21E-AF3B-474F-B795-17430868465A}"
-      DTS:From="Package\Deindex Barro-Ursua and MacroHistory"
+      DTS:DTSID="{ADE3F7FC-F63F-415A-A9C0-984877B2DE2D}"
+      DTS:From="Package\Define PENN USD Calculators"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Add Growth Definitions" />
+      DTS:To="Package\Add PENN GDP in USD" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3122,21 +3122,17 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="188,42"
-          Id="Package\Add Growth Definitions"
-          TopLeft="572.051294903314,415" />
-        <NodeLayout
           Size="185,42"
           Id="Package\Add PENN GDP in USD"
-          TopLeft="604.051294903314,256" />
+          TopLeft="36.051294903314,343" />
         <NodeLayout
           Size="250,42"
           Id="Package\Correct for IFS Seasonal Adjustment"
           TopLeft="317.051294903314,259" />
         <NodeLayout
-          Size="283,42"
-          Id="Package\Create deduplicated -EXTENDED definitions"
-          TopLeft="44.051294903314,339" />
+          Size="335,42"
+          Id="Package\Create deduplicated entries for the CLEANED defintion"
+          TopLeft="311.051294903314,340.5" />
         <NodeLayout
           Size="262,42"
           Id="Package\Deindex Barro-Ursua and MacroHistory"
@@ -3172,7 +3168,7 @@
         <NodeLayout
           Size="153,42"
           Id="Package\WID extensions"
-          TopLeft="385,336" />
+          TopLeft="683,340.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="143.935910228677,131.024248409665">
@@ -3231,18 +3227,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="327.051294903314,358.5">
+          TopLeft="646.051294903314,361.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.948705096686,0"
+              EndConnector="36.948705096686,0"
               Start="0,0"
-              End="50.448705096686,0">
+              End="29.448705096686,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="50.448705096686,0" />
+                    End="29.448705096686,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3253,30 +3249,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="461.5,378">
+          TopLeft="759.5,382.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-298.448705096686,39"
+              EndConnector="-596.448705096686,34.5"
               Start="0,0"
-              End="-298.448705096686,31.5">
+              End="-596.448705096686,27">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="0,13.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="-4,19.5" />
+                    Point1="0,13.25"
+                    Point2="0,17.25"
+                    Point3="-4,17.25" />
                   <mssgle:LineSegment
-                    End="-294.448705096686,19.5" />
+                    End="-592.448705096686,17.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="-294.448705096686,19.5"
-                    Point2="-298.448705096686,19.5"
-                    Point3="-298.448705096686,23.5" />
+                    Point1="-592.448705096686,17.25"
+                    Point2="-596.448705096686,17.25"
+                    Point3="-596.448705096686,21.25" />
                   <mssgle:LineSegment
-                    End="-298.448705096686,31.5" />
+                    End="-596.448705096686,27" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3374,28 +3370,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="567.051294903314,278.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="37,0"
-              Start="0,0"
-              End="29.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="29.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="252.555557206146,280.123238524962">
           <EdgeLayout.Curve>
@@ -3419,30 +3393,44 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="696.551294903314,298">
+          TopLeft="221.051294903314,362.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-511,41"
+              EndConnector="90,0"
               Start="0,0"
-              End="-511,33.5">
+              End="82.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5"
-                    Point2="0,20.5"
-                    Point3="-4,20.5" />
+                    End="82.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Define PENN USD Calculators"
+          TopLeft="663.5,254" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="567.051294903314,277.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.448705096686,0"
+              Start="0,0"
+              End="88.948705096686,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-507,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-507,20.5"
-                    Point2="-511,20.5"
-                    Point3="-511,24.5" />
-                  <mssgle:LineSegment
-                    End="-511,33.5" />
+                    End="88.948705096686,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3453,18 +3441,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="294.051294903314,437">
+          TopLeft="772,296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="278,0"
+              EndConnector="-643.448705096686,47"
               Start="0,0"
-              End="270.5,0">
+              End="-643.448705096686,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="270.5,0" />
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="-4,23.5" />
+                  <mssgle:LineSegment
+                    End="-639.448705096686,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-639.448705096686,23.5"
+                    Point2="-643.448705096686,23.5"
+                    Point3="-643.448705096686,27.5" />
+                  <mssgle:LineSegment
+                    End="-643.448705096686,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3546,15 +3546,15 @@
     design-time-name="Package\Populate DimDefinitions">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="204,42"
-          Id="Package\Populate DimDefinitions\DimDefinitions OLTP Table"
-          TopLeft="32.1538473332422,11.5030307185661" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="211,42"
           Id="Package\Populate DimDefinitions\DimDefinitions ROLAP Table"
           TopLeft="27.384616242358,103.733337152847" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Populate DimDefinitions\DimDefinitions OLTP Table"
+          TopLeft="32.1538473332422,11.5030307185661" />
         <EdgeLayout
           Id="Package\Populate DimDefinitions.Paths[OLE DB Source Output]"
           TopLeft="133.5192317878,53.5030307185661">
@@ -3574,7 +3574,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3676,7 +3678,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="175,42"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
@@ -3704,7 +3706,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{8E2A2472-7A71-4357-BDA5-AEFB338D735D}">
+  DTS:VersionBuild="109"
+  DTS:VersionGUID="{7230C00C-0CF3-464B-925D-3681C82713AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -10495,6 +10495,345 @@
               </outputs>
             </component>
             <component
+              refId="Package\Penn_na\Penn Unpivoted OLTP Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Penn Unpivoted OLTP Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Penn_NA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Penn_na\Penn Unpivoted OLTP Table.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[countrycode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="countrycode"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[countrycode]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[year]"
+                      cachedDataType="i4"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_c]"
+                      cachedDataType="r8"
+                      cachedName="v_c"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_c]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_c]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_i]"
+                      cachedDataType="r8"
+                      cachedName="v_i"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_i]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_i]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_g]"
+                      cachedDataType="r8"
+                      cachedName="v_g"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_g]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_g]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_x]"
+                      cachedDataType="r8"
+                      cachedName="v_x"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_x]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_x]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_m]"
+                      cachedDataType="r8"
+                      cachedName="v_m"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_m]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_m]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_gdp]"
+                      cachedDataType="r8"
+                      cachedName="v_gdp"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gdp]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_gdp]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_c]"
+                      cachedDataType="r8"
+                      cachedName="q_c"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_c]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_c]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_i]"
+                      cachedDataType="r8"
+                      cachedName="q_i"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_i]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_i]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_g]"
+                      cachedDataType="r8"
+                      cachedName="q_g"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_g]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_g]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_x]"
+                      cachedDataType="r8"
+                      cachedName="q_x"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_x]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_x]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_m]"
+                      cachedDataType="r8"
+                      cachedName="q_m"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_m]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_m]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_gdp]"
+                      cachedDataType="r8"
+                      cachedName="q_gdp"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gdp]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_gdp]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[pop]"
+                      cachedDataType="r8"
+                      cachedName="pop"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[pop]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[pop]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[xr]"
+                      cachedDataType="r8"
+                      cachedName="xr"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[xr]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[xr2]"
+                      cachedDataType="r8"
+                      cachedName="xr2"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr2]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[xr2]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_gfcf]"
+                      cachedDataType="r8"
+                      cachedName="v_gfcf"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gfcf]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_gfcf]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_gfcf]"
+                      cachedDataType="r8"
+                      cachedName="q_gfcf"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gfcf]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_gfcf]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[emp]"
+                      cachedDataType="r8"
+                      cachedName="emp"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[emp]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[emp]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[avh]"
+                      cachedDataType="r8"
+                      cachedName="avh"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[avh]"
+                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[avh]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="4"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Penn_na\Add Source and Definition.Outputs[Derived Column Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[Definition]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Definition"
+                      externalMetadataColumnId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
+                      lineageId="Package\Penn_na\Add Source and Definition.Outputs[Derived Column Output].Columns[Definition]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="CountryCode" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_c]"
+                      dataType="r8"
+                      name="v_c" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_i]"
+                      dataType="r8"
+                      name="v_i" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_g]"
+                      dataType="r8"
+                      name="v_g" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_x]"
+                      dataType="r8"
+                      name="v_x" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_m]"
+                      dataType="r8"
+                      name="v_m" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gdp]"
+                      dataType="r8"
+                      name="v_gdp" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_c]"
+                      dataType="r8"
+                      name="q_c" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_i]"
+                      dataType="r8"
+                      name="q_i" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_g]"
+                      dataType="r8"
+                      name="q_g" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_x]"
+                      dataType="r8"
+                      name="q_x" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_m]"
+                      dataType="r8"
+                      name="q_m" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gdp]"
+                      dataType="r8"
+                      name="q_gdp" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[pop]"
+                      dataType="r8"
+                      name="pop" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr]"
+                      dataType="r8"
+                      name="xr" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr2]"
+                      dataType="r8"
+                      name="xr2" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gfcf]"
+                      dataType="r8"
+                      name="v_gfcf" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gfcf]"
+                      dataType="r8"
+                      name="q_gfcf" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[emp]"
+                      dataType="r8"
+                      name="emp" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[avh]"
+                      dataType="r8"
+                      name="avh" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DefinitionName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Penn_na\Penn Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Penn_na\Penn Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Penn_na\Penn Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Penn_na\Penn Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Penn_na\Penn_na CSV file"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -11065,350 +11404,11 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Penn_na\Penn_na Unpivoted OLTP Table"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="Penn_na Unpivoted OLTP Table"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Penn_NA]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Connections[OleDbConnection]"
-                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[countrycode]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="countrycode"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[countrycode]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[year]"
-                      cachedDataType="i4"
-                      cachedName="year"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[year]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_c]"
-                      cachedDataType="r8"
-                      cachedName="v_c"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_c]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_c]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_i]"
-                      cachedDataType="r8"
-                      cachedName="v_i"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_i]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_i]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_g]"
-                      cachedDataType="r8"
-                      cachedName="v_g"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_g]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_g]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_x]"
-                      cachedDataType="r8"
-                      cachedName="v_x"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_x]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_x]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_m]"
-                      cachedDataType="r8"
-                      cachedName="v_m"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_m]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_m]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_gdp]"
-                      cachedDataType="r8"
-                      cachedName="v_gdp"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gdp]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_gdp]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_c]"
-                      cachedDataType="r8"
-                      cachedName="q_c"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_c]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_c]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_i]"
-                      cachedDataType="r8"
-                      cachedName="q_i"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_i]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_i]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_g]"
-                      cachedDataType="r8"
-                      cachedName="q_g"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_g]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_g]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_x]"
-                      cachedDataType="r8"
-                      cachedName="q_x"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_x]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_x]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_m]"
-                      cachedDataType="r8"
-                      cachedName="q_m"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_m]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_m]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_gdp]"
-                      cachedDataType="r8"
-                      cachedName="q_gdp"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gdp]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_gdp]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[pop]"
-                      cachedDataType="r8"
-                      cachedName="pop"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[pop]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[pop]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[xr]"
-                      cachedDataType="r8"
-                      cachedName="xr"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[xr]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[xr2]"
-                      cachedDataType="r8"
-                      cachedName="xr2"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr2]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[xr2]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[v_gfcf]"
-                      cachedDataType="r8"
-                      cachedName="v_gfcf"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gfcf]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[v_gfcf]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[q_gfcf]"
-                      cachedDataType="r8"
-                      cachedName="q_gfcf"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gfcf]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[q_gfcf]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[emp]"
-                      cachedDataType="r8"
-                      cachedName="emp"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[emp]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[emp]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[avh]"
-                      cachedDataType="r8"
-                      cachedName="avh"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[avh]"
-                      lineageId="Package\Penn_na\Penn_na CSV file.Outputs[Flat File Source Output].Columns[avh]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[Source]"
-                      cachedDataType="wstr"
-                      cachedLength="4"
-                      cachedName="Source"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      lineageId="Package\Penn_na\Add Source and Definition.Outputs[Derived Column Output].Columns[Source]" />
-                    <inputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].Columns[Definition]"
-                      cachedDataType="wstr"
-                      cachedLength="8"
-                      cachedName="Definition"
-                      externalMetadataColumnId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
-                      lineageId="Package\Penn_na\Add Source and Definition.Outputs[Derived Column Output].Columns[Definition]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
-                      dataType="wstr"
-                      length="3"
-                      name="CountryCode" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      dataType="i4"
-                      name="Year" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_c]"
-                      dataType="r8"
-                      name="v_c" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_i]"
-                      dataType="r8"
-                      name="v_i" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_g]"
-                      dataType="r8"
-                      name="v_g" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_x]"
-                      dataType="r8"
-                      name="v_x" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_m]"
-                      dataType="r8"
-                      name="v_m" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gdp]"
-                      dataType="r8"
-                      name="v_gdp" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_c]"
-                      dataType="r8"
-                      name="q_c" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_i]"
-                      dataType="r8"
-                      name="q_i" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_g]"
-                      dataType="r8"
-                      name="q_g" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_x]"
-                      dataType="r8"
-                      name="q_x" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_m]"
-                      dataType="r8"
-                      name="q_m" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gdp]"
-                      dataType="r8"
-                      name="q_gdp" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[pop]"
-                      dataType="r8"
-                      name="pop" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr]"
-                      dataType="r8"
-                      name="xr" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[xr2]"
-                      dataType="r8"
-                      name="xr2" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[v_gfcf]"
-                      dataType="r8"
-                      name="v_gfcf" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[q_gfcf]"
-                      dataType="r8"
-                      name="q_gfcf" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[emp]"
-                      dataType="r8"
-                      name="emp" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[avh]"
-                      dataType="r8"
-                      name="avh" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      dataType="wstr"
-                      length="50"
-                      name="SourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
-                      dataType="wstr"
-                      length="50"
-                      name="DefinitionName" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Penn_na.Paths[Derived Column Output]"
-              endId="Package\Penn_na\Penn_na Unpivoted OLTP Table.Inputs[OLE DB Destination Input]"
+              endId="Package\Penn_na\Penn Unpivoted OLTP Table.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Penn_na\Add Source and Definition.Outputs[Derived Column Output]" />
             <path
@@ -32680,18 +32680,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7 1]"
-          TopLeft="293.444444444444,429.694444444444">
+          TopLeft="293.444444444444,429.694444444445">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-70.6111111111111,0"
+              EndConnector="-70.6111111111107,0"
               Start="0,0"
-              End="-63.1111111111111,0">
+              End="-63.1111111111107,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-63.1111111111111,0" />
+                    End="-63.1111111111107,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -33405,8 +33405,8 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="228,42"
-          Id="Package\Penn_na\Penn_na Unpivoted OLTP Table"
+          Size="210.5,42"
+          Id="Package\Penn_na\Penn Unpivoted OLTP Table"
           TopLeft="104,324" />
         <NodeLayout
           Size="202,42"
@@ -33456,9 +33456,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-389,106"
+              EndConnector="-397.75,106"
               Start="0,0"
-              End="-389,98.5">
+              End="-397.75,98.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -33469,13 +33469,13 @@
                     Point2="0,53"
                     Point3="-4,53" />
                   <mssgle:LineSegment
-                    End="-385,53" />
+                    End="-393.75,53" />
                   <mssgle:CubicBezierSegment
-                    Point1="-385,53"
-                    Point2="-389,53"
-                    Point3="-389,57" />
+                    Point1="-393.75,53"
+                    Point2="-397.75,53"
+                    Point3="-397.75,57" />
                   <mssgle:LineSegment
-                    End="-389,98.5" />
+                    End="-397.75,98.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -33487,6 +33487,19 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Penn_na\Penn Unpivoted OLTP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\PPP2011 from ICP">
     <LayoutInfo>
