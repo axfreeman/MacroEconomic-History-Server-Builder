@@ -20,7 +20,6 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- the Date Dimension allows us to group data by decade and other categories such as business cycle
-
 BEGIN TRY 
 DROP TABLE [dbo].[DimDate] 
 END TRY 
@@ -30,9 +29,7 @@ GO
 
 CREATE TABLE [dbo].[DimDate](
 	[Date] [date] NOT NULL,
-	[Decade] [nvarchar](50) NOT NULL,
 	[year] [int] NOT NULL,
-	[Cycle] [nvarchar](50) NOT NULL
 CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED 
 (
 	[Date] ASC
@@ -47,15 +44,16 @@ GO
 -- NOTE: if two sources use the same name for different countries, the simple view we use at present won't catch that.
 -- However the sources is recorded in this table so if the need arises, the deficiency can be corrected
 
-BEGIN TRY 
-DROP TABLE [dbo].[GeoStandardNames] 
-END TRY 
-BEGIN CATCH
-END CATCH 
 
 -- this table is used on the OLTP server to standardise geographic names.
 -- works in conjunction with DimGeo, in that it reduces each geographic names to a unique 'GeoStandardName'
 -- which identifies a unique DimGeo record
+BEGIN TRY 
+DROP TABLE [dbo].[GeoStandardNames] 
+END TRY 
+BEGIN CATCH
+END CATCH
+GO
 
 CREATE TABLE [dbo].[GeoStandardNames](
 		-- The source of the data (eg UN2018,WDI2012,PALGRAVE, ETC). Not used (at 19/08/2018) at present; here for information
@@ -82,7 +80,8 @@ BEGIN TRY
 DROP TABLE [dbo].[DimGeo] 
 END TRY 
 BEGIN CATCH
-END CATCH 
+END CATCH
+GO
 
 
 CREATE TABLE [dbo].[DimGeo](
@@ -96,6 +95,7 @@ CREATE TABLE [dbo].[DimGeo](
 [Geopolitical Detail][nvarchar](255) NULL,
 [Major Blocs] [nvarchar](255) NULL,
 [Penn Geography] [nvarchar](255) NULL,
+[MACROHISTORY Geography] [nvarchar](255) NULL,
 [WID Geography] [nvarchar](255) NULL,
 [IMF main category] [nvarchar](255) NULL,
 [IMF sub-category] [nvarchar](255) NULL,	
@@ -136,12 +136,12 @@ GO
 
 
 -- The indicator Dimension table 
-
 BEGIN TRY 
 DROP TABLE [dbo].[DimIndicator] 
 END TRY 
 BEGIN CATCH
-END CATCH 
+END CATCH
+GO
 
 CREATE TABLE [dbo].[DimIndicator](
 	[DimIndicatorID] [int] NOT NULL IDENTITY (1,1), 
@@ -160,7 +160,6 @@ CREATE TABLE [dbo].[DimIndicator](
 GO
 
 -- The Source Dimension lists the various sources 
-
 BEGIN TRY 
 DROP TABLE [dbo].[DimSource] 
 END TRY 
@@ -185,7 +184,6 @@ CONSTRAINT [PK_Source] PRIMARY KEY CLUSTERED
 GO
 
 -- The Definitions Dimension lists the various sources as well as composite definitions which splice data from various sources
-
 BEGIN TRY 
 DROP TABLE [dbo].[DimDefinitions] 
 END TRY 

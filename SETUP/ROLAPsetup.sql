@@ -105,6 +105,7 @@ CREATE TABLE [dbo].[DimGeo](
 [Geopolitical Detail][nvarchar](255) NULL,
 [Major Blocs] [nvarchar](255) NULL,
 [Penn Geography] [nvarchar](255) NULL,
+[MACROHISTORY Geography] [nvarchar](255) NULL,
 [WID Geography] [nvarchar](255) NULL,
 [IMF main category] [nvarchar](255) NULL,
 [IMF sub-category] [nvarchar](255) NULL,	
@@ -123,9 +124,7 @@ GO
 
 CREATE TABLE [dbo].[DimDate](
 	[Date] [datetime] NOT NULL,
-	[Decade] [nvarchar](255) NOT NULL,
-	[Year] [int] NOT NULL,
-	[Cycle] [nvarchar](255) NOT NULL,
+	[Year] [int] NOT NULL
  CONSTRAINT [PK_Date] PRIMARY KEY CLUSTERED 
 (
 	[Year] ASC
