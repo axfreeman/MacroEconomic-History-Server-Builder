@@ -85,3 +85,28 @@ INNER JOIN DimDefinitions ON
  DimDefinitions.DefinitionName=PENN_USD_TEMPORARY_TABLE.DefinitionName
 GO
 
+-- create a procedure to append to the fact file the view given by the keyfinder of the TEMOPORARY_TABLE created by calculated_fn
+-- (phew)
+
+create or alter procedure [dbo].[PENN_USD_Injector]
+AS
+-- Insert into the fact file
+INSERT INTO Fact(
+ [DimSourceID],
+ [DimDefinitionID], 
+ [DimGeoID],
+ [DimIndicatorID],
+ [YearAsDate],
+ [Value])
+SELECT
+ [DimSourceID],
+ [DimDefinitionID], 
+ [DimGeoID],
+ [DimIndicatorID],
+ YearAsDate,
+ [Value]
+FROM PENN_USD_Calculated_KeyFinder
+
+GO
+
+
