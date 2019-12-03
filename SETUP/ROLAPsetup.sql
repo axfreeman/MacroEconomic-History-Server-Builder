@@ -191,14 +191,9 @@ GO
 -- Not currently used except for internal test purposes, to scrutinise the database contents.
 -- But is externally accessible so could be used for a tabular BI model
 
-BEGIN TRY 
-DROP VIEW [dbo].[FactQuery] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO
 
-CREATE VIEW [dbo].[FactQuery]
+
+CREATE OR ALTER VIEW [dbo].[FactQuery]
 AS
 SELECT
  dbo.Fact.FactID,
@@ -213,7 +208,10 @@ SELECT
  dbo.DimIndicator.IndicatorStandardCode,
  dbo.DimSource.SourceDescription,
  dbo.DimIndicator.Type,
+ dbo.DimIndicator.Unit,
  dbo.DimIndicator.IndicatorName,
+ dbo.DimIndicator.Measure,
+ dbo.DimIndicator.Qualifier,
  dbo.Fact.Value,
  dbo.Fact.YearAsDate,
  Year(Fact.YearAsDate) as Year
@@ -224,3 +222,45 @@ FROM dbo.Fact LEFT OUTER JOIN
  dbo.DimDefinitions ON dbo.Fact.DimDefinitionID=dbo.DimDefinitions.DimDefinitionID 
 GO
 
+CREATE OR ALTER VIEW [dbo].[FactReduced]
+AS
+SELECT
+ FactID,
+ DimSourceID,
+ DimDefinitionID,
+ DimGeoID,
+ DimIndicatorID,
+ YearAsDate,
+ Value
+FROM [dbo].[FactQuery]
+WHERE
+(
+ Type= N'GDP Measures' OR
+ Type= N'Capital' OR
+ Type= N'GDP Components' OR
+ Type= N'Demography and Labour' OR
+ Type= N'Indices'
+) AND
+(
+Unit=N'USD' OR
+Unit=N'LCU' OR
+Unit=N'Index' OR
+Unit=N'LCU/LCU' OR
+Unit=N'LCU/Population' OR
+Unit=N'LCU/USD' OR
+Unit=N'Persons' OR
+Unit=N'PPP' OR
+Unit=N'USD/LCU'
+) AND
+(
+SourceName='UN2018' OR
+SourceName='WDI2018' OR
+SourceName='MADDISON' OR
+SourceName='WEO201O' OR
+SourceName='MACROHIST' OR
+SourceName='BARRO-URSUA' OR
+SourceName='PENN' OR
+SourceName='WID' OR
+SourceName='OECD'
+)
+GO
