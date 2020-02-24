@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="204"
-  DTS:VersionGUID="{1DC14135-2CCE-4E85-BF6E-BAC87F83A99F}">
+  DTS:VersionBuild="205"
+  DTS:VersionGUID="{0C02C7FC-75A1-4DED-B58D-6DF995A13B98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -358,6 +358,16 @@
                       refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
                       dataType="i4"
                       name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Decade]"
+                      dataType="wstr"
+                      length="255"
+                      name="Decade" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Cycle]"
+                      dataType="wstr"
+                      length="255"
+                      name="Cycle" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1262,13 +1272,6 @@
                       cachedName="Geopolitical Detail"
                       externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Detail]"
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical Detail]" />
-                    <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[MACROHISTORY Geography]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="MACROHISTORY Geography"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY Geography]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[MACROHISTORY Geography]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1336,11 +1339,6 @@
                       dataType="wstr"
                       length="255"
                       name="Geopolitical Detail" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="MACROHISTORY Geography" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3449,13 +3447,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="148,42"
-          Id="Package\Populate DimDate\OLTP DimDate"
-          TopLeft="99,27" />
-        <NodeLayout
           Size="154,42"
           Id="Package\Populate DimDate\ROLAP DimDate"
           TopLeft="99.6,136.6" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Populate DimDate\OLTP DimDate"
+          TopLeft="99,27" />
         <EdgeLayout
           Id="Package\Populate DimDate.Paths[OLE DB Source Output]"
           TopLeft="174.8,69">
