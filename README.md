@@ -1,5 +1,5 @@
 # Macroeconomic History Data Project
-[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 27 November 2019.
+[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 25 february 2020.
 
 >Contact address for the project: **alan.freeman@umanitoba.ca**
 
@@ -82,10 +82,7 @@ The ETL procedures transform the raw DATA/SOURCE into the above form. The raw DA
 
 We will use this section to report the current state of the dataset, including bugs and changes.
 
->17/04/2019 Snapshot of the dataset stored in /ARCHIVES/20190417 SNAPSHOT. This includes the first draft of Working paper 2 on International Inequality, together with all the data, calculations, charts and tables for this draft. Work will now start on updates to the dataset which will therefore start to get out of sync with this draft.
-
-
-
+>24 Feb 2020 Capital stock data from Eurostat /AMECO added
 
 
 Oh yes, the name of the folder with the code in it. It got called GERGLE 4.0 at an early stage and since then, the name became redundant. Don't let it worry you.

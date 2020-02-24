@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMSDG0qF19ke0DuOP9Cr9ygAAAAACAAAAAAAQZgAAAAEAACAAAACLsoTqbX7HfNK+EwTi0/Q++5zdz51ciJN+PTrMEAf6IQAAAAAOgAAAAAIAACAAAAAa7HnLxlJL88L2ab0IxALRXq51Zi9SKxINzb5vx0StRZAAAAD27Jh6uQGed+8L7e7/AF6erWSci0E+w321Xp4aUFL8x1R+8BV/7a/0ryf01129TYCntqCrmyKbD0zPOk4QmUwupEnZxc0C85h5hB+NNnQRtWgKq0IDKMI8xbP7Q1Paks/oj6FUOkdh8tLXMdAza8ja3FD8O+vAhrc21CRp8vBruNFkj9xvBVkuhd1p3l9oyflAAAAAeBqec5OgiCd5QwNXAF8TZFKVDmgh1YlyNyGIBxeGg1ysdFXYfdh13XwUpgq11LEWCmL9bgc62/O8mC2bQxy0LQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMSDG0qF19ke0DuOP9Cr9ygAAAAACAAAAAAAQZgAAAAEAACAAAABrWzFJPcSMx3I5rWhNFJSYiE13L8zu3zzoLaZM/fZjBAAAAAAOgAAAAAIAACAAAABUJkzHzk5Z6VnIXWLOkoMMqMlGfYraxtRSu4U2vGMjCJAAAACI05OU75LT6VjposELjpetcg7ICQAwQrDgCd/ezqKJp5R4th4j0seFga5BBmDYtMA0wbvQXhmAnXoR44skiTPUQ/G4ej3k9Pe8gVRocWY2Xe1kfI18kbw40aUlWohGx2KWlI2yiCC16YTsJh/+v2Lt0ZWUtkwFSGMfQGd/nJoTfTIHHyuv8jaiExI+cSvD2yJAAAAAATKbVfXEKgfHPYoVlgOoK2PAh08GFlreyqLxN91ymcJg3NkBaIQKeL4jNFeCbL5Eo2EZuEsTuSQ2V8Ds/SigUA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -3688,21 +3688,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.AMECO.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\GitHub\MacroEconomic-History-Server-Builder\DATA\SOURCE\AMECO surplus and depreciation LCU.csv</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.AMECO.DataRowsToSkip">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -3885,21 +3870,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\GitHub\MacroEconomic-History-Server-Builder\DATA\SOURCE\Eurostat Capital Stock flat file.csv</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.Eurostat.DataRowsToSkip">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -4064,10 +4034,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">205</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">206</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0C02C7FC-75A1-4DED-B58D-6DF995A13B98}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{882FC860-524D-4106-B407-57AD523E46E1}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

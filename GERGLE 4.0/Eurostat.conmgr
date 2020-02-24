@@ -4,6 +4,8 @@
   DTS:DTSID="{E41777B5-FF62-4A60-A273-15CAAB8B916D}"
   DTS:Description="Connects to Eurostat capital stock CSV file"
   DTS:CreationName="FLATFILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\DATA\\SOURCE\\Eurostat Capital Stock flat file"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"

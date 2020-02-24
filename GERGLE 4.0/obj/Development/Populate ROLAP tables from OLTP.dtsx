@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="205"
-  DTS:VersionGUID="{0C02C7FC-75A1-4DED-B58D-6DF995A13B98}">
+  DTS:VersionBuild="206"
+  DTS:VersionGUID="{882FC860-524D-4106-B407-57AD523E46E1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -358,16 +358,6 @@
                       refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
                       dataType="i4"
                       name="Year" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Decade]"
-                      dataType="wstr"
-                      length="255"
-                      name="Decade" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Cycle]"
-                      dataType="wstr"
-                      length="255"
-                      name="Cycle" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
