@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Export ROLAP Fact File"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{D4E46D31-C607-4D24-AA61-9997D8C06F8B}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{ED7E1E9F-2591-4D02-A8B2-2DCD38C477AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -394,13 +394,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="153,42"
-          Id="Package\Export Fact File\ROLAP Fact File"
-          TopLeft="82,18" />
-        <NodeLayout
           Size="185,42"
           Id="Package\Export Fact File\Exported Fact CSV File"
           TopLeft="67,130" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Export Fact File\ROLAP Fact File"
+          TopLeft="82,18" />
         <EdgeLayout
           Id="Package\Export Fact File.Paths[OLE DB Source Output]"
           TopLeft="159,60">
