@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{F3DC81F9-29F3-4F0C-86E2-61CBA8759A66}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1900.78"
+  DTS:LastModifiedProductVersion="15.0.2000.71"
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="206"
-  DTS:VersionGUID="{882FC860-524D-4106-B407-57AD523E46E1}">
+  DTS:VersionBuild="209"
+  DTS:VersionGUID="{CC793BAE-56ED-4483-86C3-21161DFA3C4F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1329,6 +1329,11 @@
                       dataType="wstr"
                       length="255"
                       name="Geopolitical Detail" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY Geography]"
+                      dataType="wstr"
+                      length="255"
+                      name="MACROHISTORY Geography" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3077,7 +3082,7 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="185,42"
+          Size="184.8,42"
           Id="Package\Add PENN GDP in USD"
           TopLeft="36.051294903314,343" />
         <NodeLayout
@@ -3085,11 +3090,11 @@
           Id="Package\Correct for IFS Seasonal Adjustment"
           TopLeft="317.051294903314,259" />
         <NodeLayout
-          Size="335,42"
+          Size="335.2,42"
           Id="Package\Create deduplicated entries for the CLEANED defintion"
           TopLeft="311.051294903314,340.5" />
         <NodeLayout
-          Size="217,42"
+          Size="216.8,42"
           Id="Package\Define PENN USD Calculators"
           TopLeft="663.5,254" />
         <NodeLayout
@@ -3101,11 +3106,11 @@
           Id="Package\Drop and create ROLAP files"
           TopLeft="33,12" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,42"
           Id="Package\Populate DimDate"
           TopLeft="60.3162524306718,89.0242484096653" />
         <NodeLayout
-          Size="191,42"
+          Size="191.2,42"
           Id="Package\Populate DimDefinitions"
           TopLeft="50.5555680266816,176.353544333093" />
         <NodeLayout
@@ -3113,7 +3118,7 @@
           Id="Package\Populate DimGeo"
           TopLeft="360.692320739025,87.0727302014007" />
         <NodeLayout
-          Size="183,42"
+          Size="183.2,42"
           Id="Package\Populate DimIndicator"
           TopLeft="344.346166091558,13.851515453206" />
         <NodeLayout
@@ -3121,11 +3126,11 @@
           Id="Package\Populate DimSources"
           TopLeft="361.051294903314,175.313143622668" />
         <NodeLayout
-          Size="193,42"
+          Size="192.8,42"
           Id="Package\Populate ROLAP fact file"
           TopLeft="59.555557206146,259.246477049924" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,42"
           Id="Package\WID extensions"
           TopLeft="683,340.5" />
         <EdgeLayout
@@ -3567,27 +3572,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="151.2,42"
+          Id="Package\Populate DimGeo\ROLAP DimGeo"
+          TopLeft="95.2593434345085,147.32184329536" />
+        <NodeLayout
           Size="144,42"
           Id="Package\Populate DimGeo\OLTP DimGeo"
-          TopLeft="119.6,17.6" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Populate DimGeo\ROLAP DimGeo"
-          TopLeft="116.138465079471,125.275760685161" />
+          TopLeft="93.6659331146782,71.277418529181" />
         <EdgeLayout
           Id="Package\Populate DimGeo.Paths[OLE DB Source Output]"
-          TopLeft="191.669232539736,59.2">
+          TopLeft="168.262638274593,113.277418529181">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.0757606851607"
+              EndConnector="0,34.0444247661793"
               Start="0,0"
-              End="0,58.5757606851607">
+              End="0,26.5444247661793">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.5757606851607" />
+                    End="0,26.5444247661793" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -1,11 +1,8 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Eurostat"
-  DTS:DTSID="{E41777B5-FF62-4A60-A273-15CAAB8B916D}"
-  DTS:Description="Connects to Eurostat capital stock CSV file"
+  DTS:ObjectName="Eurostat New"
+  DTS:DTSID="{ECAF64B7-2C86-4096-95D7-E9C803082349}"
   DTS:CreationName="FLATFILE">
-  <DTS:PropertyExpression
-    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\DATA\\SOURCE\\Eurostat Capital Stock flat file"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"
@@ -15,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0022_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\afree\Documents\GitHub\MacroEconomic-History-Server-Builder\DATA\SOURCE\Eurostat Capital Stock flat file.csv">
+      DTS:ConnectionString="C:\Users\afree\Documents\GitHub\MacroEconomic-History-Server-Builder\DATA\SOURCE\Eurostat Capital Stock.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -23,7 +20,7 @@
           DTS:DataType="2"
           DTS:TextQualified="True"
           DTS:ObjectName="TIME"
-          DTS:DTSID="{379B4858-04D8-4FD3-A086-34A7ADAA63CF}"
+          DTS:DTSID="{D80A16C9-4AB5-4DCF-B930-A090EB3A7EE3}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -32,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="GEO"
-          DTS:DTSID="{FA8C2421-24F6-4BA5-AD95-19EA59BC0CDB}"
+          DTS:DTSID="{FAFCF999-184E-421B-ADD0-98DE8C28E2A2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -41,7 +38,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="UNIT"
-          DTS:DTSID="{A71B200F-C887-494C-BDF8-2C853837D085}"
+          DTS:DTSID="{87845599-BABE-4A62-8A4A-29164D231433}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -50,7 +47,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="SECTOR"
-          DTS:DTSID="{7B2AF39F-8B73-43A0-9A7A-8A4DFCCFCAB6}"
+          DTS:DTSID="{630D8795-496C-4E71-9C08-10A4BE862938}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -59,7 +56,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="ASSET10"
-          DTS:DTSID="{98A4B2F8-D741-4937-9E1D-18985DAB5F6B}"
+          DTS:DTSID="{A7AB06C2-4113-4773-83F4-0FC8AD0FEEF0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -68,7 +65,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Code"
-          DTS:DTSID="{8194F5C0-8444-449C-A4E3-918D0DFA2E13}"
+          DTS:DTSID="{69A1F1F9-103B-4E35-B687-412DAE2B3345}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -76,7 +73,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="Value"
-          DTS:DTSID="{62CD249F-2B3B-4843-975F-408BD3FBAB18}"
+          DTS:DTSID="{796CF8DE-4BF3-4C2E-82C9-E039CF3B494F}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
