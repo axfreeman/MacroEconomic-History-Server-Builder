@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARVThl19J+UWtgWW+fKuEnQAAAAACAAAAAAAQZgAAAAEAACAAAABrZqSbsB2Ryob40XIRcYNY6WbkiPP2C/q3PdaqR1surQAAAAAOgAAAAAIAACAAAAD3YsjrgJhBxvjSdVWDryJJkX3Tsegctcs+hE9a4DTswJAAAABG2nKgAD2mz6z3Rb81jDXpulAzc0wRuMaFsf7J2QFWZOirZRifwnp2feclYwMNAa5dP4ll8xhIeRR0P+eSoDe7SRIPs32iFK//Z1Og+kLhN4jCt6OuPkce0wzddQjWkls6H8quosHQJ5OvtJh2tHcbhkcATLy8Igm4UylAdwM8VaHQlSMA04WnqcQtPrDIs8ZAAAAAq1je0lPvQcAFTJeiMu12Mg0MxRHKeR7Nl9B+zYm1Djj2Iuo6yvsktDzL3laRit30iBTYu03bAFdIAPjpMDVQiQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARVThl19J+UWtgWW+fKuEnQAAAAACAAAAAAAQZgAAAAEAACAAAACU6v47+wNPu9kgnp5ktSItv9pao0zk06bcI3kSgNm+LQAAAAAOgAAAAAIAACAAAABmRXdbXnn+FmhYmvZLsI6r6ak6ZQPm0sLUIzDB3IDWVZAAAADRgQrl16ciUlcxrczMGUyKU8ylf4R2Mb3Clr5uuaeW07UF17S6CcrIMzw+tsJ2hgj94EwcQL0xVp1g9c2iMmuqjtBa8bLt+ygdw+j6Pb50g2qIb2hiLYXdedzR3TJcXfyK/HSAFMANCcdA1x2r/Yf9109KhuGT7NAZINafwgTPs+cWc7kI33BqL4hlvxt0YrBAAAAAq4SL8OXXq1L1OXDb4ma5O4YI67G7DgGH9N81aoSRtI08IlH/cL8JdmSEX5blxyGrdXxKMENginkTo75Xn3qqeQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,6 +34,7 @@
           <SSIS:Package SSIS:Name="Import OLTP Data from external Sources.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Populate ROLAP tables from OLTP.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Export ROLAP Fact File.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Initialise (Run FIRST on new instal).dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Create GERGLE Definitions.sql.conmgr" />
@@ -4055,6 +4056,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{D4E46D31-C607-4D24-AA61-9997D8C06F8B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Initialise (Run FIRST on new instal).dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B4163294-2094-405B-8397-C3C8441A7B61}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D202EA8F-5CDA-48D1-B432-9A755A21E4C3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

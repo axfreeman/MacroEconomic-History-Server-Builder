@@ -264,3 +264,18 @@ SourceName='WID' OR
 SourceName='OECD'
 )
 GO
+
+CREATE OR ALTER VIEW [dbo].[FactQueryCapitalStock]
+AS
+SELECT FactID, DimSourceID, DimDefinitionID, DimGeoID, DimIndicatorID, YearAsDate, Value
+FROM  dbo.FactQuery
+WHERE (Type = N'GDP Measures' OR
+         Type = N'Capital' OR
+         Type = N'GDP Components') AND (Unit = N'USD' OR
+         Unit = N'LCU' OR
+         Unit = N'EUR') AND (SourceName = 'AMECO' OR
+         SourceName = 'UN2018' OR
+         SourceName = 'OECD')
+GO
+
+
