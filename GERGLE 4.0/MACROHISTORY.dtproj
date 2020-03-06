@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARVThl19J+UWtgWW+fKuEnQAAAAACAAAAAAAQZgAAAAEAACAAAACU6v47+wNPu9kgnp5ktSItv9pao0zk06bcI3kSgNm+LQAAAAAOgAAAAAIAACAAAABmRXdbXnn+FmhYmvZLsI6r6ak6ZQPm0sLUIzDB3IDWVZAAAADRgQrl16ciUlcxrczMGUyKU8ylf4R2Mb3Clr5uuaeW07UF17S6CcrIMzw+tsJ2hgj94EwcQL0xVp1g9c2iMmuqjtBa8bLt+ygdw+j6Pb50g2qIb2hiLYXdedzR3TJcXfyK/HSAFMANCcdA1x2r/Yf9109KhuGT7NAZINafwgTPs+cWc7kI33BqL4hlvxt0YrBAAAAAq4SL8OXXq1L1OXDb4ma5O4YI67G7DgGH9N81aoSRtI08IlH/cL8JdmSEX5blxyGrdXxKMENginkTo75Xn3qqeQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAARVThl19J+UWtgWW+fKuEnQAAAAACAAAAAAAQZgAAAAEAACAAAABlurGKPsYW+CZyszdD6x+cH0SUFp3BpvCPGlpmkQ8VUQAAAAAOgAAAAAIAACAAAACjq8MCHEeqHEJn89YZa8rhnypkIkAc3N+CzyOeDcMum5AAAADAMFK4dqjpnJEewj7c9XHX5GqYGJP+H5B239h7PHvESVIXLZc1qA7lTGShPippWHfVQPDjVDMlsm6b1+xSP4O5dgfrWcfT7xNJPrYCwpiuAO9nC71W4s4UACwcmwRD7vhnmLEXBdCou9ekTi1I4BwOc+ysu7d3SBfaUR3pOCP24gCbyXIomYi4+RffJQOvqKxAAAAAE921MddgeOZl5yjITPjERfbeddTozaaXSrXVrUxp7CF1OjyWfODGidQw88Vmw/ZSnAhKGarYraalM6rgXW71WQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -71,7 +71,7 @@
           <SSIS:ConnectionManager SSIS:Name="Define PENN USD GDP.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define PENN USD Calculator.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="AMECO.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Eurostat new.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Eurostat Capital Stocks and Flows.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -3811,7 +3811,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.AlwaysCheckForRowDelimiters">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.AlwaysCheckForRowDelimiters">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3826,7 +3826,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.CodePage">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.CodePage">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3837,11 +3837,11 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">1252</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">65001</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.ColumnNamesInFirstDataRow">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.ColumnNamesInFirstDataRow">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3856,7 +3856,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.ConnectByProxy">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.ConnectByProxy">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3871,7 +3871,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.DataRowsToSkip">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.DataRowsToSkip">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3886,7 +3886,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.Format">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.Format">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3901,7 +3901,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.HeaderRowDelimiter">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.HeaderRowDelimiter">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3917,7 +3917,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.HeaderRowsToSkip">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.HeaderRowsToSkip">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3932,7 +3932,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.LocaleID">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.LocaleID">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3947,7 +3947,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.RowDelimiter">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.RowDelimiter">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3958,12 +3958,10 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">
-                </SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.TextQualifier">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.TextQualifier">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -3978,7 +3976,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Eurostat New.Unicode">
+            <SSIS:Parameter SSIS:Name="CM.Eurostat Capital Stocks and Flows.Unicode">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -4018,10 +4016,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">122</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">126</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{804F9227-2149-403A-B4AB-8267BBCBD682}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{458E6B3A-248A-41C3-B97E-4EF0CF6581A0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

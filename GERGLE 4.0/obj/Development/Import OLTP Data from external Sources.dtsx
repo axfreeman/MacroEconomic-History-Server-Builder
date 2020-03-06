@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="125"
-  DTS:VersionGUID="{E7E7AE6B-91F7-4B2C-9BAF-808AA3F8B03D}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{3B9A1340-3943-438C-8A66-226199CF0F24}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -4989,8 +4989,8 @@
               <connections>
                 <connection
                   refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Connections[FlatFileConnection]"
-                  connectionManagerID="{ECAF64B7-2C86-4096-95D7-E9C803082349}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Eurostat New]"
+                  connectionManagerID="{08681323-F165-4BBE-85A0-3AE07B22C734}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Eurostat Capital Stocks and Flows]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -5080,6 +5080,27 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].Columns[Check]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].ExternalColumns[Check]"
+                      length="255"
+                      lineageId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].Columns[Check]"
+                      name="Check"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5093,21 +5114,6 @@
                       length="255"
                       name="GEO" />
                     <externalMetadataColumn
-                      refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].ExternalColumns[UNIT]"
-                      dataType="wstr"
-                      length="255"
-                      name="UNIT" />
-                    <externalMetadataColumn
-                      refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].ExternalColumns[SECTOR]"
-                      dataType="wstr"
-                      length="255"
-                      name="SECTOR" />
-                    <externalMetadataColumn
-                      refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].ExternalColumns[ASSET10]"
-                      dataType="wstr"
-                      length="255"
-                      name="ASSET10" />
-                    <externalMetadataColumn
                       refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].ExternalColumns[Code]"
                       dataType="wstr"
                       length="255"
@@ -5116,6 +5122,11 @@
                       refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].ExternalColumns[Value]"
                       dataType="r8"
                       name="Value" />
+                    <externalMetadataColumn
+                      refId="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File.Outputs[Flat File Source Output].ExternalColumns[Check]"
+                      dataType="wstr"
+                      length="255"
+                      name="Check" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -35155,15 +35166,15 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="118.4,41.6"
+          Size="118.5,41.5"
           Id="Package\AMECO"
           TopLeft="653.749990463257,97.4771506924451" />
         <NodeLayout
-          Size="175.2,42"
+          Size="175,42"
           Id="Package\Barro-Ursua Dataset"
           TopLeft="676.508553460427,279.983873006084" />
         <NodeLayout
-          Size="216.8,42"
+          Size="217,42"
           Id="Package\CalculatePivotedAdditions"
           TopLeft="26.2863199897372,164.055555822174" />
         <NodeLayout
@@ -35175,15 +35186,15 @@
           Id="Package\IFS2018"
           TopLeft="602.320513290767,14.6146955985201" />
         <NodeLayout
-          Size="139.2,42"
+          Size="139,42"
           Id="Package\Macrohistory"
           TopLeft="31.9871699316256,291.8225812042" />
         <NodeLayout
-          Size="147.2,42"
+          Size="147,42"
           Id="Package\Maddison GDP"
           TopLeft="485.512827867587,224.827957402076" />
         <NodeLayout
-          Size="236.4,42"
+          Size="236.5,42"
           Id="Package\Maddison GDP Multiple Benchmarks"
           TopLeft="226.196588983981,222.376344516052" />
         <NodeLayout
@@ -35209,9 +35220,9 @@
         <NodeLayout
           Size="120,42"
           Id="Package\Penn_na"
-          TopLeft="891.906004857422,278.566310350875" />
+          TopLeft="901.906004857422,257.802421565122" />
         <NodeLayout
-          Size="164.8,42"
+          Size="165,42"
           Id="Package\PPP2011 from ICP"
           TopLeft="680.00640892089,168.9381733245" />
         <NodeLayout
@@ -35223,11 +35234,11 @@
           Id="Package\UN2018(new)"
           TopLeft="426.153846624099,13.6980289318531" />
         <NodeLayout
-          Size="171.2,42"
+          Size="171,42"
           Id="Package\UN-OFFICIAL"
           TopLeft="259.30768689037,94.5698927053344" />
         <NodeLayout
-          Size="191.2,42"
+          Size="191,42"
           Id="Package\Unpivot into FactSource"
           TopLeft="405.31196618817,168.327957135457" />
         <NodeLayout
@@ -35239,19 +35250,19 @@
           Id="Package\Unpivot Penn"
           TopLeft="460.226502009083,352.295701281296" />
         <NodeLayout
-          Size="159.2,42"
+          Size="159,42"
           Id="Package\Unpivot Penn_na"
           TopLeft="840.75643875378,342.650538872895" />
         <NodeLayout
-          Size="123.2,42"
+          Size="123,42"
           Id="Package\WDI2018"
           TopLeft="265.320513290766,12.4758067096312" />
         <NodeLayout
-          Size="140.4,42"
+          Size="140.5,42"
           Id="Package\WEO2002"
           TopLeft="765.500027143039,10.586022632055" />
         <NodeLayout
-          Size="151.2,42"
+          Size="151,42"
           Id="Package\WEO2018O"
           TopLeft="41.3376006490695,93.973118477383" />
         <NodeLayout
@@ -35816,24 +35827,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7 1]"
-          TopLeft="891.906004857422,305.232977017542">
+          TopLeft="961.906004857422,299.802421565122">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.4504338963579,37.4175618553536"
+              EndConnector="-41.649566103642,42.8481173077735"
               Start="0,0"
-              End="28.4504338963579,29.9175618553536">
+              End="-41.649566103642,35.3481173077735">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="24.4504338963579,0" />
+                    End="0,17.4240586538868" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.4504338963579,0"
-                    Point2="28.4504338963579,0"
-                    Point3="28.4504338963579,4" />
+                    Point1="0,17.4240586538868"
+                    Point2="0,21.4240586538868"
+                    Point3="-4,21.4240586538868" />
                   <mssgle:LineSegment
-                    End="28.4504338963579,29.9175618553536" />
+                    End="-37.649566103642,21.4240586538868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-37.649566103642,21.4240586538868"
+                    Point2="-41.649566103642,21.4240586538868"
+                    Point3="-41.649566103642,25.4240586538868" />
+                  <mssgle:LineSegment
+                    End="-41.649566103642,35.3481173077735" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -35844,18 +35861,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="851.708553460427,300.27509167848">
+          TopLeft="851.508553460427,300.983873006084">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.1974513969948,0"
+              EndConnector="50.3974513969949,-22.1814514409625"
               Start="0,0"
-              End="32.6974513969948,0">
+              End="42.8974513969949,-22.1814514409625">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="32.6974513969948,0" />
+                    End="21.1987256984975,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.1987256984975,0"
+                    Point2="25.1987256984975,0"
+                    Point3="25.1987256984975,-4" />
+                  <mssgle:LineSegment
+                    End="25.1987256984975,-18.1814514409625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.1987256984975,-18.1814514409625"
+                    Point2="25.1987256984975,-22.1814514409625"
+                    Point3="29.1987256984975,-22.1814514409625" />
+                  <mssgle:LineSegment
+                    End="42.8974513969949,-22.1814514409625" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36094,17 +36123,17 @@
     design-time-name="Package\Eurostat Capital Stock">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="222,42"
           Id="Package\Eurostat Capital Stock\Eurostat Capital Stock Flat File"
           TopLeft="111,33" />
         <NodeLayout
-          Size="258.4,42"
+          Size="258.5,42"
           Id="Package\Eurostat Capital Stock\Add Source and Definition and rescale"
           TopLeft="95,153.5" />
         <NodeLayout
-          Size="190.4,42"
+          Size="190.5,42"
           Id="Package\Eurostat Capital Stock\FactSource"
           TopLeft="133.346152740117,270.870968051557" />
         <EdgeLayout
@@ -36126,9 +36155,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -36150,9 +36177,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
