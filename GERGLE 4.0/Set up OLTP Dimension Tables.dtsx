@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{1E4643CF-DBC0-4F8B-A7AB-1E0777E3C372}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.1900.78"
+  DTS:LastModifiedProductVersion="15.0.2000.71"
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{B3EFA00B-CA49-475E-905E-8D9C00887BD3}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{0D8007D9-4261-4BAC-AFAF-EE6492417883}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1436,6 +1436,16 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Qualifier]"
                       name="Qualifier"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Sector]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Sector]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Sector]"
+                      name="Sector"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1469,6 +1479,11 @@
                       dataType="wstr"
                       length="255"
                       name="Qualifier" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sector" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1494,6 +1509,12 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorName]"
                       name="IndicatorName" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Sector]"
+                      name="Sector" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Unit]"
                       dataType="wstr"
@@ -1643,6 +1664,13 @@
                       cachedName="Unit"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Unit]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Sector]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sector"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Sector]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1680,6 +1708,11 @@
                       dataType="wstr"
                       length="255"
                       name="Unit" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sector" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3061,35 +3094,35 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="271,42"
+          Size="271.111111111112,41.7777777777778"
           Id="Package\Drop and Create OLTP Dimension Tables"
           TopLeft="48,26" />
         <NodeLayout
-          Size="252,42"
+          Size="252,41.7777777777778"
           Id="Package\Populate  DimDefinitions OLTP Table"
           TopLeft="46,268" />
         <NodeLayout
-          Size="164,42"
+          Size="164,41.7777777777778"
           Id="Package\Populate DimDate"
           TopLeft="374,272" />
         <NodeLayout
-          Size="218,42"
+          Size="217.777777777778,41.7777777777778"
           Id="Package\Populate DimGeo OLTP Table"
           TopLeft="63,177" />
         <NodeLayout
-          Size="184,42"
+          Size="184,41.7777777777778"
           Id="Package\Populate DimIndicator"
           TopLeft="382,183" />
         <NodeLayout
-          Size="235,42"
+          Size="235.111111111112,41.7777777777778"
           Id="Package\Populate DimSource OLTP  Table"
           TopLeft="44,361" />
         <NodeLayout
-          Size="273,42"
+          Size="272.888888888889,41.7777777777778"
           Id="Package\Populate GeoStandardNames OLTP Table"
           TopLeft="53,97" />
         <NodeLayout
-          Size="265,42"
+          Size="264.888888888889,41.7777777777778"
           Id="Package\Populate IndicatorStandard OLTP Table"
           TopLeft="392,101" />
         <EdgeLayout
@@ -3407,7 +3440,7 @@
     design-time-name="Package\Populate DimDate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="208,42"
           Id="Package\Populate DimDate\DimDate Excel spreadsheet"
@@ -3435,7 +3468,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3471,7 +3506,7 @@
     design-time-name="Package\Populate DimGeo OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="174,42"
           Id="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table"
@@ -3499,7 +3534,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3535,37 +3572,35 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197,42"
+          Size="196.888888888889,41.7777777777778"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
-          TopLeft="304,238" />
+          TopLeft="79.9259348298293,216.333334440277" />
         <NodeLayout
-          Size="197,42"
+          Size="196.888888888889,41.7777777777778"
           Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
-          TopLeft="306,40" />
+          TopLeft="77.0648239118814,30.71428618869" />
         <EdgeLayout
           Id="Package\Populate DimIndicator.Paths[Excel Source Output]"
-          TopLeft="403.5,82">
+          TopLeft="176.9398238153,72.4920639664678">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,156"
+              EndConnector="0,143.841270473809"
               Start="0,0"
-              End="0,148.5">
+              End="0,136.341270473809">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,148.5" />
+                    End="0,136.341270473809" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3669,7 +3704,7 @@
     design-time-name="Package\Populate GeoStandardNames OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="229.5,42"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames OLTP Table"
@@ -3697,7 +3732,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3733,7 +3770,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="221,42"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
@@ -3765,7 +3802,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3787,7 +3826,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

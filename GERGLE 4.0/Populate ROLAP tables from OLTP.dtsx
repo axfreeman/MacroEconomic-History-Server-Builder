@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="209"
-  DTS:VersionGUID="{CC793BAE-56ED-4483-86C3-21161DFA3C4F}">
+  DTS:VersionBuild="211"
+  DTS:VersionGUID="{C0F40CF6-D437-495B-833B-B02F1FBEBAF0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1517,6 +1517,16 @@
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]"
                       name="Unit"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Sector]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Sector]"
+                      name="Sector"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1554,6 +1564,11 @@
                       dataType="wstr"
                       length="255"
                       name="Unit" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sector" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1596,6 +1611,12 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Qualifier]"
                       name="Qualifier" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                      name="Sector" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Type]"
                       dataType="wstr"
@@ -1739,6 +1760,13 @@
                       cachedName="Unit"
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Sector]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sector"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Sector]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1776,6 +1804,11 @@
                       dataType="wstr"
                       length="255"
                       name="Unit" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sector" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3082,57 +3115,57 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="184.8,42"
+          Size="184.888888888889,41.7777777777778"
           Id="Package\Add PENN GDP in USD"
           TopLeft="36.051294903314,343" />
         <NodeLayout
-          Size="250,42"
+          Size="249.777777777778,41.7777777777778"
           Id="Package\Correct for IFS Seasonal Adjustment"
           TopLeft="317.051294903314,259" />
         <NodeLayout
-          Size="335.2,42"
+          Size="335.111111111112,41.7777777777778"
           Id="Package\Create deduplicated entries for the CLEANED defintion"
-          TopLeft="311.051294903314,340.5" />
+          TopLeft="264.755000446667,338.849206433545" />
         <NodeLayout
-          Size="216.8,42"
+          Size="216.888888888889,41.7777777777778"
           Id="Package\Define PENN USD Calculators"
-          TopLeft="663.5,254" />
+          TopLeft="622.388890522498,257.30158713291" />
         <NodeLayout
-          Size="262,42"
+          Size="262.222222222223,41.7777777777778"
           Id="Package\Deindex Barro-Ursua and MacroHistory"
           TopLeft="32.051294903314,417" />
         <NodeLayout
-          Size="212,42"
+          Size="212,41.7777777777778"
           Id="Package\Drop and create ROLAP files"
           TopLeft="33,12" />
         <NodeLayout
-          Size="163.2,42"
+          Size="163.111111111112,41.7777777777778"
           Id="Package\Populate DimDate"
           TopLeft="60.3162524306718,89.0242484096653" />
         <NodeLayout
-          Size="191.2,42"
+          Size="191.111111111112,41.7777777777778"
           Id="Package\Populate DimDefinitions"
           TopLeft="50.5555680266816,176.353544333093" />
         <NodeLayout
-          Size="160,42"
+          Size="160,41.7777777777778"
           Id="Package\Populate DimGeo"
           TopLeft="360.692320739025,87.0727302014007" />
         <NodeLayout
-          Size="183.2,42"
+          Size="183.111111111112,41.7777777777778"
           Id="Package\Populate DimIndicator"
           TopLeft="344.346166091558,13.851515453206" />
         <NodeLayout
-          Size="178,42"
+          Size="177.777777777778,41.7777777777778"
           Id="Package\Populate DimSources"
           TopLeft="361.051294903314,175.313143622668" />
         <NodeLayout
-          Size="192.8,42"
+          Size="192.888888888889,41.7777777777778"
           Id="Package\Populate ROLAP fact file"
           TopLeft="59.555557206146,259.246477049924" />
         <NodeLayout
-          Size="152.8,42"
+          Size="152.888888888889,41.7777777777778"
           Id="Package\WID extensions"
-          TopLeft="683,340.5" />
+          TopLeft="641.518520166845,337.19841286709" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="143.935910228677,131.024248409665">
@@ -3191,18 +3224,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="646.051294903314,361.5">
+          TopLeft="599.866111557778,358.912698539206">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="36.948705096686,0"
+              EndConnector="41.6524086090662,0"
               Start="0,0"
-              End="29.448705096686,0">
+              End="34.1524086090662,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="29.448705096686,0" />
+                    End="34.1524086090662,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3213,30 +3246,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="759.5,382.5">
+          TopLeft="717.962964611289,378.976190644868">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-596.448705096686,34.5"
+              EndConnector="-554.800558596864,38.0238093551324"
               Start="0,0"
-              End="-596.448705096686,27">
+              End="-554.800558596864,30.5238093551324">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.25" />
+                    End="0,15.0119046775662" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.25"
-                    Point2="0,17.25"
-                    Point3="-4,17.25" />
+                    Point1="0,15.0119046775662"
+                    Point2="0,19.0119046775662"
+                    Point3="-4,19.0119046775662" />
                   <mssgle:LineSegment
-                    End="-592.448705096686,17.25" />
+                    End="-550.800558596864,19.0119046775662" />
                   <mssgle:CubicBezierSegment
-                    Point1="-592.448705096686,17.25"
-                    Point2="-596.448705096686,17.25"
-                    Point3="-596.448705096686,21.25" />
+                    Point1="-550.800558596864,19.0119046775662"
+                    Point2="-554.800558596864,19.0119046775662"
+                    Point3="-554.800558596864,23.0119046775662" />
                   <mssgle:LineSegment
-                    End="-596.448705096686,27" />
+                    End="-554.800558596864,30.5238093551324" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3335,18 +3368,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="567.051294903314,277.5">
+          TopLeft="566.829072681092,279.039682455344">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96.448705096686,0"
+              EndConnector="55.5598178414059,0"
               Start="0,0"
-              End="88.948705096686,0">
+              End="48.0598178414059,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="88.948705096686,0" />
+                    End="48.0598178414059,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3379,18 +3412,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="221.051294903314,362.75">
+          TopLeft="220.940183792203,361.813492105661">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90,0"
+              EndConnector="43.8148166544643,0"
               Start="0,0"
-              End="82.5,0">
+              End="36.3148166544643,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="82.5,0" />
+                    End="36.3148166544643,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3401,30 +3434,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="772,296">
+          TopLeft="730.833334966942,299.079364910688">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-643.448705096686,47"
+              EndConnector="-602.337595619184,43.920635089312"
               Start="0,0"
-              End="-643.448705096686,39.5">
+              End="-602.337595619184,36.420635089312">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,17.960317544656" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
+                    Point1="0,17.960317544656"
+                    Point2="0,21.960317544656"
+                    Point3="-4,21.960317544656" />
                   <mssgle:LineSegment
-                    End="-639.448705096686,23.5" />
+                    End="-598.337595619184,21.960317544656" />
                   <mssgle:CubicBezierSegment
-                    Point1="-639.448705096686,23.5"
-                    Point2="-643.448705096686,23.5"
-                    Point3="-643.448705096686,27.5" />
+                    Point1="-598.337595619184,21.960317544656"
+                    Point2="-602.337595619184,21.960317544656"
+                    Point3="-602.337595619184,25.960317544656" />
                   <mssgle:LineSegment
-                    End="-643.448705096686,39.5" />
+                    End="-602.337595619184,36.420635089312" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3440,7 +3473,7 @@
     design-time-name="Package\Populate DimDate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="154,42"
           Id="Package\Populate DimDate\ROLAP DimDate"
@@ -3468,7 +3501,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3570,7 +3605,7 @@
     design-time-name="Package\Populate DimGeo">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151.2,42"
           Id="Package\Populate DimGeo\ROLAP DimGeo"
@@ -3598,7 +3633,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3634,13 +3671,13 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175,42"
+          Size="175.111111111112,41.7777777777778"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
           TopLeft="104,194" />
         <NodeLayout
-          Size="197,42"
+          Size="196.888888888889,41.7777777777778"
           Id="Package\Populate DimIndicator\OLTP DimIndicator Table"
           TopLeft="87.0769262708857,21.745455330988" />
         <EdgeLayout
@@ -3662,9 +3699,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
