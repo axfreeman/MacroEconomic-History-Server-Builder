@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="130"
-  DTS:VersionGUID="{70306611-4857-41F5-ACC8-9046707E818B}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{E98466CD-0A90-422A-A89E-C0EC928BA059}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -245,12 +245,10 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1960]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1960]"
-                      length="150"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1960]"
                       name="1960"
                       truncationRowDisposition="FailComponent">
@@ -267,7 +265,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1961]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1961]"
@@ -287,7 +285,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1962]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1962]"
@@ -307,7 +305,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1963]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1963]"
@@ -327,7 +325,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1964]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1964]"
@@ -347,7 +345,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1965]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1965]"
@@ -367,7 +365,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1966]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1966]"
@@ -387,7 +385,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1967]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1967]"
@@ -407,7 +405,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1968]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1968]"
@@ -427,7 +425,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1969]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1969]"
@@ -447,7 +445,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1970]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1970]"
@@ -467,7 +465,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1971]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1971]"
@@ -487,7 +485,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1972]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1972]"
@@ -507,7 +505,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1973]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1973]"
@@ -527,7 +525,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1974]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1974]"
@@ -547,7 +545,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1975]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1975]"
@@ -567,7 +565,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1976]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1976]"
@@ -587,7 +585,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1977]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1977]"
@@ -607,7 +605,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1978]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1978]"
@@ -627,7 +625,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1979]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1979]"
@@ -647,7 +645,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1980]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1980]"
@@ -667,7 +665,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1981]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1981]"
@@ -687,7 +685,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1982]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1982]"
@@ -707,7 +705,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1983]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1983]"
@@ -727,7 +725,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1984]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1984]"
@@ -747,7 +745,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1985]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1985]"
@@ -767,7 +765,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1986]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1986]"
@@ -787,7 +785,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1987]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1987]"
@@ -807,7 +805,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1988]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1988]"
@@ -827,7 +825,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1989]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1989]"
@@ -847,7 +845,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1990]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1990]"
@@ -867,7 +865,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1991]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1991]"
@@ -887,7 +885,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1992]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1992]"
@@ -907,7 +905,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1993]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1993]"
@@ -927,7 +925,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1994]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1994]"
@@ -947,7 +945,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1995]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1995]"
@@ -967,7 +965,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1996]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1996]"
@@ -987,7 +985,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1997]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1997]"
@@ -1007,7 +1005,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1998]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1998]"
@@ -1027,7 +1025,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1999]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1999]"
@@ -1047,7 +1045,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2000]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2000]"
@@ -1067,7 +1065,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2001]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2001]"
@@ -1087,7 +1085,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2002]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2002]"
@@ -1107,7 +1105,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2003]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2003]"
@@ -1127,7 +1125,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2004]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2004]"
@@ -1147,7 +1145,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2005]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2005]"
@@ -1167,7 +1165,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2006]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2006]"
@@ -1187,7 +1185,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2007]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2007]"
@@ -1207,7 +1205,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2008]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2008]"
@@ -1227,7 +1225,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2009]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2009]"
@@ -1247,7 +1245,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2010]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2010]"
@@ -1267,7 +1265,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2011]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2011]"
@@ -1287,7 +1285,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2012]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2012]"
@@ -1307,7 +1305,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2013]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2013]"
@@ -1327,7 +1325,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2014]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2014]"
@@ -1347,7 +1345,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2015]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2015]"
@@ -1367,7 +1365,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2016]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2016]"
@@ -1387,7 +1385,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2017]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2017]"
@@ -1407,7 +1405,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2018]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2018]"
@@ -1427,7 +1425,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2019]"
-                      dataType="r4"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2019]"
@@ -1447,11 +1445,10 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[Sort Order]"
-                      dataType="wstr"
+                      dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[Sort Order]"
-                      length="255"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[Sort Order]"
                       name="Sort Order"
                       truncationRowDisposition="FailComponent">
@@ -1468,7 +1465,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2020]"
-                      dataType="r8"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2020]"
@@ -1488,7 +1485,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2021]"
-                      dataType="r8"
+                      dataType="i8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2021]"
@@ -1531,256 +1528,255 @@
                       name="Code" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1960]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1960" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1961]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1961" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1962]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1962" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1963]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1963" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1964]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1964" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1965]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1965" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1966]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1966" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1967]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1967" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1968]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1968" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1969]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1969" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1970]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1970" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1971]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1971" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1972]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1972" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1973]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1973" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1974]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1974" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1975]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1975" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1976]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1976" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1977]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1977" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1978]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1978" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1979]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1979" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1980]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1980" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1981]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1981" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1982]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1982" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1983]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1983" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1984]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1984" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1985]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1985" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1986]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1986" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1987]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1987" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1988]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1988" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1989]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1989" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1990]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1990" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1991]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1991" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1992]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1992" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1993]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1993" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1994]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1994" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1995]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1995" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1996]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1996" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1997]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1997" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1998]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1998" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[1999]"
-                      dataType="r8"
+                      dataType="i8"
                       name="1999" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2000]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2000" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2001]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2001" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2002]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2002" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2003]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2003" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2004]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2004" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2005]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2005" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2006]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2006" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2007]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2007" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2008]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2008" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2009]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2009" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2010]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2010" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2011]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2011" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2012]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2012" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2013]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2013" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2014]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2014" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2015]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2015" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2016]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2016" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2017]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2017" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2018]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2018" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2019]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2019" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[Sort Order]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i2"
                       name="Sort Order" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2020]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2020" />
                     <externalMetadataColumn
                       refId="Package\AMECO\AMECO.Outputs[Flat File Source Output].ExternalColumns[2021]"
-                      dataType="r8"
+                      dataType="i8"
                       name="2021" />
                   </externalMetadataColumns>
                 </output>
@@ -1887,351 +1883,349 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1960]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="150"
+                      cachedDataType="i8"
                       cachedName="1960"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1960]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1960]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1961]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1961"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1961]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1961]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1962]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1962"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1962]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1962]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1963]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1963"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1963]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1963]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1964]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1964"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1964]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1964]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1965]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1965"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1965]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1965]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1966]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1966"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1966]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1966]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1967]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1967"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1967]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1967]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1968]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1968"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1968]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1968]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1969]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1969"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1969]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1969]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1970]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1970"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1970]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1970]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1971]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1971"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1971]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1971]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1972]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1972"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1972]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1972]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1973]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1973"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1973]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1973]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1974]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1974"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1974]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1974]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1975]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1975"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1975]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1975]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1976]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1976"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1976]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1976]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1977]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1977"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1977]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1977]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1978]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1978"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1978]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1978]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1979]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1979"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1979]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1979]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1980]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1980"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1980]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1980]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1981]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1981"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1981]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1981]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1982]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1982"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1982]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1982]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1983]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1983"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1983]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1983]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1984]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1984"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1984]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1984]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1985]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1985"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1985]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1985]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1986]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1986"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1986]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1986]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1987]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1987"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1987]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1987]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1988]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1988"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1988]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1988]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1989]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1989"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1989]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1989]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1990]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1990"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1990]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1990]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1991]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1991"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1991]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1991]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1992]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1992"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1992]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1992]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1993]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1993"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1993]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1993]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1994]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1994"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1994]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1994]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1995]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1995"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1995]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1995]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1996]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1996"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1996]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1996]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1997]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1997"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1997]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1997]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1998]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1998"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1998]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1998]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[1999]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="1999"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[1999]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[1999]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2000]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2000"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2000]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2000]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2001]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2001"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2001]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2001]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2002]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2002"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2002]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2002]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2003]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2003"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2003]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2003]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2004]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2004"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2004]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2004]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2005]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2005"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2005]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2005]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2006]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2006"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2006]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2006]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2007]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2007"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2007]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2007]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2008]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2008"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2008]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2008]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2009]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2009"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2009]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2009]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2010]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2010"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2010]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2010]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2011]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2011"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2011]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2011]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2012]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2012"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2012]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2012]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2013]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2013"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2013]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2013]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2014]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2014"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2014]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2014]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2015]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2015"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2015]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2015]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2016]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2016"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2016]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2016]" />
                     <inputColumn
                       refId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].Columns[2017]"
-                      cachedDataType="r4"
+                      cachedDataType="i8"
                       cachedName="2017"
                       externalMetadataColumnId="Package\AMECO\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[2017]"
                       lineageId="Package\AMECO\AMECO.Outputs[Flat File Source Output].Columns[2017]" />
@@ -36000,45 +35994,33 @@
     design-time-name="Package\AMECO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="179.111111111112,41.7777777777778"
           Id="Package\AMECO\PivotedSources"
-          TopLeft="307.5,280" />
+          TopLeft="20.4629743687896,193.952385348527" />
         <NodeLayout
           Size="204,41.7777777777778"
           Id="Package\AMECO\Add Source and Definition"
-          TopLeft="222,140" />
+          TopLeft="14.222230478569,105.746033496056" />
         <NodeLayout
           Size="160.444444444445,41.7777777777778"
           Id="Package\AMECO\AMECO"
-          TopLeft="183.5,33" />
+          TopLeft="30.7222282930654,24.9523813635313" />
         <EdgeLayout
-          Id="Package\AMECO.Paths[Flat File Source Output]"
-          TopLeft="263.7,75">
+          Id="Package\AMECO.Paths[Derived Column Output]"
+          TopLeft="113.120380201457,147.523811273834">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.3,65"
+              EndConnector="0,46.4285740746932"
               Start="0,0"
-              End="60.3,57.5">
+              End="0,38.9285740746932">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.5"
-                    Point2="0,32.5"
-                    Point3="4,32.5" />
-                  <mssgle:LineSegment
-                    End="56.3,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="56.3,32.5"
-                    Point2="60.3,32.5"
-                    Point3="60.3,36.5" />
-                  <mssgle:LineSegment
-                    End="60.3,57.5" />
+                    End="0,38.9285740746932" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -36048,37 +36030,27 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\AMECO.Paths[Derived Column Output]"
-          TopLeft="324,181.6">
+          Id="Package\AMECO.Paths[Flat File Source Output]"
+          TopLeft="113.583340496928,66.7301591413091">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="73.1,98.4"
+              EndConnector="0,39.0158743547474"
               Start="0,0"
-              End="73.1,90.9">
+              End="0,31.5158743547474">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,45.2"
-                    Point2="0,49.2"
-                    Point3="4,49.2" />
-                  <mssgle:LineSegment
-                    End="69.1,49.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.1,49.2"
-                    Point2="73.1,49.2"
-                    Point3="73.1,53.2" />
-                  <mssgle:LineSegment
-                    End="73.1,90.9" />
+                    End="0,31.5158743547474" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,7.75793717737368,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{0D8007D9-4261-4BAC-AFAF-EE6492417883}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{85680C92-26C4-4974-B4E9-6D0D3D06A21A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3572,15 +3572,15 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="196.888888888889,41.7777777777778"
-          Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
-          TopLeft="79.9259348298293,216.333334440277" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="196.888888888889,41.7777777777778"
           Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
           TopLeft="77.0648239118814,30.71428618869" />
+        <NodeLayout
+          Size="196.888888888889,41.7777777777778"
+          Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
+          TopLeft="79.9259348298293,216.333334440277" />
         <EdgeLayout
           Id="Package\Populate DimIndicator.Paths[Excel Source Output]"
           TopLeft="176.9398238153,72.4920639664678">
@@ -3600,7 +3600,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3704,37 +3706,35 @@
     design-time-name="Package\Populate GeoStandardNames OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="229.5,42"
+          Size="229.333333333334,41.7777777777778"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames OLTP Table"
           TopLeft="61,167.5" />
         <NodeLayout
-          Size="172,42"
+          Size="194.222222222223,41.7777777777778"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames"
           TopLeft="86,65" />
         <EdgeLayout
           Id="Package\Populate GeoStandardNames OLTP Table.Paths[Excel Source Output]"
-          TopLeft="173.875,107">
+          TopLeft="179.388888888889,106.777777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.5"
+              EndConnector="0,60.7222222222222"
               Start="0,0"
-              End="0,53">
+              End="0,53.2222222222222">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53" />
+                    End="0,53.2222222222222" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
