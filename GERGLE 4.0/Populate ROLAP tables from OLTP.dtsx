@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="211"
-  DTS:VersionGUID="{C0F40CF6-D437-495B-833B-B02F1FBEBAF0}">
+  DTS:VersionBuild="212"
+  DTS:VersionGUID="{DECCB3AE-EF00-46BF-B809-29636B892C7D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1989,7 +1989,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
-                      length="50"
+                      length="255"
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceName]"
                       name="SourceName"
                       truncationRowDisposition="FailComponent" />
@@ -2001,6 +2001,16 @@
                       externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DimSourceID]"
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DimSourceID]"
                       name="DimSourceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDetail]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceDetail]"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDetail]"
+                      name="SourceDetail"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -2038,12 +2048,17 @@
                     <externalMetadataColumn
                       refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="SourceName" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DimSourceID]"
                       dataType="i4"
                       name="DimSourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceDetail]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceDetail" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2059,9 +2074,15 @@
                     <outputColumn
                       refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceName]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceName]"
                       name="SourceName" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceDetail]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceDetail]"
+                      name="SourceDetail" />
                     <outputColumn
                       refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceDescription]"
                       dataType="wstr"
@@ -2232,7 +2253,7 @@
                     <inputColumn
                       refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceName]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="255"
                       cachedName="SourceName"
                       externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceName]" />
@@ -2242,6 +2263,13 @@
                       cachedName="DimSourceID"
                       externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DimSourceID]"
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DimSourceID]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceDetail]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceDetail"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDetail]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2278,12 +2306,17 @@
                     <externalMetadataColumn
                       refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="SourceName" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DimSourceID]"
                       dataType="i4"
                       name="DimSourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceDetail" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3671,7 +3704,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="175.111111111112,41.7777777777778"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
@@ -3699,7 +3732,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3735,13 +3770,13 @@
     design-time-name="Package\Populate DimSources">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="194,42"
+          Size="193.777777777778,41.7777777777778"
           Id="Package\Populate DimSources\DimSource ROLAP Table"
           TopLeft="122,168" />
         <NodeLayout
-          Size="187,42"
+          Size="187.111111111112,41.7777777777778"
           Id="Package\Populate DimSources\DimSource OLTP Table"
           TopLeft="120,25" />
         <EdgeLayout
@@ -3763,9 +3798,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
