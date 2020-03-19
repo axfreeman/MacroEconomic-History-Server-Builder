@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{A6CA2BB3-1BF4-439F-B6DD-200581211BF8}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{47AD6C0C-A22E-48E3-A08C-6E4BAECB4148}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1446,6 +1446,16 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Sector]"
                       name="Sector"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Base Year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Base Year]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Base Year]"
+                      name="Base Year"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1484,6 +1494,11 @@
                       dataType="wstr"
                       length="255"
                       name="Sector" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Base Year]"
+                      dataType="wstr"
+                      length="255"
+                      name="Base Year" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1527,6 +1542,12 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Measure]"
                       name="Measure" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Base Year]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Base Year]"
+                      name="Base Year" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Qualifier]"
                       dataType="wstr"
@@ -1671,6 +1692,13 @@
                       cachedName="Sector"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Sector]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Base Year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Base Year"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[BaseYear]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Base Year]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1713,6 +1741,11 @@
                       dataType="wstr"
                       length="255"
                       name="Sector" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[BaseYear]"
+                      dataType="wstr"
+                      length="255"
+                      name="BaseYear" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3521,33 +3554,33 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="196.888888888889,41.7777777777778"
-          Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
-          TopLeft="77.0648239118814,30.71428618869" />
+          Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
+          TopLeft="77.8888978737368,135.650798879784" />
         <NodeLayout
           Size="196.888888888889,41.7777777777778"
-          Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
-          TopLeft="79.9259348298293,216.333334440277" />
+          Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
+          TopLeft="77.0648239118814,30.71428618869" />
         <EdgeLayout
           Id="Package\Populate DimIndicator.Paths[Excel Source Output]"
-          TopLeft="176.9398238153,72.4920639664678">
+          TopLeft="175.921305337254,72.4920639664678">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,143.841270473809"
+              EndConnector="0,63.1587349133157"
               Start="0,0"
-              End="0,136.341270473809">
+              End="0,55.6587349133157">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,136.341270473809" />
+                    End="0,55.6587349133157" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-8,19.8293674566578,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3716,7 +3749,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="220.888888888889,41.7777777777778"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
@@ -3748,7 +3781,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3770,7 +3805,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -149,10 +149,11 @@ CREATE TABLE [dbo].[DimIndicator](
 	[IndicatorStandardCode][nvarchar] (256) NOT NULL,
 	[Type][nvarchar](255)NULL,
 	[IndicatorName] [nvarchar](255) NULL, 
+	[Sector] [nvarchar](255) NULL,
+	[Qualifier] [nvarchar] (255) NULL, 
 	[Unit][nvarchar](255)NULL,
 	[Measure] [nvarchar](255) NULL,
-	[Sector] [nvarchar](255) NULL,
-	[Qualifier] [nvarchar] (255) NULL 
+	[BaseYear] [nvarchar](255) NULL
  CONSTRAINT [IX_IndicatorStandardCode] UNIQUE(IndicatorStandardCode),	
  CONSTRAINT [PK_DimIndicator] PRIMARY KEY CLUSTERED 
 (

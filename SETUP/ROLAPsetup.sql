@@ -74,10 +74,11 @@ CREATE TABLE [dbo].[DimIndicator](
 	[IndicatorStandardCode][nvarchar] (256) NOT NULL,
 	[Type][nvarchar](255)NULL,
 	[IndicatorName] [nvarchar](255) NULL, 
+	[Sector] [nvarchar](255) NULL,
+	[Qualifier] [nvarchar] (255) NULL, 
 	[Unit][nvarchar](255)NULL,
 	[Measure] [nvarchar](255) NULL,
-	[Sector] [nvarchar](255) NULL,
-	[Qualifier] [nvarchar] (255) NULL,
+	[BaseYear] [nvarchar](255) NULL,
 CONSTRAINT [IX_IndicatorStandardCode] UNIQUE(IndicatorStandardCode),
 CONSTRAINT [PK_DimIndicator] PRIMARY KEY CLUSTERED 
 (
@@ -189,10 +190,7 @@ CONSTRAINT [PK_Source] PRIMARY KEY CLUSTERED
 )
 GO
 
--- provides a tabular view of the data.
--- Not currently used except for internal test purposes, to scrutinise the database contents.
--- But is externally accessible so could be used for a tabular BI model
-
+-- Provides a tabular view of the data for debugging purposes
 
 
 CREATE OR ALTER VIEW [dbo].[FactQuery]
@@ -211,11 +209,12 @@ SELECT
  dbo.Fact.DimIndicatorID,
  dbo.DimIndicator.IndicatorStandardCode,
  dbo.DimIndicator.Type,
- dbo.DimIndicator.Unit,
  dbo.DimIndicator.IndicatorName,
- dbo.DimIndicator.Measure,
  dbo.DimIndicator.Sector,
  dbo.DimIndicator.Qualifier,
+ dbo.DimIndicator.Unit,
+ dbo.DimIndicator.Measure,
+ dbo.DimIndicator.BaseYear,
  dbo.Fact.Value,
  dbo.Fact.YearAsDate,
  Year(Fact.YearAsDate) as Year
