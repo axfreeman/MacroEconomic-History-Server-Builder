@@ -11,10 +11,22 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{6A5E2126-EC3C-40E6-A06B-DFD728BD1AA2}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{3F6E0C4A-2B97-488A-8AC4-4B5A1B7E3570}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{D1CBC6CC-8079-4844-A60D-2D294028C75B}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\afree\Documents\Works - Ours\Github\MacroEconomic-History-Server-Builder\SETUP\Meta.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -1926,10 +1938,11 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDetail]"
+                      length="255"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]"
                       name="SourceDetail"
                       truncationRowDisposition="FailComponent" />
@@ -1983,7 +1996,8 @@
                       name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDetail]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="SourceDetail" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFullName]"
@@ -2011,7 +2025,8 @@
                       name="SourceFullName" />
                     <outputColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDetail]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDetail]"
                       name="SourceDetail" />
                     <outputColumn
@@ -2183,7 +2198,8 @@
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]" />
                     <inputColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceDetail]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="SourceDetail"
                       externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]" />
@@ -3124,7 +3140,7 @@
         <NodeLayout
           Size="235.111111111112,41.7777777777778"
           Id="Package\Populate DimSource OLTP  Table"
-          TopLeft="44,361" />
+          TopLeft="216.839499304815,367.190475874207" />
         <NodeLayout
           Size="272.888888888889,41.7777777777778"
           Id="Package\Populate GeoStandardNames OLTP Table"
@@ -3291,30 +3307,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="456,314">
+          TopLeft="456,313.777777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-294.5,47"
+              EndConnector="-121.60494513963,53.4126980964289"
               Start="0,0"
-              End="-294.5,39.5">
+              End="-121.60494513963,45.9126980964289">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,22.7063490482145" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="-4,23.5" />
+                    Point1="0,22.7063490482145"
+                    Point2="0,26.7063490482145"
+                    Point3="-4,26.7063490482145" />
                   <mssgle:LineSegment
-                    End="-290.5,23.5" />
+                    End="-117.60494513963,26.7063490482145" />
                   <mssgle:CubicBezierSegment
-                    Point1="-290.5,23.5"
-                    Point2="-294.5,23.5"
-                    Point3="-294.5,27.5" />
+                    Point1="-117.60494513963,26.7063490482145"
+                    Point2="-121.60494513963,26.7063490482145"
+                    Point3="-121.60494513963,30.7063490482145" />
                   <mssgle:LineSegment
-                    End="-294.5,39.5" />
+                    End="-121.60494513963,45.9126980964289" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3580,7 +3596,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="196.888888888889,41.7777777777778"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
@@ -3608,7 +3624,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3644,37 +3662,35 @@
     design-time-name="Package\Populate DimSource OLTP  Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208.888888888889,41.7777777777778"
+          Size="212,41.7777777777778"
           Id="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet"
-          TopLeft="211,18" />
+          TopLeft="21.7407482612277,12.8412701048278" />
         <NodeLayout
           Size="191.555555555556,41.7777777777778"
           Id="Package\Populate DimSource OLTP  Table\DimSource OLTP Table"
-          TopLeft="212.179894411164,128.117923124499" />
+          TopLeft="26.4391610510969,124.609986795782" />
         <EdgeLayout
           Id="Package\Populate DimSource OLTP  Table.Paths[Excel Source Output]"
-          TopLeft="311.701058316693,59.7777777777778">
+          TopLeft="124.978843545051,54.6190478826056">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,68.3401453467217"
+              EndConnector="0,69.9909389131764"
               Start="0,0"
-              End="0,60.8401453467217">
+              End="0,62.4909389131764">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.8401453467217" />
+                    End="0,62.4909389131764" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3776,7 +3792,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="220.888888888889,41.7777777777778"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
@@ -3808,7 +3824,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3830,7 +3848,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

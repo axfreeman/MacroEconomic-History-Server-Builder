@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="215"
-  DTS:VersionGUID="{95D999AA-E93D-48BD-827D-9488A5DA23E4}">
+  DTS:VersionBuild="216"
+  DTS:VersionGUID="{327A79FF-47C3-4D16-AA56-3619EA2C6CA1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2324,6 +2324,13 @@
                       cachedName="SourceDetail"
                       externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDetail]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceFullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceFullName"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFullName]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFullName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3227,7 +3234,7 @@
           Id="Package\Deindex Barro-Ursua and MacroHistory"
           TopLeft="32.051294903314,417" />
         <NodeLayout
-          Size="212,41.7777777777778"
+          Size="255.111111111112,41.7777777777778"
           Id="Package\Drop and create ROLAP files"
           TopLeft="33,12" />
         <NodeLayout
@@ -3372,18 +3379,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="245,33.925757726603">
+          TopLeft="288.111111111111,33.8146466154919">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="99.346166091558,0"
+              EndConnector="56.2350549804469,0"
               Start="0,0"
-              End="91.846166091558,0">
+              End="48.7350549804469,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="91.846166091558,0" />
+                    End="48.7350549804469,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
