@@ -172,6 +172,7 @@ GO
 CREATE TABLE [dbo].[DimSource](
 [DimSourceID] int NOT NULL IDENTITY (1,1),
 [SourceName] [nvarchar](255),
+[SourceFullName] [nvarchar](255),
 [SourceDetail] [nvarchar](255),
 [SourceDescription] [nvarchar] (255),
 [SourceFile] [nvarchar] (255),

@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{B7185734-B322-4496-B20E-39B72A7673F5}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{C7CC2D0F-51E4-42B2-A7E9-6FE5D6E5F85A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -354,8 +354,8 @@
               <connections>
                 <connection
                   refId="Package\OECD Capital Stock\OECD Capital Stock CSV File.Connections[FlatFileConnection]"
-                  connectionManagerID="{2200A021-0DB3-4F3A-8A18-C628E8693C85}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OECD Capital Stock]"
+                  connectionManagerID="{2200A021-0DB3-4F3A-8A18-C628E8693C85}:invalid"
+                  connectionManagerRefId="{2200A021-0DB3-4F3A-8A18-C628E8693C85}:invalid"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -513,6 +513,2403 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Test Pivoted Sources"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3299BA1E-9B7C-4DA2-BB3C-42F6E853D9B0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Test Pivoted Sources"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Test Pivoted Sources\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PivotedSourcesCopy]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test Pivoted Sources\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SourceName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SourceName"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[SourceName]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DefinitionName"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[DefinitionName]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[GeoSourceName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GeoSourceName"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[GeoSourceName]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IndicatorSourceName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorSourceName"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceName]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[IndicatorSourceName]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IndicatorSourceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorSourceCode"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[IndicatorSourceCode]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1946]"
+                      cachedDataType="r8"
+                      cachedName="1946"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1946]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1946]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1947]"
+                      cachedDataType="r8"
+                      cachedName="1947"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1947]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1947]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1948]"
+                      cachedDataType="r8"
+                      cachedName="1948"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1948]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1948]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1949]"
+                      cachedDataType="r8"
+                      cachedName="1949"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1949]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1949]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1950]"
+                      cachedDataType="r8"
+                      cachedName="1950"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1950]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1950]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1951]"
+                      cachedDataType="r8"
+                      cachedName="1951"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1951]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1951]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1952]"
+                      cachedDataType="r8"
+                      cachedName="1952"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1952]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1952]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1953]"
+                      cachedDataType="r8"
+                      cachedName="1953"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1953]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1953]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1954]"
+                      cachedDataType="r8"
+                      cachedName="1954"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1954]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1954]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1955]"
+                      cachedDataType="r8"
+                      cachedName="1955"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1955]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1955]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1956]"
+                      cachedDataType="r8"
+                      cachedName="1956"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1956]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1956]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1957]"
+                      cachedDataType="r8"
+                      cachedName="1957"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1957]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1957]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1958]"
+                      cachedDataType="r8"
+                      cachedName="1958"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1958]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1958]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1959]"
+                      cachedDataType="r8"
+                      cachedName="1959"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1959]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1959]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1960]"
+                      cachedDataType="r8"
+                      cachedName="1960"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1960]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1960]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1961]"
+                      cachedDataType="r8"
+                      cachedName="1961"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1961]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1961]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1962]"
+                      cachedDataType="r8"
+                      cachedName="1962"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1962]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1962]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1963]"
+                      cachedDataType="r8"
+                      cachedName="1963"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1963]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1963]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1964]"
+                      cachedDataType="r8"
+                      cachedName="1964"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1964]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1964]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1965]"
+                      cachedDataType="r8"
+                      cachedName="1965"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1965]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1965]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1966]"
+                      cachedDataType="r8"
+                      cachedName="1966"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1966]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1966]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1967]"
+                      cachedDataType="r8"
+                      cachedName="1967"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1967]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1967]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1968]"
+                      cachedDataType="r8"
+                      cachedName="1968"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1968]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1968]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1969]"
+                      cachedDataType="r8"
+                      cachedName="1969"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1969]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1969]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1970]"
+                      cachedDataType="r8"
+                      cachedName="1970"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1970]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1970]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1971]"
+                      cachedDataType="r8"
+                      cachedName="1971"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1971]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1971]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1972]"
+                      cachedDataType="r8"
+                      cachedName="1972"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1972]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1972]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1973]"
+                      cachedDataType="r8"
+                      cachedName="1973"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1973]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1973]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1974]"
+                      cachedDataType="r8"
+                      cachedName="1974"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1974]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1974]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1975]"
+                      cachedDataType="r8"
+                      cachedName="1975"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1975]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1975]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1976]"
+                      cachedDataType="r8"
+                      cachedName="1976"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1976]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1976]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1977]"
+                      cachedDataType="r8"
+                      cachedName="1977"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1977]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1977]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1978]"
+                      cachedDataType="r8"
+                      cachedName="1978"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1978]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1978]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1979]"
+                      cachedDataType="r8"
+                      cachedName="1979"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1979]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1979]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1980]"
+                      cachedDataType="r8"
+                      cachedName="1980"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1980]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1980]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1981]"
+                      cachedDataType="r8"
+                      cachedName="1981"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1981]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1981]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1982]"
+                      cachedDataType="r8"
+                      cachedName="1982"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1982]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1982]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1983]"
+                      cachedDataType="r8"
+                      cachedName="1983"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1983]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1983]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1984]"
+                      cachedDataType="r8"
+                      cachedName="1984"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1984]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1984]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1985]"
+                      cachedDataType="r8"
+                      cachedName="1985"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1985]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1985]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1986]"
+                      cachedDataType="r8"
+                      cachedName="1986"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1986]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1986]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1987]"
+                      cachedDataType="r8"
+                      cachedName="1987"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1987]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1987]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1988]"
+                      cachedDataType="r8"
+                      cachedName="1988"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1988]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1988]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1989]"
+                      cachedDataType="r8"
+                      cachedName="1989"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1989]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1989]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1990]"
+                      cachedDataType="r8"
+                      cachedName="1990"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1990]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1990]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1991]"
+                      cachedDataType="r8"
+                      cachedName="1991"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1991]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1991]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1992]"
+                      cachedDataType="r8"
+                      cachedName="1992"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1992]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1992]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1993]"
+                      cachedDataType="r8"
+                      cachedName="1993"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1993]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1993]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1994]"
+                      cachedDataType="r8"
+                      cachedName="1994"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1994]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1994]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1995]"
+                      cachedDataType="r8"
+                      cachedName="1995"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1995]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1995]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1996]"
+                      cachedDataType="r8"
+                      cachedName="1996"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1996]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1996]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1997]"
+                      cachedDataType="r8"
+                      cachedName="1997"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1997]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1997]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1998]"
+                      cachedDataType="r8"
+                      cachedName="1998"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1998]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1998]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[1999]"
+                      cachedDataType="r8"
+                      cachedName="1999"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1999]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1999]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2000]"
+                      cachedDataType="r8"
+                      cachedName="2000"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2000]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2000]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2001]"
+                      cachedDataType="r8"
+                      cachedName="2001"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2001]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2001]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2002]"
+                      cachedDataType="r8"
+                      cachedName="2002"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2002]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2002]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2003]"
+                      cachedDataType="r8"
+                      cachedName="2003"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2003]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2003]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2004]"
+                      cachedDataType="r8"
+                      cachedName="2004"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2004]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2004]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2005]"
+                      cachedDataType="r8"
+                      cachedName="2005"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2005]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2005]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2006]"
+                      cachedDataType="r8"
+                      cachedName="2006"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2006]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2006]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2007]"
+                      cachedDataType="r8"
+                      cachedName="2007"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2007]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2007]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2008]"
+                      cachedDataType="r8"
+                      cachedName="2008"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2008]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2008]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2009]"
+                      cachedDataType="r8"
+                      cachedName="2009"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2009]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2009]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2010]"
+                      cachedDataType="r8"
+                      cachedName="2010"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2010]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2010]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2011]"
+                      cachedDataType="r8"
+                      cachedName="2011"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2011]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2011]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2012]"
+                      cachedDataType="r8"
+                      cachedName="2012"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2012]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2012]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2013]"
+                      cachedDataType="r8"
+                      cachedName="2013"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2013]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2013]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2014]"
+                      cachedDataType="r8"
+                      cachedName="2014"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2014]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2014]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2015]"
+                      cachedDataType="r8"
+                      cachedName="2015"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2015]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2015]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2016]"
+                      cachedDataType="r8"
+                      cachedName="2016"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2016]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2016]" />
+                    <inputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[2017]"
+                      cachedDataType="r8"
+                      cachedName="2017"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2017]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2017]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DefinitionName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1946]"
+                      dataType="r8"
+                      name="1946" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1947]"
+                      dataType="r8"
+                      name="1947" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1948]"
+                      dataType="r8"
+                      name="1948" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1949]"
+                      dataType="r8"
+                      name="1949" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1950]"
+                      dataType="r8"
+                      name="1950" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1951]"
+                      dataType="r8"
+                      name="1951" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1952]"
+                      dataType="r8"
+                      name="1952" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1953]"
+                      dataType="r8"
+                      name="1953" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1954]"
+                      dataType="r8"
+                      name="1954" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1955]"
+                      dataType="r8"
+                      name="1955" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1956]"
+                      dataType="r8"
+                      name="1956" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1957]"
+                      dataType="r8"
+                      name="1957" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1958]"
+                      dataType="r8"
+                      name="1958" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1959]"
+                      dataType="r8"
+                      name="1959" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1960]"
+                      dataType="r8"
+                      name="1960" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1961]"
+                      dataType="r8"
+                      name="1961" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1962]"
+                      dataType="r8"
+                      name="1962" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1963]"
+                      dataType="r8"
+                      name="1963" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1964]"
+                      dataType="r8"
+                      name="1964" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1965]"
+                      dataType="r8"
+                      name="1965" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1966]"
+                      dataType="r8"
+                      name="1966" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1967]"
+                      dataType="r8"
+                      name="1967" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1968]"
+                      dataType="r8"
+                      name="1968" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1969]"
+                      dataType="r8"
+                      name="1969" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1970]"
+                      dataType="r8"
+                      name="1970" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1971]"
+                      dataType="r8"
+                      name="1971" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1972]"
+                      dataType="r8"
+                      name="1972" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1973]"
+                      dataType="r8"
+                      name="1973" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1974]"
+                      dataType="r8"
+                      name="1974" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1975]"
+                      dataType="r8"
+                      name="1975" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1976]"
+                      dataType="r8"
+                      name="1976" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1977]"
+                      dataType="r8"
+                      name="1977" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1978]"
+                      dataType="r8"
+                      name="1978" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1979]"
+                      dataType="r8"
+                      name="1979" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1980]"
+                      dataType="r8"
+                      name="1980" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1981]"
+                      dataType="r8"
+                      name="1981" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1982]"
+                      dataType="r8"
+                      name="1982" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1983]"
+                      dataType="r8"
+                      name="1983" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1984]"
+                      dataType="r8"
+                      name="1984" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1985]"
+                      dataType="r8"
+                      name="1985" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1986]"
+                      dataType="r8"
+                      name="1986" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1987]"
+                      dataType="r8"
+                      name="1987" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1988]"
+                      dataType="r8"
+                      name="1988" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1989]"
+                      dataType="r8"
+                      name="1989" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1990]"
+                      dataType="r8"
+                      name="1990" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1991]"
+                      dataType="r8"
+                      name="1991" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1992]"
+                      dataType="r8"
+                      name="1992" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1993]"
+                      dataType="r8"
+                      name="1993" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1994]"
+                      dataType="r8"
+                      name="1994" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1995]"
+                      dataType="r8"
+                      name="1995" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1996]"
+                      dataType="r8"
+                      name="1996" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1997]"
+                      dataType="r8"
+                      name="1997" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1998]"
+                      dataType="r8"
+                      name="1998" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[1999]"
+                      dataType="r8"
+                      name="1999" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2000]"
+                      dataType="r8"
+                      name="2000" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2001]"
+                      dataType="r8"
+                      name="2001" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2002]"
+                      dataType="r8"
+                      name="2002" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2003]"
+                      dataType="r8"
+                      name="2003" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2004]"
+                      dataType="r8"
+                      name="2004" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2005]"
+                      dataType="r8"
+                      name="2005" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2006]"
+                      dataType="r8"
+                      name="2006" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2007]"
+                      dataType="r8"
+                      name="2007" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2008]"
+                      dataType="r8"
+                      name="2008" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2009]"
+                      dataType="r8"
+                      name="2009" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2010]"
+                      dataType="r8"
+                      name="2010" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2011]"
+                      dataType="r8"
+                      name="2011" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2012]"
+                      dataType="r8"
+                      name="2012" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2013]"
+                      dataType="r8"
+                      name="2013" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2014]"
+                      dataType="r8"
+                      name="2014" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2015]"
+                      dataType="r8"
+                      name="2015" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2016]"
+                      dataType="r8"
+                      name="2016" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[2017]"
+                      dataType="r8"
+                      name="2017" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Test Pivoted Sources\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test Pivoted Sources\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test Pivoted Sources\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Test Pivoted Sources\Pivoted Sources"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Pivoted Sources"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PivotedSources]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Test Pivoted Sources\Pivoted Sources.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[SourceName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
+                      length="50"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[SourceName]"
+                      name="SourceName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[DefinitionName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[DefinitionName]"
+                      length="50"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[DefinitionName]"
+                      name="DefinitionName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[GeoSourceName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[GeoSourceName]"
+                      length="255"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[GeoSourceName]"
+                      name="GeoSourceName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[IndicatorSourceName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceName]"
+                      length="255"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[IndicatorSourceName]"
+                      name="IndicatorSourceName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceCode]"
+                      length="255"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[IndicatorSourceCode]"
+                      name="IndicatorSourceCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1946]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1946]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1946]"
+                      name="1946"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1947]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1947]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1947]"
+                      name="1947"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1948]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1948]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1948]"
+                      name="1948"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1949]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1949]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1949]"
+                      name="1949"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1950]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1950]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1950]"
+                      name="1950"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1951]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1951]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1951]"
+                      name="1951"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1952]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1952]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1952]"
+                      name="1952"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1953]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1953]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1953]"
+                      name="1953"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1954]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1954]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1954]"
+                      name="1954"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1955]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1955]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1955]"
+                      name="1955"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1956]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1956]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1956]"
+                      name="1956"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1957]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1957]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1957]"
+                      name="1957"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1958]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1958]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1958]"
+                      name="1958"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1959]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1959]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1959]"
+                      name="1959"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1960]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1960]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1960]"
+                      name="1960"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1961]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1961]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1961]"
+                      name="1961"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1962]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1962]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1962]"
+                      name="1962"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1963]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1963]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1963]"
+                      name="1963"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1964]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1964]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1964]"
+                      name="1964"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1965]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1965]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1965]"
+                      name="1965"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1966]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1966]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1966]"
+                      name="1966"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1967]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1967]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1967]"
+                      name="1967"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1968]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1968]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1968]"
+                      name="1968"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1969]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1969]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1969]"
+                      name="1969"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1970]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1970]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1970]"
+                      name="1970"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1971]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1971]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1971]"
+                      name="1971"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1972]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1972]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1972]"
+                      name="1972"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1973]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1973]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1973]"
+                      name="1973"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1974]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1974]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1974]"
+                      name="1974"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1975]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1975]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1975]"
+                      name="1975"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1976]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1976]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1976]"
+                      name="1976"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1977]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1977]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1977]"
+                      name="1977"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1978]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1978]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1978]"
+                      name="1978"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1979]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1979]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1979]"
+                      name="1979"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1980]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1980]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1980]"
+                      name="1980"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1981]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1981]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1981]"
+                      name="1981"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1982]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1982]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1982]"
+                      name="1982"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1983]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1983]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1983]"
+                      name="1983"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1984]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1984]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1984]"
+                      name="1984"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1985]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1985]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1985]"
+                      name="1985"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1986]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1986]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1986]"
+                      name="1986"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1987]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1987]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1987]"
+                      name="1987"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1988]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1988]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1988]"
+                      name="1988"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1989]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1989]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1989]"
+                      name="1989"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1990]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1990]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1990]"
+                      name="1990"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1991]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1991]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1991]"
+                      name="1991"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1992]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1992]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1992]"
+                      name="1992"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1993]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1993]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1993]"
+                      name="1993"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1994]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1994]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1994]"
+                      name="1994"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1995]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1995]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1995]"
+                      name="1995"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1996]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1996]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1996]"
+                      name="1996"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1997]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1997]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1997]"
+                      name="1997"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1998]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1998]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1998]"
+                      name="1998"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1999]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1999]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[1999]"
+                      name="1999"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2000]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2000]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2000]"
+                      name="2000"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2001]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2001]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2001]"
+                      name="2001"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2002]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2002]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2002]"
+                      name="2002"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2003]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2003]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2003]"
+                      name="2003"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2004]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2004]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2004]"
+                      name="2004"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2005]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2005]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2005]"
+                      name="2005"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2006]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2006]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2006]"
+                      name="2006"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2007]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2007]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2007]"
+                      name="2007"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2008]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2008]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2008]"
+                      name="2008"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2009]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2009]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2009]"
+                      name="2009"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2010]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2010]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2010]"
+                      name="2010"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2011]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2011]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2011]"
+                      name="2011"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2012]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2012]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2012]"
+                      name="2012"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2013]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2013]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2013]"
+                      name="2013"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2014]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2014]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2014]"
+                      name="2014"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2015]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2015]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2015]"
+                      name="2015"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2016]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2016]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2016]"
+                      name="2016"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2017]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2017]"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].Columns[2017]"
+                      name="2017"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[DefinitionName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DefinitionName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1946]"
+                      dataType="r8"
+                      name="1946" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1947]"
+                      dataType="r8"
+                      name="1947" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1948]"
+                      dataType="r8"
+                      name="1948" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1949]"
+                      dataType="r8"
+                      name="1949" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1950]"
+                      dataType="r8"
+                      name="1950" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1951]"
+                      dataType="r8"
+                      name="1951" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1952]"
+                      dataType="r8"
+                      name="1952" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1953]"
+                      dataType="r8"
+                      name="1953" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1954]"
+                      dataType="r8"
+                      name="1954" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1955]"
+                      dataType="r8"
+                      name="1955" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1956]"
+                      dataType="r8"
+                      name="1956" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1957]"
+                      dataType="r8"
+                      name="1957" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1958]"
+                      dataType="r8"
+                      name="1958" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1959]"
+                      dataType="r8"
+                      name="1959" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1960]"
+                      dataType="r8"
+                      name="1960" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1961]"
+                      dataType="r8"
+                      name="1961" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1962]"
+                      dataType="r8"
+                      name="1962" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1963]"
+                      dataType="r8"
+                      name="1963" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1964]"
+                      dataType="r8"
+                      name="1964" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1965]"
+                      dataType="r8"
+                      name="1965" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1966]"
+                      dataType="r8"
+                      name="1966" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1967]"
+                      dataType="r8"
+                      name="1967" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1968]"
+                      dataType="r8"
+                      name="1968" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1969]"
+                      dataType="r8"
+                      name="1969" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1970]"
+                      dataType="r8"
+                      name="1970" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1971]"
+                      dataType="r8"
+                      name="1971" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1972]"
+                      dataType="r8"
+                      name="1972" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1973]"
+                      dataType="r8"
+                      name="1973" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1974]"
+                      dataType="r8"
+                      name="1974" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1975]"
+                      dataType="r8"
+                      name="1975" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1976]"
+                      dataType="r8"
+                      name="1976" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1977]"
+                      dataType="r8"
+                      name="1977" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1978]"
+                      dataType="r8"
+                      name="1978" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1979]"
+                      dataType="r8"
+                      name="1979" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1980]"
+                      dataType="r8"
+                      name="1980" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1981]"
+                      dataType="r8"
+                      name="1981" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1982]"
+                      dataType="r8"
+                      name="1982" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1983]"
+                      dataType="r8"
+                      name="1983" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1984]"
+                      dataType="r8"
+                      name="1984" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1985]"
+                      dataType="r8"
+                      name="1985" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1986]"
+                      dataType="r8"
+                      name="1986" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1987]"
+                      dataType="r8"
+                      name="1987" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1988]"
+                      dataType="r8"
+                      name="1988" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1989]"
+                      dataType="r8"
+                      name="1989" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1990]"
+                      dataType="r8"
+                      name="1990" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1991]"
+                      dataType="r8"
+                      name="1991" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1992]"
+                      dataType="r8"
+                      name="1992" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1993]"
+                      dataType="r8"
+                      name="1993" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1994]"
+                      dataType="r8"
+                      name="1994" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1995]"
+                      dataType="r8"
+                      name="1995" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1996]"
+                      dataType="r8"
+                      name="1996" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1997]"
+                      dataType="r8"
+                      name="1997" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1998]"
+                      dataType="r8"
+                      name="1998" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[1999]"
+                      dataType="r8"
+                      name="1999" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2000]"
+                      dataType="r8"
+                      name="2000" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2001]"
+                      dataType="r8"
+                      name="2001" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2002]"
+                      dataType="r8"
+                      name="2002" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2003]"
+                      dataType="r8"
+                      name="2003" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2004]"
+                      dataType="r8"
+                      name="2004" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2005]"
+                      dataType="r8"
+                      name="2005" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2006]"
+                      dataType="r8"
+                      name="2006" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2007]"
+                      dataType="r8"
+                      name="2007" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2008]"
+                      dataType="r8"
+                      name="2008" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2009]"
+                      dataType="r8"
+                      name="2009" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2010]"
+                      dataType="r8"
+                      name="2010" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2011]"
+                      dataType="r8"
+                      name="2011" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2012]"
+                      dataType="r8"
+                      name="2012" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2013]"
+                      dataType="r8"
+                      name="2013" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2014]"
+                      dataType="r8"
+                      name="2014" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2015]"
+                      dataType="r8"
+                      name="2015" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2016]"
+                      dataType="r8"
+                      name="2016" />
+                    <externalMetadataColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output].ExternalColumns[2017]"
+                      dataType="r8"
+                      name="2017" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[SourceName]"
+                      name="SourceName" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[DefinitionName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[DefinitionName]"
+                      name="DefinitionName" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[GeoSourceName]"
+                      name="GeoSourceName" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceName]"
+                      name="IndicatorSourceName" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceCode]"
+                      name="IndicatorSourceCode" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1946]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1946]"
+                      name="1946" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1947]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1947]"
+                      name="1947" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1948]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1948]"
+                      name="1948" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1949]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1949]"
+                      name="1949" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1950]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1950]"
+                      name="1950" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1951]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1951]"
+                      name="1951" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1952]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1952]"
+                      name="1952" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1953]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1953]"
+                      name="1953" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1954]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1954]"
+                      name="1954" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1955]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1955]"
+                      name="1955" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1956]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1956]"
+                      name="1956" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1957]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1957]"
+                      name="1957" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1958]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1958]"
+                      name="1958" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1959]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1959]"
+                      name="1959" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1960]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1960]"
+                      name="1960" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1961]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1961]"
+                      name="1961" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1962]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1962]"
+                      name="1962" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1963]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1963]"
+                      name="1963" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1964]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1964]"
+                      name="1964" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1965]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1965]"
+                      name="1965" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1966]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1966]"
+                      name="1966" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1967]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1967]"
+                      name="1967" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1968]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1968]"
+                      name="1968" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1969]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1969]"
+                      name="1969" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1970]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1970]"
+                      name="1970" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1971]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1971]"
+                      name="1971" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1972]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1972]"
+                      name="1972" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1973]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1973]"
+                      name="1973" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1974]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1974]"
+                      name="1974" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1975]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1975]"
+                      name="1975" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1976]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1976]"
+                      name="1976" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1977]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1977]"
+                      name="1977" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1978]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1978]"
+                      name="1978" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1979]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1979]"
+                      name="1979" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1980]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1980]"
+                      name="1980" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1981]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1981]"
+                      name="1981" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1982]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1982]"
+                      name="1982" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1983]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1983]"
+                      name="1983" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1984]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1984]"
+                      name="1984" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1985]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1985]"
+                      name="1985" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1986]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1986]"
+                      name="1986" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1987]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1987]"
+                      name="1987" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1988]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1988]"
+                      name="1988" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1989]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1989]"
+                      name="1989" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1990]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1990]"
+                      name="1990" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1991]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1991]"
+                      name="1991" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1992]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1992]"
+                      name="1992" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1993]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1993]"
+                      name="1993" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1994]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1994]"
+                      name="1994" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1995]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1995]"
+                      name="1995" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1996]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1996]"
+                      name="1996" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1997]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1997]"
+                      name="1997" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1998]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1998]"
+                      name="1998" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1999]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[1999]"
+                      name="1999" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2000]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2000]"
+                      name="2000" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2001]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2001]"
+                      name="2001" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2002]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2002]"
+                      name="2002" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2003]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2003]"
+                      name="2003" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2004]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2004]"
+                      name="2004" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2005]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2005]"
+                      name="2005" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2006]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2006]"
+                      name="2006" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2007]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2007]"
+                      name="2007" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2008]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2008]"
+                      name="2008" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2009]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2009]"
+                      name="2009" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2010]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2010]"
+                      name="2010" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2011]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2011]"
+                      name="2011" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2012]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2012]"
+                      name="2012" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2013]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2013]"
+                      name="2013" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2014]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2014]"
+                      name="2014" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2015]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2015]"
+                      name="2015" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2016]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2016]"
+                      name="2016" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2017]"
+                      dataType="r8"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[2017]"
+                      name="2017" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Test Pivoted Sources.Paths[OLE DB Source Output]"
+              endId="Package\Test Pivoted Sources\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Test Pivoted Sources\Pivoted Sources.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -530,6 +2927,10 @@
           Size="169.777777777778,41.7777777777778"
           Id="Package\OECD Capital Stock"
           TopLeft="80.5555523545655,42.5079343362191" />
+        <NodeLayout
+          Size="180,41.7777777777778"
+          Id="Package\Test Pivoted Sources"
+          TopLeft="62.7777752832131,114.73015286863" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -625,5 +3026,71 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\Test Pivoted Sources">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156.444444444445,41.7777777777778"
+          Id="Package\Test Pivoted Sources\Pivoted Sources"
+          TopLeft="102.962958871583,73.2539645114455" />
+        <NodeLayout
+          Size="173.777777777778,41.7777777777778"
+          Id="Package\Test Pivoted Sources\OLE DB Destination"
+          TopLeft="94.9999962250393,165.285705841318" />
+        <EdgeLayout
+          Id="Package\Test Pivoted Sources.Paths[OLE DB Source Output]"
+          TopLeft="181.537033103867,115.031742289223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2539635520946"
+              Start="0,0"
+              End="0,42.7539635520946">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7539635520946" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,13.3769817760473,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test Pivoted Sources\Pivoted Sources">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Test Pivoted Sources\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

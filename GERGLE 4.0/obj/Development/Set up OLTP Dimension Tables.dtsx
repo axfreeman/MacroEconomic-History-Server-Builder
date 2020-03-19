@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{47AD6C0C-A22E-48E3-A08C-6E4BAECB4148}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{6A5E2126-EC3C-40E6-A06B-DFD728BD1AA2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1926,13 +1926,22 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]"
-                      dataType="wstr"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDetail]"
-                      length="255"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]"
                       name="SourceDetail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFullName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFullName]"
+                      length="255"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFullName]"
+                      name="SourceFullName"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1974,9 +1983,13 @@
                       name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDetail]"
+                      dataType="r8"
+                      name="SourceDetail" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFullName]"
                       dataType="wstr"
                       length="255"
-                      name="SourceDetail" />
+                      name="SourceFullName" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1991,9 +2004,14 @@
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceName]"
                       name="SourceName" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDetail]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFullName]"
                       dataType="wstr"
                       length="255"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFullName]"
+                      name="SourceFullName" />
+                    <outputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDetail]"
+                      dataType="r8"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDetail]"
                       name="SourceDetail" />
                     <outputColumn
@@ -2165,8 +2183,7 @@
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]" />
                     <inputColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceDetail]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      cachedDataType="r8"
                       cachedName="SourceDetail"
                       externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]" />
@@ -2177,6 +2194,13 @@
                       cachedName="SourceName"
                       externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceName]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceFullName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceFullName"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFullName]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFullName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2224,6 +2248,11 @@
                       dataType="wstr"
                       length="255"
                       name="SourceDetail" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFullName]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceFullName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3551,7 +3580,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="196.888888888889,41.7777777777778"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
@@ -3579,9 +3608,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,19.8293674566578,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3619,13 +3646,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="191.555555555556,41.7777777777778"
-          Id="Package\Populate DimSource OLTP  Table\DimSource OLTP Table"
-          TopLeft="212.179894411164,128.117923124499" />
-        <NodeLayout
           Size="208.888888888889,41.7777777777778"
           Id="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet"
           TopLeft="211,18" />
+        <NodeLayout
+          Size="191.555555555556,41.7777777777778"
+          Id="Package\Populate DimSource OLTP  Table\DimSource OLTP Table"
+          TopLeft="212.179894411164,128.117923124499" />
         <EdgeLayout
           Id="Package\Populate DimSource OLTP  Table.Paths[Excel Source Output]"
           TopLeft="311.701058316693,59.7777777777778">
@@ -3749,7 +3776,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="220.888888888889,41.7777777777778"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
@@ -3781,9 +3808,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3805,9 +3830,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -30,7 +30,7 @@ CREATE TABLE [dbo].[PivotedSources](
  [SourceName][nvarchar](50) NOT NULL,
  [DefinitionName] [nvarchar] (50) NOT NULL,
  [GeoSourceName] [nvarchar](255) NULL,
- [IndicatorSourceName] [nvarchar](255) NULL,
+ [IndicatorSourceName] [nvarchar](255) NULL,  /* I think this field is redundant AF 19/3/2020 */
  [IndicatorSourceCode] [nvarchar](255) not NULL,
  [1946] [float] NULL,
  [1947] [float] NULL,
