@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="216"
-  DTS:VersionGUID="{327A79FF-47C3-4D16-AA56-3619EA2C6CA1}">
+  DTS:VersionBuild="220"
+  DTS:VersionGUID="{38C34962-DC6B-4222-80C0-A820A5AB68D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1957,66 +1957,6 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceDescription]"
-                      length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDescription]"
-                      name="SourceDescription"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFile]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
-                      length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFile]"
-                      name="SourceFile"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceURL]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceURL]"
-                      length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceURL]"
-                      name="SourceURL"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Preparation Notes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Preparation Notes]"
-                      length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Preparation Notes]"
-                      name="Preparation Notes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Source Notes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Source Notes]"
-                      length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Source Notes]"
-                      name="Source Notes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Data Notes]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Data Notes]"
-                      length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Data Notes]"
-                      name="Data Notes"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -2036,58 +1976,88 @@
                       name="DimSourceID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDetail]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNameParent]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceDetail]"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceNameParent]"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDetail]"
-                      name="SourceDetail"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNameParent]"
+                      name="SourceNameParent"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFullName]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNameDetail]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceFullName]"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceNameDetail]"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFullName]"
-                      name="SourceFullName"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNameDetail]"
+                      name="SourceNameDetail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataOriginFile]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DataOriginFile]"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataOriginFile]"
+                      name="DataOriginFile"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataOriginURL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DataOriginURL]"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataOriginURL]"
+                      name="DataOriginURL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[PreparationNotes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[PreparationNotes]"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[PreparationNotes]"
+                      name="PreparationNotes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNotes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceNotes]"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNotes]"
+                      name="SourceNotes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataNotes]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DataNotes]"
+                      length="255"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataNotes]"
+                      name="DataNotes"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceDescription]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceFile" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceURL]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceURL" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Preparation Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Preparation Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
                       dataType="wstr"
@@ -2098,15 +2068,45 @@
                       dataType="i4"
                       name="DimSourceID" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceDetail]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceNameParent]"
                       dataType="wstr"
                       length="255"
-                      name="SourceDetail" />
+                      name="SourceNameParent" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceFullName]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceNameDetail]"
                       dataType="wstr"
                       length="255"
-                      name="SourceFullName" />
+                      name="SourceNameDetail" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="255"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DataOriginFile]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataOriginFile" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DataOriginURL]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataOriginURL" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[PreparationNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="PreparationNotes" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[SourceNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceNotes" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[DataNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataNotes" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2126,53 +2126,53 @@
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceName]"
                       name="SourceName" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceFullName]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceNameParent]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceFullName]"
-                      name="SourceFullName" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceNameParent]"
+                      name="SourceNameParent" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceDetail]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceNameDetail]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceDetail]"
-                      name="SourceDetail" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceNameDetail]"
+                      name="SourceNameDetail" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceDescription]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Description]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceDescription]"
-                      name="SourceDescription" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Description]"
+                      name="Description" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[DataOriginFile]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceFile]"
-                      name="SourceFile" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[DataOriginFile]"
+                      name="DataOriginFile" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceURL]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[DataOriginURL]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceURL]"
-                      name="SourceURL" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[DataOriginURL]"
+                      name="DataOriginURL" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Preparation Notes]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[PreparationNotes]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Preparation Notes]"
-                      name="Preparation Notes" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[PreparationNotes]"
+                      name="PreparationNotes" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Source Notes]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceNotes]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Source Notes]"
-                      name="Source Notes" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[SourceNotes]"
+                      name="SourceNotes" />
                     <outputColumn
-                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Data Notes]"
+                      refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[DataNotes]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[Data Notes]"
-                      name="Data Notes" />
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[DataNotes]"
+                      name="DataNotes" />
                     <outputColumn
                       refId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2263,48 +2263,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceDescription"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDescription]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDescription]" />
-                    <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceFile]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceFile"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFile]" />
-                    <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceURL]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceURL"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceURL]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceURL]" />
-                    <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[Source Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Source Notes"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Source Notes]" />
-                    <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[Data Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Data Notes"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Data Notes]" />
-                    <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[Preparation Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Preparation Notes"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Preparation Notes]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Preparation Notes]" />
-                    <inputColumn
                       refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceName]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -2318,52 +2276,64 @@
                       externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DimSourceID]"
                       lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DimSourceID]" />
                     <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceDetail]"
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceNameParent]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="SourceDetail"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceDetail]" />
+                      cachedName="SourceNameParent"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameParent]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNameParent]" />
                     <inputColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceFullName]"
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceNameDetail]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="SourceFullName"
-                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFullName]"
-                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceFullName]" />
+                      cachedName="SourceNameDetail"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameDetail]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNameDetail]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[DataOriginFile]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataOriginFile"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginFile]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataOriginFile]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[PreparationNotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PreparationNotes"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[PreparationNotes]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[PreparationNotes]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[DataOriginURL]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataOriginURL"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginURL]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataOriginURL]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[SourceNotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceNotes"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNotes]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[SourceNotes]" />
+                    <inputColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].Columns[DataNotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataNotes"
+                      externalMetadataColumnId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataNotes]"
+                      lineageId="Package\Populate DimSources\DimSource OLTP Table.Outputs[OLE DB Source Output].Columns[DataNotes]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDescription]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceFile" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceURL]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceURL" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Preparation Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Preparation Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       dataType="wstr"
@@ -2374,15 +2344,45 @@
                       dataType="i4"
                       name="DimSourceID" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameParent]"
                       dataType="wstr"
                       length="255"
-                      name="SourceDetail" />
+                      name="SourceNameParent" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFullName]"
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameDetail]"
                       dataType="wstr"
                       length="255"
-                      name="SourceFullName" />
+                      name="SourceNameDetail" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="255"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginFile]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataOriginFile" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginURL]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataOriginURL" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[PreparationNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="PreparationNotes" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceNotes" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSources\DimSource ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataNotes" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3289,30 +3289,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="450.051294903314,217.313143622668">
+          TopLeft="449.940183792203,217.090921400446">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-293.995737697168,41.933333427256"
+              EndConnector="-293.940182141612,42.1555556494782"
               Start="0,0"
-              End="-293.995737697168,34.433333427256">
+              End="-293.940182141612,34.6555556494782">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.966666713628" />
+                    End="0,17.0777778247391" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.966666713628"
-                    Point2="0,20.966666713628"
-                    Point3="-4,20.966666713628" />
+                    Point1="0,17.0777778247391"
+                    Point2="0,21.0777778247391"
+                    Point3="-4,21.0777778247391" />
                   <mssgle:LineSegment
-                    End="-289.995737697168,20.966666713628" />
+                    End="-289.940182141612,21.0777778247391" />
                   <mssgle:CubicBezierSegment
-                    Point1="-289.995737697168,20.966666713628"
-                    Point2="-293.995737697168,20.966666713628"
-                    Point3="-293.995737697168,24.966666713628" />
+                    Point1="-289.940182141612,21.0777778247391"
+                    Point2="-293.940182141612,21.0777778247391"
+                    Point3="-293.940182141612,25.0777778247391" />
                   <mssgle:LineSegment
-                    End="-293.995737697168,34.433333427256" />
+                    End="-293.940182141612,34.6555556494782" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3423,18 +3423,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="241.555568026682,196.833343977881">
+          TopLeft="241.666679137793,196.722232866769">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="119.495726876632,0"
+              EndConnector="119.384615765521,0"
               Start="0,0"
-              End="111.995726876632,0">
+              End="111.884615765521,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="111.995726876632,0" />
+                    End="111.884615765521,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3902,15 +3902,37 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,42"
+          Size="155.111111111112,41.7777777777778"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
           TopLeft="60.6153869121033,9.9757580083702" />
         <NodeLayout
-          Size="153,42"
+          Size="152.888888888889,41.7777777777778"
           Id="Package\Populate ROLAP fact file\ROLAP Fact File"
           TopLeft="62,160" />
+        <EdgeLayout
+          Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
+          TopLeft="138.307693456052,51.9757580083702">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,108.02424199163"
+              Start="0,0"
+              End="0,100.52424199163">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.52424199163" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="138,42"
+          Size="137.777777777778,41.7777777777778"
           Id="Package\Populate ROLAP fact file\ErrorCatcher"
           TopLeft="370,299" />
         <EdgeLayout
@@ -3949,30 +3971,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
-          TopLeft="138.307693456052,51.9757580083702">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,108.02424199163"
-              Start="0,0"
-              End="0,100.52424199163">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,100.52424199163" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -3991,19 +3989,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Populate ROLAP fact file\ROLAP Fact File">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate ROLAP fact file\ErrorCatcher">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

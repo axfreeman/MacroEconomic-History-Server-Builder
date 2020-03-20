@@ -172,14 +172,14 @@ GO
 CREATE TABLE [dbo].[DimSource](
 [DimSourceID] int NOT NULL IDENTITY (1,1),
 [SourceName] [nvarchar](255),
-[SourceFullName] [nvarchar](255),
-[SourceDetail] [nvarchar](255),
-[SourceDescription] [nvarchar] (255),
-[SourceFile] [nvarchar] (255),
-[SourceURL] [nvarchar] (255),
-[Preparation Notes] [nvarchar](255),
-[Source Notes] [nvarchar] (255),
-[Data Notes] [nvarchar] (255)
+[SourceNameParent] [nvarchar](255),
+[SourceNameDetail] [nvarchar](255),
+[Description] [nvarchar] (255),
+[DataOriginFile] [nvarchar] (255),
+[DataOriginURL] [nvarchar] (255),
+[PreparationNotes] [nvarchar](255),
+[SourceNotes] [nvarchar] (255),
+[DataNotes] [nvarchar] (255)
 CONSTRAINT [PK_Source] PRIMARY KEY CLUSTERED 
 (
 	[DimSourceID] ASC

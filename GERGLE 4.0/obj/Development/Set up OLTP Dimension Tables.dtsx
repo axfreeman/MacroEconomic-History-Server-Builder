@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{F371CDBA-07C3-4511-843B-57D407AADF3B}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{88AFDE03-2A81-4C37-8E84-1442DF02C957}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1877,84 +1877,84 @@
                       name="SourceName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDescription]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNameParent]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDescription]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceNameParent]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDescription]"
-                      name="SourceDescription"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNameParent]"
+                      name="SourceNameParent"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFile]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNameDetail]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFile]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceNameDetail]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFile]"
-                      name="SourceFile"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNameDetail]"
+                      name="SourceNameDetail"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceURL]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Description]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceURL]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Description]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceURL]"
-                      name="SourceURL"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Description]"
+                      name="Description"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Preparation Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataOriginFile]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Preparation Notes]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DataOriginFile]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Preparation Notes]"
-                      name="Preparation Notes"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataOriginFile]"
+                      name="DataOriginFile"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Source Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataOriginURL]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Source Notes]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DataOriginURL]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Source Notes]"
-                      name="Source Notes"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataOriginURL]"
+                      name="DataOriginURL"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[PreparationNotes]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Data Notes]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[PreparationNotes]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]"
-                      name="Data Notes"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[PreparationNotes]"
+                      name="PreparationNotes"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNotes]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDetail]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceNotes]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]"
-                      name="SourceDetail"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNotes]"
+                      name="SourceNotes"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFullName]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataNotes]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFullName]"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DataNotes]"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFullName]"
-                      name="SourceFullName"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataNotes]"
+                      name="DataNotes"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1965,45 +1965,45 @@
                       length="255"
                       name="SourceName" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDescription]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceNameParent]"
                       dataType="wstr"
                       length="255"
-                      name="SourceDescription" />
+                      name="SourceNameParent" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFile]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceNameDetail]"
                       dataType="wstr"
                       length="255"
-                      name="SourceFile" />
+                      name="SourceNameDetail" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceURL]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Description]"
                       dataType="wstr"
                       length="255"
-                      name="SourceURL" />
+                      name="Description" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Preparation Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DataOriginFile]"
                       dataType="wstr"
                       length="255"
-                      name="Preparation Notes" />
+                      name="DataOriginFile" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Source Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DataOriginURL]"
                       dataType="wstr"
                       length="255"
-                      name="Source Notes" />
+                      name="DataOriginURL" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[Data Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[PreparationNotes]"
                       dataType="wstr"
                       length="255"
-                      name="Data Notes" />
+                      name="PreparationNotes" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceDetail]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceNotes]"
                       dataType="wstr"
                       length="255"
-                      name="SourceDetail" />
+                      name="SourceNotes" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[SourceFullName]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DataNotes]"
                       dataType="wstr"
                       length="255"
-                      name="SourceFullName" />
+                      name="DataNotes" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2018,53 +2018,53 @@
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceName]"
                       name="SourceName" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFullName]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceNameParent]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFullName]"
-                      name="SourceFullName" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceNameParent]"
+                      name="SourceNameParent" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDetail]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceNameDetail]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDetail]"
-                      name="SourceDetail" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceNameDetail]"
+                      name="SourceNameDetail" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDescription]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Description]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceDescription]"
-                      name="SourceDescription" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Description]"
+                      name="Description" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFile]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[DataOriginFile]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceFile]"
-                      name="SourceFile" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[DataOriginFile]"
+                      name="DataOriginFile" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceURL]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[DataOriginURL]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceURL]"
-                      name="SourceURL" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[DataOriginURL]"
+                      name="DataOriginURL" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Preparation Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[PreparationNotes]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Preparation Notes]"
-                      name="Preparation Notes" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[PreparationNotes]"
+                      name="PreparationNotes" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Source Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceNotes]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Source Notes]"
-                      name="Source Notes" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[SourceNotes]"
+                      name="SourceNotes" />
                     <outputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Data Notes]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[DataNotes]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[Data Notes]"
-                      name="Data Notes" />
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[DataNotes]"
+                      name="DataNotes" />
                     <outputColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2155,55 +2155,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceDescription"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDescription]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDescription]" />
-                    <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceFile]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceFile"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFile]" />
-                    <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceURL]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceURL"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceURL]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceURL]" />
-                    <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Preparation Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Preparation Notes"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Preparation Notes]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Preparation Notes]" />
-                    <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Source Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Source Notes"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Source Notes]" />
-                    <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Data Notes]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Data Notes"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Data Notes]" />
-                    <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceDetail]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="SourceDetail"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceDetail]" />
-                    <inputColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceName]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -2211,45 +2162,64 @@
                       externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceName]" />
                     <inputColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceFullName]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceNameParent]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="SourceFullName"
-                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFullName]"
-                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceFullName]" />
+                      cachedName="SourceNameParent"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameParent]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNameParent]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceNameDetail]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceNameDetail"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameDetail]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNameDetail]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[DataOriginFile]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataOriginFile"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginFile]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataOriginFile]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[DataOriginURL]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataOriginURL"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginURL]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataOriginURL]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[PreparationNotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PreparationNotes"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[PreparationNotes]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[PreparationNotes]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[SourceNotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SourceNotes"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNotes]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[SourceNotes]" />
+                    <inputColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].Columns[DataNotes]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DataNotes"
+                      externalMetadataColumnId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataNotes]"
+                      lineageId="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet.Outputs[Excel Source Output].Columns[DataNotes]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDescription]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFile]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceFile" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceURL]"
-                      dataType="wstr"
-                      length="255"
-                      name="SourceURL" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Preparation Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Preparation Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Source Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Notes" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Data Notes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Data Notes" />
                     <externalMetadataColumn
                       refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       dataType="wstr"
@@ -2260,15 +2230,45 @@
                       dataType="i4"
                       name="DimSourceID" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceDetail]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameParent]"
                       dataType="wstr"
                       length="255"
-                      name="SourceDetail" />
+                      name="SourceNameParent" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceFullName]"
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNameDetail]"
                       dataType="wstr"
                       length="255"
-                      name="SourceFullName" />
+                      name="SourceNameDetail" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="255"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginFile]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataOriginFile" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataOriginURL]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataOriginURL" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[PreparationNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="PreparationNotes" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceNotes" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimSource OLTP  Table\DimSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DataNotes]"
+                      dataType="wstr"
+                      length="255"
+                      name="DataNotes" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3662,7 +3662,7 @@
     design-time-name="Package\Populate DimSource OLTP  Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="212,41.7777777777778"
           Id="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet"
@@ -3690,9 +3690,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3794,7 +3792,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="220.888888888889,41.7777777777778"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
@@ -3826,7 +3824,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3848,7 +3848,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
