@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="167"
-  DTS:VersionGUID="{CBCF3BD2-2BCE-4C45-A898-FD3214EF6EEE}">
+  DTS:VersionBuild="169"
+  DTS:VersionGUID="{1DE78A73-E192-4290-9E18-5905E887B947}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -11286,7 +11286,7 @@
                     <inputColumn
                       refId="Package\OECD\Add Source and Definition.Inputs[Derived Column Input].Columns[SourceDetail]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="255"
                       cachedName="SourceDetail"
                       lineageId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[SourceDetail]" />
                   </inputColumns>
@@ -12595,7 +12595,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[Country code]"
-                      length="50"
+                      length="255"
                       lineageId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[Country code]"
                       name="Country code"
                       truncationRowDisposition="FailComponent">
@@ -12816,7 +12816,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[IndicatorSourceCode]"
-                      length="50"
+                      length="255"
                       lineageId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[IndicatorSourceCode]"
                       name="IndicatorSourceCode"
                       truncationRowDisposition="FailComponent">
@@ -12877,9 +12877,30 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[SourceDetail]"
-                      length="50"
+                      length="255"
                       lineageId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[SourceDetail]"
                       name="SourceDetail"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[IndicatorSourceDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[IndicatorSourceDescription]"
+                      length="255"
+                      lineageId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[IndicatorSourceDescription]"
+                      name="IndicatorSourceDescription"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -13130,7 +13151,7 @@
                     <externalMetadataColumn
                       refId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[Country code]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="Country code" />
                     <externalMetadataColumn
                       refId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[1950]"
@@ -13175,7 +13196,7 @@
                     <externalMetadataColumn
                       refId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[2018]"
@@ -13188,8 +13209,13 @@
                     <externalMetadataColumn
                       refId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[SourceDetail]"
                       dataType="wstr"
-                      length="50"
+                      length="255"
                       name="SourceDetail" />
+                    <externalMetadataColumn
+                      refId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].ExternalColumns[IndicatorSourceDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceDescription" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -13704,7 +13730,7 @@
                     <inputColumn
                       refId="Package\OECD\PivotedSources.Inputs[OLE DB Destination Input].Columns[IndicatorSourceCode]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="255"
                       cachedName="IndicatorSourceCode"
                       externalMetadataColumnId="Package\OECD\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       lineageId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[IndicatorSourceCode]" />
@@ -13725,7 +13751,7 @@
                     <inputColumn
                       refId="Package\OECD\PivotedSources.Inputs[OLE DB Destination Input].Columns[Country code]"
                       cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedLength="255"
                       cachedName="Country code"
                       externalMetadataColumnId="Package\OECD\PivotedSources.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       lineageId="Package\OECD\OECD Comprehensive.Outputs[Flat File Source Output].Columns[Country code]" />
@@ -38905,7 +38931,7 @@
     design-time-name="Package\OECD">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="187.111111111112,41.7777777777778"
           Id="Package\OECD\OECD Comprehensive"
@@ -38971,9 +38997,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-13.720164867422,24.3262766050316,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
