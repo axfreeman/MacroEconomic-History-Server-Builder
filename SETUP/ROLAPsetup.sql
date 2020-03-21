@@ -227,60 +227,22 @@ FROM dbo.Fact LEFT OUTER JOIN
  dbo.DimDefinitions ON dbo.Fact.DimDefinitionID=dbo.DimDefinitions.DimDefinitionID 
 GO
 
-CREATE OR ALTER VIEW [dbo].[FactReduced]
-AS
-SELECT
- FactID,
- DimSourceID,
- DimDefinitionID,
- DimGeoID,
- DimIndicatorID,
- YearAsDate,
- Value
-FROM [dbo].[FactQuery]
-WHERE
-(
- Type= N'GDP Measures' OR
- Type= N'Capital' OR
- Type= N'GDP Components' OR
- Type= N'Demography and Labour' OR
- Type= N'Indices'
-) AND
-(
-Unit=N'USD' OR
-Unit=N'LCU' OR
-Unit=N'Index' OR
-Unit=N'LCU/LCU' OR
-Unit=N'LCU/Population' OR
-Unit=N'LCU/USD' OR
-Unit=N'Persons' OR
-Unit=N'PPP' OR
-Unit=N'USD/LCU'
-) AND
-(
-SourceName='UN2018' OR
-SourceName='WDI2018' OR
-SourceName='MADDISON' OR
-SourceName='WEO201O' OR
-SourceName='MACROHIST' OR
-SourceName='BARRO-URSUA' OR
-SourceName='PENN' OR
-SourceName='WID' OR
-SourceName='OECD'
-)
-GO
 
 CREATE OR ALTER VIEW [dbo].[FactQueryCapitalStock]
 AS
 SELECT FactID, DimSourceID, DimDefinitionID, DimGeoID, DimIndicatorID, YearAsDate, Value
-FROM  dbo.FactQuery
-WHERE (Type = N'GDP Measures' OR
-         Type = N'Capital' OR
-         Type = N'GDP Components') AND (Unit = N'USD' OR
-         Unit = N'LCU' OR
-         Unit = N'EUR') AND (SourceName = 'AMECO' OR
-         SourceName = 'UN2018' OR
-         SourceName = 'OECD')
+FROM   dbo.FactQuery
+WHERE  (Type = N'GDP Measures' OR
+          Type = N'Capital' OR
+          Type = N'GDP Components' OR
+          Type = N'Demography and Labour' OR
+          Type = N'Indices') AND (SourceName = 'UN2018' OR
+          SourceName = 'MADDISON' OR
+          SourceName = 'MACROHIST' OR
+          SourceName = 'BARRO-URSUA' OR
+		  SourceName='Eurostat' OR
+          SourceName = 'PENN' OR
+          SourceName = 'OECD')
 GO
 
 
