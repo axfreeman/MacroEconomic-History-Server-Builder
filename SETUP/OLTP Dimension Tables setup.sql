@@ -107,28 +107,29 @@ CREATE TABLE [dbo].[DimGeo](
 
 GO
 
--- this table is used on the OLTP server to standardise indicator codes.
+-- this table is used on the OLTP server to standardise indicator names.
 -- unlike GeoStandardNames, it does not directly result in a user-friendly name.
--- instead, it produces a standard code, by which the indicator is known in DimIndicator.
+-- instead, it produces a standard name, by which the indicator is known in DimIndicator.
 -- DimIndicator provides the user-friendly naming system.
 
 BEGIN TRY 
-DROP TABLE [dbo].[IndicatorStandardCodes] 
+DROP TABLE [dbo].[IndicatorStandardNames] 
 END TRY 
 BEGIN CATCH
 END CATCH
 GO
 
-CREATE TABLE [dbo].[IndicatorStandardCodes](
+CREATE TABLE [dbo].[IndicatorStandardNames](
 		-- the source of the data (eg UN2018). Unlike GeoStandardNames, this field is needed 
 		-- because two sources may use the same name for two different indicators
-	[IndicatorSource] [nvarchar] (50) NOT NULL, 
-	[IndicatorSourceDescription] [nvarchar](255) NOT NULL,
+	[IndicatorSource] [nvarchar] (255) NOT NULL, 
 		-- many sources also have an ID system of their own. For completeness, this is recorded here, but not (9/12/2018) currently used.
+	[IndicatorSourceDescription] [nvarchar](255) NOT NULL,
+		-- this is the code by which the source (provider) identifies the data. Sometimes it is a complex alphanumeric code, and sometimes it is just the description itself
 	[IndicatorSourceCode] [nvarchar](255) NOT NULL,
-		-- a standard code which identifies the indicator uniquely on the ROLAP server
-	[IndicatorStandardCode] [nvarchar](255) NOT NULL
- CONSTRAINT [PK_IndicatorSourceName] PRIMARY KEY CLUSTERED 
+		-- a standard name which identifies the indicator uniquely on the ROLAP server
+	[IndicatorStandardName] [nvarchar](255) NOT NULL
+ CONSTRAINT [PK_IndicatorSourceKey] PRIMARY KEY CLUSTERED 
 (
 	[IndicatorSource],[IndicatorSourceCode] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY])
@@ -145,16 +146,16 @@ GO
 
 CREATE TABLE [dbo].[DimIndicator](
 	[DimIndicatorID] [int] NOT NULL IDENTITY (1,1), 
-		-- the standard code which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
-	[IndicatorStandardCode][nvarchar] (256) NOT NULL,
+		-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
+	[IndicatorStandardName][nvarchar] (256) NOT NULL,
 	[Type][nvarchar](255)NULL,
-	[IndicatorName] [nvarchar](255) NULL, 
+	[Indicator] [nvarchar](255) NULL, 
 	[Sector] [nvarchar](255) NULL,
 	[Qualifier] [nvarchar] (255) NULL, 
 	[Unit][nvarchar](255)NULL,
 	[Measure] [nvarchar](255) NULL,
 	[BaseYear] [nvarchar](255) NULL
- CONSTRAINT [IX_IndicatorStandardCode] UNIQUE(IndicatorStandardCode),	
+ CONSTRAINT [IX_IndicatorStandardName] UNIQUE(IndicatorStandardName),	
  CONSTRAINT [PK_DimIndicator] PRIMARY KEY CLUSTERED 
 (
 	[DimIndicatorID] ASC

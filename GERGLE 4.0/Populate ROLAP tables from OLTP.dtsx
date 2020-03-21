@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="220"
-  DTS:VersionGUID="{38C34962-DC6B-4222-80C0-A820A5AB68D3}">
+  DTS:VersionBuild="222"
+  DTS:VersionGUID="{929F46F4-1C3D-4BD0-B671-F719E265110E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1468,16 +1468,6 @@
                       name="Measure"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardCode]"
-                      length="256"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Qualifier]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1496,16 +1486,6 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Type]"
                       name="Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorName]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorName]"
-                      name="IndicatorName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]"
@@ -1537,6 +1517,26 @@
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[BaseYear]"
                       name="BaseYear"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
+                      length="256"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Indicator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Indicator]"
+                      name="Indicator"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1550,11 +1550,6 @@
                       length="255"
                       name="Measure" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      length="256"
-                      name="IndicatorStandardCode" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Qualifier]"
                       dataType="wstr"
                       length="255"
@@ -1564,11 +1559,6 @@
                       dataType="wstr"
                       length="255"
                       name="Type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorName]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorName" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Unit]"
                       dataType="wstr"
@@ -1584,6 +1574,16 @@
                       dataType="wstr"
                       length="255"
                       name="BaseYear" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="256"
+                      name="IndicatorStandardName" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      name="Indicator" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1597,11 +1597,11 @@
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[DimIndicatorID]"
                       name="DimIndicatorID" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardCode]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
                       dataType="wstr"
                       length="256"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Measure]"
                       dataType="wstr"
@@ -1609,11 +1609,11 @@
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Measure]"
                       name="Measure" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[IndicatorName]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Indicator]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[IndicatorName]"
-                      name="IndicatorName" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Indicator]"
+                      name="Indicator" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Unit]"
                       dataType="wstr"
@@ -1747,13 +1747,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Measure]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Measure]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[IndicatorStandardCode]"
-                      cachedDataType="wstr"
-                      cachedLength="256"
-                      cachedName="IndicatorStandardCode"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardCode]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardCode]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Qualifier]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1767,13 +1760,6 @@
                       cachedName="Type"
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Type]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[IndicatorName]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IndicatorName"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorName]" />
                     <inputColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Unit]"
                       cachedDataType="wstr"
@@ -1795,6 +1781,20 @@
                       cachedName="BaseYear"
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[BaseYear]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[BaseYear]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[IndicatorStandardName]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="IndicatorStandardName"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicator"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Indicator]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1802,11 +1802,6 @@
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[DimIndicatorID]"
                       dataType="i4"
                       name="DimIndicatorID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      length="256"
-                      name="IndicatorStandardCode" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Measure]"
                       dataType="wstr"
@@ -1823,11 +1818,6 @@
                       length="255"
                       name="Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorName" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
                       dataType="wstr"
                       length="255"
@@ -1842,6 +1832,16 @@
                       dataType="wstr"
                       length="255"
                       name="BaseYear" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="256"
+                      name="IndicatorStandardName" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      name="Indicator" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2437,187 +2437,6 @@
           version="1">
           <components>
             <component
-              refId="Package\Populate ROLAP fact file\ErrorCatcher"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="ErrorCatcher"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[FactSourceErrorCatcher]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate ROLAP fact file\ErrorCatcher.Connections[OleDbConnection]"
-                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].Columns[Value]"
-                      cachedDataType="r8"
-                      cachedName="Value"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Value]" />
-                    <inputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].Columns[Year]"
-                      cachedDataType="i4"
-                      cachedName="Year"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Year]" />
-                    <inputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
-                      cachedDataType="i4"
-                      cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]" />
-                    <inputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
-                      cachedDataType="i4"
-                      cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]" />
-                    <inputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].Columns[GeoStandardName]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="GeoStandardName"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[GeoStandardName]" />
-                    <inputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].Columns[IndicatorStandardCode]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IndicatorStandardCode"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceName]"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[IndicatorStandardCode]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
-                      dataType="i8"
-                      name="OLTP_FactID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      dataType="wstr"
-                      length="255"
-                      name="GeoSourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceName]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorSourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      dataType="i4"
-                      name="Year" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      dataType="r8"
-                      name="Value" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
-                      dataType="i8"
-                      name="ErrorColumn" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                      dataType="i8"
-                      name="ErrorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      dataType="wstr"
-                      length="50"
-                      name="SourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
-                      dataType="wstr"
-                      length="50"
-                      name="DefinitionName" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate ROLAP fact file\ErrorCatcher.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate ROLAP fact file\ErrorCatcher.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\ErrorCatcher.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate ROLAP fact file\ErrorCatcher.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\Populate ROLAP fact file\OLTP FactQuery"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
@@ -2725,16 +2544,6 @@
                       name="GeoStandardName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardCode]"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[YearAsDate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Conversion"
@@ -2770,6 +2579,16 @@
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[OLTP_FactID]"
                       name="OLTP_FactID"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2794,11 +2613,6 @@
                       dataType="wstr"
                       length="255"
                       name="GeoStandardName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorStandardCode" />
                     <externalMetadataColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[YearAsDate]"
                       dataType="dbTimeStamp"
@@ -2825,6 +2639,11 @@
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[OLTP_FactID]"
                       dataType="i8"
                       name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorStandardName" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2874,12 +2693,6 @@
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[GeoStandardName]"
                       name="GeoStandardName" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode" />
-                    <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[YearAsDate]"
                       dataType="dbTimeStamp"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[YearAsDate]"
@@ -2890,6 +2703,12 @@
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName" />
                     <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
@@ -2902,11 +2721,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Populate ROLAP fact file\ROLAP Fact File"
+              refId="Package\Populate ROLAP fact file\ROLAP Fact Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="ROLAP Fact File"
+              name="ROLAP Fact Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -2959,7 +2778,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Populate ROLAP fact file\ROLAP Fact File.Connections[OleDbConnection]"
+                  refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Connections[OleDbConnection]"
                   connectionManagerID="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}:external"
                   connectionManagerRefId="Project.ConnectionManagers[ROLAP]"
                   description="The OLE DB runtime connection used to access the database."
@@ -2967,100 +2786,100 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input]"
+                  refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
-                  errorRowDisposition="RedirectRow"
+                  errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].Columns[Value]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[Value]"
                       cachedDataType="r8"
                       cachedName="Value"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Value]" />
                     <inputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].Columns[DimIndicatorID]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[DimIndicatorID]"
                       cachedDataType="i4"
                       cachedName="DimIndicatorID"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimIndicatorID]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimIndicatorID]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimIndicatorID]" />
                     <inputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].Columns[DimGeoID]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[DimGeoID]"
                       cachedDataType="i4"
                       cachedName="DimGeoID"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimGeoID]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimGeoID]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimGeoID]" />
                     <inputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].Columns[YearAsDate]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[YearAsDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="YearAsDate"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[YearAsDate]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[YearAsDate]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[YearAsDate]" />
                     <inputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].Columns[DimSourceID]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[DimSourceID]"
                       cachedDataType="i4"
                       cachedName="DimSourceID"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimSourceID]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimSourceID]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimSourceID]" />
                     <inputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].Columns[DimDefinitionID]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[DimDefinitionID]"
                       cachedDataType="i4"
                       cachedName="DimDefinitionID"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimDefinitionID]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimDefinitionID]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimDefinitionID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[FactID]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[FactID]"
                       dataType="i8"
                       name="FactID" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimGeoID]"
-                      dataType="i4"
-                      name="DimGeoID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimIndicatorID]"
-                      dataType="i4"
-                      name="DimIndicatorID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      dataType="r8"
-                      name="Value" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[YearAsDate]"
-                      dataType="dbDate"
-                      name="YearAsDate" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimSourceID]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimSourceID]"
                       dataType="i4"
                       name="DimSourceID" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input].ExternalColumns[DimDefinitionID]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimDefinitionID]"
                       dataType="i4"
                       name="DimDefinitionID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimGeoID]"
+                      dataType="i4"
+                      name="DimGeoID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimIndicatorID]"
+                      dataType="i4"
+                      name="DimIndicatorID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[YearAsDate]"
+                      dataType="dbDate"
+                      name="YearAsDate" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Populate ROLAP fact file\ROLAP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Populate ROLAP fact file\ROLAP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3071,13 +2890,8 @@
           </components>
           <paths>
             <path
-              refId="Package\Populate ROLAP fact file.Paths[OLE DB Destination Error Output]"
-              endId="Package\Populate ROLAP fact file\ErrorCatcher.Inputs[OLE DB Destination Input]"
-              name="OLE DB Destination Error Output"
-              startId="Package\Populate ROLAP fact file\ROLAP Fact File.Outputs[OLE DB Destination Error Output]" />
-            <path
               refId="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
-              endId="Package\Populate ROLAP fact file\ROLAP Fact File.Inputs[OLE DB Destination Input]"
+              endId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output]" />
           </paths>
@@ -3770,7 +3584,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="175.111111111112,41.7777777777778"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
@@ -3798,9 +3612,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3836,7 +3648,7 @@
     design-time-name="Package\Populate DimSources">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="193.777777777778,41.7777777777778"
           Id="Package\Populate DimSources\DimSource ROLAP Table"
@@ -3864,7 +3676,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3900,75 +3714,35 @@
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="155.111111111112,41.7777777777778"
+          Size="254.666666666667,41.7777777777778"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
-          TopLeft="60.6153869121033,9.9757580083702" />
+          TopLeft="96.1709424676588,38.4202024528147" />
         <NodeLayout
-          Size="152.888888888889,41.7777777777778"
-          Id="Package\Populate ROLAP fact file\ROLAP Fact File"
-          TopLeft="62,160" />
+          Size="168,41.7777777777778"
+          Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
+          TopLeft="132.888888888889,165.777777777778" />
         <EdgeLayout
           Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
-          TopLeft="138.307693456052,51.9757580083702">
+          TopLeft="220.196582344941,80.1979802305924">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,108.02424199163"
+              EndConnector="0,85.5797975471853"
               Start="0,0"
-              End="0,100.52424199163">
+              End="0,78.0797975471853">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,100.52424199163" />
+                    End="0,78.0797975471853" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="137.777777777778,41.7777777777778"
-          Id="Package\Populate ROLAP fact file\ErrorCatcher"
-          TopLeft="370,299" />
-        <EdgeLayout
-          Id="Package\Populate ROLAP fact file.Paths[OLE DB Destination Error Output]"
-          TopLeft="138.5,202">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="300.5,97"
-              Start="0,0"
-              End="300.5,89.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44.5"
-                    Point2="0,48.5"
-                    Point3="4,48.5" />
-                  <mssgle:LineSegment
-                    End="296.5,48.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="296.5,48.5"
-                    Point2="300.5,48.5"
-                    Point3="300.5,52.5" />
-                  <mssgle:LineSegment
-                    End="300.5,89.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="77.04109375,53.5,146.4178125,11.43359375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3988,7 +3762,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Populate ROLAP fact file\ROLAP Fact File">
+    design-time-name="Package\Populate ROLAP fact file\ROLAP Fact Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -337,16 +337,16 @@ SELECT
  dbo.FactSource.GeoSourceName,
  dbo.GeoStandardNames.GeoStandardName,
  dbo.FactSource.IndicatorSourceCode as [Fact Indicator Name],
- dbo.IndicatorStandardCodes.IndicatorSourceCode,
- dbo.IndicatorStandardCodes.IndicatorStandardCode, 
+ dbo.IndicatorStandardNames.IndicatorSourceCode,
+ dbo.IndicatorStandardNames.IndicatorStandardName, 
  dbo.FactSource.Year,
  dbo.FactSource.Value
 FROM dbo.FactSource
  RIGHT OUTER JOIN dbo.GeoStandardNames
  ON dbo.FactSource.GeoSourceName = dbo.GeoStandardNames.GeoSourceName
- RIGHT OUTER JOIN dbo.IndicatorStandardCodes
- ON dbo.FactSource.SourceName = dbo.IndicatorStandardCodes.IndicatorSource 
- AND dbo.FactSource.IndicatorSourceCode = dbo.IndicatorStandardCodes.IndicatorSourceCode
+ RIGHT OUTER JOIN dbo.IndicatorStandardNames
+ ON dbo.FactSource.SourceName = dbo.IndicatorStandardNames.IndicatorSource 
+ AND dbo.FactSource.IndicatorSourceCode = dbo.IndicatorStandardNames.IndicatorSourceCode
  INNER JOIN dbo.DimSource
  ON dbo.FactSource.SourceName=dbo.DimSource.SourceName
  INNER JOIN dbo.DimDefinitions
@@ -376,11 +376,11 @@ dbo.RecognisedFacts.Value,
 dbo.DimIndicator.DimIndicatorID, 
 dbo.DimGeo.DimGeoID, 
 dbo.RecognisedFacts.GeoStandardName, 
-dbo.RecognisedFacts.IndicatorStandardCode, 
+dbo.RecognisedFacts.IndicatorStandardName, 
 TRY_CONVERT(DateTime, STR(dbo.RecognisedFacts.Year) + '-01-01') AS YearAsDate
 FROM dbo.RecognisedFacts LEFT OUTER JOIN
  dbo.DimIndicator ON 
- dbo.RecognisedFacts.IndicatorStandardCode = dbo.DimIndicator.IndicatorStandardCode LEFT OUTER JOIN
+ dbo.RecognisedFacts.IndicatorStandardName = dbo.DimIndicator.IndicatorStandardName LEFT OUTER JOIN
  dbo.DimGeo ON 
  dbo.RecognisedFacts.GeoStandardName = dbo.DimGeo.GeoStandardName
 GO
@@ -401,7 +401,7 @@ CREATE VIEW [dbo].[StandardisedPivotedSources]
 AS
 SELECT dbo.PivotedSources.*
 FROM dbo.PivotedSources INNER JOIN
- dbo.IndicatorStandardCodes ON 
- dbo.PivotedSources.IndicatorSourceCode = dbo.IndicatorStandardCodes.IndicatorSourceCode AND
- dbo.PivotedSources.SourceName = dbo.IndicatorStandardCodes.IndicatorSource
+ dbo.IndicatorStandardNames ON 
+ dbo.PivotedSources.IndicatorSourceCode = dbo.IndicatorStandardNames.IndicatorSourceCode AND
+ dbo.PivotedSources.SourceName = dbo.IndicatorStandardNames.IndicatorSource
 GO

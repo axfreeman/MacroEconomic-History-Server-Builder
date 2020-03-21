@@ -24,8 +24,8 @@ SELECT
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='UN2018' AND 
- ([FactQuery].IndicatorStandardCode='GDP-TOTAL-USD-CURRENT' OR
-  [FactQuery].IndicatorStandardCode='POPULATION')
+ ([FactQuery].indicatorStandardName='GDP-TOTAL-USD-CURRENT' OR
+  [FactQuery].indicatorStandardName='POPULATION')
 UNION
 SELECT 
  [DimSourceID],
@@ -39,8 +39,8 @@ FROM [FactQuery]
  WHERE [FactQuery].SourceName='PENN' AND 
  (Year>=1970) AND
  (GeoStandardName='Taiwan') AND
- ([FactQuery].IndicatorStandardCode='GDP-TOTAL-USD-CURRENT' OR
-  [FactQuery].IndicatorStandardCode='POPULATION')
+ ([FactQuery].indicatorStandardName='GDP-TOTAL-USD-CURRENT' OR
+  [FactQuery].indicatorStandardName='POPULATION')
 GO
 
 -- plonk the UN entries into a temporary file so we can edit out the duplicates
@@ -274,14 +274,14 @@ SELECT
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
- IndicatorStandardCode,
+ indicatorStandardName,
  [Year],
  [YearAsDate],
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='WID'
-  AND IndicatorStandardCode='GDP-NET-TOTAL-LCU-CURRENT'
-  or IndicatorStandardCode='GDP-FOREIGN-INCOME-LCU'
+  AND indicatorStandardName='GDP-NET-TOTAL-LCU-CURRENT'
+  or indicatorStandardName='GDP-FOREIGN-INCOME-LCU'
 GO
 
 -- plonk the WID definitions into a temporary file so we can edit out the duplicates
@@ -298,7 +298,7 @@ SELECT
  [DefinitionName], 
  [GeoStandardName],
  [ReportingUnit],
- [IndicatorStandardCode],
+ [indicatorStandardName],
  [Year],
  [YearAsDate],
  [Value]
@@ -323,13 +323,13 @@ Year=1992
 DELETE FROM [dbo].[WID_TD_File] 
 WHERE 
 ([WID_TD_File].[ReportingUnit]= 'USSR') AND
-(IndicatorStandardCode='GDP-NET-TOTAL-LCU-CURRENT')AND
+(indicatorStandardName='GDP-NET-TOTAL-LCU-CURRENT')AND
 (Year<1990)
 
 DELETE FROM [dbo].[WID_TD_File] 
 WHERE 
 ([WID_TD_File].[ReportingUnit]= 'USSR') AND
-(IndicatorStandardCode='GDP-FOREIGN-INCOME-LCU')AND
+(indicatorStandardName='GDP-FOREIGN-INCOME-LCU')AND
 (Year<2002)
 
 -- delete duplicated Yugoslavia components
@@ -337,7 +337,7 @@ WHERE
 DELETE FROM [dbo].[WID_TD_File] 
 WHERE 
 ([WID_TD_File].[ReportingUnit]= 'Yugoslavia') AND
-(IndicatorStandardCode='GDP-FOREIGN-INCOME-LCU')AND
+(indicatorStandardName='GDP-FOREIGN-INCOME-LCU')AND
 (Year<2007)
 
 -- Ethiopia 
@@ -374,7 +374,7 @@ FROM [WID_TD_File] INNER JOIN DimGeo ON
 INNER JOIN DimDefinitions ON
  DimDefinitions.DefinitionName=WID_TD_File.DefinitionName
 INNER JOIN DimIndicator ON
- DimIndicator.IndicatorStandardCode=WID_TD_File.IndicatorStandardCode 
+ DimIndicator.indicatorStandardName=WID_TD_File.indicatorStandardName 
 GO
 
 

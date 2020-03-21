@@ -17,13 +17,13 @@ SELECT
  [DimSourceID],
   N'CLEANED' as DefinitionName, 
  [DimGeoID],
-  N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardCode,
+  N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardName,
  [YearAsDate],
  [Value]
  FROM [FactQuery]
 	WHERE 
 	([FactQuery].SourceName = N'IFS2018') 
-	and [FactQuery].IndicatorStandardCode='GDP-TOTAL-USD-CURRENT'
+	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT'
 -- for UK and former colonies, and Mexico, use the seasonally-adjusted series, which goes back further in time
 	and [FactQuery].GeoStandardName!='United States'
 	and [FactQuery].GeoStandardName!='Australia'
@@ -36,13 +36,13 @@ SELECT
  [DimSourceID],
   N'CLEANED' as DefinitionName, 
  [DimGeoID],
-  N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardCode,
+  N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardName,
  [YearAsDate],
  [Value]
  FROM [FactQuery]
 	WHERE 
 	([FactQuery].SourceName = N'IFS2018') 
-	and [FactQuery].IndicatorStandardCode='GDP-TOTAL-USD-CURRENT-SA'
+	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT-SA'
 	and (
 -- for UK and former colonies, and Mexico, use the seasonally-adjusted series, which goes back further in time
 	[FactQuery].GeoStandardName='United States'
@@ -72,7 +72,7 @@ SELECT
  YearAsDate,
  Value
 FROM [IFSSeasonalAdjustmentRemoval] INNER JOIN DimIndicator ON
- DimIndicator.IndicatorStandardCode=IFSSeasonalAdjustmentRemoval.IndicatorStandardCode
+ DimIndicator.IndicatorStandardName=IFSSeasonalAdjustmentRemoval.IndicatorStandardName
 INNER JOIN DimDefinitions ON
  DimDefinitions.DefinitionName=IFSSeasonalAdjustmentRemoval.DefinitionName
 GO

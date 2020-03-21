@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{88AFDE03-2A81-4C37-8E84-1442DF02C957}">
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{63C9BB11-8326-4FA9-83E1-AA871625E314}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1389,16 +1389,6 @@
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardCode]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -1407,16 +1397,6 @@
                       length="255"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Type]"
                       name="Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[IndicatorName]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorName]"
-                      name="IndicatorName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Unit]"
@@ -1468,24 +1448,34 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Base Year]"
                       name="Base Year"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorStandardName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardName]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Indicator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Indicator]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Indicator]"
+                      name="Indicator"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorStandardCode" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Type]"
                       dataType="wstr"
                       length="255"
                       name="Type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[IndicatorName]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorName" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Unit]"
                       dataType="wstr"
@@ -1511,6 +1501,16 @@
                       dataType="wstr"
                       length="255"
                       name="Base Year" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorStandardName" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      name="Indicator" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1519,11 +1519,11 @@
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorStandardCode]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorStandardName]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Type]"
                       dataType="wstr"
@@ -1531,11 +1531,11 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Type]"
                       name="Type" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorName]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Indicator]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorName]"
-                      name="IndicatorName" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Indicator]"
+                      name="Indicator" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Sector]"
                       dataType="wstr"
@@ -1656,13 +1656,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[IndicatorStandardCode]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IndicatorStandardCode"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardCode]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorStandardCode]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Measure]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1684,13 +1677,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Type]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[IndicatorName]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IndicatorName"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorName]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Unit]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1711,6 +1697,20 @@
                       cachedName="Base Year"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[BaseYear]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Base Year]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[IndicatorStandardName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorStandardName"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorStandardName]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicator"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Indicator]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1718,11 +1718,6 @@
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DimIndicatorID]"
                       dataType="i4"
                       name="DimIndicatorID" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardCode]"
-                      dataType="wstr"
-                      length="256"
-                      name="IndicatorStandardCode" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Measure]"
                       dataType="wstr"
@@ -1739,11 +1734,6 @@
                       length="255"
                       name="Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorName]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorName" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
                       dataType="wstr"
                       length="255"
@@ -1758,6 +1748,16 @@
                       dataType="wstr"
                       length="255"
                       name="BaseYear" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="256"
+                      name="IndicatorStandardName" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      name="Indicator" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2717,14 +2717,14 @@
                       name="IndicatorSourceCode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorStandardCode]"
+                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorStandardName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardCode]"
+                      externalMetadataColumnId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardName]"
                       length="255"
-                      lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode"
+                      lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -2745,10 +2745,10 @@
                       length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
-                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardCode]"
+                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].ExternalColumns[IndicatorStandardName]"
                       dataType="wstr"
                       length="255"
-                      name="IndicatorStandardCode" />
+                      name="IndicatorStandardName" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2775,11 +2775,11 @@
                       lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Error Output].Columns[IndicatorSourceCode]"
                       name="IndicatorSourceCode" />
                     <outputColumn
-                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Error Output].Columns[IndicatorStandardCode]"
+                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Error Output].Columns[IndicatorStandardName]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Error Output].Columns[IndicatorStandardCode]"
-                      name="IndicatorStandardCode" />
+                      lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Error Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName" />
                     <outputColumn
                       refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2813,7 +2813,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[IndicatorStandardCodes]</property>
+                  name="OpenRowset">[dbo].[IndicatorStandardNames]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2870,19 +2870,12 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].Columns[IndicatorStandardCode]"
+                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].Columns[IndicatorSource]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="IndicatorStandardCode"
-                      externalMetadataColumnId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardCode]"
-                      lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorStandardCode]" />
-                    <inputColumn
-                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].Columns[ShortSource]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="ShortSource"
+                      cachedName="IndicatorSource"
                       externalMetadataColumnId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSource]"
-                      lineageId="Package\Populate IndicatorStandard OLTP Table\Shorten Source.Outputs[Derived Column Output].Columns[ShortSource]" />
+                      lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorSource]" />
                     <inputColumn
                       refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].Columns[IndicatorSourceDescription]"
                       cachedDataType="wstr"
@@ -2897,19 +2890,21 @@
                       cachedName="IndicatorSourceCode"
                       externalMetadataColumnId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorSourceCode]" />
+                    <inputColumn
+                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].Columns[IndicatorStandardName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorStandardName"
+                      externalMetadataColumnId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      lineageId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard.Outputs[Excel Source Output].Columns[IndicatorStandardName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSource]"
                       dataType="wstr"
-                      length="50"
-                      name="IndicatorSource" />
-                    <externalMetadataColumn
-                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardCode]"
-                      dataType="wstr"
                       length="255"
-                      name="IndicatorStandardCode" />
+                      name="IndicatorSource" />
                     <externalMetadataColumn
                       refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceDescription]"
                       dataType="wstr"
@@ -2920,6 +2915,11 @@
                       dataType="wstr"
                       length="255"
                       name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorStandardName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3596,7 +3596,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="196.888888888889,41.7777777777778"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
@@ -3624,9 +3624,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3662,7 +3660,7 @@
     design-time-name="Package\Populate DimSource OLTP  Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="212,41.7777777777778"
           Id="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet"
@@ -3690,7 +3688,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3792,11 +3792,11 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="220.888888888889,41.7777777777778"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
-          TopLeft="66,197" />
+          TopLeft="66.1851851778266,197" />
         <NodeLayout
           Size="151.111111111112,41.7777777777778"
           Id="Package\Populate IndicatorStandard OLTP Table\Shorten Source"
@@ -3807,26 +3807,24 @@
           TopLeft="92,12" />
         <EdgeLayout
           Id="Package\Populate IndicatorStandard OLTP Table.Paths[Derived Column Output]"
-          TopLeft="174,143">
+          TopLeft="174.092592588913,142.777777777778">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54"
+              EndConnector="0,54.2222222222222"
               Start="0,0"
-              End="0,46.5">
+              End="0,46.7222222222222">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5" />
+                    End="0,46.7222222222222" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3848,9 +3846,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3858,6 +3854,19 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

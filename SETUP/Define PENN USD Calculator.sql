@@ -10,13 +10,13 @@ SELECT
  [DimSourceID],
   N'CLEANED' as DefinitionName, 
  [DimGeoID],
-  N'EXCHANGE_RATE_TEMP' AS IndicatorStandardCode,
+  N'EXCHANGE_RATE_TEMP' AS indicatorstandardname,
  [YearAsDate],
  [Value]
  FROM [FactQuery]
 	WHERE 
 	([FactQuery].SourceName = N'PENN') 
-	and [FactQuery].IndicatorStandardCode='EXCHANGE-RATE-LCUperUSD-PENNMARKET+ESTIMATE'
+	and [FactQuery].indicatorstandardname='EXCHANGE-RATE-LCUperUSD-PENNMARKET+ESTIMATE'
 GO
 
 
@@ -40,7 +40,7 @@ SELECT
   N'CLEANED' as DefinitionName, 
 	-- eg   N'GDP-TOTAL-USD-CURRENT' 
   @output_indicator
-AS IndicatorStandardCode,
+AS indicatorstandardname,
  [FactQuery].[DimGeoID],
  [FactQuery].[YearAsDate],
  [FactQuery].[Value]/[PENN_ExchangeRates].[Value] as Value
@@ -50,7 +50,7 @@ AS IndicatorStandardCode,
  FactQuery.YearAsDate=PENN_ExchangeRates.YearAsDate 
 	WHERE 
 		-- eg 'GDP-TOTAL-LCU-CURRENT'
-	[FactQuery].IndicatorStandardCode=@input_indicator AND
+	[FactQuery].indicatorstandardname=@input_indicator AND
 	[FactQuery].SourceName='PENN'
 )
 GO
@@ -80,7 +80,7 @@ SELECT
  YearAsDate,
  Value
 FROM PENN_USD_TEMPORARY_TABLE INNER JOIN DimIndicator ON
- DimIndicator.IndicatorStandardCode=PENN_USD_TEMPORARY_TABLE.IndicatorStandardCode
+ DimIndicator.indicatorstandardname=PENN_USD_TEMPORARY_TABLE.indicatorstandardname
 INNER JOIN DimDefinitions ON
  DimDefinitions.DefinitionName=PENN_USD_TEMPORARY_TABLE.DefinitionName
 GO

@@ -19,7 +19,7 @@ SELECT
  SourceName,
  DefinitionName,
  GeoStandardName,
- IndicatorStandardCode,
+ indicatorStandardName,
  Value,
  YearAsDate as ThisYearAsDate,
  DATEADD(yyyy, - 1, YearAsDate) AS LastYearAsDate
@@ -43,8 +43,8 @@ SELECT
  DeltaBackOne.SourceName as DeltaSourceName,
  N'CLEANED' as NewDefinitionName,
  DeltaBackOne.DefinitionName as DeltaDefinitionName,
- dbo.FactQuery.IndicatorStandardCode,
- DeltaBackOne.IndicatorStandardCode+N'-GROWTH' as DeltaIndicatorStandardCode,
+ dbo.FactQuery.indicatorStandardName,
+ DeltaBackOne.indicatorStandardName+N'-GROWTH' as DeltaindicatorStandardName,
  dbo.FactQuery.YearAsDate, 
  DeltaBackOne.LastYearAsDate,
  DeltaBackOne.ThisYearAsDate,
@@ -92,7 +92,7 @@ FROM dbo.Growth INNER JOIN
  dbo.DimDefinitions ON
  dbo.Growth.NewDefinitionName = dbo.DimDefinitions.DefinitionName INNER JOIN
  dbo.DimIndicator ON
- dbo.DimIndicator.IndicatorStandardCode=Growth.DeltaIndicatorStandardCode
+ dbo.DimIndicator.indicatorStandardName=Growth.DeltaindicatorStandardName
 GO
 -- Now insert the growth definitions
 

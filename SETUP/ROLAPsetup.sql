@@ -71,15 +71,15 @@ GO
 
 CREATE TABLE [dbo].[DimIndicator](
 	[DimIndicatorID] [int] NOT NULL,
-	[IndicatorStandardCode][nvarchar] (256) NOT NULL,
+	[IndicatorStandardName][nvarchar] (256) NOT NULL,
 	[Type][nvarchar](255)NULL,
-	[IndicatorName] [nvarchar](255) NULL, 
+	[Indicator] [nvarchar](255) NULL, 
 	[Sector] [nvarchar](255) NULL,
 	[Qualifier] [nvarchar] (255) NULL, 
 	[Unit][nvarchar](255)NULL,
 	[Measure] [nvarchar](255) NULL,
 	[BaseYear] [nvarchar](255) NULL,
-CONSTRAINT [IX_IndicatorStandardCode] UNIQUE(IndicatorStandardCode),
+CONSTRAINT [IX_IndicatorStandardName] UNIQUE(IndicatorStandardName),
 CONSTRAINT [PK_DimIndicator] PRIMARY KEY CLUSTERED 
 (
 	[DimIndicatorID] ASC
@@ -209,9 +209,9 @@ SELECT
  dbo.DimGeo.GeoStandardName, 
  dbo.DimGeo.ReportingUnit,
  dbo.Fact.DimIndicatorID,
- dbo.DimIndicator.IndicatorStandardCode,
+ dbo.DimIndicator.IndicatorStandardName,
  dbo.DimIndicator.Type,
- dbo.DimIndicator.IndicatorName,
+ dbo.DimIndicator.Indicator,
  dbo.DimIndicator.Sector,
  dbo.DimIndicator.Qualifier,
  dbo.DimIndicator.Unit,

@@ -27,12 +27,12 @@ AS
 -- Prepare to De-index rgdppc
 SELECT 
  [SourceName],
- N'COPY OF RGDPPC INDEXED' AS IndicatorStandardCode,
+ N'COPY OF RGDPPC INDEXED' AS indicatorStandardName,
  [DimGeoID],
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].SourceName='MACROHIST' and [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2005'
+ WHERE [FactQuery].SourceName='MACROHIST' and [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2005'
  GO
  
  
@@ -50,12 +50,12 @@ AS
 -- Prepare to De-index GDP
 SELECT 
  [SourceName],
- N'COPY OF GDP INDEXED' AS IndicatorStandardCode,
+ N'COPY OF GDP INDEXED' AS indicatorStandardName,
  [DimGeoID],
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].SourceName='BARRO-URSUA' and [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2006'
+ WHERE [FactQuery].SourceName='BARRO-URSUA' and [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2006'
  GO
  
 -- Create a View with MADDISON:Population in it
@@ -72,12 +72,12 @@ AS
 
 SELECT 
  [SourceName],
- N'COPY OF MADDISON:POPULATION' AS IndicatorStandardCode,
+ N'COPY OF MADDISON:POPULATION' AS indicatorStandardName,
  [DimGeoID],
  [YearAsDate],
  [Value]
 FROM [FactQuery]
- WHERE [FactQuery].SourceName='MADDISON' and [FactQuery].IndicatorStandardCode='Population'
+ WHERE [FactQuery].SourceName='MADDISON' and [FactQuery].indicatorStandardName='Population'
  GO
  
 -- [WDI2018_2005_REALGDP_BASE]contains, for each GeoID, the real GDP per capita taken from 
@@ -95,11 +95,11 @@ AS
  -- Select only year 2005 and the GeoID. As before, select GeoStandardName so we can see what's going on
 SELECT
  [DimGeoID],
- N'COPY OF WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT FOR YEAR 2005' AS IndicatorStandardCode,
+ N'COPY OF WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT FOR YEAR 2005' AS indicatorStandardName,
  [Value]
  FROM [FactQuery]
  WHERE [FactQuery].SourceName='WDI2018' 
- AND [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
+ AND [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
  AND [FactQuery].Year=2005
 GO
  
@@ -119,11 +119,11 @@ AS
  -- Select only year 2006 and the GeoID. As before, select GeoStandardName so we can see what's going on
 SELECT
  [DimGeoID],
- N'COPY OF WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT FOR YEAR 2006' AS IndicatorStandardCode,
+ N'COPY OF WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT FOR YEAR 2006' AS indicatorStandardName,
  [Value]
  FROM [FactQuery]
  WHERE [FactQuery].SourceName='WDI2018' 
- AND [FactQuery].IndicatorStandardCode='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
+ AND [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
  AND [FactQuery].Year=2006
 GO
  
@@ -140,7 +140,7 @@ CREATE VIEW [dbo].[Macrohist_WDI2018_Deindexed]
 AS
 SELECT 
  dbo.Macrohist_Indexed_rgdppc.DimGeoID,
- dbo.Macrohist_Indexed_rgdppc.IndicatorStandardCode, 
+ dbo.Macrohist_Indexed_rgdppc.indicatorStandardName, 
  dbo.Macrohist_Indexed_rgdppc.YearAsDate,
  dbo.Macrohist_Indexed_rgdppc.Value AS [Index],
  dbo.WDI2018_2005_REALGDP_BASE.Value AS Base,
@@ -163,7 +163,7 @@ CREATE VIEW [dbo].[BARRO_URSUA_WDI2018_Deindexed]
 AS
 SELECT 
  dbo.Barro_Ursua_Indexed_gdp.DimGeoID,
- dbo.Barro_Ursua_Indexed_gdp.IndicatorStandardCode, 
+ dbo.Barro_Ursua_Indexed_gdp.indicatorStandardName, 
  dbo.Barro_Ursua_Indexed_gdp.YearAsDate,
  dbo.Barro_Ursua_Indexed_gdp.Value AS [Index],
  dbo.WDI2018_2006_REALGDP_BASE.Value AS Base,
@@ -189,7 +189,7 @@ SELECT
  N'CLEANED' AS DefinitionName,
  dbo.Macrohist_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
- N'GDP-TOTAL-LCU-CONSTANT2010' AS IndicatorStandardCode,
+ N'GDP-TOTAL-LCU-CONSTANT2010' AS indicatorStandardName,
  dbo.Macrohist_WDI2018_Deindexed.YearAsDate,
  dbo.Maddison_Population.Value*Macrohist_WDI2018_Deindexed.Value as Value
 FROM dbo.Macrohist_WDI2018_Deindexed LEFT OUTER JOIN
@@ -198,7 +198,7 @@ FROM dbo.Macrohist_WDI2018_Deindexed LEFT OUTER JOIN
   dbo.Maddison_Population.DimGeoID=Macrohist_WDI2018_Deindexed.DimGeoID
  LEFT OUTER JOIN
   dbo.DimIndicator ON
-  dbo.DimIndicator.IndicatorStandardCode='GDP-TOTAL-LCU-CONSTANT2010'
+  dbo.DimIndicator.indicatorStandardName='GDP-TOTAL-LCU-CONSTANT2010'
 GO
 
 -- [Barro_Ursua_cleaner] uses Barro_Ursua_WDI2018_Deindexed] and Barro_Ursua itself to construct [Barro_Ursua_WDI2018_rgdp]
@@ -217,7 +217,7 @@ SELECT
  N'CLEANED' AS DefinitionName,
  dbo.Barro_Ursua_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
- N'GDP-TOTAL-LCU-CONSTANT2010' AS IndicatorStandardCode,
+ N'GDP-TOTAL-LCU-CONSTANT2010' AS indicatorStandardName,
  dbo.Barro_Ursua_WDI2018_Deindexed.YearAsDate,
  dbo.Maddison_Population.Value*Barro_Ursua_WDI2018_Deindexed.Value as Value
 FROM dbo.Barro_Ursua_WDI2018_Deindexed LEFT OUTER JOIN
@@ -226,7 +226,7 @@ FROM dbo.Barro_Ursua_WDI2018_Deindexed LEFT OUTER JOIN
   dbo.Maddison_Population.DimGeoID=Barro_Ursua_WDI2018_Deindexed.DimGeoID
  LEFT OUTER JOIN
   dbo.DimIndicator ON
-  dbo.DimIndicator.IndicatorStandardCode='GDP-TOTAL-LCU-CONSTANT2010'
+  dbo.DimIndicator.indicatorStandardName='GDP-TOTAL-LCU-CONSTANT2010'
 GO
 
 -- APPEND THE NEW DEFINITIONS TO THE ADDED_DEFINITIONS TABLE
