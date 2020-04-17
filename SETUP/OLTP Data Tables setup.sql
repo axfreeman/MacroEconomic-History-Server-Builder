@@ -32,6 +32,27 @@ CREATE TABLE [dbo].[PivotedSources](
  [GeoSourceName] [nvarchar](255) NULL,
  [IndicatorSourceName] [nvarchar](255) NULL,  /* I think this field is redundant AF 19/3/2020 */
  [IndicatorSourceCode] [nvarchar](255) not NULL,
+ [1925] [float] NULL,
+ [1926] [float] NULL,
+ [1927] [float] NULL,
+ [1928] [float] NULL,
+ [1929] [float] NULL,
+ [1930] [float] NULL,
+ [1931] [float] NULL,
+ [1932] [float] NULL,
+ [1933] [float] NULL,
+ [1934] [float] NULL,
+ [1935] [float] NULL,
+ [1936] [float] NULL,
+ [1937] [float] NULL,
+ [1938] [float] NULL,
+ [1939] [float] NULL,
+ [1940] [float] NULL,
+ [1941] [float] NULL,
+ [1942] [float] NULL,
+ [1943] [float] NULL,
+ [1944] [float] NULL,
+ [1945] [float] NULL,
  [1946] [float] NULL,
  [1947] [float] NULL,
  [1948] [float] NULL,
@@ -103,7 +124,9 @@ CREATE TABLE [dbo].[PivotedSources](
  [2014] [float] NULL,
  [2015] [float] NULL,
  [2016] [float] NULL,
- [2017] [float] NULL
+ [2017] [float] NULL,
+ [2018] [float] NULL,
+ [2019] [float] NULL
 ) ON [PRIMARY]
 GO
 
