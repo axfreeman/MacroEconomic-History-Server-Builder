@@ -4,7 +4,7 @@
   DTS:DTSID="{AAD799A9-CD74-462E-9885-D6063434ECFE}"
   DTS:CreationName="FLATFILE">
   <DTS:PropertyExpression
-    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\DATA\\SOURCE\\WDI2018.csv"</DTS:PropertyExpression>
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+ @[$Project::SourceData] +"WDI2018.csv"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"

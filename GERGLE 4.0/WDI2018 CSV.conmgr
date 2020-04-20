@@ -4,7 +4,7 @@
   DTS:DTSID="{AAD799A9-CD74-462E-9885-D6063434ECFE}"
   DTS:CreationName="FLATFILE">
   <DTS:PropertyExpression
-    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\DATA\\SOURCE\\WDI2018.csv"</DTS:PropertyExpression>
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+ @[$Project::SourceData] +"WDI2018.csv"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"
@@ -14,7 +14,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0022_"
       DTS:CodePage="65001"
-      DTS:ConnectionString="C:\Users\afree\source\repos\MACROHISTORY\DATA\SOURCE\WDI2018.csv">
+      DTS:ConnectionString="C:\Users\afree\Documents\Works - Ours\Github\MacroEconomic-History-Server-Builder\DATA\SOURCE\WDI2018.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
