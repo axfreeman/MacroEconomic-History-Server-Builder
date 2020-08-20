@@ -1,4 +1,4 @@
-USE ROLAP
+USE macrohistory_rolap
 GO
 
 -- Create the exchange rate view

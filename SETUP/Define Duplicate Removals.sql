@@ -1,4 +1,4 @@
-USE ROLAP
+USE macrohistory_rolap
 
 -- Create the UN Corrector view
 BEGIN TRY

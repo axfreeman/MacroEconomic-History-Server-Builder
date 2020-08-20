@@ -3,7 +3,7 @@
 -- so any changes to the structure of the OLAP tables should be reflected in changes to these tables
 
 
-USE [ROLAP]
+USE macrohistory_rolap
 GO
 
 SET ANSI_NULLS ON

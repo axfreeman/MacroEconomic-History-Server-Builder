@@ -4,6 +4,8 @@
   DTS:DTSID="{584CAF71-E85C-4A99-B093-F96A636536A0}"
   DTS:Description="Flat file connector for BEA and FED data"
   DTS:CreationName="FLATFILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot] +"\\DATA\\SOURCE\\US Capital Stock Definitive Sources.csv"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"

@@ -1,4 +1,4 @@
-USE [ROLAP]
+USE macrohistory_rolap
 GO
 
 create or alter view [PENN_USD_TEMPORARY_TABLE]

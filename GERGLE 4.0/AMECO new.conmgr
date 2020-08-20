@@ -4,6 +4,8 @@
   DTS:DTSID="{86EC3E79-AA54-4F05-A8CB-6F8DEA2869DB}"
   DTS:Description="Updated AMECO data 10 march 2020"
   DTS:CreationName="FLATFILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\DATA\\SOURCE\\AMECO surplus and depreciation LCU.csv"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"

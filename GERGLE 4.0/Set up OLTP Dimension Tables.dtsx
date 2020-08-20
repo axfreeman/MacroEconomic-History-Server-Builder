@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{1E4643CF-DBC0-4F8B-A7AB-1E0777E3C372}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{63C9BB11-8326-4FA9-83E1-AA871625E314}">
+  DTS:VersionBuild="69"
+  DTS:VersionGUID="{7451900C-9A5F-45A8-A8D3-A404C37F8123}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3118,35 +3118,35 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="271.111111111112,41.7777777777778"
+          Size="270.857142857143,41.7142857142858"
           Id="Package\Drop and Create OLTP Dimension Tables"
           TopLeft="48,26" />
         <NodeLayout
-          Size="252,41.7777777777778"
+          Size="252,41.7142857142858"
           Id="Package\Populate  DimDefinitions OLTP Table"
           TopLeft="46,268" />
         <NodeLayout
-          Size="164,41.7777777777778"
+          Size="164,41.7142857142858"
           Id="Package\Populate DimDate"
           TopLeft="374,272" />
         <NodeLayout
-          Size="217.777777777778,41.7777777777778"
+          Size="217.714285714286,41.7142857142858"
           Id="Package\Populate DimGeo OLTP Table"
           TopLeft="63,177" />
         <NodeLayout
-          Size="184,41.7777777777778"
+          Size="184,41.7142857142858"
           Id="Package\Populate DimIndicator"
           TopLeft="382,183" />
         <NodeLayout
-          Size="235.111111111112,41.7777777777778"
+          Size="234.857142857143,41.7142857142858"
           Id="Package\Populate DimSource OLTP  Table"
           TopLeft="216.839499304815,367.190475874207" />
         <NodeLayout
-          Size="272.888888888889,41.7777777777778"
+          Size="273.142857142858,41.7142857142858"
           Id="Package\Populate GeoStandardNames OLTP Table"
           TopLeft="53,97" />
         <NodeLayout
-          Size="268.444444444445,41.7777777777778"
+          Size="268.571428571429,41.7142857142858"
           Id="Package\Populate IndicatorStandard OLTP Table"
           TopLeft="392,101" />
         <EdgeLayout

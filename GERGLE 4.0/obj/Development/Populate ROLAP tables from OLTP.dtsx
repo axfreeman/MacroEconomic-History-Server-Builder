@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{F3DC81F9-29F3-4F0C-86E2-61CBA8759A66}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="222"
-  DTS:VersionGUID="{929F46F4-1C3D-4BD0-B671-F719E265110E}">
+  DTS:VersionBuild="224"
+  DTS:VersionGUID="{96BF8062-9F21-4B46-8763-878D54A703A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3028,55 +3028,55 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="184.888888888889,41.7777777777778"
+          Size="195.428571428572,42.2857142857143"
           Id="Package\Add PENN GDP in USD"
-          TopLeft="36.051294903314,343" />
+          TopLeft="36.051294903314,342.409090915495" />
         <NodeLayout
-          Size="249.777777777778,41.7777777777778"
+          Size="249.714285714286,41.7142857142858"
           Id="Package\Correct for IFS Seasonal Adjustment"
           TopLeft="317.051294903314,259" />
         <NodeLayout
-          Size="335.111111111112,41.7777777777778"
+          Size="334.857142857143,41.7142857142858"
           Id="Package\Create deduplicated entries for the CLEANED defintion"
           TopLeft="264.755000446667,338.849206433545" />
         <NodeLayout
-          Size="216.888888888889,41.7777777777778"
+          Size="217.142857142858,41.7142857142858"
           Id="Package\Define PENN USD Calculators"
           TopLeft="622.388890522498,257.30158713291" />
         <NodeLayout
-          Size="262.222222222223,41.7777777777778"
+          Size="262.285714285715,41.7142857142858"
           Id="Package\Deindex Barro-Ursua and MacroHistory"
           TopLeft="32.051294903314,417" />
         <NodeLayout
-          Size="255.111111111112,41.7777777777778"
+          Size="254.857142857143,41.7142857142858"
           Id="Package\Drop and create ROLAP files"
           TopLeft="33,12" />
         <NodeLayout
-          Size="163.111111111112,41.7777777777778"
+          Size="162.857142857143,41.7142857142858"
           Id="Package\Populate DimDate"
           TopLeft="60.3162524306718,89.0242484096653" />
         <NodeLayout
-          Size="191.111111111112,41.7777777777778"
+          Size="190.857142857143,41.7142857142858"
           Id="Package\Populate DimDefinitions"
           TopLeft="50.5555680266816,176.353544333093" />
         <NodeLayout
-          Size="160,41.7777777777778"
+          Size="160,41.7142857142858"
           Id="Package\Populate DimGeo"
           TopLeft="360.692320739025,87.0727302014007" />
         <NodeLayout
-          Size="183.111111111112,41.7777777777778"
+          Size="182.857142857143,41.7142857142858"
           Id="Package\Populate DimIndicator"
           TopLeft="344.346166091558,13.851515453206" />
         <NodeLayout
-          Size="177.777777777778,41.7777777777778"
+          Size="177.714285714286,41.7142857142858"
           Id="Package\Populate DimSources"
           TopLeft="361.051294903314,175.313143622668" />
         <NodeLayout
-          Size="192.888888888889,41.7777777777778"
+          Size="193.142857142858,41.7142857142858"
           Id="Package\Populate ROLAP fact file"
           TopLeft="59.555557206146,259.246477049924" />
         <NodeLayout
-          Size="152.888888888889,41.7777777777778"
+          Size="153.142857142858,41.7142857142858"
           Id="Package\WID extensions"
           TopLeft="641.518520166845,337.19841286709" />
         <EdgeLayout
@@ -3325,18 +3325,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="220.940183792203,361.813492105661">
+          TopLeft="231.479866331885,361.62914867452">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43.8148166544643,0"
+              EndConnector="33.2751341147816,0"
               Start="0,0"
-              End="36.3148166544643,0">
+              End="25.7751341147816,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="36.3148166544643,0" />
+                    End="25.7751341147816,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3347,30 +3347,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="730.833334966942,299.079364910688">
+          TopLeft="730.960319093927,299.015872847196">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-602.337595619184,43.920635089312"
+              EndConnector="-597.194738476327,43.393218068299"
               Start="0,0"
-              End="-602.337595619184,36.420635089312">
+              End="-597.194738476327,35.893218068299">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.960317544656" />
+                    End="0,17.6966090341495" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.960317544656"
-                    Point2="0,21.960317544656"
-                    Point3="-4,21.960317544656" />
+                    Point1="0,17.6966090341495"
+                    Point2="0,21.6966090341495"
+                    Point3="-4,21.6966090341495" />
                   <mssgle:LineSegment
-                    End="-598.337595619184,21.960317544656" />
+                    End="-593.194738476327,21.6966090341495" />
                   <mssgle:CubicBezierSegment
-                    Point1="-598.337595619184,21.960317544656"
-                    Point2="-602.337595619184,21.960317544656"
-                    Point3="-602.337595619184,25.960317544656" />
+                    Point1="-593.194738476327,21.6966090341495"
+                    Point2="-597.194738476327,21.6966090341495"
+                    Point3="-597.194738476327,25.6966090341495" />
                   <mssgle:LineSegment
-                    End="-602.337595619184,36.420635089312" />
+                    End="-597.194738476327,35.893218068299" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3584,7 +3584,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="175.111111111112,41.7777777777778"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
@@ -3612,7 +3612,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3716,11 +3718,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="254.666666666667,41.7777777777778"
+          Size="254.857142857143,41.7142857142858"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
           TopLeft="96.1709424676588,38.4202024528147" />
         <NodeLayout
-          Size="168,41.7777777777778"
+          Size="168,41.7142857142858"
           Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
           TopLeft="132.888888888889,165.777777777778" />
         <EdgeLayout

@@ -1,4 +1,4 @@
-USE [ROLAP]
+USE macrohistory_rolap
 
 -- Create a temporary definition table
 -- create the seasonal adjustment view

@@ -4,6 +4,8 @@
   DTS:DTSID="{584CAF71-E85C-4A99-B093-F96A636536A0}"
   DTS:Description="Flat file connector for BEA and FED data"
   DTS:CreationName="FLATFILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot] +"\\DATA\\SOURCE\\US Capital Stock Definitive Sources.csv"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"
@@ -13,7 +15,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0022__x0022_"
       DTS:CodePage="65001"
-      DTS:ConnectionString="C:\Users\afree\Documents\Works - Ours\Github\MacroEconomic-History-Server-Builder\DATA\SOURCE\US Capital Stock Definitive Sources.csv">
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic-History-Server-Builder\DATA\SOURCE\US Capital Stock Definitive Sources.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"

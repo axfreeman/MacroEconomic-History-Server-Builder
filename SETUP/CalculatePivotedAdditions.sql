@@ -4,7 +4,7 @@
 -- so that the result does not depend on Cube technology and can be exported,
 -- should the need arise, as simple tables for use in non-Cube-based applications
 
-USE OLTP
+USE macrohistory_oltp
 
 -- Used to precalculate USD values of GDP using the exchange rate
 -- The reason this is done here with the unpivoted IFS source is that we don't have to use DAX or MDX
