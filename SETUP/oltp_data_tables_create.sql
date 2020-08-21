@@ -1,6 +1,6 @@
 -- The OLTP database is where the source data and dimension templates are initially loaded (see Dimension Setup for details)
  
-USE [macrohistory_oltp]
+USE macrohistory_oltp
 GO
 
 /* Different suppliers of data (UN, WDI, IFS, etc) use varying names for countries.
@@ -19,14 +19,10 @@ GO
 -- create a generic pivoted table that source data can be read into, prior to unpivoting
 -- use 'Try block' rather than DROP IF EXISTS for backwards compatibility with SQLServer 2014
 
-BEGIN TRY 
-DROP TABLE [dbo].[PivotedSources] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS PivotedSources
 GO
 
-CREATE TABLE [dbo].[PivotedSources](
+CREATE TABLE [PivotedSources](
  [SourceName][nvarchar](50) NOT NULL,
  [DefinitionName] [nvarchar] (50) NOT NULL,
  [GeoSourceName] [nvarchar](255) NULL,
@@ -130,32 +126,14 @@ CREATE TABLE [dbo].[PivotedSources](
 ) ON [PRIMARY]
 GO
 
--- The PivotedSourcesErrorCatcher Table is, as its name suggests, to catch any errors
--- during data transfer to the PivotedSources table. It is purely for debugging purposes
--- and is not used by the cube
-BEGIN TRY 
-DROP TABLE [dbo].[PivotedSourcesErrorCatcher] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE TABLE [dbo].[PivotedSourcesErrorCatcher](
- [OutputColumn] nvarchar(max),
- [ErrorColumn] bigint,
- [ErrorCode] bigint
-) ON [PRIMARY]
-GO
 
 -- Macrofinancial History database requires specific treatment
 -- listed variables are year	country	iso	ifs	pop	rgdpmad	rgdppc	rconpc	gdp	iy	cpi	ca	imports	exports	narrowm	money	stir	ltrate	stocks	debtgdp	revenue	expenditure	xrusd	crisisJST	tloans	tmort	thh	tbus	hpnom
-BEGIN TRY 
-DROP TABLE [dbo].[MacroFinancialHistory] 
-END TRY 
-BEGIN CATCH
-END CATCH 
 
-CREATE TABLE [dbo].[MacroFinancialHistory](
+DROP TABLE IF EXISTS MacroFinancialHistory
+GO
+
+CREATE TABLE [MacroFinancialHistory](
  [SourceName] [nvarchar](50) NOT NULL,
  [DefinitionName] [nvarchar] (50) NOT NULL,
  year NVARCHAR(4),
@@ -190,14 +168,10 @@ GO
 -- Penn_NA database requires specific treatment
 -- listed variables are year	v_c	v_i	v_g	v_x	v_m	v_gdp	q_c	q_i	q_g	q_x	q_m	q_gdp	pop	xr	xr2	v_gfcf	q_gfcf	emp	avh
 
+DROP TABLE IF EXISTS Penn_NA
+GO
 
-BEGIN TRY 
-DROP TABLE [dbo].[Penn_NA] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO 
-CREATE TABLE [dbo].[Penn_NA](
+CREATE TABLE [Penn_NA](
 CountryCode Nvarchar(3) NOT NULL,
 [SourceName] [nvarchar](50) NOT NULL,
 [DefinitionName] [nvarchar] (50) NOT NULL,
@@ -227,14 +201,9 @@ GO
 
 -- Penn full database requires specific treatment
 
-
-BEGIN TRY 
-DROP TABLE [dbo].[Penn] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO 
-CREATE TABLE [dbo].[Penn](
+DROP TABLE IF EXISTS Penn
+GO
+CREATE  TABLE [Penn](
 CountryCode Nvarchar(3) NOT NULL,
 [SourceName] [nvarchar](50) NOT NULL,
 [DefinitionName] [nvarchar] (50) NOT NULL,
@@ -267,14 +236,9 @@ GO
 -- for these alphanumeric fields. 
 -- When the ROLAP server is initialised, the FactStandardQuery is coped to the ROLAP server.
 
-BEGIN TRY 
-DROP TABLE [dbo].[FactSource] 
-END TRY 
-BEGIN CATCH
-END CATCH 
-
-
-CREATE TABLE [dbo].[FactSource](
+DROP TABLE IF EXISTS FactSource
+GO
+CREATE TABLE [FactSource](
  [OLTP_FactID] bigint not null IDENTITY (1,1), /* this key isn't used but helps track and debug problem rows */
  [SourceName] [nvarchar](50) NULL, /* the source is a single provider at a single release date, eg UN2018, WB2015*/
  [DefinitionName] nvarchar(50)NULL, /* the 'definition' is a selection of records from different providers. Initially, the selection for a given source will simply be the source */
@@ -292,14 +256,7 @@ CREATE TABLE [dbo].[FactSource](
 ) ON [PRIMARY]
 GO
 
-BEGIN TRY 
-DROP INDEX [dbo].[ix_FactSource] 
-END TRY 
-BEGIN CATCH
-END CATCH 
-
-
-CREATE NONCLUSTERED INDEX [ix_FactSource] ON [dbo].[FactSource]
+CREATE NONCLUSTERED INDEX [ix_FactSource] ON [FactSource]
 (
 	[SourceName] ASC,
 	[DefinitionName] ASC,
@@ -309,47 +266,14 @@ CREATE NONCLUSTERED INDEX [ix_FactSource] ON [dbo].[FactSource]
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
 
--- The FactSource errorCatcher Table is, as its name suggests, to catch any errors
--- during data transfer to the FactSource table. It is purely for debugging purposes
--- and is not used by the cube
-
-BEGIN TRY 
-DROP TABLE [dbo].[FactSourceErrorCatcher] 
-END TRY 
-BEGIN CATCH
-END CATCH 
-
-
-CREATE TABLE [dbo].[FactSourceErrorCatcher](
- [OLTP_FactID] bigint not null IDENTITY (1,1), /* this key isn't used but helps track and debug problem rows */
- [SourceName] [nvarchar](50) NULL, /* the source is a single provider at a single release date, eg UN2018, WB2015*/
- [DefinitionName] nvarchar(50)NULL, /* the 'definition' is a selection of records from different providers. Initially, the selection for a given source will simply be the source */
- [GeoSourceName] [nvarchar](255) NULL,
-	-- Abbreviated complete description of the indicator and its quantifier, EG GDP-USD-MER, Exports, Population
-	-- Gets reduced to integer PK when imported into ROLAP 
- [IndicatorSourceName] [nvarchar](255) NULL, 
- [Year] int NULL,
- [Value] float NULL,
- [ErrorColumn] bigint,
- [ErrorCode] bigint
-	
-) ON [PRIMARY]
-GO
-
 
 -- selects, from the factSource file, those rows which contain countries and indicators that we know about (by including them in the DimGeo and DimIndicator tables)
 -- INCLUDE countries for which there is no data so that, when a pivot table is created, the countries are laid out with the same spacing
 -- for each indicator and source.
 -- But EXCLUDE indicators for which there is no data, or there would be too much clutter.
 
-BEGIN TRY 
-DROP VIEW [dbo].[RecognisedFacts] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO
 
-CREATE VIEW [dbo].[RecognisedFacts]
+CREATE OR ALTER VIEW [RecognisedFacts]
 AS
 SELECT
  dbo.FactSource.OLTP_FactID,
@@ -379,14 +303,7 @@ GO
 
 -- Compresses the rows of the RecognisedFacts view by substituting the integer Indexes of DimGeo and DimIndicator for the actual country and indicator names
 
-BEGIN TRY 
-DROP VIEW [dbo].[FactQuery] 
-END TRY 
-BEGIN CATCH
-END CATCH 
-GO
-
-CREATE VIEW [dbo].[FactQuery]
+CREATE OR ALTER VIEW [FactQuery]
 AS
 SELECT 
 dbo.RecognisedFacts.OLTP_FactID,
@@ -413,14 +330,7 @@ GO
 -- restrict the rows of StandardisedPivotedSources which are unpivoted into FactSource, to prevent bloat.
 -- only use those rows which have indicators that will be included in the final dataset.
 
-BEGIN TRY 
-DROP VIEW [dbo].[StandardisedPivotedSources] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[StandardisedPivotedSources]
+CREATE OR ALTER VIEW [StandardisedPivotedSources]
 AS
 SELECT dbo.PivotedSources.*
 FROM dbo.PivotedSources INNER JOIN

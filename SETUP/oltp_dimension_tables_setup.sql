@@ -3,7 +3,7 @@
 -- to the ROLAP database, which provides a clean version that is fully relational.
 -- The ROLAP database is the source for all client data whether online or offline
  
-USE [macrohistory_oltp]
+USE macrohistory_oltp
 GO
 
 /* Different suppliers of data (UN, WDI, IFS, etc) use varying names for countries.
@@ -20,14 +20,11 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- the Date Dimension allows us to group data by decade and other categories such as business cycle
-BEGIN TRY 
-DROP TABLE [dbo].[DimDate] 
-END TRY 
-BEGIN CATCH
-END CATCH
+
+DROP TABLE IF EXISTS DimDate
 GO
 
-CREATE TABLE [dbo].[DimDate](
+CREATE TABLE [DimDate](
 	[Date] [date] NOT NULL,
 	[year] [int] NOT NULL,
 CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED 
@@ -48,14 +45,10 @@ GO
 -- this table is used on the OLTP server to standardise geographic names.
 -- works in conjunction with DimGeo, in that it reduces each geographic names to a unique 'GeoStandardName'
 -- which identifies a unique DimGeo record
-BEGIN TRY 
-DROP TABLE [dbo].[GeoStandardNames] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO
 
-CREATE TABLE [dbo].[GeoStandardNames](
+DROP TABLE IF EXISTS GeoStandardNames
+
+CREATE TABLE [GeoStandardNames](
 		-- The source of the data (eg UN2018,WDI2012,PALGRAVE, ETC). Not used (at 19/08/2018) at present; here for information
 	[GeoSource] [nvarchar](255) NULL, 
 		-- 	What the country or region is called by the source. Varies from source to source, which is why we have to standardise.
@@ -76,15 +69,11 @@ GO
 -- The DimGeo table is copied to the ROLAP server at ROLAP setup time.
 -- In this way, the fact file need only contain the DimGeoID and can link to the DimGeo table which contains all the Dimension information
 
-BEGIN TRY 
-DROP TABLE [dbo].[DimGeo] 
-END TRY 
-BEGIN CATCH
-END CATCH
+
+DROP TABLE IF EXISTS DimGeo
 GO
 
-
-CREATE TABLE [dbo].[DimGeo](
+CREATE TABLE [DimGeo](
 [DimGeoID] [int] NOT NULL IDENTITY(1,1),
 [GeoStandardName] [nvarchar](255) NULL,
 [GeoPolitical Type] [nvarchar](255) NULL,	
@@ -112,14 +101,10 @@ GO
 -- instead, it produces a standard name, by which the indicator is known in DimIndicator.
 -- DimIndicator provides the user-friendly naming system.
 
-BEGIN TRY 
-DROP TABLE [dbo].[IndicatorStandardNames] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS IndicatorStandardNames
 GO
 
-CREATE TABLE [dbo].[IndicatorStandardNames](
+CREATE TABLE [IndicatorStandardNames](
 		-- the source of the data (eg UN2018). Unlike GeoStandardNames, this field is needed 
 		-- because two sources may use the same name for two different indicators
 	[IndicatorSource] [nvarchar] (255) NOT NULL, 
@@ -137,14 +122,9 @@ GO
 
 
 -- The indicator Dimension table 
-BEGIN TRY 
-DROP TABLE [dbo].[DimIndicator] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO
+DROP TABLE IF EXISTS DimIndicator
 
-CREATE TABLE [dbo].[DimIndicator](
+CREATE TABLE [DimIndicator](
 	[DimIndicatorID] [int] NOT NULL IDENTITY (1,1), 
 		-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
 	[IndicatorStandardName][nvarchar] (256) NOT NULL,
@@ -163,14 +143,10 @@ CREATE TABLE [dbo].[DimIndicator](
 GO
 
 -- The Source Dimension lists the various sources 
-BEGIN TRY 
-DROP TABLE [dbo].[DimSource] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS DimSource
 GO
 
-CREATE TABLE [dbo].[DimSource](
+CREATE TABLE [DimSource](
 [DimSourceID] int NOT NULL IDENTITY (1,1),
 [SourceName] [nvarchar](255),
 [SourceNameParent] [nvarchar](255),
@@ -189,14 +165,9 @@ CONSTRAINT [PK_Source] PRIMARY KEY CLUSTERED
 GO
 
 -- The Definitions Dimension lists the various sources as well as composite definitions which splice data from various sources
-BEGIN TRY 
-DROP TABLE [dbo].[DimDefinitions] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS DimDefinitions
 GO
-
-CREATE TABLE [dbo].[DimDefinitions](
+CREATE TABLE [DimDefinitions](
 [DimDefinitionID] int NOT NULL IDENTITY (1,1),
 [DefinitionName] [nvarchar](100),
 [LongDescription]	[nvarchar] (255)
