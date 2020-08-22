@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="218"
-  DTS:VersionGUID="{DBBFA0B2-EEAA-467C-8B5A-9B751D35706B}">
+  DTS:VersionBuild="219"
+  DTS:VersionGUID="{02B9E32C-FC96-4D7C-B9C4-CC38E17D9779}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -6495,12 +6495,12 @@
                     <externalMetadataColumn
                       refId="Package\IFS2018\Fact OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="GeoSourceName" />
                     <externalMetadataColumn
                       refId="Package\IFS2018\Fact OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\IFS2018\Fact OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
@@ -24629,12 +24629,12 @@
                     <externalMetadataColumn
                       refId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="GeoSourceName" />
                     <externalMetadataColumn
                       refId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
@@ -28350,12 +28350,12 @@
                     <externalMetadataColumn
                       refId="Package\UN2018(new)\Fact OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="GeoSourceName" />
                     <externalMetadataColumn
                       refId="Package\UN2018(new)\Fact OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\UN2018(new)\Fact OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
@@ -33659,12 +33659,12 @@
                     <externalMetadataColumn
                       refId="Package\WDI2018\Fact Source.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="GeoSourceName" />
                     <externalMetadataColumn
                       refId="Package\WDI2018\Fact Source.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\WDI2018\Fact Source.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
@@ -36924,12 +36924,12 @@
                     <externalMetadataColumn
                       refId="Package\WEO2002\Fact.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="GeoSourceName" />
                     <externalMetadataColumn
                       refId="Package\WEO2002\Fact.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\WEO2002\Fact.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
@@ -42768,7 +42768,7 @@
     design-time-name="Package\IFS2018">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158.857142857143,41.7142857142858"
           Id="Package\IFS2018\IFS2018 CSV File"
@@ -42816,9 +42816,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42840,9 +42838,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42876,9 +42872,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43905,7 +43899,7 @@
     design-time-name="Package\UN2018(new)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="189.142857142858,41.7142857142858"
           Id="Package\UN2018(new)\UN2018 (new) CSV File"
@@ -43949,9 +43943,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43985,9 +43977,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -44010,7 +44000,7 @@
     design-time-name="Package\UN-OFFICIAL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="180,41.7142857142858"
           Id="Package\UN-OFFICIAL\Source and Definition"
@@ -44058,9 +44048,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44082,9 +44070,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44106,9 +44092,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -44435,7 +44419,7 @@
     design-time-name="Package\WEO2002">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="256.571428571429,41.7142857142858"
           Id="Package\WEO2002\WEO2002 CSV file"
@@ -44483,9 +44467,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44507,9 +44489,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44543,9 +44523,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

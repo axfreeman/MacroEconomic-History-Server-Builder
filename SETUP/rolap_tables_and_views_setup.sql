@@ -6,22 +6,12 @@
 USE macrohistory_rolap
 GO
 
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 -- The normalised fact file.
 -- What the Cube sees is a selection of Fact records defined by their FactID
 -- in which the details of each dimension (Geography, indicator, series breaks, date) are
 -- provided by dimension files related to the relevant Foreign Key in the fact file.
 
-BEGIN TRY 
-DROP TABLE [dbo].[Fact] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS [dbo].[Fact] 
 GO
 
 CREATE TABLE [dbo].[Fact](
@@ -41,12 +31,8 @@ CREATE TABLE [dbo].[Fact](
 	ON [PRIMARY]
 GO
 
-BEGIN TRY 
-DROP INDEX [dbo].[ix_FactSource] 
-END TRY 
-BEGIN CATCH
-END CATCH 
-
+DROP INDEX IF EXISTS [dbo].[ix_FactSource] 
+GO
 
 CREATE NONCLUSTERED INDEX [ix_Fact] ON [dbo].[Fact]
 (
@@ -62,11 +48,7 @@ GO
 -- Note this simply replicates the definition in the OLTP database but without an auto-increment key, because that's generated when the OLTP table is created
 
 
-BEGIN TRY 
-DROP TABLE [dbo].[DimIndicator] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS [dbo].[DimIndicator] 
 GO
 
 CREATE TABLE [dbo].[DimIndicator](
@@ -89,11 +71,7 @@ GO
 -- NOTE: in the ROLAP version we do not have an auto-incrementing key because it's generated in the OLTP file
 -- As with DimIndicator, simply replicates what is in the OLTP table but without an auto-increment key, because that's generated when the OLTP table is created
 
-BEGIN TRY 
-DROP TABLE [dbo].[DimGeo] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS [dbo].[DimGeo] 
 GO
 
 CREATE TABLE [dbo].[DimGeo](
@@ -117,11 +95,7 @@ CREATE TABLE [dbo].[DimGeo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
-BEGIN TRY 
-DROP TABLE [dbo].[DimDate] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS [dbo].[DimDate] 
 GO
 
 CREATE TABLE [dbo].[DimDate](
@@ -137,21 +111,10 @@ GO
 
 -- The Definitions Dimension lists the composite definitions which splice data from various sources
 
-BEGIN TRY 
-DROP TABLE [dbo].[DimDefinitions] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS [dbo].[DimDefinitions] 
 GO
 
 -- The Definitions Dimension lists the various sources as well as composite definitions which splice data from various sources
-
-BEGIN TRY 
-DROP TABLE [dbo].[DimDefinitions] 
-END TRY 
-BEGIN CATCH
-END CATCH
-GO
 
 CREATE TABLE [dbo].[DimDefinitions](
 [DimDefinitionID] int NOT NULL,
@@ -166,11 +129,7 @@ GO
 
 -- The Source Dimension lists the various sources 
 
-BEGIN TRY 
-DROP TABLE [dbo].[DimSource] 
-END TRY 
-BEGIN CATCH
-END CATCH
+DROP TABLE IF EXISTS [dbo].[DimSource] 
 GO
 
 CREATE TABLE [dbo].[DimSource](
@@ -192,7 +151,6 @@ CONSTRAINT [PK_Source] PRIMARY KEY CLUSTERED
 GO
 
 -- Provides a tabular view of the data for debugging purposes
-
 
 CREATE OR ALTER VIEW [dbo].[FactQuery]
 AS

@@ -9,13 +9,6 @@ GO
  * Hence the ROLAP server deals only with the standard geo names
  */
 
- 
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 -- The FactSource file amalgamates data from all the various sources in a standard form.
 -- Alphanumeric names are used for the Geo, Indicator and Quantifier fields.
 -- it is then optimised by the 'FactStandardQuery' view, which substitutes integer primary keys 
@@ -41,9 +34,11 @@ CREATE TABLE [FactSource](
 	
 ) ON [PRIMARY]
 GO
-
-CREATE NONCLUSTERED INDEX [ix_FactSource] ON [FactSource]
-(
+-- the purpose of this index is to speed up those views which combine rows from the fact table with rows from dimension tables
+-- it is commented out because the index takes up a lot of space, which prevents the project running on MSSQL Express
+-- because that has a 10GB limit on the size of the database
+/* CREATE NONCLUSTERED INDEX [ix_FactSource] ON [FactSource]
+ (
 	[SourceName] ASC,
 	[DefinitionName] ASC,
 	[GeoSourceName] ASC,
@@ -51,7 +46,7 @@ CREATE NONCLUSTERED INDEX [ix_FactSource] ON [FactSource]
 	[Year] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 GO
-
+*/
 
 -- selects, from the factSource file, those rows which contain countries and indicators that we know about (by including them in the DimGeo and DimIndicator tables)
 -- INCLUDE countries for which there is no data so that, when a pivot table is created, the countries are laid out with the same spacing
