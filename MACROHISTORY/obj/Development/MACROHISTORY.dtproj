@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAACG8qPaJMsnC28XONQiXgLZWyIQ+vAZz/ETKT67UKhWSwAAAAAOgAAAAAIAACAAAABJn2gioS4TsZff/3l5dvyzeG6bJP63pRHv0FCwpJPMAJAAAAClwLKxgUBNtaVtoIgY5kgLKjPhcQZJO5xgDzJ4ULQN6qhw3rOP5HTN8s0qVAWhofR4HjtoZtD0eZgjDXPvpV64el/kQWFpCb/FNx2cWuf4Hkj7MuN4XytlJkwavoGEXXHCtuEEzRD8zVv1oEwP6gbMS3z57nx3OXbTj4LapzXLMP1R8VHXWkIxMa1HsIUVnWZAAAAAjUW8bU592aEOA12rJn1uCx1P7JCTHjUIF/btEaZ/R6omX63MHB+Q7wSr7+BM9i1ft+vhvOnj1oa50mgoXpMsuw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAACHODLTLfgu1T6D9lNCa6KmpaMewmaCXcPrN1ONXAodKAAAAAAOgAAAAAIAACAAAADV10RtmYcttIDrfnKk4SSaU3BRN6n/WlO8KcOrEzy3vJAAAADa8dXDUhA7XzCjxhsDXK8XITxPkwaEXFu+r0ZHM2kh0aiKsNbEMZN9LJajiaHT/cnU4XoM+qktIcwkRPWglNaVZlHI6qRd0QPpRdlOz5Rrggo8OiPn6HaSm9ih9I6yg89pDH78GcIDGFbaoOWqHdAxTUxzPPDYy/MWY0dwXhwVQKQ06u44AaWoneyXjekEcTVAAAAAUpL4B8JAUL7APwuDlCWRj6EnVaeHN0D8h+IrX1+JjmbRFh+AAvnYcneaHORUVyBSOVLxkforDrwuSyF4Knf50g==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,6 +35,7 @@
           <SSIS:Package SSIS:Name="Populate ROLAP tables from OLTP.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Export ROLAP Fact File.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Snippets.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Tidy.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Create GERGLE Definitions.sql.conmgr" />
@@ -73,6 +74,7 @@
           <SSIS:ConnectionManager SSIS:Name="AMECO new.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="OECD Comprehensive.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="US nationally sourced data.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="drop_unwanted_tables_and_views.sql.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -4184,10 +4186,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">72</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">68</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4A3D3158-3010-4E52-84A5-294056B6C8F9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{63C9BB11-8326-4FA9-83E1-AA871625E314}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4374,6 +4376,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{BFA6A306-E7A5-468A-8431-EF1795F357C5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Tidy.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{3DC3FF27-F509-4D9E-8905-A3B3AD1EBF07}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Tidy</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6FF9E9DE-D340-480A-AC20-4E349C123666}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
