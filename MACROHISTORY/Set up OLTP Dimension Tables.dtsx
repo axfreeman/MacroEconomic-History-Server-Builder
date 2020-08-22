@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="69"
-  DTS:VersionGUID="{7451900C-9A5F-45A8-A8D3-A404C37F8123}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{4A3D3158-3010-4E52-84A5-294056B6C8F9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1132,26 +1132,12 @@
                       externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoStandardName]"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[GeoStandardName]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[GeoPolitical Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="GeoPolitical Type"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical Type]"
-                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[GeoPolitical Type]" />
-                    <inputColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[ReportingUnit]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="ReportingUnit"
                       externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[ReportingUnit]"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[ReportingUnit]" />
-                    <inputColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[Geopolitical Region]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Geopolitical Region"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Region]"
-                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[Geopolitical Region]" />
                     <inputColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[Size]"
                       cachedDataType="wstr"
@@ -1160,54 +1146,61 @@
                       externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Size]"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[Size]" />
                     <inputColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[GeoPolitical Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GeoPolitical Type"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical_Type]"
+                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[GeoPolitical Type]" />
+                    <inputColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[GeoEconomic Region]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="GeoEconomic Region"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic Region]"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic_Region]"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[GeoEconomic Region]" />
+                    <inputColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[Geopolitical Region]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Geopolitical Region"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Region]"
+                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[Geopolitical Region]" />
+                    <inputColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[Geopolitical Detail]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Geopolitical Detail"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Detail]"
+                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[Geopolitical Detail]" />
                     <inputColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[Major Blocs]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Major Blocs"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Major Blocs]"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Major_Blocs]"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[Major Blocs]" />
                     <inputColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[Penn Geography]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Penn Geography"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Penn Geography]"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Penn_Geography]"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[Penn Geography]" />
+                    <inputColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[MacroHistory Geography]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MacroHistory Geography"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY_Geography]"
+                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[MacroHistory Geography]" />
                     <inputColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[WID Geography]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="WID Geography"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[WID Geography]"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[WID_Geography]"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[WID Geography]" />
-                    <inputColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[IMF main category]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IMF main category"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IMF main category]"
-                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[IMF main category]" />
-                    <inputColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[IMF sub-category]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IMF sub-category"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IMF sub-category]"
-                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[IMF sub-category]" />
-                    <inputColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].Columns[Geopolitical Detail]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Geopolitical Detail"
-                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Detail]"
-                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[Geopolitical Detail]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1221,65 +1214,65 @@
                       length="255"
                       name="GeoStandardName" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="GeoPolitical Type" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[ReportingUnit]"
                       dataType="wstr"
                       length="255"
                       name="ReportingUnit" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Region]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical Region" />
                     <externalMetadataColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Size]"
                       dataType="wstr"
                       length="255"
                       name="Size" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic Region]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical_Type]"
                       dataType="wstr"
                       length="255"
-                      name="GeoEconomic Region" />
+                      name="GeoPolitical_Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Major Blocs]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic_Region]"
                       dataType="wstr"
                       length="255"
-                      name="Major Blocs" />
+                      name="GeoEconomic_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Penn Geography]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Region]"
                       dataType="wstr"
                       length="255"
-                      name="Penn Geography" />
+                      name="Geopolitical_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[WID Geography]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Detail]"
                       dataType="wstr"
                       length="255"
-                      name="WID Geography" />
+                      name="Geopolitical_Detail" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IMF main category]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Major_Blocs]"
                       dataType="wstr"
                       length="255"
-                      name="IMF main category" />
+                      name="Major_Blocs" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IMF sub-category]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Penn_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="IMF sub-category" />
+                      name="Penn_Geography" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Detail]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="Geopolitical Detail" />
+                      name="MACROHISTORY_Geography" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY Geography]"
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[WID_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="MACROHISTORY Geography" />
+                      name="WID_Geography" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IMF_main_category]"
+                      dataType="wstr"
+                      length="255"
+                      name="IMF_main_category" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IMF_sub_category]"
+                      dataType="wstr"
+                      length="255"
+                      name="IMF_sub_category" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3346,17 +3339,17 @@
     design-time-name="Package\Populate  DimDefinitions OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="226,42"
+          Size="226.285714285715,42.2857142857143"
           Id="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet"
           TopLeft="111,22" />
         <NodeLayout
-          Size="205,42"
+          Size="205.142857142858,42.2857142857143"
           Id="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table"
           TopLeft="121,192.5" />
         <NodeLayout
-          Size="154.5,42"
+          Size="154.285714285715,42.2857142857143"
           Id="Package\Populate  DimDefinitions OLTP Table\Derived Column"
           TopLeft="410.833333333333,130.45138824093" />
         <EdgeLayout
@@ -3390,9 +3383,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3426,9 +3417,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3464,13 +3453,13 @@
     design-time-name="Package\Populate DimDate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208,42"
+          Size="208,42.2857142857143"
           Id="Package\Populate DimDate\DimDate Excel spreadsheet"
           TopLeft="166,37" />
         <NodeLayout
-          Size="177,42"
+          Size="177.142857142858,42.2857142857143"
           Id="Package\Populate DimDate\DimDate OLTP Table"
           TopLeft="184,223" />
         <EdgeLayout
@@ -3492,9 +3481,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3530,13 +3517,13 @@
     design-time-name="Package\Populate DimGeo OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174,42"
+          Size="173.714285714286,42.2857142857143"
           Id="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table"
           TopLeft="206,149" />
         <NodeLayout
-          Size="174,42"
+          Size="173.714285714286,42.2857142857143"
           Id="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet"
           TopLeft="211,28" />
         <EdgeLayout
@@ -3558,9 +3545,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3598,11 +3583,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196.888888888889,41.7777777777778"
+          Size="197.142857142858,41.7142857142858"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
           TopLeft="77.8888978737368,135.650798879784" />
         <NodeLayout
-          Size="196.888888888889,41.7777777777778"
+          Size="197.142857142858,41.7142857142858"
           Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
           TopLeft="77.0648239118814,30.71428618869" />
         <EdgeLayout
@@ -3660,13 +3645,13 @@
     design-time-name="Package\Populate DimSource OLTP  Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="212,41.7777777777778"
+          Size="212,41.7142857142858"
           Id="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet"
           TopLeft="21.7407482612277,12.8412701048278" />
         <NodeLayout
-          Size="191.555555555556,41.7777777777778"
+          Size="191.428571428572,41.7142857142858"
           Id="Package\Populate DimSource OLTP  Table\DimSource OLTP Table"
           TopLeft="26.4391610510969,124.609986795782" />
         <EdgeLayout
@@ -3688,9 +3673,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3726,13 +3709,13 @@
     design-time-name="Package\Populate GeoStandardNames OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="229.333333333334,41.7777777777778"
+          Size="229.142857142858,41.7142857142858"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames OLTP Table"
           TopLeft="61,167.5" />
         <NodeLayout
-          Size="194.222222222223,41.7777777777778"
+          Size="194.285714285715,41.7142857142858"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames"
           TopLeft="86,65" />
         <EdgeLayout
@@ -3754,9 +3737,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3794,15 +3775,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="220.888888888889,41.7777777777778"
+          Size="221.142857142858,41.7142857142858"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
           TopLeft="66.1851851778266,197" />
         <NodeLayout
-          Size="151.111111111112,41.7777777777778"
+          Size="150.857142857143,41.7142857142858"
           Id="Package\Populate IndicatorStandard OLTP Table\Shorten Source"
           TopLeft="96,101" />
         <NodeLayout
-          Size="163.111111111112,41.7777777777778"
+          Size="162.857142857143,41.7142857142858"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard"
           TopLeft="92,12" />
         <EdgeLayout

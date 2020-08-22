@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="225"
-  DTS:VersionGUID="{D4621FFD-07F9-4643-9AA2-0856BA9F3875}">
+  DTS:VersionBuild="229"
+  DTS:VersionGUID="{1A7BEDAA-F3DA-4B86-AE00-9140CB491036}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -783,16 +783,6 @@
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoPolitical Type]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoPolitical Type]"
-                      length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoPolitical Type]"
-                      name="GeoPolitical Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[ReportingUnit]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -822,16 +812,6 @@
                       name="GeoStandardName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical Region]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical Region]"
-                      length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical Region]"
-                      name="Geopolitical Region"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Size]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -842,93 +822,108 @@
                       name="Size"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoEconomic Region]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoPolitical_Type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoEconomic Region]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoPolitical_Type]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoEconomic Region]"
-                      name="GeoEconomic Region"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoPolitical_Type]"
+                      name="GeoPolitical_Type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major Blocs]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoEconomic_Region]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Major Blocs]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoEconomic_Region]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major Blocs]"
-                      name="Major Blocs"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoEconomic_Region]"
+                      name="GeoEconomic_Region"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Region]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Penn Geography]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_Region]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn Geography]"
-                      name="Penn Geography"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Region]"
+                      name="Geopolitical_Region"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[WID Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Detail]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[WID Geography]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_Detail]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[WID Geography]"
-                      name="WID Geography"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Detail]"
+                      name="Geopolitical_Detail"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF main category]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major_Blocs]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF main category]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Major_Blocs]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF main category]"
-                      name="IMF main category"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major_Blocs]"
+                      name="Major_Blocs"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF sub-category]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn_Geography]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF sub-category]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Penn_Geography]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF sub-category]"
-                      name="IMF sub-category"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn_Geography]"
+                      name="Penn_Geography"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical Detail]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical Detail]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY_Geography]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical Detail]"
-                      name="Geopolitical Detail"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]"
+                      name="MACROHISTORY_Geography"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[MACROHISTORY Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[WID_Geography]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY Geography]"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[WID_Geography]"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[MACROHISTORY Geography]"
-                      name="MACROHISTORY Geography"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[WID_Geography]"
+                      name="WID_Geography"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF_main_category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF_main_category]"
+                      length="255"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF_main_category]"
+                      name="IMF_main_category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF_sub_category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF_sub_category]"
+                      length="255"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF_sub_category]"
+                      name="IMF_sub_category"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoPolitical Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="GeoPolitical Type" />
                     <externalMetadataColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[ReportingUnit]"
                       dataType="wstr"
@@ -944,55 +939,60 @@
                       length="255"
                       name="GeoStandardName" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical Region]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical Region" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Size]"
                       dataType="wstr"
                       length="255"
                       name="Size" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoEconomic Region]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoPolitical_Type]"
                       dataType="wstr"
                       length="255"
-                      name="GeoEconomic Region" />
+                      name="GeoPolitical_Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Major Blocs]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[GeoEconomic_Region]"
                       dataType="wstr"
                       length="255"
-                      name="Major Blocs" />
+                      name="GeoEconomic_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Penn Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_Region]"
                       dataType="wstr"
                       length="255"
-                      name="Penn Geography" />
+                      name="Geopolitical_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[WID Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_Detail]"
                       dataType="wstr"
                       length="255"
-                      name="WID Geography" />
+                      name="Geopolitical_Detail" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF main category]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Major_Blocs]"
                       dataType="wstr"
                       length="255"
-                      name="IMF main category" />
+                      name="Major_Blocs" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF sub-category]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Penn_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="IMF sub-category" />
+                      name="Penn_Geography" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical Detail]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="Geopolitical Detail" />
+                      name="MACROHISTORY_Geography" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[WID_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="MACROHISTORY Geography" />
+                      name="WID_Geography" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF_main_category]"
+                      dataType="wstr"
+                      length="255"
+                      name="IMF_main_category" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[IMF_sub_category]"
+                      dataType="wstr"
+                      length="255"
+                      name="IMF_sub_category" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1012,11 +1012,11 @@
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoStandardName]"
                       name="GeoStandardName" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoPolitical Type]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoPolitical_Type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoPolitical Type]"
-                      name="GeoPolitical Type" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoPolitical_Type]"
+                      name="GeoPolitical_Type" />
                     <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[ReportingUnit]"
                       dataType="wstr"
@@ -1030,59 +1030,59 @@
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Size]"
                       name="Size" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoEconomic Region]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoEconomic_Region]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoEconomic Region]"
-                      name="GeoEconomic Region" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[GeoEconomic_Region]"
+                      name="GeoEconomic_Region" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical Region]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical_Region]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical Region]"
-                      name="Geopolitical Region" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical_Region]"
+                      name="Geopolitical_Region" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical Detail]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical_Detail]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical Detail]"
-                      name="Geopolitical Detail" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical_Detail]"
+                      name="Geopolitical_Detail" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Major Blocs]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Major_Blocs]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Major Blocs]"
-                      name="Major Blocs" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Major_Blocs]"
+                      name="Major_Blocs" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Penn Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Penn_Geography]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Penn Geography]"
-                      name="Penn Geography" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Penn_Geography]"
+                      name="Penn_Geography" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY_Geography]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY Geography]"
-                      name="MACROHISTORY Geography" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY_Geography]"
+                      name="MACROHISTORY_Geography" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[WID Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[WID_Geography]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[WID Geography]"
-                      name="WID Geography" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[WID_Geography]"
+                      name="WID_Geography" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF main category]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF_main_category]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF main category]"
-                      name="IMF main category" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF_main_category]"
+                      name="IMF_main_category" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF sub-category]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF_sub_category]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF sub-category]"
-                      name="IMF sub-category" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[IMF_sub_category]"
+                      name="IMF_sub_category" />
                     <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1173,13 +1173,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[GeoPolitical Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="GeoPolitical Type"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical Type]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoPolitical Type]" />
-                    <inputColumn
                       refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[ReportingUnit]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1200,13 +1193,6 @@
                       externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoStandardName]"
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoStandardName]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Geopolitical Region]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Geopolitical Region"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Region]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical Region]" />
-                    <inputColumn
                       refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Size]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1214,62 +1200,78 @@
                       externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Size]"
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Size]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[GeoEconomic Region]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[GeoEconomic_Region]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="GeoEconomic Region"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic Region]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoEconomic Region]" />
+                      cachedName="GeoEconomic_Region"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic_Region]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoEconomic_Region]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Major Blocs]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Geopolitical_Region]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Major Blocs"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Major Blocs]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major Blocs]" />
+                      cachedName="Geopolitical_Region"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Region]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Region]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Penn Geography]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Geopolitical_Detail]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Penn Geography"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Penn Geography]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn Geography]" />
+                      cachedName="Geopolitical_Detail"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Detail]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Detail]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[WID Geography]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[MACROHISTORY_Geography]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="WID Geography"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[WID Geography]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[WID Geography]" />
+                      cachedName="MACROHISTORY_Geography"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY_Geography]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[IMF main category]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[WID_Geography]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="IMF main category"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF main category]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF main category]" />
+                      cachedName="WID_Geography"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[WID_Geography]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[WID_Geography]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[IMF sub-category]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[IMF_main_category]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="IMF sub-category"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF sub-category]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF sub-category]" />
+                      cachedName="IMF_main_category"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF_main_category]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF_main_category]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Geopolitical Detail]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[IMF_sub_category]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Geopolitical Detail"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Detail]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical Detail]" />
+                      cachedName="IMF_sub_category"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF_sub_category]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF_sub_category]" />
+                    <inputColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Major_Blocs]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Major_Blocs"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Major_Blocs]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major_Blocs]" />
+                    <inputColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[GeoPolitical_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="GeoPolitical_Type"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical_Type]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoPolitical_Type]" />
+                    <inputColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Penn_Geography]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Penn_Geography"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Penn_Geography]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn_Geography]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="GeoPolitical Type" />
                     <externalMetadataColumn
                       refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[ReportingUnit]"
                       dataType="wstr"
@@ -1285,55 +1287,60 @@
                       length="255"
                       name="GeoStandardName" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Region]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical Region" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Size]"
                       dataType="wstr"
                       length="255"
                       name="Size" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic Region]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoEconomic_Region]"
                       dataType="wstr"
                       length="255"
-                      name="GeoEconomic Region" />
+                      name="GeoEconomic_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Major Blocs]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Region]"
                       dataType="wstr"
                       length="255"
-                      name="Major Blocs" />
+                      name="Geopolitical_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Penn Geography]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Detail]"
                       dataType="wstr"
                       length="255"
-                      name="Penn Geography" />
+                      name="Geopolitical_Detail" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[WID Geography]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="WID Geography" />
+                      name="MACROHISTORY_Geography" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF main category]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[WID_Geography]"
                       dataType="wstr"
                       length="255"
-                      name="IMF main category" />
+                      name="WID_Geography" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF sub-category]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF_main_category]"
                       dataType="wstr"
                       length="255"
-                      name="IMF sub-category" />
+                      name="IMF_main_category" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical Detail]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[IMF_sub_category]"
                       dataType="wstr"
                       length="255"
-                      name="Geopolitical Detail" />
+                      name="IMF_sub_category" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY Geography]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Major_Blocs]"
                       dataType="wstr"
                       length="255"
-                      name="MACROHISTORY Geography" />
+                      name="Major_Blocs" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical_Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoPolitical_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Penn_Geography]"
+                      dataType="wstr"
+                      length="255"
+                      name="Penn_Geography" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3386,13 +3393,13 @@
     design-time-name="Package\Populate DimDate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154,42"
+          Size="154.285714285715,42.2857142857143"
           Id="Package\Populate DimDate\ROLAP DimDate"
           TopLeft="99.6,136.6" />
         <NodeLayout
-          Size="148,42"
+          Size="148,42.2857142857143"
           Id="Package\Populate DimDate\OLTP DimDate"
           TopLeft="99,27" />
         <EdgeLayout
@@ -3414,9 +3421,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3518,13 +3523,13 @@
     design-time-name="Package\Populate DimGeo">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.2,42"
+          Size="151.428571428572,42.2857142857143"
           Id="Package\Populate DimGeo\ROLAP DimGeo"
           TopLeft="95.2593434345085,147.32184329536" />
         <NodeLayout
-          Size="144,42"
+          Size="144,42.2857142857143"
           Id="Package\Populate DimGeo\OLTP DimGeo"
           TopLeft="93.6659331146782,71.277418529181" />
         <EdgeLayout
@@ -3546,9 +3551,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3584,13 +3587,13 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175.111111111112,41.7777777777778"
+          Size="174.857142857143,41.7142857142858"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
           TopLeft="104.925925889133,117.857146747258" />
         <NodeLayout
-          Size="196.888888888889,41.7777777777778"
+          Size="197.142857142858,41.7142857142858"
           Id="Package\Populate DimIndicator\OLTP DimIndicator Table"
           TopLeft="87.0769262708857,21.745455330988" />
         <EdgeLayout
@@ -3612,9 +3615,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

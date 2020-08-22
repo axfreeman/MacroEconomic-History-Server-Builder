@@ -1,4 +1,4 @@
--- The OLTP database is where the  source data and dimension templates are initially loaded.
+-- The OLTP database is where the source data and dimension templates are initially loaded.
 -- After they have been standardised and where necessary unpivoted, the results are copied
 -- to the ROLAP database, which provides a clean version that is fully relational.
 -- The ROLAP database is the source for all client data whether online or offline
@@ -13,25 +13,20 @@ GO
  */
 
  
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
 
 -- the Date Dimension allows us to group data by decade and other categories such as business cycle
 
 DROP TABLE IF EXISTS DimDate
 GO
 
-CREATE TABLE [DimDate](
-	[Date] [date] NOT NULL,
-	[year] [int] NOT NULL,
-CONSTRAINT [PK_DimDate] PRIMARY KEY CLUSTERED 
+CREATE TABLE DimDate (
+	 Date date NOT NULL,
+	 year int NOT NULL,
+CONSTRAINT PK_DimDate PRIMARY KEY CLUSTERED 
 (
-	[Date] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+	 Date ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
+) 
 GO
 
 
@@ -48,20 +43,20 @@ GO
 
 DROP TABLE IF EXISTS GeoStandardNames
 
-CREATE TABLE [GeoStandardNames](
+CREATE TABLE GeoStandardNames (
 		-- The source of the data (eg UN2018,WDI2012,PALGRAVE, ETC). Not used (at 19/08/2018) at present; here for information
-	[GeoSource] [nvarchar](255) NULL, 
+	 GeoSource nvarchar (255) NULL, 
 		-- 	What the country or region is called by the source. Varies from source to source, which is why we have to standardise.
-	[GeoSourceName] [nvarchar](255) NOT NULL, 
+	 GeoSourceName nvarchar (255) NOT NULL, 
 		-- A standard name by which the country or region is known on the ROLAP and Analysis servers 
 		-- currently (9/12/2018) this is also the name by which the country is known to the user, but this
 		-- could be changed by supplying a different name via DimGeo	
-	[GeoStandardName] [nvarchar](255) NULL 
+	 GeoStandardName nvarchar (255) NULL 
 
- CONSTRAINT [PK_StandardGeO] PRIMARY KEY CLUSTERED 
+ CONSTRAINT PK_StandardGeO PRIMARY KEY CLUSTERED 
 (
-	[GeoSourceName] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY])
+	 GeoSourceName ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) )
 GO
 
 
@@ -73,26 +68,26 @@ GO
 DROP TABLE IF EXISTS DimGeo
 GO
 
-CREATE TABLE [DimGeo](
-[DimGeoID] [int] NOT NULL IDENTITY(1,1),
-[GeoStandardName] [nvarchar](255) NULL,
-[GeoPolitical Type] [nvarchar](255) NULL,	
-[ReportingUnit] [nvarchar](255) NULL,	
-[Size] [nvarchar](255) NULL,
-[GeoEconomic Region] [nvarchar](255) NULL,
-[Geopolitical Region] [nvarchar](255) NULL,
-[Geopolitical Detail][nvarchar](255) NULL,
-[Major Blocs] [nvarchar](255) NULL,
-[Penn Geography] [nvarchar](255) NULL,
-[MACROHISTORY Geography] [nvarchar](255) NULL,
-[WID Geography] [nvarchar](255) NULL,
-[IMF main category] [nvarchar](255) NULL,
-[IMF sub-category] [nvarchar](255) NULL,	
- CONSTRAINT [PK_DimGeO] PRIMARY KEY CLUSTERED 
+CREATE TABLE DimGeo (
+ DimGeoID int NOT NULL IDENTITY(1,1),
+ GeoStandardName nvarchar (255) NULL,
+ GeoPolitical_Type nvarchar (255) NULL,	
+ ReportingUnit nvarchar (255) NULL,	
+ Size nvarchar (255) NULL,
+ GeoEconomic_Region nvarchar (255) NULL,
+ Geopolitical_Region nvarchar (255) NULL,
+ Geopolitical_Detail nvarchar (255) NULL,
+ Major_Blocs nvarchar (255) NULL,
+ Penn_Geography nvarchar (255) NULL,
+ MACROHISTORY_Geography nvarchar (255) NULL,
+ WID_Geography nvarchar (255) NULL,
+ IMF_main_category nvarchar (255) NULL,
+ IMF_sub_category nvarchar (255) NULL,	
+ CONSTRAINT PK_DimGeO PRIMARY KEY CLUSTERED 
 (
-	[DimGeoID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+	 DimGeoID ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
+) 
 
 GO
 
@@ -104,79 +99,76 @@ GO
 DROP TABLE IF EXISTS IndicatorStandardNames
 GO
 
-CREATE TABLE [IndicatorStandardNames](
+CREATE TABLE IndicatorStandardNames (
 		-- the source of the data (eg UN2018). Unlike GeoStandardNames, this field is needed 
 		-- because two sources may use the same name for two different indicators
-	[IndicatorSource] [nvarchar] (255) NOT NULL, 
+	 IndicatorSource nvarchar (255) NOT NULL, 
 		-- many sources also have an ID system of their own. For completeness, this is recorded here, but not (9/12/2018) currently used.
-	[IndicatorSourceDescription] [nvarchar](255) NOT NULL,
+	 IndicatorSourceDescription nvarchar (255) NOT NULL,
 		-- this is the code by which the source (provider) identifies the data. Sometimes it is a complex alphanumeric code, and sometimes it is just the description itself
-	[IndicatorSourceCode] [nvarchar](255) NOT NULL,
+	 IndicatorSourceCode nvarchar (255) NOT NULL,
 		-- a standard name which identifies the indicator uniquely on the ROLAP server
-	[IndicatorStandardName] [nvarchar](255) NOT NULL
- CONSTRAINT [PK_IndicatorSourceKey] PRIMARY KEY CLUSTERED 
+	 IndicatorStandardName nvarchar (255) NOT NULL
+ CONSTRAINT PK_IndicatorSourceKey PRIMARY KEY CLUSTERED 
 (
-	[IndicatorSource],[IndicatorSourceCode] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY])
+	 IndicatorSource , IndicatorSourceCode ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) )
 GO
 
 
 -- The indicator Dimension table 
 DROP TABLE IF EXISTS DimIndicator
 
-CREATE TABLE [DimIndicator](
-	[DimIndicatorID] [int] NOT NULL IDENTITY (1,1), 
+CREATE TABLE DimIndicator (
+	 DimIndicatorID int NOT NULL IDENTITY (1,1), 
 		-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
-	[IndicatorStandardName][nvarchar] (256) NOT NULL,
-	[Type][nvarchar](255)NULL,
-	[Indicator] [nvarchar](255) NULL, 
-	[Sector] [nvarchar](255) NULL,
-	[Qualifier] [nvarchar] (255) NULL, 
-	[Unit][nvarchar](255)NULL,
-	[Measure] [nvarchar](255) NULL,
-	[BaseYear] [nvarchar](255) NULL
- CONSTRAINT [IX_IndicatorStandardName] UNIQUE(IndicatorStandardName),	
- CONSTRAINT [PK_DimIndicator] PRIMARY KEY CLUSTERED 
+	 IndicatorStandardName nvarchar (256) NOT NULL,
+	 Type nvarchar (255)NULL,
+	 Indicator nvarchar (255) NULL, 
+	 Sector nvarchar (255) NULL,
+	 Qualifier nvarchar (255) NULL, 
+	 Unit nvarchar (255)NULL,
+	 Measure nvarchar (255) NULL,
+	 BaseYear nvarchar (255) NULL
+ CONSTRAINT IX_IndicatorStandardName UNIQUE(IndicatorStandardName),	
+ CONSTRAINT PK_DimIndicator PRIMARY KEY CLUSTERED 
 (
-	[DimIndicatorID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY])
+	 DimIndicatorID ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) )
 GO
 
 -- The Source Dimension lists the various sources 
 DROP TABLE IF EXISTS DimSource
 GO
 
-CREATE TABLE [DimSource](
-[DimSourceID] int NOT NULL IDENTITY (1,1),
-[SourceName] [nvarchar](255),
-[SourceNameParent] [nvarchar](255),
-[SourceNameDetail] [nvarchar](255),
-[Description] [nvarchar] (255),
-[DataOriginFile] [nvarchar] (255),
-[DataOriginURL] [nvarchar] (255),
-[PreparationNotes] [nvarchar](255),
-[SourceNotes] [nvarchar] (255),
-[DataNotes] [nvarchar] (255)
-CONSTRAINT [PK_Source] PRIMARY KEY CLUSTERED 
+CREATE TABLE DimSource (
+ DimSourceID int NOT NULL IDENTITY (1,1),
+ SourceName nvarchar (255),
+ SourceNameParent nvarchar (255),
+ SourceNameDetail nvarchar (255),
+ Description nvarchar (255),
+ DataOriginFile nvarchar (255),
+ DataOriginURL nvarchar (255),
+ PreparationNotes nvarchar (255),
+ SourceNotes nvarchar (255),
+ DataNotes nvarchar (255)
+CONSTRAINT PK_Source PRIMARY KEY CLUSTERED 
 (
-	[DimSourceID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	 DimSourceID ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
 )
 GO
 
 -- The Definitions Dimension lists the various sources as well as composite definitions which splice data from various sources
 DROP TABLE IF EXISTS DimDefinitions
 GO
-CREATE TABLE [DimDefinitions](
-[DimDefinitionID] int NOT NULL IDENTITY (1,1),
-[DefinitionName] [nvarchar](100),
-[LongDescription]	[nvarchar] (255)
-CONSTRAINT [PK_Definition] PRIMARY KEY CLUSTERED 
+CREATE TABLE DimDefinitions (
+ DimDefinitionID int NOT NULL IDENTITY (1,1),
+ DefinitionName nvarchar (100),
+ LongDescription 	 nvarchar (255)
+CONSTRAINT PK_Definition PRIMARY KEY CLUSTERED 
 (
-	[DimDefinitionID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	 DimDefinitionID ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
 )
 GO
-
-
-
