@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="212"
-  DTS:VersionGUID="{C788B2A7-2E2B-4C15-8501-9CF327B8A7C3}">
+  DTS:VersionBuild="218"
+  DTS:VersionGUID="{DBBFA0B2-EEAA-467C-8B5A-9B751D35706B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5681,24 +5681,6 @@
               startId="Package\Barro-Ursua Dataset\Unpivot.Outputs[Unpivot Output]" />
           </paths>
         </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Calculate PivotedAdditions"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8702aa3e-5ff2-49a3-8b87-2a9c99486a6b}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Calculate PivotedAdditions"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{442F2917-9C92-411C-B3F4-4301EB05D697}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="CalculatePivotedAdditions.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -24647,12 +24629,12 @@
                     <externalMetadataColumn
                       refId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
-                      length="255"
+                      length="100"
                       name="GeoSourceName" />
                     <externalMetadataColumn
                       refId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="255"
+                      length="100"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\UN-OFFICIAL\Pivoted Sources.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
@@ -38783,9 +38765,8 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\WEO2018O\Derived Column.Inputs[Derived Column Input].Columns[ShortindicatorSubjectCode]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="82"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="Subject Descriptor"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
@@ -39001,13 +38982,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].Columns[WEO Subject Code]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="WEO Subject Code"
-                      externalMetadataColumnId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      lineageId="Package\WEO2018O\768:invalid" />
-                    <inputColumn
                       refId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].Columns[Country]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -39041,18 +39015,25 @@
                       cachedName="Value"
                       externalMetadataColumnId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
                       lineageId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].Columns[ShortindicatorSubjectCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ShortindicatorSubjectCode"
+                      externalMetadataColumnId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[ShortindicatorSubjectCode]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="GeoSourceName" />
                     <externalMetadataColumn
                       refId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
-                      length="100"
+                      length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
                       refId="Package\WEO2018O\Fact.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
@@ -39820,10 +39801,28 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\WEO2018O\Unpivot.Inputs[Unpivot Input].Columns[WEO Subject Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="WEO Subject Code"
+                      lineageId="Package\WEO2018O\WEO2018O CSV.Outputs[Flat File Source Output].Columns[WEO Subject Code]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[WEO Subject Code]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\WEO2018O\Unpivot.Inputs[Unpivot Input].Columns[Subject Descriptor]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="82"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="Subject Descriptor"
                       lineageId="Package\WEO2018O\WEO2018O CSV.Outputs[Flat File Source Output].Columns[Subject Descriptor]">
                       <properties>
@@ -39831,7 +39830,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
-                          name="DestinationColumn">#{Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[Subject Descriptor]}</property>
+                          name="DestinationColumn">#{Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[ShortindicatorSubjectCode]}</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the value written to the PivotKey column in the output row."
@@ -39963,12 +39962,24 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[Subject Descriptor]"
-                      codePage="65001"
-                      dataType="str"
-                      length="82"
-                      lineageId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[Subject Descriptor]"
-                      name="Subject Descriptor">
+                      refId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[WEO Subject Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[WEO Subject Code]"
+                      name="WEO Subject Code">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[ShortindicatorSubjectCode]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\WEO2018O\Unpivot.Outputs[Unpivot Output].Columns[ShortindicatorSubjectCode]"
+                      name="ShortindicatorSubjectCode">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -40868,12 +40879,11 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\WEO2018O\WEO2018O CSV.Outputs[Flat File Source Output].Columns[Subject Descriptor]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="IgnoreFailure"
                       externalMetadataColumnId="Package\WEO2018O\WEO2018O CSV.Outputs[Flat File Source Output].ExternalColumns[Subject Descriptor]"
-                      length="82"
+                      length="50"
                       lineageId="Package\WEO2018O\WEO2018O CSV.Outputs[Flat File Source Output].Columns[Subject Descriptor]"
                       name="Subject Descriptor"
                       truncationRowDisposition="IgnoreFailure">
@@ -41820,10 +41830,6 @@
           Id="Package\Barro-Ursua Dataset"
           TopLeft="74.7560817471333,389.815887641518" />
         <NodeLayout
-          Size="170.857142857143,41.7142857142858"
-          Id="Package\Calculate PivotedAdditions"
-          TopLeft="979.070840282541,530.759982791569" />
-        <NodeLayout
           Size="182.285714285715,41.7142857142858"
           Id="Package\Eurostat Capital Stock"
           TopLeft="56.3333340839102,326.692707414671" />
@@ -41862,7 +41868,7 @@
         <NodeLayout
           Size="121.714285714286,41.7142857142858"
           Id="Package\Penn Full"
-          TopLeft="707.580856721762,395.841027731027" />
+          TopLeft="647.580855132305,394.659209562016" />
         <NodeLayout
           Size="141.142857142858,41.7142857142858"
           Id="Package\Penn_na"
@@ -42051,30 +42057,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="768.437999578905,437.555313445312">
+          TopLeft="708.437997989448,436.373495276302">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-603.476024092539,44.462142274956"
+              EndConnector="-543.476022503082,45.6439604439659"
               Start="0,0"
-              End="-603.476024092539,36.962142274956">
+              End="-543.476022503082,38.1439604439659">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.231071137478" />
+                    End="0,18.8219802219829" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.231071137478"
-                    Point2="0,22.231071137478"
-                    Point3="-4,22.231071137478" />
+                    Point1="0,18.8219802219829"
+                    Point2="0,22.8219802219829"
+                    Point3="-4,22.8219802219829" />
                   <mssgle:LineSegment
-                    End="-599.476024092539,22.231071137478" />
+                    End="-539.476022503082,22.8219802219829" />
                   <mssgle:CubicBezierSegment
-                    Point1="-599.476024092539,22.231071137478"
-                    Point2="-603.476024092539,22.231071137478"
-                    Point3="-603.476024092539,26.231071137478" />
+                    Point1="-539.476022503082,22.8219802219829"
+                    Point2="-543.476022503082,22.8219802219829"
+                    Point3="-543.476022503082,26.8219802219829" />
                   <mssgle:LineSegment
-                    End="-603.476024092539,36.962142274956" />
+                    End="-543.476022503082,38.1439604439659" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -42441,18 +42447,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="440.740834753506,416.384690666962">
+          TopLeft="440.740834753506,415.793781582457">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="266.840021968255,0"
+              EndConnector="206.840020378799,0"
               Start="0,0"
-              End="259.340021968255,0">
+              End="199.340020378799,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="259.340021968255,0" />
+                    End="199.340020378799,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -42468,7 +42474,7 @@
     design-time-name="Package\AMECO">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="116.571428571429,42.2857142857143"
           Id="Package\AMECO\Unpivot"
@@ -42516,9 +42522,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42540,9 +42544,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42576,9 +42578,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -42601,7 +42601,7 @@
     design-time-name="Package\Barro-Ursua Dataset">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114.857142857143,42.2857142857143"
           Id="Package\Barro-Ursua Dataset\Unpivot"
@@ -42637,9 +42637,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42661,9 +42659,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42685,9 +42681,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -42697,7 +42691,7 @@
     design-time-name="Package\Eurostat Capital Stock">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="190.285714285715,42.2857142857143"
           Id="Package\Eurostat Capital Stock\FactSource"
@@ -42729,9 +42723,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42753,9 +42745,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -42778,7 +42768,7 @@
     design-time-name="Package\IFS2018">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158.857142857143,41.7142857142858"
           Id="Package\IFS2018\IFS2018 CSV File"
@@ -42788,47 +42778,13 @@
           Id="Package\IFS2018\Add Source and Definition"
           TopLeft="161,150" />
         <NodeLayout
-          Size="116.571428571429,42.2857142857143"
-          Id="Package\IFS2018\Unpivot"
-          TopLeft="592.5,72.5" />
-        <NodeLayout
           Size="161.714285714286,42.2857142857143"
           Id="Package\IFS2018\Fact OLTP Table"
           TopLeft="175.333333686546,267.2272726056" />
-        <EdgeLayout
-          Id="Package\IFS2018.Paths[Unpivot Output]"
-          TopLeft="650.785714285714,114.785714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-388.928571428571,35.2142857142858"
-              Start="0,0"
-              End="-388.928571428571,27.7142857142858">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,13.6071428571429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.6071428571429"
-                    Point2="0,17.6071428571429"
-                    Point3="-4,17.6071428571429" />
-                  <mssgle:LineSegment
-                    End="-384.928571428571,17.6071428571429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-384.928571428571,17.6071428571429"
-                    Point2="-388.928571428571,17.6071428571429"
-                    Point3="-388.928571428571,21.6071428571429" />
-                  <mssgle:LineSegment
-                    End="-388.928571428571,27.7142857142858" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="116.571428571429,42.2857142857143"
+          Id="Package\IFS2018\Unpivot"
+          TopLeft="592.5,72.5" />
         <EdgeLayout
           Id="Package\IFS2018.Paths[Flat File Source Output]"
           TopLeft="340.857142857143,63.8571428571429">
@@ -42860,7 +42816,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42882,7 +42840,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\IFS2018.Paths[Unpivot Output]"
+          TopLeft="650.785714285714,114.785714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-388.928571428571,35.2142857142858"
+              Start="0,0"
+              End="-388.928571428571,27.7142857142858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.6071428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.6071428571429"
+                    Point2="0,17.6071428571429"
+                    Point3="-4,17.6071428571429" />
+                  <mssgle:LineSegment
+                    End="-384.928571428571,17.6071428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-384.928571428571,17.6071428571429"
+                    Point2="-388.928571428571,17.6071428571429"
+                    Point3="-388.928571428571,21.6071428571429" />
+                  <mssgle:LineSegment
+                    End="-388.928571428571,27.7142857142858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -42905,7 +42901,7 @@
     design-time-name="Package\Macrohistory">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="178.285714285715,42.2857142857143"
           Id="Package\Macrohistory\Macrohistory CSV file"
@@ -42953,9 +42949,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42989,9 +42983,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43025,9 +43017,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43050,7 +43040,7 @@
     design-time-name="Package\Maddison GDP">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="146.285714285715,42.2857142857143"
           Id="Package\Maddison GDP\Maddison CSV"
@@ -43082,9 +43072,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43106,9 +43094,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43118,7 +43104,7 @@
     design-time-name="Package\Maddison GDP Multiple Benchmarks">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="146.285714285715,42.2857142857143"
           Id="Package\Maddison GDP Multiple Benchmarks\Maddison CSV"
@@ -43150,9 +43136,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43174,9 +43158,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43186,7 +43168,7 @@
     design-time-name="Package\Maddison Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="124,42.2857142857143"
           Id="Package\Maddison Population\Maddison"
@@ -43218,9 +43200,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43242,9 +43222,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43254,7 +43232,7 @@
     design-time-name="Package\OECD">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="186.857142857143,41.7142857142858"
           Id="Package\OECD\OECD Comprehensive"
@@ -43302,9 +43280,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43326,9 +43302,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43362,9 +43336,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43387,7 +43359,7 @@
     design-time-name="Package\Palgrave USA">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="141.714285714286,42.2857142857143"
           Id="Package\Palgrave USA\Palgrave USA"
@@ -43419,9 +43391,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43443,9 +43413,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43455,7 +43423,7 @@
     design-time-name="Package\Penn Full">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="161.714285714286,42.2857142857143"
           Id="Package\Penn Full\Fact OLTP Table"
@@ -43503,9 +43471,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43539,9 +43505,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43575,9 +43539,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43600,7 +43562,7 @@
     design-time-name="Package\Penn_na">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="158.857142857143,42.2857142857143"
           Id="Package\Penn_na\Penn_na CSV file"
@@ -43648,9 +43610,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43684,9 +43644,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43720,9 +43678,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43745,7 +43701,7 @@
     design-time-name="Package\PPP2011 from ICP">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="157.714285714286,42.2857142857143"
           Id="Package\PPP2011 from ICP\FactSource"
@@ -43777,9 +43733,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43801,9 +43755,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43826,7 +43778,7 @@
     design-time-name="Package\UN Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="145.714285714286,41.7142857142858"
           Id="Package\UN Population\UN Population"
@@ -43874,9 +43826,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43898,9 +43848,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43934,9 +43882,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -43959,7 +43905,7 @@
     design-time-name="Package\UN2018(new)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="189.142857142858,41.7142857142858"
           Id="Package\UN2018(new)\UN2018 (new) CSV File"
@@ -43968,6 +43914,10 @@
           Size="117.714285714286,42.2857142857143"
           Id="Package\UN2018(new)\Shorten"
           TopLeft="610.000016159482,155.999998309396" />
+        <NodeLayout
+          Size="161.714285714286,42.2857142857143"
+          Id="Package\UN2018(new)\Fact OLTP Table"
+          TopLeft="395.000010463927,348.045450773613" />
         <EdgeLayout
           Id="Package\UN2018(new).Paths[Flat File Source Output]"
           TopLeft="343.571428571429,78.7142857142857">
@@ -43999,13 +43949,11 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161.714285714286,42.2857142857143"
-          Id="Package\UN2018(new)\Fact OLTP Table"
-          TopLeft="395.000010463927,348.045450773613" />
         <EdgeLayout
           Id="Package\UN2018(new).Paths[Derived Column Output]"
           TopLeft="668.857159016625,198.28571259511">
@@ -44037,7 +43985,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -44072,7 +44022,7 @@
         <NodeLayout
           Size="153.714285714286,41.7142857142858"
           Id="Package\UN-OFFICIAL\Pivoted Sources"
-          TopLeft="218,294" />
+          TopLeft="216.8,293.6" />
         <NodeLayout
           Size="164,41.7142857142858"
           Id="Package\UN-OFFICIAL\UN-OFFICIAL CSV"
@@ -44083,26 +44033,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-372.095238095238,87.7142857142857"
+              EndConnector="-373.295238095238,87.3142857142857"
               Start="0,0"
-              End="-372.095238095238,80.2142857142857">
+              End="-373.295238095238,79.8142857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8571428571429" />
+                    End="0,39.6571428571428" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.8571428571429"
-                    Point2="0,43.8571428571429"
-                    Point3="-4,43.8571428571429" />
+                    Point1="0,39.6571428571428"
+                    Point2="0,43.6571428571428"
+                    Point3="-4,43.6571428571428" />
                   <mssgle:LineSegment
-                    End="-368.095238095238,43.8571428571429" />
+                    End="-369.295238095238,43.6571428571428" />
                   <mssgle:CubicBezierSegment
-                    Point1="-368.095238095238,43.8571428571429"
-                    Point2="-372.095238095238,43.8571428571429"
-                    Point3="-372.095238095238,47.8571428571429" />
+                    Point1="-369.295238095238,43.6571428571428"
+                    Point2="-373.295238095238,43.6571428571428"
+                    Point3="-373.295238095238,47.6571428571428" />
                   <mssgle:LineSegment
-                    End="-372.095238095238,80.2142857142857" />
+                    End="-373.295238095238,79.8142857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -44181,7 +44131,7 @@
     design-time-name="Package\US Nationally sourced data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="100.571428571429,42.2857142857143"
           Id="Package\US Nationally sourced data\Fact"
@@ -44229,9 +44179,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44265,9 +44213,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44301,9 +44247,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -44491,15 +44435,15 @@
     design-time-name="Package\WEO2002">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="116.571428571429,42.2857142857143"
-          Id="Package\WEO2002\Unpivot"
-          TopLeft="630.666666666667,256" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="256.571428571429,41.7142857142858"
           Id="Package\WEO2002\WEO2002 CSV file"
           TopLeft="112.5,22.5" />
+        <NodeLayout
+          Size="116.571428571429,42.2857142857143"
+          Id="Package\WEO2002\Unpivot"
+          TopLeft="630.666666666667,256" />
         <NodeLayout
           Size="201.714285714286,41.7142857142858"
           Id="Package\WEO2002\Add Source and Definition"
@@ -44508,40 +44452,6 @@
           Size="100.571428571429,42.2857142857143"
           Id="Package\WEO2002\Fact"
           TopLeft="161.333333333333,309.333333333333" />
-        <EdgeLayout
-          Id="Package\WEO2002.Paths[Derived Column Output]"
-          TopLeft="242.190476190476,215.047619047619">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="446.761904761905,40.9523809523809"
-              Start="0,0"
-              End="446.761904761905,33.4523809523809">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.4761904761905" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.4761904761905"
-                    Point2="0,20.4761904761905"
-                    Point3="4,20.4761904761905" />
-                  <mssgle:LineSegment
-                    End="442.761904761905,20.4761904761905" />
-                  <mssgle:CubicBezierSegment
-                    Point1="442.761904761905,20.4761904761905"
-                    Point2="446.761904761905,20.4761904761905"
-                    Point3="446.761904761905,24.4761904761905" />
-                  <mssgle:LineSegment
-                    End="446.761904761905,33.4523809523809" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\WEO2002.Paths[Unpivot Output]"
           TopLeft="630.666666666667,277.142857142857">
@@ -44573,7 +44483,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44595,7 +44507,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\WEO2002.Paths[Derived Column Output]"
+          TopLeft="242.190476190476,215.047619047619">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="446.761904761905,40.9523809523809"
+              Start="0,0"
+              End="446.761904761905,33.4523809523809">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4761904761905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4761904761905"
+                    Point2="0,20.4761904761905"
+                    Point3="4,20.4761904761905" />
+                  <mssgle:LineSegment
+                    End="442.761904761905,20.4761904761905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="442.761904761905,20.4761904761905"
+                    Point2="446.761904761905,20.4761904761905"
+                    Point3="446.761904761905,24.4761904761905" />
+                  <mssgle:LineSegment
+                    End="446.761904761905,33.4523809523809" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -44618,85 +44568,71 @@
     design-time-name="Package\WEO2018O">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153.714285714286,41.7142857142858"
+          Id="Package\WEO2018O\Derived Column"
+          TopLeft="516.666670816916,70.8636376764163" />
         <NodeLayout
           Size="100.571428571429,42.2857142857143"
           Id="Package\WEO2018O\Fact"
           TopLeft="413,320" />
         <NodeLayout
-          Size="153.714285714286,41.7142857142858"
-          Id="Package\WEO2018O\Derived Column"
-          TopLeft="360,192" />
-        <NodeLayout
           Size="154.857142857143,41.7142857142858"
           Id="Package\WEO2018O\WEO2018O CSV"
           TopLeft="237,72" />
-        <NodeLayout
-          Size="116.571428571429,42.2857142857143"
-          Id="Package\WEO2018O\Unpivot"
-          TopLeft="734,199.5" />
         <EdgeLayout
-          Id="Package\WEO2018O.Paths[Unpivot Output]"
-          TopLeft="792.285714285714,241.785714285714">
+          Id="Package\WEO2018O.Paths[Flat File Source Output]"
+          TopLeft="391.857142857143,92.288961695351">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-329,78.2142857142857"
+              EndConnector="124.809527959773,0"
               Start="0,0"
-              End="-329,70.7142857142857">
+              End="117.309527959773,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.1071428571429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.1071428571429"
-                    Point2="0,39.1071428571429"
-                    Point3="-4,39.1071428571429" />
-                  <mssgle:LineSegment
-                    End="-325,39.1071428571429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-325,39.1071428571429"
-                    Point2="-329,39.1071428571429"
-                    Point3="-329,43.1071428571429" />
-                  <mssgle:LineSegment
-                    End="-329,70.7142857142857" />
+                    End="117.309527959773,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-172.5,44.1071428571429,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="116.571428571429,42.2857142857143"
+          Id="Package\WEO2018O\Unpivot"
+          TopLeft="480.000012715658,183.181816196639" />
         <EdgeLayout
-          Id="Package\WEO2018O.Paths[Flat File Source Output]"
-          TopLeft="314.5,114">
+          Id="Package\WEO2018O.Paths[Derived Column Output]"
+          TopLeft="593.523813674059,112.577923390702">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="122.5,78"
+              EndConnector="-55.2380866726871,70.6038928059366"
               Start="0,0"
-              End="122.5,70.5">
+              End="-55.2380866726871,63.1038928059366">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35" />
+                    End="0,31.3019464029683" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="4,39" />
+                    Point1="0,31.3019464029683"
+                    Point2="0,35.3019464029683"
+                    Point3="-4,35.3019464029683" />
                   <mssgle:LineSegment
-                    End="118.5,39" />
+                    End="-51.2380866726871,35.3019464029683" />
                   <mssgle:CubicBezierSegment
-                    Point1="118.5,39"
-                    Point2="122.5,39"
-                    Point3="122.5,43" />
+                    Point1="-51.2380866726871,35.3019464029683"
+                    Point2="-55.2380866726871,35.3019464029683"
+                    Point3="-55.2380866726871,39.3019464029683" />
                   <mssgle:LineSegment
-                    End="122.5,70.5" />
+                    End="-55.2380866726871,63.1038928059366" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -44706,19 +44642,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\WEO2018O.Paths[Derived Column Output]"
-          TopLeft="513.714285714286,216.75">
+          Id="Package\WEO2018O.Paths[Unpivot Output]"
+          TopLeft="538.285727001372,225.467530482353">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="220.285714285714,0"
+              EndConnector="-75.0000127156578,94.532469517647"
               Start="0,0"
-              End="212.785714285714,0">
+              End="-75.0000127156578,87.032469517647">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="212.785714285714,0" />
+                    End="0,43.2662347588235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.2662347588235"
+                    Point2="0,47.2662347588235"
+                    Point3="-4,47.2662347588235" />
+                  <mssgle:LineSegment
+                    End="-71.0000127156578,47.2662347588235" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-71.0000127156578,47.2662347588235"
+                    Point2="-75.0000127156578,47.2662347588235"
+                    Point3="-75.0000127156578,51.2662347588235" />
+                  <mssgle:LineSegment
+                    End="-75.0000127156578,87.032469517647" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -44747,17 +44695,17 @@
     design-time-name="Package\World Inequality Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197,42"
+          Size="197.142857142858,42.2857142857143"
           Id="Package\World Inequality Database\Supply Source, Definition"
           TopLeft="174,149" />
         <NodeLayout
-          Size="191,42"
+          Size="190.857142857143,42.2857142857143"
           Id="Package\World Inequality Database\Fact Source OLTP Table"
           TopLeft="174,292" />
         <NodeLayout
-          Size="122,42"
+          Size="122.285714285715,42.2857142857143"
           Id="Package\World Inequality Database\WID CSV"
           TopLeft="213,34" />
         <EdgeLayout
@@ -44779,9 +44727,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44803,9 +44749,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

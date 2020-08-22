@@ -30,8 +30,8 @@ CREATE TABLE [FactSource](
  [OLTP_FactID] bigint not null IDENTITY (1,1), /* this key isn't used but helps track and debug problem rows */
  [SourceName] [nvarchar](50) NULL, /* the source is a single provider at a single release date, eg UN2018, WB2015*/
  [DefinitionName] nvarchar(50)NULL, /* the 'definition' is a selection of records from different providers. Initially, the selection for a given source will simply be the source */
- [GeoSourceName] [nvarchar](100) NULL, /* the geographical unit as defined by the supplier. This is standardised using geoStandardNames because every source has a different name for the same country */
- [IndicatorSourceCode] [nvarchar](100) NULL, 
+ [GeoSourceName] [nvarchar](255) NULL, /* the geographical unit as defined by the supplier. This is standardised using geoStandardNames because every source has a different name for the same country */
+ [IndicatorSourceCode] [nvarchar](255) NULL, 
  [Year] int NULL,
  [Value] float NULL
  	CONSTRAINT [PK_OLTP_FactID] PRIMARY KEY CLUSTERED 
