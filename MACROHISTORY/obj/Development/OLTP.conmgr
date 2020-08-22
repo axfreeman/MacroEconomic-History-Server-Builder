@@ -9,6 +9,6 @@
     DTS:Name="ServerName">@[$Project::OLTPServer]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=DESKTOP-KSAPEQM;Initial Catalog=macrohistory_oltp;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=DESKTOP-KSAPEQM\SQLEXPRESS;Initial Catalog=macrohistory_oltp;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -11,10 +11,10 @@ GO
 -- in which the details of each dimension (Geography, indicator, series breaks, date) are
 -- provided by dimension files related to the relevant Foreign Key in the fact file.
 
-DROP TABLE IF EXISTS [dbo].[Fact] 
+DROP TABLE IF EXISTS [Fact] 
 GO
 
-CREATE TABLE [dbo].[Fact](
+CREATE TABLE [Fact](
 
 	[FactID] bigint NOT NULL IDENTITY (1,1),
 	[DimSourceID] int NULL,
@@ -31,10 +31,10 @@ CREATE TABLE [dbo].[Fact](
 	ON [PRIMARY]
 GO
 
-DROP INDEX IF EXISTS [dbo].[ix_FactSource] 
+DROP INDEX IF EXISTS [ix_FactSource] 
 GO
 
-CREATE NONCLUSTERED INDEX [ix_Fact] ON [dbo].[Fact]
+CREATE NONCLUSTERED INDEX [ix_Fact] ON [Fact]
 (
 	[DimSourceID] ASC,
 	[DimDefinitionID] ASC,
@@ -48,10 +48,10 @@ GO
 -- Note this simply replicates the definition in the OLTP database but without an auto-increment key, because that's generated when the OLTP table is created
 
 
-DROP TABLE IF EXISTS [dbo].[DimIndicator] 
+DROP TABLE IF EXISTS [DimIndicator] 
 GO
 
-CREATE TABLE [dbo].[DimIndicator](
+CREATE TABLE [DimIndicator](
 	[DimIndicatorID] [int] NOT NULL,
 	[IndicatorStandardName][nvarchar] (256) NOT NULL,
 	[Type][nvarchar](255)NULL,
@@ -71,10 +71,10 @@ GO
 -- NOTE: in the ROLAP version we do not have an auto-incrementing key because it's generated in the OLTP file
 -- As with DimIndicator, simply replicates what is in the OLTP table but without an auto-increment key, because that's generated when the OLTP table is created
 
-DROP TABLE IF EXISTS [dbo].[DimGeo] 
+DROP TABLE IF EXISTS [DimGeo] 
 GO
 
-CREATE TABLE [dbo].[DimGeo](
+CREATE TABLE [DimGeo](
 [DimGeoID] [int] NOT NULL,
 [GeoStandardName] [nvarchar](255) NULL,
 [GeoPolitical Type] [nvarchar](255) NULL,	
@@ -95,10 +95,10 @@ CREATE TABLE [dbo].[DimGeo](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
-DROP TABLE IF EXISTS [dbo].[DimDate] 
+DROP TABLE IF EXISTS [DimDate] 
 GO
 
-CREATE TABLE [dbo].[DimDate](
+CREATE TABLE [DimDate](
 	[Date] [datetime] NOT NULL,
 	[Year] [int] NOT NULL
  CONSTRAINT [PK_Date] PRIMARY KEY CLUSTERED 
@@ -111,12 +111,12 @@ GO
 
 -- The Definitions Dimension lists the composite definitions which splice data from various sources
 
-DROP TABLE IF EXISTS [dbo].[DimDefinitions] 
+DROP TABLE IF EXISTS [DimDefinitions] 
 GO
 
 -- The Definitions Dimension lists the various sources as well as composite definitions which splice data from various sources
 
-CREATE TABLE [dbo].[DimDefinitions](
+CREATE TABLE [DimDefinitions](
 [DimDefinitionID] int NOT NULL,
 [DefinitionName] [nvarchar](100),
 [LongDescription]	[nvarchar] (255)
@@ -129,10 +129,10 @@ GO
 
 -- The Source Dimension lists the various sources 
 
-DROP TABLE IF EXISTS [dbo].[DimSource] 
+DROP TABLE IF EXISTS [DimSource] 
 GO
 
-CREATE TABLE [dbo].[DimSource](
+CREATE TABLE [DimSource](
 [DimSourceID] int NOT NULL,
 [SourceName] [nvarchar](255),
 [SourceNameParent] [nvarchar](255),
@@ -152,44 +152,44 @@ GO
 
 -- Provides a tabular view of the data for debugging purposes
 
-CREATE OR ALTER VIEW [dbo].[FactQuery]
+CREATE OR ALTER VIEW [FactQuery]
 AS
 SELECT
- dbo.Fact.FactID,
- dbo.Fact.DimSourceID,
- dbo.DimSource.SourceName, 
- dbo.DimSource.SourceNameParent, 
- dbo.DimSource.SourceNameDetail, 
- dbo.DimSource.Description,
- dbo.Fact.DimDefinitionID,
- dbo.DimDefinitions.DefinitionName, 
- dbo.Fact.DimGeoID,
- dbo.DimGeo.GeoStandardName, 
- dbo.DimGeo.ReportingUnit,
- dbo.Fact.DimIndicatorID,
- dbo.DimIndicator.IndicatorStandardName,
- dbo.DimIndicator.Type,
- dbo.DimIndicator.Indicator,
- dbo.DimIndicator.Sector,
- dbo.DimIndicator.Qualifier,
- dbo.DimIndicator.Unit,
- dbo.DimIndicator.Measure,
- dbo.DimIndicator.BaseYear,
- dbo.Fact.Value,
- dbo.Fact.YearAsDate,
+ Fact.FactID,
+ Fact.DimSourceID,
+ DimSource.SourceName, 
+ DimSource.SourceNameParent, 
+ DimSource.SourceNameDetail, 
+ DimSource.Description,
+ Fact.DimDefinitionID,
+ DimDefinitions.DefinitionName, 
+ Fact.DimGeoID,
+ DimGeo.GeoStandardName, 
+ DimGeo.ReportingUnit,
+ Fact.DimIndicatorID,
+ DimIndicator.IndicatorStandardName,
+ DimIndicator.Type,
+ DimIndicator.Indicator,
+ DimIndicator.Sector,
+ DimIndicator.Qualifier,
+ DimIndicator.Unit,
+ DimIndicator.Measure,
+ DimIndicator.BaseYear,
+ Fact.Value,
+ Fact.YearAsDate,
  Year(Fact.YearAsDate) as Year
-FROM dbo.Fact LEFT OUTER JOIN
- dbo.DimGeo ON dbo.Fact.DimGeoID = dbo.DimGeo.DimGeoID LEFT OUTER JOIN
- dbo.DimIndicator ON dbo.Fact.DimIndicatorID = dbo.DimIndicator.DimIndicatorID LEFT OUTER JOIN
- dbo.DimSource ON dbo.Fact.DimSourceID = dbo.DimSource.DimSourceID LEFT OUTER JOIN
- dbo.DimDefinitions ON dbo.Fact.DimDefinitionID=dbo.DimDefinitions.DimDefinitionID 
+FROM Fact LEFT OUTER JOIN
+ DimGeo ON Fact.DimGeoID = DimGeo.DimGeoID LEFT OUTER JOIN
+ DimIndicator ON Fact.DimIndicatorID = DimIndicator.DimIndicatorID LEFT OUTER JOIN
+ DimSource ON Fact.DimSourceID = DimSource.DimSourceID LEFT OUTER JOIN
+ DimDefinitions ON Fact.DimDefinitionID=DimDefinitions.DimDefinitionID 
 GO
 
 
-CREATE OR ALTER VIEW [dbo].[FactQueryCapitalStock]
+CREATE OR ALTER VIEW [FactQueryCapitalStock]
 AS
 SELECT FactID, DimSourceID, DimDefinitionID, DimGeoID, DimIndicatorID, YearAsDate, Value
-FROM   dbo.FactQuery
+FROM   FactQuery
 WHERE  (Type = N'GDP Measures' OR
           Type = N'Capital' OR
           Type = N'GDP Components' OR
