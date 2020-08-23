@@ -190,4 +190,22 @@ WHERE (Type = N'GDP Measures' OR
  SourceName = 'OECD')
 GO
 
+CREATE VIEW [dbo].[Fact_reduced_tutorial]
+AS
+  SELECT factid,
+         dimsourceid,
+         dimdefinitionid,
+         dimgeoid,
+         dimindicatorid,
+         year,
+         yearasdate,
+         value,
+         definitionname
+  FROM   dbo.factquery
+  WHERE  ( type = N'Demography and Labour' )
+         AND ( indicator = N'Population' )
+         AND ( definitionname = N'CLEANED' )
+          OR ( type = N'GDP Measures' )
+             AND ( indicator = N'GDP Total' )
 
+GO

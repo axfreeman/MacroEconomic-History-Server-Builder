@@ -9,19 +9,14 @@ This purpose of this project is to create a user-friendly database of world and 
 
 This implements the objectives of the GERG ([Geopolitical Economy Research Group](http://geopoliticaleconomy.ca)) Data group.
 
-The project, originally started in April 2019, has been split into two for user convenience. These are available as two distinct Github repositories:
+This repository can be used in two ways by two audiences
 
-* The server repository (which contains this file)
-
-* The user repository (which is at [TBA 27/11/2019])
-
-This repository is for folks who want to create a complete clone of the whole project including an SQL server that will supply the data in real time to a connected application like Excel or PowerBI (or any other application that can connect to an SQL server).
-
-Most users won't need this, which is why I separated this code from the user part.
+1. folks who only want the results. These are in the \RESULTS folder
+2. folks who want to build their own copy of the database and possibly modify it by adding new data (which is always welcome on the site so feel free to push any modified version.
 
 ## Where can you see the results?
 
-There are three ways to access the results. 
+There are four ways to access the results, in order of complexity
 
 - The simplest is to download one or more of the Excel files in the \RESULTS folder. Until the project is more stable, these will vary from time to time as we create new datasets ( we haven't yet developed an adequate versioning system). But this will give you the chance to see what the project can achieve and how it is used.
 - The second is to download the Power-BI books that we will also place in the \RESULTS folder. Again, until the project is stable these will vary, but they will show you the kind of visualizations we are working on
@@ -30,7 +25,7 @@ There are three ways to access the results.
 
 # What are the system requirements?
 
-If you only want to look at the results, you will need
+If you only want to look at the results, you will need the following software:
 
 For Excel, you'll need to make sure your version has the 'Power Pivot' add-on. Nowadays this is bundled with the download but you may have an older version, in which case you'll need to install it
 
@@ -46,13 +41,13 @@ The code assumes you have installed, probably on a Windows 10 system, the follow
 
 It also assumes you know how to use the above software.
 
-## How do you run it?
+## How can you make (and modify) your own copy of the database?
 
 From Visual studio, open the 'Macrohistory' solution
 
 Modify the parameters so they point at your SQL server and at the directory containing this clone.
 
-In you SQL server, create two databased called 'OLTP' and 'ROLAP'. The data is initially loaded into the OLTP database by two ETL packages called 'Setup OLTP Dimension Tables' and 'Import OLTP data from External sources' (which should be run in this order). Once that's done, your OLTP database contains a standardised version of the data. This is then copied to the ROLAP database in such a way that all the Foreign Keys work properly, which streamlines the data by compacting it and organising it in a star model. As a result, the entire database takes up less than 100MB of space when imported into Excel PowerPivot or PowerBI.
+In you use SQL server, create two databased called `macrohistory_oltp`and `macrohistory_rolap`. The data is initially loaded into the OLTP database by two ETL packages called `Setup OLTP Dimension Tables` and `Import OLTP data from External sources` (which should be run in this order). Once that's done, your OLTP database contains a standardised version of the data. This is then copied to the ROLAP database using the package Populate `ROLAP tables from OLTP` in such a way that all the Foreign Keys work properly, which streamlines the data by compacting it and organising it in a star model. As a result, the entire database takes up less than 100MB of space when imported into Excel PowerPivot or PowerBI. By selecting subsets of this data, you can create smaller workbooks in either format, for special purposes.
 
 You'll find that you need to run the first task in each of these packages once, to create the initial tables. While you are doing that, the other tasks will be flagged as having errors, because they expect these tables to exist. If you then close the package and re-open it, the error flags should disappear. There's probably a more sophisticated way of doing this but it doesn't take up much time, so that's for a future tweak. Or maybe you can do it and push your improvements back up to the repository.
 
@@ -76,33 +71,24 @@ In what follows below we provide a bit more detail on how MSSQL Server is used; 
 
 ### MSSQL services
 
-The project uses two services provided by Microsoft SQL server: Database services and ETL, which Microsoft refers to as 'SSDS' or sometimes 'SSIS'. To implement the project, at least one instance of MSSQL server providing database services is required, and Microsoft's IDE, called 'Visual Studio' is needed to build the ETL packages.
+The project uses two services provided by Microsoft SQL server: Database services and ETL, which Microsoft refers to as 'SSIS' or sometimes 'SSDS'. To implement the project, at least one instance of MSSQL server providing database services is required, and Microsoft's IDE, called 'Visual Studio' is needed to build the ETL packages.
 
 ### Visual Studio and ETL
 
-The project is implemented on Visual Studio (2017) with SSDS (Short for SQL Server Data Services). This allowed me to implement a set of ETL procedures which take raw data, from a variety of sources, and transform it into a standard form.
+The project is implemented on Visual Studio (2017) with SSIS (Short for SQL Server Integration Services). This allowed me to implement a set of ETL procedures which take raw data, from a variety of sources, and transform it into a standard form.
 
-16 February update: the procedures are now more portable. If you have an SQL server instance running, and have installed Visual Studio with the SSDT add-in, the steps needed are as follows:
+Because you will install the project on your own database with the files in your own folder, you need to create the databases and modify the project parameters
 
-1. Create two databases (easiest is to put them on one server but they can be on two) called OLTP and ROLAP.
+1. Create two databases (easiest is to put them on one server but they can be on two) called `macrohistory_oltp`and `macrohistory_rolap`.
 
 2. Open 'Macrohistory.sln' in Visual Studio
 
 3. Open 'Project Parameters' and modify the server and root directory properties so that the project can find your server and the source files, at the location where you have downloaded them into your setup
 
 The ETL files contain all the setup objects needed to load the server, using Visual Studio 2017 (VS) or later.
-This includes a set of Sequel Server Data Transformation Services (Sequel Server Information Services, SSIS) packages which, when run from within VS, construct the service.
+This includes a set of SSIS packages which, when run from within VS, construct the service.
 
-The ETL procedures transform the raw DATA/SOURCE into the above form. The raw DATA/SOURCE is all in the public domain; the project's copy of this data is stored in the *DATA/SOURCE* folder.
-
-#STATUS
-
-We will use this section to report the current state of the dataset, including bugs and changes.
-
->24 Feb 2020 Capital stock data from Eurostat /AMECO added
-
-
-Oh yes, the name of the folder with the code in it. It got called GERGLE 4.0 at an early stage and since then, the name became redundant. Don't let it worry you.
+The ETL procedures transform the raw DATA/SOURCE into the above form. The raw DATA/SOURCE ORIGINALS are all in the public domain; the project's cleaned-up copy of these datasets are stored in the DATA/SOURCE folder.
 
 
 
