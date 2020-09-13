@@ -1,5 +1,5 @@
 # Macroeconomic History Data Project
-[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 20 August 2020.
+[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 13 September2020.
 
 >Contact address for the project: **alan.freeman@umanitoba.ca**
 
@@ -89,6 +89,9 @@ The ETL files contain all the setup objects needed to load the server, using Vis
 This includes a set of SSIS packages which, when run from within VS, construct the service.
 
 The ETL procedures transform the raw DATA/SOURCE into the above form. The raw DATA/SOURCE ORIGINALS are all in the public domain; the project's cleaned-up copy of these datasets are stored in the DATA/SOURCE folder.
+
+### Change Tracking
+13 September: Created 'EXPORTS' folder to hold datasets and other material to be used in the GERG Data Laboratory Project
 
 
 
