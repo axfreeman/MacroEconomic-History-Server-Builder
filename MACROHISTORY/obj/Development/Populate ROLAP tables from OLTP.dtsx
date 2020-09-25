@@ -11,20 +11,20 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="229"
-  DTS:VersionGUID="{1A7BEDAA-F3DA-4B86-AE00-9140CB491036}">
+  DTS:VersionBuild="238"
+  DTS:VersionGUID="{350E6D9D-F006-417E-8432-039A135E9472}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Add PENN GDP in USD"
+      DTS:refId="Package\Calculate and add PENN GDP in USD"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{d38e9613-fcc2-4f27-8e70-4ba633f36a27}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Add PENN GDP in USD"
+      DTS:ObjectName="Calculate and add PENN GDP in USD"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -54,13 +54,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Create deduplicated entries for the CLEANED defintion"
+      DTS:refId="Package\deduplicate where appropriate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{b6ba5743-b4eb-4371-b887-52c6252ff859}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Create deduplicated entries for the CLEANED defintion"
+      DTS:ObjectName="deduplicate where appropriate"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -123,278 +123,6 @@
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStmtSourceType="FileConnection"
           SQLTask:SqlStatementSource="ROLAPsetup" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Populate DimDate"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{936B0800-005B-4DAF-A40A-7237B3F79343}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Populate DimDate"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Populate DimDate\OLTP DimDate"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLTP DimDate"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimDate]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate DimDate\OLTP DimDate.Connections[OleDbConnection]"
-                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].Columns[Date]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].ExternalColumns[Date]"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].Columns[Date]"
-                      name="Date"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].Columns[year]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].ExternalColumns[year]"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].Columns[year]"
-                      name="year"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].ExternalColumns[Date]"
-                      dataType="dbDate"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].ExternalColumns[year]"
-                      dataType="i4"
-                      name="year" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[Date]"
-                      dataType="dbDate"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[Date]"
-                      name="Date" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[year]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[year]"
-                      name="year" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Populate DimDate\ROLAP DimDate"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="ROLAP DimDate"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimDate]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate DimDate\ROLAP DimDate.Connections[OleDbConnection]"
-                  connectionManagerID="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[ROLAP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].Columns[year]"
-                      cachedDataType="i4"
-                      cachedName="year"
-                      externalMetadataColumnId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output].Columns[year]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      dataType="dbTimeStamp"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      dataType="i4"
-                      name="Year" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate DimDate\ROLAP DimDate.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\ROLAP DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\ROLAP DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\ROLAP DimDate.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Populate DimDate.Paths[OLE DB Source Output]"
-              endId="Package\Populate DimDate\ROLAP DimDate.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Populate DimDate\OLTP DimDate.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2514,15 +2242,6 @@
                       name="Value"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Year]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Year]"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Year]"
-                      name="Year"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimIndicatorID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -2549,15 +2268,6 @@
                       length="255"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[GeoStandardName]"
                       name="GeoStandardName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[YearAsDate]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[YearAsDate]"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[YearAsDate]"
-                      name="YearAsDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimSourceID]"
@@ -2596,6 +2306,15 @@
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
                       name="IndicatorStandardName"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2603,10 +2322,6 @@
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Value]"
                       dataType="r8"
                       name="Value" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Year]"
-                      dataType="i4"
-                      name="Year" />
                     <externalMetadataColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[DimIndicatorID]"
                       dataType="i4"
@@ -2620,10 +2335,6 @@
                       dataType="wstr"
                       length="255"
                       name="GeoStandardName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[YearAsDate]"
-                      dataType="dbTimeStamp"
-                      name="YearAsDate" />
                     <externalMetadataColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[SourceName]"
                       dataType="wstr"
@@ -2651,6 +2362,10 @@
                       dataType="wstr"
                       length="255"
                       name="IndicatorStandardName" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2679,15 +2394,15 @@
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Value]"
                       name="Value" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Year]"
-                      dataType="i4"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Year]"
-                      name="Year" />
-                    <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[DimIndicatorID]"
                       dataType="i4"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[DimIndicatorID]"
                       name="DimIndicatorID" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
                     <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[DimGeoID]"
                       dataType="i4"
@@ -2699,11 +2414,6 @@
                       length="255"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[GeoStandardName]"
                       name="GeoStandardName" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[YearAsDate]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[YearAsDate]"
-                      name="YearAsDate" />
                     <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2818,12 +2528,6 @@
                       externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimGeoID]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimGeoID]" />
                     <inputColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[YearAsDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="YearAsDate"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[YearAsDate]"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[YearAsDate]" />
-                    <inputColumn
                       refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[DimSourceID]"
                       cachedDataType="i4"
                       cachedName="DimSourceID"
@@ -2835,6 +2539,12 @@
                       cachedName="DimDefinitionID"
                       externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DimDefinitionID]"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[DimDefinitionID]" />
+                    <inputColumn
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DateField]"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2859,13 +2569,13 @@
                       dataType="i4"
                       name="DimIndicatorID" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[YearAsDate]"
-                      dataType="dbDate"
-                      name="YearAsDate" />
-                    <externalMetadataColumn
                       refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
                       dataType="r8"
                       name="Value" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\ROLAP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[DateField]"
+                      dataType="dbDate"
+                      name="DateField" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2928,8 +2638,8 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{8443047D-C96F-4809-B66E-EE0644BC2376}"
-      DTS:From="Package\Populate DimDate"
+      DTS:DTSID="{E12687FA-E00C-403A-AEF2-C282CF54F11F}"
+      DTS:From="Package\Populate DimGeo"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Populate DimDefinitions" />
@@ -2945,7 +2655,7 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
       DTS:DTSID="{01FA5811-CC25-4677-A94A-2FB365E13426}"
-      DTS:From="Package\Create deduplicated entries for the CLEANED defintion"
+      DTS:From="Package\deduplicate where appropriate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
       DTS:To="Package\WID extensions" />
@@ -2982,14 +2692,6 @@
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Populate DimSources" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:CreationName=""
-      DTS:DTSID="{692FE328-31B2-4D9E-9376-E7D37E8A605C}"
-      DTS:From="Package\Populate DimGeo"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Populate DimDate" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
       DTS:DTSID="{8DF48FE6-655B-4EA9-A514-0F1FAD4C58B1}"
@@ -3009,10 +2711,10 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
       DTS:DTSID="{4A41F266-4F57-4E73-805C-3884763D69C7}"
-      DTS:From="Package\Add PENN GDP in USD"
+      DTS:From="Package\Calculate and add PENN GDP in USD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Create deduplicated entries for the CLEANED defintion" />
+      DTS:To="Package\deduplicate where appropriate" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
@@ -3020,7 +2722,7 @@
       DTS:From="Package\Define PENN USD Calculators"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Add PENN GDP in USD" />
+      DTS:To="Package\Calculate and add PENN GDP in USD" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -3035,105 +2737,79 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="195.428571428572,42.2857142857143"
-          Id="Package\Add PENN GDP in USD"
-          TopLeft="36.051294903314,342.409090915495" />
+          Size="257,42"
+          Id="Package\Calculate and add PENN GDP in USD"
+          TopLeft="863.273532019339,189.215910385478" />
         <NodeLayout
-          Size="249.714285714286,41.7142857142858"
+          Size="249.5,41.5"
           Id="Package\Correct for IFS Seasonal Adjustment"
-          TopLeft="317.051294903314,259" />
+          TopLeft="275.051287220937,192.375000369086" />
         <NodeLayout
-          Size="334.857142857143,41.7142857142858"
-          Id="Package\Create deduplicated entries for the CLEANED defintion"
-          TopLeft="264.755000446667,338.849206433545" />
+          Size="220,42"
+          Id="Package\deduplicate where appropriate"
+          TopLeft="10.088327245565,274.587843140652" />
         <NodeLayout
-          Size="217.142857142858,41.7142857142858"
+          Size="233,43.5"
           Id="Package\Define PENN USD Calculators"
-          TopLeft="622.388890522498,257.30158713291" />
+          TopLeft="576.55554955094,192.990981419488" />
         <NodeLayout
-          Size="262.285714285715,41.7142857142858"
+          Size="262.5,41.5"
           Id="Package\Deindex Barro-Ursua and MacroHistory"
-          TopLeft="32.051294903314,417" />
+          TopLeft="614.329089311524,280.450758753502" />
         <NodeLayout
-          Size="254.857142857143,41.7142857142858"
+          Size="255,41.5"
           Id="Package\Drop and create ROLAP files"
-          TopLeft="33,12" />
+          TopLeft="15.6111104782717,10.8181818309894" />
         <NodeLayout
-          Size="162.857142857143,41.7142857142858"
-          Id="Package\Populate DimDate"
-          TopLeft="60.3162524306718,89.0242484096653" />
-        <NodeLayout
-          Size="190.857142857143,41.7142857142858"
+          Size="191,41.5"
           Id="Package\Populate DimDefinitions"
-          TopLeft="50.5555680266816,176.353544333093" />
+          TopLeft="503.944472515799,90.1300604158503" />
         <NodeLayout
-          Size="160,41.7142857142858"
+          Size="160,41.5"
           Id="Package\Populate DimGeo"
-          TopLeft="360.692320739025,87.0727302014007" />
+          TopLeft="244.970095279019,92.3909119619483" />
         <NodeLayout
-          Size="182.857142857143,41.7142857142858"
+          Size="183,41.5"
           Id="Package\Populate DimIndicator"
-          TopLeft="344.346166091558,13.851515453206" />
+          TopLeft="29.1794909036344,90.0787873543879" />
         <NodeLayout
-          Size="177.714285714286,41.7142857142858"
+          Size="177.5,41.5"
           Id="Package\Populate DimSources"
-          TopLeft="361.051294903314,175.313143622668" />
+          TopLeft="797.384641305518,90.2714778744359" />
         <NodeLayout
-          Size="193.142857142858,41.7142857142858"
+          Size="219,41.5"
           Id="Package\Populate ROLAP fact file"
-          TopLeft="59.555557206146,259.246477049924" />
+          TopLeft="25.3333339978716,192.670720297411" />
         <NodeLayout
-          Size="153.142857142858,41.7142857142858"
+          Size="153,41.5"
           Id="Package\WID extensions"
-          TopLeft="641.518520166845,337.19841286709" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="143.935910228677,131.024248409665">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.3292959234274"
-              Start="0,0"
-              End="0,37.8292959234274">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.8292959234274" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="394.962958901017,276.827201069448" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="449.940183792203,217.090921400446">
+          TopLeft="886.134641305518,131.771477874436">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-293.940182141612,42.1555556494782"
+              EndConnector="-751.301307307646,60.8992424229748"
               Start="0,0"
-              End="-293.940182141612,34.6555556494782">
+              End="-751.301307307646,53.3992424229748">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.0777778247391" />
+                    End="0,26.4496212114874" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.0777778247391"
-                    Point2="0,21.0777778247391"
-                    Point3="-4,21.0777778247391" />
+                    Point1="0,26.4496212114874"
+                    Point2="0,30.4496212114874"
+                    Point3="-4,30.4496212114874" />
                   <mssgle:LineSegment
-                    End="-289.940182141612,21.0777778247391" />
+                    End="-747.301307307646,30.4496212114874" />
                   <mssgle:CubicBezierSegment
-                    Point1="-289.940182141612,21.0777778247391"
-                    Point2="-293.940182141612,21.0777778247391"
-                    Point3="-293.940182141612,25.0777778247391" />
+                    Point1="-747.301307307646,30.4496212114874"
+                    Point2="-751.301307307646,30.4496212114874"
+                    Point3="-751.301307307646,34.4496212114874" />
                   <mssgle:LineSegment
-                    End="-293.940182141612,34.6555556494782" />
+                    End="-751.301307307646,53.3992424229748" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3144,18 +2820,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="599.866111557778,358.912698539206">
+          TopLeft="230.088327245565,296.58252210505">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.6524086090662,0"
+              EndConnector="164.874631655452,0"
               Start="0,0"
-              End="34.1524086090662,0">
+              End="157.374631655452,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="34.1524086090662,0" />
+                    End="157.374631655452,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3166,30 +2842,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="717.962964611289,378.976190644868">
+          TopLeft="547.962958901017,299.388979911475">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-554.800558596864,38.0238093551324"
+              EndConnector="66.366130410507,0"
               Start="0,0"
-              End="-554.800558596864,30.5238093551324">
+              End="58.866130410507,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.0119046775662" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.0119046775662"
-                    Point2="0,19.0119046775662"
-                    Point3="-4,19.0119046775662" />
-                  <mssgle:LineSegment
-                    End="-550.800558596864,19.0119046775662" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-550.800558596864,19.0119046775662"
-                    Point2="-554.800558596864,19.0119046775662"
-                    Point3="-554.800558596864,23.0119046775662" />
-                  <mssgle:LineSegment
-                    End="-554.800558596864,30.5238093551324" />
+                    End="58.866130410507,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3200,18 +2864,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="288.111111111111,33.8146466154919">
+          TopLeft="143.039681906843,52.5324675452751">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.2350549804469,0"
+              EndConnector="-22.4316195746372,37.5463198091128"
               Start="0,0"
-              End="48.7350549804469,0">
+              End="-22.4316195746372,30.0463198091128">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="48.7350549804469,0" />
+                    End="0,14.7731599045564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7731599045564"
+                    Point2="0,18.7731599045564"
+                    Point3="-4,18.7731599045564" />
+                  <mssgle:LineSegment
+                    End="-18.4316195746372,18.7731599045564" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.4316195746372,18.7731599045564"
+                    Point2="-22.4316195746372,18.7731599045564"
+                    Point3="-22.4316195746372,22.7731599045564" />
+                  <mssgle:LineSegment
+                    End="-22.4316195746372,30.0463198091128" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3222,18 +2898,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="438.269243415292,55.851515453206">
+          TopLeft="212.036633760777,112.091992515311">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.2212147481947"
+              EndConnector="32.933461518242,0"
               Start="0,0"
-              End="0,23.7212147481947">
+              End="25.433461518242,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.7212147481947" />
+                    End="25.433461518242,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3244,40 +2920,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="241.666679137793,196.722232866769">
+          TopLeft="694.944472515799,110.950769145143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="119.384615765521,0"
+              EndConnector="102.440168789719,0"
               Start="0,0"
-              End="111.884615765521,0">
+              End="94.940168789719,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="111.884615765521,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="360.692320739025,109.048489305533">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-137.376068308353,0"
-              Start="0,0"
-              End="-129.876068308353,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-129.876068308353,0" />
+                    End="94.940168789719,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3288,18 +2942,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="566.829072681092,279.039682455344">
+          TopLeft="524.551287220937,213.932990894287">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="55.5598178414059,0"
+              EndConnector="52.0042623300026,0"
               Start="0,0"
-              End="48.0598178414059,0">
+              End="44.5042623300026,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="48.0598178414059,0" />
+                    End="44.5042623300026,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3310,18 +2964,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="252.555557206146,280.123238524962">
+          TopLeft="244.333333997872,213.272860333248">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.495737697168,0"
+              EndConnector="30.7179532230658,0"
               Start="0,0"
-              End="56.995737697168,0">
+              End="23.2179532230658,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.995737697168,0" />
+                    End="23.2179532230658,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3332,18 +2986,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="231.479866331885,361.62914867452">
+          TopLeft="991.773532019339,231.215910385478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="33.2751341147816,0"
+              EndConnector="-871.685204773774,43.3719327551741"
               Start="0,0"
-              End="25.7751341147816,0">
+              End="-871.685204773774,35.8719327551741">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="25.7751341147816,0" />
+                    End="0,17.6859663775871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.6859663775871"
+                    Point2="0,21.6859663775871"
+                    Point3="-4,21.6859663775871" />
+                  <mssgle:LineSegment
+                    End="-867.685204773774,21.6859663775871" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-867.685204773774,21.6859663775871"
+                    Point2="-871.685204773774,21.6859663775871"
+                    Point3="-871.685204773774,25.6859663775871" />
+                  <mssgle:LineSegment
+                    End="-871.685204773774,35.8719327551741" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3354,30 +3020,40 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="730.960319093927,299.015872847196">
+          TopLeft="809.55554955094,212.478445902483">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-597.194738476327,43.393218068299"
+              EndConnector="53.717982468399,0"
               Start="0,0"
-              End="-597.194738476327,35.893218068299">
+              End="46.217982468399,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.6966090341495" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.6966090341495"
-                    Point2="0,21.6966090341495"
-                    Point3="-4,21.6966090341495" />
+                    End="46.217982468399,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="404.970095279019,112.010486188899">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.97437723678,0"
+              Start="0,0"
+              End="91.47437723678,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-593.194738476327,21.6966090341495" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-593.194738476327,21.6966090341495"
-                    Point2="-597.194738476327,21.6966090341495"
-                    Point3="-597.194738476327,25.6966090341495" />
-                  <mssgle:LineSegment
-                    End="-597.194738476327,35.893218068299" />
+                    End="91.47437723678,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3389,70 +3065,6 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Populate DimDate">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="154.285714285715,42.2857142857143"
-          Id="Package\Populate DimDate\ROLAP DimDate"
-          TopLeft="99.6,136.6" />
-        <NodeLayout
-          Size="148,42.2857142857143"
-          Id="Package\Populate DimDate\OLTP DimDate"
-          TopLeft="99,27" />
-        <EdgeLayout
-          Id="Package\Populate DimDate.Paths[OLE DB Source Output]"
-          TopLeft="174.8,69">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67.6"
-              Start="0,0"
-              End="0,60.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate DimDate\OLTP DimDate">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate DimDate\ROLAP DimDate">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Populate DimDefinitions">
     <LayoutInfo>
@@ -3523,7 +3135,7 @@
     design-time-name="Package\Populate DimGeo">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151.428571428572,42.2857142857143"
           Id="Package\Populate DimGeo\ROLAP DimGeo"
@@ -3551,7 +3163,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3589,11 +3203,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174.857142857143,41.7142857142858"
+          Size="175,41.5"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
           TopLeft="104.925925889133,117.857146747258" />
         <NodeLayout
-          Size="197.142857142858,41.7142857142858"
+          Size="197,41.5"
           Id="Package\Populate DimIndicator\OLTP DimIndicator Table"
           TopLeft="87.0769262708857,21.745455330988" />
         <EdgeLayout
@@ -3717,13 +3331,13 @@
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="254.857142857143,41.7142857142858"
+          Size="255,41.5"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
           TopLeft="96.1709424676588,38.4202024528147" />
         <NodeLayout
-          Size="168,41.7142857142858"
+          Size="168,41.5"
           Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
           TopLeft="132.888888888889,165.777777777778" />
         <EdgeLayout
@@ -3745,9 +3359,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

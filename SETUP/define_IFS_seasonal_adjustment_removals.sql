@@ -18,7 +18,7 @@ SELECT
   N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardName,
- [YearAsDate],
+ [DateField],
  [Value]
  FROM [FactQuery]
 	WHERE 
@@ -37,7 +37,7 @@ SELECT
   N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardName,
- [YearAsDate],
+ [DateField],
  [Value]
  FROM [FactQuery]
 	WHERE 
@@ -69,7 +69,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  IFSSeasonalAdjustmentRemoval.DimGeoID,
  DimIndicator.DimIndicatorID,
- YearAsDate,
+ DateField,
  Value
 FROM [IFSSeasonalAdjustmentRemoval] INNER JOIN DimIndicator ON
  DimIndicator.IndicatorStandardName=IFSSeasonalAdjustmentRemoval.IndicatorStandardName
@@ -83,14 +83,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM IFSSeasonalAdjustmentRemoval_KeyFinder
 GO 

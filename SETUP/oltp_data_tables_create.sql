@@ -25,7 +25,7 @@ CREATE TABLE [FactSource](
  [DefinitionName] nvarchar(50)NULL, /* the 'definition' is a selection of records from different providers. Initially, the selection for a given source will simply be the source */
  [GeoSourceName] [nvarchar](255) NULL, /* the geographical unit as defined by the supplier. This is standardised using geoStandardNames because every source has a different name for the same country */
  [IndicatorSourceCode] [nvarchar](255) NULL, 
- [Year] int NULL,
+ [Date] DateTime NULL,
  [Value] float NULL
  	CONSTRAINT [PK_OLTP_FactID] PRIMARY KEY CLUSTERED 
 (
@@ -67,7 +67,7 @@ SELECT
  dbo.FactSource.IndicatorSourceCode as [Fact Indicator Name],
  dbo.IndicatorStandardNames.IndicatorSourceCode,
  dbo.IndicatorStandardNames.IndicatorStandardName, 
- dbo.FactSource.Year,
+ dbo.FactSource.Date,
  dbo.FactSource.Value
 FROM dbo.FactSource
  RIGHT OUTER JOIN dbo.GeoStandardNames
@@ -79,7 +79,7 @@ FROM dbo.FactSource
  ON dbo.FactSource.SourceName=dbo.DimSource.SourceName
  INNER JOIN dbo.DimDefinitions
  ON dbo.FactSource.DefinitionName=dbo.dimDefinitions.DefinitionName
-WHERE (dbo.FactSource.Year IS NOT NULL) AND (dbo.FactSource.Year > 1700) and (Value<>0)
+WHERE (Year(dbo.FactSource.Date) IS NOT NULL) AND (Year(dbo.FactSource.Date) > 1700) and (Value<>0)
 GO
 
 -- Compresses the rows of the RecognisedFacts view by substituting the integer Indexes of DimGeo and DimIndicator for the actual country and indicator names
@@ -92,13 +92,12 @@ dbo.RecognisedFacts.SourceName,
 dbo.RecognisedFacts.DefinitionName, 
 dbo.RecognisedFacts.DimSourceID,
 dbo.RecognisedFacts.DimDefinitionID,
-dbo.RecognisedFacts.Year, 
+dbo.RecognisedFacts.Date, 
 dbo.RecognisedFacts.Value, 
 dbo.DimIndicator.DimIndicatorID, 
 dbo.DimGeo.DimGeoID, 
 dbo.RecognisedFacts.GeoStandardName, 
-dbo.RecognisedFacts.IndicatorStandardName, 
-TRY_CONVERT(DateTime, STR(dbo.RecognisedFacts.Year) + '-01-01') AS YearAsDate
+dbo.RecognisedFacts.IndicatorStandardName 
 FROM dbo.RecognisedFacts LEFT OUTER JOIN
  dbo.DimIndicator ON 
  dbo.RecognisedFacts.IndicatorStandardName = dbo.DimIndicator.IndicatorStandardName LEFT OUTER JOIN

@@ -21,7 +21,7 @@ CREATE TABLE Fact (
 	 DimDefinitionID int NULL,
 	 DimGeoID int NULL,
 	 DimIndicatorID int NULL,
-	 YearAsDate Date Null,
+	 DateField Date Null,
 	 Value float NULL
 	CONSTRAINT PK_FactID PRIMARY KEY CLUSTERED 
 (
@@ -81,19 +81,6 @@ CREATE TABLE DimGeo (
 	 DimGeoID ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
 ) 
-
-DROP TABLE IF EXISTS DimDate 
-GO
-
-CREATE TABLE DimDate (
-	 Date datetime NOT NULL,
-	 Year int NOT NULL
- CONSTRAINT PK_Date PRIMARY KEY CLUSTERED 
-(
-	 Year ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
-) 
-GO
 
 
 -- The Definitions Dimension lists the composite definitions which splice data from various sources
@@ -163,8 +150,7 @@ SELECT
  DimIndicator.Measure,
  DimIndicator.BaseYear,
  Fact.Value,
- Fact.YearAsDate,
- Year(Fact.YearAsDate) as Year
+ Fact.DateField
 FROM Fact LEFT OUTER JOIN
  DimGeo ON Fact.DimGeoID = DimGeo.DimGeoID LEFT OUTER JOIN
  DimIndicator ON Fact.DimIndicatorID = DimIndicator.DimIndicatorID LEFT OUTER JOIN
@@ -173,39 +159,4 @@ FROM Fact LEFT OUTER JOIN
 GO
 
 
-CREATE OR ALTER VIEW FactQueryCapitalStock 
-AS
-SELECT FactID, DimSourceID, DimDefinitionID, DimGeoID, DimIndicatorID, YearAsDate, Value
-FROM FactQuery
-WHERE (Type = N'GDP Measures' OR
- Type = N'Capital' OR
- Type = N'GDP Components' OR
- Type = N'Demography and Labour' OR
- Type = N'Indices') AND (SourceName = 'UN2018' OR
- SourceName = 'MADDISON' OR
- SourceName = 'MACROHIST' OR
- SourceName = 'BARRO-URSUA' OR
-		 SourceName='Eurostat' OR
- SourceName = 'PENN' OR
- SourceName = 'OECD')
-GO
 
-CREATE VIEW [dbo].[Fact_reduced_tutorial]
-AS
-  SELECT factid,
-         dimsourceid,
-         dimdefinitionid,
-         dimgeoid,
-         dimindicatorid,
-         year,
-         yearasdate,
-         value,
-         definitionname
-  FROM   dbo.factquery
-  WHERE  ( type = N'Demography and Labour' )
-         AND ( indicator = N'Population' )
-         AND ( definitionname = N'CLEANED' )
-          OR ( type = N'GDP Measures' )
-             AND ( indicator = N'GDP Total' )
-
-GO

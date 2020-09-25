@@ -4,9 +4,9 @@
   DTS:DTSID="{073421C5-8240-4CF0-90D2-D89607B65125}"
   DTS:CreationName="FILE">
   <DTS:PropertyExpression
-    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\Define Duplicate Removals.sql"</DTS:PropertyExpression>
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\deduplicate.sql"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="C:\Users\afree\source\repos\MACROHISTORY\SETUP\Define Duplicate Removals.sql" />
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomicHistory\SETUP\deduplicate.sql" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

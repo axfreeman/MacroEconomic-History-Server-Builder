@@ -12,25 +12,6 @@ GO
  * Hence the ROLAP server deals only with the standard geo names
  */
 
- 
-
--- the Date Dimension allows us to group data by decade and other categories such as business cycle
-
-DROP TABLE IF EXISTS DimDate
-GO
-
-CREATE TABLE DimDate (
-	 Date date NOT NULL,
-	 year int NOT NULL,
-CONSTRAINT PK_DimDate PRIMARY KEY CLUSTERED 
-(
-	 Date ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
-) 
-GO
-
-
-
 
 -- GeoStandardNames transforms the different country names that are used by the various sources into a standardised name
 -- NOTE: if two sources use the same name for different countries, the simple view we use at present won't catch that.

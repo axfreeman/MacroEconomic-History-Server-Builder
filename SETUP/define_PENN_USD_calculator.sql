@@ -11,7 +11,7 @@ SELECT
   N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'EXCHANGE_RATE_TEMP' AS indicatorstandardname,
- [YearAsDate],
+ [DateField],
  [Value]
  FROM [FactQuery]
 	WHERE 
@@ -42,12 +42,12 @@ SELECT
   @output_indicator
 AS indicatorstandardname,
  [FactQuery].[DimGeoID],
- [FactQuery].[YearAsDate],
+ [FactQuery].[DateField],
  [FactQuery].[Value]/[PENN_ExchangeRates].[Value] as Value
  FROM [FactQuery]
  INNER JOIN [PENN_ExchangeRates] ON
  FactQuery.DimGeoID=PENN_ExchangeRates.DimGeoID AND
- FactQuery.YearAsDate=PENN_ExchangeRates.YearAsDate 
+ FactQuery.DateField=PENN_ExchangeRates.DateField 
 	WHERE 
 		-- eg 'GDP-TOTAL-LCU-CURRENT'
 	[FactQuery].indicatorstandardname=@input_indicator AND
@@ -77,7 +77,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeoID,
  DimIndicator.DimIndicatorID,
- YearAsDate,
+ DateField,
  Value
 FROM PENN_USD_TEMPORARY_TABLE INNER JOIN DimIndicator ON
  DimIndicator.indicatorstandardname=PENN_USD_TEMPORARY_TABLE.indicatorstandardname
@@ -96,14 +96,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM PENN_USD_Calculated_KeyFinder
 

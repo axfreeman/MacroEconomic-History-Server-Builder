@@ -19,8 +19,7 @@ SELECT
  N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [DimIndicatorID],
- [Year],
- [YearAsDate],
+ DateField,
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='UN2018' AND 
@@ -32,12 +31,11 @@ SELECT
  N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [DimIndicatorID],
- [Year],
- [YearAsDate],
+ DateField,
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='PENN' AND 
- (Year>=1970) AND
+ (Year(DateField)>=1970) AND
  (GeoStandardName='Taiwan') AND
  ([FactQuery].indicatorStandardName='GDP-TOTAL-USD-CURRENT' OR
   [FactQuery].indicatorStandardName='POPULATION')
@@ -57,8 +55,7 @@ SELECT
  [DefinitionName], 
  [GeoStandardName],
  [DimIndicatorID],
- [Year],
- [YearAsDate],
+ DateField,
  [Value]
 INTO dbo.UN_TD_File
  FROM [UN_RU_Corrector]
@@ -68,43 +65,43 @@ GO
 -- delete duplicated entries 
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 1990) 
+WHERE (Year([UN_TD_File].DateField)= 1990) 
 AND ([GeoStandardName]='USSR')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 1990) 
+WHERE (Year(UN_TD_FILE.DateField)= 1990) 
 AND ([GeoStandardName]='Yugoslavia')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 1990) 
+WHERE (Year(UN_TD_FILE.DateField)= 1990) 
 AND ([GeoStandardName]='Ethiopia (Former)')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 1991) 
+WHERE (Year(UN_TD_FILE.DateField)= 1991) 
 AND ([GeoStandardName]='Ethiopia (Former)')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 1992) 
+WHERE (Year(UN_TD_FILE.DateField)= 1992) 
 AND ([GeoStandardName]='Ethiopia (Former)')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 1993) 
+WHERE (Year(UN_TD_FILE.DateField)= 1993) 
 AND ([GeoStandardName]='Ethiopia (Former)')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 1990) 
+WHERE (Year(UN_TD_FILE.DateField)= 1990) 
 AND ([GeoStandardName]='Czechoslovakia (Former)')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 2008) 
+WHERE (Year(UN_TD_FILE.DateField)= 2008) 
 AND ([GeoStandardName]='Sudan (Former)')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 2009) 
+WHERE (Year(UN_TD_FILE.DateField)= 2009) 
 AND ([GeoStandardName]='Sudan (Former)')
 
 DELETE FROM [dbo].[UN_TD_File] 
-WHERE ([UN_TD_File].[Year]= 2010) 
+WHERE (Year(UN_TD_FILE.DateField)= 2010) 
 AND ([GeoStandardName]='Sudan (Former)')
 
 -- TODO: former Indonesia?
@@ -124,7 +121,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeo.DimGeoID,
  UN_TD_File.DimIndicatorID,
- UN_TD_File.YearAsDate,
+ UN_TD_File.DateField,
  UN_TD_File.Value
 FROM [UN_TD_File] INNER JOIN DimGeo ON
  DimGeo.GeoStandardName=UN_TD_File.GeoStandardName
@@ -138,14 +135,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM UN_RU_Corrector_KeyFinder
 GO 
@@ -169,8 +166,8 @@ SELECT
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
- [Year],
- [YearAsDate],
+ DateField,
+ Year(DateField) as Year,
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='MADDISON' 
@@ -191,8 +188,8 @@ SELECT
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
- [Year],
- [YearAsDate],
+ DateField,
+ Year(DateField) as Year,
  [Value]
 INTO dbo.MADDISON_TD_File
  FROM [MADDISON_RU_Corrector]
@@ -227,7 +224,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeo.DimGeoID,
  MADDISON_TD_File.DimIndicatorID,
- MADDISON_TD_File.YearAsDate,
+ MADDISON_TD_File.DateField,
  MADDISON_TD_File.Value
 FROM [MADDISON_TD_File] INNER JOIN DimGeo ON
  DimGeo.GeoStandardName=MADDISON_TD_File.GeoStandardName
@@ -242,14 +239,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ DateField,
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM MADDISON_RU_Corrector_KeyFinder
 GO 
@@ -275,8 +272,8 @@ SELECT
  [ReportingUnit],
  [DimIndicatorID],
  indicatorStandardName,
- [Year],
- [YearAsDate],
+ DateField,
+ Year(DateField) as Year,
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='WID'
@@ -299,8 +296,7 @@ SELECT
  [GeoStandardName],
  [ReportingUnit],
  [indicatorStandardName],
- [Year],
- [YearAsDate],
+ DateField,
  [Value]
 INTO dbo.WID_TD_File
  FROM [WID_RU_Corrector]
@@ -311,12 +307,12 @@ GO
 DELETE FROM [dbo].[WID_TD_File] 
 WHERE 
 ([WID_TD_File].[GeoStandardName]= 'Czechoslovakia (Former)')  AND
-Year=1990
+Year(DateField)=1990
 
 DELETE FROM [dbo].[WID_TD_File] 
 WHERE 
 ([WID_TD_File].[GeoStandardName]= 'Czech Republic')  AND
-Year=1992
+Year(DateField)=1992
 
 -- delete duplicated USSR components
 
@@ -324,13 +320,13 @@ DELETE FROM [dbo].[WID_TD_File]
 WHERE 
 ([WID_TD_File].[ReportingUnit]= 'USSR') AND
 (indicatorStandardName='GDP-NET-TOTAL-LCU-CURRENT')AND
-(Year<1990)
+(Year(DateField)<1990)
 
 DELETE FROM [dbo].[WID_TD_File] 
 WHERE 
 ([WID_TD_File].[ReportingUnit]= 'USSR') AND
 (indicatorStandardName='GDP-FOREIGN-INCOME-LCU')AND
-(Year<2002)
+(Year(DateField)<2002)
 
 -- delete duplicated Yugoslavia components
 
@@ -338,7 +334,7 @@ DELETE FROM [dbo].[WID_TD_File]
 WHERE 
 ([WID_TD_File].[ReportingUnit]= 'Yugoslavia') AND
 (indicatorStandardName='GDP-FOREIGN-INCOME-LCU')AND
-(Year<2007)
+(Year(DateField)<2007)
 
 -- Ethiopia 
 
@@ -367,7 +363,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeo.DimGeoID,
  DimIndicator.DimIndicatorID,
- WID_TD_File.YearAsDate,
+ WID_TD_File.DateField,
  WID_TD_File.Value
 FROM [WID_TD_File] INNER JOIN DimGeo ON
  DimGeo.GeoStandardName=WID_TD_File.GeoStandardName
@@ -384,14 +380,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ DateField,
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM WID_RU_Corrector_KeyFinder
 GO 

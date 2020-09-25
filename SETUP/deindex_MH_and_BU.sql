@@ -29,7 +29,7 @@ SELECT
  [SourceName],
  N'COPY OF RGDPPC INDEXED' AS indicatorStandardName,
  [DimGeoID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='MACROHIST' and [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2005'
@@ -52,7 +52,7 @@ SELECT
  [SourceName],
  N'COPY OF GDP INDEXED' AS indicatorStandardName,
  [DimGeoID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='BARRO-URSUA' and [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT-INDEXED-2006'
@@ -74,7 +74,7 @@ SELECT
  [SourceName],
  N'COPY OF MADDISON:POPULATION' AS indicatorStandardName,
  [DimGeoID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].SourceName='MADDISON' and [FactQuery].indicatorStandardName='Population'
@@ -100,7 +100,7 @@ SELECT
  FROM [FactQuery]
  WHERE [FactQuery].SourceName='WDI2018' 
  AND [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
- AND [FactQuery].Year=2005
+ AND Year([FactQuery].DateField)=2005
 GO
  
  
@@ -124,7 +124,7 @@ SELECT
  FROM [FactQuery]
  WHERE [FactQuery].SourceName='WDI2018' 
  AND [FactQuery].indicatorStandardName='GDP-TOTAL-PERCAPITA-LCU-CONSTANT' 
- AND [FactQuery].Year=2006
+ AND Year([FactQuery].DateField)=2006
 GO
  
 -- [Macrohist_WDI2018_Deindexed] uses [Macrohist_indexed] and [WDI2018_2005_REALGDP_BASE] to construct a de-indexed rgdppc
@@ -141,7 +141,7 @@ AS
 SELECT 
  dbo.Macrohist_Indexed_rgdppc.DimGeoID,
  dbo.Macrohist_Indexed_rgdppc.indicatorStandardName, 
- dbo.Macrohist_Indexed_rgdppc.YearAsDate,
+ dbo.Macrohist_Indexed_rgdppc.DateField,
  dbo.Macrohist_Indexed_rgdppc.Value AS [Index],
  dbo.WDI2018_2005_REALGDP_BASE.Value AS Base,
  dbo.Macrohist_Indexed_rgdppc.Value*dbo.WDI2018_2005_REALGDP_BASE.Value/100 as Value
@@ -164,7 +164,7 @@ AS
 SELECT 
  dbo.Barro_Ursua_Indexed_gdp.DimGeoID,
  dbo.Barro_Ursua_Indexed_gdp.indicatorStandardName, 
- dbo.Barro_Ursua_Indexed_gdp.YearAsDate,
+ dbo.Barro_Ursua_Indexed_gdp.DateField,
  dbo.Barro_Ursua_Indexed_gdp.Value AS [Index],
  dbo.WDI2018_2006_REALGDP_BASE.Value AS Base,
  dbo.Barro_Ursua_Indexed_gdp.Value*dbo.WDI2018_2006_REALGDP_BASE.Value/100 as Value
@@ -190,11 +190,11 @@ SELECT
  dbo.Macrohist_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
  N'GDP-TOTAL-LCU-CONSTANT2010' AS indicatorStandardName,
- dbo.Macrohist_WDI2018_Deindexed.YearAsDate,
+ dbo.Macrohist_WDI2018_Deindexed.DateField,
  dbo.Maddison_Population.Value*Macrohist_WDI2018_Deindexed.Value as Value
 FROM dbo.Macrohist_WDI2018_Deindexed LEFT OUTER JOIN
   dbo.Maddison_Population ON
-  dbo.Maddison_Population.YearAsDate=Macrohist_WDI2018_Deindexed.YearAsDate AND
+  dbo.Maddison_Population.DateField=Macrohist_WDI2018_Deindexed.DateField AND
   dbo.Maddison_Population.DimGeoID=Macrohist_WDI2018_Deindexed.DimGeoID
  LEFT OUTER JOIN
   dbo.DimIndicator ON
@@ -218,11 +218,11 @@ SELECT
  dbo.Barro_Ursua_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
  N'GDP-TOTAL-LCU-CONSTANT2010' AS indicatorStandardName,
- dbo.Barro_Ursua_WDI2018_Deindexed.YearAsDate,
+ dbo.Barro_Ursua_WDI2018_Deindexed.DateField,
  dbo.Maddison_Population.Value*Barro_Ursua_WDI2018_Deindexed.Value as Value
 FROM dbo.Barro_Ursua_WDI2018_Deindexed LEFT OUTER JOIN
   dbo.Maddison_Population ON
-  dbo.Maddison_Population.YearAsDate=Barro_Ursua_WDI2018_Deindexed.YearAsDate AND
+  dbo.Maddison_Population.DateField=Barro_Ursua_WDI2018_Deindexed.DateField AND
   dbo.Maddison_Population.DimGeoID=Barro_Ursua_WDI2018_Deindexed.DimGeoID
  LEFT OUTER JOIN
   dbo.DimIndicator ON
@@ -244,7 +244,7 @@ SELECT
  [DefinitionName], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM [dbo].[Macrohist_cleaner]
 UNION
@@ -253,7 +253,7 @@ SELECT
  [DefinitionName], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM [dbo].[Barro_Ursua_cleaner]
 GO
@@ -274,7 +274,7 @@ SELECT
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM AddedDefinitions
 INNER JOIN DimDefinitions ON
@@ -290,14 +290,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM NormalisedAddedDefinitions
 GO 

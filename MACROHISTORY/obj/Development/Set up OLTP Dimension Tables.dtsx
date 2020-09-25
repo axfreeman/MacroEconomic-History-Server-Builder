@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{4A3D3158-3010-4E52-84A5-294056B6C8F9}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{909310DD-0BC5-4FA4-9E65-A37F718AFE56}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -413,272 +413,6 @@
               endId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]"
               name="Excel Source Output"
               startId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Populate DimDate"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{34fb6192-cc8d-48ba-baea-b98d757b95de}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Populate DimDate"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:LoggingOptions
-        DTS:FilterKind="0" />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Populate DimDate\DimDate Excel spreadsheet"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="DimDate Excel spreadsheet"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">DimDate$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate DimDate\DimDate Excel spreadsheet.Connections[OleDbConnection]"
-                  connectionManagerID="{059F5836-86DD-4BAC-A416-FFBA4FA9442F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Meta]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].Columns[Date]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].ExternalColumns[Date]"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].Columns[Date]"
-                      name="Date"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].Columns[Year]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].ExternalColumns[Year]"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].Columns[Year]"
-                      name="Year"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].ExternalColumns[Date]"
-                      dataType="date"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].ExternalColumns[Year]"
-                      dataType="r8"
-                      name="Year" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[Date]"
-                      dataType="date"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[Date]"
-                      name="Date" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[Year]"
-                      dataType="r8"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[Year]"
-                      name="Year" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Populate DimDate\DimDate OLTP Table"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="DimDate OLTP Table"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimDate]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate DimDate\DimDate OLTP Table.Connections[OleDbConnection]"
-                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedDataType="date"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].Columns[Date]" />
-                    <inputColumn
-                      refId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input].Columns[Year]"
-                      cachedDataType="r8"
-                      cachedName="Year"
-                      externalMetadataColumnId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[year]"
-                      lineageId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output].Columns[Year]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      dataType="dbDate"
-                      name="Date" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[year]"
-                      dataType="i4"
-                      name="year" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate DimDate\DimDate OLTP Table.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\DimDate OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate DimDate\DimDate OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate DimDate\DimDate OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Populate DimDate.Paths[Excel Source Output]"
-              endId="Package\Populate DimDate\DimDate OLTP Table.Inputs[OLE DB Destination Input]"
-              name="Excel Source Output"
-              startId="Package\Populate DimDate\DimDate Excel spreadsheet.Outputs[Excel Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3084,18 +2818,10 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{D60BD488-73EB-4718-AF64-2E50EA6CBFE6}"
+      DTS:DTSID="{CBEBDEC3-B512-49B7-823B-B215928E7E15}"
       DTS:From="Package\Populate  DimDefinitions OLTP Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Populate DimDate" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
-      DTS:CreationName=""
-      DTS:DTSID="{637481B9-D083-4415-A0EB-C4168E8EFF27}"
-      DTS:From="Package\Populate DimDate"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 6"
       DTS:To="Package\Populate DimSource OLTP  Table" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -3111,35 +2837,31 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="270.857142857143,41.7142857142858"
+          Size="271,41.5"
           Id="Package\Drop and Create OLTP Dimension Tables"
           TopLeft="48,26" />
         <NodeLayout
-          Size="252,41.7142857142858"
+          Size="252,41.5"
           Id="Package\Populate  DimDefinitions OLTP Table"
           TopLeft="46,268" />
         <NodeLayout
-          Size="164,41.7142857142858"
-          Id="Package\Populate DimDate"
-          TopLeft="374,272" />
-        <NodeLayout
-          Size="217.714285714286,41.7142857142858"
+          Size="217.5,41.5"
           Id="Package\Populate DimGeo OLTP Table"
           TopLeft="63,177" />
         <NodeLayout
-          Size="184,41.7142857142858"
+          Size="184,41.5"
           Id="Package\Populate DimIndicator"
           TopLeft="382,183" />
         <NodeLayout
-          Size="234.857142857143,41.7142857142858"
+          Size="235,41.5"
           Id="Package\Populate DimSource OLTP  Table"
           TopLeft="216.839499304815,367.190475874207" />
         <NodeLayout
-          Size="273.142857142858,41.7142857142858"
+          Size="273,41.5"
           Id="Package\Populate GeoStandardNames OLTP Table"
           TopLeft="53,97" />
         <NodeLayout
-          Size="268.571428571429,41.7142857142858"
+          Size="268.5,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table"
           TopLeft="392,101" />
         <EdgeLayout
@@ -3278,52 +3000,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="298,291">
+          TopLeft="172,309.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="76,0"
+              EndConnector="162.339499304815,57.690475874207"
               Start="0,0"
-              End="68.5,0">
+              End="162.339499304815,50.190475874207">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="68.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="456,313.777777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-121.60494513963,53.4126980964289"
-              Start="0,0"
-              End="-121.60494513963,45.9126980964289">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.7063490482145" />
+                    End="0,24.8452379371035" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.7063490482145"
-                    Point2="0,26.7063490482145"
-                    Point3="-4,26.7063490482145" />
+                    Point1="0,24.8452379371035"
+                    Point2="0,28.8452379371035"
+                    Point3="4,28.8452379371035" />
                   <mssgle:LineSegment
-                    End="-117.60494513963,26.7063490482145" />
+                    End="158.339499304815,28.8452379371035" />
                   <mssgle:CubicBezierSegment
-                    Point1="-117.60494513963,26.7063490482145"
-                    Point2="-121.60494513963,26.7063490482145"
-                    Point3="-121.60494513963,30.7063490482145" />
+                    Point1="158.339499304815,28.8452379371035"
+                    Point2="162.339499304815,28.8452379371035"
+                    Point3="162.339499304815,32.8452379371035" />
                   <mssgle:LineSegment
-                    End="-121.60494513963,45.9126980964289" />
+                    End="162.339499304815,50.190475874207" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3438,70 +3138,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Populate DimDate">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="208,42.2857142857143"
-          Id="Package\Populate DimDate\DimDate Excel spreadsheet"
-          TopLeft="166,37" />
-        <NodeLayout
-          Size="177.142857142858,42.2857142857143"
-          Id="Package\Populate DimDate\DimDate OLTP Table"
-          TopLeft="184,223" />
-        <EdgeLayout
-          Id="Package\Populate DimDate.Paths[Excel Source Output]"
-          TopLeft="271.25,79">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,144"
-              Start="0,0"
-              End="0,136.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,136.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate DimDate\DimDate Excel spreadsheet">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate DimDate\DimDate OLTP Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

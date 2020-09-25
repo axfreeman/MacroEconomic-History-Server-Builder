@@ -1,4 +1,26 @@
- CREATE VIEW [dbo].[Project3_fact_query]
+ 
+ 
+CREATE OR ALTER VIEW [dbo].[Project_1_reduced]
+AS
+  SELECT factid,
+         dimsourceid,
+         dimdefinitionid,
+         dimgeoid,
+         dimindicatorid,
+         year,
+         yearasdate,
+         value,
+         definitionname
+  FROM   dbo.factquery
+  WHERE  ( type = N'Demography and Labour' )
+         AND ( indicator = N'Population' )
+         AND ( definitionname = N'CLEANED' )
+          OR ( type = N'GDP Measures' )
+             AND ( indicator = N'GDP Total' )
+
+GO
+ 
+CREATE OR ALTER VIEW [dbo].[Project3_fact_query]
 AS
   SELECT factid,
          dimsourceid,
@@ -18,7 +40,7 @@ AS
 
 go
 
-CREATE VIEW [dbo].[Project3_source_query]
+CREATE OR ALTER VIEW [dbo].[Project3_source_query]
 AS
   SELECT dimsourceid,
          sourcenameparent,
@@ -35,7 +57,7 @@ AS
 
 go  
 
-CREATE VIEW [dbo].[Project3_indicator_query]
+CREATE OR ALTER VIEW [dbo].[Project3_indicator_query]
 AS
   SELECT dimindicatorid,
          indicatorstandardname,
@@ -49,7 +71,7 @@ AS
 go  
 
 
- CREATE VIEW [dbo].[Project3_all_data_query]
+CREATE OR ALTER VIEW [dbo].[Project3_all_data_query]
 AS
   SELECT dbo.project3_indicator_query.dimindicatorid,
          dbo.project3_source_query.dimsourceid,
@@ -84,3 +106,21 @@ AS
                          dbo.project3_indicator_query.dimindicatorid
 
 go  
+
+CREATE OR ALTER VIEW FactQueryCapitalStock 
+AS
+SELECT FactID, DimSourceID, DimDefinitionID, DimGeoID, DimIndicatorID, DateField, Value
+FROM FactQuery
+WHERE (Type = N'GDP Measures' OR
+ Type = N'Capital' OR
+ Type = N'GDP Components' OR
+ Type = N'Demography and Labour' OR
+ Type = N'Indices') AND (SourceName = 'UN2018' OR
+ SourceName = 'MADDISON' OR
+ SourceName = 'MACROHIST' OR
+ SourceName = 'BARRO-URSUA' OR
+		 SourceName='Eurostat' OR
+ SourceName = 'PENN' OR
+ SourceName = 'OECD')
+GO
+

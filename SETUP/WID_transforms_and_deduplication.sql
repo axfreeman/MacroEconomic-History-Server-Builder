@@ -23,13 +23,13 @@ SELECT
   N'WID-EXTENDED' as DefinitionName, 
  [DimGeoID],
   N'EXCHANGE_RATE_TEMP' AS indicatorstandardname,
- [YearAsDate],
+ [DateField],
  [Value]
  FROM [FactQuery]
 	WHERE 
 	([FactQuery].DefinitionName = N'PENN') 
 	and [FactQuery].indicatorstandardname='EXCHANGE-RATE-LCUperUSD-PENNMARKET+ESTIMATE'
-	and Year<=2014
+	and Year([DateField])<=2014
 
 --IFS does not take care of Euro currencies before Eurification	
 	
@@ -39,13 +39,13 @@ SELECT
   N'WID-EXTENDED' as DefinitionName, 
  [DimGeoID],
   N'EXCHANGE_RATE_TEMP' AS indicatorstandardname,
- [YearAsDate],
+ [DateField],
  [Value]
  FROM [FactQuery]
 	WHERE 
 	([FactQuery].DefinitionName = N'IFS2018') 
 	and [FactQuery].indicatorstandardname='EXCHANGE-RATE-LCUperUSD-PERIODAVERAGE'
-	and Year>2014
+	and Year([DateField])>2014
 
 	
 GO
@@ -65,12 +65,12 @@ SELECT
   N'WID-EXTENDED' as DefinitionName, 
   N'GDP-NET-TOTAL-USD-CURRENT' AS indicatorstandardname,
  [FactQuery].[DimGeoID],
- [FactQuery].[YearAsDate],
+ [FactQuery].[DateField],
  [FactQuery].[Value]/[PENN_ExchangeRates].[Value] as Value
  FROM [FactQuery]
  INNER JOIN [PENN_ExchangeRates] ON
  FactQuery.DimGeoID=PENN_ExchangeRates.DimGeoID AND
- FactQuery.YearAsDate=PENN_ExchangeRates.YearAsDate 
+ FactQuery.DateField=PENN_ExchangeRates.DateField 
 	WHERE 
 	[FactQuery].indicatorstandardname='GDP-NET-TOTAL-LCU-CURRENT' AND
 	[FactQuery].DefinitionName='WID-EXTENDED'
@@ -92,7 +92,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeoID,
  DimIndicator.DimIndicatorID,
- YearAsDate,
+ DateField,
  Value
 FROM [WID_NDP_USD_Calculated] INNER JOIN DimIndicator ON
  WID_NDP_USD_Calculated.indicatorstandardname=DimIndicator.indicatorstandardname
@@ -107,14 +107,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM WID_USD_Calculated_KeyFinder
 GO 
@@ -135,7 +135,7 @@ SELECT
  [SourceName],
  N'COPY OF WID NDP' AS indicatorstandardname,
  [DimGeoID],
- [YearAsDate],
+ [DateField],
  [Value]
 FROM [FactQuery]
  WHERE [FactQuery].DefinitionName='WID-EXTENDED' and [FactQuery].indicatorstandardname='GDP-NET-TOTAL-LCU-CURRENT'
@@ -157,12 +157,12 @@ SELECT
   N'WID-EXTENDED' AS DefinitionName, 
   N'GDP-NATIONAL-INCOME-LCU-CURRENT' AS indicatorstandardname,
  [FactQuery].[DimGeoID],
- [FactQuery].[YearAsDate],
+ [FactQuery].[DateField],
  [FactQuery].[Value] + [WID_National_Income].[Value] as Value
  FROM [FactQuery]
  INNER JOIN [WID_National_Income] ON
  FactQuery.DimGeoID=WID_National_Income.DimGeoID AND
- FactQuery.YearAsDate=WID_National_Income.YearAsDate 
+ FactQuery.DateField=WID_National_Income.DateField 
 	WHERE 
 	[FactQuery].indicatorstandardname='GDP-FOREIGN-INCOME-LCU-CURRENT' AND
 	[FactQuery].DefinitionName='WID'
@@ -184,7 +184,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeoID,
  DimIndicator.DimIndicatorID,
- YearAsDate,
+ DateField,
  Value
 FROM [WID_National_Income_Calculated] INNER JOIN DimIndicator ON
  DimIndicator.indicatorstandardname=WID_National_Income_Calculated.indicatorstandardname
@@ -198,14 +198,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM WID_National_Income_Calculated_KeyFinder
 GO 
@@ -226,12 +226,12 @@ SELECT
   N'WID-EXTENDED' as DefinitionName, 
   N'GDP-NATIONAL-INCOME-USD-CURRENT' AS indicatorstandardname,
  [FactQuery].[DimGeoID],
- [FactQuery].[YearAsDate],
+ [FactQuery].[DateField],
  [FactQuery].[Value]/[PENN_ExchangeRates].[Value] as Value
  FROM [FactQuery]
  INNER JOIN [PENN_ExchangeRates] ON
  FactQuery.DimGeoID=PENN_ExchangeRates.DimGeoID AND
- FactQuery.YearAsDate=PENN_ExchangeRates.YearAsDate 
+ FactQuery.DateField=PENN_ExchangeRates.DateField 
 	WHERE 
 	[FactQuery].indicatorstandardname='GDP-NATIONAL-INCOME-LCU-CURRENT' AND
 	[FactQuery].DefinitionName='WID-EXTENDED'
@@ -253,7 +253,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeoID,
  DimIndicator.DimIndicatorID,
- YearAsDate,
+ DateField,
  Value
 FROM [WID_National_Income_USD_Calculated] INNER JOIN DimIndicator ON
  WID_National_Income_USD_Calculated.indicatorstandardname=DimIndicator.indicatorstandardname
@@ -268,14 +268,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM WID_National_Income_USD_Calculated_KeyFinder
 GO 
@@ -296,12 +296,12 @@ SELECT
   N'WID-EXTENDED' as DefinitionName, 
   N'GDP-FOREIGN-INCOME-USD-CURRENT' AS indicatorstandardname,
  [FactQuery].[DimGeoID],
- [FactQuery].[YearAsDate],
+ [FactQuery].[DateField],
  [FactQuery].[Value]/[PENN_ExchangeRates].[Value] as Value
  FROM [FactQuery]
  INNER JOIN [PENN_ExchangeRates] ON
  FactQuery.DimGeoID=PENN_ExchangeRates.DimGeoID AND
- FactQuery.YearAsDate=PENN_ExchangeRates.YearAsDate 
+ FactQuery.DateField=PENN_ExchangeRates.DateField 
 	WHERE 
 	[FactQuery].indicatorstandardname='GDP-FOREIGN-INCOME-LCU-CURRENT' AND
 	[FactQuery].DefinitionName='WID'
@@ -323,7 +323,7 @@ SELECT
  DimDefinitions.DimDefinitionID,
  DimGeoID,
  DimIndicator.DimIndicatorID,
- YearAsDate,
+ DateField,
  Value
 FROM [WID_Foreign_Income_USD_Calculated] INNER JOIN DimIndicator ON
  WID_Foreign_Income_USD_Calculated.indicatorstandardname=DimIndicator.indicatorstandardname
@@ -338,14 +338,14 @@ INSERT INTO Fact(
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- [YearAsDate],
+ [DateField],
  [Value])
 SELECT
  [DimSourceID],
  [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
- YearAsDate,
+ DateField,
  [Value]
 FROM WID_Foreign_Income_USD_Calculated_KeyFinder
 GO 
