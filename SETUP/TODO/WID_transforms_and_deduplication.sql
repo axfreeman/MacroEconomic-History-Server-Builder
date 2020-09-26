@@ -1,3 +1,5 @@
+USE macrohistory_rolap
+GO
 /* This query creates the World Indquality Database (WID) transformations:
 	1) Calculate NDP and NI in USD (NB for countries, not reporting units)
 	2) Calculate National Income (NDP+Foreign Income) in LCU
@@ -9,14 +11,7 @@
 --(1) Calculate NDP and NI in USD (NB for countries, not reporting units)
 -- Create a view with exchange rates in it
 
-BEGIN TRY
-DROP VIEW [dbo].[PENN_ExchangeRates]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [PENN_ExchangeRates]
+CREATE OR ATER VIEW [PENN_ExchangeRates]
 AS
 SELECT
  [DimSourceID],

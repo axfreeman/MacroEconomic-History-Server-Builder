@@ -1,22 +1,14 @@
 USE macrohistory_rolap
-
--- Create the UN Corrector view
-BEGIN TRY
-DROP VIEW [dbo].[UN_RU_Corrector]
-END TRY
-BEGIN CATCH
-END CATCH
 GO
 
 -- Select all UN2018 GDP and POPULATION
 --Add the PENN data for Taiwan because UN omits it for political reasons only
 
-CREATE VIEW [dbo].[UN_RU_Corrector]
+CREATE OR ALTER VIEW [dbo].[UN_RU_Corrector]
 AS
 
 SELECT 
  [DimSourceID],
- N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [DimIndicatorID],
  DateField,
@@ -28,7 +20,6 @@ FROM [FactQuery]
 UNION
 SELECT 
  [DimSourceID],
- N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [DimIndicatorID],
  DateField,
@@ -52,7 +43,6 @@ GO
 
 SELECT 
  [DimSourceID],
- [DefinitionName], 
  [GeoStandardName],
  [DimIndicatorID],
  DateField,
@@ -103,43 +93,32 @@ AND ([GeoStandardName]='Sudan (Former)')
 DELETE FROM [dbo].[UN_TD_File] 
 WHERE (Year(UN_TD_FILE.DateField)= 2010) 
 AND ([GeoStandardName]='Sudan (Former)')
-
+GO
 -- TODO: former Indonesia?
 -- TODO: former Netherlands Antilles
 
-BEGIN TRY
-DROP VIEW [dbo].[UN_RU_Corrector_KeyFinder]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
 
-CREATE VIEW [dbo].[UN_RU_Corrector_KeyFinder]
+CREATE OR ALTER VIEW [dbo].[UN_RU_Corrector_KeyFinder]
 AS
 SELECT
  UN_TD_File.DimSourceID,
- DimDefinitions.DimDefinitionID,
  DimGeo.DimGeoID,
- UN_TD_File.DimIndicatorID,
+ DimIndicatorID,
  UN_TD_File.DateField,
  UN_TD_File.Value
 FROM [UN_TD_File] INNER JOIN DimGeo ON
  DimGeo.GeoStandardName=UN_TD_File.GeoStandardName
-INNER JOIN DimDefinitions ON
- DimDefinitions.DefinitionName=UN_TD_File.DefinitionName
 GO
 
 -- Insert into the fact file
 INSERT INTO Fact(
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  [DateField],
  [Value])
 SELECT
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  DateField,
@@ -150,19 +129,12 @@ GO
 -- MADDISON
 
 -- Create the MADDISON Corrector view
-BEGIN TRY
-DROP VIEW [dbo].[MADDISON_RU_Corrector]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
 
-CREATE VIEW [dbo].[MADDISON_RU_Corrector]
+CREATE OR ALTER VIEW [dbo].[MADDISON_RU_Corrector]
 AS
 -- Select all MADDISON Records
 SELECT 
  [DimSourceID],
- N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
@@ -184,7 +156,6 @@ GO
 
 SELECT 
  [DimSourceID],
- [DefinitionName], 
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
@@ -208,42 +179,30 @@ DELETE FROM [dbo].[MADDISON_TD_File]
 WHERE 
 ([MADDISON_TD_File].[ReportingUnit]= 'USSR') AND
 ([MADDISON_TD_File].[GeoStandardName] <> 'USSR')
-
-
-BEGIN TRY
-DROP VIEW [dbo].[MADDISON_RU_Corrector_KeyFinder]
-END TRY
-BEGIN CATCH
-END CATCH
 GO
 
-CREATE VIEW [dbo].[MADDISON_RU_Corrector_KeyFinder]
+CREATE OR ALTER VIEW [dbo].[MADDISON_RU_Corrector_KeyFinder]
 AS
 SELECT
  MADDISON_TD_File.DimSourceID,
- DimDefinitions.DimDefinitionID,
  DimGeo.DimGeoID,
  MADDISON_TD_File.DimIndicatorID,
  MADDISON_TD_File.DateField,
  MADDISON_TD_File.Value
 FROM [MADDISON_TD_File] INNER JOIN DimGeo ON
  DimGeo.GeoStandardName=MADDISON_TD_File.GeoStandardName
-INNER JOIN DimDefinitions ON
- DimDefinitions.DefinitionName=MADDISON_TD_File.DefinitionName
 GO
 
 
 -- Insert into the fact file
 INSERT INTO Fact(
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  DateField,
  [Value])
 SELECT
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  DateField,
@@ -254,20 +213,11 @@ GO
 
 -- WID
 
--- Create the WID Corrector view
-BEGIN TRY
-DROP VIEW [dbo].[WID_RU_Corrector]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[WID_RU_Corrector]
+CREATE OR ALTER VIEW [dbo].[WID_RU_Corrector]
 AS
 -- Select all WID Records
 SELECT 
  [DimSourceID],
- N'CLEANED' as DefinitionName, 
  [GeoStandardName],
  [ReportingUnit],
  [DimIndicatorID],
@@ -292,7 +242,6 @@ GO
 
 SELECT 
  [DimSourceID],
- [DefinitionName], 
  [GeoStandardName],
  [ReportingUnit],
  [indicatorStandardName],
@@ -360,15 +309,12 @@ CREATE VIEW [dbo].[WID_RU_Corrector_KeyFinder]
 AS
 SELECT
  WID_TD_File.DimSourceID,
- DimDefinitions.DimDefinitionID,
  DimGeo.DimGeoID,
  DimIndicator.DimIndicatorID,
  WID_TD_File.DateField,
  WID_TD_File.Value
 FROM [WID_TD_File] INNER JOIN DimGeo ON
  DimGeo.GeoStandardName=WID_TD_File.GeoStandardName
-INNER JOIN DimDefinitions ON
- DimDefinitions.DefinitionName=WID_TD_File.DefinitionName
 INNER JOIN DimIndicator ON
  DimIndicator.indicatorStandardName=WID_TD_File.indicatorStandardName 
 GO
@@ -377,14 +323,12 @@ GO
 -- Insert into the fact file
 INSERT INTO Fact(
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  DateField,
  [Value])
 SELECT
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  DateField,

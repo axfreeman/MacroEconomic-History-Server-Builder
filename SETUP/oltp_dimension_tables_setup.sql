@@ -140,16 +140,3 @@ CONSTRAINT PK_Source PRIMARY KEY CLUSTERED
 )
 GO
 
--- The Definitions Dimension lists the various sources as well as composite definitions which splice data from various sources
-DROP TABLE IF EXISTS DimDefinitions
-GO
-CREATE TABLE DimDefinitions (
- DimDefinitionID int NOT NULL IDENTITY (1,1),
- DefinitionName nvarchar (100),
- LongDescription 	 nvarchar (255)
-CONSTRAINT PK_Definition PRIMARY KEY CLUSTERED 
-(
-	 DimDefinitionID ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
-)
-GO

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAABbCgEr0IRTRSaD5JS8Py2EBppwJ+bMj3B1h9BUfnL85AAAAAAOgAAAAAIAACAAAACKqYeF2UbL0lcn0Rz30TaJLz7b8ujX+eQwpcwOnNtMWZAAAAAjrpciIZlD5y5rTB5JhoF1wPfVGc+1QtqcH87Wsdjc18A98BWzopvSpdx7/mkJbqvlCuD9I07piRtYyVy7plnPg//iUprvZFMv5gIKVHfe2G1UNuKRsir+L784ZSiA+xezYdrDAcM2PZjEVUzvBwaUTiL8jM2Gpjs9w14XHWS+qM67+b8t2HO3nryuQ9fMlnNAAAAA/bzO+8Y6mZi2qfHMvXUQsrXFJ5svWE4gHgICk+HD6Ycph9s2BkwAcm94i9v6s55EdbAjXZ/vpuupNItXyHChYw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAAAWEPGWdjm3CIgo5GjVA5WFP9ujw4qkZDTxFaAa1jYa5AAAAAAOgAAAAAIAACAAAAD9xJYxPCRWzvg62Xa9ieBlgFZyHFL3Ab8njkYaFwXey5AAAADCPBA20NnuSgIxTJ1Gic1VQglSzE2GQf1m+TQOexslfe13XvM/k++T0mtYy4msrREe4Ninjytxrkuv6NrcJ1ovsacYahEaClZ6aE6eju8guxmNondRWLMG4LYfoFoEG1ypsZ+Iegv5AKjaq5jEozhFbgO63PKJFKgN9RdLfrNpTqVwyejm+l1AZaK8fsyB479AAAAAKsCIwaSmECrloenPLio8wDP3PCpa9/JeUtmbK4yOATO2BgFei/Al/AmxnBewoAJ0pTDE1vgRv1bySnZeZAixYw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -74,6 +74,8 @@
           <SSIS:ConnectionManager SSIS:Name="OECD Comprehensive.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="US nationally sourced data.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="drop_unwanted_tables_and_views.sql.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="calculate_IFS_USD_GDP.sql.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="define_PENN_USD_calculator.sql.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -4177,6 +4179,21 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.calculate_IFS_USD_GDP.sql.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\Github\MacroEconomicHistory\SETUP\calculate_IFS_USD_GDP.sql</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="Set up OLTP Dimension Tables.dtsx">
@@ -4185,10 +4202,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">74</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">68</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{909310DD-0BC5-4FA4-9E65-A37F718AFE56}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{63C9BB11-8326-4FA9-83E1-AA871625E314}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4320,10 +4337,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">262</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">295</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B2F0A43F-8F3B-44AB-AB4D-4BDE08008DE1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6ECBF092-67F6-4612-BE45-FDAE3996BC80}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4337,10 +4354,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">238</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">243</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{350E6D9D-F006-417E-8432-039A135E9472}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{018B3D21-CAE5-4BFE-85A0-CC2364F6C43F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4371,10 +4388,10 @@
                 <SSIS:Property SSIS:Name="Name">Tidy</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{98226E92-F2F2-4767-A579-43A59D936760}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6FF9E9DE-D340-480A-AC20-4E349C123666}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

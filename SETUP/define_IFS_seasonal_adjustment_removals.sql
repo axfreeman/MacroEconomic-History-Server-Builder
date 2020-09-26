@@ -1,21 +1,16 @@
 USE macrohistory_rolap
+go
+-- This script normalises the anomalous IFS series for current USD covering USA, Australia, United Kingdom, Canada, New Zealand and Mexico
+-- the IFS provides seasonally adjusted series for these which go further back in time.
+-- the script therefore renames these series to be unadjusted, since with annual data, the distinction creates unnecessary complications
+-- and deletes the unadjusted series
 
--- Create a temporary definition table
--- create the seasonal adjustment view
-
-BEGIN TRY
-DROP VIEW [dbo].[IFSSeasonalAdjustmentRemoval]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [IFSSeasonalAdjustmentRemoval]
+-- create seasonal adjustment view
+CREATE OR ALTER VIEW [IFSSeasonalAdjustmentRemoval]
 AS
 -- Select all GDP-USD-CURRENT from IFS before 1970 (not present in UN2018)
 SELECT
  [DimSourceID],
-  N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardName,
  [DateField],
@@ -34,7 +29,6 @@ SELECT
 UNION
 SELECT
  [DimSourceID],
-  N'CLEANED' as DefinitionName, 
  [DimGeoID],
   N'GDP-TOTAL-USD-CURRENT' AS IndicatorStandardName,
  [DateField],
@@ -53,41 +47,63 @@ SELECT
 	or [FactQuery].GeoStandardName='Mexico')
 GO
 
--- locate the IndicatorID and DefinitionID for the seasonal adjustment corrector
+-- Create a temporary definition table to hold the results
 
-BEGIN TRY
-DROP VIEW [dbo].[IFSSeasonalAdjustmentRemoval_KeyFinder]
-END TRY
-BEGIN CATCH
-END CATCH
+SELECT * INTO 
+IFS_temporary_seasonal_adjustment_table
+FROM IFSSeasonalAdjustmentRemoval 
+
+-- delete the original entries
+
+DELETE FROM FactQuery
+WHERE 
+	([FactQuery].SourceName = N'IFS2018') 
+	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT'
+	and [FactQuery].GeoStandardName!='United States'
+	and [FactQuery].GeoStandardName!='Australia'
+	and [FactQuery].GeoStandardName!='United Kingdom'
+	and [FactQuery].GeoStandardName!='Canada'
+	and [FactQuery].GeoStandardName!='New Zealand'
+	and [FactQuery].GeoStandardName!='Mexico'
+
 GO
 
-CREATE VIEW [IFSSeasonalAdjustmentRemoval_KeyFinder]
+DELETE FROM FactQuery
+WHERE
+	([FactQuery].SourceName = N'IFS2018') 
+	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT-SA'
+	and (
+	[FactQuery].GeoStandardName='United States'
+	or [FactQuery].GeoStandardName='Australia'
+	or [FactQuery].GeoStandardName='United Kingdom'
+	or [FactQuery].GeoStandardName='Canada'
+	or [FactQuery].GeoStandardName='New Zealand'
+	or [FactQuery].GeoStandardName='Mexico')
+GO
+
+-- Construct a view to find the dimension IDs for the seasonal adjustment corrector
+CREATE OR ALTER VIEW [IFSSeasonalAdjustmentRemoval_KeyFinder]
 AS
 SELECT
- IFSSeasonalAdjustmentRemoval.DimSourceID,
- DimDefinitions.DimDefinitionID,
- IFSSeasonalAdjustmentRemoval.DimGeoID,
+ IFS_temporary_seasonal_adjustment_table.DimSourceID,
+ IFS_temporary_seasonal_adjustment_table.DimGeoID,
  DimIndicator.DimIndicatorID,
  DateField,
  Value
-FROM [IFSSeasonalAdjustmentRemoval] INNER JOIN DimIndicator ON
- DimIndicator.IndicatorStandardName=IFSSeasonalAdjustmentRemoval.IndicatorStandardName
-INNER JOIN DimDefinitions ON
- DimDefinitions.DefinitionName=IFSSeasonalAdjustmentRemoval.DefinitionName
+FROM [IFS_temporary_seasonal_adjustment_table] INNER JOIN DimIndicator ON
+ DimIndicator.IndicatorStandardName=IFS_temporary_seasonal_adjustment_table.IndicatorStandardName
+
 GO
 
 -- Insert into the fact file
 INSERT INTO Fact(
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  [DateField],
  [Value])
 SELECT
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  DateField,

@@ -18,7 +18,6 @@ CREATE TABLE Fact (
 
 	 FactID bigint NOT NULL IDENTITY (1,1),
 	 DimSourceID int NULL,
-	 DimDefinitionID int NULL,
 	 DimGeoID int NULL,
 	 DimIndicatorID int NULL,
 	 DateField Date Null,
@@ -83,24 +82,6 @@ CREATE TABLE DimGeo (
 ) 
 
 
--- The Definitions Dimension lists the composite definitions which splice data from various sources
-
-DROP TABLE IF EXISTS DimDefinitions 
-GO
-
--- The Definitions Dimension lists the various sources as well as composite definitions which splice data from various sources
-
-CREATE TABLE DimDefinitions (
- DimDefinitionID int NOT NULL,
- DefinitionName nvarchar (100),
- LongDescription 	 nvarchar (255)
-CONSTRAINT PK_Definition PRIMARY KEY CLUSTERED 
-(
-	 DimDefinitionID ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
-)
-GO
-
 -- The Source Dimension lists the various sources 
 
 DROP TABLE IF EXISTS DimSource 
@@ -135,8 +116,6 @@ SELECT
  DimSource.SourceNameParent, 
  DimSource.SourceNameDetail, 
  DimSource.Description,
- Fact.DimDefinitionID,
- DimDefinitions.DefinitionName, 
  Fact.DimGeoID,
  DimGeo.GeoStandardName, 
  DimGeo.ReportingUnit,
@@ -154,8 +133,7 @@ SELECT
 FROM Fact LEFT OUTER JOIN
  DimGeo ON Fact.DimGeoID = DimGeo.DimGeoID LEFT OUTER JOIN
  DimIndicator ON Fact.DimIndicatorID = DimIndicator.DimIndicatorID LEFT OUTER JOIN
- DimSource ON Fact.DimSourceID = DimSource.DimSourceID LEFT OUTER JOIN
- DimDefinitions ON Fact.DimDefinitionID=DimDefinitions.DimDefinitionID 
+ DimSource ON Fact.DimSourceID = DimSource.DimSourceID
 GO
 
 

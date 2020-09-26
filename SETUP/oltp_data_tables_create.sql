@@ -22,7 +22,6 @@ GO
 CREATE TABLE [FactSource](
  [OLTP_FactID] bigint not null IDENTITY (1,1), /* this key isn't used but helps track and debug problem rows */
  [SourceName] [nvarchar](50) NULL, /* the source is a single provider at a single release date, eg UN2018, WB2015*/
- [DefinitionName] nvarchar(50)NULL, /* the 'definition' is a selection of records from different providers. Initially, the selection for a given source will simply be the source */
  [GeoSourceName] [nvarchar](255) NULL, /* the geographical unit as defined by the supplier. This is standardised using geoStandardNames because every source has a different name for the same country */
  [IndicatorSourceCode] [nvarchar](255) NULL, 
  [Date] DateTime NULL,
@@ -59,9 +58,7 @@ AS
 SELECT
  dbo.FactSource.OLTP_FactID,
  dbo.FactSource.SourceName,
- dbo.FactSource.DefinitionName,
  dbo.DimSource.DimSourceID,
- dbo.DimDefinitions.DimDefinitionID,
  dbo.FactSource.GeoSourceName,
  dbo.GeoStandardNames.GeoStandardName,
  dbo.FactSource.IndicatorSourceCode as [Fact Indicator Name],
@@ -77,8 +74,6 @@ FROM dbo.FactSource
  AND dbo.FactSource.IndicatorSourceCode = dbo.IndicatorStandardNames.IndicatorSourceCode
  INNER JOIN dbo.DimSource
  ON dbo.FactSource.SourceName=dbo.DimSource.SourceName
- INNER JOIN dbo.DimDefinitions
- ON dbo.FactSource.DefinitionName=dbo.dimDefinitions.DefinitionName
 WHERE (Year(dbo.FactSource.Date) IS NOT NULL) AND (Year(dbo.FactSource.Date) > 1700) and (Value<>0)
 GO
 
@@ -89,9 +84,7 @@ AS
 SELECT 
 dbo.RecognisedFacts.OLTP_FactID,
 dbo.RecognisedFacts.SourceName, 
-dbo.RecognisedFacts.DefinitionName, 
 dbo.RecognisedFacts.DimSourceID,
-dbo.RecognisedFacts.DimDefinitionID,
 dbo.RecognisedFacts.Date, 
 dbo.RecognisedFacts.Value, 
 dbo.DimIndicator.DimIndicatorID, 
