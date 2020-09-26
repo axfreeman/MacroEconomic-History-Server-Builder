@@ -1,8 +1,16 @@
 -- script to clean up macrohistory_rolap  after finishing ROLAP transfer
-
+Use macrohistory_oltp
 DROP TABLE IF EXISTS MADDISON_TD_File;
 DROP TABLE IF EXISTS UN_TD_File;
 DROP TABLE IF EXISTS WID_TD_File;
+DROP TABLE IF EXISTS Temp_IFS_USD_SA_Table
+DROP TABLE IF EXISTS Temp_IFS_USD_Table
+DROP TABLE IF EXISTS Temp_PENN_USD_Table
+DROP TABLE IF EXISTS UN_duplicates
+DROP VIEW IF EXISTS DuplicateFinder
+GO
+Use macrohistory_rolap
+-- Many of these no longer relevant  26/09/2020
 DROP VIEW IF EXISTS AddedDefinitions;
 DROP VIEW IF EXISTS Barro_Ursua_cleaner;
 DROP VIEW IF EXISTS Barro_Ursua_Indexed_gdp;

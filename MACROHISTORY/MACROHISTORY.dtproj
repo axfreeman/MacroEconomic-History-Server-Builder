@@ -26,14 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAABFnvKyhXaaMHO3UjxMV7BLmfe7mUSYA5yzkg1bV9vREQAAAAAOgAAAAAIAACAAAACq1jETBq4Gg4ByWnJ3i5O2s/dw0XnqLD8G+d2DvgIfjJAAAACKw8GEapTdi91C78JDPpBwjC2+B5txwmJ1fUDjxSlcNNSq8rpswZbgXTF6dDH7zK6RcT142vsRntKForGs1LhK3A+XqRRBnHS8+4dpjK4d6952gpEDh6BkIpXlKdxWlP5jpzpoGpcLW3W4jzYoJoNQygz16ANgc/9DjtOeMzS66jTq20ry6FYD8kXoZz/a2TlAAAAAVFNs9JJ1M9nfiKWM55in2O7ULt7fnwWP4txuGmroMnZ/S64uCB1LXX9ub+7iGsu2KW4yrqonGaVV55amuyxLAA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAABFzsG7QlOB7vd5vUH5WsvSz0H6h00/zdmXWSvdxXSipgAAAAAOgAAAAAIAACAAAADQ6Dp21lFT3fypY0yKKggQ3hAfAIR21ksWzxPk4apxqJAAAACRdHy7umpC71TT2XLovjs9DnPqjxr8/mkT7MMw5E4gVRlS3pUsh/Mka6A6Le/RRGcty+SB9XA7pwVjgwaqn5017NyLcDCIdcvRJvYquy5l0GvhSqz/Vc1TQ8UB3Y20OLrCXBO+yUwn1uHaEFr+tk9Hp7lJiO2xK/sDy8CcVFcBUA8WdP59vgH49QNNnqQFi8ZAAAAAzurGJsXRMntUgHzMnTfhIVFF3Ld+mi+N0RhTAzItl0yPitRLt3L2aRB0HDJpRBF4NG9JlBO1nSFHczh9LPQF3Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Set up OLTP Dimension Tables.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Import OLTP Data from external Sources.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Populate ROLAP tables from OLTP.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Snippets.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Tidy.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
@@ -4194,21 +4193,6 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.define_PENN_USD_calculator.sql.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\Github\MacroEconomicHistory\SETUP\define_PENN_USD_calculator.sql</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="Set up OLTP Dimension Tables.dtsx">
@@ -4352,10 +4336,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">295</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">299</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6ECBF092-67F6-4612-BE45-FDAE3996BC80}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{90780C60-881A-4AF4-AD7D-29276AEE9595}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4373,23 +4357,6 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{2BC60616-EF54-403C-B5AC-4B6CF669E436}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Snippets.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{B52AA361-AC6C-4BC6-98DF-7384A63A9B47}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BFA6A306-E7A5-468A-8431-EF1795F357C5}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

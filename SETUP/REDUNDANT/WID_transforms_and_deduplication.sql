@@ -11,7 +11,7 @@ GO
 --(1) Calculate NDP and NI in USD (NB for countries, not reporting units)
 -- Create a view with exchange rates in it
 
-CREATE OR ATER VIEW [PENN_ExchangeRates]
+CREATE OR ALTER VIEW [PENN_ExchangeRates]
 AS
 SELECT
  [DimSourceID],
@@ -22,7 +22,7 @@ SELECT
  [Value]
  FROM [FactQuery]
 	WHERE 
-	([FactQuery].DefinitionName = N'PENN') 
+	([FactQuery].SourceName = N'PENN') 
 	and [FactQuery].indicatorstandardname='EXCHANGE-RATE-LCUperUSD-PENNMARKET+ESTIMATE'
 	and Year([DateField])<=2014
 

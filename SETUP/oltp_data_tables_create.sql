@@ -52,7 +52,6 @@ GO
 -- for each indicator and source.
 -- But EXCLUDE indicators for which there is no data, or there would be too much clutter.
 
-
 CREATE OR ALTER VIEW [RecognisedFacts]
 AS
 SELECT
@@ -78,7 +77,7 @@ WHERE (Year(dbo.FactSource.Date) IS NOT NULL) AND (Year(dbo.FactSource.Date) > 1
 GO
 
 -- Compresses the rows of the RecognisedFacts view by substituting the integer Indexes of DimGeo and DimIndicator for the actual country and indicator names
-
+-- For debugging purposes only, report extensively on additional fields from the indicator dimension
 CREATE OR ALTER VIEW [FactQuery]
 AS
 SELECT 
@@ -90,7 +89,14 @@ dbo.RecognisedFacts.Value,
 dbo.DimIndicator.DimIndicatorID, 
 dbo.DimGeo.DimGeoID, 
 dbo.RecognisedFacts.GeoStandardName, 
-dbo.RecognisedFacts.IndicatorStandardName 
+dbo.RecognisedFacts.IndicatorStandardName,
+dbo.DimIndicator.Type,
+dbo.DimIndicator.Indicator,
+dbo.DimIndicator.Sector,
+dbo.DimIndicator.Measure,
+dbo.DimIndicator.Unit,
+dbo.DimIndicator.BaseYear,
+dbo.DimIndicator.Qualifier
 FROM dbo.RecognisedFacts LEFT OUTER JOIN
  dbo.DimIndicator ON 
  dbo.RecognisedFacts.IndicatorStandardName = dbo.DimIndicator.IndicatorStandardName LEFT OUTER JOIN

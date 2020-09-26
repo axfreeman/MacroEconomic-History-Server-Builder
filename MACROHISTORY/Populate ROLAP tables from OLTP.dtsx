@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="244"
-  DTS:VersionGUID="{A0602792-B5B8-4865-8C4C-7D37C436C675}">
+  DTS:VersionBuild="250"
+  DTS:VersionGUID="{EA74205E-AD33-4328-BF3D-CE700B5A429B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -32,24 +32,6 @@
           SQLTask:Connection="{442F2917-9C92-411C-B3F4-4301EB05D697}"
           SQLTask:SqlStmtSourceType="FileConnection"
           SQLTask:SqlStatementSource="Define Deindexation for MH and B-U.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\deduplicate where appropriate"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{b6ba5743-b4eb-4371-b887-52c6252ff859}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="deduplicate where appropriate"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="Define Duplicate Removals sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1941,6 +1923,76 @@
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Date]"
                       name="Date"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Type]"
+                      name="Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Indicator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Indicator]"
+                      name="Indicator"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Sector]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Sector]"
+                      name="Sector"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Measure]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Measure]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Measure]"
+                      name="Measure"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Unit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Unit]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Unit]"
+                      name="Unit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[BaseYear]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[BaseYear]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[BaseYear]"
+                      name="BaseYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Qualifier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Qualifier]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Qualifier]"
+                      name="Qualifier"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1983,6 +2035,41 @@
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
                       name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      name="Indicator" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sector" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Measure]"
+                      dataType="wstr"
+                      length="255"
+                      name="Measure" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Unit]"
+                      dataType="wstr"
+                      length="255"
+                      name="Unit" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[BaseYear]"
+                      dataType="wstr"
+                      length="255"
+                      name="BaseYear" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Qualifier]"
+                      dataType="wstr"
+                      length="255"
+                      name="Qualifier" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2038,6 +2125,48 @@
                       length="255"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
                       name="IndicatorStandardName" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      name="Type" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Indicator]"
+                      name="Indicator" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                      name="Sector" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Measure]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Measure]"
+                      name="Measure" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Unit]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Unit]"
+                      name="Unit" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[BaseYear]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[BaseYear]"
+                      name="BaseYear" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Qualifier]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Qualifier]"
+                      name="Qualifier" />
                     <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
@@ -2230,11 +2359,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F765A72D-C8FD-44D8-B804-24C4B0C77C95}"
+      DTS:DTSID="{935250D3-01CA-4074-86E8-34EC0198CE4E}"
       DTS:From="Package\Populate DimSources"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Populate ROLAP fact file" />
+      DTS:To="Package\BH and MH de-indexation" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -2252,21 +2381,13 @@
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Populate DimGeo" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
-      DTS:CreationName=""
-      DTS:DTSID="{D1414247-189D-44B6-B43C-2E0425DEA8FE}"
-      DTS:From="Package\deduplicate where appropriate"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 4"
-      DTS:To="Package\BH and MH de-indexation" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{59E4EE7F-3EB4-4CFD-9494-31170D33CDE4}"
-      DTS:From="Package\Populate ROLAP fact file"
+      DTS:DTSID="{1A8D44B3-8AD8-4860-9AE6-A15FCC1B3D67}"
+      DTS:From="Package\BH and MH de-indexation"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:To="Package\deduplicate where appropriate" />
+      DTS:To="Package\Populate ROLAP fact file" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2281,77 +2402,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="220,42"
-          Id="Package\deduplicate where appropriate"
-          TopLeft="289.088327245565,191.712843552297" />
+          Size="199,42"
+          Id="Package\BH and MH de-indexation"
+          TopLeft="353.5,196.083332359376" />
         <NodeLayout
-          Size="255,41.5"
+          Size="239.5,41.5"
           Id="Package\Drop and create ROLAP files"
-          TopLeft="15.6111104782717,10.8181818309894" />
+          TopLeft="55.1111104782717,25.4431817583462" />
         <NodeLayout
           Size="160,41.5"
           Id="Package\Populate DimGeo"
-          TopLeft="527.970095279019,17.6409123332355" />
+          TopLeft="358.970095279019,108.099245217257" />
         <NodeLayout
           Size="183,41.5"
           Id="Package\Populate DimIndicator"
-          TopLeft="300.179490903634,13.7037877337466" />
+          TopLeft="79.679490903634,109.037120593554" />
         <NodeLayout
           Size="177.5,41.5"
           Id="Package\Populate DimSources"
-          TopLeft="752.384641305518,24.188144869342" />
+          TopLeft="595.384641305518,104.354811137817" />
         <NodeLayout
           Size="219,41.5"
           Id="Package\Populate ROLAP fact file"
-          TopLeft="25.3333339978716,192.670720297411" />
+          TopLeft="350.333333997872,295.587386452885" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="687.970095279019,41.6645286012888">
+          TopLeft="518.970095279019,126.977028177537">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.414546026499,0"
+              EndConnector="76.414546026499,0"
               Start="0,0"
-              End="56.914546026499,0">
+              End="68.914546026499,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.914546026499,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="841.134641305518,65.688144869342">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-706.301307307646,126.982575428069"
-              Start="0,0"
-              End="-706.301307307646,119.482575428069">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.4912877140345" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,59.4912877140345"
-                    Point2="0,63.4912877140345"
-                    Point3="-4,63.4912877140345" />
-                  <mssgle:LineSegment
-                    End="-702.301307307646,63.4912877140345" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-702.301307307646,63.4912877140345"
-                    Point2="-706.301307307646,63.4912877140345"
-                    Point3="-706.301307307646,67.4912877140345" />
-                  <mssgle:LineSegment
-                    End="-706.301307307646,119.482575428069" />
+                    End="68.914546026499,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2362,18 +2449,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="270.611110478272,33.010984782368">
+          TopLeft="173.020300690953,66.9431817583462">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="29.5683804253627,0"
+              EndConnector="0,42.0939388352079"
               Start="0,0"
-              End="22.0683804253627,0">
+              End="0,34.5939388352079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="22.0683804253627,0" />
+                    End="0,34.5939388352079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2384,18 +2471,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="483.179490903634,36.4223500334911">
+          TopLeft="262.679490903634,129.318182905406">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.7906043753846,0"
+              EndConnector="96.290604375385,0"
               Start="0,0"
-              End="37.2906043753846,0">
+              End="88.790604375385,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.2906043753846,0" />
+                    End="88.790604375385,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2406,18 +2493,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="244.333333997872,213.066781924854">
+          TopLeft="456.416666998936,238.083332359376">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.7549932476934,0"
+              EndConnector="0,57.5040540935086"
               Start="0,0"
-              End="37.2549932476934,0">
+              End="0,50.0040540935086">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.2549932476934,0" />
+                    End="0,50.0040540935086" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2426,24 +2513,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="199,42"
-          Id="Package\BH and MH de-indexation"
-          TopLeft="660.5,191.749999047567" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="509.088327245565,212.731421299932">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="684.134641305518,145.854811137817">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.411672754435,0"
+              EndConnector="-231.134641305518,50.228521221559"
               Start="0,0"
-              End="143.911672754435,0">
+              End="-231.134641305518,42.728521221559">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="143.911672754435,0" />
+                    End="0,21.1142606107795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1142606107795"
+                    Point2="0,25.1142606107795"
+                    Point3="-4,25.1142606107795" />
+                  <mssgle:LineSegment
+                    End="-227.134641305518,25.1142606107795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-227.134641305518,25.1142606107795"
+                    Point2="-231.134641305518,25.1142606107795"
+                    Point3="-231.134641305518,29.1142606107795" />
+                  <mssgle:LineSegment
+                    End="-231.134641305518,42.728521221559" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2657,7 +2752,7 @@
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="255,41.5"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
@@ -2685,9 +2780,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

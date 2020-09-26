@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{909310DD-0BC5-4FA4-9E65-A37F718AFE56}">
+  DTS:VersionBuild="77"
+  DTS:VersionGUID="{FC8AD6C3-978C-4973-B917-CE23FE5BC097}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -48,373 +48,6 @@
           SQLTask:BypassPrepare="False"
           SQLTask:SqlStmtSourceType="FileConnection"
           SQLTask:SqlStatementSource="OLTP Dimension Tables setup.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Populate  DimDefinitions OLTP Table"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{6f6dbfd5-050b-4a96-90e5-0174ec52be5c}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Populate  DimDefinitions OLTP Table"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:LoggingOptions
-        DTS:FilterKind="0" />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Populate  DimDefinitions OLTP Table\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input].Columns[DefinitionName]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="DefinitionName"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="100"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]"
-                      name="DefinitionName"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]},100)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">LEFT(DefinitionName,100)</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Excel Source"
-              name="DimDefinitions Excel worksheet"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">DimDefinitions$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mapping from parameters in the SQL command to variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Connections[OleDbConnection]"
-                  connectionManagerID="{059F5836-86DD-4BAC-A416-FFBA4FA9442F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Meta]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output]"
-                  name="Excel Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DefinitionName]"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[DefinitionName]"
-                      name="DefinitionName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[LongDescription]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[LongDescription]"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[LongDescription]"
-                      name="LongDescription"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[DefinitionName]"
-                      dataType="wstr"
-                      length="255"
-                      name="DefinitionName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].ExternalColumns[LongDescription]"
-                      dataType="wstr"
-                      length="255"
-                      name="LongDescription" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output]"
-                  isErrorOut="true"
-                  name="Excel Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[DefinitionName]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[DefinitionName]"
-                      name="DefinitionName" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[LongDescription]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[LongDescription]"
-                      name="LongDescription" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="DimDefinitions OLTP Table"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimDefinitions]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Connections[OleDbConnection]"
-                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].Columns[LongDescription]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="LongDescription"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[LongDescription]"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output].Columns[LongDescription]" />
-                    <inputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].Columns[DefinitionName]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="DefinitionName"
-                      externalMetadataColumnId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output].Columns[DefinitionName]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[LongDescription]"
-                      dataType="wstr"
-                      length="255"
-                      name="LongDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DefinitionName]"
-                      dataType="wstr"
-                      length="100"
-                      name="DefinitionName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[DimDefinitionID]"
-                      dataType="i4"
-                      name="DimDefinitionID" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Populate  DimDefinitions OLTP Table.Paths[Derived Column Output]"
-              endId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Populate  DimDefinitions OLTP Table.Paths[Excel Source Output]"
-              endId="Package\Populate  DimDefinitions OLTP Table\Derived Column.Inputs[Derived Column Input]"
-              name="Excel Source Output"
-              startId="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet.Outputs[Excel Source Output]" />
-          </paths>
-        </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1238,6 +871,16 @@
                       dataType="wstr"
                       length="255"
                       name="Indicator" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[F9]"
+                      dataType="wstr"
+                      length="255"
+                      name="F9" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Check existence]"
+                      dataType="wstr"
+                      length="255"
+                      name="Check existence" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2810,18 +2453,10 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{1873A22D-ECFD-40DE-BC7A-5B63F73A6DDE}"
+      DTS:DTSID="{3DC90C75-A006-4DA7-90AE-E83E717E6F01}"
       DTS:From="Package\Populate DimIndicator"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Populate  DimDefinitions OLTP Table" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:CreationName=""
-      DTS:DTSID="{CBEBDEC3-B512-49B7-823B-B215928E7E15}"
-      DTS:From="Package\Populate  DimDefinitions OLTP Table"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
       DTS:To="Package\Populate DimSource OLTP  Table" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -2837,47 +2472,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="271,41.5"
+          Size="331,41.5"
           Id="Package\Drop and Create OLTP Dimension Tables"
-          TopLeft="48,26" />
+          TopLeft="34.5,24.3750000080715" />
         <NodeLayout
-          Size="252,41.5"
-          Id="Package\Populate  DimDefinitions OLTP Table"
-          TopLeft="46,268" />
-        <NodeLayout
-          Size="217.5,41.5"
+          Size="253,41.5"
           Id="Package\Populate DimGeo OLTP Table"
-          TopLeft="63,177" />
+          TopLeft="62.5,176.458333336024" />
         <NodeLayout
           Size="184,41.5"
           Id="Package\Populate DimIndicator"
-          TopLeft="382,183" />
+          TopLeft="409,171.083333392524" />
         <NodeLayout
-          Size="235,41.5"
+          Size="290,41.5"
           Id="Package\Populate DimSource OLTP  Table"
-          TopLeft="216.839499304815,367.190475874207" />
+          TopLeft="51.339499304815,279.982142974042" />
         <NodeLayout
-          Size="273,41.5"
+          Size="295.5,41.5"
           Id="Package\Populate GeoStandardNames OLTP Table"
           TopLeft="53,97" />
         <NodeLayout
           Size="268.5,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table"
-          TopLeft="392,101" />
+          TopLeft="391.5,93.9583333683097" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="186.5,68">
+          TopLeft="200.375,65.8750000080715">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29"
+              EndConnector="0,31.1249999919285"
               Start="0,0"
-              End="0,21.5">
+              End="0,23.6249999919285">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,23.6249999919285" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2888,18 +2519,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="325.888888888889,119.888888888889">
+          TopLeft="348.5,116.229166684155">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.111111111111,0"
+              EndConnector="43,0"
               Start="0,0"
-              End="58.611111111111,0">
+              End="35.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="58.611111111111,0" />
+                    End="35.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2910,30 +2541,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="526.222222222222,142.777777777778">
+          TopLeft="525.75,135.45833336831">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-354.333333333333,34.2222222222222"
+              EndConnector="-295.916666666667,40.9999999677142"
               Start="0,0"
-              End="-354.333333333333,26.7222222222222">
+              End="-295.916666666667,33.4999999677142">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.1111111111111" />
+                    End="0,20.4454045369168" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.1111111111111"
-                    Point2="0,17.1111111111111"
-                    Point3="-4,17.1111111111111" />
+                    Point1="0,20.4454045369168"
+                    Point2="0,24.4454045369168"
+                    Point3="-4,24.4454045369168" />
                   <mssgle:LineSegment
-                    End="-350.333333333333,17.1111111111111" />
+                    End="-291.916666666667,24.4454045369168" />
                   <mssgle:CubicBezierSegment
-                    Point1="-350.333333333333,17.1111111111111"
-                    Point2="-354.333333333333,17.1111111111111"
-                    Point3="-354.333333333333,21.1111111111111" />
+                    Point1="-291.916666666667,24.4454045369168"
+                    Point2="-295.916666666667,24.4454045369168"
+                    Point3="-295.916666666667,28.4454045369168" />
                   <mssgle:LineSegment
-                    End="-354.333333333333,26.7222222222222" />
+                    End="-295.916666666667,33.4999999677142" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2944,18 +2575,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="281,201">
+          TopLeft="315.5,194.520833364274">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="101,0"
+              EndConnector="93.5,0"
               Start="0,0"
-              End="93.5,0">
+              End="86,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="93.5,0" />
+                    End="86,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2966,64 +2597,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="474,225">
+          TopLeft="501,212.583333392524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-302,43"
+              EndConnector="-304.660500695185,67.3988095815181"
               Start="0,0"
-              End="-302,35.5">
+              End="-304.660500695185,59.8988095815181">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,29.6994047907591" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="-4,21.5" />
+                    Point1="0,29.6994047907591"
+                    Point2="0,33.6994047907591"
+                    Point3="-4,33.6994047907591" />
                   <mssgle:LineSegment
-                    End="-298,21.5" />
+                    End="-300.660500695185,33.6994047907591" />
                   <mssgle:CubicBezierSegment
-                    Point1="-298,21.5"
-                    Point2="-302,21.5"
-                    Point3="-302,25.5" />
+                    Point1="-300.660500695185,33.6994047907591"
+                    Point2="-304.660500695185,33.6994047907591"
+                    Point3="-304.660500695185,37.6994047907591" />
                   <mssgle:LineSegment
-                    End="-302,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="172,309.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="162.339499304815,57.690475874207"
-              Start="0,0"
-              End="162.339499304815,50.190475874207">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.8452379371035" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.8452379371035"
-                    Point2="0,28.8452379371035"
-                    Point3="4,28.8452379371035" />
-                  <mssgle:LineSegment
-                    End="158.339499304815,28.8452379371035" />
-                  <mssgle:CubicBezierSegment
-                    Point1="158.339499304815,28.8452379371035"
-                    Point2="162.339499304815,28.8452379371035"
-                    Point3="162.339499304815,32.8452379371035" />
-                  <mssgle:LineSegment
-                    End="162.339499304815,50.190475874207" />
+                    End="-304.660500695185,59.8988095815181" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3035,120 +2632,6 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Populate  DimDefinitions OLTP Table">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="226.285714285715,42.2857142857143"
-          Id="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet"
-          TopLeft="111,22" />
-        <NodeLayout
-          Size="205.142857142858,42.2857142857143"
-          Id="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table"
-          TopLeft="121,192.5" />
-        <NodeLayout
-          Size="154.285714285715,42.2857142857143"
-          Id="Package\Populate  DimDefinitions OLTP Table\Derived Column"
-          TopLeft="410.833333333333,130.45138824093" />
-        <EdgeLayout
-          Id="Package\Populate  DimDefinitions OLTP Table.Paths[Excel Source Output]"
-          TopLeft="224,64">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="264.083333333333,66.4513882409298"
-              Start="0,0"
-              End="264.083333333333,58.9513882409298">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.2256941204649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.2256941204649"
-                    Point2="0,33.2256941204649"
-                    Point3="4,33.2256941204649" />
-                  <mssgle:LineSegment
-                    End="260.083333333333,33.2256941204649" />
-                  <mssgle:CubicBezierSegment
-                    Point1="260.083333333333,33.2256941204649"
-                    Point2="264.083333333333,33.2256941204649"
-                    Point3="264.083333333333,37.2256941204649" />
-                  <mssgle:LineSegment
-                    End="264.083333333333,58.9513882409298" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Populate  DimDefinitions OLTP Table.Paths[Derived Column Output]"
-          TopLeft="410.833333333333,151.45138824093">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-84.8333333333334,62.0486117590702"
-              Start="0,0"
-              End="-77.3333333333334,62.0486117590702">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-38.4166666666667,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-38.4166666666667,0"
-                    Point2="-42.4166666666667,0"
-                    Point3="-42.4166666666667,4" />
-                  <mssgle:LineSegment
-                    End="-42.4166666666667,58.0486117590702" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-42.4166666666667,58.0486117590702"
-                    Point2="-42.4166666666667,62.0486117590702"
-                    Point3="-46.4166666666667,62.0486117590702" />
-                  <mssgle:LineSegment
-                    End="-77.3333333333334,62.0486117590702" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate  DimDefinitions OLTP Table\DimDefinitions Excel worksheet">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate  DimDefinitions OLTP Table\DimDefinitions OLTP Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Populate DimGeo OLTP Table">
     <LayoutInfo>
@@ -3219,11 +2702,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197.142857142858,41.7142857142858"
+          Size="197,41.5"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
           TopLeft="77.8888978737368,135.650798879784" />
         <NodeLayout
-          Size="197.142857142858,41.7142857142858"
+          Size="197,41.5"
           Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
           TopLeft="77.0648239118814,30.71428618869" />
         <EdgeLayout
