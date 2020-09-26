@@ -1,6 +1,6 @@
 USE macrohistory_oltp
 GO
--- Add USD series for the various  PENN series
+-- Add USD measures for the various PENN series
 -- Do it here for convenience rather than oblige the user to write complex
 -- DAX or MDX Queries
 -- create temporary tables so we can inspect them to see what goes on, in case of problems
@@ -12,7 +12,7 @@ SELECT
    dbo.RecognisedFacts.SourceName,
    dbo.RecognisedFacts.GeoSourceName,
    N'xr2*v_gdp' as IndicatorSourceCode,
-   dbo.RecognisedFacts.Value*RecognisedFacts_1.Value AS Value,
+   RecognisedFacts_1.Value/RecognisedFacts.Value AS Value,
    dbo.RecognisedFacts.Date INTO Temp_PENN_USD_Table 
 FROM
    dbo.RecognisedFacts 
@@ -27,10 +27,12 @@ WHERE
    )
    AND 
    (
+      -- PENN code for exchange rate
       dbo.RecognisedFacts.IndicatorSourceCode = N'xr2'
    )
    AND 
    (
+      -- PENN code for GDP in LCU
       RecognisedFacts_1.IndicatorSourceCode = N'v_gdp'
    )
 GO 

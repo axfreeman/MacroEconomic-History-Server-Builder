@@ -8,6 +8,7 @@ GO
 DROP TABLE IF EXISTS Temp_IFS_USD_Table 
 GO 
 
+-- Construct a table containing the USD GDP for the non-seasonally-adjusted series
 SELECT
    dbo.RecognisedFacts.SourceName,
    dbo.RecognisedFacts.GeoSourceName,
@@ -27,19 +28,22 @@ WHERE
    )
    AND 
    (
+      -- GDP in LCU
       dbo.RecognisedFacts.IndicatorSourceCode = N'NGDP_XDC'
    )
    AND 
    (
+      -- Exchange rate
       RecognisedFacts_1.IndicatorSourceCode = N'EDNA_USD_XDC_RATE'
    )
 GO 
 
+-- Construct a table containing the USD GDP for seasonally-adjusted series
 DROP TABLE IF EXISTS Temp_IFS_USD_SA_Table 
    SELECT
       dbo.RecognisedFacts.SourceName,
       dbo.RecognisedFacts.GeoSourceName,
-      N'NGDP_XDC*EDNA_USD_XDC_RATE' as IndicatorSourceCode,
+      N'NGDP_XDC_SA*EDNA_USD_XDC_RATE' as IndicatorSourceCode,
       dbo.RecognisedFacts.Value*RecognisedFacts_1.Value AS Value,
       dbo.RecognisedFacts.Date INTO Temp_IFS_USD_SA_Table 
    FROM
@@ -55,10 +59,12 @@ DROP TABLE IF EXISTS Temp_IFS_USD_SA_Table
       )
       AND 
       (
+         -- Seasonally adjusted GDP in LCU (where this exists)
          dbo.RecognisedFacts.IndicatorSourceCode = N'NGDP_SA_XDC'
       )
       AND 
       (
+         -- Exchange rate
          RecognisedFacts_1.IndicatorSourceCode = N'EDNA_USD_XDC_RATE'
       )
 GO 

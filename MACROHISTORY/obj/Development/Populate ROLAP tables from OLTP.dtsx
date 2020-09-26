@@ -11,12 +11,29 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="243"
-  DTS:VersionGUID="{018B3D21-CAE5-4BFE-85A0-CC2364F6C43F}">
+  DTS:VersionBuild="244"
+  DTS:VersionGUID="{A0602792-B5B8-4865-8C4C-7D37C436C675}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\BH and MH de-indexation"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3F4BB8DD-DE41-499F-AC0A-EF013EF8FC08}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="BH and MH de-indexation"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{442F2917-9C92-411C-B3F4-4301EB05D697}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="Define Deindexation for MH and B-U.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\deduplicate where appropriate"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -2235,6 +2252,14 @@
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Populate DimGeo" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D1414247-189D-44B6-B43C-2E0425DEA8FE}"
+      DTS:From="Package\deduplicate where appropriate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\BH and MH de-indexation" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
       DTS:DTSID="{59E4EE7F-3EB4-4CFD-9494-31170D33CDE4}"
@@ -2279,6 +2304,28 @@
           Size="219,41.5"
           Id="Package\Populate ROLAP fact file"
           TopLeft="25.3333339978716,192.670720297411" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="687.970095279019,41.6645286012888">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.414546026499,0"
+              Start="0,0"
+              End="56.914546026499,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.914546026499,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="841.134641305518,65.688144869342">
@@ -2379,20 +2426,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="199,42"
+          Id="Package\BH and MH de-indexation"
+          TopLeft="660.5,191.749999047567" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="687.970095279019,41.6645286012888">
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="509.088327245565,212.731421299932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="64.414546026499,0"
+              EndConnector="151.411672754435,0"
               Start="0,0"
-              End="56.914546026499,0">
+              End="143.911672754435,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.914546026499,0" />
+                    End="143.911672754435,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2606,15 +2657,15 @@
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="168,41.5"
-          Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
-          TopLeft="132.888888888889,165.777777777778" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="255,41.5"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
           TopLeft="96.1709424676588,38.4202024528147" />
+        <NodeLayout
+          Size="168,41.5"
+          Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
+          TopLeft="132.888888888889,165.777777777778" />
         <EdgeLayout
           Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
           TopLeft="220.196582344941,80.1979802305924">
@@ -2634,7 +2685,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

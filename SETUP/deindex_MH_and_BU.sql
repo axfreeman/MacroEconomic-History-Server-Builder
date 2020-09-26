@@ -14,15 +14,10 @@
 */
 
 -- Create a View with the MACROHIST Indexed GDP in it
-
-BEGIN TRY
-DROP VIEW [dbo].[Macrohist_Indexed_rgdppc]
-END TRY
-BEGIN CATCH
-END CATCH
+USE macrohistory_rolap
 GO
 
-CREATE VIEW [dbo].[Macrohist_Indexed_rgdppc]
+CREATE OR ALTER VIEW [dbo].[Macrohist_Indexed_rgdppc]
 AS
 -- Prepare to De-index rgdppc
 SELECT 
@@ -38,14 +33,7 @@ FROM [FactQuery]
  
  -- Create a View with the BARRO_URSUA Indexed GDP in it
 
-BEGIN TRY
-DROP VIEW [dbo].[Barro_Ursua_Indexed_gdp]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[Barro_Ursua_Indexed_gdp]
+CREATE OR ALTER VIEW [dbo].[Barro_Ursua_Indexed_gdp]
 AS
 -- Prepare to De-index GDP
 SELECT 
@@ -60,14 +48,7 @@ FROM [FactQuery]
  
 -- Create a View with MADDISON:Population in it
 
-BEGIN TRY
-DROP VIEW [dbo].[Maddison_Population]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[Maddison_Population]
+CREATE OR ALTER VIEW [dbo].[Maddison_Population]
 AS
 
 SELECT 
@@ -83,14 +64,7 @@ FROM [FactQuery]
 -- [WDI2018_2005_REALGDP_BASE]contains, for each GeoID, the real GDP per capita taken from 
 -- WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT[@2005] (the base year for the MACROHIST:rgdppc index)
  
-BEGIN TRY
-DROP VIEW [dbo].[WDI2018_2005_REALGDP_BASE]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[WDI2018_2005_REALGDP_BASE]
+CREATE OR ALTER VIEW [dbo].[WDI2018_2005_REALGDP_BASE]
 AS
  -- Select only year 2005 and the GeoID. As before, select GeoStandardName so we can see what's going on
 SELECT
@@ -107,14 +81,7 @@ GO
 -- [WDI2018_2006_REALGDP_BASE]contains, for each GeoID, the real GDP per capita taken from 
 -- WDI2018:GDP-TOTAL-PERCAPITA-LCU-CONSTANT[@2006] (the base year for the MACROHIST:rgdppc index)
  
-BEGIN TRY
-DROP VIEW [dbo].[WDI2018_2006_REALGDP_BASE]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[WDI2018_2006_REALGDP_BASE]
+CREATE OR ALTER VIEW [dbo].[WDI2018_2006_REALGDP_BASE]
 AS
  -- Select only year 2006 and the GeoID. As before, select GeoStandardName so we can see what's going on
 SELECT
@@ -129,14 +96,7 @@ GO
  
 -- [Macrohist_WDI2018_Deindexed] uses [Macrohist_indexed] and [WDI2018_2005_REALGDP_BASE] to construct a de-indexed rgdppc
 
-BEGIN TRY
-DROP VIEW [dbo].[Macrohist_WDI2018_Deindexed]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[Macrohist_WDI2018_Deindexed]
+CREATE OR ALTER VIEW [dbo].[Macrohist_WDI2018_Deindexed]
 AS
 SELECT 
  dbo.Macrohist_Indexed_rgdppc.DimGeoID,
@@ -152,14 +112,7 @@ GO
 
 -- [BARRO-URSUA_WDI2018_Deindexed] uses [Barro_Ursua_Indexed_gdp] and [WDI2018_2006_REALGDP_BASE] to construct a de-indexed rgdppc
 
-BEGIN TRY
-DROP VIEW [dbo].[BARRO_URSUA_WDI2018_Deindexed]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[BARRO_URSUA_WDI2018_Deindexed]
+CREATE OR ALTER VIEW [dbo].[BARRO_URSUA_WDI2018_Deindexed]
 AS
 SELECT 
  dbo.Barro_Ursua_Indexed_gdp.DimGeoID,
@@ -175,18 +128,10 @@ GO
 
 -- use [Macrohist_WDI2018_Deindexed] and Macrohist itself to construct [Macrohist_WDI2018_rgdp]
 
-BEGIN TRY
-DROP VIEW [dbo].[Macrohist_cleaner]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[Macrohist_cleaner]
+CREATE OR ALTER VIEW [dbo].[Macrohist_cleaner]
 AS
 SELECT 
  N'MACROHIST' AS SourceName,
- N'CLEANED' AS DefinitionName,
  dbo.Macrohist_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
  N'GDP-TOTAL-LCU-CONSTANT2010' AS indicatorStandardName,
@@ -203,18 +148,10 @@ GO
 
 -- [Barro_Ursua_cleaner] uses Barro_Ursua_WDI2018_Deindexed] and Barro_Ursua itself to construct [Barro_Ursua_WDI2018_rgdp]
 
-BEGIN TRY
-DROP VIEW [dbo].[Barro_Ursua_cleaner]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[Barro_Ursua_cleaner]
+CREATE OR ALTER VIEW [dbo].[Barro_Ursua_cleaner]
 AS
 SELECT 
  N'BARRO-URSUA' AS SourceName,
- N'CLEANED' AS DefinitionName,
  dbo.Barro_Ursua_WDI2018_Deindexed.DimGeoID,
  dbo.DimIndicator.DimIndicatorID,
  N'GDP-TOTAL-LCU-CONSTANT2010' AS indicatorStandardName,
@@ -230,18 +167,11 @@ FROM dbo.Barro_Ursua_WDI2018_Deindexed LEFT OUTER JOIN
 GO
 
 -- APPEND THE NEW DEFINITIONS TO THE ADDED_DEFINITIONS TABLE
-BEGIN TRY
-DROP VIEW [dbo].[AddedDefinitions]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
 
-CREATE VIEW [dbo].[AddedDefinitions]
+CREATE OR ALTER VIEW [dbo].[AddedDefinitions]
 AS
 SELECT 
  [SourceName],
- [DefinitionName], 
  [DimGeoID],
  [DimIndicatorID],
  [DateField],
@@ -250,7 +180,6 @@ FROM [dbo].[Macrohist_cleaner]
 UNION
 SELECT 
  [SourceName],
- [DefinitionName], 
  [DimGeoID],
  [DimIndicatorID],
  [DateField],
@@ -258,27 +187,17 @@ SELECT
 FROM [dbo].[Barro_Ursua_cleaner]
 GO
 
--- we have to now recover the indexes for source and definition before finally putting the result into the fact file.
+-- we have to now recover the indexes for source before finally putting the result into the fact file.
 
-BEGIN TRY
-DROP VIEW [dbo].[NormalisedAddedDefinitions]
-END TRY
-BEGIN CATCH
-END CATCH
-GO
-
-CREATE VIEW [dbo].[NormalisedAddedDefinitions]
+CREATE OR ALTER VIEW [dbo].[NormalisedAddedDefinitions]
 AS
 SELECT
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  [DateField],
  [Value]
 FROM AddedDefinitions
-INNER JOIN DimDefinitions ON
-AddedDefinitions.DefinitionName=DimDefinitions.DefinitionName
 INNER JOIN DimSource ON
 AddedDefinitions.SourceName=DimSource.SourceName
 GO
@@ -287,14 +206,12 @@ GO
 
 INSERT INTO Fact(
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  [DateField],
  [Value])
 SELECT
  [DimSourceID],
- [DimDefinitionID], 
  [DimGeoID],
  [DimIndicatorID],
  [DateField],
