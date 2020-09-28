@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="250"
-  DTS:VersionGUID="{EA74205E-AD33-4328-BF3D-CE700B5A429B}">
+  DTS:VersionBuild="251"
+  DTS:VersionGUID="{4E871D62-1D1D-445B-8522-1BA3EE52A4D2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -810,66 +810,6 @@
                       name="DimIndicatorID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Measure]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Measure]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Measure]"
-                      name="Measure"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Qualifier]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Qualifier]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Qualifier]"
-                      name="Qualifier"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Type]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Type]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Type]"
-                      name="Type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Unit]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]"
-                      name="Unit"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Sector]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Sector]"
-                      name="Sector"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[BaseYear]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[BaseYear]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[BaseYear]"
-                      name="BaseYear"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -880,14 +820,84 @@
                       name="IndicatorStandardName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Indicator]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[indicator_type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[indicator_type]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Indicator]"
-                      name="Indicator"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[indicator_type]"
+                      name="indicator_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[component]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[component]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[component]"
+                      name="component"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[industrial_sector]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[industrial_sector]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[industrial_sector]"
+                      name="industrial_sector"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[measure_type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[measure_type]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[measure_type]"
+                      name="measure_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[dimensions]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[dimensions]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[dimensions]"
+                      name="dimensions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[metrics]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[metrics]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[metrics]"
+                      name="metrics"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[units]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[units]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[units]"
+                      name="units"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[qualifier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[qualifier]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[qualifier]"
+                      name="qualifier"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -897,45 +907,50 @@
                       dataType="i4"
                       name="DimIndicatorID" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Measure]"
-                      dataType="wstr"
-                      length="255"
-                      name="Measure" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Qualifier]"
-                      dataType="wstr"
-                      length="255"
-                      name="Qualifier" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="Type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Unit]"
-                      dataType="wstr"
-                      length="255"
-                      name="Unit" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
-                      dataType="wstr"
-                      length="255"
-                      name="Sector" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[BaseYear]"
-                      dataType="wstr"
-                      length="255"
-                      name="BaseYear" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
                       dataType="wstr"
                       length="256"
                       name="IndicatorStandardName" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[indicator_type]"
                       dataType="wstr"
                       length="255"
-                      name="Indicator" />
+                      name="indicator_type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[component]"
+                      dataType="wstr"
+                      length="255"
+                      name="component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[industrial_sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="industrial_sector" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[measure_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="measure_type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[dimensions]"
+                      dataType="wstr"
+                      length="255"
+                      name="dimensions" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[metrics]"
+                      dataType="wstr"
+                      length="255"
+                      name="metrics" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[units]"
+                      dataType="wstr"
+                      length="255"
+                      name="units" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[qualifier]"
+                      dataType="wstr"
+                      length="255"
+                      name="qualifier" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -955,47 +970,53 @@
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
                       name="IndicatorStandardName" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Measure]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[indicator_type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Measure]"
-                      name="Measure" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[indicator_type]"
+                      name="indicator_type" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Indicator]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[component]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Indicator]"
-                      name="Indicator" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[component]"
+                      name="component" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Unit]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[industrial_sector]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Unit]"
-                      name="Unit" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[industrial_sector]"
+                      name="industrial_sector" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Qualifier]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[measure_type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Qualifier]"
-                      name="Qualifier" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[measure_type]"
+                      name="measure_type" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[dimensions]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Sector]"
-                      name="Sector" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[dimensions]"
+                      name="dimensions" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[metrics]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[Type]"
-                      name="Type" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[metrics]"
+                      name="metrics" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[BaseYear]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[units]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[BaseYear]"
-                      name="BaseYear" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[units]"
+                      name="units" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[qualifier]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[qualifier]"
+                      name="qualifier" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1092,48 +1113,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[DimIndicatorID]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[DimIndicatorID]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Measure]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Measure"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Measure]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Measure]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Qualifier]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Qualifier"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Qualifier]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Qualifier]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Type"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Type]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Unit]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Unit"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Unit]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Sector]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Sector"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Sector]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[BaseYear]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="BaseYear"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[BaseYear]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[BaseYear]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[IndicatorStandardName]"
                       cachedDataType="wstr"
                       cachedLength="256"
@@ -1141,12 +1120,61 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[indicator_type]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Indicator"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[Indicator]" />
+                      cachedName="indicator_type"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[indicator_type]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[indicator_type]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[component]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="component"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[component]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[component]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[industrial_sector]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="industrial_sector"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[industrial_sector]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[industrial_sector]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[measure_type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="measure_type"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[measure_type]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[measure_type]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[dimensions]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="dimensions"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[dimensions]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[dimensions]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[metrics]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="metrics"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[metrics]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[metrics]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[units]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="units"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[units]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[units]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[qualifier]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="qualifier"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[qualifier]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[qualifier]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1155,45 +1183,50 @@
                       dataType="i4"
                       name="DimIndicatorID" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Measure]"
-                      dataType="wstr"
-                      length="255"
-                      name="Measure" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Qualifier]"
-                      dataType="wstr"
-                      length="255"
-                      name="Qualifier" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="Type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
-                      dataType="wstr"
-                      length="255"
-                      name="Unit" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
-                      dataType="wstr"
-                      length="255"
-                      name="Sector" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[BaseYear]"
-                      dataType="wstr"
-                      length="255"
-                      name="BaseYear" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
                       dataType="wstr"
                       length="256"
                       name="IndicatorStandardName" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[Indicator]"
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[indicator_type]"
                       dataType="wstr"
                       length="255"
-                      name="Indicator" />
+                      name="indicator_type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[component]"
+                      dataType="wstr"
+                      length="255"
+                      name="component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[industrial_sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="industrial_sector" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[measure_type]"
+                      dataType="wstr"
+                      length="255"
+                      name="measure_type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[dimensions]"
+                      dataType="wstr"
+                      length="255"
+                      name="dimensions" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[metrics]"
+                      dataType="wstr"
+                      length="255"
+                      name="metrics" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[units]"
+                      dataType="wstr"
+                      length="255"
+                      name="units" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[qualifier]"
+                      dataType="wstr"
+                      length="255"
+                      name="qualifier" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1924,74 +1957,84 @@
                       name="Date"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Type]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[indicator_type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[indicator_type]"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Type]"
-                      name="Type"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[indicator_type]"
+                      name="indicator_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Indicator]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[component]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[component]"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Indicator]"
-                      name="Indicator"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[component]"
+                      name="component"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Sector]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[industrial_sector]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[industrial_sector]"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Sector]"
-                      name="Sector"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[industrial_sector]"
+                      name="industrial_sector"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Measure]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[measure_type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Measure]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[measure_type]"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Measure]"
-                      name="Measure"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[measure_type]"
+                      name="measure_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Unit]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[dimensions]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Unit]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[dimensions]"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Unit]"
-                      name="Unit"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[dimensions]"
+                      name="dimensions"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[BaseYear]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[metrics]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[BaseYear]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[metrics]"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[BaseYear]"
-                      name="BaseYear"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[metrics]"
+                      name="metrics"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Qualifier]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[units]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Qualifier]"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[units]"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[Qualifier]"
-                      name="Qualifier"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[units]"
+                      name="units"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[qualifier]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[qualifier]"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].Columns[qualifier]"
+                      name="qualifier"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -2036,40 +2079,45 @@
                       dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Type]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[indicator_type]"
                       dataType="wstr"
                       length="255"
-                      name="Type" />
+                      name="indicator_type" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Indicator]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[component]"
                       dataType="wstr"
                       length="255"
-                      name="Indicator" />
+                      name="component" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Sector]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[industrial_sector]"
                       dataType="wstr"
                       length="255"
-                      name="Sector" />
+                      name="industrial_sector" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Measure]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[measure_type]"
                       dataType="wstr"
                       length="255"
-                      name="Measure" />
+                      name="measure_type" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Unit]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[dimensions]"
                       dataType="wstr"
                       length="255"
-                      name="Unit" />
+                      name="dimensions" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[BaseYear]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[metrics]"
                       dataType="wstr"
                       length="255"
-                      name="BaseYear" />
+                      name="metrics" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[Qualifier]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[units]"
                       dataType="wstr"
                       length="255"
-                      name="Qualifier" />
+                      name="units" />
+                    <externalMetadataColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Output].ExternalColumns[qualifier]"
+                      dataType="wstr"
+                      length="255"
+                      name="qualifier" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2126,47 +2174,53 @@
                       lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
                       name="IndicatorStandardName" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Type]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[indicator_type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Type]"
-                      name="Type" />
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[indicator_type]"
+                      name="indicator_type" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Indicator]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[component]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Indicator]"
-                      name="Indicator" />
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[component]"
+                      name="component" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Sector]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[industrial_sector]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Sector]"
-                      name="Sector" />
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[industrial_sector]"
+                      name="industrial_sector" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Measure]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[measure_type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Measure]"
-                      name="Measure" />
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[measure_type]"
+                      name="measure_type" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Unit]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[dimensions]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Unit]"
-                      name="Unit" />
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[dimensions]"
+                      name="dimensions" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[BaseYear]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[metrics]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[BaseYear]"
-                      name="BaseYear" />
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[metrics]"
+                      name="metrics" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Qualifier]"
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[units]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[Qualifier]"
-                      name="Qualifier" />
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[units]"
+                      name="units" />
+                    <outputColumn
+                      refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[qualifier]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[qualifier]"
+                      name="qualifier" />
                     <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactQuery.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
@@ -2448,6 +2502,40 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="684.134641305518,145.854811137817">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-231.134641305518,50.228521221559"
+              Start="0,0"
+              End="-231.134641305518,42.728521221559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1142606107795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1142606107795"
+                    Point2="0,25.1142606107795"
+                    Point3="-4,25.1142606107795" />
+                  <mssgle:LineSegment
+                    End="-227.134641305518,25.1142606107795" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-227.134641305518,25.1142606107795"
+                    Point2="-231.134641305518,25.1142606107795"
+                    Point3="-231.134641305518,29.1142606107795" />
+                  <mssgle:LineSegment
+                    End="-231.134641305518,42.728521221559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="173.020300690953,66.9431817583462">
           <EdgeLayout.Curve>
@@ -2505,40 +2593,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,50.0040540935086" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="684.134641305518,145.854811137817">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-231.134641305518,50.228521221559"
-              Start="0,0"
-              End="-231.134641305518,42.728521221559">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.1142606107795" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.1142606107795"
-                    Point2="0,25.1142606107795"
-                    Point3="-4,25.1142606107795" />
-                  <mssgle:LineSegment
-                    End="-227.134641305518,25.1142606107795" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-227.134641305518,25.1142606107795"
-                    Point2="-231.134641305518,25.1142606107795"
-                    Point3="-231.134641305518,29.1142606107795" />
-                  <mssgle:LineSegment
-                    End="-231.134641305518,42.728521221559" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2620,7 +2674,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="175,41.5"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
@@ -2648,9 +2702,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2752,7 +2804,7 @@
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="255,41.5"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
@@ -2780,7 +2832,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

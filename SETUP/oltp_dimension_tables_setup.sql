@@ -85,7 +85,7 @@ CREATE TABLE IndicatorStandardNames (
 		-- because two sources may use the same name for two different indicators
 	 IndicatorSource nvarchar (255) NOT NULL, 
 		-- many sources also have an ID system of their own. For completeness, this is recorded here, but not (9/12/2018) currently used.
-	 IndicatorSourceDescription nvarchar (255) NOT NULL,
+	 IndicatorSourceDescription nvarchar (255) NULL,
 		-- this is the code by which the source (provider) identifies the data. Sometimes it is a complex alphanumeric code, and sometimes it is just the description itself
 	 IndicatorSourceCode nvarchar (255) NOT NULL,
 		-- a standard name which identifies the indicator uniquely on the ROLAP server
@@ -104,13 +104,14 @@ CREATE TABLE DimIndicator (
 	 DimIndicatorID int NOT NULL IDENTITY (1,1), 
 		-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
 	 IndicatorStandardName nvarchar (256) NOT NULL,
-	 Type nvarchar (255)NULL,
-	 Indicator nvarchar (255) NULL, 
-	 Sector nvarchar (255) NULL,
-	 Qualifier nvarchar (255) NULL, 
-	 Unit nvarchar (255)NULL,
-	 Measure nvarchar (255) NULL,
-	 BaseYear nvarchar (255) NULL
+	 indicator_type nvarchar (255)NULL,
+	 component nvarchar (255) NULL, 
+	 industrial_sector nvarchar (255) NULL,
+	 measure_type nvarchar (255) NULL, 
+	 dimensions nvarchar (255)NULL,
+	 metrics nvarchar (255) NULL,
+	 units nvarchar (255) NULL,
+	 qualifier nvarchar (255) NULL,
  CONSTRAINT IX_IndicatorStandardName UNIQUE(IndicatorStandardName),	
  CONSTRAINT PK_DimIndicator PRIMARY KEY CLUSTERED 
 (

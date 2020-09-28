@@ -15,7 +15,6 @@ DROP TABLE IF EXISTS Fact
 GO
 
 CREATE TABLE Fact (
-
 	 FactID bigint NOT NULL IDENTITY (1,1),
 	 DimSourceID int NULL,
 	 DimGeoID int NULL,
@@ -40,13 +39,14 @@ GO
 CREATE TABLE DimIndicator (
 	 DimIndicatorID int NOT NULL,
 	 IndicatorStandardName nvarchar (256) NOT NULL,
-	 Type nvarchar (255)NULL,
-	 Indicator nvarchar (255) NULL, 
-	 Sector nvarchar (255) NULL,
-	 Qualifier nvarchar (255) NULL, 
-	 Unit nvarchar (255)NULL,
-	 Measure nvarchar (255) NULL,
-	 BaseYear nvarchar (255) NULL,
+	 indicator_type nvarchar (255)NULL,
+	 component nvarchar (255) NULL, 
+	 industrial_sector nvarchar (255) NULL,
+	 measure_type nvarchar (255) NULL, 
+	 dimensions nvarchar (255)NULL,
+	 metrics nvarchar (255) NULL,
+	 units nvarchar (255) NULL,
+	 qualifier nvarchar (255) NULL,
 CONSTRAINT IX_IndicatorStandardName UNIQUE(IndicatorStandardName),
 CONSTRAINT PK_DimIndicator PRIMARY KEY CLUSTERED 
 (
@@ -121,13 +121,14 @@ SELECT
  DimGeo.ReportingUnit,
  Fact.DimIndicatorID,
  DimIndicator.IndicatorStandardName,
- DimIndicator.Type,
- DimIndicator.Indicator,
- DimIndicator.Sector,
- DimIndicator.Qualifier,
- DimIndicator.Unit,
- DimIndicator.Measure,
- DimIndicator.BaseYear,
+ DimIndicator.indicator_type, 
+ DimIndicator.component, 
+ DimIndicator.industrial_sector,
+ DimIndicator.measure_type, 
+ DimIndicator.dimensions,
+ DimIndicator.metrics,
+ DimIndicator.units,
+ DimIndicator.qualifier,
  Fact.Value,
  Fact.DateField
 FROM Fact LEFT OUTER JOIN
