@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{8C5F6746-8492-4067-B719-F3073A0D5EF9}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{DBD6D53B-0470-47E3-B6ED-71F3DB9BF0FC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2713,15 +2713,15 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="197,41.5"
-          Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
-          TopLeft="77.8888978737368,135.650798879784" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="197,41.5"
           Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
           TopLeft="77.0648239118814,30.71428618869" />
+        <NodeLayout
+          Size="197,41.5"
+          Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
+          TopLeft="77.8888978737368,135.650798879784" />
         <EdgeLayout
           Id="Package\Populate DimIndicator.Paths[Excel Source Output]"
           TopLeft="175.921305337254,72.4920639664678">
@@ -2741,7 +2741,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2909,17 +2911,17 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="221.142857142858,41.7142857142858"
+          Size="221,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
           TopLeft="66.1851851778266,197" />
         <NodeLayout
-          Size="150.857142857143,41.7142857142858"
+          Size="151,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table\Shorten Source"
           TopLeft="96,101" />
         <NodeLayout
-          Size="162.857142857143,41.7142857142858"
+          Size="163,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard"
           TopLeft="92,12" />
         <EdgeLayout
@@ -2941,9 +2943,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2965,9 +2965,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
