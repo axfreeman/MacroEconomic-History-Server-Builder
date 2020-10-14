@@ -32,23 +32,26 @@ GO
 -- Maps the indicator description in the source onto standard indicator and quantifier names
 -- Note this simply replicates the definition in the OLTP database but without an auto-increment key, because that's generated when the OLTP table is created
 
-
 DROP TABLE IF EXISTS DimIndicator 
 GO
 
 CREATE TABLE DimIndicator (
-	 DimIndicatorID int NOT NULL,
+	 DimIndicatorID int NOT NULL, 
+		-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
 	 IndicatorStandardName nvarchar (256) NOT NULL,
-	 indicator_type nvarchar (255)NULL,
-	 component nvarchar (255) NULL, 
-	 industrial_sector nvarchar (255) NULL,
-	 measure_type nvarchar (255) NULL, 
-	 dimensions nvarchar (255)NULL,
-	 metrics nvarchar (255) NULL,
-	 units nvarchar (255) NULL,
-	 qualifier nvarchar (255) NULL,
-CONSTRAINT IX_IndicatorStandardName UNIQUE(IndicatorStandardName),
-CONSTRAINT PK_DimIndicator PRIMARY KEY CLUSTERED 
+	 indicator_type nvarchar(255) NULL,
+	 component  nvarchar(255) NULL,
+	 approach  nvarchar(255) NULL,
+	 net_or_gross  nvarchar(255) NULL,
+	 paid_or_received nvarchar(255) NULL,
+	 description nvarchar(255) NULL,
+	 industrial_sector nvarchar(255) NULL,
+	 measure_type nvarchar(255) NULL, 
+	 dimensions nvarchar(255) NULL,
+	 metrics nvarchar(255) NULL,
+	 units nvarchar(255) NULL
+ CONSTRAINT IX_IndicatorStandardName UNIQUE(IndicatorStandardName),	
+ CONSTRAINT PK_DimIndicator PRIMARY KEY CLUSTERED 
 (
 	 DimIndicatorID ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) )
@@ -62,19 +65,19 @@ GO
 
 CREATE TABLE DimGeo (
  DimGeoID int NOT NULL,
- GeoStandardName nvarchar (255) NULL,
- GeoPolitical_Type nvarchar (255) NULL,	
- ReportingUnit nvarchar (255) NULL,	
- Size nvarchar (255) NULL,
- GeoEconomic_Region nvarchar (255) NULL,
- Geopolitical_Region nvarchar (255) NULL,
- Geopolitical_Detail nvarchar (255) NULL,
- Major_Blocs nvarchar (255) NULL,
- Penn_Geography nvarchar (255) NULL,
- MACROHISTORY_Geography nvarchar (255) NULL,
- WID_Geography nvarchar (255) NULL,
- IMF_main_category nvarchar (255) NULL,
- IMF_sub_category nvarchar (255) NULL,	
+ GeoStandardName  nvarchar(255) NULL,
+ GeoPolitical_Type  nvarchar(255)NULL,	
+ ReportingUnit nvarchar(255) NULL,	
+ Size nvarchar(255) NULL,
+ GeoEconomic_Region nvarchar(255) NULL,
+ Geopolitical_Region nvarchar(255) NULL,
+ Geopolitical_Detail nvarchar(255) NULL,
+ Major_Blocs nvarchar(255) NULL,
+ Penn_Geography nvarchar(255) NULL,
+ MACROHISTORY_Geography nvarchar(255) NULL,
+ WID_Geography nvarchar(255) NULL,
+ IMF_main_category nvarchar(255) NULL,
+ IMF_sub_category nvarchar(255) NULL,	
  CONSTRAINT PK_DimGeO PRIMARY KEY CLUSTERED 
 (
 	 DimGeoID ASC
@@ -89,15 +92,15 @@ GO
 
 CREATE TABLE DimSource (
  DimSourceID int NOT NULL,
- SourceName nvarchar (255),
- SourceNameParent nvarchar (255),
- SourceNameDetail nvarchar (255),
- Description nvarchar (255),
- DataOriginFile nvarchar (255),
- DataOriginURL nvarchar (255),
- PreparationNotes nvarchar (255),
- SourceNotes nvarchar (255),
- DataNotes nvarchar (255)
+ SourceName nvarchar(255) ,
+ SourceNameParent nvarchar(255) ,
+ SourceNameDetail nvarchar(255) ,
+ Description nvarchar(255) ,
+ DataOriginFile nvarchar(255) ,
+ DataOriginURL nvarchar(255) ,
+ PreparationNotes nvarchar(255) ,
+ SourceNotes nvarchar(255) ,
+ DataNotes nvarchar(255) 
 CONSTRAINT PK_Source PRIMARY KEY CLUSTERED 
 (
 	 DimSourceID ASC
@@ -121,14 +124,17 @@ SELECT
  DimGeo.ReportingUnit,
  Fact.DimIndicatorID,
  DimIndicator.IndicatorStandardName,
- DimIndicator.indicator_type, 
- DimIndicator.component, 
- DimIndicator.industrial_sector,
- DimIndicator.measure_type, 
- DimIndicator.dimensions,
- DimIndicator.metrics,
- DimIndicator.units,
- DimIndicator.qualifier,
+ DimIndicator.indicator_type ,
+ DimIndicator.component ,
+ DimIndicator.approach  ,
+ DimIndicator.net_or_gross ,
+ DimIndicator.paid_or_received ,
+ DimIndicator.description as [indicator description] ,
+ DimIndicator.industrial_sector ,
+ DimIndicator.measure_type , 
+ DimIndicator.dimensions ,
+ DimIndicator.metrics ,
+ DimIndicator.units ,
  Fact.Value,
  Fact.DateField
 FROM Fact LEFT OUTER JOIN

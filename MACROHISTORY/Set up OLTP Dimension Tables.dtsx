@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="81"
-  DTS:VersionGUID="{DBD6D53B-0470-47E3-B6ED-71F3DB9BF0FC}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{6AE33B3D-826A-43B9-8096-7D292E7F213A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -759,84 +759,114 @@
                       name="IndicatorStandardName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[indicator_type]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Indicator Type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[indicator_type]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Indicator Type]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[indicator_type]"
-                      name="indicator_type"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Indicator Type]"
+                      name="Indicator Type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[component]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Component]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[component]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Component]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[component]"
-                      name="component"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Component]"
+                      name="Component"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[industtrial_sector]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Approach]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[industtrial_sector]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Approach]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[industtrial_sector]"
-                      name="industtrial_sector"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Approach]"
+                      name="Approach"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[measure_type]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Net or Gross]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[measure_type]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Net or Gross]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[measure_type]"
-                      name="measure_type"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Net or Gross]"
+                      name="Net or Gross"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[dimensions]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Paid or Received]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[dimensions]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Paid or Received]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[dimensions]"
-                      name="dimensions"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Paid or Received]"
+                      name="Paid or Received"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[metrics]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Description]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[metrics]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Description]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[metrics]"
-                      name="metrics"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Description]"
+                      name="Description"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[units]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Industrial Sector]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[units]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Industrial Sector]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[units]"
-                      name="units"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Industrial Sector]"
+                      name="Industrial Sector"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[qualifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Measure Type]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[qualifier]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Measure Type]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[qualifier]"
-                      name="qualifier"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Measure Type]"
+                      name="Measure Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Dimensions]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Dimensions]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Dimensions]"
+                      name="Dimensions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Metrics]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Metrics]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Metrics]"
+                      name="Metrics"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Units]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Units]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Units]"
+                      name="Units"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -847,45 +877,60 @@
                       length="255"
                       name="IndicatorStandardName" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[indicator_type]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Indicator Type]"
                       dataType="wstr"
                       length="255"
-                      name="indicator_type" />
+                      name="Indicator Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[component]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Component]"
                       dataType="wstr"
                       length="255"
-                      name="component" />
+                      name="Component" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[industtrial_sector]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Approach]"
                       dataType="wstr"
                       length="255"
-                      name="industtrial_sector" />
+                      name="Approach" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[measure_type]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Net or Gross]"
                       dataType="wstr"
                       length="255"
-                      name="measure_type" />
+                      name="Net or Gross" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[dimensions]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Paid or Received]"
                       dataType="wstr"
                       length="255"
-                      name="dimensions" />
+                      name="Paid or Received" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[metrics]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Description]"
                       dataType="wstr"
                       length="255"
-                      name="metrics" />
+                      name="Description" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[units]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Industrial Sector]"
                       dataType="wstr"
                       length="255"
-                      name="units" />
+                      name="Industrial Sector" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[qualifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Measure Type]"
                       dataType="wstr"
                       length="255"
-                      name="qualifier" />
+                      name="Measure Type" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Dimensions]"
+                      dataType="wstr"
+                      length="255"
+                      name="Dimensions" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Metrics]"
+                      dataType="wstr"
+                      length="255"
+                      name="Metrics" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[Units]"
+                      dataType="wstr"
+                      length="255"
+                      name="Units" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -900,53 +945,71 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[IndicatorStandardName]"
                       name="IndicatorStandardName" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[indicator_type]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Indicator Type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[indicator_type]"
-                      name="indicator_type" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Indicator Type]"
+                      name="Indicator Type" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[component]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Component]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[component]"
-                      name="component" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Component]"
+                      name="Component" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[industtrial_sector]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Approach]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[industtrial_sector]"
-                      name="industtrial_sector" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Approach]"
+                      name="Approach" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[measure_type]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Net or Gross]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[measure_type]"
-                      name="measure_type" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Net or Gross]"
+                      name="Net or Gross" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[dimensions]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Paid or Received]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[dimensions]"
-                      name="dimensions" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Paid or Received]"
+                      name="Paid or Received" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[metrics]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Description]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[metrics]"
-                      name="metrics" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Description]"
+                      name="Description" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[units]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Industrial Sector]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[units]"
-                      name="units" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Industrial Sector]"
+                      name="Industrial Sector" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[qualifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Measure Type]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[qualifier]"
-                      name="qualifier" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Measure Type]"
+                      name="Measure Type" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Dimensions]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Dimensions]"
+                      name="Dimensions" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Metrics]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Metrics]"
+                      name="Metrics" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Units]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[Units]"
+                      name="Units" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1044,61 +1107,82 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[IndicatorStandardName]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[indicator_type]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Component]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="indicator_type"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[indicator_type]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[indicator_type]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="component"
+                      cachedName="Component"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[component]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[component]" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Component]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[industtrial_sector]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Dimensions]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="industtrial_sector"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[industrial_sector]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[industtrial_sector]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[measure_type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="measure_type"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[measure_type]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[measure_type]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[dimensions]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="dimensions"
+                      cachedName="Dimensions"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[dimensions]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[dimensions]" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Dimensions]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[metrics]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Metrics]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="metrics"
+                      cachedName="Metrics"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[metrics]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[metrics]" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Metrics]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[units]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Units]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="units"
+                      cachedName="Units"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[units]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[units]" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Units]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[qualifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Approach]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="qualifier"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[qualifier]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[qualifier]" />
+                      cachedName="Approach"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[approach]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Approach]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Net or Gross]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Net or Gross"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[net_or_gross]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Net or Gross]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Paid or Received]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Paid or Received"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[paid_or_received]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Paid or Received]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Industrial Sector]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Industrial Sector"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[industrial_sector]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Industrial Sector]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Indicator Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicator Type"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[indicator_type]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Indicator Type]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[Measure Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Measure Type"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[measure_type]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[Measure Type]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1147,10 +1231,25 @@
                       length="255"
                       name="units" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[qualifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[approach]"
                       dataType="wstr"
                       length="255"
-                      name="qualifier" />
+                      name="approach" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[net_or_gross]"
+                      dataType="wstr"
+                      length="255"
+                      name="net_or_gross" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[paid_or_received]"
+                      dataType="wstr"
+                      length="255"
+                      name="paid_or_received" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[description]"
+                      dataType="wstr"
+                      length="255"
+                      name="description" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2649,11 +2748,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="173.714285714286,42.2857142857143"
+          Size="173.5,42.5"
           Id="Package\Populate DimGeo OLTP Table\DimGeo OLTP Table"
           TopLeft="206,149" />
         <NodeLayout
-          Size="173.714285714286,42.2857142857143"
+          Size="173.5,42.5"
           Id="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet"
           TopLeft="211,28" />
         <EdgeLayout
@@ -2713,15 +2812,15 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="197,41.5"
-          Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
-          TopLeft="77.0648239118814,30.71428618869" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="197,41.5"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
           TopLeft="77.8888978737368,135.650798879784" />
+        <NodeLayout
+          Size="197,41.5"
+          Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
+          TopLeft="77.0648239118814,30.71428618869" />
         <EdgeLayout
           Id="Package\Populate DimIndicator.Paths[Excel Source Output]"
           TopLeft="175.921305337254,72.4920639664678">
@@ -2741,9 +2840,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2781,11 +2878,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="212,41.7142857142858"
+          Size="212,41.5"
           Id="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet"
           TopLeft="21.7407482612277,12.8412701048278" />
         <NodeLayout
-          Size="191.428571428572,41.7142857142858"
+          Size="191.5,41.5"
           Id="Package\Populate DimSource OLTP  Table\DimSource OLTP Table"
           TopLeft="26.4391610510969,124.609986795782" />
         <EdgeLayout
@@ -2847,11 +2944,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="229.142857142858,41.7142857142858"
+          Size="229,41.5"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames OLTP Table"
           TopLeft="61,167.5" />
         <NodeLayout
-          Size="194.285714285715,41.7142857142858"
+          Size="194.5,41.5"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames"
           TopLeft="86,65" />
         <EdgeLayout
@@ -2911,7 +3008,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="221,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
@@ -2943,7 +3040,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2965,7 +3064,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

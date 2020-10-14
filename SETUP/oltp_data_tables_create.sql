@@ -89,15 +89,8 @@ dbo.RecognisedFacts.Value,
 dbo.DimIndicator.DimIndicatorID, 
 dbo.DimGeo.DimGeoID, 
  dbo.RecognisedFacts.GeoStandardName, 
- dbo.RecognisedFacts.IndicatorStandardName,
- dimIndicator.indicator_type,
- dimIndicator.component,
- dimIndicator.industrial_sector,
- dimIndicator.measure_type,
- dimIndicator.dimensions,
- dimIndicator.metrics,
- dimIndicator.units,
- dimIndicator.qualifier
+ dbo.RecognisedFacts.IndicatorStandardName
+
 FROM dbo.RecognisedFacts LEFT OUTER JOIN
  dbo.DimIndicator ON 
  dbo.RecognisedFacts.IndicatorStandardName = dbo.DimIndicator.IndicatorStandardName LEFT OUTER JOIN
