@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAAA5uMq+LI0+u/wGAEytYGHrGWRCus/2RExoxy10UsFqKgAAAAAOgAAAAAIAACAAAABYtaIQ4+GYILVMR4WRjlSY1+1KAAJfUGb4f9qqBVLhm5AAAABOecB2o343hvyIGiFvKFeO9I7+mK3HF8mxyT+SigwngEUXs5k2LeHJZcMq0iSYizZhy6OhqdD4HK81adOeWonaYzFhTUoOmcgxrREto9oU2XzA1KSXZLdOKOFzDexzcpyHJ9tSmBrt8bjT2SHulRriha35X9oMzs8K3avWcEL0Wq9dZkkV8ZXqNwKhza30/sFAAAAArRL/qz1s39zAjrP4W7/hFoqDPEcCfUUgTHVyXpoV5UUENZm/H+vFPXRKXFm1TM5CwoA85Zp1w+b9k7THK+24PQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAACUiGACR7Ed9D00FsVnauI2jwKo+eiOc+iy1BBNx8AmnAAAAAAOgAAAAAIAACAAAADEH4QIL9OXZ+lTY8W4mODws4IAG6dBJPWlMU+udOAFeJAAAADrK7U0KHPoCLX+DV4nrZL2pVzbG6PktyiFo+iDrTaxhRE50s6nX1zYPs8f/65E/MyaHMC7kupKMKWfW8o2fGa/F3RW99BmKaCPSd2//U9QXm8qpIEECXM9GGd6mLYPw0XlhwQNOFux53Z1B+nQuMMYI1qzr9T5fWt20ZAQuF9OZoaRN3A6ft7Ess0OyuqaH5xAAAAAB8wKPcdF+pBrWiG7P54LQyEwKqTKFaHsrtSkmcIi5xqz7+lNdlUuKygzFg4ic2lwrYkYXFaOvoEb8KQe327hUg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -999,7 +999,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\afree\Documents\Github\MacroEconomicHistory\SETUP\Meta.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\Meta.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1072,7 +1072,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\Github\MacroEconomicHistory\SETUP\Meta.xls</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\Meta.xls</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -3814,21 +3814,6 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.calculate_IFS_USD_GDP.sql.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\Github\MacroEconomicHistory\SETUP\calculate_IFS_USD_GDP.sql</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
             <SSIS:Parameter SSIS:Name="CM.WDI2020.AlwaysCheckForRowDelimiters">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
@@ -4019,10 +4004,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">79</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">84</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8C5F6746-8492-4067-B719-F3073A0D5EF9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3E94CE80-DB7C-4955-BD7B-50F0F25FB784}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4171,10 +4156,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">251</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">255</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4E871D62-1D1D-445B-8522-1BA3EE52A4D2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2D3491C5-286D-42C2-AE6F-3A78C4876E24}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

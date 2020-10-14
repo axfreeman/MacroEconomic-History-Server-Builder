@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="254"
-  DTS:VersionGUID="{B91E1E22-3558-410D-A59B-CEA7CA8878CC}">
+  DTS:VersionBuild="255"
+  DTS:VersionGUID="{2D3491C5-286D-42C2-AE6F-3A78C4876E24}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -830,16 +830,6 @@
                       name="indicator_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[component]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[component]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[component]"
-                      name="component"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[industrial_sector]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -890,16 +880,6 @@
                       name="units"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[approach]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[approach]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[approach]"
-                      name="approach"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[net_or_gross]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -929,6 +909,76 @@
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[description]"
                       name="description"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[gdp_expenditure_component]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[gdp_expenditure_component]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[gdp_expenditure_component]"
+                      name="gdp_expenditure_component"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[capital_component]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[capital_component]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[capital_component]"
+                      name="capital_component"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[source_component]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[source_component]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[source_component]"
+                      name="source_component"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[balance_of_payments_component]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[balance_of_payments_component]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[balance_of_payments_component]"
+                      name="balance_of_payments_component"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[population_component]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[population_component]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[population_component]"
+                      name="population_component"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[other]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[other]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[other]"
+                      name="other"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[gdp_approach_variation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[gdp_approach_variation]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[gdp_approach_variation]"
+                      name="gdp_approach_variation"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -946,11 +996,6 @@
                       dataType="wstr"
                       length="255"
                       name="indicator_type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[component]"
-                      dataType="wstr"
-                      length="255"
-                      name="component" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[industrial_sector]"
                       dataType="wstr"
@@ -977,11 +1022,6 @@
                       length="255"
                       name="units" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[approach]"
-                      dataType="wstr"
-                      length="255"
-                      name="approach" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[net_or_gross]"
                       dataType="wstr"
                       length="255"
@@ -996,6 +1036,41 @@
                       dataType="wstr"
                       length="255"
                       name="description" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[gdp_expenditure_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="gdp_expenditure_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[capital_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="capital_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[source_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="source_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[balance_of_payments_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="balance_of_payments_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[population_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="population_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[other]"
+                      dataType="wstr"
+                      length="255"
+                      name="other" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].ExternalColumns[gdp_approach_variation]"
+                      dataType="wstr"
+                      length="255"
+                      name="gdp_approach_variation" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1021,17 +1096,47 @@
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[indicator_type]"
                       name="indicator_type" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[component]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[gdp_expenditure_component]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[component]"
-                      name="component" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[gdp_expenditure_component]"
+                      name="gdp_expenditure_component" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[approach]"
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[capital_component]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[approach]"
-                      name="approach" />
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[capital_component]"
+                      name="capital_component" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[source_component]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[source_component]"
+                      name="source_component" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[balance_of_payments_component]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[balance_of_payments_component]"
+                      name="balance_of_payments_component" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[population_component]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[population_component]"
+                      name="population_component" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[other]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[other]"
+                      name="other" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[gdp_approach_variation]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[gdp_approach_variation]"
+                      name="gdp_approach_variation" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Error Output].Columns[net_or_gross]"
                       dataType="wstr"
@@ -1190,13 +1295,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[indicator_type]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[indicator_type]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="component"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[component]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[component]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[industrial_sector]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1232,13 +1330,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[units]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[units]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[approach]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="approach"
-                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[approach]"
-                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[approach]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[net_or_gross]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1259,6 +1350,55 @@
                       cachedName="description"
                       externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[description]"
                       lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[description]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[capital_component]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="capital_component"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[capital_component]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[capital_component]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[source_component]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="source_component"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[source_component]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[source_component]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[balance_of_payments_component]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="balance_of_payments_component"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[balance_of_payments_component]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[balance_of_payments_component]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[population_component]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="population_component"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[population_component]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[population_component]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[other]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="other"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[other]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[other]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[gdp_approach_variation]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="gdp_approach_variation"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[gdp_approach_variation]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[gdp_approach_variation]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].Columns[gdp_expenditure_component]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="gdp_expenditure_component"
+                      externalMetadataColumnId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[gdp_Expenditure_Component]"
+                      lineageId="Package\Populate DimIndicator\OLTP DimIndicator Table.Outputs[OLE DB Source Output].Columns[gdp_expenditure_component]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1276,11 +1416,6 @@
                       dataType="wstr"
                       length="255"
                       name="indicator_type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[component]"
-                      dataType="wstr"
-                      length="255"
-                      name="component" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[industrial_sector]"
                       dataType="wstr"
@@ -1307,11 +1442,6 @@
                       length="255"
                       name="units" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[approach]"
-                      dataType="wstr"
-                      length="255"
-                      name="approach" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[net_or_gross]"
                       dataType="wstr"
                       length="255"
@@ -1326,6 +1456,41 @@
                       dataType="wstr"
                       length="255"
                       name="description" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[gdp_Expenditure_Component]"
+                      dataType="wstr"
+                      length="255"
+                      name="gdp_Expenditure_Component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[capital_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="capital_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[source_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="source_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[balance_of_payments_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="balance_of_payments_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[population_component]"
+                      dataType="wstr"
+                      length="255"
+                      name="population_component" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[other]"
+                      dataType="wstr"
+                      length="255"
+                      name="other" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\ROLAP DimIndicator.Inputs[OLE DB Destination Input].ExternalColumns[gdp_approach_variation]"
+                      dataType="wstr"
+                      length="255"
+                      name="gdp_approach_variation" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2607,13 +2772,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175,41.5"
-          Id="Package\Populate DimIndicator\ROLAP DimIndicator"
-          TopLeft="104.925925889133,117.857146747258" />
-        <NodeLayout
           Size="197,41.5"
           Id="Package\Populate DimIndicator\OLTP DimIndicator Table"
           TopLeft="87.0769262708857,21.745455330988" />
+        <NodeLayout
+          Size="175,41.5"
+          Id="Package\Populate DimIndicator\ROLAP DimIndicator"
+          TopLeft="104.925925889133,117.857146747258" />
         <EdgeLayout
           Id="Package\Populate DimIndicator.Paths[OLE DB Source Output]"
           TopLeft="189.001426080009,63.5232331087658">
@@ -2735,15 +2900,15 @@
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="168,41.5"
-          Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
-          TopLeft="132.888888888889,165.777777777778" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="255,41.5"
           Id="Package\Populate ROLAP fact file\OLTP FactQuery"
           TopLeft="96.1709424676588,38.4202024528147" />
+        <NodeLayout
+          Size="168,41.5"
+          Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
+          TopLeft="132.888888888889,165.777777777778" />
         <EdgeLayout
           Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
           TopLeft="220.196582344941,80.1979802305924">
@@ -2763,7 +2928,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

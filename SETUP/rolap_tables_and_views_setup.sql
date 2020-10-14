@@ -29,6 +29,29 @@ CREATE TABLE Fact (
 	 
 GO
 
+-- A normalised fact file for GDP definitions.
+-- Introduced 14 October 2020 to start experimentally splitting the fact files into more meaningful chunks
+-- What the Cube sees is a selection of Fact records defined by their FactID
+-- in which the details of each dimension (Geography, indicator, series breaks, date) are
+-- provided by dimension files related to the relevant Foreign Key in the fact file.
+
+DROP TABLE IF EXISTS fact_GDP_definitions 
+GO
+
+CREATE TABLE fact_GDP_definitions (
+	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
+	 DimSourceID int NULL,
+	 DimGeoID int NULL,
+	 DimIndicatorID int NULL,
+	 DateField Date Null,
+	 Value float NULL
+	CONSTRAINT PK_Fact_GDP_ID PRIMARY KEY CLUSTERED 
+(
+	 Fact_GDP_ID ASC
+)
+	) 
+GO
+
 -- Maps the indicator description in the source onto standard indicator and quantifier names
 -- Note this simply replicates the definition in the OLTP database but without an auto-increment key, because that's generated when the OLTP table is created
 
@@ -40,16 +63,21 @@ CREATE TABLE DimIndicator (
 		-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
 	 IndicatorStandardName nvarchar (256) NOT NULL,
 	 indicator_type nvarchar(255) NULL,
-	 component  nvarchar(255) NULL,
-	 approach  nvarchar(255) NULL,
-	 net_or_gross  nvarchar(255) NULL,
-	 paid_or_received nvarchar(255) NULL,
-	 description nvarchar(255) NULL,
-	 industrial_sector nvarchar(255) NULL,
-	 measure_type nvarchar(255) NULL, 
-	 dimensions nvarchar(255) NULL,
-	 metrics nvarchar(255) NULL,
-	 units nvarchar(255) NULL
+	gdp_Expenditure_Component	nvarchar (255)NULL,
+	capital_component nvarchar (255)NULL,
+	source_component nvarchar (255)NULL,
+	balance_of_payments_component nvarchar (255)NULL,
+	population_component nvarchar (255)NULL,
+	other nvarchar (255)NULL,
+	gdp_approach_variation nvarchar (255)NULL,
+	description nvarchar (255)NULL,
+	industrial_sector nvarchar (255)NULL,
+	net_or_gross nvarchar (255)NULL,
+	paid_or_received nvarchar (255)NULL,
+	measure_type nvarchar (255)NULL,
+	dimensions nvarchar (255)NULL,
+	units nvarchar (255)NULL,
+	metrics nvarchar (255)NULL
  CONSTRAINT IX_IndicatorStandardName UNIQUE(IndicatorStandardName),	
  CONSTRAINT PK_DimIndicator PRIMARY KEY CLUSTERED 
 (
@@ -125,16 +153,21 @@ SELECT
  Fact.DimIndicatorID,
  DimIndicator.IndicatorStandardName,
  DimIndicator.indicator_type ,
- DimIndicator.component ,
- DimIndicator.approach  ,
- DimIndicator.net_or_gross ,
- DimIndicator.paid_or_received ,
- DimIndicator.description as [indicator description] ,
- DimIndicator.industrial_sector ,
- DimIndicator.measure_type , 
- DimIndicator.dimensions ,
- DimIndicator.metrics ,
- DimIndicator.units ,
+  DimIndicator.gdp_Expenditure_Component,
+  DimIndicator.capital_component ,
+  DimIndicator.source_component ,
+  DimIndicator.balance_of_payments_component ,
+  DimIndicator.population_component ,
+  DimIndicator.other ,
+  DimIndicator.gdp_approach_variation ,
+  DimIndicator.description as indicator_description,
+  DimIndicator.industrial_sector ,
+  DimIndicator.net_or_gross ,
+  DimIndicator.paid_or_received ,
+  DimIndicator.measure_type ,
+  DimIndicator.dimensions ,
+  DimIndicator.units ,
+  DimIndicator.metrics ,
  Fact.Value,
  Fact.DateField
 FROM Fact LEFT OUTER JOIN
