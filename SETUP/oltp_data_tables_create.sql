@@ -55,46 +55,46 @@ GO
 CREATE OR ALTER VIEW [RecognisedFacts]
 AS
 SELECT
- dbo.FactSource.OLTP_FactID,
- dbo.FactSource.SourceName,
- dbo.DimSource.DimSourceID,
- dbo.FactSource.GeoSourceName,
- dbo.GeoStandardNames.GeoStandardName,
- dbo.FactSource.IndicatorSourceCode as [Fact Indicator Name],
- dbo.IndicatorStandardNames.IndicatorSourceCode,
- dbo.IndicatorStandardNames.IndicatorStandardName, 
- dbo.FactSource.Date,
- dbo.FactSource.Value
-FROM dbo.FactSource
- RIGHT OUTER JOIN dbo.GeoStandardNames
- ON dbo.FactSource.GeoSourceName = dbo.GeoStandardNames.GeoSourceName
- RIGHT OUTER JOIN dbo.IndicatorStandardNames
- ON dbo.FactSource.SourceName = dbo.IndicatorStandardNames.IndicatorSource 
- AND dbo.FactSource.IndicatorSourceCode = dbo.IndicatorStandardNames.IndicatorSourceCode
- INNER JOIN dbo.DimSource
- ON dbo.FactSource.SourceName=dbo.DimSource.SourceName
-WHERE (Year(dbo.FactSource.Date) IS NOT NULL) AND (Year(dbo.FactSource.Date) > 1700) and (Value<>0)
+ FactSource.OLTP_FactID,
+ FactSource.SourceName,
+ DimSource.DimSourceID,
+ FactSource.GeoSourceName,
+ GeoStandardNames.GeoStandardName,
+ FactSource.IndicatorSourceCode as [Fact Indicator Name],
+ IndicatorStandardNames.IndicatorSourceCode,
+ IndicatorStandardNames.IndicatorStandardName, 
+ FactSource.Date,
+ FactSource.Value
+FROM FactSource
+ RIGHT OUTER JOIN GeoStandardNames
+ ON FactSource.GeoSourceName = GeoStandardNames.GeoSourceName
+ RIGHT OUTER JOIN IndicatorStandardNames
+ ON FactSource.SourceName = IndicatorStandardNames.IndicatorSource 
+ AND FactSource.IndicatorSourceCode = IndicatorStandardNames.IndicatorSourceCode
+ INNER JOIN DimSource
+ ON FactSource.SourceName=DimSource.SourceName
+WHERE (Year(FactSource.Date) IS NOT NULL) AND (Year(FactSource.Date) > 1700) and (Value<>0)
 GO
 
 -- Compresses the rows of the RecognisedFacts view by substituting the integer Indexes of DimGeo and DimIndicator for the actual country and indicator names
--- For debugging purposes only, report extensively on additional fields from the indicator dimension
+-- For debugging purposes only, report on additional fields from the indicator dimension
 CREATE OR ALTER VIEW [FactQuery]
 AS
 SELECT 
-dbo.RecognisedFacts.OLTP_FactID,
-dbo.RecognisedFacts.SourceName, 
-dbo.RecognisedFacts.DimSourceID,
-dbo.RecognisedFacts.Date, 
-dbo.RecognisedFacts.Value, 
-dbo.DimIndicator.DimIndicatorID, 
-dbo.DimGeo.DimGeoID, 
- dbo.RecognisedFacts.GeoStandardName, 
- dbo.RecognisedFacts.IndicatorStandardName
-
-FROM dbo.RecognisedFacts LEFT OUTER JOIN
- dbo.DimIndicator ON 
- dbo.RecognisedFacts.IndicatorStandardName = dbo.DimIndicator.IndicatorStandardName LEFT OUTER JOIN
- dbo.DimGeo ON 
- dbo.RecognisedFacts.GeoStandardName = dbo.DimGeo.GeoStandardName
+ RecognisedFacts.OLTP_FactID,
+ RecognisedFacts.SourceName, 
+ RecognisedFacts.DimSourceID, 
+ RecognisedFacts.Date, 
+ RecognisedFacts.Value, 
+ DimIndicator.DimIndicatorID, 
+ DimGeo.DimGeoID, 
+ RecognisedFacts.GeoStandardName, 
+ RecognisedFacts.IndicatorStandardName,
+ DimIndicator.gdp_approach_variant
+FROM RecognisedFacts LEFT OUTER JOIN
+ DimIndicator ON 
+ RecognisedFacts.IndicatorStandardName = DimIndicator.IndicatorStandardName LEFT OUTER JOIN
+ DimGeo ON 
+ RecognisedFacts.GeoStandardName = DimGeo.GeoStandardName
 GO
 

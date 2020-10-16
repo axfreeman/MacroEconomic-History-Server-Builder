@@ -103,27 +103,23 @@ DROP TABLE IF EXISTS DimIndicator
 -- IndicatorStandardName	Indicator Type	Component	Approach	Net or Gross	Paid or Received	Description	Industrial Sector	Measure Type	Dimensions	Metrics	Units
 
 CREATE TABLE DimIndicator (
-	 DimIndicatorID int NOT NULL IDENTITY (1,1), 
-		-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
-	 IndicatorStandardName nvarchar (256) NOT NULL,
-	 indicator_type nvarchar (255)NULL,
+	DimIndicatorID int NOT NULL IDENTITY (1,1), 
+	-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
+	IndicatorStandardName nvarchar (256) NOT NULL,
+	indicator_type nvarchar (255)NULL,
 	gdp_expenditure_component nvarchar (255)NULL,
 	capital_component nvarchar (255)NULL,
 	source_component nvarchar (255)NULL,
 	balance_of_payments_component nvarchar (255)NULL,
 	population_component nvarchar (255)NULL,
-	other nvarchar (255)NULL,
-	gdp_approach_variation nvarchar (255)NULL,
-	description nvarchar (255)NULL,
+	other_indicator_description nvarchar (255)NULL,
+	gdp_approach_variant nvarchar (255)NULL,
+	gdp_approach_modifier nvarchar (255) NULL,
 	industrial_sector nvarchar (255)NULL,
-	net_or_gross nvarchar (255)NULL,
-	paid_or_received nvarchar (255)NULL,
 	measure_type nvarchar (255)NULL,
-	dimensions nvarchar (255)NULL,
-	units nvarchar (255)NULL,
-	metrics nvarchar (255)NULL,
-
-
+	indicator_dimension nvarchar (255)NULL,
+	indicator_units nvarchar (255)NULL,
+	indicator_metrics nvarchar (255)NULL,
  CONSTRAINT IX_IndicatorStandardName UNIQUE(IndicatorStandardName),	
  CONSTRAINT PK_DimIndicator PRIMARY KEY CLUSTERED 
 (

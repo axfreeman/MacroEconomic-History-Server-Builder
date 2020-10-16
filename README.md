@@ -1,5 +1,5 @@
 # Macroeconomic History Data Project
-[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 25 September2020.
+[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 15 October 2020.
 
 >Contact address for the project: **alan.freeman@umanitoba.ca**
 
@@ -48,6 +48,8 @@ From Visual studio, open the 'Macrohistory' solution
 Modify the parameters so they point at your SQL server and at the directory containing this clone.
 
 In you use SQL server, create two databased called `macrohistory_oltp`and `macrohistory_rolap`. The data is initially loaded into the OLTP database by two ETL packages called `Setup OLTP Dimension Tables` and `Import OLTP data from External sources` (which should be run in this order). Once that's done, your OLTP database contains a standardised version of the data. This is then copied to the ROLAP database using the package Populate `ROLAP tables from OLTP` in such a way that all the Foreign Keys work properly, which streamlines the data by compacting it and organising it in a star model. As a result, the entire database takes up less than 100MB of space when imported into Excel PowerPivot or PowerBI. By selecting subsets of this data, you can create smaller workbooks in either format, for special purposes.
+
+As of 15 October, a companion Analysis Server (SSAS) project will go onto github and I will try to update the two in parallel, because they go together. This is a standalone project which uses the data in the SQL server to create a model with the correct measures and hierarchies for the data. You don't have to use it to look at the data, but it helps, because it shows how the model is constructed from the raw data. You can run this in Visual Studio and analyse it with Excel without going to the SSAS server, but I've found it does help to have an SSAS server instance and deploy to it.
 
 You'll find that you need to run the first task in each of these packages once, to create the initial tables. While you are doing that, the other tasks will be flagged as having errors, because they expect these tables to exist. If you then close the package and re-open it, the error flags should disappear. There's probably a more sophisticated way of doing this but it doesn't take up much time, so that's for a future tweak. Or maybe you can do it and push your improvements back up to the repository.
 
