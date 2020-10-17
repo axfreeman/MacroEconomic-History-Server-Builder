@@ -77,7 +77,8 @@ WHERE (Year(FactSource.Date) IS NOT NULL) AND (Year(FactSource.Date) > 1700) and
 GO
 
 -- Compresses the rows of the RecognisedFacts view by substituting the integer Indexes of DimGeo and DimIndicator for the actual country and indicator names
--- For debugging purposes only, report on additional fields from the indicator dimension
+-- For debugging purposes only, report on a few additional fields from other dimensions
+-- indicator_type is used to split the OLTP fact file into a number of ROLAP fact files for convenient handling, transparency to the user, partitioning, etc.
 CREATE OR ALTER VIEW [FactQuery]
 AS
 SELECT 
@@ -90,7 +91,7 @@ SELECT
  DimGeo.DimGeoID, 
  RecognisedFacts.GeoStandardName, 
  RecognisedFacts.IndicatorStandardName,
- DimIndicator.gdp_approach_variant
+ DimIndicator.indicator_type
 FROM RecognisedFacts LEFT OUTER JOIN
  DimIndicator ON 
  RecognisedFacts.IndicatorStandardName = DimIndicator.IndicatorStandardName LEFT OUTER JOIN

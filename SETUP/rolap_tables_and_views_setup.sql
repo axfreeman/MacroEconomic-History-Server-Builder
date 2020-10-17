@@ -51,6 +51,101 @@ CREATE TABLE GDP_definitions (
 	) 
 GO
 
+-- A normalised fact file for Balance of Payments.
+-- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
+-- What the Cube sees is a selection of Fact records defined by their FactID
+-- in which the details of each dimension (Geography, indicator, series breaks, date) are
+-- provided by dimension files related to the relevant Foreign Key in the fact file.
+
+DROP TABLE IF EXISTS balance_of_payments
+GO
+
+CREATE TABLE balance_of_payments (
+	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
+	 DimSourceID int NULL,
+	 DimGeoID int NULL,
+	 DimIndicatorID int NULL,
+	 DateField Date Null,
+	 Value float NULL
+	CONSTRAINT PK_BoP_ID PRIMARY KEY CLUSTERED 
+(
+	 Fact_GDP_ID ASC
+)
+	) 
+GO
+
+-- A normalised fact file for GDP expenditure components.
+-- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
+-- What the Cube sees is a selection of Fact records defined by their FactID
+-- in which the details of each dimension (Geography, indicator, series breaks, date) are
+-- provided by dimension files related to the relevant Foreign Key in the fact file.
+
+DROP TABLE IF EXISTS GDP_components_of_expenditure
+GO
+
+CREATE TABLE GDP_components_of_expenditure (
+	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
+	 DimSourceID int NULL,
+	 DimGeoID int NULL,
+	 DimIndicatorID int NULL,
+	 DateField Date Null,
+	 Value float NULL
+	CONSTRAINT PK_Components_ID PRIMARY KEY CLUSTERED 
+(
+	 Fact_GDP_ID ASC
+)
+	) 
+GO
+
+-- A normalised fact file for GDP sources (factor incomes).
+-- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
+-- What the Cube sees is a selection of Fact records defined by their FactID
+-- in which the details of each dimension (Geography, indicator, series breaks, date) are
+-- provided by dimension files related to the relevant Foreign Key in the fact file.
+
+DROP TABLE IF EXISTS GDP_sources
+GO
+
+CREATE TABLE GDP_sources (
+	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
+	 DimSourceID int NULL,
+	 DimGeoID int NULL,
+	 DimIndicatorID int NULL,
+	 DateField Date Null,
+	 Value float NULL
+	CONSTRAINT PK_sources_ID PRIMARY KEY CLUSTERED 
+(
+	 Fact_GDP_ID ASC
+)
+	) 
+GO
+
+-- A normalised fact file for Capital.
+-- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
+-- What the Cube sees is a selection of Fact records defined by their FactID
+-- in which the details of each dimension (Geography, indicator, series breaks, date) are
+-- provided by dimension files related to the relevant Foreign Key in the fact file.
+
+DROP TABLE IF EXISTS Capital_Stock
+GO
+
+CREATE TABLE Capital_Stock (
+	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
+	 DimSourceID int NULL,
+	 DimGeoID int NULL,
+	 DimIndicatorID int NULL,
+	 DateField Date Null,
+	 Value float NULL
+	CONSTRAINT PK_capital_ID PRIMARY KEY CLUSTERED 
+(
+	 Fact_GDP_ID ASC
+)
+	) 
+GO
+
+
+
+
 -- Maps the indicator description in the source onto standard indicator and quantifier names
 -- Note this simply replicates the definition in the OLTP database but without an auto-increment key, because that's generated when the OLTP table is created
 -- indicator_type	gdp_expenditure_component	capital_component	source_component	balance_of_payments_component	population_component	indicator_other_information	gdp_approach_variation	indicator_description	industrial_sector	net_or_gross	paid_or_received	measure_type	indicator_dimension	indicator_units	indicator_metrics
@@ -172,5 +267,32 @@ FROM Fact LEFT OUTER JOIN
  DimSource ON Fact.DimSourceID = DimSource.DimSourceID
 GO
 
+-- Create a date table
+-- at present only years, but we can add quarters, months  etc later
 
+DROP TABLE IF EXISTS Calendar
 
+CREATE TABLE Calendar( 
+  [CalendarKey] [int] NULL, 
+  [Date] [date] NULL, 
+  [Year] [int] NULL, 
+
+) ON [PRIMARY] 
+
+declare @start_date date, @end_date date 
+ 
+set @start_date = '01/01/1870' 
+set @end_date = '01/01/2021' 
+ 
+WHILE (@start_date<=@end_date) 
+BEGIN 
+ 
+INSERT INTO Calendar
+SELECT 
+[CalendarKey]=CONVERT(int,CONVERT(VARCHAR(15), @start_date, 112)), 
+[Date]= @start_date, 
+[Year] = DATEPART(YEAR,@start_date)
+
+SET @start_date =DATEADD(year, 1, @start_date) 
+ 
+END 
