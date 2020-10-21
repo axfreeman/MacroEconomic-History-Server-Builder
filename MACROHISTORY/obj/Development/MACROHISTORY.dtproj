@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAABU2ZDFjd1rSSxRR9L4bMb0C40xwOMwb8fXu2fkPSlfwAAAAAAOgAAAAAIAACAAAADz1kOFh2XDNhUXTphS0Y8FyMSYxRTv2t9x7j84QHdSc5AAAABN/UbreQGEH+ZBZHZ13edyKKV/6HDu2gdVEudoilPYGPf6E8KD5sFqMFP2d9hdEe6HvymhtpgbwtTpEuDXCtn6Le7riZIz8fga9pxq7K7TvKKYLi30brZKbpK2547ZDh2+a3bAq7AWYZ4Lp6QUjeB8d80plhSo/UzNyJjtZYPQVMNVXc2Zc+eo14Qm4FnA92BAAAAAfjGWD6uXOdcNgjWknPPOTpMhu24RYykBzaFrcb6XjbMYPm2JVxBgRq0o8VtvVyvdyWkkzNhPjiUVFSnEp8VdPg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAACw2yoauNc/e3QM3LUEzWpJ8CU1QNNDJEUL8pP+VouvKwAAAAAOgAAAAAIAACAAAABjECix3g2nmnUanzvtNDezOATW7wb+K4L9JAqtTuOJV5AAAAB7TV+xJZBgDB7xATCQzfeXW32giwv3vpKRAzkMsua+VkONRJS2pSomBSPfWQTCYl8eCp+0AERwjj8YYKY7NXqyq+TDOYSl6HXXDhRu4qse1/plRq3Qv6iXxZcWNZ8V7Hjpf0TtghHAcbaxhFYIXFQ01B/0eCRk2fGJDyQGwxiEBIL9KcXrDXPhb7sQRfevGIBAAAAAlr12QgtPIDPaWRQgT3O8soeuggUxq6LWTPL83P0zgVsPn3q1XIphO5DMZdocqnEYmj7kUXFHYJ1/wq2dSSO4lw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,6 +35,7 @@
           <SSIS:Package SSIS:Name="Populate ROLAP tables from OLTP.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Tidy.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="WDI2020 (temp).dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Alternate ROLAP splitting populator.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Create GERGLE Definitions.sql.conmgr" />
@@ -4004,10 +4005,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">88</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">84</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4D3B2DEB-EB21-4FFC-A065-E3BA617C6BE2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3E94CE80-DB7C-4955-BD7B-50F0F25FB784}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4156,10 +4157,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">266</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">269</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B780D74B-5D98-4DC3-8FE3-51C7632D9F5C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{80002F17-029E-42CA-9F4E-D267310CE0ED}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4194,6 +4195,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{339A769C-76AF-4281-B61C-CD3AA7A0893B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Alternate ROLAP splitting populator.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{23144B29-586D-4EDD-8F8B-7C28E5196023}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Alternate ROLAP splitting populator</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">267</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{52CE283D-CDA8-4F30-97AB-4F3BBEC35BC3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
