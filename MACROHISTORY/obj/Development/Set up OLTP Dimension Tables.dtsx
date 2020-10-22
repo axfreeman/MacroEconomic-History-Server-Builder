@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="88"
-  DTS:VersionGUID="{4D3B2DEB-EB21-4FFC-A065-E3BA617C6BE2}">
+  DTS:VersionBuild="90"
+  DTS:VersionGUID="{9A0E619A-02EA-41B6-8017-BB3DF4822C1E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -879,24 +879,24 @@
                       name="other_indicator_description"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_approach_variant]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[output_definition]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[gdp_approach_variant]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[output_definition]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_approach_variant]"
-                      name="gdp_approach_variant"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[output_definition]"
+                      name="output_definition"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_approach_modifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[accounting_basis]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[gdp_approach_modifier]"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[accounting_basis]"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_approach_modifier]"
-                      name="gdp_approach_modifier"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[accounting_basis]"
+                      name="accounting_basis"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -967,15 +967,15 @@
                       length="255"
                       name="other_indicator_description" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[gdp_approach_variant]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[output_definition]"
                       dataType="wstr"
                       length="255"
-                      name="gdp_approach_variant" />
+                      name="output_definition" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[gdp_approach_modifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[accounting_basis]"
                       dataType="wstr"
                       length="255"
-                      name="gdp_approach_modifier" />
+                      name="accounting_basis" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1032,23 +1032,23 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[other_indicator_description]"
                       name="other_indicator_description" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[gdp_approach_variant]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[output_definition]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[gdp_approach_variant]"
-                      name="gdp_approach_variant" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[output_definition]"
+                      name="output_definition" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[accounting_basis]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[accounting_basis]"
+                      name="accounting_basis" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[industrial_sector]"
                       dataType="wstr"
                       length="255"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[industrial_sector]"
                       name="industrial_sector" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[gdp_approach_modifier]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[gdp_approach_modifier]"
-                      name="gdp_approach_modifier" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[measure_type]"
                       dataType="wstr"
@@ -1233,13 +1233,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[other_indicator_description]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[other_indicator_description]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[gdp_approach_variant]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="gdp_approach_variant"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[gdp_approach_variant]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_approach_variant]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[indicator_dimension]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1261,12 +1254,19 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[indicator_metrics]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[indicator_metrics]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[gdp_approach_modifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[output_definition]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="gdp_approach_modifier"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[gdp_approach_modifier]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_approach_modifier]" />
+                      cachedName="output_definition"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[output_definition]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[output_definition]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[accounting_basis]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="accounting_basis"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[accounting_basis]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[accounting_basis]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1325,11 +1325,6 @@
                       length="255"
                       name="other_indicator_description" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[gdp_approach_variant]"
-                      dataType="wstr"
-                      length="255"
-                      name="gdp_approach_variant" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[indicator_dimension]"
                       dataType="wstr"
                       length="255"
@@ -1345,10 +1340,15 @@
                       length="255"
                       name="indicator_metrics" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[gdp_approach_modifier]"
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[output_definition]"
                       dataType="wstr"
                       length="255"
-                      name="gdp_approach_modifier" />
+                      name="output_definition" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[accounting_basis]"
+                      dataType="wstr"
+                      length="255"
+                      name="accounting_basis" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
