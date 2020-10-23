@@ -1,5 +1,5 @@
 # Macroeconomic History Data Project
-[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 15 October 2020.
+[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 23 October 2020
 
 >Contact address for the project: **alan.freeman@umanitoba.ca**
 
@@ -11,17 +11,17 @@ This implements the objectives of the GERG ([Geopolitical Economy Research Group
 
 This repository can be used in two ways by two audiences
 
-1. folks who only want the results. These are in the \RESULTS folder
+1. folks who only want the results. These are in the \EXPORTS folder. There are also experimental results in the \DATA\TESTS folder, which are 'Beta' so no promises.
 2. folks who want to build their own copy of the database and possibly modify it by adding new data (which is always welcome on the site so feel free to push any modified version.
 
 ## Where can you see the results?
 
 There are four ways to access the results, in order of complexity
 
-- The simplest is to download one or more of the Excel files in the \RESULTS folder. Until the project is more stable, these will vary from time to time as we create new datasets ( we haven't yet developed an adequate versioning system). But this will give you the chance to see what the project can achieve and how it is used.
-- The second is to download the Power-BI books that we will also place in the \RESULTS folder. Again, until the project is stable these will vary, but they will show you the kind of visualizations we are working on
-- The third is to access the shared workspace (on the web) of the Power-BI side of the project. Only one snag here: it's not ready yet. But watch this space and drop us a line (contact address at the top of this document) if you'd like to be kept informed.
-- The fourth, if you are a coder, is to download this project from Github and run it yourself to produce the complete database locally, which you can then  use as you please.
+- The simplest is to download one or more of the Excel files in the \EXPORTS folder. Until the project is more stable, these will vary from time to time as we create new datasets ( we haven't yet developed an adequate versioning system). But this will give you the chance to see what the project can achieve and how it is used.
+- The second is to download the Power-BI books that we will also place in the \EXPORTS folder. Again, until the project is stable these will vary, but they will show you the kind of visualizations we are working on
+- The third is to access the shared workspace (on the web) of the Power-BI side of the project. Only one snag here: it's not ready yet. But  things are moving along: watch this space and drop us a line (contact address at the top of this document) if you'd like to be kept informed.
+- The fourth, if you are a coder, is to download this project from Github and run it yourself to produce the complete database locally, which you can then  use as you please. In particular (new at 23 October) you can build an Analysis Server which has all the filters and hierarchies ready-made.
 
 # What are the system requirements?
 
@@ -49,11 +49,11 @@ Modify the parameters so they point at your SQL server and at the directory cont
 
 In you use SQL server, create two databased called `macrohistory_oltp`and `macrohistory_rolap`. The data is initially loaded into the OLTP database by two ETL packages called `Setup OLTP Dimension Tables` and `Import OLTP data from External sources` (which should be run in this order). Once that's done, your OLTP database contains a standardised version of the data. This is then copied to the ROLAP database using the package Populate `ROLAP tables from OLTP` in such a way that all the Foreign Keys work properly, which streamlines the data by compacting it and organising it in a star model. As a result, the entire database takes up less than 100MB of space when imported into Excel PowerPivot or PowerBI. By selecting subsets of this data, you can create smaller workbooks in either format, for special purposes.
 
-As of 15 October, a companion Analysis Server (SSAS) project will go onto github and I will try to update the two in parallel, because they go together. This is a standalone project which uses the data in the SQL server to create a model with the correct measures and hierarchies for the data. You don't have to use it to look at the data, but it helps, because it shows how the model is constructed from the raw data. You can run this in Visual Studio and analyse it with Excel without going to the SSAS server, but I've found it does help to have an SSAS server instance and deploy to it.
+As of 23 October, the companion Analysis Server (SSAS) project is integrated into this project on github . This uses the data in the SQL server to create a model with the correct measures and hierarchies for the data. You don't have to use it to look at the data, but it helps, because it shows how the model is constructed from the raw data. You can run this in Visual Studio and analyse it with Excel without going to the SSAS server, but I've found it does help to have an SSAS server instance and deploy to it. 
+
+Also, if you install the Power BI gateway, you can create Power BI workbooks using direct query to your own analysis server, publish these to Power BI Service, and access the published workbook while it draws its data from your own copy of analysis server. My eventual aim is a public Analysis server that will be common to all workbooks, but we're not there yet.
 
 You'll find that you need to run the first task in each of these packages once, to create the initial tables. While you are doing that, the other tasks will be flagged as having errors, because they expect these tables to exist. If you then close the package and re-open it, the error flags should disappear. There's probably a more sophisticated way of doing this but it doesn't take up much time, so that's for a future tweak. Or maybe you can do it and push your improvements back up to the repository.
-
-There is one bug: the UN Population connector has not been parameterised so it will fail, expecting to find the relevant CSV input file in the wrong place. You can either parameterise it properly or edit manually with the new location of this CSV file. Again, if you fix this and push it up to the repository, that would be a nice gesture.
 
 That's it, basically. Let me know if you run into problems. Some technical stuff below, somewhat outdated by the widespread use of DAX and other table-transforming software. But it could be a useful place to start.
 
