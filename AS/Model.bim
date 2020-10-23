@@ -27,7 +27,7 @@
     ],
     "tables": [
       {
-        "name": "DimGeo",
+        "name": "Geography",
         "columns": [
           {
             "name": "DimGeoID",
@@ -154,7 +154,7 @@
         ]
       },
       {
-        "name": "DimIndicator",
+        "name": "Indicators",
         "columns": [
           {
             "name": "DimIndicatorID",
@@ -274,22 +274,22 @@
             "name": "Units",
             "levels": [
               {
-                "name": "measure_type",
+                "name": "Measure Type (Stock/Flow/etc)",
                 "ordinal": 0,
                 "column": "measure_type"
               },
               {
-                "name": "indicator_dimension",
+                "name": "Dimension (Money/Quantity/PPP)",
                 "ordinal": 1,
                 "column": "indicator_dimension"
               },
               {
-                "name": "indicator_units",
+                "name": "Units (USD/EUR/LCU/etc)",
                 "ordinal": 2,
                 "column": "indicator_units"
               },
               {
-                "name": "indicator_metrics",
+                "name": "Metric (Current/Constant/etc)",
                 "ordinal": 3,
                 "column": "indicator_metrics"
               }
@@ -298,7 +298,7 @@
         ]
       },
       {
-        "name": "DimSource",
+        "name": "Sources",
         "columns": [
           {
             "name": "DimSourceID",
@@ -382,7 +382,7 @@
             "name": "Source",
             "levels": [
               {
-                "name": "Parent",
+                "name": "Source",
                 "ordinal": 0,
                 "column": "SourceNameParent"
               },
@@ -401,32 +401,69 @@
           {
             "name": "FactID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "FactID"
           },
           {
             "name": "DimSourceID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "DimSourceID"
           },
           {
             "name": "DimGeoID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "DimGeoID"
           },
           {
             "name": "DimIndicatorID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "DimIndicatorID"
           },
           {
             "name": "DateField",
             "dataType": "dateTime",
+            "isHidden": true,
             "sourceColumn": "DateField"
           },
           {
             "name": "Value",
             "dataType": "double",
+            "isHidden": true,
             "sourceColumn": "Value"
+          },
+          {
+            "type": "calculated",
+            "name": "Output Definition",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "RELATED(Indicators[output_definition])"
+          },
+          {
+            "type": "calculated",
+            "name": "Accounting Basis",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[accounting_basis])"
+          },
+          {
+            "type": "calculated",
+            "name": "Indicator_Type",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[indicator_type])"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "year('Fact'[DateField])"
           }
         ],
         "partitions": [
@@ -444,10 +481,47 @@
               ]
             }
           }
+        ],
+        "measures": [
+          {
+            "name": "Item",
+            "expression": "sum('Fact'[Value])"
+          },
+          {
+            "name": "Count",
+            "expression": "Count('Fact'[Value])"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "GDP and other output measures",
+            "levels": [
+              {
+                "name": "Output Definition",
+                "ordinal": 0,
+                "column": "Output Definition"
+              },
+              {
+                "name": "Accounting Basis",
+                "ordinal": 1,
+                "column": "Accounting Basis"
+              }
+            ]
+          },
+          {
+            "name": "Indicator Type",
+            "levels": [
+              {
+                "name": "Indicator Type",
+                "ordinal": 0,
+                "column": "Indicator_Type"
+              }
+            ]
+          }
         ]
       },
       {
-        "name": "Calendar",
+        "name": "Dates",
         "columns": [
           {
             "name": "CalendarKey",
@@ -490,28 +564,28 @@
         "name": "4dfd3380-68bc-4c13-aefa-7b7e64dbcaf6",
         "fromTable": "Fact",
         "fromColumn": "DimGeoID",
-        "toTable": "DimGeo",
+        "toTable": "Geography",
         "toColumn": "DimGeoID"
       },
       {
         "name": "44cb3d6b-d9f0-414b-af5c-dcfc7f16c213",
         "fromTable": "Fact",
         "fromColumn": "DimIndicatorID",
-        "toTable": "DimIndicator",
+        "toTable": "Indicators",
         "toColumn": "DimIndicatorID"
       },
       {
         "name": "c99f3341-4b5a-47d6-abe3-648015d9214d",
         "fromTable": "Fact",
         "fromColumn": "DimSourceID",
-        "toTable": "DimSource",
+        "toTable": "Sources",
         "toColumn": "DimSourceID"
       },
       {
         "name": "150ee8a0-0267-4fec-a63d-8570997278f9",
         "fromTable": "Fact",
         "fromColumn": "DateField",
-        "toTable": "Calendar",
+        "toTable": "Dates",
         "toColumn": "Date"
       }
     ],

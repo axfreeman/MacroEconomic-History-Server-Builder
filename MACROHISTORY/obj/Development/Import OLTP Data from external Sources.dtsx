@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="329"
-  DTS:VersionGUID="{50391824-16A1-491B-B619-CF3E0353D98C}">
+  DTS:VersionBuild="347"
+  DTS:VersionGUID="{1C44DD1C-5DBB-4717-9ECA-7E1643C39412}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -11849,13 +11849,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Maddison GDP"
+      DTS:refId="Package\Maddison"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{3c6320db-0b9c-456f-9620-d56d7fb3ea22}"
+      DTS:DTSID="{1444AD99-7A74-4EE4-9038-5C7912A8813F}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Maddison GDP"
+      DTS:ObjectName="Maddison"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -11863,53 +11863,58 @@
           version="1">
           <components>
             <component
-              refId="Package\Maddison GDP\Add Source, Date, etc"
+              refId="Package\Maddison\Add Source, calculated columns and date field"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Add Source, Date, etc"
+              name="Add Source, calculated columns and date field"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Maddison GDP\Add Source, Date, etc.Inputs[Derived Column Input]"
+                  refId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Inputs[Derived Column Input].Columns[pop]"
-                      cachedDataType="r8"
-                      cachedName="pop"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Inputs[Derived Column Input].Columns[rgdpnapc]"
-                      cachedDataType="r8"
-                      cachedName="rgdpnapc"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Inputs[Derived Column Input].Columns[year]"
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input].Columns[year]"
                       cachedDataType="i2"
                       cachedName="year"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[year]" />
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input].Columns[pop]"
+                      cachedDataType="r8"
+                      cachedName="pop"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]" />
+                    <inputColumn
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input].Columns[rgdpnapc]"
+                      cachedDataType="r8"
+                      cachedName="rgdpnapc"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]" />
+                    <inputColumn
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input].Columns[cgdppc]"
+                      cachedDataType="r8"
+                      cachedName="cgdppc"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output]"
+                  refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Maddison GDP\Add Source, Date, etc.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[SourceName]"
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[Source]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="8"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[SourceName]"
-                      name="SourceName"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[Source]"
+                      name="Source"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -11926,42 +11931,63 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Indicator]"
-                      dataType="wstr"
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[DateField]"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="31"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Indicator]"
-                      name="Indicator"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[DateField]"
+                      name="DateField"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">"GDP in 2011 PPP (one benchmark)"</property>
+                          name="Expression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)#{Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[year]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">"GDP in 2011 PPP (one benchmark)"</property>
+                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)year)</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Value]"
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[POPULATION]"
                       dataType="r8"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Value]"
-                      name="Value"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[POPULATION]"
+                      name="POPULATION"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]} * 1000 * #{Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]}</property>
+                          name="Expression">#{Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]} * 1000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">pop * 1000</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[SingleBenchmarkGDP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[SingleBenchmarkGDP]"
+                      name="SingleBenchmarkGDP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]} * 1000 * #{Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -11971,530 +11997,19 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Date]"
-                      dataType="dbDate"
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[MultipleBenchmarkGDP]"
+                      dataType="r8"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Date]"
-                      name="Date"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[MultipleBenchmarkGDP]"
+                      name="MultipleBenchmarkGDP"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)#{Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[year]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)year</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Maddison GDP\Add Source, Date, etc.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Maddison GDP\FactSource"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="FactSource"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[FactSource]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Maddison GDP\FactSource.Connections[OleDbConnection]"
-                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].Columns[country]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="country"
-                      externalMetadataColumnId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[country]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].Columns[Value]"
-                      cachedDataType="i4"
-                      cachedName="Value"
-                      externalMetadataColumnId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Value]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].Columns[SourceName]"
-                      cachedDataType="wstr"
-                      cachedLength="8"
-                      cachedName="SourceName"
-                      externalMetadataColumnId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[SourceName]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].Columns[Indicator]"
-                      cachedDataType="wstr"
-                      cachedLength="31"
-                      cachedName="Indicator"
-                      externalMetadataColumnId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Indicator]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Date]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      dataType="wstr"
-                      length="255"
-                      name="GeoSourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      dataType="r8"
-                      name="Value" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
-                      dataType="i8"
-                      name="OLTP_FactID" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      dataType="wstr"
-                      length="50"
-                      name="SourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorSourceCode" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      dataType="dbTimeStamp"
-                      name="Date" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Maddison GDP\FactSource.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison GDP\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Maddison GDP\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Maddison GDP\Maddison CSV"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="2057"
-              name="Maddison CSV"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Maddison GDP\Maddison CSV.Connections[FlatFileConnection]"
-                  connectionManagerID="{B814F008-0750-4DDF-9567-65AF4B68CA64}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Maddison CSV]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[country]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[country]"
-                      length="255"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[country]"
-                      name="country"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[year]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[year]"
-                      name="year"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]"
-                      name="pop"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[rgdpnapc]"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]"
-                      name="rgdpnapc"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
-                      dataType="wstr"
-                      length="3"
-                      name="countrycode" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[country]"
-                      dataType="wstr"
-                      length="255"
-                      name="country" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
-                      dataType="i2"
-                      name="year" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[cgdppc]"
-                      dataType="r8"
-                      name="cgdppc" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[rgdpnapc]"
-                      dataType="r8"
-                      name="rgdpnapc" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
-                      dataType="r8"
-                      name="pop" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_cig]"
-                      dataType="wstr"
-                      length="255"
-                      name="i_cig" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_bm]"
-                      dataType="wstr"
-                      length="255"
-                      name="i_bm" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="65001"
-                      dataType="text"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Maddison GDP.Paths[Derived Column Output]"
-              endId="Package\Maddison GDP\FactSource.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Maddison GDP\Add Source, Date, etc.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Maddison GDP.Paths[Flat File Source Output]"
-              endId="Package\Maddison GDP\Add Source, Date, etc.Inputs[Derived Column Input]"
-              name="Flat File Source Output"
-              startId="Package\Maddison GDP\Maddison CSV.Outputs[Flat File Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Maddison GDP Multiple Benchmarks"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{b71eac91-df32-464c-ada3-fa5ee9cc3caa}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Maddison GDP Multiple Benchmarks"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Add Source, Date, etc"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Inputs[Derived Column Input].Columns[pop]"
-                      cachedDataType="r8"
-                      cachedName="pop"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Inputs[Derived Column Input].Columns[cgdppc]"
-                      cachedDataType="r8"
-                      cachedName="cgdppc"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Inputs[Derived Column Input].Columns[year]"
-                      cachedDataType="i2"
-                      cachedName="year"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[year]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[SourceName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="8"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[SourceName]"
-                      name="SourceName"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"MADDISON"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"MADDISON"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Indicator]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="37"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Indicator]"
-                      name="Indicator"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"GDP in 2011 PPP (multiple benchmarks)"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"GDP in 2011 PPP (multiple benchmarks)"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Value]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Value]"
-                      name="Value"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">#{Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]} * 1000 * #{Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]}</property>
+                          name="Expression">#{Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]} * 1000 * #{Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -12503,49 +12018,27 @@
                           name="FriendlyExpression">pop * 1000 * cgdppc</property>
                       </properties>
                     </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[YearAsDate]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[YearAsDate]"
-                      name="YearAsDate"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)#{Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[year]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)year</property>
-                      </properties>
-                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Error Output]"
+                  refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -12554,11 +12047,100 @@
               </outputs>
             </component>
             <component
-              refId="Package\Maddison GDP Multiple Benchmarks\FactSource"
+              refId="Package\Maddison\Eliminate Silly Years"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Eliminate Silly Years"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Maddison\Eliminate Silly Years.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Maddison\Eliminate Silly Years.Inputs[Conditional Split Input].Columns[year]"
+                      cachedDataType="i2"
+                      cachedName="year"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Maddison\Eliminate Silly Years.Outputs[Sensible Years]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sensible Years"
+                  synchronousInputId="Package\Maddison\Eliminate Silly Years.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[year]} &gt; 1800</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">year &gt; 1800</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Maddison\Eliminate Silly Years.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Maddison\Eliminate Silly Years.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Maddison\Eliminate Silly Years.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Maddison\Eliminate Silly Years.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Maddison\Eliminate Silly Years.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Maddison\Eliminate Silly Years.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Maddison\Eliminate Silly Years.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Maddison\Eliminate Silly Years.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Maddison\FactSource OLTP Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="FactSource"
+              name="FactSource OLTP Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -12611,7 +12193,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Connections[OleDbConnection]"
+                  refId="Package\Maddison\FactSource OLTP Table.Connections[OleDbConnection]"
                   connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
                   connectionManagerRefId="Project.ConnectionManagers[OLTP]"
                   description="The OLE DB runtime connection used to access the database."
@@ -12619,96 +12201,96 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input]"
+                  refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].Columns[country]"
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[DateField]"
+                      cachedDataType="dbDate"
+                      cachedName="DateField"
+                      externalMetadataColumnId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[DateField]" />
+                    <inputColumn
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicator"
+                      externalMetadataColumnId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Indicator]" />
+                    <inputColumn
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[country]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="country"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[country]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].Columns[Value]"
-                      cachedDataType="i4"
-                      cachedName="Value"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Value]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].Columns[SourceName]"
-                      cachedDataType="wstr"
-                      cachedLength="8"
-                      cachedName="SourceName"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[SourceName]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].Columns[Indicator]"
-                      cachedDataType="wstr"
-                      cachedLength="37"
-                      cachedName="Indicator"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[Indicator]" />
-                    <inputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].Columns[YearAsDate]"
-                      cachedDataType="dbDate"
-                      cachedName="YearAsDate"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output].Columns[YearAsDate]" />
+                      externalMetadataColumnId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[country]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      dataType="wstr"
-                      length="255"
-                      name="GeoSourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      dataType="r8"
-                      name="Value" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
                       dataType="i8"
                       name="OLTP_FactID" />
                     <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       dataType="wstr"
                       length="50"
                       name="SourceName" />
                     <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
                       length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
                       name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Maddison\FactSource OLTP Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Maddison\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Maddison\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Maddison\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Maddison\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -12717,7 +12299,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV"
+              refId="Package\Maddison\Maddison CSV"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -12737,24 +12319,24 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Connections[FlatFileConnection]"
+                  refId="Package\Maddison\Maddison CSV.Connections[FlatFileConnection]"
                   connectionManagerID="{B814F008-0750-4DDF-9567-65AF4B68CA64}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Maddison CSV]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output]"
+                  refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[countrycode]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[countrycode]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
                       length="3"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[countrycode]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[countrycode]"
                       name="countrycode"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -12769,13 +12351,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[country]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[country]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[country]"
                       length="255"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[country]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[country]"
                       name="country"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -12790,12 +12372,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[year]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[year]"
                       dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[year]"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[year]"
                       name="year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -12810,32 +12392,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]"
-                      name="pop"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[cgdppc]"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[cgdppc]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[cgdppc]"
                       name="cgdppc"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -12849,462 +12411,14 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
-                      dataType="wstr"
-                      length="3"
-                      name="countrycode" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[country]"
-                      dataType="wstr"
-                      length="255"
-                      name="country" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
-                      dataType="i2"
-                      name="year" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[cgdppc]"
+                    <outputColumn
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]"
                       dataType="r8"
-                      name="cgdppc" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[rgdpnapc]"
-                      dataType="r8"
-                      name="rgdpnapc" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
-                      dataType="r8"
-                      name="pop" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_cig]"
-                      dataType="wstr"
-                      length="255"
-                      name="i_cig" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_bm]"
-                      dataType="wstr"
-                      length="255"
-                      name="i_bm" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="65001"
-                      dataType="text"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Maddison GDP Multiple Benchmarks.Paths[Derived Column Output]"
-              endId="Package\Maddison GDP Multiple Benchmarks\FactSource.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Maddison GDP Multiple Benchmarks.Paths[Flat File Source Output]"
-              endId="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc.Inputs[Derived Column Input]"
-              name="Flat File Source Output"
-              startId="Package\Maddison GDP Multiple Benchmarks\Maddison CSV.Outputs[Flat File Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Maddison Population"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{33cafdab-89f9-4c3a-bd94-fd85098dde74}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Maddison Population"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Maddison Population\Add Source, Date"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Add Source, Date"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Maddison Population\Add Source, Date.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Inputs[Derived Column Input].Columns[pop]"
-                      cachedDataType="r8"
-                      cachedName="pop"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[pop]" />
-                    <inputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Inputs[Derived Column Input].Columns[year]"
-                      cachedDataType="i2"
-                      cachedName="year"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[year]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Maddison Population\Add Source, Date.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[SourceName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="8"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[SourceName]"
-                      name="SourceName"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"MADDISON"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"MADDISON"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Indicator]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="10"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Indicator]"
-                      name="Indicator"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"POPULATION"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"POPULATION"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Value]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Value]"
-                      name="Value"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">#{Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[pop]} * 1000</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">pop * 1000</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Date]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Date]"
-                      name="Date"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)#{Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[year]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)year</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Maddison Population\Add Source, Date.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Maddison Population\FactSource"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="FactSource"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[FactSource]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Maddison Population\FactSource.Connections[OleDbConnection]"
-                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].Columns[country]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="country"
-                      externalMetadataColumnId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[country]" />
-                    <inputColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].Columns[Value]"
-                      cachedDataType="r8"
-                      cachedName="Value"
-                      externalMetadataColumnId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Value]" />
-                    <inputColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].Columns[SourceName]"
-                      cachedDataType="wstr"
-                      cachedLength="8"
-                      cachedName="SourceName"
-                      externalMetadataColumnId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[SourceName]" />
-                    <inputColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].Columns[Indicator]"
-                      cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="Indicator"
-                      externalMetadataColumnId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Indicator]" />
-                    <inputColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].Columns[Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Date"
-                      externalMetadataColumnId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output].Columns[Date]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      dataType="wstr"
-                      length="255"
-                      name="GeoSourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      dataType="r8"
-                      name="Value" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
-                      dataType="i8"
-                      name="OLTP_FactID" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      dataType="wstr"
-                      length="50"
-                      name="SourceName" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorSourceCode" />
-                    <externalMetadataColumn
-                      refId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      dataType="dbTimeStamp"
-                      name="Date" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Maddison Population\FactSource.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison Population\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Maddison Population\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Maddison Population\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Maddison Population\FactSource.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Maddison Population\Maddison"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="2057"
-              name="Maddison"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Maddison Population\Maddison.Connections[FlatFileConnection]"
-                  connectionManagerID="{B814F008-0750-4DDF-9567-65AF4B68CA64}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Maddison CSV]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[country]"
-                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[country]"
-                      length="255"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[country]"
-                      name="country"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[rgdpnapc]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[rgdpnapc]"
+                      name="rgdpnapc"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -13318,32 +12432,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[year]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[year]"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[year]"
-                      name="year"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[pop]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[pop]"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].Columns[pop]"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[pop]"
                       name="pop"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -13357,71 +12451,374 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[i_cig]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_cig]"
+                      length="255"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[i_cig]"
+                      name="i_cig"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[i_bm]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_bm]"
+                      length="255"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[i_bm]"
+                      name="i_bm"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
                       dataType="wstr"
                       length="3"
                       name="countrycode" />
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[country]"
                       dataType="wstr"
                       length="255"
                       name="country" />
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
                       dataType="i2"
                       name="year" />
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[cgdppc]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[cgdppc]"
                       dataType="r8"
                       name="cgdppc" />
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[rgdpnapc]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[rgdpnapc]"
                       dataType="r8"
                       name="rgdpnapc" />
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[pop]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
                       dataType="r8"
                       name="pop" />
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[i_cig]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_cig]"
                       dataType="wstr"
                       length="255"
                       name="i_cig" />
                     <externalMetadataColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output].ExternalColumns[i_bm]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].ExternalColumns[i_bm]"
                       dataType="wstr"
                       length="255"
                       name="i_bm" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Error Output]"
+                  refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="65001"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Maddison Population\Maddison.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Maddison Population\Maddison.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Maddison\Unpivot"
+              componentClassID="Microsoft.UnPivot"
+              contactInfo="Unpivot;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Expands an un-normalized data flow into a more normalized version. Values from multiple columns of a single record expand to multiple records in a single column. For example, expand a table that lists athletic scores with a column for each game to more records and a single score column."
+              name="Unpivot">
+              <inputs>
+                <input
+                  refId="Package\Maddison\Unpivot.Inputs[Unpivot Input]"
+                  hasSideEffects="true"
+                  name="Unpivot Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[POPULATION]"
+                      cachedDataType="r8"
+                      cachedName="POPULATION"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[POPULATION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">POPULATION</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[SingleBenchmarkGDP]"
+                      cachedDataType="r8"
+                      cachedName="SingleBenchmarkGDP"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[SingleBenchmarkGDP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">SingleBenchmarkGDP</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[MultipleBenchmarkGDP]"
+                      cachedDataType="r8"
+                      cachedName="MultipleBenchmarkGDP"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[MultipleBenchmarkGDP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">MultipleBenchmarkGDP</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[countrycode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="countrycode"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[countrycode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[countrycode]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[country]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[year]"
+                      cachedDataType="i2"
+                      cachedName="year"
+                      lineageId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output].Columns[year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Source"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[Source]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Source]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Maddison\Unpivot.Inputs[Unpivot Input].Columns[DateField]"
+                      cachedDataType="dbDate"
+                      cachedName="DateField"
+                      lineageId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output].Columns[DateField]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[DateField]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Maddison\Unpivot.Outputs[Unpivot Output]"
+                  name="Unpivot Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Indicator]"
+                      name="Indicator">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">true</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      dataType="r8"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      name="Value">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[countrycode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[countrycode]"
+                      name="countrycode">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[country]"
+                      name="country">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[year]"
+                      dataType="i2"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[year]"
+                      name="year">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Source]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[Source]"
+                      name="Source">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[DateField]"
+                      dataType="dbDate"
+                      lineageId="Package\Maddison\Unpivot.Outputs[Unpivot Output].Columns[DateField]"
+                      name="DateField">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -13430,15 +12827,25 @@
           </components>
           <paths>
             <path
-              refId="Package\Maddison Population.Paths[Derived Column Output]"
-              endId="Package\Maddison Population\FactSource.Inputs[OLE DB Destination Input]"
+              refId="Package\Maddison.Paths[Derived Column Output]"
+              endId="Package\Maddison\Unpivot.Inputs[Unpivot Input]"
               name="Derived Column Output"
-              startId="Package\Maddison Population\Add Source, Date.Outputs[Derived Column Output]" />
+              startId="Package\Maddison\Add Source, calculated columns and date field.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Maddison Population.Paths[Flat File Source Output]"
-              endId="Package\Maddison Population\Add Source, Date.Inputs[Derived Column Input]"
+              refId="Package\Maddison.Paths[Flat File Source Output]"
+              endId="Package\Maddison\Eliminate Silly Years.Inputs[Conditional Split Input]"
               name="Flat File Source Output"
-              startId="Package\Maddison Population\Maddison.Outputs[Flat File Source Output]" />
+              startId="Package\Maddison\Maddison CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Maddison.Paths[Sensible Years]"
+              endId="Package\Maddison\Add Source, calculated columns and date field.Inputs[Derived Column Input]"
+              name="Sensible Years"
+              startId="Package\Maddison\Eliminate Silly Years.Outputs[Sensible Years]" />
+            <path
+              refId="Package\Maddison.Paths[Unpivot Output]"
+              endId="Package\Maddison\FactSource OLTP Table.Inputs[OLE DB Destination Input]"
+              name="Unpivot Output"
+              startId="Package\Maddison\Unpivot.Outputs[Unpivot Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -44411,14 +43818,6 @@
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\WDI2020" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{4439a839-206a-4abb-991c-53b2c5ddd585}"
-      DTS:From="Package\Maddison Population"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1"
-      DTS:To="Package\Maddison GDP" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
       DTS:DTSID="{EF7C561D-83CA-4670-9F20-8AA493154674}"
@@ -44445,11 +43844,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
       DTS:CreationName=""
-      DTS:DTSID="{2937CD90-3EE7-4F94-8D8D-4EC04D98CB6D}"
-      DTS:From="Package\Maddison GDP Multiple Benchmarks"
+      DTS:DTSID="{915F015F-88B5-4CB1-8F0E-A7CC39329940}"
+      DTS:From="Package\PPP2011 from ICP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 13"
-      DTS:To="Package\Palgrave USA" />
+      DTS:To="Package\Maddison" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 14]"
       DTS:CreationName=""
@@ -44469,11 +43868,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 16]"
       DTS:CreationName=""
-      DTS:DTSID="{432BA61E-1009-4A40-B760-195358975CB5}"
-      DTS:From="Package\PPP2011 from ICP"
+      DTS:DTSID="{8C70C423-3239-4FBF-AC38-479C88F9D285}"
+      DTS:From="Package\Maddison"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 16"
-      DTS:To="Package\Maddison Population" />
+      DTS:To="Package\Palgrave USA" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 17]"
       DTS:CreationName=""
@@ -44506,14 +43905,6 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\UN-OFFICIAL" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{010db25b-1c0d-40d1-b80d-c36f07c5c872}"
-      DTS:From="Package\Maddison GDP"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2 1"
-      DTS:To="Package\Maddison GDP Multiple Benchmarks" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 20]"
       DTS:CreationName=""
@@ -44640,18 +44031,6 @@
           Id="Package\Macrohistory"
           TopLeft="401.216138565251,463.363086286697" />
         <NodeLayout
-          Size="153,42.5"
-          Id="Package\Maddison GDP"
-          TopLeft="390.18624459552,377.281835213126" />
-        <NodeLayout
-          Size="256.5,42.5"
-          Id="Package\Maddison GDP Multiple Benchmarks"
-          TopLeft="100.388499623283,373.876691629843" />
-        <NodeLayout
-          Size="181,42.5"
-          Id="Package\Maddison Population"
-          TopLeft="612.055218019759,374.713564392867" />
-        <NodeLayout
           Size="111,42.5"
           Id="Package\OECD"
           TopLeft="587.506750694104,286.819194594511" />
@@ -44696,6 +44075,10 @@
           Id="Package\US Nationally sourced"
           TopLeft="874.877135881017,468.815471883764" />
         <NodeLayout
+          Size="123,42"
+          Id="Package\WDI2020"
+          TopLeft="624.5,17" />
+        <NodeLayout
           Size="127.5,42"
           Id="Package\WEO2002"
           TopLeft="245.766053679,139.96032354384" />
@@ -44730,19 +44113,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="612.055218019759,397.247699802997">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="214.956904990896,38.5824916655211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-68.8689734242391,0"
+              EndConnector="409.543095009104,0"
               Start="0,0"
-              End="-61.3689734242391,0">
+              End="402.043095009104,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-61.3689734242391,0" />
+                    End="402.043095009104,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -44818,28 +44201,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="224.759578067991,416.376691629843">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49.5141924352286"
-              Start="0,0"
-              End="0,42.0141924352286">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.0141924352286" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
           TopLeft="237.500021737298,307.014744637469">
           <EdgeLayout.Curve>
@@ -44875,28 +44236,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="66.2051361148812,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="881.457655889727,395.524790559752">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-88.402437869968,0"
-              Start="0,0"
-              End="-80.902437869968,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-80.902437869968,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -44994,28 +44333,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2 1]"
-          TopLeft="390.18624459552,396.829263421485">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-33.2977449722364,0"
-              Start="0,0"
-              End="-25.7977449722364,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-25.7977449722364,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 20]"
           TopLeft="968.320894347154,511.315471883764">
           <EdgeLayout.Curve>
@@ -45051,6 +44368,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,24.1577764451665" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="686,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-376.483946321,80.96032354384"
+              Start="0,0"
+              End="-376.483946321,73.46032354384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.48016177192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.48016177192"
+                    Point2="0,40.48016177192"
+                    Point3="-4,40.48016177192" />
+                  <mssgle:LineSegment
+                    End="-372.483946321,40.48016177192" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-372.483946321,40.48016177192"
+                    Point2="-376.483946321,40.48016177192"
+                    Point3="-376.483946321,44.48016177192" />
+                  <mssgle:LineSegment
+                    End="-376.483946321,73.46032354384" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -45214,23 +44565,23 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="123,42"
-          Id="Package\WDI2020"
-          TopLeft="624.5,17" />
+          Size="123.5,42"
+          Id="Package\Maddison"
+          TopLeft="635.5,373" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="214.956904990896,38.5824916655211">
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="881.457655889727,394.543008363319">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="409.543095009104,0"
+              EndConnector="-122.457655889727,0"
               Start="0,0"
-              End="402.043095009104,0">
+              End="-114.957655889727,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="402.043095009104,0" />
+                    End="-114.957655889727,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -45240,31 +44591,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="686,59">
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="697.25,415">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-376.483946321,80.96032354384"
+              EndConnector="-476.369343487302,50.890884065072"
               Start="0,0"
-              End="-376.483946321,73.46032354384">
+              End="-476.369343487302,43.390884065072">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.48016177192" />
+                    End="0,21.445442032536" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.48016177192"
-                    Point2="0,40.48016177192"
-                    Point3="-4,40.48016177192" />
+                    Point1="0,21.445442032536"
+                    Point2="0,25.445442032536"
+                    Point3="-4,25.445442032536" />
                   <mssgle:LineSegment
-                    End="-372.483946321,40.48016177192" />
+                    End="-472.369343487302,25.445442032536" />
                   <mssgle:CubicBezierSegment
-                    Point1="-372.483946321,40.48016177192"
-                    Point2="-376.483946321,40.48016177192"
-                    Point3="-376.483946321,44.48016177192" />
+                    Point1="-472.369343487302,25.445442032536"
+                    Point2="-476.369343487302,25.445442032536"
+                    Point3="-476.369343487302,29.445442032536" />
                   <mssgle:LineSegment
-                    End="-376.483946321,73.46032354384" />
+                    End="-476.369343487302,43.390884065072" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -46010,273 +45361,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Macrohistory\FactSource OLTP table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Maddison GDP">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="146.5,42.5"
-          Id="Package\Maddison GDP\Maddison CSV"
-          TopLeft="117,48" />
-        <NodeLayout
-          Size="152.5,43.5"
-          Id="Package\Maddison GDP\FactSource"
-          TopLeft="120,268" />
-        <NodeLayout
-          Size="181.5,42"
-          Id="Package\Maddison GDP\Add Source, Date, etc"
-          TopLeft="101,163.5" />
-        <EdgeLayout
-          Id="Package\Maddison GDP.Paths[Flat File Source Output]"
-          TopLeft="191,90.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,73"
-              Start="0,0"
-              End="0,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Maddison GDP.Paths[Derived Column Output]"
-          TopLeft="194,205.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62.5"
-              Start="0,0"
-              End="0,55">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Maddison GDP\FactSource">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Maddison GDP Multiple Benchmarks">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="233.5,42"
-          Id="Package\Maddison GDP Multiple Benchmarks\Maddison CSV"
-          TopLeft="78,47.5" />
-        <NodeLayout
-          Size="225.5,42.5"
-          Id="Package\Maddison GDP Multiple Benchmarks\FactSource"
-          TopLeft="82,260" />
-        <NodeLayout
-          Size="181.5,42"
-          Id="Package\Maddison GDP Multiple Benchmarks\Add Source, Date, etc"
-          TopLeft="101.5,166" />
-        <EdgeLayout
-          Id="Package\Maddison GDP Multiple Benchmarks.Paths[Derived Column Output]"
-          TopLeft="193.5,208">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Maddison GDP Multiple Benchmarks.Paths[Flat File Source Output]"
-          TopLeft="193.5,89.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,76.5"
-              Start="0,0"
-              End="0,69">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Maddison GDP Multiple Benchmarks\FactSource">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Maddison Population">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="124,42.5"
-          Id="Package\Maddison Population\Maddison"
-          TopLeft="173,35" />
-        <NodeLayout
-          Size="161.5,42"
-          Id="Package\Maddison Population\Add Source, Date"
-          TopLeft="164,171.5" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Maddison Population\FactSource"
-          TopLeft="152.5,306.5" />
-        <EdgeLayout
-          Id="Package\Maddison Population.Paths[Derived Column Output]"
-          TopLeft="244.75,213.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-14.75,93"
-              Start="0,0"
-              End="-14.75,85.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,42.5"
-                    Point2="0,46.5"
-                    Point3="-4,46.5" />
-                  <mssgle:LineSegment
-                    End="-10.75,46.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.75,46.5"
-                    Point2="-14.75,46.5"
-                    Point3="-14.75,50.5" />
-                  <mssgle:LineSegment
-                    End="-14.75,85.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Maddison Population.Paths[Flat File Source Output]"
-          TopLeft="235,77.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.75,94"
-              Start="0,0"
-              End="9.75,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43"
-                    Point2="0,47"
-                    Point3="4,47" />
-                  <mssgle:LineSegment
-                    End="5.75,47" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.75,47"
-                    Point2="9.75,47"
-                    Point3="9.75,51" />
-                  <mssgle:LineSegment
-                    End="9.75,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Maddison Population\FactSource">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -47691,6 +46775,126 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\WDI2020">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="116.5,42.5"
+          Id="Package\WDI2020\Unpivot"
+          TopLeft="358.000017881394,149.401513233531" />
+        <NodeLayout
+          Size="243,42"
+          Id="Package\WDI2020\Shorten, add source, add Datefield"
+          TopLeft="665.111130478942,141.424239924979" />
+        <NodeLayout
+          Size="183,41.5"
+          Id="Package\WDI2020\WDI2018 CSV"
+          TopLeft="325.5,74.6" />
+        <NodeLayout
+          Size="137.5,42.5"
+          Id="Package\WDI2020\Fact Source"
+          TopLeft="343.777783944283,241.829542099286" />
+        <EdgeLayout
+          Id="Package\WDI2020.Paths[Derived Column Output]"
+          TopLeft="786.611130478942,183.424239924979">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-374.083346534659,58.405302174307"
+              Start="0,0"
+              End="-374.083346534659,50.905302174307">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2026510871535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2026510871535"
+                    Point2="0,29.2026510871535"
+                    Point3="-4,29.2026510871535" />
+                  <mssgle:LineSegment
+                    End="-370.083346534659,29.2026510871535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-370.083346534659,29.2026510871535"
+                    Point2="-374.083346534659,29.2026510871535"
+                    Point3="-374.083346534659,33.2026510871535" />
+                  <mssgle:LineSegment
+                    End="-374.083346534659,50.905302174307" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\WDI2020.Paths[Unpivot Output]"
+          TopLeft="474.500017881394,170.651513233531">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="190.611112597548,-8.22727330855201"
+              Start="0,0"
+              End="183.111112597548,-8.22727330855201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="91.305556298774,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.305556298774,0"
+                    Point2="95.305556298774,0"
+                    Point3="95.305556298774,-4" />
+                  <mssgle:LineSegment
+                    End="95.305556298774,-4.22727330855201" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.305556298774,-4.22727330855201"
+                    Point2="95.305556298774,-8.22727330855201"
+                    Point3="99.305556298774,-8.22727330855201" />
+                  <mssgle:LineSegment
+                    End="183.111112597548,-8.22727330855201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\WDI2020.Paths[Flat File Source Output]"
+          TopLeft="416.625008940697,116.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.301513233531"
+              Start="0,0"
+              End="0,25.801513233531">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.801513233531" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
     design-time-name="Package\WEO2002">
     <LayoutInfo>
       <GraphLayout
@@ -48090,124 +47294,183 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\WDI2020">
+    design-time-name="Package\Maddison">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="116.5,42.5"
-          Id="Package\WDI2020\Unpivot"
-          TopLeft="358.000017881394,149.401513233531" />
+          Size="145.5,42"
+          Id="Package\Maddison\Maddison CSV"
+          TopLeft="202.5,55.5" />
         <NodeLayout
-          Size="243,42"
-          Id="Package\WDI2020\Shorten, add source, add Datefield"
-          TopLeft="665.111130478942,141.424239924979" />
+          Size="296,42"
+          Id="Package\Maddison\Add Source, calculated columns and date field"
+          TopLeft="451.5,127" />
         <NodeLayout
-          Size="183,41.5"
-          Id="Package\WDI2020\WDI2018 CSV"
-          TopLeft="325.5,74.6" />
-        <NodeLayout
-          Size="137.5,42.5"
-          Id="Package\WDI2020\Fact Source"
-          TopLeft="343.777783944283,241.829542099286" />
+          Size="115,42"
+          Id="Package\Maddison\Unpivot"
+          TopLeft="554,246" />
         <EdgeLayout
-          Id="Package\WDI2020.Paths[Derived Column Output]"
-          TopLeft="786.611130478942,183.424239924979">
+          Id="Package\Maddison.Paths[Derived Column Output]"
+          TopLeft="599.5,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-374.083346534659,58.405302174307"
+              EndConnector="12,77"
               Start="0,0"
-              End="-374.083346534659,50.905302174307">
+              End="12,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.2026510871535" />
+                    End="0,34.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.2026510871535"
-                    Point2="0,29.2026510871535"
-                    Point3="-4,29.2026510871535" />
+                    Point1="0,34.5"
+                    Point2="0,38.5"
+                    Point3="4,38.5" />
                   <mssgle:LineSegment
-                    End="-370.083346534659,29.2026510871535" />
+                    End="8,38.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-370.083346534659,29.2026510871535"
-                    Point2="-374.083346534659,29.2026510871535"
-                    Point3="-374.083346534659,33.2026510871535" />
+                    Point1="8,38.5"
+                    Point2="12,38.5"
+                    Point3="12,42.5" />
                   <mssgle:LineSegment
-                    End="-374.083346534659,50.905302174307" />
+                    End="12,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Maddison\FactSource OLTP Table"
+          TopLeft="390.5,386.5" />
+        <EdgeLayout
+          Id="Package\Maddison.Paths[Unpivot Output]"
+          TopLeft="611.5,288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-127,98.5"
+              Start="0,0"
+              End="-127,91">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,45.25"
+                    Point2="0,49.25"
+                    Point3="-4,49.25" />
+                  <mssgle:LineSegment
+                    End="-123,49.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-123,49.25"
+                    Point2="-127,49.25"
+                    Point3="-127,53.25" />
+                  <mssgle:LineSegment
+                    End="-127,91" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Maddison\Eliminate Silly Years"
+          TopLeft="176.5,164.5" />
+        <EdgeLayout
+          Id="Package\Maddison.Paths[Flat File Source Output]"
+          TopLeft="275.25,97.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.25,67"
+              Start="0,0"
+              End="-12.25,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="-4,33.5" />
+                  <mssgle:LineSegment
+                    End="-8.25,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.25,33.5"
+                    Point2="-12.25,33.5"
+                    Point3="-12.25,37.5" />
+                  <mssgle:LineSegment
+                    End="-12.25,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\WDI2020.Paths[Unpivot Output]"
-          TopLeft="474.500017881394,170.651513233531">
+          Id="Package\Maddison.Paths[Sensible Years]"
+          TopLeft="349.5,185.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="190.611112597548,-8.22727330855201"
+              EndConnector="102,-37.5"
               Start="0,0"
-              End="183.111112597548,-8.22727330855201">
+              End="94.5,-37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="91.305556298774,0" />
+                    End="47,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="91.305556298774,0"
-                    Point2="95.305556298774,0"
-                    Point3="95.305556298774,-4" />
+                    Point1="47,0"
+                    Point2="51,0"
+                    Point3="51,-4" />
                   <mssgle:LineSegment
-                    End="95.305556298774,-4.22727330855201" />
+                    End="51,-33.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="95.305556298774,-4.22727330855201"
-                    Point2="95.305556298774,-8.22727330855201"
-                    Point3="99.305556298774,-8.22727330855201" />
+                    Point1="51,-33.5"
+                    Point2="51,-37.5"
+                    Point3="55,-37.5" />
                   <mssgle:LineSegment
-                    End="183.111112597548,-8.22727330855201" />
+                    End="94.5,-37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\WDI2020.Paths[Flat File Source Output]"
-          TopLeft="416.625008940697,116.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.301513233531"
-              Start="0,0"
-              End="0,25.801513233531">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.801513233531" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="18.4317578125,1,65.136484375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Maddison\FactSource OLTP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
