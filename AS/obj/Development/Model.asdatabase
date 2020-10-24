@@ -293,6 +293,28 @@
                 "column": "indicator_metrics"
               }
             ]
+          },
+          {
+            "name": "Balance of Payments Component",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
+              {
+                "name": "BoP Component",
+                "ordinal": 0,
+                "column": "balance_of_payments_component"
+              }
+            ]
+          },
+          {
+            "name": "Industrial Sector (Agriculture/Industry etc)",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
+              {
+                "name": "Sector",
+                "ordinal": 0,
+                "column": "industrial_sector"
+              }
+            ]
           }
         ]
       },
@@ -395,7 +417,7 @@
         ]
       },
       {
-        "name": "Fact",
+        "name": "Data",
         "columns": [
           {
             "name": "FactID",
@@ -448,6 +470,21 @@
             "isDataTypeInferred": true,
             "isHidden": true,
             "expression": "related(Indicators[accounting_basis])"
+          },
+          {
+            "type": "calculated",
+            "name": "Indicator_Type",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[indicator_type])"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "year('Data'[DateField])"
           }
         ],
         "partitions": [
@@ -469,25 +506,32 @@
         "measures": [
           {
             "name": "Item",
-            "expression": "sum('Fact'[Value])"
+            "expression": "sum('Data'[Value])"
           },
           {
             "name": "Count",
-            "expression": "Count('Fact'[Value])"
+            "expression": "Count('Data'[Value])"
           }
         ],
         "hierarchies": [
           {
             "name": "GDP and other output measures",
+            "hideMembers": "hideBlankMembers",
             "levels": [
               {
                 "name": "Output Definition",
                 "ordinal": 0,
                 "column": "Output Definition"
-              },
+              }
+            ]
+          },
+          {
+            "name": "Basis (Gross/Net etc)",
+            "hideMembers": "hideBlankMembers",
+            "levels": [
               {
                 "name": "Accounting Basis",
-                "ordinal": 1,
+                "ordinal": 0,
                 "column": "Accounting Basis"
               }
             ]
@@ -536,28 +580,28 @@
     "relationships": [
       {
         "name": "4dfd3380-68bc-4c13-aefa-7b7e64dbcaf6",
-        "fromTable": "Fact",
+        "fromTable": "Data",
         "fromColumn": "DimGeoID",
         "toTable": "Geography",
         "toColumn": "DimGeoID"
       },
       {
         "name": "44cb3d6b-d9f0-414b-af5c-dcfc7f16c213",
-        "fromTable": "Fact",
+        "fromTable": "Data",
         "fromColumn": "DimIndicatorID",
         "toTable": "Indicators",
         "toColumn": "DimIndicatorID"
       },
       {
         "name": "c99f3341-4b5a-47d6-abe3-648015d9214d",
-        "fromTable": "Fact",
+        "fromTable": "Data",
         "fromColumn": "DimSourceID",
         "toTable": "Sources",
         "toColumn": "DimSourceID"
       },
       {
         "name": "150ee8a0-0267-4fec-a63d-8570997278f9",
-        "fromTable": "Fact",
+        "fromTable": "Data",
         "fromColumn": "DateField",
         "toTable": "Dates",
         "toColumn": "Date"
