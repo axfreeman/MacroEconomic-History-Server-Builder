@@ -17,7 +17,7 @@ SELECT
  [Value]
  FROM [FactQuery]
 	WHERE 
-	([FactQuery].SourceName = N'IFS2018') 
+	([FactQuery].SourceName = N'IFS2020') 
 	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT'
 -- for UK and former colonies, and Mexico, use the seasonally-adjusted series, which goes back further in time
 	and [FactQuery].GeoStandardName!='United States'
@@ -35,7 +35,7 @@ SELECT
  [Value]
  FROM [FactQuery]
 	WHERE 
-	([FactQuery].SourceName = N'IFS2018') 
+	([FactQuery].SourceName = N'IFS2020') 
 	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT-SA'
 	and (
 -- for UK and former colonies, and Mexico, use the seasonally-adjusted series, which goes back further in time
@@ -57,7 +57,7 @@ FROM IFSSeasonalAdjustmentRemoval
 
 DELETE FROM FactQuery
 WHERE 
-	([FactQuery].SourceName = N'IFS2018') 
+	([FactQuery].SourceName = N'IFS2020') 
 	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT'
 	and [FactQuery].GeoStandardName!='United States'
 	and [FactQuery].GeoStandardName!='Australia'
@@ -70,7 +70,7 @@ GO
 
 DELETE FROM FactQuery
 WHERE
-	([FactQuery].SourceName = N'IFS2018') 
+	([FactQuery].SourceName = N'IFS2020') 
 	and [FactQuery].IndicatorStandardName='GDP-TOTAL-USD-CURRENT-SA'
 	and (
 	[FactQuery].GeoStandardName='United States'

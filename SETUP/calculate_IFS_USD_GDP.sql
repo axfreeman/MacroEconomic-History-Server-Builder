@@ -24,7 +24,7 @@ FROM
       and RecognisedFacts.Date = RecognisedFacts_1.Date 
 WHERE
    (
-      dbo.RecognisedFacts.SourceName = N'IFS2018'
+      dbo.RecognisedFacts.SourceName = N'IFS2020'
    )
    AND 
    (
@@ -55,7 +55,7 @@ DROP TABLE IF EXISTS Temp_IFS_USD_SA_Table
          and RecognisedFacts.Date = RecognisedFacts_1.Date 
    WHERE
       (
-         dbo.RecognisedFacts.SourceName = N'IFS2018'
+         dbo.RecognisedFacts.SourceName = N'IFS2020'
       )
       AND 
       (
