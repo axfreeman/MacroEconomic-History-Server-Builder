@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="271"
-  DTS:VersionGUID="{F3BDEA2D-2C0B-44AC-888B-D9035440ABF1}">
+  DTS:VersionBuild="273"
+  DTS:VersionGUID="{53CBAEE4-EAD7-412C-A3E8-571889FB5763}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2006,6 +2006,354 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Populate IndicatorStandardNames"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{BD3B7ED8-4100-4FED-84D9-793166D7B316}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate IndicatorStandardNames"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="IndicatorStandardNames OLTP Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[IndicatorStandardNames]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSource]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSource]"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSource]"
+                      name="IndicatorSource"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSourceDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceDescription]"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSourceDescription]"
+                      name="IndicatorSourceDescription"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceCode]"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSourceCode]"
+                      name="IndicatorSourceCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSource]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSource" />
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorStandardName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorSource]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorSource]"
+                      name="IndicatorSource" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceDescription]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceDescription]"
+                      name="IndicatorSourceDescription" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorSourceCode]"
+                      name="IndicatorSourceCode" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
+                      name="IndicatorStandardName" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="IndicatorStandardNames ROLAP Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[IndicatorStandardNames]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Connections[OleDbConnection]"
+                  connectionManagerID="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ROLAP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].Columns[IndicatorSource]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorSource"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSource]"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSource]" />
+                    <inputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].Columns[IndicatorSourceDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorSourceDescription"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceDescription]"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSourceDescription]" />
+                    <inputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].Columns[IndicatorSourceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorSourceCode"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorSourceCode]" />
+                    <inputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].Columns[IndicatorStandardName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorStandardName"
+                      externalMetadataColumnId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSource]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSource" />
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorStandardName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate IndicatorStandardNames.Paths[OLE DB Source Output]"
+              endId="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Populate ROLAP fact file"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -2464,11 +2812,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{935250D3-01CA-4074-86E8-34EC0198CE4E}"
+      DTS:DTSID="{1FD22262-2494-4AEA-BB0A-09227C8DB8C8}"
       DTS:From="Package\Populate DimSources"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\BH and MH de-indexation" />
+      DTS:To="Package\Populate IndicatorStandardNames" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -2485,6 +2833,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Populate DimGeo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{A3512897-4051-4272-BB52-D7E97F15069D}"
+      DTS:From="Package\Populate IndicatorStandardNames"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\BH and MH de-indexation" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
@@ -2509,7 +2865,7 @@
         <NodeLayout
           Size="199,42"
           Id="Package\BH and MH de-indexation"
-          TopLeft="353.5,196.083332359376" />
+          TopLeft="81,198.083332359376" />
         <NodeLayout
           Size="239.5,41.5"
           Id="Package\Drop and create ROLAP files"
@@ -2529,7 +2885,7 @@
         <NodeLayout
           Size="219,41.5"
           Id="Package\Populate ROLAP fact file"
-          TopLeft="350.333333997872,295.587386452885" />
+          TopLeft="466.833333997872,312.087386452885" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="518.970095279019,126.977028177537">
@@ -2544,40 +2900,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="68.914546026499,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="684.134641305518,145.854811137817">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-231.134641305518,50.228521221559"
-              Start="0,0"
-              End="-231.134641305518,42.728521221559">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.1142606107795" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.1142606107795"
-                    Point2="0,25.1142606107795"
-                    Point3="-4,25.1142606107795" />
-                  <mssgle:LineSegment
-                    End="-227.134641305518,25.1142606107795" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-227.134641305518,25.1142606107795"
-                    Point2="-231.134641305518,25.1142606107795"
-                    Point3="-231.134641305518,29.1142606107795" />
-                  <mssgle:LineSegment
-                    End="-231.134641305518,42.728521221559" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2632,18 +2954,90 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="456.416666998936,238.083332359376">
+          TopLeft="180.5,240.083332359376">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.5040540935086"
+              EndConnector="395.833333997872,72.004054093509"
               Start="0,0"
-              End="0,50.0040540935086">
+              End="395.833333997872,64.504054093509">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.0040540935086" />
+                    End="0,32.0020270467545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0020270467545"
+                    Point2="0,36.0020270467545"
+                    Point3="4,36.0020270467545" />
+                  <mssgle:LineSegment
+                    End="391.833333997872,36.0020270467545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="391.833333997872,36.0020270467545"
+                    Point2="395.833333997872,36.0020270467545"
+                    Point3="395.833333997872,40.0020270467545" />
+                  <mssgle:LineSegment
+                    End="395.833333997872,64.504054093509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="239.5,42"
+          Id="Package\Populate IndicatorStandardNames"
+          TopLeft="833.5,100" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="772.884641305518,123.052405568908">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.615358694482,0"
+              Start="0,0"
+              End="53.115358694482,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.115358694482,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="953.25,142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-772.75,56.083332359376"
+              Start="0,0"
+              End="-772.75,48.583332359376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.041666179688" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.041666179688"
+                    Point2="0,28.041666179688"
+                    Point3="-4,28.041666179688" />
+                  <mssgle:LineSegment
+                    End="-768.75,28.041666179688" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-768.75,28.041666179688"
+                    Point2="-772.75,28.041666179688"
+                    Point3="-772.75,32.041666179688" />
+                  <mssgle:LineSegment
+                    End="-772.75,48.583332359376" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2901,6 +3295,70 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate IndicatorStandardNames">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="252.5,42"
+          Id="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table"
+          TopLeft="356.5,107" />
+        <NodeLayout
+          Size="259.5,42"
+          Id="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table"
+          TopLeft="358,238" />
+        <EdgeLayout
+          Id="Package\Populate IndicatorStandardNames.Paths[OLE DB Source Output]"
+          TopLeft="485.25,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89"
+              Start="0,0"
+              End="0,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate IndicatorStandardNames\IndicatorStandardNames ROLAP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

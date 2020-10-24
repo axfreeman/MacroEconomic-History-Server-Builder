@@ -481,10 +481,11 @@
           },
           {
             "type": "calculated",
-            "name": "Year",
-            "dataType": "int64",
+            "name": "IndicatorStandardNamesID",
+            "dataType": "string",
             "isDataTypeInferred": true,
-            "expression": "year('Data'[DateField])"
+            "isHidden": true,
+            "expression": "concatenate(concatenate(related(Sources[SourceName]),\":\"),related(Indicators[IndicatorStandardName]))"
           }
         ],
         "partitions": [
@@ -574,6 +575,57 @@
             }
           }
         ]
+      },
+      {
+        "name": "IndicatorStandardNames",
+        "columns": [
+          {
+            "name": "IndicatorSource",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorSource"
+          },
+          {
+            "name": "IndicatorSourceDescription",
+            "dataType": "string",
+            "sourceColumn": "IndicatorSourceDescription"
+          },
+          {
+            "name": "IndicatorSourceCode",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorSourceCode"
+          },
+          {
+            "name": "IndicatorStandardName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorStandardName"
+          },
+          {
+            "type": "calculated",
+            "name": "IndicatorStandardNamesKey",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "concatenate(Concatenate(IndicatorStandardNames[IndicatorSource],\":\"),IndicatorStandardNames[IndicatorStandardName])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap\",",
+                "    dbo_IndicatorStandardNames = Source{[Schema=\"dbo\",Item=\"IndicatorStandardNames\"]}[Data]",
+                "in",
+                "    dbo_IndicatorStandardNames"
+              ]
+            }
+          }
+        ]
       }
     ],
     "relationships": [
@@ -604,6 +656,13 @@
         "fromColumn": "DateField",
         "toTable": "Dates",
         "toColumn": "Date"
+      },
+      {
+        "name": "a5c44f5c-905a-4ff8-9a97-ce9ddbc018f5",
+        "fromTable": "Data",
+        "fromColumn": "IndicatorStandardNamesID",
+        "toTable": "IndicatorStandardNames",
+        "toColumn": "IndicatorStandardNamesKey"
       }
     ],
     "annotations": [

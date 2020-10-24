@@ -143,6 +143,31 @@ CREATE TABLE Capital_Stock (
 	) 
 GO
 
+-- Indicator Standard Names is a mirror of the OLTP table of the same name
+-- In the initialy OLTP stage, when data is being loaded from the raw sources, 
+-- the OLTP table is used to convert the supplier's many different codes into a single standard code used by this project (the MacroEconomic History project)
+-- here, in the ROLAP stage, it is used in the inverse sense, to retrieve the original description from the combination of the Source and the indicator code
+-- we need to key on both the source and the indicator code, to get a unique key (since several suppliers will give data that corresponds to a single indicator).
+-- That's why the primary key is different in this version of the table and in the OLTP version
+
+DROP TABLE IF EXISTS IndicatorStandardNames
+GO
+
+CREATE TABLE IndicatorStandardNames (
+		-- the source of the data (eg UN2018). Unlike GeoStandardNames, this field is needed 
+		-- because two sources may use the same name for two different indicators
+	 IndicatorSource nvarchar (255) NOT NULL, 
+		-- many sources also have an ID system of their own. For completeness, this is recorded here, but not (9/12/2018) currently used.
+	 IndicatorSourceDescription nvarchar (255) NULL,
+		-- this is the code by which the source (provider) identifies the data. Sometimes it is a complex alphanumeric code, and sometimes it is just the description itself
+	 IndicatorSourceCode nvarchar (255) NOT NULL,
+		-- a standard name which identifies the indicator uniquely on the ROLAP server
+	 IndicatorStandardName nvarchar (255) NOT NULL
+ CONSTRAINT PK_IndicatorSourceKey PRIMARY KEY CLUSTERED 
+(
+	 IndicatorSource , IndicatorStandardName ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) )
+GO
 
 
 
