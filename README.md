@@ -1,5 +1,5 @@
 # Macroeconomic History Data Project
-[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 23 October 2020
+[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 29 November 2020
 
 >Contact address for the project: **alan.freeman@umanitoba.ca**
 
@@ -96,6 +96,10 @@ The ETL procedures transform the raw DATA/SOURCE into the above form. The raw DA
 13 September: Created 'EXPORTS' folder to hold datasets and other material to be used in the GERG Data Laboratory Project
 
 25 September New Date Handling System: the Date dimension no longer exists. All Years are converted to MSSQL DateTime format, stored in the Fact Table so there is no need for a separate dimension table.
+
+29 November The hierarchies are being continuously updated. This takes effect in the AS project which is inside the folder structure
+
+
 
 
 
