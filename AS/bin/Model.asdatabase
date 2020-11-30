@@ -169,6 +169,26 @@
                 "column": "GeoStandardName"
               }
             ]
+          },
+          {
+            "name": "PENN Availability",
+            "levels": [
+              {
+                "name": "PENN availability",
+                "ordinal": 0,
+                "column": "Penn_Geography"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "ReportingUnit"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "GeoStandardName"
+              }
+            ]
           }
         ]
       },
