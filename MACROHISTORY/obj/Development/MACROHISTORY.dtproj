@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAV8F2cz2D/EKh4iLdCjyJTgAAAAACAAAAAAAQZgAAAAEAACAAAAANuDYvuHDL4LC+nuA+KB1L3ADrX1sjwUkYe2CHD9Sr6AAAAAAOgAAAAAIAACAAAADdl2hpPrSYq/45JqUzBsU9i62aHbOyYicArZXdWdmVuZAAAABLVu6OjcSpmgzsiJXoU49m+UFUveBshkUvaSyIzdYBTg7Npe8YKEc7OeHps9HJwvELoIhZWRkSIMUoOII1WyZyQeRuDhJt3Kn7GAEOVXhGMhqt43iydtJa/J03iXre0O59KZNkOI1d4RtUhWtCJ6Vcp5d0sbXitgWUlbpJPG2lzzkjgRoPEmiV6aMfkLzpgA1AAAAAqxzTR7CWp3e6QzySmSq5N6I7mLsfE8Swl6QHgHZb4XeKsbvN7c6HphykBODjC5ZXwaGfWRk5cvdaIWQgCkybyA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMhzXrDzyl0m/MPQtyHm6VQAAAAACAAAAAAAQZgAAAAEAACAAAADuOWQWjMjxxVRaP8ADIPUK5UcGXKYgs8lLziA+nK7EJQAAAAAOgAAAAAIAACAAAACLQvJ2ye471IzhpVTMPeJL9NlXks3TLcPxTqW2gUolV5AAAAC+WJnkGXskbVCrS2Vg2+6V2V+Bjdi5CaIaThb+iYXAesKUE/NhsjmpzHtGNXINZ9u/7HVKMmIhPbgLdQ3JS3dkv/xNM72F/P/iVXXftw2rtjug5WEwkwfnE6e6QYLzuLOrEnDOw3Y5dSKTN5IjeflCwqpyNBBqxvzLcmtqYxGR2dLanlR4sfiiWlTPD6gRwk5AAAAAHMbVXDctWKDFXChdZQMI/Db6tu4CRbUvNC3NbDPdjhBSRJVLlrqv48OYNW+mFGnvpOiQT6B6dSQT6PAKM9DEAw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,7 +34,6 @@
           <SSIS:Package SSIS:Name="Import OLTP Data from external Sources.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Populate ROLAP tables from OLTP.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Tidy.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="WDI2020 (temp).dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Alternate ROLAP splitting populator.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
@@ -4188,10 +4187,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">84</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">90</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3E94CE80-DB7C-4955-BD7B-50F0F25FB784}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9A0E619A-02EA-41B6-8017-BB3DF4822C1E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4323,10 +4322,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">377</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">370</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{5466297F-13E6-496D-8A83-46268835684C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B72C2B13-FF9D-4C3B-BE65-4A4FA17BEB63}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4461,7 +4460,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\afree\Documents\Github\MacroEconomic History\DATA\SOURCE\BOP_10-24-2020 03-41-59-89_timeSeries (cleaned).xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\afree\Documents\Github\MacroEconomic History\DATA\SOURCE\BOP_10-24-2020 03-41-59-89_timeSeries (cleaned).xlsx;Extended Properties="Excel 12.0 XML;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -4575,10 +4574,10 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">273</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">255</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{53CBAEE4-EAD7-412C-A3E8-571889FB5763}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2D3491C5-286D-42C2-AE6F-3A78C4876E24}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4592,27 +4591,10 @@
                 <SSIS:Property SSIS:Name="Name">Tidy</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6FF9E9DE-D340-480A-AC20-4E349C123666}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="WDI2020 (temp).dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{AF8920AB-21D7-4EDC-AFBB-1144043FAF28}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{339A769C-76AF-4281-B61C-CD3AA7A0893B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{98226E92-F2F2-4767-A579-43A59D936760}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

@@ -497,6 +497,21 @@
             "isDataTypeInferred": true,
             "isHidden": true,
             "expression": "related(IndicatorStandardNames[IndicatorSourceDescription])"
+          },
+          {
+            "type": "calculated",
+            "name": "Nation",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Geography[GeoStandardName])"
+          },
+          {
+            "type": "calculated",
+            "name": "Indicator Source and Code",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "Data[IndicatorStandardNamesID]"
           }
         ],
         "partitions": [
