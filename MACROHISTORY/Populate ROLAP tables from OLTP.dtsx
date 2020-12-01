@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="273"
-  DTS:VersionGUID="{53CBAEE4-EAD7-412C-A3E8-571889FB5763}">
+  DTS:VersionBuild="274"
+  DTS:VersionGUID="{C3878120-A019-43FB-8B8F-0310C46C319D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -197,16 +197,6 @@
                       name="Geopolitical_Region"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Detail]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_Detail]"
-                      length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Detail]"
-                      name="Geopolitical_Detail"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major_Blocs]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -215,16 +205,6 @@
                       length="255"
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Major_Blocs]"
                       name="Major_Blocs"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn_Geography]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Penn_Geography]"
-                      length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn_Geography]"
-                      name="Penn_Geography"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]"
@@ -266,6 +246,26 @@
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[IMF_sub_category]"
                       name="IMF_sub_category"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[wdi_availability]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[wdi_availability]"
+                      length="255"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[wdi_availability]"
+                      name="wdi_availability"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[penn_availability]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[penn_availability]"
+                      length="255"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[penn_availability]"
+                      name="penn_availability"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -304,20 +304,10 @@
                       length="255"
                       name="Geopolitical_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_Detail]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical_Detail" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Major_Blocs]"
                       dataType="wstr"
                       length="255"
                       name="Major_Blocs" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[Penn_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="Penn_Geography" />
                     <externalMetadataColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY_Geography]"
                       dataType="wstr"
@@ -338,6 +328,16 @@
                       dataType="wstr"
                       length="255"
                       name="IMF_sub_category" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[wdi_availability]"
+                      dataType="wstr"
+                      length="255"
+                      name="wdi_availability" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].ExternalColumns[penn_availability]"
+                      dataType="wstr"
+                      length="255"
+                      name="penn_availability" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -387,11 +387,11 @@
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical_Region]"
                       name="Geopolitical_Region" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical_Detail]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[wdi_availability]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Geopolitical_Detail]"
-                      name="Geopolitical_Detail" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[wdi_availability]"
+                      name="wdi_availability" />
                     <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Major_Blocs]"
                       dataType="wstr"
@@ -399,11 +399,11 @@
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Major_Blocs]"
                       name="Major_Blocs" />
                     <outputColumn
-                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Penn_Geography]"
+                      refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[penn_availability]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[Penn_Geography]"
-                      name="Penn_Geography" />
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[penn_availability]"
+                      name="penn_availability" />
                     <outputColumn
                       refId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY_Geography]"
                       dataType="wstr"
@@ -559,13 +559,6 @@
                       externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Region]"
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Region]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Geopolitical_Detail]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Geopolitical_Detail"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Detail]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Geopolitical_Detail]" />
-                    <inputColumn
                       refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[MACROHISTORY_Geography]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -608,12 +601,19 @@
                       externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[GeoPolitical_Type]"
                       lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[GeoPolitical_Type]" />
                     <inputColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[Penn_Geography]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[wdi_availability]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Penn_Geography"
-                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Penn_Geography]"
-                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[Penn_Geography]" />
+                      cachedName="wdi_availability"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[wdi_availability]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[wdi_availability]" />
+                    <inputColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].Columns[penn_availability]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="penn_availability"
+                      externalMetadataColumnId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[penn_availability]"
+                      lineageId="Package\Populate DimGeo\OLTP DimGeo.Outputs[OLE DB Source Output].Columns[penn_availability]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -647,11 +647,6 @@
                       length="255"
                       name="Geopolitical_Region" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_Detail]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical_Detail" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY_Geography]"
                       dataType="wstr"
                       length="255"
@@ -682,10 +677,15 @@
                       length="255"
                       name="GeoPolitical_Type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[Penn_Geography]"
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[wdi_availability]"
                       dataType="wstr"
                       length="255"
-                      name="Penn_Geography" />
+                      name="wdi_availability" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo\ROLAP DimGeo.Inputs[OLE DB Destination Input].ExternalColumns[penn_availability]"
+                      dataType="wstr"
+                      length="255"
+                      name="penn_availability" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2883,6 +2883,10 @@
           Id="Package\Populate DimSources"
           TopLeft="595.384641305518,104.354811137817" />
         <NodeLayout
+          Size="239.5,42"
+          Id="Package\Populate IndicatorStandardNames"
+          TopLeft="833.5,100" />
+        <NodeLayout
           Size="219,41.5"
           Id="Package\Populate ROLAP fact file"
           TopLeft="466.833333997872,312.087386452885" />
@@ -2900,6 +2904,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="68.914546026499,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="772.884641305518,123.052405568908">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.615358694482,0"
+              Start="0,0"
+              End="53.115358694482,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.115358694482,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2953,66 +2979,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="180.5,240.083332359376">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="395.833333997872,72.004054093509"
-              Start="0,0"
-              End="395.833333997872,64.504054093509">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.0020270467545" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.0020270467545"
-                    Point2="0,36.0020270467545"
-                    Point3="4,36.0020270467545" />
-                  <mssgle:LineSegment
-                    End="391.833333997872,36.0020270467545" />
-                  <mssgle:CubicBezierSegment
-                    Point1="391.833333997872,36.0020270467545"
-                    Point2="395.833333997872,36.0020270467545"
-                    Point3="395.833333997872,40.0020270467545" />
-                  <mssgle:LineSegment
-                    End="395.833333997872,64.504054093509" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="239.5,42"
-          Id="Package\Populate IndicatorStandardNames"
-          TopLeft="833.5,100" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="772.884641305518,123.052405568908">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="60.615358694482,0"
-              Start="0,0"
-              End="53.115358694482,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="53.115358694482,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="953.25,142">
           <EdgeLayout.Curve>
@@ -3046,6 +3012,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="180.5,240.083332359376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="395.833333997872,72.004054093509"
+              Start="0,0"
+              End="395.833333997872,64.504054093509">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.0020270467545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.0020270467545"
+                    Point2="0,36.0020270467545"
+                    Point3="4,36.0020270467545" />
+                  <mssgle:LineSegment
+                    End="391.833333997872,36.0020270467545" />
+                  <mssgle:CubicBezierSegment
+                    Point1="391.833333997872,36.0020270467545"
+                    Point2="395.833333997872,36.0020270467545"
+                    Point3="395.833333997872,40.0020270467545" />
+                  <mssgle:LineSegment
+                    End="395.833333997872,64.504054093509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3053,13 +3053,13 @@
     design-time-name="Package\Populate DimGeo">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151.428571428572,42.2857142857143"
+          Size="151.5,42.5"
           Id="Package\Populate DimGeo\ROLAP DimGeo"
           TopLeft="95.2593434345085,147.32184329536" />
         <NodeLayout
-          Size="144,42.2857142857143"
+          Size="144,42.5"
           Id="Package\Populate DimGeo\OLTP DimGeo"
           TopLeft="93.6659331146782,71.277418529181" />
         <EdgeLayout
@@ -3081,9 +3081,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3246,59 +3244,6 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Populate ROLAP fact file">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="168,41.5"
-          Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
-          TopLeft="142.888888888889,155.277777777778" />
-        <NodeLayout
-          Size="255,41.5"
-          Id="Package\Populate ROLAP fact file\OLTP FactQuery"
-          TopLeft="96.1709424676588,38.4202024528147" />
-        <EdgeLayout
-          Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
-          TopLeft="225.279915678274,79.9202024528147">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,75.3575753249633"
-              Start="0,0"
-              End="0,67.8575753249633">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.8575753249633" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate ROLAP fact file\OLTP FactQuery">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Populate IndicatorStandardNames">
     <LayoutInfo>
       <GraphLayout
@@ -3359,6 +3304,59 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Populate ROLAP fact file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="168,41.5"
+          Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
+          TopLeft="142.888888888889,155.277777777778" />
+        <NodeLayout
+          Size="255,41.5"
+          Id="Package\Populate ROLAP fact file\OLTP FactQuery"
+          TopLeft="96.1709424676588,38.4202024528147" />
+        <EdgeLayout
+          Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
+          TopLeft="225.279915678274,79.9202024528147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.3575753249633"
+              Start="0,0"
+              End="0,67.8575753249633">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.8575753249633" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate ROLAP fact file\OLTP FactQuery">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
