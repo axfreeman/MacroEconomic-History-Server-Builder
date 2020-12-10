@@ -1,12 +1,17 @@
 USE macrohistory_oltp
 GO
--- Add USD measures for the various PENN series
+-- Add USD measures for the PENN series
 -- Do it here for convenience rather than oblige the user to write complex
 -- DAX or MDX Queries
 -- create temporary tables so we can inspect them to see what goes on, in case of problems
 
 DROP TABLE IF EXISTS Temp_PENN_USD_Table 
 GO 
+
+-- xr2 is PENN's series code for 'Exchange rate, national currency/USD (market+estimated)'
+-- xr (which we don't use) is their code for 'Exchange rate, national currency/USD (market)'
+-- v_gdp is their code for GDP at current national prices.
+
 
 SELECT
    dbo.RecognisedFacts.SourceName,
@@ -23,7 +28,7 @@ FROM
       and RecognisedFacts.Date = RecognisedFacts_1.Date 
 WHERE
    (
-      dbo.RecognisedFacts.SourceName = N'PENN'
+      dbo.RecognisedFacts.SourceName = N'PENN National Accounts 2020'
    )
    AND 
    (
