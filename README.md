@@ -1,5 +1,5 @@
 # Macroeconomic History Data Project
-[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 29 November 2020
+[Alan Freeman](https://geopoliticaleconomy.academia.edu/AlanFreeman) 9 December 2020
 
 >Contact address for the project: **alan.freeman@umanitoba.ca**
 
@@ -16,12 +16,21 @@ This repository can be used in two ways by two audiences
 
 ## Where can you see the results?
 
-There are four ways to access the results, in order of complexity
+- There are four ways to access the results, in order of complexity
 
-- The simplest is to download one or more of the Excel files in the \EXPORTS folder. Until the project is more stable, these will vary from time to time as we create new datasets ( we haven't yet developed an adequate versioning system). But this will give you the chance to see what the project can achieve and how it is used.
-- The second is to download the Power-BI books that we will also place in the \EXPORTS folder. Again, until the project is stable these will vary, but they will show you the kind of visualizations we are working on
+- The simplest is to download one or more of the Excel files in the `DATA\EXPORTS` folder. Until the project is more stable, these will vary from time to time as we create new datasets ( we haven't yet developed an adequate versioning system). But this will give you the chance to see what the project can achieve and how it is used.
+- The second is to download the Power-BI books that we will also place in the `DATA\EXPORTS` folder. Again, until the project is stable these will vary, but they will show you the kind of visualizations we are working on
 - The third is to access the shared workspace (on the web) of the Power-BI side of the project. Only one snag here: it's not ready yet. But  things are moving along: watch this space and drop us a line (contact address at the top of this document) if you'd like to be kept informed.
 - The fourth, if you are a coder, is to download this project from Github and run it yourself to produce the complete database locally, which you can then  use as you please. In particular (new at 23 October) you can build an Analysis Server which has all the filters and hierarchies ready-made.
+
+### Note (9 December)
+
+An 'addin' called `Dispersions Add-In.xlam` has been created to help calculate dispersion measures (Theil, Gini, weighted quartiles). It's in the `SETUP` folder. It drastically simplifies the spreadsheets, but it means if you want to play with the data (as opposed to just viewing it) you will need to install it into your copy of any exported workbook locally. 
+
+I'm working on more user-friendly options, and probably will rewrite it as a proper extension that you can get from AppSource. Another workaround would be to put the code in each of the exported result workbooks, but here the disadvantage is that if the code is modified, the workbooks will still contain the old code. Some brief notes on how to install are at the end of this document under 'change notes'
+
+All I can say is 'watch this space'
+
 
 # What are the system requirements?
 
@@ -92,12 +101,18 @@ This includes a set of SSIS packages which, when run from within VS, construct t
 
 The ETL procedures transform the raw DATA/SOURCE into the above form. The raw DATA/SOURCE ORIGINALS are all in the public domain; the project's cleaned-up copy of these datasets are stored in the DATA/SOURCE folder.
 
-### Change Tracking
-13 September: Created 'EXPORTS' folder to hold datasets and other material to be used in the GERG Data Laboratory Project
+### Change Notes
+**13 September**: Created 'EXPORTS' folder to hold datasets and other material to be used in the GERG Data Laboratory Project
 
-25 September New Date Handling System: the Date dimension no longer exists. All Years are converted to MSSQL DateTime format, stored in the Fact Table so there is no need for a separate dimension table.
+**25 September** New Date Handling System: the Date dimension no longer exists. All Years are converted to MSSQL DateTime format, stored in the Fact Table so there is no need for a separate dimension table.
 
-29 November The hierarchies are being continuously updated. This takes effect in the AS project which is inside the folder structure
+**29 November** The hierarchies are being continuously updated. This takes effect in the AS project which is inside the folder structure
+
+**9 December** The  `Change Tracking.xlsx` workbook in `CHANGE TRACKING` now attempts to keep a systematic record of changes including a brief description, the status of the proposed change, which commit it appears in, and how or whether it has been tested, along with any problems noted.
+
+**9 December** A separate add-in was created to handle Theil, GIni and weighted quartile calculations. This slightly complicates the business of reproducing the data, in that the user now has to install the Add-in. A copy is stored in the `SETUP` folder (called `Dispersions Add-In.xlam`) and this has to be brought into any excel book where this functionality is needed. The add-in has to be copied into a local user folder here: `C:\Users\[your user name]\AppData\Roaming\Microsoft\AddIns`. It should then be brought into the workbook via the File>Options>Addins dialogue and will appear as an available Excel Add-in. Eventually it's proposed to convert this to a distributable form to be downloaded from AppSource or 'Sideloaded' from the project. Since this is under development, we'll document the procedure when it is more stable
+
+
 
 
 
