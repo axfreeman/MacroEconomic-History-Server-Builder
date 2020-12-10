@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="378"
-  DTS:VersionGUID="{B3D05B0B-1337-4DF8-8025-9632F2853497}">
+  DTS:VersionBuild="386"
+  DTS:VersionGUID="{4F3565E7-0809-4103-AFCD-E3E0F762646D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27228,6 +27228,1765 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Penn National Accounts 2020"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{727a82b5-557c-4098-a667-79ac620601fc}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Penn National Accounts 2020"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Penn National Accounts 2020\Add Source and scale"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Source and scale"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[v_gdp]"
+                      cachedDataType="r8"
+                      cachedName="v_gdp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gdp]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gdp]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">v_gdp * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[v_c]"
+                      cachedDataType="r8"
+                      cachedName="v_c"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_c]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_c]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">v_c * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[v_i]"
+                      cachedDataType="r8"
+                      cachedName="v_i"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_i]" />
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[v_g]"
+                      cachedDataType="r8"
+                      cachedName="v_g"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_g]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_i]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">v_i * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[v_x]"
+                      cachedDataType="r8"
+                      cachedName="v_x"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_x]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_x]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">v_x * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[v_m]"
+                      cachedDataType="r8"
+                      cachedName="v_m"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_m]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_m]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">v_m * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[q_c]"
+                      cachedDataType="r8"
+                      cachedName="q_c"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_c]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_c]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">q_c * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[q_i]"
+                      cachedDataType="r8"
+                      cachedName="q_i"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_i]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_i]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">q_i * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[q_g]"
+                      cachedDataType="r8"
+                      cachedName="q_g"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_g]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_g]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">q_g * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[q_x]"
+                      cachedDataType="r8"
+                      cachedName="q_x"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_x]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_x]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">q_x * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[q_m]"
+                      cachedDataType="r8"
+                      cachedName="q_m"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_m]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_m]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">q_m * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[q_gdp]"
+                      cachedDataType="r8"
+                      cachedName="q_gdp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gdp]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gdp]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">q_gdp * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[v_gfcf]"
+                      cachedDataType="r8"
+                      cachedName="v_gfcf"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gfcf]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gfcf]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">v_gfcf * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[q_gfcf]"
+                      cachedDataType="r8"
+                      cachedName="q_gfcf"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gfcf]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gfcf]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">q_gfcf * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="27"
+                      lineageId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"PENN National Accounts 2020"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"PENN National Accounts 2020"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Convert Year to YearAsDate"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Inputs[Derived Column Input].Columns[year]"
+                      cachedDataType="ui2"
+                      cachedName="year"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Output].Columns[YearAsDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Output].Columns[YearAsDate]"
+                      name="YearAsDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[year]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)year)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Penn National Accounts 2020\FactSource OLTP Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FactSource OLTP Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[countrycode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="countrycode"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[countrycode]" />
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicator"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Indicator]" />
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[YearAsDate]"
+                      cachedDataType="dbDate"
+                      cachedName="YearAsDate"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Output].Columns[YearAsDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="PENN National Accounts 2020 csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Connections[FlatFileConnection]"
+                  connectionManagerID="{6AD3BA1C-2103-47EC-84E4-AB4C44F088C8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[PENN National Accounts 2020]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[countrycode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
+                      length="3"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[countrycode]"
+                      name="countrycode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[year]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_c]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_c]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_c]"
+                      name="v_c"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_i]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_i]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_i]"
+                      name="v_i"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_g]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_g]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_g]"
+                      name="v_g"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_x]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_x]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_x]"
+                      name="v_x"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_m]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_m]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_m]"
+                      name="v_m"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gdp]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_gdp]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gdp]"
+                      name="v_gdp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_c]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_c]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_c]"
+                      name="q_c"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_i]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_i]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_i]"
+                      name="q_i"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_g]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_g]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_g]"
+                      name="q_g"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_x]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_x]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_x]"
+                      name="q_x"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_m]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_m]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_m]"
+                      name="q_m"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gdp]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_gdp]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gdp]"
+                      name="q_gdp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[pop]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[pop]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[pop]"
+                      name="pop"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[xr]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[xr]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[xr]"
+                      name="xr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[xr2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[xr2]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[xr2]"
+                      name="xr2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gfcf]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_gfcf]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gfcf]"
+                      name="v_gfcf"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gfcf]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_gfcf]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gfcf]"
+                      name="q_gfcf"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[emp]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[emp]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[emp]"
+                      name="emp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[avh]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[avh]"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[avh]"
+                      name="avh"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[countrycode]"
+                      dataType="wstr"
+                      length="3"
+                      name="countrycode" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      dataType="i4"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_c]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="v_c" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_i]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="v_i" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_g]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="v_g" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_x]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="v_x" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_m]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="v_m" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_gdp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="v_gdp" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_c]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="q_c" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_i]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="q_i" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_g]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="q_g" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_x]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="q_x" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_m]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="q_m" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_gdp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="q_gdp" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[pop]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="pop" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[xr]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="xr" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[xr2]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="xr2" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[v_gfcf]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="v_gfcf" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[q_gfcf]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="q_gfcf" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[emp]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="emp" />
+                    <externalMetadataColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].ExternalColumns[avh]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="avh" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Penn National Accounts 2020\Unpivot"
+              componentClassID="Microsoft.UnPivot"
+              contactInfo="Unpivot;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Expands an un-normalized data flow into a more normalized version. Values from multiple columns of a single record expand to multiple records in a single column. For example, expand a table that lists athletic scores with a column for each game to more records and a single score column."
+              name="Unpivot">
+              <inputs>
+                <input
+                  refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input]"
+                  hasSideEffects="true"
+                  name="Unpivot Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[v_c]"
+                      cachedDataType="r8"
+                      cachedName="v_c"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_c]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">v_c</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[q_gfcf]"
+                      cachedDataType="r8"
+                      cachedName="q_gfcf"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gfcf]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">q_gfcf</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[v_gfcf]"
+                      cachedDataType="r8"
+                      cachedName="v_gfcf"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gfcf]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">v_gfcf</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[xr2]"
+                      cachedDataType="r8"
+                      cachedName="xr2"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[xr2]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">xr2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[xr]"
+                      cachedDataType="r8"
+                      cachedName="xr"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[xr]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">xr</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[pop]"
+                      cachedDataType="r8"
+                      cachedName="pop"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[pop]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">pop</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[q_gdp]"
+                      cachedDataType="r8"
+                      cachedName="q_gdp"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_gdp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">q_gdp</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[q_m]"
+                      cachedDataType="r8"
+                      cachedName="q_m"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_m]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">q_m</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[emp]"
+                      cachedDataType="r8"
+                      cachedName="emp"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[emp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">emp</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[q_x]"
+                      cachedDataType="r8"
+                      cachedName="q_x"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_x]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">q_x</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[q_i]"
+                      cachedDataType="r8"
+                      cachedName="q_i"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_i]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">q_i</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[q_c]"
+                      cachedDataType="r8"
+                      cachedName="q_c"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_c]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">q_c</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[v_gdp]"
+                      cachedDataType="r8"
+                      cachedName="v_gdp"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_gdp]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">v_gdp</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[v_m]"
+                      cachedDataType="r8"
+                      cachedName="v_m"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_m]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">v_m</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[v_x]"
+                      cachedDataType="r8"
+                      cachedName="v_x"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_x]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">v_x</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[v_g]"
+                      cachedDataType="r8"
+                      cachedName="v_g"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_g]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">v_g</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[v_i]"
+                      cachedDataType="r8"
+                      cachedName="v_i"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[v_i]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">v_i</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[q_g]"
+                      cachedDataType="r8"
+                      cachedName="q_g"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[q_g]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">q_g</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[avh]"
+                      cachedDataType="r8"
+                      cachedName="avh"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[avh]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">avh</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[countrycode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="countrycode"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[countrycode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[countrycode]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[year]"
+                      cachedDataType="ui2"
+                      cachedName="year"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Source"
+                      lineageId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Output].Columns[Source]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Source]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output]"
+                  name="Unpivot Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Indicator]"
+                      name="Indicator">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">true</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      dataType="r8"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      name="Value">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[countrycode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[countrycode]"
+                      name="countrycode">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[year]"
+                      dataType="ui2"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[year]"
+                      name="year">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Source]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output].Columns[Source]"
+                      name="Source">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Penn National Accounts 2020.Paths[Derived Column Output]"
+              endId="Package\Penn National Accounts 2020\Unpivot.Inputs[Unpivot Input]"
+              name="Derived Column Output"
+              startId="Package\Penn National Accounts 2020\Add Source and scale.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Penn National Accounts 2020.Paths[Derived Column Output1]"
+              endId="Package\Penn National Accounts 2020\FactSource OLTP Table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Penn National Accounts 2020.Paths[Flat File Source Output]"
+              endId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Penn National Accounts 2020.Paths[Unpivot Output]"
+              endId="Package\Penn National Accounts 2020\Convert Year to YearAsDate.Inputs[Derived Column Input]"
+              name="Unpivot Output"
+              startId="Package\Penn National Accounts 2020\Unpivot.Outputs[Unpivot Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Penn_na"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -49270,6 +51029,14 @@
       DTS:ObjectName="Constraint 22"
       DTS:To="Package\Convenience IFS USD series" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 23]"
+      DTS:CreationName=""
+      DTS:DTSID="{E1FC0A70-0CC4-4997-B5D2-66A56D64FA70}"
+      DTS:From="Package\Penn National Accounts 2020"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 23"
+      DTS:To="Package\Penn Full" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
       DTS:DTSID="{2C363D02-1DA5-433D-A0B5-E8D174062B06}"
@@ -49328,11 +51095,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{23F01B4A-BDFA-464A-96C6-57D26F0FA213}"
+      DTS:DTSID="{90EB21C3-8E08-40B0-AF99-0DE85D5E01A1}"
       DTS:From="Package\Penn_na"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Penn Full" />
+      DTS:To="Package\Penn National Accounts 2020" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -49406,6 +51173,10 @@
           Size="125,42.5"
           Id="Package\Penn Full"
           TopLeft="478.803070143101,464.169731285666" />
+        <NodeLayout
+          Size="216.5,42"
+          Id="Package\Penn National Accounts 2020"
+          TopLeft="346.5,594.5" />
         <NodeLayout
           Size="123,42.5"
           Id="Package\Penn_na"
@@ -49811,6 +51582,40 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 23]"
+          TopLeft="489.5,594.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.803070143101,-87.830268714334"
+              Start="0,0"
+              End="51.803070143101,-80.330268714334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-31.5187056423854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-31.5187056423854"
+                    Point2="0,-35.5187056423854"
+                    Point3="4,-35.5187056423854" />
+                  <mssgle:LineSegment
+                    End="47.803070143101,-35.5187056423854" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.803070143101,-35.5187056423854"
+                    Point2="51.803070143101,-35.5187056423854"
+                    Point3="51.803070143101,-39.5187056423854" />
+                  <mssgle:LineSegment
+                    End="51.803070143101,-80.330268714334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="196,122.23016177192">
           <EdgeLayout.Curve>
@@ -49966,18 +51771,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="419.26465281329,485.157387706515">
+          TopLeft="357.76465281329,506.145044127365">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="59.538417329811,0"
+              EndConnector="96.98534718671,88.354955872635"
               Start="0,0"
-              End="52.038417329811,0">
+              End="96.98534718671,80.854955872635">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.038417329811,0" />
+                    End="0,40.1774779363175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.1774779363175"
+                    Point2="0,44.1774779363175"
+                    Point3="4,44.1774779363175" />
+                  <mssgle:LineSegment
+                    End="92.98534718671,44.1774779363175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.98534718671,44.1774779363175"
+                    Point2="96.98534718671,44.1774779363175"
+                    Point3="96.98534718671,48.1774779363175" />
+                  <mssgle:LineSegment
+                    End="96.98534718671,80.854955872635" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -51548,15 +53365,7 @@
     design-time-name="Package\Penn Full">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="268,42.5"
-          Id="Package\Penn Full\Penn CSV File"
-          TopLeft="87,37" />
-        <NodeLayout
-          Size="116.5,42.5"
-          Id="Package\Penn Full\Unpivot"
-          TopLeft="169.333333333333,187.428571428571" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="211.5,42"
           Id="Package\Penn Full\Convert Year to YearAsDate"
@@ -51566,43 +53375,17 @@
           Id="Package\Penn Full\FactSource OLTP Table"
           TopLeft="135.666666666667,363.666666666667" />
         <NodeLayout
+          Size="116.5,42.5"
+          Id="Package\Penn Full\Unpivot"
+          TopLeft="169.333333333333,187.428571428571" />
+        <NodeLayout
           Size="184,42"
           Id="Package\Penn Full\Add  Source and scale"
           TopLeft="89.6666666666667,113.666666666667" />
-        <EdgeLayout
-          Id="Package\Penn Full.Paths[Derived Column Output]"
-          TopLeft="181.666666666667,155.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45.9166666666663,31.761904761904"
-              Start="0,0"
-              End="45.9166666666663,24.261904761904">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.880952380952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.880952380952"
-                    Point2="0,15.880952380952"
-                    Point3="4,15.880952380952" />
-                  <mssgle:LineSegment
-                    End="41.9166666666663,15.880952380952" />
-                  <mssgle:CubicBezierSegment
-                    Point1="41.9166666666663,15.880952380952"
-                    Point2="45.9166666666663,15.880952380952"
-                    Point3="45.9166666666663,19.880952380952" />
-                  <mssgle:LineSegment
-                    End="45.9166666666663,24.261904761904" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="268,42.5"
+          Id="Package\Penn Full\Penn CSV File"
+          TopLeft="87,37" />
         <EdgeLayout
           Id="Package\Penn Full.Paths[Unpivot Output]"
           TopLeft="226,229.928571428571">
@@ -51622,7 +53405,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51656,7 +53441,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51678,7 +53465,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Penn Full.Paths[Derived Column Output]"
+          TopLeft="181.666666666667,155.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.9166666666663,31.761904761904"
+              Start="0,0"
+              End="45.9166666666663,24.261904761904">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.880952380952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.880952380952"
+                    Point2="0,15.880952380952"
+                    Point3="4,15.880952380952" />
+                  <mssgle:LineSegment
+                    End="41.9166666666663,15.880952380952" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.9166666666663,15.880952380952"
+                    Point2="45.9166666666663,15.880952380952"
+                    Point3="45.9166666666663,19.880952380952" />
+                  <mssgle:LineSegment
+                    End="45.9166666666663,24.261904761904" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -51698,10 +53523,150 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Penn_na">
+    design-time-name="Package\Penn National Accounts 2020">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="116.5,42.5"
+          Id="Package\Penn National Accounts 2020\Unpivot"
+          TopLeft="218.247252747253,138.549450549451" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Penn National Accounts 2020\FactSource OLTP Table"
+          TopLeft="331,289.5" />
+        <NodeLayout
+          Size="237.5,42"
+          Id="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv"
+          TopLeft="137,35" />
+        <NodeLayout
+          Size="181.5,42"
+          Id="Package\Penn National Accounts 2020\Add Source and scale"
+          TopLeft="460.269230769231,38.230769230769" />
+        <NodeLayout
+          Size="211.5,42"
+          Id="Package\Penn National Accounts 2020\Convert Year to YearAsDate"
+          TopLeft="474.5,135.5" />
+        <EdgeLayout
+          Id="Package\Penn National Accounts 2020.Paths[Unpivot Output]"
+          TopLeft="334.747252747253,158.149725274725">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.752747252747,0"
+              Start="0,0"
+              End="132.252747252747,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="132.252747252747,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Penn National Accounts 2020.Paths[Flat File Source Output]"
+          TopLeft="374.5,57.6153846153845">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.7692307692309,0"
+              Start="0,0"
+              End="78.2692307692309,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.2692307692309,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Penn National Accounts 2020.Paths[Derived Column Output1]"
+          TopLeft="580.25,177.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-153.25,112"
+              Start="0,0"
+              End="-153.25,104.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52"
+                    Point2="0,56"
+                    Point3="-4,56" />
+                  <mssgle:LineSegment
+                    End="-149.25,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-149.25,56"
+                    Point2="-153.25,56"
+                    Point3="-153.25,60" />
+                  <mssgle:LineSegment
+                    End="-153.25,104.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Penn National Accounts 2020.Paths[Derived Column Output]"
+          TopLeft="551.019230769231,80.230769230769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-274.521978021978,58.318681318682"
+              Start="0,0"
+              End="-274.521978021978,50.818681318682">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.159340659341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.159340659341"
+                    Point2="0,29.159340659341"
+                    Point3="-4,29.159340659341" />
+                  <mssgle:LineSegment
+                    End="-270.521978021978,29.159340659341" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-270.521978021978,29.159340659341"
+                    Point2="-274.521978021978,29.159340659341"
+                    Point3="-274.521978021978,33.159340659341" />
+                  <mssgle:LineSegment
+                    End="-274.521978021978,50.818681318682" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Penn_na">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="116.5,42.5"
           Id="Package\Penn_na\Unpivot"
@@ -51741,7 +53706,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51763,7 +53730,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51797,7 +53766,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51831,7 +53802,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52772,7 +54745,7 @@
     design-time-name="Package\WEO2020O">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
           Id="Package\WEO2020O\WEO2020O CSV"
@@ -52812,9 +54785,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52836,9 +54807,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52872,9 +54841,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-78.475,49.8,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52908,9 +54875,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
