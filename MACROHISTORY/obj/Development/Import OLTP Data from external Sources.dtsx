@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="413"
-  DTS:VersionGUID="{A831DAD3-64CC-4442-A0D0-1E26BE8F3A1C}">
+  DTS:VersionBuild="416"
+  DTS:VersionGUID="{AAFB8BD5-750C-4934-9F8C-CFC4EA114EAD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49316,12 +49316,6 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\WEO2020O\Add Source and Shorten.Inputs[Derived Column Input].Columns[Units]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Units"
-                      lineageId="Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output].Columns[Units]" />
-                    <inputColumn
                       refId="Package\WEO2020O\Add Source and Shorten.Inputs[Derived Column Input].Columns[WEO Subject Code]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -49339,29 +49333,6 @@
                   name="Derived Column Output"
                   synchronousInputId="Package\WEO2020O\Add Source and Shorten.Inputs[Derived Column Input]">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\WEO2020O\Add Source and Shorten.Outputs[Derived Column Output].Columns[CombinedDescriptor]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="255"
-                      lineageId="Package\WEO2020O\Add Source and Shorten.Outputs[Derived Column Output].Columns[CombinedDescriptor]"
-                      name="CombinedDescriptor"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[LEFT](#{Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output].Columns[Subject Descriptor]} + ";" + #{Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output].Columns[Units]},255)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">LEFT(ShortindicatorSubjectCode + ";" + Units,255)</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\WEO2020O\Add Source and Shorten.Outputs[Derived Column Output].Columns[SourceName]"
                       dataType="wstr"
@@ -50430,25 +50401,6 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\WEO2020O\Unpivot.Inputs[Unpivot Input].Columns[CombinedDescriptor]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="CombinedDescriptor"
-                      lineageId="Package\WEO2020O\Add Source and Shorten.Outputs[Derived Column Output].Columns[CombinedDescriptor]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
-                          name="DestinationColumn">#{Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[CombinedDescriptor]}</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the value written to the PivotKey column in the output row."
-                          expressionType="Notify"
-                          name="PivotKeyValue" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\WEO2020O\Unpivot.Inputs[Unpivot Input].Columns[SourceName]"
                       cachedDataType="wstr"
                       cachedLength="8"
@@ -50618,19 +50570,6 @@
                       length="255"
                       lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Units]"
                       name="Units">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
-                          name="PivotKey">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[CombinedDescriptor]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[CombinedDescriptor]"
-                      name="CombinedDescriptor">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -52687,6 +52626,28 @@
           Id="Package\World Inequality Database"
           TopLeft="945.231815932044,473.602472929281" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1044.55003118418,142.462962473893">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.894210988039"
+              Start="0,0"
+              End="0,27.394210988039">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.394210988039" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="600.956904990896,58.4149833310423">
           <EdgeLayout.Curve>
@@ -52919,6 +52880,40 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="121.877135881017,411.315471883764">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.872864118983,63.684528116236"
+              Start="0,0"
+              End="72.872864118983,56.184528116236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.842264058118" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.842264058118"
+                    Point2="0,31.842264058118"
+                    Point3="4,31.842264058118" />
+                  <mssgle:LineSegment
+                    End="68.872864118983,31.842264058118" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.872864118983,31.842264058118"
+                    Point2="72.872864118983,31.842264058118"
+                    Point3="72.872864118983,35.842264058118" />
+                  <mssgle:LineSegment
+                    End="72.872864118983,56.184528116236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 21]"
           TopLeft="244,204.453887358937">
           <EdgeLayout.Curve>
@@ -53095,6 +53090,28 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="579.5,496.810183941881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.4444444444439,0"
+              Start="0,0"
+              End="84.9444444444439,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="84.9444444444439,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="565.418437485352,123.223192943185">
           <EdgeLayout.Curve>
@@ -53174,84 +53191,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="-17.990077551869,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1044.55003118418,142.462962473893">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.894210988039"
-              Start="0,0"
-              End="0,27.394210988039">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.394210988039" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="121.877135881017,411.315471883764">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="72.872864118983,63.684528116236"
-              Start="0,0"
-              End="72.872864118983,56.184528116236">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.842264058118" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.842264058118"
-                    Point2="0,31.842264058118"
-                    Point3="4,31.842264058118" />
-                  <mssgle:LineSegment
-                    End="68.872864118983,31.842264058118" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.872864118983,31.842264058118"
-                    Point2="72.872864118983,31.842264058118"
-                    Point3="72.872864118983,35.842264058118" />
-                  <mssgle:LineSegment
-                    End="72.872864118983,56.184528116236" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="579.5,496.810183941881">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.4444444444439,0"
-              Start="0,0"
-              End="84.9444444444439,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="84.9444444444439,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -56205,7 +56144,7 @@
     design-time-name="Package\WEO2020O">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
           Id="Package\WEO2020O\WEO2020O CSV"
@@ -56213,7 +56152,7 @@
         <NodeLayout
           Size="100.5,42.5"
           Id="Package\WEO2020O\Fact"
-          TopLeft="214.2,242.4" />
+          TopLeft="233.2,232.9" />
         <NodeLayout
           Size="116.5,42.5"
           Id="Package\WEO2020O\Unpivot"
@@ -56225,29 +56164,27 @@
         <NodeLayout
           Size="210,42"
           Id="Package\WEO2020O\Convert year to YearAsDate"
-          TopLeft="300.4,110.8" />
+          TopLeft="302.9,118.3" />
         <EdgeLayout
           Id="Package\WEO2020O.Paths[Unpivot Output]"
-          TopLeft="251.300012715658,134.51590809832">
+          TopLeft="251.300012715658,138.26590809832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.0999872843421,0"
+              EndConnector="51.599987284342,0"
               Start="0,0"
-              End="41.5999872843421,0">
+              End="44.099987284342,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="41.5999872843421,0" />
+                    End="44.099987284342,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -56269,45 +56206,41 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\WEO2020O.Paths[Derived Column Output1]"
-          TopLeft="405.4,152.8">
+          TopLeft="407.9,160.3">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-140.95,89.6"
+              EndConnector="-124.45,72.6"
               Start="0,0"
-              End="-140.95,82.1">
+              End="-124.45,65.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.8" />
+                    End="0,32.3" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.8"
-                    Point2="0,44.8"
-                    Point3="-4,44.8" />
+                    Point1="0,32.3"
+                    Point2="0,36.3"
+                    Point3="-4,36.3" />
                   <mssgle:LineSegment
-                    End="-136.95,44.8" />
+                    End="-120.45,36.3" />
                   <mssgle:CubicBezierSegment
-                    Point1="-136.95,44.8"
-                    Point2="-140.95,44.8"
-                    Point3="-140.95,48.8" />
+                    Point1="-120.45,36.3"
+                    Point2="-124.45,36.3"
+                    Point3="-124.45,40.3" />
                   <mssgle:LineSegment
-                    End="-140.95,82.1" />
+                    End="-124.45,65.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -56341,9 +56274,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

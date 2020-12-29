@@ -56,7 +56,26 @@ At the date of this document, two datasets are obtained from the UN site:
     - [ ] constant 2015 USD
   - [ ] GNI in LCU
 
+## WEO
+
+The World Economic Outlook series is produced twice a year in April and October.
+
+- [ ] It includes forecasts for about 5 years ahead
+- [ ] The data only starts in 1980
+  - [ ] However in 2002 the data series started in 1970 and so is included for completeness
+  - [ ] The two series have not been spliced, though it would be an idea
+
+There are 46 indicators, though some are repeats in different units (local currency, USD, Share, Growth, etc)
+
+- [ ] We only upload a selection of indicators, essentially to exclude those that can be simply calculated from the supplied data
+- [ ] But we generally include LCU, USD, and PPP measures
+- [ ] We create a composite indicator at ETL which combines the indicator and its units; this seems redundant so in the 2020 pass we'll try to eliminate it
+- [ ] A selection of indicators is then made via the dimIndicator table
+- [ ] If an indicator isn't in the dimIndicator table, it doesn't get passed through to the ROLAP database (and hence doesn't appear on the Analysis Server), but it is accessible in the OLTP database, though only in the FactSource table, not in the FactQuery view
+
 ## General notes
+
+
 
 # Series Notes
 
