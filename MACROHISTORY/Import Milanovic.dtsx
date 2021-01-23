@@ -1,0 +1,1541 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/29/2020 2:58:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KSAPEQM"
+  DTS:CreatorName="DESKTOP-KSAPEQM\afree"
+  DTS:DTSID="{1E25C408-48BB-4918-81CB-AE002F1FF5D8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{CDCA61AE-8B99-4252-BE17-EF820C14A7DD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B814EB60-6ECC-4E80-A73C-CE7825499604}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\DATA\TESTS\Milanovic errors.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat File Source Error Output Column"
+              DTS:DTSID="{A2E570B1-B06B-489A-BCD6-FF192DD402B6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{F297EA72-AB68-4317-93DD-1CFB7488B921}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{26A38E28-6DB4-49B5-BE3E-DC53CA356A56}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3B2F0624-E8BF-4AFA-BEB6-7B7C6FE97936}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\DATA\TESTS\Milanovic errors on unpivot.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="contcod"
+              DTS:DTSID="{B9033E8C-10BC-410D-8A9C-6CEBFF8D25F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{7BB91300-3F61-498D-A715-45C53C88CFD2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="bin_year"
+              DTS:DTSID="{0FA67082-11CD-49A6-B194-A5865B49F2A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="group"
+              DTS:DTSID="{F40AF53E-8019-4B3F-820B-688EFEB761CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pop"
+              DTS:DTSID="{AE438F41-C02F-406D-9854-E858373E9FE1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RRinc"
+              DTS:DTSID="{4BE8F9EB-3EC4-410E-B3AC-080643BBAB6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{975B0582-A455-4CD7-8D7E-C7654634863E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{05FFBC08-A318-4B6D-95A4-0BE67CDF259D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Milanovic csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C347D295-BF32-4227-AA16-4CF459433DAD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Milanovic csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Milanovic csv\Add survey year to description of the indicator"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add survey year to description of the indicator"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Inputs[Derived Column Input].Columns[IndicatorCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorCode"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[IndicatorCode]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Inputs[Derived Column Input].Columns[bin_year]"
+                      cachedDataType="i2"
+                      cachedName="bin_year"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[bin_year]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Inputs[Derived Column Input].Columns[year]"
+                      cachedDataType="i2"
+                      cachedName="year"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Milanovic csv\Add survey year to description of the indicator.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output].Columns[AugmentedIndicatorCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output].Columns[AugmentedIndicatorCode]"
+                      name="AugmentedIndicatorCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[LEFT](#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[IndicatorCode]} + (DT_WSTR,4)#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[bin_year]},255)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(IndicatorCode + (DT_WSTR,4)bin_year,255)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output].Columns[YearAsDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output].Columns[YearAsDate]"
+                      name="YearAsDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[year]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)year)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Milanovic csv\Add survey year to description of the indicator.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Milanovic csv\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Milanovic csv\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Derived Column.Inputs[Derived Column Input].Columns[contcod]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="contcod"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[contcod]"
+                      truncationRowDisposition="RedirectRow"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[contcod]} + (DT_WSTR,3)#{Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[group]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">contcod + (DT_WSTR,3)group</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Derived Column.Inputs[Derived Column Input].Columns[group]"
+                      cachedDataType="i1"
+                      cachedName="group"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[group]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Milanovic csv\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Milanovic"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Milanovic"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Milanovic csv\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Milanovic csv\FactSource OLE Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FactSource OLE Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Milanovic csv\FactSource OLE Table.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].Columns[contcod]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="contcod"
+                      externalMetadataColumnId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[contcod]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].Columns[AugmentedIndicatorCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AugmentedIndicatorCode"
+                      externalMetadataColumnId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output].Columns[AugmentedIndicatorCode]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].Columns[YearAsDate]"
+                      cachedDataType="dbDate"
+                      cachedName="YearAsDate"
+                      externalMetadataColumnId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output].Columns[YearAsDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Milanovic csv\FactSource OLE Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\FactSource OLE Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\FactSource OLE Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\FactSource OLE Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Milanovic csv\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Milanovic csv\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Flat File Source Error Output Column"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Load Milanovic csv\Flat File Destination 1"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="Flat File Destination 1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Milanovic csv\Flat File Destination 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[contcod]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="contcod"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[contcod]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[contcod]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[year]"
+                      cachedDataType="i2"
+                      cachedName="year"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[year]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[year]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[bin_year]"
+                      cachedDataType="i2"
+                      cachedName="bin_year"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[bin_year]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[bin_year]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[group]"
+                      cachedDataType="i1"
+                      cachedName="group"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[group]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[group]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[pop]"
+                      cachedDataType="r8"
+                      cachedName="pop"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[pop]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[pop]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[RRinc]"
+                      cachedDataType="r8"
+                      cachedName="RRinc"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[RRinc]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[RRinc]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[contcod]"
+                      dataType="wstr"
+                      length="5"
+                      name="contcod" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[year]"
+                      dataType="i2"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[bin_year]"
+                      dataType="i2"
+                      name="bin_year" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[group]"
+                      dataType="i1"
+                      name="group" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[pop]"
+                      dataType="r8"
+                      name="pop" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[RRinc]"
+                      dataType="r8"
+                      name="RRinc" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Load Milanovic csv\Milanovic CSV"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Milanovic CSV"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Milanovic csv\Milanovic CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="{EEEC0527-78FE-4CD9-AF6F-66E42FF9BEF1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Milanovic povcal]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[contcod]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[contcod]"
+                      length="5"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[contcod]"
+                      name="contcod"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[year]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[bin_year]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[bin_year]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[bin_year]"
+                      name="bin_year"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[group]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[group]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[group]"
+                      name="group"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[pop]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[pop]"
+                      name="pop"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[RRinc]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[RRinc]"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[RRinc]"
+                      name="RRinc"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[contcod]"
+                      dataType="wstr"
+                      length="5"
+                      name="contcod" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="255"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      dataType="wstr"
+                      length="255"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      dataType="i2"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[inc_con]"
+                      dataType="wstr"
+                      length="10"
+                      name="inc_con" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[source]"
+                      dataType="wstr"
+                      length="255"
+                      name="source" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[mysample]"
+                      dataType="i1"
+                      name="mysample" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[bin_year]"
+                      dataType="i2"
+                      name="bin_year" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[group]"
+                      dataType="i1"
+                      name="group" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[pop]"
+                      dataType="r8"
+                      name="pop" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[RRinc]"
+                      dataType="r8"
+                      name="RRinc" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[RRmean]"
+                      dataType="r8"
+                      name="RRmean" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[cons_2005ppp_pc]"
+                      dataType="r8"
+                      name="cons_2005ppp_pc" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[gdp_2005ppp_pc]"
+                      dataType="r8"
+                      name="gdp_2005ppp_pc" />
+                    <externalMetadataColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].ExternalColumns[totpop]"
+                      dataType="r8"
+                      name="totpop" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Milanovic csv\Unpivot"
+              componentClassID="Microsoft.UnPivot"
+              contactInfo="Unpivot;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Expands an un-normalized data flow into a more normalized version. Values from multiple columns of a single record expand to multiple records in a single column. For example, expand a table that lists athletic scores with a column for each game to more records and a single score column."
+              name="Unpivot">
+              <inputs>
+                <input
+                  refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input]"
+                  hasSideEffects="true"
+                  name="Unpivot Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input].Columns[pop]"
+                      cachedDataType="r8"
+                      cachedName="pop"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[pop]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">pop</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input].Columns[RRinc]"
+                      cachedDataType="r8"
+                      cachedName="RRinc"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[RRinc]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue">RRinc</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input].Columns[contcod]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="contcod"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[contcod]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[contcod]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input].Columns[year]"
+                      cachedDataType="i2"
+                      cachedName="year"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[year]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input].Columns[bin_year]"
+                      cachedDataType="i2"
+                      cachedName="bin_year"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[bin_year]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[bin_year]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input].Columns[group]"
+                      cachedDataType="i1"
+                      cachedName="group"
+                      lineageId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output].Columns[group]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[group]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="Source"
+                      lineageId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Output].Columns[Source]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Source]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output]"
+                  name="Unpivot Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[IndicatorCode]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[IndicatorCode]"
+                      name="IndicatorCode">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">true</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      dataType="r8"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      name="Value">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[contcod]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[contcod]"
+                      name="contcod">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[year]"
+                      dataType="i2"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[year]"
+                      name="year">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[bin_year]"
+                      dataType="i2"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[bin_year]"
+                      name="bin_year">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[group]"
+                      dataType="i1"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[group]"
+                      name="group">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Source]"
+                      dataType="wstr"
+                      length="9"
+                      lineageId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output].Columns[Source]"
+                      name="Source">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Milanovic csv.Paths[Derived Column Error Output]"
+              endId="Package\Load Milanovic csv\Flat File Destination 1.Inputs[Flat File Destination Input]"
+              name="Derived Column Error Output"
+              startId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Error Output]" />
+            <path
+              refId="Package\Load Milanovic csv.Paths[Derived Column Output]"
+              endId="Package\Load Milanovic csv\Unpivot.Inputs[Unpivot Input]"
+              name="Derived Column Output"
+              startId="Package\Load Milanovic csv\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Milanovic csv.Paths[Derived Column Output1]"
+              endId="Package\Load Milanovic csv\FactSource OLE Table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Milanovic csv\Add survey year to description of the indicator.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Milanovic csv.Paths[Flat File Source Error Output]"
+              endId="Package\Load Milanovic csv\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Flat File Source Error Output"
+              startId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Error Output]" />
+            <path
+              refId="Package\Load Milanovic csv.Paths[Flat File Source Output]"
+              endId="Package\Load Milanovic csv\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Load Milanovic csv\Milanovic CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load Milanovic csv.Paths[Unpivot Output]"
+              endId="Package\Load Milanovic csv\Add survey year to description of the indicator.Inputs[Derived Column Input]"
+              name="Unpivot Output"
+              startId="Package\Load Milanovic csv\Unpivot.Outputs[Unpivot Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="166.5,42"
+          Id="Package\Load Milanovic csv"
+          TopLeft="147.5,93" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Milanovic csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="297,42"
+          Id="Package\Load Milanovic csv\Add survey year to description of the indicator"
+          TopLeft="199.5,139.5" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Load Milanovic csv\Unpivot"
+          TopLeft="764.5,178.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load Milanovic csv\Flat File Destination"
+          TopLeft="38,258" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Load Milanovic csv\FactSource OLE Table"
+          TopLeft="448.5,261" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Load Milanovic csv\Milanovic CSV"
+          TopLeft="53,35.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Load Milanovic csv\Derived Column"
+          TopLeft="712.5,83.5" />
+        <EdgeLayout
+          Id="Package\Load Milanovic csv.Paths[Flat File Source Error Output]"
+          TopLeft="124.5,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,180.5"
+              Start="0,0"
+              End="0,173">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-63.62638671875,80.6953125,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Milanovic csv.Paths[Derived Column Output1]"
+          TopLeft="348,181.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="191.5,79.5"
+              Start="0,0"
+              End="191.5,72">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.75"
+                    Point2="0,39.75"
+                    Point3="4,39.75" />
+                  <mssgle:LineSegment
+                    End="187.5,39.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="187.5,39.75"
+                    Point2="191.5,39.75"
+                    Point3="191.5,43.75" />
+                  <mssgle:LineSegment
+                    End="191.5,72" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Milanovic csv.Paths[Derived Column Output]"
+          TopLeft="789.5,125.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.5,53"
+              Start="0,0"
+              End="32.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="28.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.5,26.5"
+                    Point2="32.5,26.5"
+                    Point3="32.5,30.5" />
+                  <mssgle:LineSegment
+                    End="32.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="8.25,31.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Milanovic csv.Paths[Unpivot Output]"
+          TopLeft="764.5,199.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-268,-39"
+              Start="0,0"
+              End="-260.5,-39">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-130,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-130,0"
+                    Point2="-134,0"
+                    Point3="-134,-4" />
+                  <mssgle:LineSegment
+                    End="-134,-35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134,-35"
+                    Point2="-134,-39"
+                    Point3="-138,-39" />
+                  <mssgle:LineSegment
+                    End="-260.5,-39" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Milanovic csv.Paths[Flat File Source Output]"
+          TopLeft="197,56.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="515.5,48"
+              Start="0,0"
+              End="508,48">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="253.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="253.75,0"
+                    Point2="257.75,0"
+                    Point3="257.75,4" />
+                  <mssgle:LineSegment
+                    End="257.75,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="257.75,44"
+                    Point2="257.75,48"
+                    Point3="261.75,48" />
+                  <mssgle:LineSegment
+                    End="508,48" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="249.75,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Load Milanovic csv\Flat File Destination 1"
+          TopLeft="998.5,129" />
+        <EdgeLayout
+          Id="Package\Load Milanovic csv.Paths[Derived Column Error Output]"
+          TopLeft="866.5,104.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132,45.5"
+              Start="0,0"
+              End="124.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62,0"
+                    Point2="66,0"
+                    Point3="66,4" />
+                  <mssgle:LineSegment
+                    End="66,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66,41.5"
+                    Point2="66,45.5"
+                    Point3="70,45.5" />
+                  <mssgle:LineSegment
+                    End="124.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="1.03861328125001,-17.609375,129.9227734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Milanovic csv\FactSource OLE Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
