@@ -1,12 +1,8 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="OLTP"
-  DTS:DTSID="{442F2917-9C92-411C-B3F4-4301EB05D697}"
+  DTS:ObjectName="DESKTOP-KSAPEQM.macrohistory_oltp_23.01.2021"
+  DTS:DTSID="{CE969ADB-7DC2-4925-B8D6-5AF3C2321948}"
   DTS:CreationName="OLEDB">
-  <DTS:PropertyExpression
-    DTS:Name="InitialCatalog">@[$Project::DatabaseName]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="ServerName">@[$Project::OLTPServer]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectionString="Data Source=DESKTOP-KSAPEQM;Initial Catalog=macrohistory_oltp_23.01.2021;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />

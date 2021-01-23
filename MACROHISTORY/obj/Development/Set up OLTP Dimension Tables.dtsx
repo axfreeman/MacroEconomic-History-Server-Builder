@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{6136D8F5-6FF0-4516-B4EF-B8B7BBF22851}">
+  DTS:VersionBuild="95"
+  DTS:VersionGUID="{250CF529-3D2F-4667-9A0D-2A140E2BBE73}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -249,6 +249,16 @@
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[penn_availability]"
                       name="penn_availability"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[WEO Geography]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].ExternalColumns[WEO Geography]"
+                      length="255"
+                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].Columns[WEO Geography]"
+                      name="WEO Geography"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -317,6 +327,11 @@
                       dataType="wstr"
                       length="255"
                       name="penn_availability" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Output].ExternalColumns[WEO Geography]"
+                      dataType="wstr"
+                      length="255"
+                      name="WEO Geography" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -402,6 +417,12 @@
                       length="255"
                       lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Error Output].Columns[IMF sub-category]"
                       name="IMF sub-category" />
+                    <outputColumn
+                      refId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Error Output].Columns[WEO Geography]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Error Output].Columns[WEO Geography]"
+                      name="WEO Geography" />
                     <outputColumn
                       refId="Package\Populate DimGeo OLTP Table\DimGeo Excel Sheet.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2707,7 +2728,7 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="331,41.5"
+          Size="271,42"
           Id="Package\Drop and Create OLTP Dimension Tables"
           TopLeft="34.5,24.3750000080715" />
         <NodeLayout
@@ -2732,18 +2753,30 @@
           TopLeft="391.5,93.9583333683097" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="200.375,65.8750000080715">
+          TopLeft="170,66.3750000080715">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.1249999919285"
+              EndConnector="30.75,30.6249999919285"
               Start="0,0"
-              End="0,23.6249999919285">
+              End="30.75,23.1249999919285">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.6249999919285" />
+                    End="0,11.3124999959643" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.3124999959643"
+                    Point2="0,15.3124999959643"
+                    Point3="4,15.3124999959643" />
+                  <mssgle:LineSegment
+                    End="26.75,15.3124999959643" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.75,15.3124999959643"
+                    Point2="30.75,15.3124999959643"
+                    Point3="30.75,19.3124999959643" />
+                  <mssgle:LineSegment
+                    End="30.75,23.1249999919285" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2987,7 +3020,7 @@
     design-time-name="Package\Populate DimSource OLTP  Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="212,41.5"
           Id="Package\Populate DimSource OLTP  Table\DimSource Excel worksheet"
@@ -3015,9 +3048,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3053,7 +3084,7 @@
     design-time-name="Package\Populate GeoStandardNames OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="229,41.5"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames OLTP Table"
@@ -3081,9 +3112,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3119,7 +3148,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="221,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table\IndicatorStandard OLTP Table"
@@ -3151,9 +3180,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3175,9 +3202,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
