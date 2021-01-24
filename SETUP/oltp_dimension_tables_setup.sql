@@ -56,14 +56,16 @@ CREATE TABLE DimGeo (
  ReportingUnit nvarchar (255) NULL,	
  Size nvarchar (255) NULL,
  GeoEconomic_Region nvarchar (255) NULL,
- Geopolitical_Region nvarchar (255) NULL,
- wdi_availability nvarchar (255) NULL,
  Major_Blocs nvarchar (255) NULL,
+ NICS_geography nvarchar (255) NULL,
+ Geopolitical_region nvarchar (255) NULL,
+ Maddison_availability nvarchar (255) NULL,
+ wdi_availability nvarchar (255) NULL,
  penn_availability nvarchar (255) NULL,
  MACROHISTORY_Geography nvarchar (255) NULL,
  WID_Geography nvarchar (255) NULL,
  IMF_main_category nvarchar (255) NULL,
- IMF_sub_category nvarchar (255) NULL,	
+ WEO_Geography nvarchar (255) NULL,	
  CONSTRAINT PK_DimGeO PRIMARY KEY CLUSTERED 
 (
 	 DimGeoID ASC

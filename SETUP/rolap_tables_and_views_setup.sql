@@ -28,120 +28,6 @@ CREATE TABLE Fact (
  ) 
 GO
 
--- A normalised fact file for GDP definitions.
--- Introduced 14 October 2020 to start experimentally splitting the fact files into more meaningful chunks
--- What the Cube sees is a selection of Fact records defined by their FactID
--- in which the details of each dimension (Geography, indicator, series breaks, date) are
--- provided by dimension files related to the relevant Foreign Key in the fact file.
-
-DROP TABLE IF EXISTS GDP_definitions 
-GO
-
-CREATE TABLE GDP_definitions (
-	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
-	 DimSourceID int NULL,
-	 DimGeoID int NULL,
-	 DimIndicatorID int NULL,
-	 DateField Date Null,
-	 Value float NULL
-	CONSTRAINT PK_GDP_ID PRIMARY KEY CLUSTERED 
-(
-	 Fact_GDP_ID ASC
-)
-	) 
-GO
-
--- A normalised fact file for Balance of Payments.
--- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
--- What the Cube sees is a selection of Fact records defined by their FactID
--- in which the details of each dimension (Geography, indicator, series breaks, date) are
--- provided by dimension files related to the relevant Foreign Key in the fact file.
-
-DROP TABLE IF EXISTS balance_of_payments
-GO
-
-CREATE TABLE balance_of_payments (
-	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
-	 DimSourceID int NULL,
-	 DimGeoID int NULL,
-	 DimIndicatorID int NULL,
-	 DateField Date Null,
-	 Value float NULL
-	CONSTRAINT PK_BoP_ID PRIMARY KEY CLUSTERED 
-(
-	 Fact_GDP_ID ASC
-)
-	) 
-GO
-
--- A normalised fact file for GDP expenditure components.
--- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
--- What the Cube sees is a selection of Fact records defined by their FactID
--- in which the details of each dimension (Geography, indicator, series breaks, date) are
--- provided by dimension files related to the relevant Foreign Key in the fact file.
-
-DROP TABLE IF EXISTS GDP_components_of_expenditure
-GO
-
-CREATE TABLE GDP_components_of_expenditure (
-	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
-	 DimSourceID int NULL,
-	 DimGeoID int NULL,
-	 DimIndicatorID int NULL,
-	 DateField Date Null,
-	 Value float NULL
-	CONSTRAINT PK_Components_ID PRIMARY KEY CLUSTERED 
-(
-	 Fact_GDP_ID ASC
-)
-	) 
-GO
-
--- A normalised fact file for GDP sources (factor incomes).
--- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
--- What the Cube sees is a selection of Fact records defined by their FactID
--- in which the details of each dimension (Geography, indicator, series breaks, date) are
--- provided by dimension files related to the relevant Foreign Key in the fact file.
-
-DROP TABLE IF EXISTS GDP_sources
-GO
-
-CREATE TABLE GDP_sources (
-	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
-	 DimSourceID int NULL,
-	 DimGeoID int NULL,
-	 DimIndicatorID int NULL,
-	 DateField Date Null,
-	 Value float NULL
-	CONSTRAINT PK_sources_ID PRIMARY KEY CLUSTERED 
-(
-	 Fact_GDP_ID ASC
-)
-	) 
-GO
-
--- A normalised fact file for Capital.
--- Introduced 16 October 2020 to start experimentally splitting the fact files into more meaningful chunks
--- What the Cube sees is a selection of Fact records defined by their FactID
--- in which the details of each dimension (Geography, indicator, series breaks, date) are
--- provided by dimension files related to the relevant Foreign Key in the fact file.
-
-DROP TABLE IF EXISTS Capital_Stock
-GO
-
-CREATE TABLE Capital_Stock (
-	 Fact_GDP_ID bigint NOT NULL IDENTITY (1,1),
-	 DimSourceID int NULL,
-	 DimGeoID int NULL,
-	 DimIndicatorID int NULL,
-	 DateField Date Null,
-	 Value float NULL
-	CONSTRAINT PK_capital_ID PRIMARY KEY CLUSTERED 
-(
-	 Fact_GDP_ID ASC
-)
-	) 
-GO
 
 -- Indicator Standard Names is a mirror of the OLTP table of the same name
 -- In the initialy OLTP stage, when data is being loaded from the raw sources, 
@@ -210,27 +96,29 @@ GO
 DROP TABLE IF EXISTS DimGeo 
 GO
 
+
 CREATE TABLE DimGeo (
  DimGeoID int NOT NULL,
- GeoStandardName  nvarchar(255) NULL,
- GeoPolitical_Type  nvarchar(255)NULL,	
- ReportingUnit nvarchar(255) NULL,	
- Size nvarchar(255) NULL,
- GeoEconomic_Region nvarchar(255) NULL,
- Geopolitical_Region nvarchar(255) NULL,
- wdi_availability nvarchar(255) NULL,
- Major_Blocs nvarchar(255) NULL,
- penn_availability nvarchar(255) NULL,
- MACROHISTORY_Geography nvarchar(255) NULL,
- WID_Geography nvarchar(255) NULL,
- IMF_main_category nvarchar(255) NULL,
- IMF_sub_category nvarchar(255) NULL,	
+ GeoStandardName nvarchar (255) NULL,
+ GeoPolitical_Type nvarchar (255) NULL,	
+ ReportingUnit nvarchar (255) NULL,	
+ Size nvarchar (255) NULL,
+ GeoEconomic_Region nvarchar (255) NULL,
+ Major_Blocs nvarchar (255) NULL,
+ NICS_geography nvarchar (255) NULL,
+ Geopolitical_region nvarchar (255) NULL,
+ Maddison_availability nvarchar (255) NULL,
+ wdi_availability nvarchar (255) NULL,
+ penn_availability nvarchar (255) NULL,
+ MACROHISTORY_Geography nvarchar (255) NULL,
+ WID_Geography nvarchar (255) NULL,
+ IMF_main_category nvarchar (255) NULL,
+ WEO_Geography nvarchar (255) NULL,	
  CONSTRAINT PK_DimGeO PRIMARY KEY CLUSTERED 
 (
 	 DimGeoID ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
 ) 
-
 
 -- The Source Dimension lists the various sources 
 

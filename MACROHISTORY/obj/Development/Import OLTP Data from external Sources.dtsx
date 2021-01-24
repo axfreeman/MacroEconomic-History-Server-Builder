@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="416"
-  DTS:VersionGUID="{AAFB8BD5-750C-4934-9F8C-CFC4EA114EAD}">
+  DTS:VersionBuild="426"
+  DTS:VersionGUID="{1F4BFF21-0B0C-45EE-8D43-25A5B82EF109}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26840,6 +26840,29 @@
                           name="FriendlyExpression">q_gfcf * 1000000</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Penn National Accounts 2020\Add Source and scale.Inputs[Derived Column Input].Columns[pop]"
+                      cachedDataType="r8"
+                      cachedName="pop"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[pop]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Penn National Accounts 2020\PENN National Accounts 2020 csv.Outputs[Flat File Source Output].Columns[pop]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">pop * 1000000</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -49385,6 +49408,80 @@
               </outputs>
             </component>
             <component
+              refId="Package\WEO2020O\Billions"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Billions"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\WEO2020O\Billions.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\WEO2020O\Billions.Inputs[Derived Column Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Value]} * 1000000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Value * 1000000000</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\WEO2020O\Billions.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\WEO2020O\Billions.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\WEO2020O\Billions.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\WEO2020O\Billions.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\WEO2020O\Billions.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Billions.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\WEO2020O\Billions.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Billions.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\WEO2020O\Convert year to YearAsDate"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -49621,6 +49718,715 @@
                       refId="Package\WEO2020O\Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\WEO2020O\Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\WEO2020O\Fact (Billions)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fact (Billions)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\WEO2020O\Fact (Billions).Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].Columns[SourceName]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="SourceName"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[SourceName]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].Columns[ShortindicatorSubjectCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ShortindicatorSubjectCode"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[ShortindicatorSubjectCode]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].Columns[YearAsDate]"
+                      cachedDataType="dbDate"
+                      cachedName="YearAsDate"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\WEO2020O\Convert year to YearAsDate.Outputs[Derived Column Output].Columns[YearAsDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\WEO2020O\Fact (Billions).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\WEO2020O\Fact (Billions).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Fact (Billions).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\WEO2020O\Fact (Billions).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Fact (Billions).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\WEO2020O\Fact (Millions)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fact (Millions)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\WEO2020O\Fact (Millions).Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].Columns[SourceName]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="SourceName"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[SourceName]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].Columns[ShortindicatorSubjectCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ShortindicatorSubjectCode"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[ShortindicatorSubjectCode]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].Columns[YearAsDate]"
+                      cachedDataType="dbDate"
+                      cachedName="YearAsDate"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\WEO2020O\Convert year to YearAsDate.Outputs[Derived Column Output].Columns[YearAsDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\WEO2020O\Fact (Millions).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\WEO2020O\Fact (Millions).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Fact (Millions).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\WEO2020O\Fact (Millions).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Fact (Millions).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\WEO2020O\Fact (Null Scale)"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fact (Null Scale)"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\WEO2020O\Fact (Null Scale).Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].Columns[SourceName]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="SourceName"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[SourceName]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].Columns[ShortindicatorSubjectCode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ShortindicatorSubjectCode"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[ShortindicatorSubjectCode]" />
+                    <inputColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].Columns[YearAsDate]"
+                      cachedDataType="dbDate"
+                      cachedName="YearAsDate"
+                      externalMetadataColumnId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\WEO2020O\Convert year to YearAsDate.Outputs[Derived Column Output].Columns[YearAsDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\WEO2020O\Fact (Null Scale).Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Fact (Null Scale).Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\WEO2020O\Fact (Null Scale).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Fact (Null Scale).Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\WEO2020O\Millions"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Millions"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\WEO2020O\Millions.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\WEO2020O\Millions.Inputs[Derived Column Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Value]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Value]} * 1000000</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Value * 1000000</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\WEO2020O\Millions.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\WEO2020O\Millions.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\WEO2020O\Millions.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\WEO2020O\Millions.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\WEO2020O\Millions.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Millions.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\WEO2020O\Millions.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Millions.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\WEO2020O\Scale where needed"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Scale where needed"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input].Columns[Scale (1)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Scale (1)"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Scale (1)]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\WEO2020O\Scale where needed.Outputs[Null]"
+                  description="Output 3 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Null"
+                  synchronousInputId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Scale (1)]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL([Scale (1)])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\WEO2020O\Scale where needed.Outputs[Billions]"
+                  description="Output 4 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Billions"
+                  synchronousInputId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Scale (1)]} == "Billions"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Scale (1)] == "Billions"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\WEO2020O\Scale where needed.Outputs[Millions]"
+                  description="Output 5 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Millions"
+                  synchronousInputId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Scale (1)]} == "Millions"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">[Scale (1)] == "Millions"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\WEO2020O\Scale where needed.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\WEO2020O\Scale where needed.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\WEO2020O\Scale where needed.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Scale where needed.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\WEO2020O\Scale where needed.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\WEO2020O\Scale where needed.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -50491,6 +51297,25 @@
                           name="PivotKeyValue">2021</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\WEO2020O\Unpivot.Inputs[Unpivot Input].Columns[Scale (1)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Scale (1)"
+                      lineageId="Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output].Columns[Scale (1)]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
+                          name="DestinationColumn">#{Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Scale (1)]}</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the value written to the PivotKey column in the output row."
+                          expressionType="Notify"
+                          name="PivotKeyValue" />
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -50583,6 +51408,19 @@
                       length="8"
                       lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[SourceName]"
                       name="SourceName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
+                          name="PivotKey">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Scale (1)]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\WEO2020O\Unpivot.Outputs[Unpivot Output].Columns[Scale (1)]"
+                      name="Scale (1)">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -51550,6 +52388,27 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output].Columns[Scale (1)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output].ExternalColumns[Scale]"
+                      length="255"
+                      lineageId="Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output].Columns[Scale (1)]"
+                      name="Scale (1)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -51822,20 +52681,50 @@
           </components>
           <paths>
             <path
+              refId="Package\WEO2020O.Paths[Billions]"
+              endId="Package\WEO2020O\Billions.Inputs[Derived Column Input]"
+              name="Billions"
+              startId="Package\WEO2020O\Scale where needed.Outputs[Billions]" />
+            <path
+              refId="Package\WEO2020O.Paths[Conditional Split Default Output]"
+              endId="Package\WEO2020O\Fact.Inputs[OLE DB Destination Input]"
+              name="Conditional Split Default Output"
+              startId="Package\WEO2020O\Scale where needed.Outputs[Conditional Split Default Output]" />
+            <path
               refId="Package\WEO2020O.Paths[Derived Column Output]"
               endId="Package\WEO2020O\Unpivot.Inputs[Unpivot Input]"
               name="Derived Column Output"
               startId="Package\WEO2020O\Add Source and Shorten.Outputs[Derived Column Output]" />
             <path
               refId="Package\WEO2020O.Paths[Derived Column Output1]"
-              endId="Package\WEO2020O\Fact.Inputs[OLE DB Destination Input]"
+              endId="Package\WEO2020O\Scale where needed.Inputs[Conditional Split Input]"
               name="Derived Column Output"
               startId="Package\WEO2020O\Convert year to YearAsDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\WEO2020O.Paths[Derived Column Output2]"
+              endId="Package\WEO2020O\Fact (Billions).Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\WEO2020O\Billions.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\WEO2020O.Paths[Derived Column Output3]"
+              endId="Package\WEO2020O\Fact (Millions).Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\WEO2020O\Millions.Outputs[Derived Column Output]" />
             <path
               refId="Package\WEO2020O.Paths[Flat File Source Output]"
               endId="Package\WEO2020O\Add Source and Shorten.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\WEO2020O\WEO2020O CSV.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\WEO2020O.Paths[Millions]"
+              endId="Package\WEO2020O\Millions.Inputs[Derived Column Input]"
+              name="Millions"
+              startId="Package\WEO2020O\Scale where needed.Outputs[Millions]" />
+            <path
+              refId="Package\WEO2020O.Paths[Null]"
+              endId="Package\WEO2020O\Fact (Null Scale).Inputs[OLE DB Destination Input]"
+              name="Null"
+              startId="Package\WEO2020O\Scale where needed.Outputs[Null]" />
             <path
               refId="Package\WEO2020O.Paths[Unpivot Output]"
               endId="Package\WEO2020O\Convert year to YearAsDate.Inputs[Derived Column Input]"
@@ -52608,7 +53497,7 @@
         <NodeLayout
           Size="187,42.5"
           Id="Package\US Nationally sourced"
-          TopLeft="28.377135881017,368.815471883764" />
+          TopLeft="18.377135881017,361.815471883764" />
         <NodeLayout
           Size="123,42"
           Id="Package\WDI2020"
@@ -52620,7 +53509,7 @@
         <NodeLayout
           Size="133,42"
           Id="Package\WEO2020O"
-          TopLeft="432.418437485352,104.446385886369" />
+          TopLeft="436.918437485352,98.946385886369" />
         <NodeLayout
           Size="207,42.5"
           Id="Package\World Inequality Database"
@@ -52881,30 +53770,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="121.877135881017,411.315471883764">
+          TopLeft="111.877135881017,404.315471883764">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="72.872864118983,63.684528116236"
+              EndConnector="82.872864118983,70.684528116236"
               Start="0,0"
-              End="72.872864118983,56.184528116236">
+              End="82.872864118983,63.184528116236">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.842264058118" />
+                    End="0,31.342264058118" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.842264058118"
-                    Point2="0,31.842264058118"
-                    Point3="4,31.842264058118" />
+                    Point1="0,31.342264058118"
+                    Point2="0,35.342264058118"
+                    Point3="4,35.342264058118" />
                   <mssgle:LineSegment
-                    End="68.872864118983,31.842264058118" />
+                    End="78.872864118983,35.342264058118" />
                   <mssgle:CubicBezierSegment
-                    Point1="68.872864118983,31.842264058118"
-                    Point2="72.872864118983,31.842264058118"
-                    Point3="72.872864118983,35.842264058118" />
+                    Point1="78.872864118983,35.342264058118"
+                    Point2="82.872864118983,35.342264058118"
+                    Point3="82.872864118983,39.342264058118" />
                   <mssgle:LineSegment
-                    End="72.872864118983,56.184528116236" />
+                    End="82.872864118983,63.184528116236" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -53113,18 +54002,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="565.418437485352,123.223192943185">
+          TopLeft="569.918437485352,120.473192943185">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.081562514648,0"
+              EndConnector="36.581562514648,0"
               Start="0,0"
-              End="33.581562514648,0">
+              End="29.081562514648,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="33.581562514648,0" />
+                    End="29.081562514648,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -53157,18 +54046,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="385.266053679,124.203354715104">
+          TopLeft="385.266053679,121.453354715104">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="47.152383806352,0"
+              EndConnector="51.652383806352,0"
               Start="0,0"
-              End="39.652383806352,0">
+              End="44.152383806352,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="39.652383806352,0" />
+                    End="44.152383806352,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -53179,18 +54068,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="240.867213432886,387.625865003293">
+          TopLeft="240.867213432886,384.125865003293">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-25.490077551869,0"
+              EndConnector="-35.490077551869,0"
               Start="0,0"
-              End="-17.990077551869,0">
+              End="-27.990077551869,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-17.990077551869,0" />
+                    End="-27.990077551869,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -53512,7 +54401,7 @@
     design-time-name="Package\Eurostat Capital Stock">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190.5,42.5"
           Id="Package\Eurostat Capital Stock\FactSource"
@@ -53544,7 +54433,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53566,7 +54457,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -54956,61 +55849,13 @@
           Id="Package\Penn National Accounts 2020\PENN National Accounts 2020 csv"
           TopLeft="137,35" />
         <NodeLayout
-          Size="181.5,42"
-          Id="Package\Penn National Accounts 2020\Add Source and scale"
-          TopLeft="460.269230769231,38.230769230769" />
-        <NodeLayout
           Size="211.5,42"
           Id="Package\Penn National Accounts 2020\Convert Year to YearAsDate"
           TopLeft="474.5,135.5" />
-        <EdgeLayout
-          Id="Package\Penn National Accounts 2020.Paths[Unpivot Output]"
-          TopLeft="334.747252747253,158.149725274725">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="139.752747252747,0"
-              Start="0,0"
-              End="132.252747252747,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="132.252747252747,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Penn National Accounts 2020.Paths[Flat File Source Output]"
-          TopLeft="374.5,57.6153846153845">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="85.7692307692309,0"
-              Start="0,0"
-              End="78.2692307692309,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="78.2692307692309,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="181.5,42"
+          Id="Package\Penn National Accounts 2020\Add Source and scale"
+          TopLeft="460.269230769231,38.230769230769" />
         <EdgeLayout
           Id="Package\Penn National Accounts 2020.Paths[Derived Column Output1]"
           TopLeft="580.25,177.5">
@@ -55073,6 +55918,54 @@
                     Point3="-274.521978021978,33.159340659341" />
                   <mssgle:LineSegment
                     End="-274.521978021978,50.818681318682" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Penn National Accounts 2020.Paths[Unpivot Output]"
+          TopLeft="334.747252747253,158.149725274725">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="139.752747252747,0"
+              Start="0,0"
+              End="132.252747252747,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="132.252747252747,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Penn National Accounts 2020.Paths[Flat File Source Output]"
+          TopLeft="374.5,57.6153846153845">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.7692307692309,0"
+              Start="0,0"
+              End="78.2692307692309,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.2692307692309,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -55343,7 +56236,7 @@
     design-time-name="Package\UN Population">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="211.5,42"
           Id="Package\UN Population\Convert Year to YearAsDate"
@@ -55383,7 +56276,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55405,7 +56300,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55439,7 +56336,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55473,7 +56372,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -55496,41 +56397,23 @@
     design-time-name="Package\UN2020">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="138.5,42"
-          Id="Package\UN2020\UN2020 CSV"
-          TopLeft="118,62" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="115,42"
           Id="Package\UN2020\Unpivot"
           TopLeft="321.5,63.5" />
-        <EdgeLayout
-          Id="Package\UN2020.Paths[Flat File Source Output]"
-          TopLeft="256.5,83.75">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="65,0"
-              Start="0,0"
-              End="57.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="57.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="201,42"
           Id="Package\UN2020\Add Source, Convert Date"
           TopLeft="552,70" />
+        <NodeLayout
+          Size="118,42"
+          Id="Package\UN2020\Fact File"
+          TopLeft="576.5,244" />
+        <NodeLayout
+          Size="138.5,42"
+          Id="Package\UN2020\UN2020 CSV"
+          TopLeft="118,62" />
         <EdgeLayout
           Id="Package\UN2020.Paths[Unpivot Output]"
           TopLeft="436.5,87.75">
@@ -55550,13 +56433,35 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="118,42"
-          Id="Package\UN2020\Fact File"
-          TopLeft="576.5,244" />
+        <EdgeLayout
+          Id="Package\UN2020.Paths[Flat File Source Output]"
+          TopLeft="256.5,83.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="65,0"
+              Start="0,0"
+              End="57.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="57.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\UN2020.Paths[Derived Column Output]"
           TopLeft="652.5,112">
@@ -55588,7 +56493,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -55611,7 +56518,7 @@
     design-time-name="Package\UN2020-OFFICIAL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="116.5,42.5"
           Id="Package\UN2020-OFFICIAL\Unpivot"
@@ -55647,7 +56554,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55669,7 +56578,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55703,7 +56614,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -55726,7 +56639,7 @@
     design-time-name="Package\US Nationally sourced">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="211.5,42"
           Id="Package\US Nationally sourced\Convert Year to YearAsDate"
@@ -55766,7 +56679,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55788,7 +56703,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55822,7 +56739,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55856,7 +56775,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -56144,41 +57065,45 @@
     design-time-name="Package\WEO2020O">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="100.5,42.5"
+          Id="Package\WEO2020O\Fact"
+          TopLeft="786.2,338.9" />
         <NodeLayout
           Size="155,42"
           Id="Package\WEO2020O\WEO2020O CSV"
           TopLeft="111.8,32.7" />
         <NodeLayout
-          Size="100.5,42.5"
-          Id="Package\WEO2020O\Fact"
-          TopLeft="233.2,232.9" />
+          Size="173.5,42"
+          Id="Package\WEO2020O\Scale where needed"
+          TopLeft="632.5,117.5" />
         <NodeLayout
           Size="116.5,42.5"
           Id="Package\WEO2020O\Unpivot"
-          TopLeft="134.800012715658,115.981816196639" />
-        <NodeLayout
-          Size="193.5,42"
-          Id="Package\WEO2020O\Add Source and Shorten"
-          TopLeft="313.066670816916,40.4636376764163" />
+          TopLeft="96.800012715658,118.981816196639" />
         <NodeLayout
           Size="210,42"
           Id="Package\WEO2020O\Convert year to YearAsDate"
           TopLeft="302.9,118.3" />
+        <NodeLayout
+          Size="193.5,42"
+          Id="Package\WEO2020O\Add Source and Shorten"
+          TopLeft="313.066670816916,40.4636376764163" />
         <EdgeLayout
           Id="Package\WEO2020O.Paths[Unpivot Output]"
-          TopLeft="251.300012715658,138.26590809832">
+          TopLeft="213.300012715658,139.76590809832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51.599987284342,0"
+              EndConnector="89.599987284342,0"
               Start="0,0"
-              End="44.099987284342,0">
+              End="82.099987284342,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="44.099987284342,0" />
+                    End="82.099987284342,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -56211,30 +57136,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\WEO2020O.Paths[Derived Column Output1]"
-          TopLeft="407.9,160.3">
+          TopLeft="512.9,138.9">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-124.45,72.6"
+              EndConnector="119.6,0"
               Start="0,0"
-              End="-124.45,65.1">
+              End="112.1,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.3" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.3"
-                    Point2="0,36.3"
-                    Point3="-4,36.3" />
-                  <mssgle:LineSegment
-                    End="-120.45,36.3" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-120.45,36.3"
-                    Point2="-124.45,36.3"
-                    Point3="-124.45,40.3" />
-                  <mssgle:LineSegment
-                    End="-124.45,65.1" />
+                    End="112.1,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -56249,32 +57162,240 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-216.766658101258,33.5181785202227"
+              EndConnector="-254.766658101258,36.5181785202227"
               Start="0,0"
-              End="-216.766658101258,26.0181785202227">
+              End="-254.766658101258,29.0181785202227">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.7590892601114" />
+                    End="0,14.2590892601113" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.7590892601114"
-                    Point2="0,16.7590892601114"
-                    Point3="-4,16.7590892601114" />
+                    Point1="0,14.2590892601113"
+                    Point2="0,18.2590892601113"
+                    Point3="-4,18.2590892601113" />
                   <mssgle:LineSegment
-                    End="-212.766658101258,16.7590892601114" />
+                    End="-250.766658101258,18.2590892601113" />
                   <mssgle:CubicBezierSegment
-                    Point1="-212.766658101258,16.7590892601114"
-                    Point2="-216.766658101258,16.7590892601114"
-                    Point3="-216.766658101258,20.7590892601114" />
+                    Point1="-250.766658101258,18.2590892601113"
+                    Point2="-254.766658101258,18.2590892601113"
+                    Point3="-254.766658101258,22.2590892601113" />
                   <mssgle:LineSegment
-                    End="-216.766658101258,26.0181785202227" />
+                    End="-254.766658101258,29.0181785202227" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="111.5,42"
+          Id="Package\WEO2020O\Billions"
+          TopLeft="361,265" />
+        <NodeLayout
+          Size="113.5,42"
+          Id="Package\WEO2020O\Millions"
+          TopLeft="926.5,273" />
+        <EdgeLayout
+          Id="Package\WEO2020O.Paths[Conditional Split Default Output]"
+          TopLeft="719.25,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="117.2,179.4"
+              Start="0,0"
+              End="117.2,171.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,85.7"
+                    Point2="0,89.7"
+                    Point3="4,89.7" />
+                  <mssgle:LineSegment
+                    End="113.2,89.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113.2,89.7"
+                    Point2="117.2,89.7"
+                    Point3="117.2,93.7" />
+                  <mssgle:LineSegment
+                    End="117.2,171.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.01390625,94.7,141.2278125,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142.5,42"
+          Id="Package\WEO2020O\Fact (Billions)"
+          TopLeft="341,394" />
+        <EdgeLayout
+          Id="Package\WEO2020O.Paths[Derived Column Output2]"
+          TopLeft="414.5,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87"
+              Start="0,0"
+              End="0,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144.5,42"
+          Id="Package\WEO2020O\Fact (Millions)"
+          TopLeft="916,403.5" />
+        <EdgeLayout
+          Id="Package\WEO2020O.Paths[Derived Column Output3]"
+          TopLeft="985.75,315">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88.5"
+              Start="0,0"
+              End="0,81">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,81" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\WEO2020O.Paths[Billions]"
+          TopLeft="691.666666666667,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-274.916666666667,105.5"
+              Start="0,0"
+              End="-274.916666666667,98">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7784123358081" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.7784123358081"
+                    Point2="0,42.7784123358081"
+                    Point3="-4,42.7784123358081" />
+                  <mssgle:LineSegment
+                    End="-270.916666666667,42.7784123358081" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-270.916666666667,42.7784123358081"
+                    Point2="-274.916666666667,42.7784123358081"
+                    Point3="-274.916666666667,46.7784123358081" />
+                  <mssgle:LineSegment
+                    End="-274.916666666667,98" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-153.255911458333,47.7784123358081,31.59515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\WEO2020O.Paths[Millions]"
+          TopLeft="760.625,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="222.625,113.5"
+              Start="0,0"
+              End="222.625,106">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9787133396405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.9787133396405"
+                    Point2="0,38.9787133396405"
+                    Point3="4,38.9787133396405" />
+                  <mssgle:LineSegment
+                    End="218.625,38.9787133396405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="218.625,38.9787133396405"
+                    Point2="222.625,38.9787133396405"
+                    Point3="222.625,42.9787133396405" />
+                  <mssgle:LineSegment
+                    End="222.625,106" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="94.604921875,43.9787133396405,33.41515625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\WEO2020O\Fact (Null Scale)"
+          TopLeft="513.5,341" />
+        <EdgeLayout
+          Id="Package\WEO2020O.Paths[Null]"
+          TopLeft="702.7,159.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.2,181.5"
+              Start="0,0"
+              End="-111.2,174">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.1806307741319" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,77.1806307741319"
+                    Point2="0,81.1806307741319"
+                    Point3="-4,81.1806307741319" />
+                  <mssgle:LineSegment
+                    End="-107.2,81.1806307741319" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107.2,81.1806307741319"
+                    Point2="-111.2,81.1806307741319"
+                    Point3="-111.2,85.1806307741319" />
+                  <mssgle:LineSegment
+                    End="-111.2,174" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-64.30212890625,86.1806307741319,17.4042578125,9.7490234375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -56375,6 +57496,45 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\World Inequality Database\Fact Source OLTP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\WEO2020O\Fact (Billions)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\WEO2020O\Fact (Millions)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\WEO2020O\Fact (Null Scale)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

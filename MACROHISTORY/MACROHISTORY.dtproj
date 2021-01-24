@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMhzXrDzyl0m/MPQtyHm6VQAAAAACAAAAAAAQZgAAAAEAACAAAABfYlI5iz6RTuEu9AK6Bw3QxhVEyy2O8KMCwnCpXEIMHwAAAAAOgAAAAAIAACAAAAA9t1VHpyL+b1mrDD6qbna3HHpgA2LuSIUNNUuRPRQH7pAAAABiz96kbqjZ+T3HXo0Y2uFs0yF7cxzWXxNeGe7oskZToA3bYmtVEBOe1cUROZRKHVTYgOhzxuBJGAjXLHFZ7LpRsLPqPxegE98r07ce8X0g/RvUsbUtzOJp0aHpUCTFLGfQjp6Hn1rrgUAVldFXwldpVsMtbOCgsYysF3sJovraxSPnIhv///rSgFMqZzRgIhxAAAAAWtqZRKlrqrqVBLp4Phx2OmB4/mo5RpHMkdAeqsPSh88wSz3fxEzf4IDOPHQQSI0XtaxmClpHDco0Fg2EaYJ5QQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMhzXrDzyl0m/MPQtyHm6VQAAAAACAAAAAAAQZgAAAAEAACAAAABkQjOZhtrYHDHL9YhU96NoTZuHGE+2/qvVLvhS2/EY0AAAAAAOgAAAAAIAACAAAAAyqBk9S0lFXqJqaV5FAxKuFNbXW5ImDPjb2zcBcw+wtpAAAAAlFY078fpv2Dt/BtCwx9dN2JveV70ht7b/FmJLSa9tEVofsl7rqAb/ft/FNhctHKgr81GsKi5GfEv/NeWUmnc0Ch/RoVsb6B4y6QIkWEQLcY1kvMDCjcNsk33QtJIWVIFj0hxvFB8GMeeRJExn0LajNbq+FwC/cEU4GkwGt8deP/ZZu8Ole1ATCW6E7AE6cTZAAAAA2nZ87IBYLl2lne49+RzFFLopMYUaWxE1GeMvFzhFfISQIouNGtCtim3eK2oVlz+rlpM+fY83j+YH9z5niljPnQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -38,7 +38,6 @@
           <SSIS:Package SSIS:Name="Import Milanovic.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
-          <SSIS:ConnectionManager SSIS:Name="Create GERGLE Definitions.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="CalculatePivotedAdditions.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="OLTP Dimension Tables setup.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="OLTP Data Tables setup.sql.conmgr" />
@@ -59,7 +58,6 @@
           <SSIS:ConnectionManager SSIS:Name="OLTP.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define IFS Seasonal Adjustment Removals.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Deindexation for MH and B-U.sql.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Define Growth Additions.SQL.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="UN Population.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="Define Duplicate Removals.sql.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="WID CSV.conmgr" />
@@ -5435,10 +5433,10 @@
                 <SSIS:Property SSIS:Name="Name">Import OLTP Data from external Sources</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">416</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">420</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AAFB8BD5-750C-4934-9F8C-CFC4EA114EAD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{18F5AB95-3C76-472A-9EDF-D4297238B14F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

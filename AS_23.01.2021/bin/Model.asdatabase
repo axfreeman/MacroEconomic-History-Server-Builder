@@ -453,193 +453,6 @@
         ]
       },
       {
-        "name": "Geography",
-        "columns": [
-          {
-            "name": "DimGeoID",
-            "dataType": "int64",
-            "isHidden": true,
-            "sourceColumn": "DimGeoID"
-          },
-          {
-            "name": "Nation",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "GeoStandardName"
-          },
-          {
-            "name": "GeoPolitical_Type",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "GeoPolitical_Type"
-          },
-          {
-            "name": "Country",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "ReportingUnit"
-          },
-          {
-            "name": "Size",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "Size"
-          },
-          {
-            "name": "GeoEconomic_Region",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "GeoEconomic_Region"
-          },
-          {
-            "name": "Geopolitical_Region",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "Geopolitical_Region"
-          },
-          {
-            "name": "wdi_availability",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "wdi_availability"
-          },
-          {
-            "name": "Major_Blocs",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "Major_Blocs"
-          },
-          {
-            "name": "penn_availability",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "penn_availability"
-          },
-          {
-            "name": "MACROHISTORY_Geography",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "MACROHISTORY_Geography"
-          },
-          {
-            "name": "WID_Geography",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "WID_Geography"
-          },
-          {
-            "name": "IMF_main_category",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "IMF_main_category"
-          },
-          {
-            "name": "IMF_sub_category",
-            "dataType": "string",
-            "isHidden": true,
-            "sourceColumn": "IMF_sub_category"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "Partition",
-            "dataView": "full",
-            "source": {
-              "type": "m",
-              "expression": [
-                "let",
-                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021\",",
-                "    dbo_DimGeo = Source{[Schema=\"dbo\",Item=\"DimGeo\"]}[Data]",
-                "in",
-                "    dbo_DimGeo"
-              ]
-            }
-          }
-        ],
-        "hierarchies": [
-          {
-            "name": "Bloc",
-            "levels": [
-              {
-                "name": "Bloc",
-                "ordinal": 0,
-                "column": "Major_Blocs"
-              },
-              {
-                "name": "Country",
-                "ordinal": 1,
-                "column": "Country"
-              },
-              {
-                "name": "Nation",
-                "ordinal": 2,
-                "column": "Nation"
-              }
-            ]
-          },
-          {
-            "name": "GeoEconomic Region",
-            "levels": [
-              {
-                "name": "GeoEconomic_Region",
-                "ordinal": 0,
-                "column": "GeoEconomic_Region"
-              },
-              {
-                "name": "Country",
-                "ordinal": 1,
-                "column": "Country"
-              },
-              {
-                "name": "Nation",
-                "ordinal": 2,
-                "column": "Nation"
-              }
-            ]
-          },
-          {
-            "name": "Penn Availability",
-            "levels": [
-              {
-                "name": "Years in which PENN data is available",
-                "ordinal": 0,
-                "column": "penn_availability"
-              },
-              {
-                "name": "Country",
-                "ordinal": 1,
-                "column": "Country"
-              },
-              {
-                "name": "Nation",
-                "ordinal": 2,
-                "column": "Nation"
-              }
-            ]
-          },
-          {
-            "name": "WDI Availability",
-            "levels": [
-              {
-                "name": "Years in which WDI data is available",
-                "ordinal": 0,
-                "column": "wdi_availability"
-              },
-              {
-                "name": "Country",
-                "ordinal": 1,
-                "column": "Country"
-              },
-              {
-                "name": "Nation",
-                "ordinal": 2,
-                "column": "Nation"
-              }
-            ]
-          }
-        ]
-      },
-      {
         "name": "IndicatorStandardNames",
         "columns": [
           {
@@ -691,6 +504,285 @@
             }
           }
         ]
+      },
+      {
+        "name": "DimGeo",
+        "columns": [
+          {
+            "name": "DimGeoID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DimGeoID"
+          },
+          {
+            "name": "Nation",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "GeoStandardName"
+          },
+          {
+            "name": "GeoPolitical_Type",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "GeoPolitical_Type"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "ReportingUnit"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Size"
+          },
+          {
+            "name": "GeoEconomic_Region",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "GeoEconomic_Region"
+          },
+          {
+            "name": "Major_Blocs",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Major_Blocs"
+          },
+          {
+            "name": "NICS_geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "NICS_geography"
+          },
+          {
+            "name": "Geopolitical_region",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Geopolitical_region"
+          },
+          {
+            "name": "Maddison_availability",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Maddison_availability"
+          },
+          {
+            "name": "wdi_availability",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "wdi_availability"
+          },
+          {
+            "name": "penn_availability",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "penn_availability"
+          },
+          {
+            "name": "MACROHISTORY_Geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "MACROHISTORY_Geography"
+          },
+          {
+            "name": "WID_Geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "WID_Geography"
+          },
+          {
+            "name": "IMF_main_category",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IMF_main_category"
+          },
+          {
+            "name": "WEO_Geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "WEO_Geography"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021\",",
+                "    dbo_DimGeo = Source{[Schema=\"dbo\",Item=\"DimGeo\"]}[Data]",
+                "in",
+                "    dbo_DimGeo"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Countries",
+            "levels": [
+              {
+                "name": "Country",
+                "ordinal": 0,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 1,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "Geopolitical Economy Geography",
+            "levels": [
+              {
+                "name": "Bloc",
+                "ordinal": 0,
+                "column": "Major_Blocs"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "WEO Geography",
+            "levels": [
+              {
+                "name": "Bloc",
+                "ordinal": 1,
+                "column": "WEO_Geography"
+              },
+              {
+                "name": "Country",
+                "ordinal": 2,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 3,
+                "column": "Nation"
+              },
+              {
+                "name": "IMF_main_category",
+                "ordinal": 0,
+                "column": "IMF_main_category"
+              }
+            ]
+          },
+          {
+            "name": "NICS Geography",
+            "levels": [
+              {
+                "name": "Bloc",
+                "ordinal": 0,
+                "column": "NICS_geography"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "Maddison Availability",
+            "levels": [
+              {
+                "name": "Years",
+                "ordinal": 0,
+                "column": "Maddison_availability"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "WDI availability",
+            "levels": [
+              {
+                "name": "Years",
+                "ordinal": 0,
+                "column": "wdi_availability"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "PENN availability",
+            "levels": [
+              {
+                "name": "Years",
+                "ordinal": 0,
+                "column": "penn_availability"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "Geoeconomic Region",
+            "levels": [
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              },
+              {
+                "name": "GeoEconomic_Region",
+                "ordinal": 0,
+                "column": "GeoEconomic_Region"
+              }
+            ]
+          }
+        ]
       }
     ],
     "relationships": [
@@ -709,18 +801,18 @@
         "toColumn": "DimIndicatorID"
       },
       {
-        "name": "efedfc5d-9545-4537-ba1f-3338f0e005dc",
-        "fromTable": "Data",
-        "fromColumn": "DimGeoID",
-        "toTable": "Geography",
-        "toColumn": "DimGeoID"
-      },
-      {
         "name": "1334155b-1ea9-470d-a411-16953f7e6971",
         "fromTable": "Data",
         "fromColumn": "IndicatorStandardNameID",
         "toTable": "IndicatorStandardNames",
         "toColumn": "IndicatorStandardNamesID"
+      },
+      {
+        "name": "72d5158f-0a19-489c-8ef5-d3038dd28373",
+        "fromTable": "Data",
+        "fromColumn": "DimGeoID",
+        "toTable": "DimGeo",
+        "toColumn": "DimGeoID"
       }
     ],
     "annotations": [
