@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Import OLTP Data from external Sources"
   DTS:PackageType="5"
-  DTS:VersionBuild="426"
-  DTS:VersionGUID="{1F4BFF21-0B0C-45EE-8D43-25A5B82EF109}">
+  DTS:VersionBuild="427"
+  DTS:VersionGUID="{387CAF47-3F20-41A4-B2BA-40F528A9C736}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -16578,12 +16578,12 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The lineage ID of the output column that will receive the value from this input column. Or -1 if column's value is not used in output rows."
-                          name="DestinationColumn">#{Package\Macrohistory\Unpivot.Outputs[Unpivot Output].Columns[xrusd]}</property>
+                          name="DestinationColumn">#{Package\Macrohistory\Unpivot.Outputs[Unpivot Output].Columns[Value]}</property>
                         <property
-                          dataType="System.Null"
+                          dataType="System.String"
                           description="Specifies the value written to the PivotKey column in the output row."
                           expressionType="Notify"
-                          name="PivotKeyValue" />
+                          name="PivotKeyValue">xrusd</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -16875,18 +16875,6 @@
                       dataType="i1"
                       lineageId="Package\Macrohistory\Unpivot.Outputs[Unpivot Output].Columns[crisisJST]"
                       name="crisisJST">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the value in the PivotKeyValue property is written to the column in the new row."
-                          name="PivotKey">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Macrohistory\Unpivot.Outputs[Unpivot Output].Columns[xrusd]"
-                      dataType="r4"
-                      lineageId="Package\Macrohistory\Unpivot.Outputs[Unpivot Output].Columns[xrusd]"
-                      name="xrusd">
                       <properties>
                         <property
                           dataType="System.Boolean"
@@ -54865,11 +54853,11 @@
     design-time-name="Package\Macrohistory">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="188.5,42"
           Id="Package\Macrohistory\FactSource OLTP table"
-          TopLeft="278,286" />
+          TopLeft="278,285.5" />
         <NodeLayout
           Size="178.5,42.5"
           Id="Package\Macrohistory\Macrohistory CSV file"
@@ -54877,7 +54865,7 @@
         <NodeLayout
           Size="116.5,42.5"
           Id="Package\Macrohistory\Unpivot"
-          TopLeft="116.666666666667,141.333333333333" />
+          TopLeft="116.166666666667,142.333333333333" />
         <NodeLayout
           Size="271.5,42"
           Id="Package\Macrohistory\Add Source, and scale where appropriate"
@@ -54888,26 +54876,24 @@
           TopLeft="386.692307692308,139.538461538461" />
         <EdgeLayout
           Id="Package\Macrohistory.Paths[Unpivot Output]"
-          TopLeft="233.166666666667,161.560897435897">
+          TopLeft="232.666666666667,162.060897435897">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="153.525641025641,0"
+              EndConnector="154.025641025641,0"
               Start="0,0"
-              End="146.025641025641,0">
+              End="146.525641025641,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="146.025641025641,0" />
+                    End="146.525641025641,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -54941,9 +54927,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -54952,34 +54936,32 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-120.192307692308,104.461538461539"
+              EndConnector="-120.192307692308,103.961538461539"
               Start="0,0"
-              End="-120.192307692308,96.961538461539">
+              End="-120.192307692308,96.461538461539">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.2307692307695" />
+                    End="0,47.9807692307695" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.2307692307695"
-                    Point2="0,52.2307692307695"
-                    Point3="-4,52.2307692307695" />
+                    Point1="0,47.9807692307695"
+                    Point2="0,51.9807692307695"
+                    Point3="-4,51.9807692307695" />
                   <mssgle:LineSegment
-                    End="-116.192307692308,52.2307692307695" />
+                    End="-116.192307692308,51.9807692307695" />
                   <mssgle:CubicBezierSegment
-                    Point1="-116.192307692308,52.2307692307695"
-                    Point2="-120.192307692308,52.2307692307695"
-                    Point3="-120.192307692308,56.2307692307695" />
+                    Point1="-116.192307692308,51.9807692307695"
+                    Point2="-120.192307692308,51.9807692307695"
+                    Point3="-120.192307692308,55.9807692307695" />
                   <mssgle:LineSegment
-                    End="-120.192307692308,96.961538461539" />
+                    End="-120.192307692308,96.461538461539" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -54988,34 +54970,32 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-292.166666666666,55.666666666666"
+              EndConnector="-292.666666666666,56.666666666666"
               Start="0,0"
-              End="-292.166666666666,48.166666666666">
+              End="-292.666666666666,49.166666666666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.833333333333" />
+                    End="0,24.333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.833333333333"
-                    Point2="0,27.833333333333"
-                    Point3="-4,27.833333333333" />
+                    Point1="0,24.333333333333"
+                    Point2="0,28.333333333333"
+                    Point3="-4,28.333333333333" />
                   <mssgle:LineSegment
-                    End="-288.166666666666,27.833333333333" />
+                    End="-288.666666666666,28.333333333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="-288.166666666666,27.833333333333"
-                    Point2="-292.166666666666,27.833333333333"
-                    Point3="-292.166666666666,31.833333333333" />
+                    Point1="-288.666666666666,28.333333333333"
+                    Point2="-292.666666666666,28.333333333333"
+                    Point3="-292.666666666666,32.333333333333" />
                   <mssgle:LineSegment
-                    End="-292.166666666666,48.166666666666" />
+                    End="-292.666666666666,49.166666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -57402,6 +57382,45 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\WEO2020O\Fact (Null Scale)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\WEO2020O\Fact (Billions)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\WEO2020O\Fact (Millions)">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\WEO2020O\Fact">
     <Properties>
       <Property>
@@ -57496,45 +57515,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\World Inequality Database\Fact Source OLTP Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\WEO2020O\Fact (Billions)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\WEO2020O\Fact (Millions)">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\WEO2020O\Fact (Null Scale)">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

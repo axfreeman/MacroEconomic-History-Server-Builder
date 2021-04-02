@@ -144,7 +144,7 @@ CONSTRAINT PK_Source PRIMARY KEY CLUSTERED
 GO
 
 -- Provides a tabular view of the data for debugging purposes
-
+/* WAS
 CREATE OR ALTER VIEW FactQuery 
 AS
 SELECT
@@ -178,6 +178,70 @@ FROM Fact LEFT OUTER JOIN
  DimGeo ON Fact.DimGeoID = DimGeo.DimGeoID LEFT OUTER JOIN
  DimIndicator ON Fact.DimIndicatorID = DimIndicator.DimIndicatorID LEFT OUTER JOIN
  DimSource ON Fact.DimSourceID = DimSource.DimSourceID
+GO
+*/
+
+CREATE OR ALTER VIEW FactQuery 
+AS
+SELECT dbo.Fact.FactID, dbo.Fact.DimSourceID, dbo.DimSource.SourceName, dbo.DimSource.SourceNameParent, dbo.DimSource.SourceNameDetail, dbo.DimSource.Description, dbo.Fact.DimGeoID, dbo.DimGeo.GeoStandardName, dbo.DimGeo.ReportingUnit, dbo.Fact.DimIndicatorID, dbo.DimIndicator.IndicatorStandardName, dbo.DimIndicator.indicator_type, 
+         dbo.DimIndicator.gdp_expenditure_component, dbo.DimIndicator.capital_component, dbo.DimIndicator.source_component, dbo.DimIndicator.balance_of_payments_component, dbo.DimIndicator.population_component, dbo.DimIndicator.other_indicator_description, dbo.DimIndicator.output_definition, dbo.DimIndicator.industrial_sector, dbo.DimIndicator.measure_type, 
+         dbo.DimIndicator.indicator_dimension, dbo.DimIndicator.indicator_units, dbo.DimIndicator.indicator_metrics, dbo.Fact.Value, dbo.Fact.DateField, dbo.DimIndicator.accounting_basis, dbo.DimGeo.GeoEconomic_Region, dbo.DimGeo.Major_Blocs, dbo.DimGeo.NICS_geography, dbo.DimGeo.Geopolitical_region, dbo.DimGeo.Maddison_availability, dbo.DimGeo.wdi_availability, 
+         dbo.DimGeo.penn_availability, dbo.DimGeo.WID_Geography, dbo.DimGeo.IMF_main_category, dbo.DimGeo.WEO_Geography, dbo.DimGeo.MACROHISTORY_Geography, dbo.DimGeo.Size, dbo.DimGeo.GeoPolitical_Type
+FROM  dbo.Fact LEFT OUTER JOIN
+         dbo.DimGeo ON dbo.Fact.DimGeoID = dbo.DimGeo.DimGeoID LEFT OUTER JOIN
+         dbo.DimIndicator ON dbo.Fact.DimIndicatorID = dbo.DimIndicator.DimIndicatorID LEFT OUTER JOIN
+         dbo.DimSource ON dbo.Fact.DimSourceID = dbo.DimSource.DimSourceID
+
+GO
+
+-- this query contains a lagged variable so growth can easily be calculated
+-- eventually, growth itself will replace this lagged variable
+
+CREATE OR ALTER VIEW [dbo].[LaggedFactQuery]
+AS
+
+/*WAS
+SELECT dbo.FactQuery.FactID, 
+ dbo.FactQuery.DimSourceID, 
+ dbo.FactQuery.DimGeoID,
+ dbo.FactQuery.DimIndicatorID,
+ dbo.FactQuery.DateField,
+ dbo.FactQuery.Value,
+ Fact_1.Value AS LaggedValue,
+ dbo.FactQuery.SourceName,
+ dbo.FactQuery.SourceNameParent,
+ dbo.FactQuery.SourceNameDetail,
+ dbo.FactQuery.Description,
+ dbo.FactQuery.GeoStandardName, 
+ dbo.FactQuery.ReportingUnit,
+ dbo.FactQuery.indicator_type,
+ dbo.FactQuery.gdp_Expenditure_Component,
+ dbo.FactQuery.capital_component,
+ dbo.FactQuery.source_component,
+ dbo.FactQuery.balance_of_payments_component,
+ dbo.FactQuery.population_component,
+ dbo.FactQuery.other_indicator_description,
+ dbo.FactQuery.output_definition,
+ dbo.FactQuery.industrial_sector, 
+ dbo.FactQuery.measure_type,
+ dbo.FactQuery.indicator_dimension,
+ dbo.FactQuery.indicator_units,
+ dbo.FactQuery.indicator_metrics
+FROM  dbo.FactQuery INNER JOIN
+ dbo.Fact AS Fact_1 ON
+ YEAR(dbo.FactQuery.DateField) = YEAR(Fact_1.DateField) - 1
+ AND dbo.FactQuery.DimSourceID = Fact_1.DimSourceID
+ AND dbo.FactQuery.DimGeoID = Fact_1.DimGeoID
+ AND dbo.FactQuery.DimIndicatorID = Fact_1.DimIndicatorID
+*/
+SELECT dbo.FactQuery.FactID, dbo.FactQuery.DateField, dbo.FactQuery.Value, Fact_1.Value AS LaggedValue, dbo.FactQuery.SourceNameDetail, dbo.FactQuery.Description, dbo.FactQuery.GeoStandardName, dbo.FactQuery.ReportingUnit, dbo.FactQuery.indicator_type, dbo.FactQuery.gdp_Expenditure_Component, dbo.FactQuery.capital_component, dbo.FactQuery.source_component, 
+         dbo.FactQuery.balance_of_payments_component, dbo.FactQuery.population_component, dbo.FactQuery.other_indicator_description, dbo.FactQuery.output_definition, dbo.FactQuery.industrial_sector, dbo.FactQuery.measure_type, dbo.FactQuery.indicator_dimension, dbo.FactQuery.indicator_units, dbo.FactQuery.indicator_metrics, dbo.FactQuery.IndicatorStandardName, 
+         dbo.IndicatorStandardNames.IndicatorSourceDescription, dbo.FactQuery.SourceNameParent, dbo.FactQuery.gdp_expenditure_component AS Expr1, dbo.FactQuery.SourceName, dbo.FactQuery.accounting_basis, dbo.FactQuery.GeoEconomic_Region, dbo.FactQuery.Major_Blocs, dbo.FactQuery.NICS_geography, dbo.FactQuery.Geopolitical_region, 
+         dbo.FactQuery.Maddison_availability, dbo.FactQuery.wdi_availability, dbo.FactQuery.penn_availability, dbo.FactQuery.WID_Geography, dbo.FactQuery.IMF_main_category, dbo.FactQuery.MACROHISTORY_Geography, dbo.FactQuery.WEO_Geography, dbo.FactQuery.Size, dbo.FactQuery.GeoPolitical_Type
+FROM  dbo.FactQuery INNER JOIN
+         dbo.Fact AS Fact_1 ON YEAR(dbo.FactQuery.DateField) = YEAR(Fact_1.DateField) - 1 AND dbo.FactQuery.DimSourceID = Fact_1.DimSourceID AND dbo.FactQuery.DimGeoID = Fact_1.DimGeoID AND dbo.FactQuery.DimIndicatorID = Fact_1.DimIndicatorID LEFT OUTER JOIN
+         dbo.IndicatorStandardNames ON dbo.FactQuery.SourceName = dbo.IndicatorStandardNames.IndicatorSource AND dbo.FactQuery.IndicatorStandardName = dbo.IndicatorStandardNames.IndicatorStandardName
+
 GO
 
 -- Create a date table
