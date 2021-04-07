@@ -204,6 +204,10 @@
           {
             "name": "Count",
             "expression": "count(Data[Value])"
+          },
+          {
+            "name": "LaggedValue",
+            "expression": "Calculate(Sum(Data[Value]),SAMEPERIODLASTYEAR(Data[DateField]),ALL(Data))"
           }
         ],
         "hierarchies": [
@@ -774,6 +778,26 @@
                 "name": "GeoEconomic_Region",
                 "ordinal": 0,
                 "column": "GeoEconomic_Region"
+              }
+            ]
+          },
+          {
+            "name": "IMF Hierarchy",
+            "levels": [
+              {
+                "name": "IMF_main_category",
+                "ordinal": 0,
+                "column": "IMF_main_category"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
               }
             ]
           }
