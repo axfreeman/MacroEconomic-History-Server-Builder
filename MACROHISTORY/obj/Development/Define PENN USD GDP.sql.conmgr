@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Define PENN USD GDP sql"
+  DTS:DTSID="{974CFAA4-5872-4ED1-81DD-E2C142A3C9C7}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\calculate_PENN_USD_GDP.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\calculate_PENN_USD_GDP.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

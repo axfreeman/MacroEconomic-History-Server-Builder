@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Create GERGLE Definitions.sql"
+  DTS:DTSID="{DF6089D6-4FF2-48C7-9ED2-D3A3FE0ABB06}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\Create GERGLE Definitions.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\Create GERGLE Definitions.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

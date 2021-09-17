@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Define IFS Seasonal Adjustment Removals sql"
+  DTS:DTSID="{BEDAE0C5-76B6-4829-8628-EF5602373BE7}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\define_IFS_seasonal_adjustment_removals.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\define_IFS_seasonal_adjustment_removals.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

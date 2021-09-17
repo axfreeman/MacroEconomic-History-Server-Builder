@@ -1,0 +1,845 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "culture": "en-GB",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "DESKTOP-KSAPEQM",
+            "database": "macrohistory_rolap_23.01.2021"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "credential": {
+          "AuthenticationKind": "ServiceAccount",
+          "kind": "SQL",
+          "path": "desktop-ksapeqm;macrohistory_rolap_23.01.2021",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "Data",
+        "columns": [
+          {
+            "name": "FactID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "FactID"
+          },
+          {
+            "name": "DimSourceID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DimSourceID"
+          },
+          {
+            "name": "DimGeoID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DimGeoID"
+          },
+          {
+            "name": "DimIndicatorID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DimIndicatorID"
+          },
+          {
+            "name": "DateField",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "sourceColumn": "DateField"
+          },
+          {
+            "name": "Value",
+            "dataType": "double",
+            "isHidden": true,
+            "sourceColumn": "Value"
+          },
+          {
+            "type": "calculated",
+            "name": "Year",
+            "dataType": "int64",
+            "isDataTypeInferred": true,
+            "expression": "Year(Data[DateField])"
+          },
+          {
+            "type": "calculated",
+            "name": "Accounting Basis",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "related(Indicators[Accounting Basis])"
+          },
+          {
+            "type": "calculated",
+            "name": "Industrial Sector",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "related(Indicators[industrial_sector])"
+          },
+          {
+            "type": "calculated",
+            "name": "Type (Flow/Stock/etc)",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[measure_type])"
+          },
+          {
+            "type": "calculated",
+            "name": "Dimension (Money/Quantity/PPP/etc)",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[indicator_dimension])"
+          },
+          {
+            "type": "calculated",
+            "name": "Units (LCU/USD/etc)",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[indicator_units])"
+          },
+          {
+            "type": "calculated",
+            "name": "Metric (Current/Constant/etc)",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[indicator_metrics])"
+          },
+          {
+            "type": "calculated",
+            "name": "Output Definition",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "related(Indicators[output_definition])"
+          },
+          {
+            "type": "calculated",
+            "name": "Population",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "related(Indicators[population_component])"
+          },
+          {
+            "type": "calculated",
+            "name": "Source",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Sources[SourceNameParent])"
+          },
+          {
+            "type": "calculated",
+            "name": "Source Detail",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Sources[SourceNameDetail])"
+          },
+          {
+            "type": "calculated",
+            "name": "Source Indicator Description",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Sources[Description])"
+          },
+          {
+            "type": "calculated",
+            "name": "IndicatorStandardName",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(Indicators[IndicatorStandardName])"
+          },
+          {
+            "type": "calculated",
+            "name": "IndicatorStandardNameID",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "concatenate(concatenate(related(Sources[SourceName]),\":\"),related(Indicators[IndicatorStandardName]))"
+          },
+          {
+            "type": "calculated",
+            "name": "Indicator Source Description",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "related(IndicatorStandardNames[IndicatorSourceDescription])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021\",",
+                "    dbo_Fact = Source{[Schema=\"dbo\",Item=\"Fact\"]}[Data]",
+                "in",
+                "    dbo_Fact"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Item",
+            "expression": "Sum(Data[Value])"
+          },
+          {
+            "name": "Count",
+            "expression": "count(Data[Value])"
+          },
+          {
+            "name": "LaggedValue",
+            "expression": "Calculate(Sum(Data[Value]),SAMEPERIODLASTYEAR(Data[DateField]),ALL(Data))"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Measure",
+            "levels": [
+              {
+                "name": "Type (Flow/Stock/etc)",
+                "ordinal": 0,
+                "column": "Type (Flow/Stock/etc)"
+              },
+              {
+                "name": "Dimension (Money/Quantity/PPP/etc)",
+                "ordinal": 1,
+                "column": "Dimension (Money/Quantity/PPP/etc)"
+              },
+              {
+                "name": "Units (LCU/USD/etc)",
+                "ordinal": 2,
+                "column": "Units (LCU/USD/etc)"
+              },
+              {
+                "name": "Metric (Current/Constant/etc)",
+                "ordinal": 3,
+                "column": "Metric (Current/Constant/etc)"
+              }
+            ]
+          },
+          {
+            "name": "Sources",
+            "levels": [
+              {
+                "name": "Source",
+                "ordinal": 0,
+                "column": "Source"
+              },
+              {
+                "name": "Source Detail",
+                "ordinal": 1,
+                "column": "Source Detail"
+              },
+              {
+                "name": "Source Indicator Description",
+                "ordinal": 2,
+                "column": "Indicator Source Description"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sources",
+        "columns": [
+          {
+            "name": "DimSourceID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DimSourceID"
+          },
+          {
+            "name": "SourceName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "SourceName"
+          },
+          {
+            "name": "SourceNameParent",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "SourceNameParent"
+          },
+          {
+            "name": "SourceNameDetail",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "SourceNameDetail"
+          },
+          {
+            "name": "Description",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Description"
+          },
+          {
+            "name": "DataOriginFile",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "DataOriginFile"
+          },
+          {
+            "name": "DataOriginURL",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "DataOriginURL"
+          },
+          {
+            "name": "PreparationNotes",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "PreparationNotes"
+          },
+          {
+            "name": "SourceNotes",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "SourceNotes"
+          },
+          {
+            "name": "DataNotes",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "DataNotes"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021\",",
+                "    dbo_DimSource = Source{[Schema=\"dbo\",Item=\"DimSource\"]}[Data]",
+                "in",
+                "    dbo_DimSource"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Indicators",
+        "columns": [
+          {
+            "name": "DimIndicatorID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DimIndicatorID"
+          },
+          {
+            "name": "IndicatorStandardName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorStandardName"
+          },
+          {
+            "name": "indicator_type",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "indicator_type"
+          },
+          {
+            "name": "gdp_expenditure_component",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "gdp_expenditure_component"
+          },
+          {
+            "name": "capital_component",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "capital_component"
+          },
+          {
+            "name": "source_component",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "source_component"
+          },
+          {
+            "name": "balance_of_payments_component",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "balance_of_payments_component"
+          },
+          {
+            "name": "population_component",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "population_component"
+          },
+          {
+            "name": "other_indicator_description",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "other_indicator_description"
+          },
+          {
+            "name": "output_definition",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "output_definition"
+          },
+          {
+            "name": "Accounting Basis",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "accounting_basis"
+          },
+          {
+            "name": "industrial_sector",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "industrial_sector"
+          },
+          {
+            "name": "measure_type",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "measure_type"
+          },
+          {
+            "name": "indicator_dimension",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "indicator_dimension"
+          },
+          {
+            "name": "indicator_units",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "indicator_units"
+          },
+          {
+            "name": "indicator_metrics",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "indicator_metrics"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021\",",
+                "    dbo_DimIndicator = Source{[Schema=\"dbo\",Item=\"DimIndicator\"]}[Data]",
+                "in",
+                "    dbo_DimIndicator"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "IndicatorStandardNames",
+        "columns": [
+          {
+            "name": "IndicatorSource",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorSource"
+          },
+          {
+            "name": "IndicatorSourceDescription",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorSourceDescription"
+          },
+          {
+            "name": "IndicatorSourceCode",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorSourceCode"
+          },
+          {
+            "name": "IndicatorStandardName",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IndicatorStandardName"
+          },
+          {
+            "type": "calculated",
+            "name": "IndicatorStandardNamesID",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "expression": "concatenate(Concatenate(IndicatorStandardNames[IndicatorSource],\":\"),IndicatorStandardNames[IndicatorStandardName])"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021\",",
+                "    dbo_IndicatorStandardNames = Source{[Schema=\"dbo\",Item=\"IndicatorStandardNames\"]}[Data]",
+                "in",
+                "    dbo_IndicatorStandardNames"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimGeo",
+        "columns": [
+          {
+            "name": "DimGeoID",
+            "dataType": "int64",
+            "isHidden": true,
+            "sourceColumn": "DimGeoID"
+          },
+          {
+            "name": "Nation",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "GeoStandardName"
+          },
+          {
+            "name": "GeoPolitical_Type",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "GeoPolitical_Type"
+          },
+          {
+            "name": "Country",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "ReportingUnit"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Size"
+          },
+          {
+            "name": "GeoEconomic_Region",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "GeoEconomic_Region"
+          },
+          {
+            "name": "Major_Blocs",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Major_Blocs"
+          },
+          {
+            "name": "NICS_geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "NICS_geography"
+          },
+          {
+            "name": "Geopolitical_region",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Geopolitical_region"
+          },
+          {
+            "name": "Maddison_availability",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "Maddison_availability"
+          },
+          {
+            "name": "wdi_availability",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "wdi_availability"
+          },
+          {
+            "name": "penn_availability",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "penn_availability"
+          },
+          {
+            "name": "MACROHISTORY_Geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "MACROHISTORY_Geography"
+          },
+          {
+            "name": "WID_Geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "WID_Geography"
+          },
+          {
+            "name": "IMF_main_category",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "IMF_main_category"
+          },
+          {
+            "name": "WEO_Geography",
+            "dataType": "string",
+            "isHidden": true,
+            "sourceColumn": "WEO_Geography"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/DESKTOP-KSAPEQM;macrohistory_rolap_23 01 2021\",",
+                "    dbo_DimGeo = Source{[Schema=\"dbo\",Item=\"DimGeo\"]}[Data]",
+                "in",
+                "    dbo_DimGeo"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Countries",
+            "levels": [
+              {
+                "name": "Country",
+                "ordinal": 0,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 1,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "Geopolitical Economy Geography",
+            "levels": [
+              {
+                "name": "Bloc",
+                "ordinal": 0,
+                "column": "Major_Blocs"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "WEO Geography",
+            "levels": [
+              {
+                "name": "Bloc",
+                "ordinal": 0,
+                "column": "WEO_Geography"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "NICS Geography",
+            "levels": [
+              {
+                "name": "Bloc",
+                "ordinal": 0,
+                "column": "NICS_geography"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "Maddison Availability",
+            "levels": [
+              {
+                "name": "Years",
+                "ordinal": 0,
+                "column": "Maddison_availability"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "WDI availability",
+            "levels": [
+              {
+                "name": "Years",
+                "ordinal": 0,
+                "column": "wdi_availability"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "PENN availability",
+            "levels": [
+              {
+                "name": "Years",
+                "ordinal": 0,
+                "column": "penn_availability"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          },
+          {
+            "name": "Geoeconomic Region",
+            "levels": [
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              },
+              {
+                "name": "GeoEconomic_Region",
+                "ordinal": 0,
+                "column": "GeoEconomic_Region"
+              }
+            ]
+          },
+          {
+            "name": "IMF Hierarchy",
+            "levels": [
+              {
+                "name": "IMF_main_category",
+                "ordinal": 0,
+                "column": "IMF_main_category"
+              },
+              {
+                "name": "Country",
+                "ordinal": 1,
+                "column": "Country"
+              },
+              {
+                "name": "Nation",
+                "ordinal": 2,
+                "column": "Nation"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "6d56db93-8228-4e41-929a-09feedfb2bc8",
+        "fromTable": "Data",
+        "fromColumn": "DimSourceID",
+        "toTable": "Sources",
+        "toColumn": "DimSourceID"
+      },
+      {
+        "name": "69176743-74e1-412e-b99a-e436e350c50d",
+        "fromTable": "Data",
+        "fromColumn": "DimIndicatorID",
+        "toTable": "Indicators",
+        "toColumn": "DimIndicatorID"
+      },
+      {
+        "name": "1334155b-1ea9-470d-a411-16953f7e6971",
+        "fromTable": "Data",
+        "fromColumn": "IndicatorStandardNameID",
+        "toTable": "IndicatorStandardNames",
+        "toColumn": "IndicatorStandardNamesID"
+      },
+      {
+        "name": "72d5158f-0a19-489c-8ef5-d3038dd28373",
+        "fromTable": "Data",
+        "fromColumn": "DimGeoID",
+        "toTable": "DimGeo",
+        "toColumn": "DimGeoID"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Define Growth Additions.SQL"
+  DTS:DTSID="{8B5A443F-3941-4ED7-9340-B74ADD6C0551}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\Define Growth Additions.SQL"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\Define Growth Additions.SQL" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

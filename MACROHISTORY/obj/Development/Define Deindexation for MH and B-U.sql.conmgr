@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Define Deindexation for MH and B-U.sql"
+  DTS:DTSID="{1B64A420-8998-4BC6-B58E-01E594613903}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\deindex_MH_and_BU.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\deindex_MH_and_BU.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

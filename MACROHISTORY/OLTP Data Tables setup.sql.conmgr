@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OLTP Data Tables setup sql"
+  DTS:DTSID="{D475698B-09CA-4E41-8C86-7FEC7EBC1930}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\oltp_data_tables_create.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic-History-Server-Builder\SETUP\oltp_data_tables_setup.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

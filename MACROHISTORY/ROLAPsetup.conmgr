@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ROLAPsetup"
+  DTS:DTSID="{88D8C542-F0A5-4CF9-AC63-A64D643A199E}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\rolap_tables_and_views_setup.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomicHistory\SETUP\rolap_tables_and_views_setup.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

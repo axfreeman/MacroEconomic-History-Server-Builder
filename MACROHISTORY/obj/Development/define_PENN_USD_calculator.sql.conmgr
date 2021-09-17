@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="define_PENN_USD_calculator.sql"
+  DTS:DTSID="{B4750F90-599A-401A-9DF4-2CDB9562C2B9}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\define_PENN_USD_calculator.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\define_PENN_USD_calculator.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

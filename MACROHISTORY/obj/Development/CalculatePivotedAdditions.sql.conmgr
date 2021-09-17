@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CalculatePivotedAdditions.sql"
+  DTS:DTSID="{885D1A10-52DD-40CB-BB0B-0FE3F1874CF7}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\CalculatePivotedAdditions.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\CalculatePivotedAdditions.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

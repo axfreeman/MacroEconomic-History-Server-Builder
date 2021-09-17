@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="drop_unwanted_tables_and_views.sql"
+  DTS:DTSID="{3C48BDD0-120C-46B5-ACD8-B7C270BAB8DF}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\drop_unwanted_tables_and_views.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\drop_unwanted_tables_and_views.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

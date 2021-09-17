@@ -1,0 +1,443 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/5/2019 4:25:37 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-9EATJT9"
+  DTS:CreatorName="DESKTOP-9EATJT9\afree"
+  DTS:DTSID="{6B886975-E37A-44C1-B613-7ED902B326F3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1900.78"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Export ROLAP Fact File"
+  DTS:PackageType="5"
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{ED7E1E9F-2591-4D02-A8B2-2DCD38C477AC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export Fact File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6F2B1828-EB9F-459C-B988-69E0D5BBE3C6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export Fact File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Export Fact File\Exported Fact CSV File"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2057"
+              name="Exported Fact CSV File">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Fact File\Exported Fact CSV File.Connections[FlatFileConnection]"
+                  connectionManagerID="{2E41802E-A35B-4E79-8FB2-2156ADD72141}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Fact]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].Columns[FactID]"
+                      cachedDataType="i8"
+                      cachedName="FactID"
+                      externalMetadataColumnId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[FactID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[FactID]" />
+                    <inputColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].Columns[DimGeoID]"
+                      cachedDataType="i4"
+                      cachedName="DimGeoID"
+                      externalMetadataColumnId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimGeoID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimGeoID]" />
+                    <inputColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].Columns[DimIndicatorID]"
+                      cachedDataType="i4"
+                      cachedName="DimIndicatorID"
+                      externalMetadataColumnId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimIndicatorID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimIndicatorID]" />
+                    <inputColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].Columns[DimSourceID]"
+                      cachedDataType="i4"
+                      cachedName="DimSourceID"
+                      externalMetadataColumnId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimSourceID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimSourceID]" />
+                    <inputColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].Columns[DimDefinitionID]"
+                      cachedDataType="i4"
+                      cachedName="DimDefinitionID"
+                      externalMetadataColumnId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimDefinitionID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimDefinitionID]" />
+                    <inputColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].Columns[YearAsDate]"
+                      cachedDataType="dbDate"
+                      cachedName="YearAsDate"
+                      externalMetadataColumnId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[YearAsDate]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[YearAsDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[FactID]"
+                      dataType="i8"
+                      name="FactID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimGeoID]"
+                      dataType="i4"
+                      name="DimGeoID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimIndicatorID]"
+                      dataType="i4"
+                      name="DimIndicatorID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimSourceID]"
+                      dataType="i4"
+                      name="DimSourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[DimDefinitionID]"
+                      dataType="i4"
+                      name="DimDefinitionID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input].ExternalColumns[YearAsDate]"
+                      dataType="date"
+                      name="YearAsDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Export Fact File\ROLAP Fact File"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ROLAP Fact File"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Fact]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Fact File\ROLAP Fact File.Connections[OleDbConnection]"
+                  connectionManagerID="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ROLAP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[Value]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[Value]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[Value]"
+                      name="Value"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[FactID]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[FactID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[FactID]"
+                      name="FactID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimGeoID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimGeoID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimGeoID]"
+                      name="DimGeoID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimIndicatorID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimIndicatorID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimIndicatorID]"
+                      name="DimIndicatorID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[YearAsDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[YearAsDate]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[YearAsDate]"
+                      name="YearAsDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimSourceID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimSourceID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimSourceID]"
+                      name="DimSourceID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimDefinitionID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimDefinitionID]"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].Columns[DimDefinitionID]"
+                      name="DimDefinitionID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[FactID]"
+                      dataType="i8"
+                      name="FactID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimGeoID]"
+                      dataType="i4"
+                      name="DimGeoID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimIndicatorID]"
+                      dataType="i4"
+                      name="DimIndicatorID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[YearAsDate]"
+                      dataType="dbDate"
+                      name="YearAsDate" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimSourceID]"
+                      dataType="i4"
+                      name="DimSourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output].ExternalColumns[DimDefinitionID]"
+                      dataType="i4"
+                      name="DimDefinitionID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[FactID]"
+                      dataType="i8"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[FactID]"
+                      name="FactID" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimSourceID]"
+                      dataType="i4"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimSourceID]"
+                      name="DimSourceID" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimDefinitionID]"
+                      dataType="i4"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimDefinitionID]"
+                      name="DimDefinitionID" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimGeoID]"
+                      dataType="i4"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimGeoID]"
+                      name="DimGeoID" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimIndicatorID]"
+                      dataType="i4"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[DimIndicatorID]"
+                      name="DimIndicatorID" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[YearAsDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[YearAsDate]"
+                      name="YearAsDate" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[Value]"
+                      dataType="r8"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[Value]"
+                      name="Value" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Export Fact File.Paths[OLE DB Source Output]"
+              endId="Package\Export Fact File\Exported Fact CSV File.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Export Fact File\ROLAP Fact File.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Export Fact File"
+          TopLeft="38,20" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Export Fact File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Export Fact File\Exported Fact CSV File"
+          TopLeft="67,130" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Export Fact File\ROLAP Fact File"
+          TopLeft="82,18" />
+        <EdgeLayout
+          Id="Package\Export Fact File.Paths[OLE DB Source Output]"
+          TopLeft="159,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,70"
+              Start="0,0"
+              End="0,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Export Fact File\ROLAP Fact File">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

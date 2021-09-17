@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Define WID Transforms and deduplication.sql"
+  DTS:DTSID="{63F501A8-2E0B-4726-9CBD-855C372BF520}"
+  DTS:CreationName="FILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+"\\SETUP\\WID_transforms_and_deduplication.sql"</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\WID_transforms_and_deduplication.sql" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
