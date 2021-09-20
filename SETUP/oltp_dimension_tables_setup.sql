@@ -3,7 +3,7 @@
 -- to the ROLAP database, which provides a clean version that is fully relational.
 -- The ROLAP database is the source for all client data whether online or offline
  
-USE [macrohistory_oltp_23.01.2021]
+USE [MACROHISTORY_OLTP]
 GO
 
 /* Different suppliers of data (UN, WDI, IFS, etc) use varying names for countries.

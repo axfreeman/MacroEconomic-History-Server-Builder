@@ -3,7 +3,7 @@
 -- so any changes to the structure of the OLAP tables should be reflected in changes to these tables
 
 
-USE [macrohistory_rolap_23.01.2021]
+USE [MACROHISTORY_ROLAP]
 GO
 
 -- The normalised fact file.
