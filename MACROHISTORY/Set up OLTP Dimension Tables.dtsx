@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-9EATJT9\afree"
   DTS:DTSID="{1E4643CF-DBC0-4F8B-A7AB-1E0777E3C372}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="103"
-  DTS:VersionGUID="{E97EFDEC-2820-407A-BD31-9C8E98066BD0}">
+  DTS:VersionBuild="111"
+  DTS:VersionGUID="{079DB58C-6DD6-4C4A-B359-75A5AC749023}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,31 +23,49 @@
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\afree\Documents\Works - Ours\Github\MacroEconomic-History-Server-Builder\SETUP\Meta.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[oltp_data_tables_create.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C5710A62-083C-43AA-94CA-779CF264BD1D}"
+      DTS:ObjectName="oltp_data_tables_create.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\oltp_data_tables_create.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[oltp_dimension_tables_setup.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{81C1F5A2-BF55-4676-8F63-7B80D0B2DDDF}"
+      DTS:ObjectName="oltp_dimension_tables_setup.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\oltp_dimension_tables_setup.sql" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Drop and Create OLTP Dimension Tables"
+      DTS:refId="Package\OLTP DImension Tables Setup"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{62971208-d023-4510-8376-7e29840841b4}"
+      DTS:DTSID="{B41F13ED-E219-4740-A165-659229C1432C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Drop and Create OLTP Dimension Tables"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="OLTP DImension Tables Setup"
       DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:LoggingOptions
-        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{442F2917-9C92-411C-B3F4-4301EB05D697}"
-          SQLTask:BypassPrepare="False"
           SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="OLTP Dimension Tables setup.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="oltp_dimension_tables_setup.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -870,56 +888,6 @@
                       name="indicator_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_expenditure_component]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[gdp_expenditure_component]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_expenditure_component]"
-                      name="gdp_expenditure_component"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[capital_component]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[capital_component]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[capital_component]"
-                      name="capital_component"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[source_component]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[source_component]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[source_component]"
-                      name="source_component"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[balance_of_payments_component]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[balance_of_payments_component]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[balance_of_payments_component]"
-                      name="balance_of_payments_component"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[population_component]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[population_component]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[population_component]"
-                      name="population_component"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[industrial_sector]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -970,16 +938,6 @@
                       name="indicator_metrics"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[other_indicator_description]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[other_indicator_description]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[other_indicator_description]"
-                      name="other_indicator_description"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[output_definition]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -999,6 +957,26 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[accounting_basis]"
                       name="accounting_basis"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[component_description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[component_description]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[component_description]"
+                      name="component_description"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[supplementary_information]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[supplementary_information]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[supplementary_information]"
+                      name="supplementary_information"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1012,31 +990,6 @@
                       dataType="wstr"
                       length="255"
                       name="indicator_type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[gdp_expenditure_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="gdp_expenditure_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[capital_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="capital_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[source_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="source_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[balance_of_payments_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="balance_of_payments_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[population_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="population_component" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[industrial_sector]"
                       dataType="wstr"
@@ -1063,11 +1016,6 @@
                       length="255"
                       name="indicator_metrics" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[other_indicator_description]"
-                      dataType="wstr"
-                      length="255"
-                      name="other_indicator_description" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[output_definition]"
                       dataType="wstr"
                       length="255"
@@ -1077,6 +1025,16 @@
                       dataType="wstr"
                       length="255"
                       name="accounting_basis" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[component_description]"
+                      dataType="wstr"
+                      length="255"
+                      name="component_description" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].ExternalColumns[supplementary_information]"
+                      dataType="wstr"
+                      length="255"
+                      name="supplementary_information" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1097,41 +1055,17 @@
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[indicator_type]"
                       name="indicator_type" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[gdp_expenditure_component]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[component_description]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[gdp_expenditure_component]"
-                      name="gdp_expenditure_component" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[component_description]"
+                      name="component_description" />
                     <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[capital_component]"
+                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[supplementary_information]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[capital_component]"
-                      name="capital_component" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[source_component]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[source_component]"
-                      name="source_component" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[balance_of_payments_component]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[balance_of_payments_component]"
-                      name="balance_of_payments_component" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[population_component]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[population_component]"
-                      name="population_component" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[other_indicator_description]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[other_indicator_description]"
-                      name="other_indicator_description" />
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[supplementary_information]"
+                      name="supplementary_information" />
                     <outputColumn
                       refId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Error Output].Columns[output_definition]"
                       dataType="wstr"
@@ -1292,48 +1226,6 @@
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[measure_type]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[measure_type]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[gdp_expenditure_component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="gdp_expenditure_component"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[gdp_expenditure_component]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[gdp_expenditure_component]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[capital_component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="capital_component"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[capital_component]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[capital_component]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[source_component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="source_component"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[source_component]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[source_component]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[balance_of_payments_component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="balance_of_payments_component"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[balance_of_payments_component]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[balance_of_payments_component]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[population_component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="population_component"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[population_component]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[population_component]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[other_indicator_description]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="other_indicator_description"
-                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[other_indicator_description]"
-                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[other_indicator_description]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[indicator_dimension]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1368,6 +1260,13 @@
                       cachedName="accounting_basis"
                       externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[accounting_basis]"
                       lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[accounting_basis]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].Columns[component_description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="component_description"
+                      externalMetadataColumnId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[component_description]"
+                      lineageId="Package\Populate DimIndicator\DimIndicator Excel Sheet.Outputs[Excel Source Output].Columns[component_description]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1396,36 +1295,6 @@
                       length="255"
                       name="measure_type" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[gdp_expenditure_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="gdp_expenditure_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[capital_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="capital_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[source_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="source_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[balance_of_payments_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="balance_of_payments_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[population_component]"
-                      dataType="wstr"
-                      length="255"
-                      name="population_component" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[other_indicator_description]"
-                      dataType="wstr"
-                      length="255"
-                      name="other_indicator_description" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[indicator_dimension]"
                       dataType="wstr"
                       length="255"
@@ -1450,6 +1319,16 @@
                       dataType="wstr"
                       length="255"
                       name="accounting_basis" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[component_description]"
+                      dataType="wstr"
+                      length="255"
+                      name="component_description" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicator\DimIndicator OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[supplementary_information]"
+                      dataType="wstr"
+                      length="255"
+                      name="supplementary_information" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2764,8 +2643,8 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{E3468AB6-A15B-4B19-9150-5FC1021EFB5A}"
-      DTS:From="Package\Drop and Create OLTP Dimension Tables"
+      DTS:DTSID="{8605F209-E6DA-48BF-A573-A4BAF4E7AA98}"
+      DTS:From="Package\OLTP DImension Tables Setup"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Populate GeoStandardNames OLTP Table" />
@@ -2815,55 +2694,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="271,42"
-          Id="Package\Drop and Create OLTP Dimension Tables"
-          TopLeft="34.5,24.3750000080715" />
+          Size="222.285714285715,42.2857142857143"
+          Id="Package\OLTP DImension Tables Setup"
+          TopLeft="85.0000022517312,31.6521747333116" />
         <NodeLayout
-          Size="253,41.5"
+          Size="253.142857142858,41.7142857142858"
           Id="Package\Populate DimGeo OLTP Table"
-          TopLeft="62.5,176.458333336024" />
+          TopLeft="62.5,188.893116266968" />
         <NodeLayout
-          Size="184,41.5"
+          Size="184,41.7142857142858"
           Id="Package\Populate DimIndicator"
-          TopLeft="408,168.583333392524" />
+          TopLeft="408,181.018116323468" />
         <NodeLayout
-          Size="290,41.5"
+          Size="290.285714285715,41.7142857142858"
           Id="Package\Populate DimSource OLTP  Table"
-          TopLeft="655.839499304815,171.482142974042" />
+          TopLeft="655.839499304815,183.916925904986" />
         <NodeLayout
-          Size="295.5,41.5"
+          Size="295.428571428572,41.7142857142858"
           Id="Package\Populate GeoStandardNames OLTP Table"
-          TopLeft="53,97" />
+          TopLeft="53,109.434782930944" />
         <NodeLayout
-          Size="265,42"
+          Size="265.142857142858,42.2857142857143"
           Id="Package\Populate IndicatorStandard OLTP Table"
-          TopLeft="391.5,93.9583333683097" />
+          TopLeft="391.5,106.393116299254" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="170,66.3750000080715">
+          TopLeft="198.428572554437,73.9378890190259">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="30.75,30.6249999919285"
+              EndConnector="0,35.496893911918"
               Start="0,0"
-              End="30.75,23.1249999919285">
+              End="0,27.996893911918">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.3124999959643" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.3124999959643"
-                    Point2="0,15.3124999959643"
-                    Point3="4,15.3124999959643" />
-                  <mssgle:LineSegment
-                    End="26.75,15.3124999959643" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.75,15.3124999959643"
-                    Point2="30.75,15.3124999959643"
-                    Point3="30.75,19.3124999959643" />
-                  <mssgle:LineSegment
-                    End="30.75,23.1249999919285" />
+                    End="0,27.996893911918" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2874,7 +2741,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="348.5,116.354166684155">
+          TopLeft="348.5,128.788949615099">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2896,7 +2763,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="524,135.95833336831">
+          TopLeft="524,148.393116299254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2930,7 +2797,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="315.5,193.270833364274">
+          TopLeft="315.5,205.705616295218">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2952,7 +2819,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="592,190.782738183283">
+          TopLeft="592,203.217521114227">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3045,13 +2912,13 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="197,41.5"
+          Size="197.142857142858,41.7142857142858"
           Id="Package\Populate DimIndicator\DimIndicator OLTP Table"
           TopLeft="77.3888978737368,136.150798879784" />
         <NodeLayout
-          Size="197,41.5"
+          Size="197.142857142858,41.7142857142858"
           Id="Package\Populate DimIndicator\DimIndicator Excel Sheet"
           TopLeft="77.0648239118814,30.71428618869" />
         <EdgeLayout
@@ -3073,9 +2940,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3179,11 +3044,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="229,41.5"
+          Size="229.142857142858,41.7142857142858"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames OLTP Table"
           TopLeft="61,167.5" />
         <NodeLayout
-          Size="194.5,41.5"
+          Size="194.285714285715,41.7142857142858"
           Id="Package\Populate GeoStandardNames OLTP Table\GeoStandardNames"
           TopLeft="86,65" />
         <EdgeLayout
@@ -3243,7 +3108,7 @@
     design-time-name="Package\Populate IndicatorStandard OLTP Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,41.5"
           Id="Package\Populate IndicatorStandard OLTP Table\Shorten Source"
@@ -3275,7 +3140,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3297,7 +3164,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

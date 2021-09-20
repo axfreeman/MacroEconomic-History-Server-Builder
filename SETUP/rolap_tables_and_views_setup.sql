@@ -3,7 +3,7 @@
 -- so any changes to the structure of the OLAP tables should be reflected in changes to these tables
 
 
-USE [macrohistory_rolap_23.01.2021]
+USE [MACROHISTORY_ROLAP]
 GO
 
 -- The normalised fact file.
@@ -59,7 +59,7 @@ GO
 
 -- Maps the indicator description in the source onto standard indicator and quantifier names
 -- Note this simply replicates the definition in the OLTP database but without an auto-increment key, because that's generated when the OLTP table is created
--- indicator_type	gdp_expenditure_component	capital_component	source_component	balance_of_payments_component	population_component	indicator_other_information	gdp_approach_variation	indicator_description	industrial_sector	net_or_gross	paid_or_received	measure_type	indicator_dimension	indicator_units	indicator_metrics
+-- indicator_type	 component	supplementary_information	gdp_approach_variation	indicator_description	industrial_sector	net_or_gross	paid_or_received	measure_type	indicator_dimension	indicator_units	indicator_metrics
 
 DROP TABLE IF EXISTS DimIndicator 
 GO
@@ -69,12 +69,8 @@ CREATE TABLE DimIndicator (
 	-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
 	IndicatorStandardName nvarchar (256) NOT NULL,
 	indicator_type nvarchar (255)NULL,
-	gdp_expenditure_component nvarchar (255)NULL,
-	capital_component nvarchar (255)NULL,
-	source_component nvarchar (255)NULL,
-	balance_of_payments_component nvarchar (255)NULL,
-	population_component nvarchar (255)NULL,
-	other_indicator_description nvarchar (255)NULL,
+	component nvarchar (255)NULL,
+	supplementary_information nvarchar (255)NULL,
 	output_definition nvarchar (255)NULL,
 	accounting_basis nvarchar (255) NULL,
 	industrial_sector nvarchar (255)NULL,
@@ -184,7 +180,7 @@ GO
 CREATE OR ALTER VIEW FactQuery 
 AS
 SELECT dbo.Fact.FactID, dbo.Fact.DimSourceID, dbo.DimSource.SourceName, dbo.DimSource.SourceNameParent, dbo.DimSource.SourceNameDetail, dbo.DimSource.Description, dbo.Fact.DimGeoID, dbo.DimGeo.GeoStandardName, dbo.DimGeo.ReportingUnit, dbo.Fact.DimIndicatorID, dbo.DimIndicator.IndicatorStandardName, dbo.DimIndicator.indicator_type, 
-         dbo.DimIndicator.gdp_expenditure_component, dbo.DimIndicator.capital_component, dbo.DimIndicator.source_component, dbo.DimIndicator.balance_of_payments_component, dbo.DimIndicator.population_component, dbo.DimIndicator.other_indicator_description, dbo.DimIndicator.output_definition, dbo.DimIndicator.industrial_sector, dbo.DimIndicator.measure_type, 
+         dbo.DimIndicator.component, dbo.DimIndicator.supplementary_information, dbo.DimIndicator.output_definition, dbo.DimIndicator.industrial_sector, dbo.DimIndicator.measure_type, 
          dbo.DimIndicator.indicator_dimension, dbo.DimIndicator.indicator_units, dbo.DimIndicator.indicator_metrics, dbo.Fact.Value, dbo.Fact.DateField, dbo.DimIndicator.accounting_basis, dbo.DimGeo.GeoEconomic_Region, dbo.DimGeo.Major_Blocs, dbo.DimGeo.NICS_geography, dbo.DimGeo.Geopolitical_region, dbo.DimGeo.Maddison_availability, dbo.DimGeo.wdi_availability, 
          dbo.DimGeo.penn_availability, dbo.DimGeo.WID_Geography, dbo.DimGeo.IMF_main_category, dbo.DimGeo.WEO_Geography, dbo.DimGeo.MACROHISTORY_Geography, dbo.DimGeo.Size, dbo.DimGeo.GeoPolitical_Type
 FROM  dbo.Fact LEFT OUTER JOIN
@@ -234,9 +230,9 @@ FROM  dbo.FactQuery INNER JOIN
  AND dbo.FactQuery.DimGeoID = Fact_1.DimGeoID
  AND dbo.FactQuery.DimIndicatorID = Fact_1.DimIndicatorID
 */
-SELECT dbo.FactQuery.FactID, dbo.FactQuery.DateField, dbo.FactQuery.Value, Fact_1.Value AS LaggedValue, dbo.FactQuery.SourceNameDetail, dbo.FactQuery.Description, dbo.FactQuery.GeoStandardName, dbo.FactQuery.ReportingUnit, dbo.FactQuery.indicator_type, dbo.FactQuery.gdp_Expenditure_Component, dbo.FactQuery.capital_component, dbo.FactQuery.source_component, 
-         dbo.FactQuery.balance_of_payments_component, dbo.FactQuery.population_component, dbo.FactQuery.other_indicator_description, dbo.FactQuery.output_definition, dbo.FactQuery.industrial_sector, dbo.FactQuery.measure_type, dbo.FactQuery.indicator_dimension, dbo.FactQuery.indicator_units, dbo.FactQuery.indicator_metrics, dbo.FactQuery.IndicatorStandardName, 
-         dbo.IndicatorStandardNames.IndicatorSourceDescription, dbo.FactQuery.SourceNameParent, dbo.FactQuery.gdp_expenditure_component AS Expr1, dbo.FactQuery.SourceName, dbo.FactQuery.accounting_basis, dbo.FactQuery.GeoEconomic_Region, dbo.FactQuery.Major_Blocs, dbo.FactQuery.NICS_geography, dbo.FactQuery.Geopolitical_region, 
+SELECT dbo.FactQuery.FactID, dbo.FactQuery.DateField, dbo.FactQuery.Value, Fact_1.Value AS LaggedValue, dbo.FactQuery.SourceNameDetail, dbo.FactQuery.Description, dbo.FactQuery.GeoStandardName, dbo.FactQuery.ReportingUnit, dbo.FactQuery.indicator_type, dbo.FactQuery.component, 
+         dbo.FactQuery.supplementary_information, dbo.FactQuery.output_definition, dbo.FactQuery.industrial_sector, dbo.FactQuery.measure_type, dbo.FactQuery.indicator_dimension, dbo.FactQuery.indicator_units, dbo.FactQuery.indicator_metrics, dbo.FactQuery.IndicatorStandardName, 
+         dbo.IndicatorStandardNames.IndicatorSourceDescription, dbo.FactQuery.SourceNameParent, dbo.FactQuery.SourceName, dbo.FactQuery.accounting_basis, dbo.FactQuery.GeoEconomic_Region, dbo.FactQuery.Major_Blocs, dbo.FactQuery.NICS_geography, dbo.FactQuery.Geopolitical_region, 
          dbo.FactQuery.Maddison_availability, dbo.FactQuery.wdi_availability, dbo.FactQuery.penn_availability, dbo.FactQuery.WID_Geography, dbo.FactQuery.IMF_main_category, dbo.FactQuery.MACROHISTORY_Geography, dbo.FactQuery.WEO_Geography, dbo.FactQuery.Size, dbo.FactQuery.GeoPolitical_Type
 FROM  dbo.FactQuery INNER JOIN
          dbo.Fact AS Fact_1 ON YEAR(dbo.FactQuery.DateField) = YEAR(Fact_1.DateField) - 1 AND dbo.FactQuery.DimSourceID = Fact_1.DimSourceID AND dbo.FactQuery.DimGeoID = Fact_1.DimGeoID AND dbo.FactQuery.DimIndicatorID = Fact_1.DimIndicatorID LEFT OUTER JOIN

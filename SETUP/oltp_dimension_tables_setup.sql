@@ -3,7 +3,7 @@
 -- to the ROLAP database, which provides a clean version that is fully relational.
 -- The ROLAP database is the source for all client data whether online or offline
  
-USE [macrohistory_oltp_23.01.2021]
+USE [MACROHISTORY_OLTP]
 GO
 
 /* Different suppliers of data (UN, WDI, IFS, etc) use varying names for countries.
@@ -109,12 +109,8 @@ CREATE TABLE DimIndicator (
 	-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
 	IndicatorStandardName nvarchar (256) NOT NULL,
 	indicator_type nvarchar (255)NULL,
-	gdp_expenditure_component nvarchar (255)NULL,
-	capital_component nvarchar (255)NULL,
-	source_component nvarchar (255)NULL,
-	balance_of_payments_component nvarchar (255)NULL,
-	population_component nvarchar (255)NULL,
-	other_indicator_description nvarchar (255)NULL,
+	component_description nvarchar (255)NULL,
+	supplementary_information nvarchar (255)NULL,
 	output_definition nvarchar (255)NULL,
 	accounting_basis nvarchar (255) NULL,
 	industrial_sector nvarchar (255)NULL,
