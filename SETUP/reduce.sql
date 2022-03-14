@@ -25,9 +25,11 @@ SELECT a.IndicatorStandardName,
 FROM dbo.simplifiedIndicatorTable AS a
     INNER JOIN dbo.FilterCompositeTable AS b
         ON a.SourceNameParent = b.SourceNameParent
+
            AND a.indicator_type = b.indicator_type
-           AND ISNULL(a.component, N'AAA') = b.component
+		   AND a.component=b.component
            AND ISNULL(a.output_definition, N'AAA') = b.output_definition
+
 GO
 
 
@@ -91,23 +93,28 @@ GO
 
 CREATE or alter VIEW [dbo].[smallCompleteQuery]
 AS
-SELECT a.Year,
-	   a.Value,
-	   c.GeoPolitical_Type,
+SELECT c.GeoPolitical_Type,
+       c.DimGeoID,
        c.GeoStandardName,
        c.ReportingUnit,
+       c.Size,
        c.GeoEconomic_Region,
        c.Major_Blocs,
+       c.NICS_geography,
        c.Geopolitical_region,
        c.Maddison_availability,
        c.wdi_availability,
        c.penn_availability,
+       c.MACROHISTORY_Geography,
+       c.WID_Geography,
+       c.IMF_main_category,
        c.WEO_Geography,
        b.IndicatorStandardName,
        b.indicator_type,
        b.component_description,
        b.supplementary_information,
        b.output_definition,
+       b.accounting_basis,
        b.industrial_sector,
        b.measure_type,
        b.indicator_dimension,
@@ -117,8 +124,6 @@ SELECT a.Year,
        b.IndicatorSourceDescription,
        b.IndicatorSourceCode,
        b.SourceNameDetail,
-	   b.SourceNameParent,
-	   b.SourceName,
        b.Description,
        b.SIndID
 FROM dbo.smallerFactTable AS a
@@ -127,5 +132,3 @@ FROM dbo.smallerFactTable AS a
     RIGHT OUTER JOIN dbo.smallerGeographyTable AS c
         ON a.DimGeoID = c.DimGeoID
 GO
-
-

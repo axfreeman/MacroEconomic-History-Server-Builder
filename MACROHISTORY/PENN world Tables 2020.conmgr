@@ -1,53 +1,55 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="PENN WORLD TABLES"
-  DTS:DTSID="{52D47102-6F47-46F9-B96E-AE925DC88496}"
+  DTS:ObjectName="PENN world Tables 2020"
+  DTS:DTSID="{FA3F0A73-B81A-40CA-81F0-B093DF2DFC2D}"
   DTS:CreationName="FLATFILE">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ProjectRoot]+ @[$Project::SourceData]+"pwt91.csv"</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"
-      DTS:LocaleID="4105"
+      DTS:LocaleID="2057"
       DTS:HeaderRowDelimiter="_x000D__x000A_"
       DTS:ColumnNamesInFirstDataRow="True"
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x0022_"
       DTS:CodePage="65001"
-      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\DATA\SOURCE\pwt.csv">
+      DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\DATA\SOURCE\pwt91.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="255"
+          DTS:MaximumWidth="3"
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="countrycode"
-          DTS:DTSID="{68A652B0-0D41-4A0B-98D2-A233F0B20B22}"
+          DTS:DTSID="{E2DFC077-902E-4517-906D-E1956143A06A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="255"
+          DTS:MaximumWidth="50"
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="country"
-          DTS:DTSID="{32B0A881-0B09-436C-B4C0-528A6FC1097E}"
+          DTS:DTSID="{72669BFE-8447-4604-B02E-7EAE9DCBD9D2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:MaximumWidth="255"
+          DTS:MaximumWidth="50"
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="currency_unit"
-          DTS:DTSID="{D22E6FC5-46E8-4F9A-95E5-C4DBADCA328B}"
+          DTS:DTSID="{7D427CC2-B9EA-4B59-BE17-BDBE5C8DCEED}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x002C_"
-          DTS:DataType="3"
+          DTS:DataType="2"
           DTS:TextQualified="True"
           DTS:ObjectName="year"
-          DTS:DTSID="{E3A03710-5D29-4FA6-9CEE-7732B8D2A2FC}"
+          DTS:DTSID="{3C1AC329-E041-4A33-AA20-1251548F7EA2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -55,7 +57,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rgdpe"
-          DTS:DTSID="{13E009D3-D613-4C01-83E3-620FB274F53A}"
+          DTS:DTSID="{E337CFE3-5097-47F2-8398-E306B4B0321A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -63,7 +65,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rgdpo"
-          DTS:DTSID="{190C2434-9733-4942-8356-4F50930CFB14}"
+          DTS:DTSID="{306AFB81-3BED-4B2B-841E-DC376BC521FD}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -71,7 +73,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pop"
-          DTS:DTSID="{A43BBF82-BE89-41E8-95F3-3A8A63D9EE22}"
+          DTS:DTSID="{5624C80F-78CF-4912-89FF-4F8159052CC1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -79,7 +81,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="emp"
-          DTS:DTSID="{6D629FF7-4661-49D7-9E93-793F38743E89}"
+          DTS:DTSID="{2B222FDD-4259-4E98-88FA-226BC7E943EF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -87,7 +89,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="avh"
-          DTS:DTSID="{8FED91F9-F7F8-4C74-A15C-D49E929834DB}"
+          DTS:DTSID="{27303FE1-B54C-441F-ACC4-71903ECA6031}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -95,7 +97,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="hc"
-          DTS:DTSID="{4E4666D2-D481-4D7F-9561-FACEE538D653}"
+          DTS:DTSID="{6977C70E-12B4-4846-BB95-FE5FCDE0B568}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -103,7 +105,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="ccon"
-          DTS:DTSID="{47E5E557-9367-494F-9D20-C6C9900833FD}"
+          DTS:DTSID="{5B0E4E87-E4A6-4B81-A6D1-C660580C12C5}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -111,7 +113,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="cda"
-          DTS:DTSID="{49CC2BA3-5F17-4682-AE05-4528975DD71E}"
+          DTS:DTSID="{E1E3261A-F7BF-4DE3-B1D6-F92B10AD38ED}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -119,7 +121,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="cgdpe"
-          DTS:DTSID="{61F67EAB-9870-44A0-8447-F3C700001A68}"
+          DTS:DTSID="{6C4D1BB7-8FED-4279-A567-10C4B31007CA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -127,7 +129,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="cgdpo"
-          DTS:DTSID="{5FB3DA4B-26C0-4114-9B49-266B8E9D100F}"
+          DTS:DTSID="{CB1BDC6E-D484-46A6-A357-778EE1C628AF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -135,7 +137,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="cn"
-          DTS:DTSID="{527BEECF-9661-4D23-B087-FA75CFBB9EC4}"
+          DTS:DTSID="{7A80D61C-29EB-4CCF-B5C5-3B3D9E8008FE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -143,7 +145,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="ck"
-          DTS:DTSID="{29EDC381-699F-48FB-83B3-8A60222AC309}"
+          DTS:DTSID="{76F9D9DE-8A5D-4508-BE10-DB51EEC6590C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -151,7 +153,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="ctfp"
-          DTS:DTSID="{C935203D-B3E5-4D09-9D2E-0539BC56C03A}"
+          DTS:DTSID="{DE07F3B5-8312-4CB5-9A7A-536A70D412FB}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -159,7 +161,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="cwtfp"
-          DTS:DTSID="{40C1F403-FF1D-4A89-B74D-D9722DBAD163}"
+          DTS:DTSID="{954AA8F6-CE45-48AD-8345-6BCFB4A1AF0A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -167,7 +169,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rgdpna"
-          DTS:DTSID="{EF0D5922-F712-4D9C-96A0-9053D37ADCD0}"
+          DTS:DTSID="{C80AE3EF-A93B-416A-80D4-09AF5F3CE0A6}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -175,7 +177,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rconna"
-          DTS:DTSID="{94793E58-D5D4-470F-8600-62ECF023FA2D}"
+          DTS:DTSID="{1DF8E3FE-8E3B-40CF-97C6-BBEAEBC7E4CD}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -183,7 +185,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rdana"
-          DTS:DTSID="{74D4E857-BE7F-4068-9B75-FD142E609E34}"
+          DTS:DTSID="{94A94D11-5FE6-4116-AA78-37AEF77B3F61}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -191,7 +193,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rnna"
-          DTS:DTSID="{4266E8B0-2607-433F-AF68-05B68196B84D}"
+          DTS:DTSID="{BE92AE62-77F4-44D5-B8AF-27681462356F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -199,7 +201,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rkna"
-          DTS:DTSID="{D7FE7F08-DD03-41E0-9906-56C61D40D14E}"
+          DTS:DTSID="{22870D58-4B7A-44C7-B2A4-3AC245B9E6EA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -207,7 +209,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rtfpna"
-          DTS:DTSID="{EDBA059A-C93F-4D26-B0BC-EBA7FE2A63E6}"
+          DTS:DTSID="{F20B3FD9-8779-43BE-A3A2-68D287AEC08D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -215,7 +217,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="rwtfpna"
-          DTS:DTSID="{7303B1B1-B323-430A-8AAC-F9F5D564DD4C}"
+          DTS:DTSID="{1758C530-1871-4BD2-A41F-90F68FA7000C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -223,7 +225,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="labsh"
-          DTS:DTSID="{388B691B-1E9A-4850-A1E2-98BA8FCFA1E5}"
+          DTS:DTSID="{5B85CFCE-4B7E-4463-97A1-23AE8F74BCF6}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -231,7 +233,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="irr"
-          DTS:DTSID="{DA90C84A-B574-4465-9F31-6C30609D6A7F}"
+          DTS:DTSID="{AEE5F78B-8DE6-44D8-AD30-CD1B56B1921E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -239,7 +241,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="delta"
-          DTS:DTSID="{A25DBFBF-5306-4108-9AC5-DD16B96B8180}"
+          DTS:DTSID="{FF9FD576-E1C6-446D-BC96-D9431AEA0289}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -247,7 +249,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="xr"
-          DTS:DTSID="{731E741C-33D2-4F12-95D2-43394609A72B}"
+          DTS:DTSID="{911FB20D-0F61-4667-BF62-D7EEC3A4B965}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -255,7 +257,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_con"
-          DTS:DTSID="{35B38FE6-8529-4C9F-B100-6CA6A4C74B62}"
+          DTS:DTSID="{CC25C74D-FB3F-4F44-9907-1D8028B4A907}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -263,7 +265,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_da"
-          DTS:DTSID="{D98E9F59-AFD0-44F6-AAEF-876AFCDE291C}"
+          DTS:DTSID="{338A502B-B328-439D-8E80-2CD083CD6D80}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -271,7 +273,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_gdpo"
-          DTS:DTSID="{61DDA778-8E76-4033-8729-D9B784A23836}"
+          DTS:DTSID="{28695B5F-C8DF-45B8-BD7E-4996E0F54D1C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -279,7 +281,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="i_cig"
-          DTS:DTSID="{BA939A9A-EAD2-4DE3-8DF8-819D05246FFA}"
+          DTS:DTSID="{66AD2B24-08E6-4246-8CB0-135A700CA47F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -287,7 +289,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="i_xm"
-          DTS:DTSID="{7C299A9E-5473-4BD4-9E98-9950D13686FA}"
+          DTS:DTSID="{7F1832F9-2E68-4B8E-8929-BEF70CEAC1B4}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -295,7 +297,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="i_xr"
-          DTS:DTSID="{2D9A27B1-3C65-4746-A982-4B3817745E11}"
+          DTS:DTSID="{010413C8-A4F0-4DDA-8D97-97AD0DDABA48}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -303,7 +305,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="i_outlier"
-          DTS:DTSID="{B156CFB3-999D-4CBC-9302-B7F5557F84FF}"
+          DTS:DTSID="{B427F634-27AC-42B4-81BC-B03306E1D90F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -311,7 +313,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="i_irr"
-          DTS:DTSID="{2870DB9B-37FA-4E9D-93E3-A8D69570B9C6}"
+          DTS:DTSID="{F8208192-254D-411C-9328-57E3A1EB7717}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -319,7 +321,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="cor_exp"
-          DTS:DTSID="{2AF1AFBC-9DBA-482E-A688-947D9547D305}"
+          DTS:DTSID="{792D9E5A-CF0B-449A-AE01-393166045908}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -327,7 +329,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="statcap"
-          DTS:DTSID="{569BD91B-91C8-46B5-8F1F-4B8A30CABF60}"
+          DTS:DTSID="{8861274B-CBCA-4EBB-87FD-EA89C48B5464}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -335,7 +337,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="csh_c"
-          DTS:DTSID="{007AC191-9B01-4205-A656-770213ECD6F5}"
+          DTS:DTSID="{1609734B-272E-49A4-BBBC-060288291E42}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -343,7 +345,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="csh_i"
-          DTS:DTSID="{B6D4ADCE-1BD6-4E37-9D67-F75996226E16}"
+          DTS:DTSID="{FE28D3FE-CDBA-4278-BA8C-536DED053AB2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -351,7 +353,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="csh_g"
-          DTS:DTSID="{0A4B1B5A-B42C-4054-9465-F1F8C28DD235}"
+          DTS:DTSID="{99DD6ADB-3EFC-49B5-8337-01E3E4CB9685}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -359,7 +361,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="csh_x"
-          DTS:DTSID="{5B2086C0-52A7-4897-B6D2-2FFBBFA3834F}"
+          DTS:DTSID="{3C166D5D-E19E-4934-B55B-09FC48390BAC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -367,7 +369,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="csh_m"
-          DTS:DTSID="{0891539A-C777-499D-B5D3-3ECDA73627FF}"
+          DTS:DTSID="{33541FC9-3871-4AF3-A29A-466F98F66B89}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -375,7 +377,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="csh_r"
-          DTS:DTSID="{03E84D8F-5C1A-466D-A61B-6EB03D1EBEAE}"
+          DTS:DTSID="{A04593C7-B9F9-490D-AA66-CF964D81AD97}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -383,7 +385,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_c"
-          DTS:DTSID="{339DA7E1-182C-4E1E-A28F-3FBBEDEEC9E5}"
+          DTS:DTSID="{2561FD45-FE07-42CD-B192-6DB091FDCA03}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -391,7 +393,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_i"
-          DTS:DTSID="{B1FE7FF4-4798-4C77-827D-39EA00E5D1CB}"
+          DTS:DTSID="{550C1A42-6741-4DB9-B1B1-4321FD18B1EE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -399,7 +401,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_g"
-          DTS:DTSID="{83033708-0990-4880-B8B4-C7C9BCD48174}"
+          DTS:DTSID="{66BE9AEC-F7A7-4DB6-A9AB-B79CE2D1480E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -407,7 +409,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_x"
-          DTS:DTSID="{4FC4598F-F325-46D2-9BE9-CEE218ED47A4}"
+          DTS:DTSID="{F4B08D9B-3444-42CE-B14A-0A5476857B8C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -415,7 +417,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_m"
-          DTS:DTSID="{94FB18EB-1DDC-4F4A-BF64-D6A1CF04058C}"
+          DTS:DTSID="{38751E8B-5BF7-4562-9AF9-7133E1460583}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -423,7 +425,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_n"
-          DTS:DTSID="{79687B1F-70F5-4847-A44F-1113E615D44C}"
+          DTS:DTSID="{DDFA445E-86D5-4365-A3DC-3A639D5167A5}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -431,7 +433,7 @@
           DTS:DataType="5"
           DTS:TextQualified="True"
           DTS:ObjectName="pl_k"
-          DTS:DTSID="{4B041028-508B-426F-94BA-0818E4157535}"
+          DTS:DTSID="{C69504E5-29F6-418A-A325-1C7A8AA42FEE}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

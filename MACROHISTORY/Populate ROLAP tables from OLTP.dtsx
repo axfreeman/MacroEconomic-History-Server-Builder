@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="287"
-  DTS:VersionGUID="{659D63D9-E7D7-4834-9EA3-C2A8159C1A16}">
+  DTS:VersionBuild="285"
+  DTS:VersionGUID="{BE837FB1-7343-420E-856A-48A16282FB0B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -74,26 +74,6 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[reduce.sql]"
-      DTS:CreationName="FILE"
-      DTS:DTSID="{0B44CB3D-B4AB-432B-A32A-E892F650D7BE}"
-      DTS:ObjectName="reduce.sql">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\reduce.sql" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[simplify.sql]"
-      DTS:CreationName="FILE"
-      DTS:DTSID="{AF1FEF37-EA1C-493F-864B-0E6178EFAC89}"
-      DTS:ObjectName="simplify.sql">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\simplify.sql" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -2798,40 +2778,6 @@
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Produce Reduced Tables"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6AE29E30-1A75-4598-9826-F732847B5C3B}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Produce Reduced Tables"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{3EC81040-B146-42C9-B74A-2C7413ECB0CB}"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="reduce.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Produce Simplified Tables"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E202C9C7-835D-4679-9DD8-5D5F235EC8F9}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Produce Simplified Tables"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{BA853467-90FA-48E3-A669-2B6102164645}"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="simplify.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2874,22 +2820,6 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Populate ROLAP fact file" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:CreationName=""
-      DTS:DTSID="{90AB8214-B5B6-48B4-8FC1-DC5393290C37}"
-      DTS:From="Package\Populate ROLAP fact file"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Produce Simplified Tables" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
-      DTS:CreationName=""
-      DTS:DTSID="{218FE8CA-2C12-41CD-A84C-8BD068E883FF}"
-      DTS:From="Package\Produce Simplified Tables"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Produce Reduced Tables" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2926,7 +2856,7 @@
         <NodeLayout
           Size="218.857142857143,41.7142857142858"
           Id="Package\Populate ROLAP fact file"
-          TopLeft="64.6666566906722,220.587384094614" />
+          TopLeft="466.333333997872,311.587386452885" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="518.970095279019,126.727028177537">
@@ -3017,82 +2947,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="953.214285714286,142.785714285714">
+          TopLeft="953.25,142.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-779.119057595042,77.8016698089"
+              EndConnector="-377.416666002128,169.087386452885"
               Start="0,0"
-              End="-779.119057595042,70.3016698089">
+              End="-377.416666002128,161.587386452885">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.90083490445" />
+                    End="0,80.5436932264425" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34.90083490445"
-                    Point2="0,38.90083490445"
-                    Point3="-4,38.90083490445" />
+                    Point1="0,80.5436932264425"
+                    Point2="0,84.5436932264425"
+                    Point3="-4,84.5436932264425" />
                   <mssgle:LineSegment
-                    End="-775.119057595042,38.90083490445" />
+                    End="-373.416666002128,84.5436932264425" />
                   <mssgle:CubicBezierSegment
-                    Point1="-775.119057595042,38.90083490445"
-                    Point2="-779.119057595042,38.90083490445"
-                    Point3="-779.119057595042,42.90083490445" />
+                    Point1="-373.416666002128,84.5436932264425"
+                    Point2="-377.416666002128,84.5436932264425"
+                    Point3="-377.416666002128,88.5436932264425" />
                   <mssgle:LineSegment
-                    End="-779.119057595042,70.3016698089" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="200,42.2857142857143"
-          Id="Package\Produce Simplified Tables"
-          TopLeft="388.333343620654,226.086962380797" />
-        <NodeLayout
-          Size="194.857142857143,42.2857142857143"
-          Id="Package\Produce Reduced Tables"
-          TopLeft="720.000019073487,228.913049410557" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="283.523799547815,244.337173237706">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="104.809544072839,0"
-              Start="0,0"
-              End="97.3095440728385,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="97.3095440728385,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="588.333343620654,248.642863038534">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="131.666675452833,0"
-              Start="0,0"
-              End="124.166675452833,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="124.166675452833,0" />
+                    End="-377.416666002128,161.587386452885" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3108,7 +2986,7 @@
     design-time-name="Package\Populate DimGeo">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151.428571428572,42.2857142857143"
           Id="Package\Populate DimGeo\ROLAP DimGeo"
@@ -3136,9 +3014,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3174,7 +3050,7 @@
     design-time-name="Package\Populate DimIndicator">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="174.857142857143,41.7142857142858"
           Id="Package\Populate DimIndicator\ROLAP DimIndicator"
@@ -3202,9 +3078,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3240,7 +3114,7 @@
     design-time-name="Package\Populate DimSources">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="193.714285714286,41.7142857142858"
           Id="Package\Populate DimSources\DimSource ROLAP Table"
@@ -3268,9 +3142,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3306,7 +3178,7 @@
     design-time-name="Package\Populate IndicatorStandardNames">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="252.571428571429,42.2857142857143"
           Id="Package\Populate IndicatorStandardNames\IndicatorStandardNames OLTP Table"
@@ -3334,9 +3206,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

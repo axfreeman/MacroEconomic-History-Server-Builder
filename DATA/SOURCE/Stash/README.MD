@@ -1,2 +1,0 @@
-This folder contains files that are no longer in use, which we have not yet ascertained are safe to remove  
-They will be kept here until all tests are run and we can rule out their further use, at which point they will still be available in the git history, but no longer currently available
