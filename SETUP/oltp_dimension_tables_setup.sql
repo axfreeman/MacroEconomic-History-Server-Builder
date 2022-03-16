@@ -107,7 +107,7 @@ DROP TABLE IF EXISTS DimIndicator
 CREATE TABLE DimIndicator (
 	DimIndicatorID int NOT NULL IDENTITY (1,1), 
 	-- the standard name which identifies this indicator uniquely on the ROLAP server (and hence in the cube)
-	IndicatorStandardName nvarchar (256) NOT NULL,
+	IndicatorStandardName nvarchar (255) NOT NULL,
 	indicator_type nvarchar (255)NULL,
 	component_description nvarchar (255)NULL,
 	supplementary_information nvarchar (255)NULL,
@@ -145,5 +145,67 @@ CONSTRAINT PK_Source PRIMARY KEY CLUSTERED
 	 DimSourceID ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) 
 )
+GO
+
+-- IndicatorStandardNames are the internal names assigned to various indicators in this project - they are not very systematic because we made them up as we went along
+-- but are sufficient for the project to work. An example is 'GDP-TOTAL-LCU-CURRENT'.
+-- Each source has its own name for the indicator it provides (indicatorSourceCode), and this has to be translated into the standard name.
+-- This query provides a list of standardised indicator names together with their indicatorSource Code and their source.
+-- Each entry in 'FactSource' records the source and indicatorSourceCode
+-- Hence, to add the 'IndicatorStandardName' to the FactSource, we have to join this table to FactSource on BOTH the source and the indicatorSourceCode
+
+CREATE or alter VIEW [dbo].[IndicatorStandardisedDimensionView]
+AS
+SELECT TOP (100) PERCENT
+    std.IndicatorSource,
+    std.IndicatorSourceDescription,
+    di.IndicatorStandardName,
+    di.indicator_type,
+    di.component_description AS component,
+    di.accounting_basis,
+    di.industrial_sector,
+    di.measure_type,
+    di.supplementary_information AS supplementary,
+    di.output_definition,
+    di.indicator_dimension,
+    di.indicator_metrics,
+    std.IndicatorSourceCode
+FROM dbo.IndicatorStandardNames AS std
+    INNER JOIN dbo.DimIndicator AS di
+        ON std.IndicatorStandardName = di.IndicatorStandardName
+ORDER BY std.IndicatorSource,
+         di.IndicatorStandardName
+GO
+
+-- Sources provide many different names for the countries in the project
+-- These have to be mapped to standard names so that data from different sources can be compared
+-- Each entry in 'FactSource' records the source and the name by which the source refers to the country concerned ('GeoSourceName')
+-- But, unlike the indicator view, we only need to find the single entry in this standardised table that provides the needed GeoStandardName
+-- We do this by ensuring the geoSourceName, in the geoStandardName table, is unique.
+
+CREATE or ALTER VIEW [dbo].[GeoStandardisedDimensionView]
+AS
+SELECT TOP (100) PERCENT
+    dg.GeoPolitical_Type,
+    dg.GeoStandardName,
+    dg.ReportingUnit,
+    dg.GeoEconomic_Region,
+    dg.Major_Blocs,
+    dg.NICS_geography,
+    dg.Geopolitical_region,
+    dg.Maddison_availability,
+    dg.wdi_availability,
+    dg.penn_availability,
+    dg.MACROHISTORY_Geography,
+    dg.WID_Geography,
+    dg.IMF_main_category,
+    dg.WEO_Geography,
+    dg.Size,
+    std.GeoSourceName
+FROM dbo.GeoStandardNames AS std
+    INNER JOIN dbo.DimGeo AS dg
+        ON std.GeoStandardName = dg.GeoStandardName
+ORDER BY dg.Major_Blocs,
+         dg.ReportingUnit
 GO
 
