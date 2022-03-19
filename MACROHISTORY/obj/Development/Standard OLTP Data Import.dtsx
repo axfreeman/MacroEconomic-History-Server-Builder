@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Standard OLTP Data Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="491"
-  DTS:VersionGUID="{BD30078E-22D8-476A-82D3-8A36E89DFCD8}">
+  DTS:VersionBuild="492"
+  DTS:VersionGUID="{215CA012-61BE-4F38-9391-1DA04649555D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -36479,11 +36479,11 @@
                       externalMetadataColumnId="Package\PENN Capital Stock\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       lineageId="Package\PENN Capital Stock\Unpivot.Outputs[Unpivot Output].Columns[Indicator]" />
                     <inputColumn
-                      refId="Package\PENN Capital Stock\FactSource.Inputs[OLE DB Destination Input].Columns[year]"
-                      cachedDataType="ui2"
-                      cachedName="year"
+                      refId="Package\PENN Capital Stock\FactSource.Inputs[OLE DB Destination Input].Columns[DateField]"
+                      cachedDataType="dbDate"
+                      cachedName="DateField"
                       externalMetadataColumnId="Package\PENN Capital Stock\FactSource.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\PENN Capital Stock\Unpivot.Outputs[Unpivot Output].Columns[year]" />
+                      lineageId="Package\PENN Capital Stock\Unpivot.Outputs[Unpivot Output].Columns[DateField]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -59828,6 +59828,10 @@
           Id="Package\deduplicate UN GDP series"
           TopLeft="103.999996291266,99.4619534316512" />
         <NodeLayout
+          Size="220.571428571429,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates"
+          TopLeft="984.123595411118,407.50311349979" />
+        <NodeLayout
           Size="117.714285714286,42.2857142857143"
           Id="Package\IFS2020"
           TopLeft="825.388894687464,22.8043457607691" />
@@ -60044,6 +60048,28 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="870.492081844408,428.937897441421">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113.63151356671,0"
+              Start="0,0"
+              End="106.13151356671,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="106.13151356671,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
           TopLeft="943.103180401749,42.5341593887462">
           <EdgeLayout.Curve>
@@ -60057,6 +60083,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="68.5634929318076,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 16]"
+          TopLeft="1094.07768408465,449.788827785504">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,109.211186701016"
+              Start="0,0"
+              End="0,101.711186701016">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,101.711186701016" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60377,54 +60425,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="-59.4223050589359,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="220.571428571429,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates"
-          TopLeft="984.123595411118,407.50311349979" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="870.492081844408,428.937897441421">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="113.63151356671,0"
-              Start="0,0"
-              End="106.13151356671,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="106.13151356671,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="1094.07768408465,449.788827785504">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,109.211186701016"
-              Start="0,0"
-              End="0,101.711186701016">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,101.711186701016" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60807,6 +60807,182 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\GERG Spliced Exchange Rates">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="176.571428571429,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Datefield Conversion"
+          TopLeft="351.666675982652,221.000005727229" />
+        <NodeLayout
+          Size="172,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Flat File Destination"
+          TopLeft="168.333337792644,162.217395508222" />
+        <NodeLayout
+          Size="188.571428571429,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\OLTP FactSource Table"
+          TopLeft="596.111126902663,312.633548311694" />
+        <NodeLayout
+          Size="115.428571428572,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Unpivot"
+          TopLeft="786.111131935944,223.826092756989" />
+        <NodeLayout
+          Size="239.428571428572,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Add Source and convert DateField"
+          TopLeft="720.55557464376,84.2173934868469" />
+        <NodeLayout
+          Size="219.428571428572,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\GERG spliced Exchange Rates"
+          TopLeft="322.777786328469,77.4347846154229" />
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Flat File Source Output]"
+          TopLeft="542.20635775704,101.968946193992">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178.349216886719,0"
+              Start="0,0"
+              End="170.849216886719,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="170.849216886719,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="77.4246084433595,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output]"
+          TopLeft="842.047639004138,126.503107772561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.3229849844279"
+              Start="0,0"
+              End="0,89.8229849844279">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.8229849844279" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output1]"
+          TopLeft="439.952390268367,263.285720012943">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="250.44445092001,49.3478282987508"
+              Start="0,0"
+              End="250.44445092001,41.8478282987508">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.6739141493754" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6739141493754"
+                    Point2="0,24.6739141493754"
+                    Point3="4,24.6739141493754" />
+                  <mssgle:LineSegment
+                    End="246.44445092001,24.6739141493754" />
+                  <mssgle:CubicBezierSegment
+                    Point1="246.44445092001,24.6739141493754"
+                    Point2="250.44445092001,24.6739141493754"
+                    Point3="250.44445092001,28.6739141493754" />
+                  <mssgle:LineSegment
+                    End="250.44445092001,41.8478282987508" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Flat File Source Error Output]"
+          TopLeft="432.492072042755,119.720498901137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178.158734250111,42.4968966070846"
+              Start="0,0"
+              End="-178.158734250111,34.9968966070846">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2484483035423" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2484483035423"
+                    Point2="0,21.2484483035423"
+                    Point3="-4,21.2484483035423" />
+                  <mssgle:LineSegment
+                    End="-174.158734250111,21.2484483035423" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174.158734250111,21.2484483035423"
+                    Point2="-178.158734250111,21.2484483035423"
+                    Point3="-178.158734250111,25.2484483035423" />
+                  <mssgle:LineSegment
+                    End="-178.158734250111,34.9968966070846" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-152.705753843805,26.2484483035423,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Unpivot Output]"
+          TopLeft="786.111131935944,243.555906384966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-257.873027381863,0"
+              Start="0,0"
+              End="-250.373027381863,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-250.373027381863,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <TaskHost
     design-time-name="Package\IFS2020">
     <LayoutInfo>
@@ -61926,13 +62102,55 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="131.428571428572,42.2857142857143"
+          Id="Package\PENN Capital Stock\FactSource"
+          TopLeft="622,384.5" />
+        <NodeLayout
           Size="169.714285714286,42.2857142857143"
           Id="Package\PENN Capital Stock\PENN Capital Stock"
           TopLeft="531.5,37" />
         <NodeLayout
+          Size="115.428571428572,42.2857142857143"
+          Id="Package\PENN Capital Stock\Unpivot"
+          TopLeft="715.5,229" />
+        <NodeLayout
           Size="195.428571428572,42.2857142857143"
           Id="Package\PENN Capital Stock\Add Source and scale up"
           TopLeft="629.5,113.5" />
+        <EdgeLayout
+          Id="Package\PENN Capital Stock.Paths[Unpivot Output]"
+          TopLeft="773.214285714286,271.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-85.5000000000002,113.214285714286"
+              Start="0,0"
+              End="-85.5000000000002,105.714285714286">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.6071428571428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.6071428571428"
+                    Point2="0,56.6071428571428"
+                    Point3="-4,56.6071428571428" />
+                  <mssgle:LineSegment
+                    End="-81.5000000000002,56.6071428571428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-81.5000000000002,56.6071428571428"
+                    Point2="-85.5000000000002,56.6071428571428"
+                    Point3="-85.5000000000002,60.6071428571428" />
+                  <mssgle:LineSegment
+                    End="-85.5000000000002,105.714285714286" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\PENN Capital Stock.Paths[Flat File Source Output]"
           TopLeft="616.357142857143,79.2857142857143">
@@ -61967,10 +62185,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="115.428571428572,42.2857142857143"
-          Id="Package\PENN Capital Stock\Unpivot"
-          TopLeft="715.5,229" />
         <EdgeLayout
           Id="Package\PENN Capital Stock.Paths[Derived Column Output]"
           TopLeft="727.214285714286,155.785714285714">
@@ -61997,44 +62211,6 @@
                     Point3="46,40.6071428571429" />
                   <mssgle:LineSegment
                     End="46,65.7142857142857" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="131.428571428572,42.2857142857143"
-          Id="Package\PENN Capital Stock\FactSource"
-          TopLeft="622,384.5" />
-        <EdgeLayout
-          Id="Package\PENN Capital Stock.Paths[Unpivot Output]"
-          TopLeft="773.214285714286,271.285714285714">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-85.5000000000002,113.214285714286"
-              Start="0,0"
-              End="-85.5000000000002,105.714285714286">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.6071428571428" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.6071428571428"
-                    Point2="0,56.6071428571428"
-                    Point3="-4,56.6071428571428" />
-                  <mssgle:LineSegment
-                    End="-81.5000000000002,56.6071428571428" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-81.5000000000002,56.6071428571428"
-                    Point2="-85.5000000000002,56.6071428571428"
-                    Point3="-85.5000000000002,60.6071428571428" />
-                  <mssgle:LineSegment
-                    End="-85.5000000000002,105.714285714286" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -63807,181 +63983,5 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\GERG Spliced Exchange Rates">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="176.571428571429,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Datefield Conversion"
-          TopLeft="351.666675982652,221.000005727229" />
-        <NodeLayout
-          Size="172,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Flat File Destination"
-          TopLeft="168.333337792644,162.217395508222" />
-        <NodeLayout
-          Size="188.571428571429,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\OLTP FactSource Table"
-          TopLeft="596.111126902663,312.633548311694" />
-        <NodeLayout
-          Size="115.428571428572,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Unpivot"
-          TopLeft="786.111131935944,223.826092756989" />
-        <NodeLayout
-          Size="239.428571428572,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Add Source and convert DateField"
-          TopLeft="720.55557464376,84.2173934868469" />
-        <NodeLayout
-          Size="219.428571428572,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\GERG spliced Exchange Rates"
-          TopLeft="322.777786328469,77.4347846154229" />
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Flat File Source Output]"
-          TopLeft="542.20635775704,101.968946193992">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="178.349216886719,0"
-              Start="0,0"
-              End="170.849216886719,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="170.849216886719,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="77.4246084433595,5,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output]"
-          TopLeft="842.047639004138,126.503107772561">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,97.3229849844279"
-              Start="0,0"
-              End="0,89.8229849844279">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,89.8229849844279" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output1]"
-          TopLeft="439.952390268367,263.285720012943">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="250.44445092001,49.3478282987508"
-              Start="0,0"
-              End="250.44445092001,41.8478282987508">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.6739141493754" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.6739141493754"
-                    Point2="0,24.6739141493754"
-                    Point3="4,24.6739141493754" />
-                  <mssgle:LineSegment
-                    End="246.44445092001,24.6739141493754" />
-                  <mssgle:CubicBezierSegment
-                    Point1="246.44445092001,24.6739141493754"
-                    Point2="250.44445092001,24.6739141493754"
-                    Point3="250.44445092001,28.6739141493754" />
-                  <mssgle:LineSegment
-                    End="250.44445092001,41.8478282987508" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Flat File Source Error Output]"
-          TopLeft="432.492072042755,119.720498901137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-178.158734250111,42.4968966070846"
-              Start="0,0"
-              End="-178.158734250111,34.9968966070846">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.2484483035423" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.2484483035423"
-                    Point2="0,21.2484483035423"
-                    Point3="-4,21.2484483035423" />
-                  <mssgle:LineSegment
-                    End="-174.158734250111,21.2484483035423" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-174.158734250111,21.2484483035423"
-                    Point2="-178.158734250111,21.2484483035423"
-                    Point3="-178.158734250111,25.2484483035423" />
-                  <mssgle:LineSegment
-                    End="-178.158734250111,34.9968966070846" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-152.705753843805,26.2484483035423,127.2527734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Unpivot Output]"
-          TopLeft="786.111131935944,243.555906384966">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-257.873027381863,0"
-              Start="0,0"
-              End="-250.373027381863,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-250.373027381863,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

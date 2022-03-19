@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="114"
-  DTS:VersionGUID="{A7BEE43D-01A4-4889-99AE-81B43F79AE81}">
+  DTS:VersionBuild="115"
+  DTS:VersionGUID="{3430F8EB-59CC-4A03-9E7D-B46626F651BA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -61,23 +61,6 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Create Standardised Dimension Tables"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{C53A0057-F817-46D9-BE32-0B8C2CB0DB42}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Create Standardised Dimension Tables"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{442F2917-9C92-411C-B3F4-4301EB05D697}"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="create_standardised_OLTP_dimension_tables.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\OLTP DImension Tables Setup"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -2707,14 +2690,6 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Populate DimSource OLTP  Table" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:CreationName=""
-      DTS:DTSID="{8C62C516-C23F-4641-B24F-84A7BE87530C}"
-      DTS:From="Package\Populate DimSource OLTP  Table"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Create Standardised Dimension Tables" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2728,10 +2703,6 @@
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="260.571428571429,42.2857142857143"
-          Id="Package\Create Standardised Dimension Tables"
-          TopLeft="786.111131935944,288.826094441468" />
         <NodeLayout
           Size="222.285714285715,42.2857142857143"
           Id="Package\OLTP DImension Tables Setup"
@@ -2870,40 +2841,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="56.339499304815,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="800.982356447672,225.631211619272">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="115.414489773986,63.1948828221963"
-              Start="0,0"
-              End="115.414489773986,55.6948828221963">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5974414110982" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5974414110982"
-                    Point2="0,31.5974414110982"
-                    Point3="4,31.5974414110982" />
-                  <mssgle:LineSegment
-                    End="111.414489773986,31.5974414110982" />
-                  <mssgle:CubicBezierSegment
-                    Point1="111.414489773986,31.5974414110982"
-                    Point2="115.414489773986,31.5974414110982"
-                    Point3="115.414489773986,35.5974414110982" />
-                  <mssgle:LineSegment
-                    End="115.414489773986,55.6948828221963" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -150,39 +150,38 @@ CREATE OR ALTER VIEW FactCompleteView
 
 AS
 
-SELECT TOP (100) PERCENT
-    s.SourceName,
-    s.SourceNameDetail,
-    s.SourceNameParent,
-    s.Description,
-    g.GeoPolitical_Type,
-    g.GeoStandardName,
-    g.ReportingUnit,
-    g.GeoEconomic_Region,
-    g.Major_Blocs,
-    g.NICS_geography,
-    g.Geopolitical_region,
+SELECT TOP 100 PERCENT
+    s.SourceName as Source,
+    s.SourceNameParent as [Dataset],
+    s.SourceNameDetail as [Dataset detail],
+/*    s.Description, (Additional Information, not userful in this query) */ 
+    g.GeoPolitical_Type as [Geopolitical type],
+    g.Major_Blocs as [Bloc],
+    g.GeoEconomic_Region as [Geo-economic region],
+    g.IMF_main_category as [IMF geoeconomic classification],
+    g.ReportingUnit as [Reporting Unit],
+    g.GeoStandardName as Country ,
+/*    g.Geopolitical_region, redundant, probably delete this */
     g.Maddison_availability,
     g.wdi_availability,
     g.penn_availability,
-    g.MACROHISTORY_Geography,
-    g.WID_Geography,
-    g.IMF_main_category,
-    g.WEO_Geography,
-    g.Size,
-    g.GeoSourceName,
-    i.IndicatorSourceDescription,
-    i.IndicatorStandardName,
-    i.indicator_type,
-    i.component,
-    i.accounting_basis,
-    i.industrial_sector,
-    i.measure_type,
-    i.supplementary,
-    i.output_definition,
-    i.indicator_dimension,
-    i.indicator_metrics,
-    i.IndicatorSourceCode,
+/*     g.MACROHISTORY_Geography, */
+/*    g.WID_Geography, */
+/*    g.WEO_Geography, */
+/*    g.Size, */
+/*    g.GeoSourceName, */
+/*    i.IndicatorStandardName,*/
+    i.indicator_type as [Indicator type],
+    i.IndicatorSourceDescription as [Indicator],
+    i.component as [Indicator component],
+    i.output_definition as [GDP definition],
+    i.accounting_basis as [GDP measure],
+    i.industrial_sector as [Industrial Sector],
+    i.measure_type as [Measure],
+    i.indicator_dimension as [Dimension],
+    i.indicator_metrics as [Metric],
+/*    i.IndicatorSourceCode, (probably too confusing to the user) */
+/*    i.supplementary,*/
     f.Year,
     f.Value
 FROM dbo.Fact AS f
