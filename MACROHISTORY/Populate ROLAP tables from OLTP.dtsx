@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="299"
-  DTS:VersionGUID="{B2EDF225-ECBC-42E5-A567-5C0DD26DF361}">
+  DTS:VersionBuild="306"
+  DTS:VersionGUID="{4EEB8FB8-1B9A-4BAA-9374-76D690992A46}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1531,7 +1531,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Populate IndicatorStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
-                      length="255"
+                      length="256"
                       lineageId="Package\Populate IndicatorStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]"
                       name="IndicatorStandardName"
                       truncationRowDisposition="FailComponent" />
@@ -1660,7 +1660,7 @@
                     <externalMetadataColumn
                       refId="Package\Populate IndicatorStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
                       dataType="wstr"
-                      length="255"
+                      length="256"
                       name="IndicatorStandardName" />
                     <externalMetadataColumn
                       refId="Package\Populate IndicatorStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[indicator_type]"
@@ -1738,7 +1738,7 @@
                     <outputColumn
                       refId="Package\Populate IndicatorStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
                       dataType="wstr"
-                      length="255"
+                      length="256"
                       lineageId="Package\Populate IndicatorStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[IndicatorStandardName]"
                       name="IndicatorStandardName" />
                     <outputColumn
@@ -1912,7 +1912,7 @@
                     <inputColumn
                       refId="Package\Populate IndicatorStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[IndicatorStandardName]"
                       cachedDataType="wstr"
-                      cachedLength="255"
+                      cachedLength="256"
                       cachedName="IndicatorStandardName"
                       externalMetadataColumnId="Package\Populate IndicatorStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
                       lineageId="Package\Populate IndicatorStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[IndicatorStandardName]" />
@@ -2296,7 +2296,7 @@
                     <externalMetadataColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactView (Selection).Outputs[OLE DB Source Output].ExternalColumns[IndicatorStandardName]"
                       dataType="wstr"
-                      length="255"
+                      length="256"
                       name="IndicatorStandardName" />
                     <externalMetadataColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactView (Selection).Outputs[OLE DB Source Output].ExternalColumns[IndicatorSourceDescription]"
@@ -2641,51 +2641,51 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="239.428571428572,41.7142857142858"
+          Size="239.5,41.5"
           Id="Package\Drop and create ROLAP files"
           TopLeft="58.4444438999082,35.6170950654821" />
         <NodeLayout
-          Size="177.714285714286,41.7142857142858"
+          Size="177.5,41.5"
           Id="Package\Populate DimSources"
           TopLeft="54.8290714301302,110.006985197337" />
         <NodeLayout
-          Size="277.714285714286,42.2857142857143"
+          Size="277.5,42"
           Id="Package\Populate GeoStandardisedDimensionTable"
           TopLeft="715.000018941032,36.7391313868795" />
         <NodeLayout
-          Size="301.142857142858,42.2857142857143"
+          Size="301,42.5"
           Id="Package\Populate IndicatorStandardisedDimensionTable"
           TopLeft="347.22223142047,37.3043487928316" />
         <NodeLayout
-          Size="193.142857142858,42.2857142857143"
+          Size="193,42.5"
           Id="Package\Populate ROLAP fact file"
           TopLeft="272.999995542954,110.935207339927" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="853.857161798175,79.0248456725938">
+          TopLeft="853.750018941032,78.7391313868795">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-710.170947510901,30.9821395247432"
+              EndConnector="-710.170947510902,31.2678538104575"
               Start="0,0"
-              End="-710.170947510901,23.4821395247432">
+              End="-710.170947510902,23.7678538104575">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.4910697623716" />
+                    End="0,11.6339269052287" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.4910697623716"
-                    Point2="0,15.4910697623716"
-                    Point3="-4,15.4910697623716" />
+                    Point1="0,11.6339269052287"
+                    Point2="0,15.6339269052287"
+                    Point3="-4,15.6339269052287" />
                   <mssgle:LineSegment
-                    End="-706.170947510901,15.4910697623716" />
+                    End="-706.170947510902,15.6339269052287" />
                   <mssgle:CubicBezierSegment
-                    Point1="-706.170947510901,15.4910697623716"
-                    Point2="-710.170947510901,15.4910697623716"
-                    Point3="-710.170947510901,19.4910697623716" />
+                    Point1="-706.170947510902,15.6339269052287"
+                    Point2="-710.170947510902,15.6339269052287"
+                    Point3="-710.170947510902,19.6339269052287" />
                   <mssgle:LineSegment
-                    End="-710.170947510901,23.4821395247432" />
+                    End="-710.170947510902,23.7678538104575" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2740,18 +2740,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="648.365088563327,58.1645972327127">
+          TopLeft="648.22223142047,58.1467400898555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.6349303777042,0"
+              EndConnector="66.7777875205619,0"
               Start="0,0"
-              End="59.1349303777042,0">
+              End="59.2777875205619,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="59.1349303777042,0" />
+                    End="59.2777875205619,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2835,13 +2835,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="104.571428571429,42.2857142857143"
-          Id="Package\Populate GeoStandardisedDimensionTable\OLTP"
-          TopLeft="364,157" />
-        <NodeLayout
-          Size="111.428571428572,42.2857142857143"
+          Size="111.5,42.5"
           Id="Package\Populate GeoStandardisedDimensionTable\ROLAP"
           TopLeft="571.6,281.2" />
+        <NodeLayout
+          Size="104.5,42.5"
+          Id="Package\Populate GeoStandardisedDimensionTable\OLTP"
+          TopLeft="364,157" />
         <EdgeLayout
           Id="Package\Populate GeoStandardisedDimensionTable.Paths[OLE DB Source Output]"
           TopLeft="416.285714285714,199.285714285714">
@@ -2911,11 +2911,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="111.428571428572,42.2857142857143"
+          Size="111.5,42.5"
           Id="Package\Populate IndicatorStandardisedDimensionTable\ROLAP"
           TopLeft="318,263.6" />
         <NodeLayout
-          Size="104.571428571429,42.2857142857143"
+          Size="104.5,42.5"
           Id="Package\Populate IndicatorStandardisedDimensionTable\OLTP"
           TopLeft="238,137" />
         <EdgeLayout
@@ -2968,32 +2968,19 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate IndicatorStandardisedDimensionTable\ROLAP">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="203.428571428572,42.2857142857143"
-          Id="Package\Populate ROLAP fact file\OLTP FactView (Selection)"
-          TopLeft="165.55555994128,56.5217405951992" />
-        <NodeLayout
-          Size="163.428571428572,42.2857142857143"
+          Size="163.5,42.5"
           Id="Package\Populate ROLAP fact file\ROLAP Fact Table"
           TopLeft="501.111124386022,282.043485570044" />
+        <NodeLayout
+          Size="203.5,42.5"
+          Id="Package\Populate ROLAP fact file\OLTP FactView (Selection)"
+          TopLeft="165.55555994128,56.5217405951992" />
         <EdgeLayout
           Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
           TopLeft="267.269845655566,98.8074548809135">

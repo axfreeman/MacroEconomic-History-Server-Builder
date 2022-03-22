@@ -28,9 +28,12 @@ CREATE TABLE Fact (
  ) 
 GO
 
+-- New standardised indicator table introduced March 2022. Combines information from what were previously
+-- the two separate tables DimIndicator and IndicatorStandardNames
+
 Drop table if exists IndicatorStandardisedDimensionTable
 CREATE TABLE [dbo].[IndicatorStandardisedDimensionTable](
-	[IndicatorStandardisedID] [int] NOT NULL,
+	[IndicatorStandardisedID] [int] NOT NULL IDENTITY (1,1),
 	[IndicatorSource] [nvarchar](255) NOT NULL,
 	[IndicatorSourceDescription] [nvarchar](255) NULL,
 	[IndicatorStandardName] [nvarchar](256) NOT NULL,
@@ -47,9 +50,13 @@ CREATE TABLE [dbo].[IndicatorStandardisedDimensionTable](
 ) ON [PRIMARY]
 GO
 
-DROP TABLE IF EXISTS GeoStandardisedDimensionTable
+-- New standardised geography table introduced March 2022. Combines information from what were previously
+-- the two separate tables DimGeo and GeoStandardNames
+
+DROP TABLE IF EXISTS [GeoStandardisedDimensionTable]
+
 CREATE TABLE [dbo].[GeoStandardisedDimensionTable](
-	[GeoStandardisedID] [int] NOT NULL,
+	[GeoStandardisedID] [int] IDENTITY(1,1) NOT NULL,
 	[GeoPolitical_Type] [nvarchar](255) NULL,
 	[GeoStandardName] [nvarchar](255) NULL,
 	[ReportingUnit] [nvarchar](255) NULL,
@@ -65,11 +72,9 @@ CREATE TABLE [dbo].[GeoStandardisedDimensionTable](
 	[IMF_main_category] [nvarchar](255) NULL,
 	[WEO_Geography] [nvarchar](255) NULL,
 	[Size] [nvarchar](255) NULL,
-	[GeoSourceName] [nvarchar](255) NOT NULL,
+	[GeoSourceName] [nvarchar](255) NOT NULL
 ) ON [PRIMARY]
 GO
-
-
 
 DROP TABLE IF EXISTS DimSource 
 GO
