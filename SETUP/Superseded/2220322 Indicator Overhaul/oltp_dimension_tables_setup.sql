@@ -12,23 +12,20 @@ GO
 
 Drop table if exists IndicatorStandardisedDimensionTable
 CREATE TABLE [dbo].[IndicatorStandardisedDimensionTable](
-	[StandardisedID] [int] NOT NULL IDENTITY (1,1),
-	[SourceName] [nvarchar](255) NOT NULL, /* was 'IndicatorSource' */
-	[SourceCode] [nvarchar](255) NOT NULL, /* was 'IndicatorSourceCode' */
-	[SourceDescription] [nvarchar](255) NOT NULL, 
-	[StandardCode] [nvarchar](255) NOT NULL, /* was 'IndicatorStandardName, was 256 */
-	[StandardDescription][nvarchar](255) NULL, /* new */
-	[IndicatorType] [nvarchar](255) NULL, /* was 'indicator_type' */
-	[IndicatorComponent][nvarchar](255) NULL, /* New */
-	[Sector][nvarchar](255) NULL, /* was 'industrial_sector' */
-	[AssetType][nvarchar](255) NULL, /* new */
+	[IndicatorStandardisedID] [int] NOT NULL IDENTITY (1,1),
+	[IndicatorSource] [nvarchar](255) NOT NULL,
+	[IndicatorSourceDescription] [nvarchar](255) NULL,
+	[IndicatorStandardName] [nvarchar](256) NOT NULL,
+	[indicator_type] [nvarchar](255) NULL,
+	[component] [nvarchar](255) NULL,
 	[accounting_basis] [nvarchar](255) NULL,
-	[MeasureType] [nvarchar](255) NULL, /* was measure_type */
-/*	[supplementary] [nvarchar](255) NULL,*/ /* DELETED */
-/*	[output_definition] [nvarchar](255) NULL, */ /* DELETED */ 
-	[MeasureDimension] [nvarchar](255) NULL, /*was indicator_dimension */
-	[MeasureMetric] [nvarchar](255) NULL, /* was indicator_measure */
-	[MeasureUnits] [nvarchar](255) NULL, /* was indicator_units */
+	[industrial_sector] [nvarchar](255) NULL,
+	[measure_type] [nvarchar](255) NULL,
+	[supplementary] [nvarchar](255) NULL,
+	[output_definition] [nvarchar](255) NULL,
+	[indicator_dimension] [nvarchar](255) NULL,
+	[indicator_metrics] [nvarchar](255) NULL,
+	[IndicatorSourceCode] [nvarchar](255) NOT NULL,
 ) ON [PRIMARY]
 GO
 

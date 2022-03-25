@@ -33,69 +33,55 @@ CREATE TABLE [FactSource](
 	
 ) ON [PRIMARY]
 GO
--- the purpose of this index is to speed up those views which combine rows from the fact table with rows from dimension tables
--- it is commented out because the index takes up a lot of space, which prevents the project running on MSSQL Express
--- because that has a 10GB limit on the size of the database
-/* CREATE NONCLUSTERED INDEX [ix_FactSource] ON [FactSource]
- (
-	[SourceName] ASC,
-	[DefinitionName] ASC,
-	[GeoSourceName] ASC,
-	[IndicatorSourceCode] ASC,
-	[Year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-*/
 
 -- selects, from the factSource file, those rows which contain countries and indicators that we know about (by including them in the DimGeo and DimIndicator tables)
 -- INCLUDE countries for which there is no data so that, when a pivot table is created, the countries are laid out with the same spacing
 -- for each indicator and source.
 -- But EXCLUDE indicators for which there is no data, or there would be too much clutter.
 
-CREATE OR ALTER VIEW [RecognisedFacts]
-AS
-SELECT
- FactSource.OLTP_FactID,
- FactSource.SourceName,
- DimSource.DimSourceID,
- FactSource.GeoSourceName,
- GeoStandardNames.GeoStandardName,
- FactSource.IndicatorSourceCode as [Fact Indicator Name],
- IndicatorStandardNames.IndicatorSourceCode,
- IndicatorStandardNames.IndicatorStandardName, 
- FactSource.Date,
- FactSource.Value
-FROM FactSource
- RIGHT OUTER JOIN GeoStandardNames
- ON FactSource.GeoSourceName = GeoStandardNames.GeoSourceName
- RIGHT OUTER JOIN IndicatorStandardNames
- ON FactSource.SourceName = IndicatorStandardNames.IndicatorSource 
- AND FactSource.IndicatorSourceCode = IndicatorStandardNames.IndicatorSourceCode
- INNER JOIN DimSource
- ON FactSource.SourceName=DimSource.SourceName
-WHERE (Year(FactSource.Date) IS NOT NULL) AND (Year(FactSource.Date) > 1700) and (Value<>0)
-GO
 
--- Compresses the rows of the RecognisedFacts view by substituting the integer Indexes of DimGeo and DimIndicator for the actual country and indicator names
--- For debugging purposes only, report on a few additional fields from other dimensions
--- indicator_type is used to split the OLTP fact file into a number of ROLAP fact files for convenient handling, transparency to the user, partitioning, etc.
-CREATE OR ALTER VIEW [FactQuery]
+-- This view contains all the data associated with the factsource table in a single query
+-- Most of the fields are not used, but are included for debugging, testing and inspection
+
+CREATE OR ALTER VIEW [dbo].[FactSourceCompleteView]
 AS
 SELECT 
- RecognisedFacts.OLTP_FactID,
- RecognisedFacts.SourceName, 
- RecognisedFacts.DimSourceID, 
- RecognisedFacts.Date, 
- RecognisedFacts.Value, 
- DimIndicator.DimIndicatorID, 
- DimGeo.DimGeoID, 
- RecognisedFacts.GeoStandardName, 
- RecognisedFacts.IndicatorStandardName,
- DimIndicator.indicator_type
-FROM RecognisedFacts LEFT OUTER JOIN
- DimIndicator ON 
- RecognisedFacts.IndicatorStandardName = DimIndicator.IndicatorStandardName LEFT OUTER JOIN
- DimGeo ON 
- RecognisedFacts.GeoStandardName = DimGeo.GeoStandardName
+       i.StandardisedID,
+	   g.GeoStandardisedID,
+	   s.DimSourceID,
+	   g.GeoPolitical_Type,
+       g.GeoStandardName,
+       g.ReportingUnit,
+       g.GeoEconomic_Region,
+       g.Major_Blocs,
+       g.Geopolitical_region,
+       g.Maddison_availability,
+       g.MACROHISTORY_Geography,
+       g.WID_Geography,
+       g.IMF_main_category,
+       g.WEO_Geography,
+       i.SourceCode,
+       i.StandardCode,
+       i.StandardDescription,
+       i.IndicatorType,
+       i.IndicatorComponent,
+       i.Sector,
+	   i.AssetType,
+       i.accounting_basis,
+       i.MeasureType,
+       i.MeasureDimension,
+       i.MeasureMetric,
+       f.Value,
+       Year(f.Date) as Year,
+       s.SourceName,
+       s.SourceNameParent,
+       s.SourceNameDetail
+FROM dbo.FactSource AS f
+    INNER JOIN dbo.IndicatorStandardisedDimensionTable AS i
+        ON f.SourceName = i.SourceName
+           AND f.IndicatorSourceCode = i.SourceCode
+    INNER JOIN dbo.GeoStandardisedDimensionTable AS g
+        ON f.GeoSourceName = g.GeoSourceName
+    INNER JOIN dbo.DimSource AS s
+        ON f.SourceName = s.SourceName
 GO
-

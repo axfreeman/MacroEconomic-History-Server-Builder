@@ -28,29 +28,25 @@ CREATE TABLE Fact (
  ) 
 GO
 
-
 -- New standardised indicator table introduced March 2022. Combines information from what were previously
 -- the two separate tables DimIndicator and IndicatorStandardNames
 
 Drop table if exists IndicatorStandardisedDimensionTable
 CREATE TABLE [dbo].[IndicatorStandardisedDimensionTable](
-	[StandardisedID] [int] NOT NULL,
-	[SourceName] [nvarchar](255) NOT NULL, /* was 'IndicatorSource' */
-	[SourceCode] [nvarchar](255) NOT NULL, /* was 'IndicatorSourceCode' */
-	[SourceDescription] [nvarchar](255) NULL, 
-	[StandardCode] [nvarchar](255) NOT NULL, /* was 'IndicatorStandardName, was 256 */
-	[StandardDescription][nvarchar](255) NULL, /* new */
-	[IndicatorType] [nvarchar](255) NULL, /* was 'indicator_type' */
-	[IndicatorComponent][nvarchar](255) NULL, /* New */
-	[Sector][nvarchar](255) NULL, /* was 'industrial_sector' */
-	[AssetType][nvarchar](255) NULL, /* new */
+	[IndicatorStandardisedID] [int] NOT NULL IDENTITY (1,1),
+	[IndicatorSource] [nvarchar](255) NOT NULL,
+	[IndicatorSourceDescription] [nvarchar](255) NULL,
+	[IndicatorStandardName] [nvarchar](256) NOT NULL,
+	[indicator_type] [nvarchar](255) NULL,
+	[component] [nvarchar](255) NULL,
 	[accounting_basis] [nvarchar](255) NULL,
-	[MeasureType] [nvarchar](255) NULL, /* was measure_type */
-/*	[supplementary] [nvarchar](255) NULL,*/ /* DELETED */
-/*	[output_definition] [nvarchar](255) NULL, */ /* DELETED */ 
-	[MeasureDimension] [nvarchar](255) NULL, /*was indicator_dimension */
-	[MeasureMetric] [nvarchar](255) NULL, /* was indicator_measure */
-	[MeasureUnits] [nvarchar](255) NULL, /* was indicator_units */
+	[industrial_sector] [nvarchar](255) NULL,
+	[measure_type] [nvarchar](255) NULL,
+	[supplementary] [nvarchar](255) NULL,
+	[output_definition] [nvarchar](255) NULL,
+	[indicator_dimension] [nvarchar](255) NULL,
+	[indicator_metrics] [nvarchar](255) NULL,
+	[IndicatorSourceCode] [nvarchar](255) NOT NULL,
 ) ON [PRIMARY]
 GO
 
@@ -60,7 +56,7 @@ GO
 DROP TABLE IF EXISTS [GeoStandardisedDimensionTable]
 
 CREATE TABLE [dbo].[GeoStandardisedDimensionTable](
-	[GeoStandardisedID] [int] NOT NULL,
+	[GeoStandardisedID] [int] IDENTITY(1,1) NOT NULL,
 	[GeoPolitical_Type] [nvarchar](255) NULL,
 	[GeoStandardName] [nvarchar](255) NULL,
 	[ReportingUnit] [nvarchar](255) NULL,
@@ -163,7 +159,7 @@ SELECT TOP 100 PERCENT
     s.SourceName as Source,
     s.SourceNameParent as [Dataset],
     s.SourceNameDetail as [Dataset detail],
-/*    s.Description, (Additional Information, not useful in this query) */ 
+/*    s.Description, (Additional Information, not userful in this query) */ 
     g.GeoPolitical_Type as [Geopolitical type],
     g.Major_Blocs as [Bloc],
     g.GeoEconomic_Region as [Geo-economic region],
@@ -180,19 +176,17 @@ SELECT TOP 100 PERCENT
 /*    g.Size, */
 /*    g.GeoSourceName, */
 /*    i.IndicatorStandardName,*/
-	i.SourceCode,
-    i.SourceDescription,
-	i.StandardCode,
-	i.StandardDescription,
-    i.IndicatorType as [Indicator type],
-	i.IndicatorComponent as [Indicator Component or Detail],
-    i.Sector as [Industrial or Social Sector],
-	i.AssetType as [Asset Type],
+    i.indicator_type as [Indicator type],
+    i.IndicatorSourceDescription as [Indicator],
+    i.component as [Indicator component],
+    i.output_definition as [GDP definition],
     i.accounting_basis as [GDP measure],
-    i.MeasureType as [Measure Type],
-    i.MeasureDimension as [Measure Dimension],
-    i.MeasureMetric as [Measure Metric],
-	i.MeasureUnits as [Measure Units],
+    i.industrial_sector as [Industrial Sector],
+    i.measure_type as [Measure],
+    i.indicator_dimension as [Dimension],
+    i.indicator_metrics as [Metric],
+/*    i.IndicatorSourceCode, (probably too confusing to the user) */
+/*    i.supplementary,*/
     f.Year,
     f.Value
 FROM dbo.Fact AS f
@@ -201,10 +195,8 @@ FROM dbo.Fact AS f
     INNER JOIN dbo.GeoStandardisedDimensionTable AS g
         ON f.DimGeoStandardisedID = g.GeoStandardisedID
     INNER JOIN dbo.IndicatorStandardisedDimensionTable AS i
-        ON f.DimIndicatorStandardisedID = i.StandardisedID
+        ON f.DimIndicatorStandardisedID = i.IndicatorStandardisedID
 ORDER BY s.SourceName,
-         i.IndicatorType,
+         i.indicator_type,
          g.Major_Blocs,
          g.ReportingUnit
-
-GO

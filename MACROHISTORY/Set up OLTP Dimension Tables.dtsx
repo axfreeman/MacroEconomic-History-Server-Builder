@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Set up OLTP Dimension Tables"
   DTS:PackageType="5"
-  DTS:VersionBuild="127"
-  DTS:VersionGUID="{4ED32BC9-1B0F-40CA-8920-BA70AC6A93A9}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{D763A899-60B9-4EFC-BF42-9A34E658D7E5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -898,16 +898,6 @@
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardName]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[StandardName]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardName]"
-                      name="StandardName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[Source]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -928,26 +918,6 @@
                       name="SourceDescription"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_type]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[indicator_type]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_type]"
-                      name="indicator_type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[component]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[component]"
-                      length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[component]"
-                      name="component"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[accounting_basis]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -958,83 +928,118 @@
                       name="accounting_basis"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[industrial_sector]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[SourceCode]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[industrial_sector]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[SourceCode]"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[industrial_sector]"
-                      name="industrial_sector"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[SourceCode]"
+                      name="SourceCode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[measure_type]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardCode]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[measure_type]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[StandardCode]"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[measure_type]"
-                      name="measure_type"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardCode]"
+                      name="StandardCode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[supplementary]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardDescription]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[supplementary]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[StandardDescription]"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[supplementary]"
-                      name="supplementary"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardDescription]"
+                      name="StandardDescription"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[output_definition]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorType]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[output_definition]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[IndicatorType]"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[output_definition]"
-                      name="output_definition"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorType]"
+                      name="IndicatorType"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_dimension]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorComponent]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[indicator_dimension]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[IndicatorComponent]"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_dimension]"
-                      name="indicator_dimension"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorComponent]"
+                      name="IndicatorComponent"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_metrics]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[Sector]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[indicator_metrics]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[Sector]"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_metrics]"
-                      name="indicator_metrics"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[Sector]"
+                      name="Sector"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorSourceCode]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[AssetType]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[IndicatorSourceCode]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[AssetType]"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorSourceCode]"
-                      name="IndicatorSourceCode"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[AssetType]"
+                      name="AssetType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureType]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureType]"
+                      name="MeasureType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureDimension]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureDimension]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureDimension]"
+                      name="MeasureDimension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureMetric]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureMetric]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureMetric]"
+                      name="MeasureMetric"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureUnits]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureUnits]"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureUnits]"
+                      name="MeasureUnits"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[StandardName]"
-                      dataType="wstr"
-                      length="255"
-                      name="StandardName" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[Source]"
                       dataType="wstr"
@@ -1046,55 +1051,65 @@
                       length="255"
                       name="SourceDescription" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[indicator_type]"
-                      dataType="wstr"
-                      length="255"
-                      name="indicator_type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[component]"
-                      dataType="wstr"
-                      length="255"
-                      name="component" />
-                    <externalMetadataColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[accounting_basis]"
                       dataType="wstr"
                       length="255"
                       name="accounting_basis" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[industrial_sector]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[SourceCode]"
                       dataType="wstr"
                       length="255"
-                      name="industrial_sector" />
+                      name="SourceCode" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[measure_type]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[StandardCode]"
                       dataType="wstr"
                       length="255"
-                      name="measure_type" />
+                      name="StandardCode" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[supplementary]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[StandardDescription]"
                       dataType="wstr"
                       length="255"
-                      name="supplementary" />
+                      name="StandardDescription" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[output_definition]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[IndicatorType]"
                       dataType="wstr"
                       length="255"
-                      name="output_definition" />
+                      name="IndicatorType" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[indicator_dimension]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[IndicatorComponent]"
                       dataType="wstr"
                       length="255"
-                      name="indicator_dimension" />
+                      name="IndicatorComponent" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[indicator_metrics]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[Sector]"
                       dataType="wstr"
                       length="255"
-                      name="indicator_metrics" />
+                      name="Sector" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[IndicatorSourceCode]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[AssetType]"
                       dataType="wstr"
                       length="255"
-                      name="IndicatorSourceCode" />
+                      name="AssetType" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureType]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureType" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureDimension]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureDimension" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureMetric]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureMetric" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].ExternalColumns[MeasureUnits]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureUnits" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1103,17 +1118,17 @@
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[StandardName]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[StandardName]"
-                      name="StandardName" />
-                    <outputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[Source]"
                       dataType="wstr"
                       length="255"
                       lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[Source]"
                       name="Source" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[SourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[SourceCode]"
+                      name="SourceCode" />
                     <outputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[SourceDescription]"
                       dataType="wstr"
@@ -1121,17 +1136,41 @@
                       lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[SourceDescription]"
                       name="SourceDescription" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[indicator_type]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[StandardCode]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[indicator_type]"
-                      name="indicator_type" />
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[StandardCode]"
+                      name="StandardCode" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[component]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[StandardDescription]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[component]"
-                      name="component" />
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[StandardDescription]"
+                      name="StandardDescription" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[IndicatorType]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[IndicatorType]"
+                      name="IndicatorType" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[IndicatorComponent]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[IndicatorComponent]"
+                      name="IndicatorComponent" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[Sector]"
+                      name="Sector" />
+                    <outputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[AssetType]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[AssetType]"
+                      name="AssetType" />
                     <outputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[accounting_basis]"
                       dataType="wstr"
@@ -1139,47 +1178,29 @@
                       lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[accounting_basis]"
                       name="accounting_basis" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[industrial_sector]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureType]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[industrial_sector]"
-                      name="industrial_sector" />
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureType]"
+                      name="MeasureType" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[measure_type]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureDimension]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[measure_type]"
-                      name="measure_type" />
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureDimension]"
+                      name="MeasureDimension" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[supplementary]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureMetric]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[supplementary]"
-                      name="supplementary" />
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureMetric]"
+                      name="MeasureMetric" />
                     <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[output_definition]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureUnits]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[output_definition]"
-                      name="output_definition" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[indicator_dimension]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[indicator_dimension]"
-                      name="indicator_dimension" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[indicator_metrics]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[indicator_metrics]"
-                      name="indicator_metrics" />
-                    <outputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[IndicatorSourceCode]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[IndicatorSourceCode]"
-                      name="IndicatorSourceCode" />
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[MeasureUnits]"
+                      name="MeasureUnits" />
                     <outputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1270,20 +1291,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[indicator_type]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="indicator_type"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[indicator_type]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_type]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[component]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="component"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[component]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[component]" />
-                    <inputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[accounting_basis]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1291,147 +1298,173 @@
                       externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[accounting_basis]"
                       lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[accounting_basis]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[industrial_sector]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[Source]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="industrial_sector"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[industrial_sector]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[industrial_sector]" />
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[Source]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[measure_type]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[SourceCode]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="measure_type"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[measure_type]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[measure_type]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[supplementary]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="supplementary"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[supplementary]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[supplementary]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[output_definition]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="output_definition"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[output_definition]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[output_definition]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[indicator_dimension]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="indicator_dimension"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[indicator_dimension]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_dimension]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[indicator_metrics]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="indicator_metrics"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[indicator_metrics]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[indicator_metrics]" />
-                    <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[IndicatorSourceCode]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IndicatorSourceCode"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorSourceCode]" />
+                      cachedName="SourceCode"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[SourceCode]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[SourceCode]" />
                     <inputColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[SourceDescription]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="SourceDescription"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceDescription]"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[SourceDescription]"
                       lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[SourceDescription]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[StandardName]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[StandardCode]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="StandardName"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardName]" />
+                      cachedName="StandardCode"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[StandardCode]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardCode]" />
                     <inputColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[Source]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[StandardDescription]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Source"
-                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSource]"
-                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[Source]" />
+                      cachedName="StandardDescription"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[StandardDescription]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[StandardDescription]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[IndicatorType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorType"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorType]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorType]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[IndicatorComponent]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorComponent"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorComponent]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[IndicatorComponent]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[Sector]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sector"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[Sector]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[AssetType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AssetType"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[AssetType]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[AssetType]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[MeasureType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MeasureType"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureType]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureType]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[MeasureDimension]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MeasureDimension"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureDimension]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureDimension]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[MeasureMetric]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MeasureMetric"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureMetric]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureMetric]" />
+                    <inputColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].Columns[MeasureUnits]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MeasureUnits"
+                      externalMetadataColumnId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureUnits]"
+                      lineageId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicator.Outputs[Excel Source Output].Columns[MeasureUnits]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSource]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorSource" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceDescription]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorSourceDescription" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardName]"
-                      dataType="wstr"
-                      length="256"
-                      name="IndicatorStandardName" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[indicator_type]"
-                      dataType="wstr"
-                      length="255"
-                      name="indicator_type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[component]"
-                      dataType="wstr"
-                      length="255"
-                      name="component" />
                     <externalMetadataColumn
                       refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[accounting_basis]"
                       dataType="wstr"
                       length="255"
                       name="accounting_basis" />
                     <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[industrial_sector]"
-                      dataType="wstr"
-                      length="255"
-                      name="industrial_sector" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[measure_type]"
-                      dataType="wstr"
-                      length="255"
-                      name="measure_type" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[supplementary]"
-                      dataType="wstr"
-                      length="255"
-                      name="supplementary" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[output_definition]"
-                      dataType="wstr"
-                      length="255"
-                      name="output_definition" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[indicator_dimension]"
-                      dataType="wstr"
-                      length="255"
-                      name="indicator_dimension" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[indicator_metrics]"
-                      dataType="wstr"
-                      length="255"
-                      name="indicator_metrics" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      dataType="wstr"
-                      length="255"
-                      name="IndicatorSourceCode" />
-                    <externalMetadataColumn
-                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorStandardisedID]"
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[StandardisedID]"
                       dataType="i4"
-                      name="IndicatorStandardisedID" />
+                      name="StandardisedID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[SourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[SourceDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="SourceDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[StandardCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="StandardCode" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[StandardDescription]"
+                      dataType="wstr"
+                      length="255"
+                      name="StandardDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorType]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorType" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorComponent]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorComponent" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[Sector]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sector" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[AssetType]"
+                      dataType="wstr"
+                      length="255"
+                      name="AssetType" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureType]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureType" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureDimension]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureDimension" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureMetric]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureMetric" />
+                    <externalMetadataColumn
+                      refId="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable.Inputs[OLE DB Destination Input].ExternalColumns[MeasureUnits]"
+                      dataType="wstr"
+                      length="255"
+                      name="MeasureUnits" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2026,6 +2059,10 @@
           Id="Package\OLTP DImension Tables Setup"
           TopLeft="85.0000022517312,31.6521747333116" />
         <NodeLayout
+          Size="221,42"
+          Id="Package\Populate DimGeoStandardised"
+          TopLeft="590.5,228" />
+        <NodeLayout
           Size="244.5,42"
           Id="Package\Populate DimIndicatorStandardised"
           TopLeft="95,148.5" />
@@ -2033,40 +2070,6 @@
           Size="290.5,41.5"
           Id="Package\Populate DimSource OLTP  Table"
           TopLeft="732.839499304815,33.416925904986" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="878.089499304815,74.916925904986">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-660.839499304815,73.583074095014"
-              Start="0,0"
-              End="-660.839499304815,66.083074095014">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.791537047507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.791537047507"
-                    Point2="0,36.791537047507"
-                    Point3="-4,36.791537047507" />
-                  <mssgle:LineSegment
-                    End="-656.839499304815,36.791537047507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-656.839499304815,36.791537047507"
-                    Point2="-660.839499304815,36.791537047507"
-                    Point3="-660.839499304815,40.791537047507" />
-                  <mssgle:LineSegment
-                    End="-660.839499304815,66.083074095014" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="307.500002251731,53.5345503191488">
@@ -2089,10 +2092,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="221,42"
-          Id="Package\Populate DimGeoStandardised"
-          TopLeft="590.5,228" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="217.25,190.5">
@@ -2127,14 +2126,124 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="878.089499304815,74.916925904986">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-660.839499304815,73.583074095014"
+              Start="0,0"
+              End="-660.839499304815,66.083074095014">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.791537047507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.791537047507"
+                    Point2="0,36.791537047507"
+                    Point3="-4,36.791537047507" />
+                  <mssgle:LineSegment
+                    End="-656.839499304815,36.791537047507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-656.839499304815,36.791537047507"
+                    Point2="-660.839499304815,36.791537047507"
+                    Point3="-660.839499304815,40.791537047507" />
+                  <mssgle:LineSegment
+                    End="-660.839499304815,66.083074095014" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Populate DimGeoStandardised">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Populate DimGeoStandardised\DimGeoStandardised"
+          TopLeft="140,37" />
+        <NodeLayout
+          Size="234.5,42"
+          Id="Package\Populate DimGeoStandardised\DimGeoStandardised OLTP Table"
+          TopLeft="341.2,163.6" />
+        <EdgeLayout
+          Id="Package\Populate DimGeoStandardised.Paths[Excel Source Output]"
+          TopLeft="228.5,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="229.95,84.6"
+              Start="0,0"
+              End="229.95,77.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.3" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.3"
+                    Point2="0,42.3"
+                    Point3="4,42.3" />
+                  <mssgle:LineSegment
+                    End="225.95,42.3" />
+                  <mssgle:CubicBezierSegment
+                    Point1="225.95,42.3"
+                    Point2="229.95,42.3"
+                    Point3="229.95,46.3" />
+                  <mssgle:LineSegment
+                    End="229.95,77.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate DimGeoStandardised\DimGeoStandardised">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate DimGeoStandardised\DimGeoStandardised OLTP Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Populate DimIndicatorStandardised">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="226.5,42"
           Id="Package\Populate DimIndicatorStandardised\DimStandardisedIndicatorTable"
@@ -2174,9 +2283,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2263,82 +2370,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Populate DimSource OLTP  Table\DimSource OLTP Table">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Populate DimGeoStandardised">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Populate DimGeoStandardised\DimGeoStandardised"
-          TopLeft="140,37" />
-        <NodeLayout
-          Size="234.5,42"
-          Id="Package\Populate DimGeoStandardised\DimGeoStandardised OLTP Table"
-          TopLeft="341.2,163.6" />
-        <EdgeLayout
-          Id="Package\Populate DimGeoStandardised.Paths[Excel Source Output]"
-          TopLeft="228.5,79">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="229.95,84.6"
-              Start="0,0"
-              End="229.95,77.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.3" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.3"
-                    Point2="0,42.3"
-                    Point3="4,42.3" />
-                  <mssgle:LineSegment
-                    End="225.95,42.3" />
-                  <mssgle:CubicBezierSegment
-                    Point1="225.95,42.3"
-                    Point2="229.95,42.3"
-                    Point3="229.95,46.3" />
-                  <mssgle:LineSegment
-                    End="229.95,77.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate DimGeoStandardised\DimGeoStandardised">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Populate DimGeoStandardised\DimGeoStandardised OLTP Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

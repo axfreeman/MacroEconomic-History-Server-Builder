@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Reduced OLTP Data Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="493"
-  DTS:VersionGUID="{7F96BFC5-ADAF-4975-9340-136C11EF333B}">
+  DTS:VersionBuild="496"
+  DTS:VersionGUID="{5855C918-3C85-4F8A-AF99-410EA415DFBC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -16114,41 +16114,6 @@
               startId="Package\Barro-Ursua Dataset\Unpivot.Outputs[Unpivot Output]" />
           </paths>
         </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Convenience IFS USD series"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7E3B6E34-78C7-4820-B522-F7755C810089}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Convenience IFS USD series"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{442F2917-9C92-411C-B3F4-4301EB05D697}"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="calculate_IFS_USD_GDP.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Convenience PENN USD"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A9CB9320-50C1-4E7A-B0F5-41CD19523F36}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Convenience PENN USD"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{442F2917-9C92-411C-B3F4-4301EB05D697}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStmtSourceType="FileConnection"
-          SQLTask:SqlStatementSource="define_PENN_USD_calculator.sql" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -59613,8 +59578,8 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{5B17E48A-FD1D-4DEB-A2AA-12B603E89F23}"
-      DTS:From="Package\Convenience IFS USD series"
+      DTS:DTSID="{4AEC4CB0-A570-43DE-9641-3AB52854A85F}"
+      DTS:From="Package\IFS2020 BoP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\UN Population" />
@@ -59691,14 +59656,6 @@
       DTS:ObjectName="Constraint 18"
       DTS:To="Package\Barro-Ursua Dataset" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 19]"
-      DTS:CreationName=""
-      DTS:DTSID="{5BF13D32-DCC0-4CA8-8CF8-3FDD50A695A7}"
-      DTS:From="Package\Convenience PENN USD"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 19"
-      DTS:To="Package\World Inequality Database" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{440B7FCC-5D71-4E9A-A499-952FD458CAAD}"
@@ -59706,14 +59663,6 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Penn National Accounts" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 22]"
-      DTS:CreationName=""
-      DTS:DTSID="{7A1CB8E0-1945-4B20-84D8-D26DE2D8617D}"
-      DTS:From="Package\IFS2020 BoP"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 22"
-      DTS:To="Package\Convenience IFS USD series" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 23]"
       DTS:CreationName=""
@@ -59749,11 +59698,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{17AE6A4A-58AC-4F95-B193-C029850B975B}"
+      DTS:DTSID="{C067EA05-5F11-427F-8F24-7144A3AA121D}"
       DTS:From="Package\Penn World Tables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Convenience PENN USD" />
+      DTS:To="Package\World Inequality Database" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
@@ -59810,19 +59759,11 @@
         <NodeLayout
           Size="189,42.5"
           Id="Package\Add Spliced GERG Data"
-          TopLeft="170.388867136872,286.347822234626" />
+          TopLeft="165.388867136872,234.347822234626" />
         <NodeLayout
           Size="181.5,42.5"
           Id="Package\Barro-Ursua Dataset"
           TopLeft="757.533893786545,174.262340099146" />
-        <NodeLayout
-          Size="211,42.5"
-          Id="Package\Convenience IFS USD series"
-          TopLeft="1005.5555573069,105.223832097701" />
-        <NodeLayout
-          Size="191.5,42.5"
-          Id="Package\Convenience PENN USD"
-          TopLeft="691.111116056088,281.163841999348" />
         <NodeLayout
           Size="207,42.5"
           Id="Package\deduplicate UN GDP series"
@@ -59830,7 +59771,7 @@
         <NodeLayout
           Size="220.5,42.5"
           Id="Package\GERG Spliced Exchange Rates"
-          TopLeft="984.123595411118,407.50311349979" />
+          TopLeft="745.123595411118,316.50311349979" />
         <NodeLayout
           Size="117.5,42.5"
           Id="Package\IFS2020"
@@ -59842,11 +59783,11 @@
         <NodeLayout
           Size="177.5,42.5"
           Id="Package\Load GERG LCU GDP"
-          TopLeft="692.777796130122,408.086967097338" />
+          TopLeft="465.777796130122,310.586967097338" />
         <NodeLayout
           Size="166.5,42.5"
           Id="Package\Load Milanovic csv"
-          TopLeft="181.66667147919,424.478271869946" />
+          TopLeft="172.66667147919,311.478271869946" />
         <NodeLayout
           Size="141.5,42.5"
           Id="Package\Macrohistory"
@@ -59862,7 +59803,7 @@
         <NodeLayout
           Size="169.5,42.5"
           Id="Package\PENN Capital Stock"
-          TopLeft="1008.88891561532,559.000014486521" />
+          TopLeft="1021.38891561532,314.500014486521" />
         <NodeLayout
           Size="190.5,42.5"
           Id="Package\Penn National Accounts"
@@ -59870,7 +59811,7 @@
         <NodeLayout
           Size="167.5,42.5"
           Id="Package\Penn World Tables"
-          TopLeft="1021.4444644304,280.67390892749" />
+          TopLeft="1019.9444644304,243.67390892749" />
         <NodeLayout
           Size="165,42.5"
           Id="Package\PPP2011 from ICP"
@@ -59902,29 +59843,7 @@
         <NodeLayout
           Size="207,42.5"
           Id="Package\World Inequality Database"
-          TopLeft="426.454029338665,281.537251480579" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="1005.5555573069,125.81379372389">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-67.3245472965197,0"
-              Start="0,0"
-              End="-59.8245472965197,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-59.8245472965197,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="466.954029338665,234.537251480579" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="292.599762133753,41.8068706500422">
@@ -60015,30 +59934,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="347.952385764904,445.621129012803">
+          TopLeft="339.16667147919,332.282619483642">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="344.825410365218,-16.391304772608"
+              EndConnector="126.611124650932,0"
               Start="0,0"
-              End="337.325410365218,-16.391304772608">
+              End="119.111124650932,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="168.412705182609,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="168.412705182609,0"
-                    Point2="172.412705182609,0"
-                    Point3="172.412705182609,-4" />
-                  <mssgle:LineSegment
-                    End="172.412705182609,-12.391304772608" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172.412705182609,-12.391304772608"
-                    Point2="172.412705182609,-16.391304772608"
-                    Point3="176.412705182609,-16.391304772608" />
-                  <mssgle:LineSegment
-                    End="337.325410365218,-16.391304772608" />
+                    End="119.111124650932,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60049,18 +59956,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="870.492081844408,428.937897441421">
+          TopLeft="643.277796130122,334.795040298564">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="113.63151356671,0"
+              EndConnector="101.845799280996,0"
               Start="0,0"
-              End="106.13151356671,0">
+              End="94.3457992809959,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="106.13151356671,0" />
+                    End="94.3457992809959,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60093,18 +60000,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="1094.07768408465,449.788827785504">
+          TopLeft="965.623595411118,336.751563993156">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,109.211186701016"
+              EndConnector="55.765320204202,0"
               Start="0,0"
-              End="0,101.711186701016">
+              End="48.265320204202,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,101.711186701016" />
+                    End="48.265320204202,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60136,28 +60043,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 19]"
-          TopLeft="691.111116056088,302.493403882821">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-57.7999438602802,0"
-              Start="0,0"
-              End="-50.2999438602802,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-50.2999438602802,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="939.248179500831,196.70880641752">
           <EdgeLayout.Curve>
@@ -60180,53 +60065,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 22]"
-          TopLeft="1088.59524476213,62.2639730167234">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22.3888839733449,42.9598590809776"
-              Start="0,0"
-              End="22.3888839733449,35.4598590809776">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.4799295404888" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.4799295404888"
-                    Point2="0,21.4799295404888"
-                    Point3="4,21.4799295404888" />
-                  <mssgle:LineSegment
-                    End="18.3888839733449,21.4799295404888" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.3888839733449,21.4799295404888"
-                    Point2="22.3888839733449,21.4799295404888"
-                    Point3="22.3888839733449,25.4799295404888" />
-                  <mssgle:LineSegment
-                    End="22.3888839733449,35.4598590809776" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 23]"
-          TopLeft="1102.95637245952,219.155272735894">
+          TopLeft="1102.27780103095,219.36955845018">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.5186361915957"
+              EndConnector="0,24.30435047731"
               Start="0,0"
-              End="0,54.0186361915957">
+              End="0,16.80435047731">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.0186361915957" />
+                    End="0,16.80435047731" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60293,28 +60144,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="24.9089310874369,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="1021.4444644304,302.061732606276">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-138.904776945741,0"
-              Start="0,0"
-              End="-131.404776945741,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-131.404776945741,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60391,18 +60220,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="264.884912165174,328.63353652034">
+          TopLeft="257.902769308031,276.847822234626">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,95.844735349606"
+              EndConnector="0,34.63044963532"
               Start="0,0"
-              End="0,88.344735349606">
+              End="0,27.13044963532">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,88.344735349606" />
+                    End="0,27.13044963532" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60413,18 +60242,86 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="426.454029338665,305.08539400046">
+          TopLeft="466.954029338665,255.692536857603">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-66.9223050589359,0"
+              EndConnector="-112.565162201793,0"
               Start="0,0"
-              End="-59.4223050589359,0">
+              End="-105.065162201793,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-59.4223050589359,0" />
+                    End="-105.065162201793,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="1088.66667333356,62.4782587310091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-223.399949037463,41.6397823333559"
+              Start="0,0"
+              End="-223.399949037463,34.1397823333559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.819891166678" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.819891166678"
+                    Point2="0,20.819891166678"
+                    Point3="-4,20.819891166678" />
+                  <mssgle:LineSegment
+                    End="-219.399949037463,20.819891166678" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-219.399949037463,20.819891166678"
+                    Point2="-223.399949037463,20.819891166678"
+                    Point3="-223.399949037463,24.819891166678" />
+                  <mssgle:LineSegment
+                    End="-223.399949037463,34.1397823333559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1019.9444644304,264.92390892749">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-345.990435091735,-9.13665744691099"
+              Start="0,0"
+              End="-338.490435091735,-9.13665744691099">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-168.995217545867,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-168.995217545867,0"
+                    Point2="-172.995217545867,0"
+                    Point3="-172.995217545867,-4" />
+                  <mssgle:LineSegment
+                    End="-172.995217545867,-5.13665744691099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-172.995217545867,-5.13665744691099"
+                    Point2="-172.995217545867,-9.13665744691099"
+                    Point3="-176.995217545867,-9.13665744691099" />
+                  <mssgle:LineSegment
+                    End="-338.490435091735,-9.13665744691099" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -60813,6 +60710,10 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="239.428571428572,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Add Source and convert DateField"
+          TopLeft="720.55557464376,84.2173934868469" />
+        <NodeLayout
           Size="176.571428571429,42.2857142857143"
           Id="Package\GERG Spliced Exchange Rates\Datefield Conversion"
           TopLeft="351.666675982652,221.000005727229" />
@@ -60825,17 +60726,37 @@
           Id="Package\GERG Spliced Exchange Rates\OLTP FactSource Table"
           TopLeft="596.111126902663,312.633548311694" />
         <NodeLayout
-          Size="115.428571428572,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Unpivot"
-          TopLeft="786.111131935944,223.826092756989" />
-        <NodeLayout
-          Size="239.428571428572,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Add Source and convert DateField"
-          TopLeft="720.55557464376,84.2173934868469" />
-        <NodeLayout
           Size="219.428571428572,42.2857142857143"
           Id="Package\GERG Spliced Exchange Rates\GERG spliced Exchange Rates"
           TopLeft="322.777786328469,77.4347846154229" />
+        <NodeLayout
+          Size="115.428571428572,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Unpivot"
+          TopLeft="786.111131935944,223.826092756989" />
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Unpivot Output]"
+          TopLeft="786.111131935944,243.555906384966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-257.873027381863,0"
+              Start="0,0"
+              End="-250.373027381863,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-250.373027381863,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\GERG Spliced Exchange Rates.Paths[Flat File Source Output]"
           TopLeft="542.20635775704,101.968946193992">
@@ -60857,66 +60778,6 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="77.4246084433595,5,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output]"
-          TopLeft="842.047639004138,126.503107772561">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,97.3229849844279"
-              Start="0,0"
-              End="0,89.8229849844279">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,89.8229849844279" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output1]"
-          TopLeft="439.952390268367,263.285720012943">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="250.44445092001,49.3478282987508"
-              Start="0,0"
-              End="250.44445092001,41.8478282987508">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.6739141493754" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.6739141493754"
-                    Point2="0,24.6739141493754"
-                    Point3="4,24.6739141493754" />
-                  <mssgle:LineSegment
-                    End="246.44445092001,24.6739141493754" />
-                  <mssgle:CubicBezierSegment
-                    Point1="246.44445092001,24.6739141493754"
-                    Point2="250.44445092001,24.6739141493754"
-                    Point3="250.44445092001,28.6739141493754" />
-                  <mssgle:LineSegment
-                    End="250.44445092001,41.8478282987508" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -60957,19 +60818,55 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Unpivot Output]"
-          TopLeft="786.111131935944,243.555906384966">
+          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output1]"
+          TopLeft="439.952390268367,263.285720012943">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-257.873027381863,0"
+              EndConnector="250.44445092001,49.3478282987508"
               Start="0,0"
-              End="-250.373027381863,0">
+              End="250.44445092001,41.8478282987508">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-250.373027381863,0" />
+                    End="0,20.6739141493754" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6739141493754"
+                    Point2="0,24.6739141493754"
+                    Point3="4,24.6739141493754" />
+                  <mssgle:LineSegment
+                    End="246.44445092001,24.6739141493754" />
+                  <mssgle:CubicBezierSegment
+                    Point1="246.44445092001,24.6739141493754"
+                    Point2="250.44445092001,24.6739141493754"
+                    Point3="250.44445092001,28.6739141493754" />
+                  <mssgle:LineSegment
+                    End="250.44445092001,41.8478282987508" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output]"
+          TopLeft="842.047639004138,126.503107772561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.3229849844279"
+              Start="0,0"
+              End="0,89.8229849844279">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.8229849844279" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -62100,7 +61997,7 @@
     design-time-name="Package\PENN Capital Stock">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="131.428571428572,42.2857142857143"
           Id="Package\PENN Capital Stock\FactSource"
@@ -62148,7 +62045,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62182,7 +62081,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62216,7 +62117,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -62239,7 +62142,7 @@
     design-time-name="Package\Penn National Accounts">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="192,42.2857142857143"
           Id="Package\Penn National Accounts\FactSource OLTP Table"
@@ -62279,7 +62182,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62301,7 +62206,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62335,7 +62242,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62369,7 +62278,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -62379,7 +62290,7 @@
     design-time-name="Package\Penn World Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="192,42.2857142857143"
           Id="Package\Penn World Tables\FactSource OLTP Table"
@@ -62419,7 +62330,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62453,7 +62366,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62475,7 +62390,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -62509,7 +62426,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
