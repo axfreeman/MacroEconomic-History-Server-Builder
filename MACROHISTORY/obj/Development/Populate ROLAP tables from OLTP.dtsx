@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="310"
-  DTS:VersionGUID="{73DBD639-AC6E-48D1-8291-238ECD162E66}">
+  DTS:VersionBuild="314"
+  DTS:VersionGUID="{D24DCA4F-4B1E-444E-BCFB-3847F951F012}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,55 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{9CE03148-0E9B-4B6B-931C-D34EE2EC13D4}"
-      DTS:ObjectName="DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 2]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{319CFC39-5B16-4A08-B0B5-9F6A01A4D5CA}"
-      DTS:ObjectName="DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 3]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{3EC81040-B146-42C9-B74A-2C7413ECB0CB}"
-      DTS:ObjectName="DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 3">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 4]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{BA853467-90FA-48E3-A669-2B6102164645}"
-      DTS:ObjectName="DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 4">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP_220522;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -485,8 +437,8 @@
               <connections>
                 <connection
                   refId="Package\Populate DimSources\DimSource ROLAP Table.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 2]"
+                  connectionManagerID="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ROLAP]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3195,13 +3147,13 @@
     design-time-name="Package\Populate DimSources">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="193.714285714286,41.7142857142858"
+          Size="193.5,41.5"
           Id="Package\Populate DimSources\DimSource ROLAP Table"
           TopLeft="122,168" />
         <NodeLayout
-          Size="186.857142857143,41.7142857142858"
+          Size="187,41.5"
           Id="Package\Populate DimSources\DimSource OLTP Table"
           TopLeft="120,25" />
         <EdgeLayout
@@ -3223,9 +3175,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3261,7 +3211,7 @@
     design-time-name="Package\Populate GeoStandardisedDimensionTable">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="111.5,42.5"
           Id="Package\Populate GeoStandardisedDimensionTable\ROLAP"
@@ -3301,7 +3251,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3413,15 +3365,15 @@
     design-time-name="Package\Populate ROLAP fact file">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="203.5,42"
-          Id="Package\Populate ROLAP fact file\OLTP FactSourceComplete"
-          TopLeft="163.5,45.5" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="153,42"
           Id="Package\Populate ROLAP fact file\ROLAP Fact File"
           TopLeft="495,198" />
+        <NodeLayout
+          Size="203.5,42"
+          Id="Package\Populate ROLAP fact file\OLTP FactSourceComplete"
+          TopLeft="163.5,45.5" />
         <EdgeLayout
           Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
           TopLeft="265.25,87.5">
@@ -3453,7 +3405,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

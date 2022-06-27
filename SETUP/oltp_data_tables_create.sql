@@ -1,6 +1,6 @@
 -- The OLTP database is where the source data and dimension templates are initially loaded (see Dimension Setup for details)
  
-USE [MACROHISTORY_OLTP]
+USE [MACROHISTORY_OLTP_220522]
 GO
 
 /* Different suppliers of data (UN, WDI, IFS, etc) use varying names for countries.

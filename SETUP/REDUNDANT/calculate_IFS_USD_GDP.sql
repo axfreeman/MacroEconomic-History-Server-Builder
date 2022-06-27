@@ -1,4 +1,4 @@
-USE macrohistory_oltp
+USE MACROHISTORY_OLTP_220522
 GO
 -- Add USD series for the IFS GDP and SAGDP series
 -- Do it here for convenience rather than oblige the user to write complex

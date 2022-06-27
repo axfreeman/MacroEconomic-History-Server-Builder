@@ -1,4 +1,4 @@
-USE macrohistory_oltp
+USE macrohistory_oltp_220522
 GO
 
 DROP TABLE IF EXISTS UN_duplicates

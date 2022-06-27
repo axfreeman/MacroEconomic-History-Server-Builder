@@ -11,11 +11,55 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Full OLTP Data Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="496"
-  DTS:VersionGUID="{447C2A7E-C6AD-417E-A6DA-51306F9B15DF}">
+  DTS:VersionBuild="507"
+  DTS:VersionGUID="{37FE24CE-5E7E-425C-A0FA-9EE23AFBA87D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Error File for UNCTAD FDI]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4B23A0DA-C540-44C2-A670-019528137C22}"
+      DTS:ObjectName="Error File for UNCTAD FDI">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\ERRORS\UNCTAD errors.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat File Source Error Output Column"
+              DTS:DTSID="{9D06E4DF-FF9B-4104-A237-D0DD9525F967}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{6BC09352-F69D-4481-8838-F06AAAA1D349}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{2E949C81-9492-4886-A0BC-AA61ADDF55F4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
@@ -41957,6 +42001,690 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\UNCTAD FDI"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ABEA3190-E2A6-4B51-A911-A996FF0718B0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="UNCTAD FDI"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\UNCTAD FDI\Add source and convert date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add source and convert date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Year"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input].Columns[Economy Label]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Economy Label"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Economy Label]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input].Columns[Direction Label]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Direction Label"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Direction Label]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input].Columns[US dollars at current prices in millions]"
+                      cachedDataType="r8"
+                      cachedName="US dollars at current prices in millions"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[US dollars at current prices in millions]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[DateField]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[DateField]"
+                      name="DateField"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)#{Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Year]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)Year)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"UNCTAD FDI"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"UNCTAD FDI"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Economy Label]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Economy Label]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Indicator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Indicator]"
+                      name="Indicator"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Direction Label]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Direction Label]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Value]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Value]"
+                      name="Value"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[US dollars at current prices in millions]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[US dollars at current prices in millions]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\UNCTAD FDI\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\UNCTAD FDI\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Source]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicator"
+                      externalMetadataColumnId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[Indicator]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateField]"
+                      cachedDataType="dbDate"
+                      cachedName="DateField"
+                      externalMetadataColumnId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output].Columns[DateField]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\UNCTAD FDI\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UNCTAD FDI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UNCTAD FDI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\UNCTAD FDI\UNCTAD FDI"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="4105"
+              name="UNCTAD FDI"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\UNCTAD FDI\UNCTAD FDI.Connections[FlatFileConnection]"
+                  connectionManagerID="{35F73111-82A1-4499-9E6C-BEFF0ADA97AF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[UNCTAD FDI]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Year]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      length="255"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Economy Label]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Economy Label]"
+                      length="255"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Economy Label]"
+                      name="Economy Label"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Direction Label]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Direction Label]"
+                      length="255"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[Direction Label]"
+                      name="Direction Label"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[US dollars at current prices in millions]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[US dollars at current prices in millions]"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].Columns[US dollars at current prices in millions]"
+                      name="US dollars at current prices in millions"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      dataType="wstr"
+                      length="255"
+                      name="Year" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Economy]"
+                      dataType="wstr"
+                      length="255"
+                      name="Economy" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Economy Label]"
+                      dataType="wstr"
+                      length="255"
+                      name="Economy Label" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Mode]"
+                      dataType="wstr"
+                      length="255"
+                      name="Mode" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Mode Label]"
+                      dataType="wstr"
+                      length="255"
+                      name="Mode Label" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Direction]"
+                      dataType="wstr"
+                      length="255"
+                      name="Direction" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Direction Label]"
+                      dataType="wstr"
+                      length="255"
+                      name="Direction Label" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[US dollars at current prices in millions]"
+                      dataType="r8"
+                      name="US dollars at current prices in millions" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[US dollars at current prices in millions Footnote]"
+                      dataType="r8"
+                      name="US dollars at current prices in millions Footnote" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[US dollars at current prices per capita]"
+                      dataType="r8"
+                      name="US dollars at current prices per capita" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[US dollars at current prices per capita Footnote]"
+                      dataType="r8"
+                      name="US dollars at current prices per capita Footnote" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Percentage of total world]"
+                      dataType="r8"
+                      name="Percentage of total world" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Percentage of total world Footnote]"
+                      dataType="r8"
+                      name="Percentage of total world Footnote" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Percentage of Gross Domestic Product]"
+                      dataType="r8"
+                      name="Percentage of Gross Domestic Product" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Percentage of Gross Domestic Product Footnote]"
+                      dataType="r8"
+                      name="Percentage of Gross Domestic Product Footnote" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Percentage of Gross Fixed Capital Formation]"
+                      dataType="r8"
+                      name="Percentage of Gross Fixed Capital Formation" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output].ExternalColumns[Percentage of Gross Fixed Capital Formation Footnote]"
+                      dataType="r8"
+                      name="Percentage of Gross Fixed Capital Formation Footnote" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\UNCTAD FDI\UNCTAD FDI Errors"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="4105"
+              name="UNCTAD FDI Errors">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Error File for UNCTAD FDI]"
+                  connectionManagerRefId="Package.ConnectionManagers[Error File for UNCTAD FDI]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].Columns[Flat File Source Error Output Column]"
+                      cachedCodepage="65001"
+                      cachedDataType="text"
+                      cachedName="Flat File Source Error Output Column"
+                      externalMetadataColumnId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\UNCTAD FDI.Paths[Derived Column Output]"
+              endId="Package\UNCTAD FDI\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\UNCTAD FDI\Add source and convert date.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\UNCTAD FDI.Paths[Flat File Source Error Output]"
+              endId="Package\UNCTAD FDI\UNCTAD FDI Errors.Inputs[Flat File Destination Input]"
+              name="Flat File Source Error Output"
+              startId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Error Output]" />
+            <path
+              refId="Package\UNCTAD FDI.Paths[Flat File Source Output]"
+              endId="Package\UNCTAD FDI\Add source and convert date.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\UNCTAD FDI\UNCTAD FDI.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\WDI2021"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -50359,6 +51087,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\Load Milanovic csv" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{906B741E-E61E-4D28-B91A-87F428A01F6E}"
+      DTS:From="Package\PENN Capital Stock"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\UNCTAD FDI" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -50771,6 +51507,28 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="756.9444644304,194.760865581058">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.9444027064719,0"
+              Start="0,0"
+              End="49.4444027064719,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="49.4444027064719,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="786.727967034583,41.7247436289547">
           <EdgeLayout.Curve>
@@ -50858,20 +51616,36 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="139.5,42"
+          Id="Package\UNCTAD FDI"
+          TopLeft="220,330" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="756.9444644304,194.760865581058">
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="436.13891561532,296.500014486521">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.9444027064719,0"
+              EndConnector="-146.38891561532,33.499985513479"
               Start="0,0"
-              End="49.4444027064719,0">
+              End="-146.38891561532,25.999985513479">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="49.4444027064719,0" />
+                    End="0,12.7499927567395" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.7499927567395"
+                    Point2="0,16.7499927567395"
+                    Point3="-4,16.7499927567395" />
+                  <mssgle:LineSegment
+                    End="-142.38891561532,16.7499927567395" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-142.38891561532,16.7499927567395"
+                    Point2="-146.38891561532,16.7499927567395"
+                    Point3="-146.38891561532,20.7499927567395" />
+                  <mssgle:LineSegment
+                    End="-146.38891561532,25.999985513479" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -51127,6 +51901,10 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="239.428571428572,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Add Source and convert DateField"
+          TopLeft="720.55557464376,84.2173934868469" />
+        <NodeLayout
           Size="176.571428571429,42.2857142857143"
           Id="Package\GERG Spliced Exchange Rates\Datefield Conversion"
           TopLeft="351.666675982652,221.000005727229" />
@@ -51139,17 +51917,37 @@
           Id="Package\GERG Spliced Exchange Rates\OLTP FactSource Table"
           TopLeft="596.111126902663,312.633548311694" />
         <NodeLayout
-          Size="115.428571428572,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Unpivot"
-          TopLeft="786.111131935944,223.826092756989" />
-        <NodeLayout
-          Size="239.428571428572,42.2857142857143"
-          Id="Package\GERG Spliced Exchange Rates\Add Source and convert DateField"
-          TopLeft="720.55557464376,84.2173934868469" />
-        <NodeLayout
           Size="219.428571428572,42.2857142857143"
           Id="Package\GERG Spliced Exchange Rates\GERG spliced Exchange Rates"
           TopLeft="322.777786328469,77.4347846154229" />
+        <NodeLayout
+          Size="115.428571428572,42.2857142857143"
+          Id="Package\GERG Spliced Exchange Rates\Unpivot"
+          TopLeft="786.111131935944,223.826092756989" />
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Unpivot Output]"
+          TopLeft="786.111131935944,243.555906384966">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-257.873027381863,0"
+              Start="0,0"
+              End="-250.373027381863,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-250.373027381863,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\GERG Spliced Exchange Rates.Paths[Flat File Source Output]"
           TopLeft="542.20635775704,101.968946193992">
@@ -51171,66 +51969,6 @@
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="77.4246084433595,5,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output]"
-          TopLeft="842.047639004138,126.503107772561">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,97.3229849844279"
-              Start="0,0"
-              End="0,89.8229849844279">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,89.8229849844279" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output1]"
-          TopLeft="439.952390268367,263.285720012943">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="250.44445092001,49.3478282987508"
-              Start="0,0"
-              End="250.44445092001,41.8478282987508">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.6739141493754" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.6739141493754"
-                    Point2="0,24.6739141493754"
-                    Point3="4,24.6739141493754" />
-                  <mssgle:LineSegment
-                    End="246.44445092001,24.6739141493754" />
-                  <mssgle:CubicBezierSegment
-                    Point1="246.44445092001,24.6739141493754"
-                    Point2="250.44445092001,24.6739141493754"
-                    Point3="250.44445092001,28.6739141493754" />
-                  <mssgle:LineSegment
-                    End="250.44445092001,41.8478282987508" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51271,19 +52009,55 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\GERG Spliced Exchange Rates.Paths[Unpivot Output]"
-          TopLeft="786.111131935944,243.555906384966">
+          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output1]"
+          TopLeft="439.952390268367,263.285720012943">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-257.873027381863,0"
+              EndConnector="250.44445092001,49.3478282987508"
               Start="0,0"
-              End="-250.373027381863,0">
+              End="250.44445092001,41.8478282987508">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-250.373027381863,0" />
+                    End="0,20.6739141493754" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.6739141493754"
+                    Point2="0,24.6739141493754"
+                    Point3="4,24.6739141493754" />
+                  <mssgle:LineSegment
+                    End="246.44445092001,24.6739141493754" />
+                  <mssgle:CubicBezierSegment
+                    Point1="246.44445092001,24.6739141493754"
+                    Point2="250.44445092001,24.6739141493754"
+                    Point3="250.44445092001,28.6739141493754" />
+                  <mssgle:LineSegment
+                    End="250.44445092001,41.8478282987508" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERG Spliced Exchange Rates.Paths[Derived Column Output]"
+          TopLeft="842.047639004138,126.503107772561">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97.3229849844279"
+              Start="0,0"
+              End="0,89.8229849844279">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.8229849844279" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -52229,7 +53003,7 @@
     design-time-name="Package\PENN Capital Stock">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="131.428571428572,42.2857142857143"
           Id="Package\PENN Capital Stock\FactSource"
@@ -52277,7 +53051,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52311,7 +53087,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52345,7 +53123,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52368,7 +53148,7 @@
     design-time-name="Package\Penn National Accounts">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="192,42.2857142857143"
           Id="Package\Penn National Accounts\FactSource OLTP Table"
@@ -52408,7 +53188,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52430,7 +53212,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52464,7 +53248,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52498,7 +53284,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52508,7 +53296,7 @@
     design-time-name="Package\Penn World Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="192,42.2857142857143"
           Id="Package\Penn World Tables\FactSource OLTP Table"
@@ -52548,7 +53336,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52582,7 +53372,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52604,7 +53396,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52638,7 +53432,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52914,7 +53710,7 @@
     design-time-name="Package\UN2020-OFFICIAL">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="116.5,42.5"
           Id="Package\UN2020-OFFICIAL\Unpivot"
@@ -52950,7 +53746,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52972,7 +53770,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53006,7 +53806,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -53031,23 +53833,23 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172,42.2857142857143"
+          Size="172,42.5"
           Id="Package\WDI2021\Flat File Destination"
           TopLeft="128,200.8" />
         <NodeLayout
-          Size="114.857142857143,42.2857142857143"
+          Size="115,42.5"
           Id="Package\WDI2021\Unpivot"
           TopLeft="378,129.6" />
         <NodeLayout
-          Size="242.857142857143,42.2857142857143"
+          Size="243,42.5"
           Id="Package\WDI2021\Shorten, add source, add Datefield"
           TopLeft="376.4,257.2" />
         <NodeLayout
-          Size="133.714285714286,42.2857142857143"
+          Size="133.5,42.5"
           Id="Package\WDI2021\Fact Source"
           TopLeft="415.6,341.2" />
         <NodeLayout
-          Size="172.571428571429,42.2857142857143"
+          Size="172.5,42.5"
           Id="Package\WDI2021\WDI 2021 CSV FILE"
           TopLeft="112.2,32.4" />
         <EdgeLayout
@@ -53081,9 +53883,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53117,9 +53917,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53189,9 +53987,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -53881,6 +54677,147 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\WEO2020O\Fact">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\UNCTAD FDI">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139.5,42"
+          Id="Package\UNCTAD FDI\UNCTAD FDI"
+          TopLeft="172,76.5" />
+        <NodeLayout
+          Size="214.5,42"
+          Id="Package\UNCTAD FDI\Add source and convert date"
+          TopLeft="293,190.5" />
+        <EdgeLayout
+          Id="Package\UNCTAD FDI.Paths[Flat File Source Output]"
+          TopLeft="241.75,118.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158.5,72"
+              Start="0,0"
+              End="158.5,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="4,36" />
+                  <mssgle:LineSegment
+                    End="154.5,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="154.5,36"
+                    Point2="158.5,36"
+                    Point3="158.5,40" />
+                  <mssgle:LineSegment
+                    End="158.5,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\UNCTAD FDI\OLE DB Destination"
+          TopLeft="578.5,321.5" />
+        <EdgeLayout
+          Id="Package\UNCTAD FDI.Paths[Derived Column Output]"
+          TopLeft="400.25,232.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="263.75,89"
+              Start="0,0"
+              End="263.75,81.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5"
+                    Point2="0,44.5"
+                    Point3="4,44.5" />
+                  <mssgle:LineSegment
+                    End="259.75,44.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="259.75,44.5"
+                    Point2="263.75,44.5"
+                    Point3="263.75,48.5" />
+                  <mssgle:LineSegment
+                    End="263.75,81.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\UNCTAD FDI\UNCTAD FDI Errors"
+          TopLeft="594.5,64" />
+        <EdgeLayout
+          Id="Package\UNCTAD FDI.Paths[Flat File Source Error Output]"
+          TopLeft="311.5,97.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="283,-12.5"
+              Start="0,0"
+              End="275.5,-12.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="137.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.5,0"
+                    Point2="141.5,0"
+                    Point3="141.5,-4" />
+                  <mssgle:LineSegment
+                    End="141.5,-8.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="141.5,-8.5"
+                    Point2="141.5,-12.5"
+                    Point3="145.5,-12.5" />
+                  <mssgle:LineSegment
+                    End="275.5,-12.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="77.87361328125,1,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\UNCTAD FDI\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

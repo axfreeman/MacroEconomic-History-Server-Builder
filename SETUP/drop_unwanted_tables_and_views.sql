@@ -1,5 +1,5 @@
 -- script to clean up macrohistory_rolap  after finishing ROLAP transfer
-Use macrohistory_oltp
+Use macrohistory_oltp_220522
 DROP TABLE IF EXISTS MADDISON_TD_File;
 DROP TABLE IF EXISTS UN_TD_File;
 DROP TABLE IF EXISTS WID_TD_File;
