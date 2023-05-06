@@ -11,23 +11,11 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="314"
-  DTS:VersionGUID="{D24DCA4F-4B1E-444E-BCFB-3847F951F012}">
+  DTS:VersionBuild="316"
+  DTS:VersionGUID="{912999F7-A96B-4A65-9F9F-EEA385D3D627}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{48930CA6-5BB6-42F1-8491-E8AE41FF1B86}"
-      DTS:ObjectName="DESKTOP-VM2MSFK.MACROHISTORY_ROLAP">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-VM2MSFK;Initial Catalog=MACROHISTORY_ROLAP_220522;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[reduce.sql]"
       DTS:CreationName="FILE"
@@ -54,6 +42,7 @@
     <DTS:Executable
       DTS:refId="Package\Drop and create ROLAP files"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DelayValidation="True"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{57764191-E14C-4999-8009-697173DE132E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
@@ -72,6 +61,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate DimSources"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{E7DAC2CF-F50B-496C-9C81-D56755A44650}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -613,6 +603,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate GeoStandardisedDimensionTable"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{3BBF4037-5823-44A5-B95D-7577F17EB065}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -1125,8 +1116,8 @@
               <connections>
                 <connection
                   refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP]"
+                  connectionManagerID="{48930CA6-5BB6-42F1-8491-E8AE41FF1B86}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1385,6 +1376,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate IndicatorStandardisedDimensionTable"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{34A9ED7A-8571-4522-BBD5-E5B55C90D7E4}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -1855,8 +1847,8 @@
               <connections>
                 <connection
                   refId="Package\Populate IndicatorStandardisedDimensionTable\ROLAP.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP]"
+                  connectionManagerID="{48930CA6-5BB6-42F1-8491-E8AE41FF1B86}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2091,6 +2083,7 @@
     <DTS:Executable
       DTS:refId="Package\Populate ROLAP fact file"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{533C6D0F-883C-4A80-AD61-1FF88591D607}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -3021,34 +3014,34 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="239.5,41.5"
+          Size="240,42"
           Id="Package\Drop and create ROLAP files"
           TopLeft="58.4444438999082,35.6170950654821" />
         <NodeLayout
-          Size="177.5,41.5"
+          Size="178,42"
           Id="Package\Populate DimSources"
           TopLeft="54.8290714301302,110.006985197337" />
         <NodeLayout
-          Size="277.5,42"
+          Size="278,42"
           Id="Package\Populate GeoStandardisedDimensionTable"
-          TopLeft="715.000018941032,36.7391313868795" />
+          TopLeft="716.000018941032,36.7391313868795" />
         <NodeLayout
-          Size="301,42.5"
+          Size="301,42"
           Id="Package\Populate IndicatorStandardisedDimensionTable"
           TopLeft="347.22223142047,37.3043487928316" />
         <NodeLayout
-          Size="193,42.5"
+          Size="193,42"
           Id="Package\Populate ROLAP fact file"
           TopLeft="272.999995542954,110.935207339927" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="853.750018941032,78.7391313868795">
+          TopLeft="855.000018941032,78.7391313868795">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-710.170947510902,31.2678538104575"
+              EndConnector="-711.170947510902,31.2678538104575"
               Start="0,0"
-              End="-710.170947510902,23.7678538104575">
+              End="-711.170947510902,23.7678538104575">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -3059,13 +3052,13 @@
                     Point2="0,15.6339269052287"
                     Point3="-4,15.6339269052287" />
                   <mssgle:LineSegment
-                    End="-706.170947510902,15.6339269052287" />
+                    End="-707.170947510902,15.6339269052287" />
                   <mssgle:CubicBezierSegment
-                    Point1="-706.170947510902,15.6339269052287"
-                    Point2="-710.170947510902,15.6339269052287"
-                    Point3="-710.170947510902,19.6339269052287" />
+                    Point1="-707.170947510902,15.6339269052287"
+                    Point2="-711.170947510902,15.6339269052287"
+                    Point3="-711.170947510902,19.6339269052287" />
                   <mssgle:LineSegment
-                    End="-710.170947510902,23.7678538104575" />
+                    End="-711.170947510902,23.7678538104575" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3120,18 +3113,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="648.22223142047,58.1467400898555">
+          TopLeft="648.22223142047,58.0217400898555">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66.7777875205619,0"
+              EndConnector="67.7777875205619,0"
               Start="0,0"
-              End="59.2777875205619,0">
+              End="60.2777875205619,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="59.2777875205619,0" />
+                    End="60.2777875205619,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3291,11 +3284,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="111.5,42.5"
+          Size="112,42"
           Id="Package\Populate IndicatorStandardisedDimensionTable\ROLAP"
           TopLeft="318,263.6" />
         <NodeLayout
-          Size="104.5,42.5"
+          Size="104,42"
           Id="Package\Populate IndicatorStandardisedDimensionTable\OLTP"
           TopLeft="238,137" />
         <EdgeLayout
