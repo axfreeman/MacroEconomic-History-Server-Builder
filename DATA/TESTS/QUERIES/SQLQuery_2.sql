@@ -1,1 +1,0 @@
-Select * from factquery where FactQuery.GeoStandardName='United Kingdom'
