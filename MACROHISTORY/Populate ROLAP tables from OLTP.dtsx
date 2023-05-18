@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="316"
-  DTS:VersionGUID="{912999F7-A96B-4A65-9F9F-EEA385D3D627}">
+  DTS:VersionBuild="320"
+  DTS:VersionGUID="{F23341FB-95C5-4E47-93EF-320DEA638D66}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -727,86 +727,6 @@
                       name="Major_Blocs"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[NICS_geography]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[NICS_geography]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[NICS_geography]"
-                      name="NICS_geography"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Geopolitical_region]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_region]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Geopolitical_region]"
-                      name="Geopolitical_region"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Maddison_availability]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Maddison_availability]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Maddison_availability]"
-                      name="Maddison_availability"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[wdi_availability]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[wdi_availability]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[wdi_availability]"
-                      name="wdi_availability"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[penn_availability]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[penn_availability]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[penn_availability]"
-                      name="penn_availability"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY_Geography]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]"
-                      name="MACROHISTORY_Geography"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[WID_Geography]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[WID_Geography]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[WID_Geography]"
-                      name="WID_Geography"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[IMF_main_category]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[IMF_main_category]"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[IMF_main_category]"
-                      name="IMF_main_category"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[WEO_Geography]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -845,6 +765,26 @@
                       lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[GeoStandardisedID]"
                       name="GeoStandardisedID"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Available_From]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Available_From]"
+                      length="255"
+                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Available_From]"
+                      name="Available_From"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Available_Until]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Available_Until]"
+                      length="255"
+                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Available_Until]"
+                      name="Available_Until"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -874,46 +814,6 @@
                       length="255"
                       name="Major_Blocs" />
                     <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[NICS_geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="NICS_geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_region]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical_region" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Maddison_availability]"
-                      dataType="wstr"
-                      length="255"
-                      name="Maddison_availability" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[wdi_availability]"
-                      dataType="wstr"
-                      length="255"
-                      name="wdi_availability" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[penn_availability]"
-                      dataType="wstr"
-                      length="255"
-                      name="penn_availability" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="MACROHISTORY_Geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[WID_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="WID_Geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[IMF_main_category]"
-                      dataType="wstr"
-                      length="255"
-                      name="IMF_main_category" />
-                    <externalMetadataColumn
                       refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[WEO_Geography]"
                       dataType="wstr"
                       length="255"
@@ -932,6 +832,16 @@
                       refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[GeoStandardisedID]"
                       dataType="i4"
                       name="GeoStandardisedID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Available_From]"
+                      dataType="wstr"
+                      length="255"
+                      name="Available_From" />
+                    <externalMetadataColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].ExternalColumns[Available_Until]"
+                      dataType="wstr"
+                      length="255"
+                      name="Available_Until" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -970,54 +880,6 @@
                       lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Major_Blocs]"
                       name="Major_Blocs" />
                     <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[NICS_geography]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[NICS_geography]"
-                      name="NICS_geography" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Geopolitical_region]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Geopolitical_region]"
-                      name="Geopolitical_region" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Maddison_availability]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Maddison_availability]"
-                      name="Maddison_availability" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[wdi_availability]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[wdi_availability]"
-                      name="wdi_availability" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[penn_availability]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[penn_availability]"
-                      name="penn_availability" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY_Geography]"
-                      name="MACROHISTORY_Geography" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[WID_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[WID_Geography]"
-                      name="WID_Geography" />
-                    <outputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[IMF_main_category]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[IMF_main_category]"
-                      name="IMF_main_category" />
-                    <outputColumn
                       refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[WEO_Geography]"
                       dataType="wstr"
                       length="255"
@@ -1035,6 +897,18 @@
                       length="255"
                       lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[GeoSourceName]"
                       name="GeoSourceName" />
+                    <outputColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Available_From]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Available_From]"
+                      name="Available_From" />
+                    <outputColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Available_Until]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[Available_Until]"
+                      name="Available_Until" />
                     <outputColumn
                       refId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Error Output].Columns[GeoStandardisedID]"
                       dataType="i4"
@@ -1116,8 +990,8 @@
               <connections>
                 <connection
                   refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Connections[OleDbConnection]"
-                  connectionManagerID="{48930CA6-5BB6-42F1-8491-E8AE41FF1B86}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-VM2MSFK.MACROHISTORY_ROLAP 1]"
+                  connectionManagerID="{7D09BE9C-426C-47B6-8A69-8B68D051C2E7}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ROLAP]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1165,62 +1039,6 @@
                       externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Major_Blocs]"
                       lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Major_Blocs]" />
                     <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[NICS_geography]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="NICS_geography"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[NICS_geography]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[NICS_geography]" />
-                    <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[Geopolitical_region]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Geopolitical_region"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_region]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Geopolitical_region]" />
-                    <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[Maddison_availability]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Maddison_availability"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Maddison_availability]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Maddison_availability]" />
-                    <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[wdi_availability]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="wdi_availability"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[wdi_availability]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[wdi_availability]" />
-                    <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[penn_availability]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="penn_availability"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[penn_availability]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[penn_availability]" />
-                    <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[MACROHISTORY_Geography]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="MACROHISTORY_Geography"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY_Geography]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]" />
-                    <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[WID_Geography]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="WID_Geography"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[WID_Geography]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[WID_Geography]" />
-                    <inputColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[IMF_main_category]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="IMF_main_category"
-                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[IMF_main_category]"
-                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[IMF_main_category]" />
-                    <inputColumn
                       refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[WEO_Geography]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -1247,6 +1065,20 @@
                       cachedName="GeoStandardisedID"
                       externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[GeoStandardisedID]"
                       lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[GeoStandardisedID]" />
+                    <inputColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[Available_From]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Available_From"
+                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Available_From]"
+                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Available_From]" />
+                    <inputColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].Columns[Available_Until]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Available_Until"
+                      externalMetadataColumnId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Available_Until]"
+                      lineageId="Package\Populate GeoStandardisedDimensionTable\OLTP.Outputs[OLE DB Source Output].Columns[Available_Until]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1280,46 +1112,6 @@
                       length="255"
                       name="Major_Blocs" />
                     <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[NICS_geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="NICS_geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Geopolitical_region]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical_region" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Maddison_availability]"
-                      dataType="wstr"
-                      length="255"
-                      name="Maddison_availability" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[wdi_availability]"
-                      dataType="wstr"
-                      length="255"
-                      name="wdi_availability" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[penn_availability]"
-                      dataType="wstr"
-                      length="255"
-                      name="penn_availability" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[MACROHISTORY_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="MACROHISTORY_Geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[WID_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="WID_Geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[IMF_main_category]"
-                      dataType="wstr"
-                      length="255"
-                      name="IMF_main_category" />
-                    <externalMetadataColumn
                       refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[WEO_Geography]"
                       dataType="wstr"
                       length="255"
@@ -1334,6 +1126,16 @@
                       dataType="wstr"
                       length="255"
                       name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Available_From]"
+                      dataType="wstr"
+                      length="255"
+                      name="Available_From" />
+                    <externalMetadataColumn
+                      refId="Package\Populate GeoStandardisedDimensionTable\ROLAP.Inputs[OLE DB Destination Input].ExternalColumns[Available_Until]"
+                      dataType="wstr"
+                      length="255"
+                      name="Available_Until" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2234,56 +2036,6 @@
                       name="Major_Blocs"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[Geopolitical_region]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_region]"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[Geopolitical_region]"
-                      name="Geopolitical_region"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[Maddison_availability]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[Maddison_availability]"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[Maddison_availability]"
-                      name="Maddison_availability"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY_Geography]"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[MACROHISTORY_Geography]"
-                      name="MACROHISTORY_Geography"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[WID_Geography]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[WID_Geography]"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[WID_Geography]"
-                      name="WID_Geography"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[IMF_main_category]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[IMF_main_category]"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[IMF_main_category]"
-                      name="IMF_main_category"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].Columns[WEO_Geography]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -2492,31 +2244,6 @@
                       length="255"
                       name="Major_Blocs" />
                     <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[Geopolitical_region]"
-                      dataType="wstr"
-                      length="255"
-                      name="Geopolitical_region" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[Maddison_availability]"
-                      dataType="wstr"
-                      length="255"
-                      name="Maddison_availability" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[MACROHISTORY_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="MACROHISTORY_Geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[WID_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      name="WID_Geography" />
-                    <externalMetadataColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[IMF_main_category]"
-                      dataType="wstr"
-                      length="255"
-                      name="IMF_main_category" />
-                    <externalMetadataColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Output].ExternalColumns[WEO_Geography]"
                       dataType="wstr"
                       length="255"
@@ -2651,36 +2378,6 @@
                       length="255"
                       lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[Major_Blocs]"
                       name="Major_Blocs" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[Geopolitical_region]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[Geopolitical_region]"
-                      name="Geopolitical_region" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[Maddison_availability]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[Maddison_availability]"
-                      name="Maddison_availability" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[MACROHISTORY_Geography]"
-                      name="MACROHISTORY_Geography" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[WID_Geography]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[WID_Geography]"
-                      name="WID_Geography" />
-                    <outputColumn
-                      refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[IMF_main_category]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[IMF_main_category]"
-                      name="IMF_main_category" />
                     <outputColumn
                       refId="Package\Populate ROLAP fact file\OLTP FactSourceComplete.Outputs[OLE DB Source Error Output].Columns[WEO_Geography]"
                       dataType="wstr"
@@ -3140,7 +2837,7 @@
     design-time-name="Package\Populate DimSources">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="193.5,41.5"
           Id="Package\Populate DimSources\DimSource ROLAP Table"
@@ -3168,7 +2865,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3204,13 +2903,13 @@
     design-time-name="Package\Populate GeoStandardisedDimensionTable">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="111.5,42.5"
+          Size="112,42"
           Id="Package\Populate GeoStandardisedDimensionTable\ROLAP"
           TopLeft="571.6,281.2" />
         <NodeLayout
-          Size="104.5,42.5"
+          Size="104,42"
           Id="Package\Populate GeoStandardisedDimensionTable\OLTP"
           TopLeft="364,157" />
         <EdgeLayout
@@ -3244,9 +2943,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3282,7 +2979,7 @@
     design-time-name="Package\Populate IndicatorStandardisedDimensionTable">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="112,42"
           Id="Package\Populate IndicatorStandardisedDimensionTable\ROLAP"
@@ -3322,7 +3019,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3360,13 +3059,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="204,42"
+          Id="Package\Populate ROLAP fact file\OLTP FactSourceComplete"
+          TopLeft="163.5,45.5" />
+        <NodeLayout
           Size="153,42"
           Id="Package\Populate ROLAP fact file\ROLAP Fact File"
           TopLeft="495,198" />
-        <NodeLayout
-          Size="203.5,42"
-          Id="Package\Populate ROLAP fact file\OLTP FactSourceComplete"
-          TopLeft="163.5,45.5" />
         <EdgeLayout
           Id="Package\Populate ROLAP fact file.Paths[OLE DB Source Output]"
           TopLeft="265.25,87.5">
