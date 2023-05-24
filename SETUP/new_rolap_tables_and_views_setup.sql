@@ -61,14 +61,15 @@ CREATE TABLE [dbo].[GeoStandardisedDimensionTable](
 	[GeoStandardisedID] [int] NOT NULL,
 	[GeoPolitical_Type] [nvarchar](255) NULL,
 	[GeoStandardName] [nvarchar](255) NULL,
+	[GeoSourceName] [nvarchar](255) NOT NULL,
 	[ReportingUnit] [nvarchar](255) NULL,
 	[GeoEconomic_Region] [nvarchar](255) NULL,
 	[Major_Blocs] [nvarchar](255) NULL,
-	[WEO_Geography] [nvarchar](255) NULL,
+	[IMF_Main_Category] [nvarchar](255) NULL,
 	[Available_From] [nvarchar](255) NULL,
 	[Available_Until] [nvarchar](255) NULL,
-	[Size] [nvarchar](255) NULL,
-	[GeoSourceName] [nvarchar](255) NOT NULL
+	[WDI_from]  [nvarchar](255) NULL,
+	[WDI_to]  [nvarchar](255) NULL
 ) ON [PRIMARY]
 GO
 
@@ -105,12 +106,14 @@ SELECT TOP 100 PERCENT
     s.SourceNameDetail as [Dataset detail],
     g.GeoPolitical_Type as [Geopolitical type],
     g.Major_Blocs as [Bloc],
-
-
+	g.GeoEconomic_Region as [Region],
     g.ReportingUnit as [Reporting Unit],
     g.GeoStandardName as Country ,
 	g.Available_From as Available_From,
 	g.Available_Until as Available_Until,
+	g.IMF_Main_Category,
+	g.WDI_from,
+	g.WDI_to,
 	i.SourceCode,
     i.SourceDescription,
 	i.StandardCode,

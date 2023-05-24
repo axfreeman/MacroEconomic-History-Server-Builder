@@ -38,10 +38,11 @@ CREATE TABLE [dbo].[GeoStandardisedDimensionTable](
 	[ReportingUnit] [nvarchar](255) NULL,
 	[GeoEconomic_Region] [nvarchar](255) NULL,
 	[Major_Blocs] [nvarchar](255) NULL,
-	[WEO_Geography] [nvarchar](255) NULL,
+	[IMF_Main_Category] [nvarchar](255) NULL,
 	[Available_From] [nvarchar](255) NULL,
 	[Available_Until] [nvarchar](255) NULL,
-	[Size] [nvarchar](255) NULL,
+	[WDI_from] [nvarchar](255) NULL,
+	[WDI_to] [nvarchar](255) NULL,
 ) ON [PRIMARY]
 GO
 
@@ -66,10 +67,11 @@ CREATE TABLE [dbo].[DimGeo](
 	[GeoPolitical_Type] [nvarchar](255) NULL,
 	[GeoEconomic_Region] [nvarchar](255) NULL,
 	[Major_Blocs] [nvarchar](255) NULL,
-	[WEO_Geography] [nvarchar](255) NULL,
+	[IMF_Main_Category] [nvarchar](255) NULL,
 	[Available_From] [nvarchar](255) NULL,
 	[Available_Until] [nvarchar](255) NULL,
-	[Size] [nvarchar](255) NULL
+	[WDI_from] [nvarchar](255) NULL,
+	[WDI_to] [nvarchar](255) NULL,
 ) ON [PRIMARY]
 GO
 
@@ -98,17 +100,21 @@ GO
 
 CREATE OR ALTER VIEW [dbo].[GeoStandardisedDimensionView]
 AS
-SELECT        dbo.GeoStandardNames.GeoSourceName, dbo.DimGeo.GeoStandardisedID, dbo.DimGeo.GeoStandardName, 
+SELECT        
+dbo.GeoStandardNames.GeoSourceName, 
+dbo.DimGeo.GeoStandardisedID, 
+dbo.DimGeo.GeoStandardName, 
 GeoPolitical_Type,
 dbo.DimGeo.ReportingUnit, 
 dbo.DimGeo.GeoEconomic_Region, 
 dbo.DimGeo.Major_Blocs, 
+dbo.DimGeo.IMF_Main_Category,
 dbo.DimGeo.Available_From, 
-Available_Until,                 
-dbo.DimGeo.Size, 
-dbo.DimGeo.WEO_Geography
-FROM            dbo.DimGeo RIGHT OUTER JOIN
-                         dbo.GeoStandardNames ON dbo.DimGeo.GeoStandardName = dbo.GeoStandardNames.GeoStandardName
+Available_Until,            
+WDI_from,
+WDI_to
+FROM dbo.DimGeo RIGHT OUTER JOIN
+ dbo.GeoStandardNames ON dbo.DimGeo.GeoStandardName = dbo.GeoStandardNames.GeoStandardName
 GO
 
 

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-9EATJT9</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAU7unT95vOkyLa5Yqs8HwxwAAAAACAAAAAAAQZgAAAAEAACAAAADA1xuWDs/a1MVBxYgQhRSmwqpK4bLWK1jpZLuV7hzKzAAAAAAOgAAAAAIAACAAAAAUFM5ru0eaTj3SmdoicPDfl19HwvxEyVp5y8saERcup5AAAAAgf9GIQD5+YeYlN1rZx/gW9WtmvMyq/lYu90pf7Ry+nviakIvZgfLBCmXT4g6oPCFHGw8ie5pgNJRPc2xAEV+YfrHx0pkeZowqI4UTu+bc1rWGy5+a3JitKEcGq6iD8lK7vsjrxDkLST4Zcv3cfD1g4ZLBuN+hQJxMs+k85z5AV1eo762OiGNeK+c99zHYPkBAAAAA37PPgdwcHW+BTvShpinWLDzGpsvngIi0JRIX1hiGcAP8Dkp/Ut5L31LcxbChQG1WsG0rxEeewrWH21f8dl3iaw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAU7unT95vOkyLa5Yqs8HwxwAAAAACAAAAAAAQZgAAAAEAACAAAABU/D407xXJ3gf75daix2fbeZUUO+fNeBC/EYZcuMg43wAAAAAOgAAAAAIAACAAAABdN2Zfk66VPewtkseV4NeDpewd3nndlHSUlRpxCTZnTZAAAACOjdGqS5k6uFjew8cGmk3R/dsd4K0FUo9AVpJH9LMyGDIAUzS/cl32nbeloVxGbkRdF//gCzWRXQJH1kGIzmRp0Qp3Kg1r7tVtRAEp9RFnpkQ2H3iWQ8pRspnxDSCEtV+XqoVm4VAVFR3lrTHSeATB3awEwy1cdONT6CiSo151/gEj3heSJvMpD1U8viOBLcBAAAAAwKJioUAaPDOqVqTjHbCjPMZcoabcbABgns5Qv8BG10umgTlVdyIRQgL3pSS2C/YI5ghgwcih2e0VFEvNdFWRWA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -4651,10 +4651,10 @@
                 <SSIS:Property SSIS:Name="Name">Set up OLTP Dimension Tables</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">147</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">129</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{17273357-F0A2-4F9B-979E-09A0B7A14C49}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F0240733-B76F-45DC-9303-DAB2B686F226}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -4717,7 +4717,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\Meta.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\Meta.xls;Extended Properties="Excel 8.0;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -4891,16 +4891,46 @@
                 <SSIS:Property SSIS:Name="Name">Populate ROLAP tables from OLTP</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">320</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">322</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F23341FB-95C5-4E47-93EF-320DEA638D66}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9F0FE02E-A730-47CF-894C-163C21E7B2B3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CM.copy_OLTP_to_ROLAP_fact file.sql.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.copy_OLTP_to_ROLAP_fact file.sql.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\afree\Documents\Github\MacroEconomic History\SETUP\copy_OLTP_to_ROLAP_fact file.sql</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.reduce.sql.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -6549,10 +6579,10 @@
                 <SSIS:Property SSIS:Name="Name">Full OLTP Data Import</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">594</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">591</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9EED2541-597C-48BB-8EA9-DFAA73E3D5BA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BD66FA54-0FAF-4B82-8015-71C26F150990}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
