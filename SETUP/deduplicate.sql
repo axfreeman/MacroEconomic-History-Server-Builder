@@ -1,9 +1,9 @@
-USE macrohistory_oltp_220522
+USE macrohistory_oltp_230505
 GO
 
 DROP TABLE IF EXISTS UN_duplicates
 
--- Select all UN2018 GDP that are duplicated for 'former' entities, but only for the years concerned
+-- Select all UN 2023 GDP that are duplicated for 'former' entities, but only for the years concerned
 SELECT
  OLTP_FactID,
  SourceName,
@@ -13,35 +13,17 @@ SELECT
  Value
 INTO UN_duplicates
 FROM FactSource
- WHERE FactSource.SourceName='UN2018' AND 
-(FactSource.IndicatorSourceCode ='LCU-CURRENT.1' OR
- FactSource.IndicatorSourceCode=N'LCU-CURRENT.2' OR
- FactSource.IndicatorSourceCode=N'LCU-CURRENT.3' OR
- FactSource.IndicatorSourceCode=N'LCU-CURRENT.4' OR
- FactSource.IndicatorSourceCode=N'LCU-CURRENT.5' OR
- FactSource.IndicatorSourceCode=N'LCU-CURRENT.9' OR
- FactSource.IndicatorSourceCode=N'USD-CONSTANT.1' OR
- FactSource.IndicatorSourceCode=N'USD-CONSTANT.2' OR
- FactSource.IndicatorSourceCode=N'USD-CONSTANT.3' OR
- FactSource.IndicatorSourceCode=N'USD-CONSTANT.4' OR
- FactSource.IndicatorSourceCode=N'USD-CONSTANT.5' OR
- FactSource.IndicatorSourceCode=N'USD-CONSTANT.9' OR
- FactSource.IndicatorSourceCode=N'USD-CURRENT.1' OR
- FactSource.IndicatorSourceCode=N'USD-CURRENT.2' OR
- FactSource.IndicatorSourceCode=N'USD-CURRENT.3' OR
- FactSource.IndicatorSourceCode=N'USD-CURRENT.4' OR
- FactSource.IndicatorSourceCode=N'USD-CURRENT.5' OR
- FactSource.IndicatorSourceCode=N'USD-CURRENT.9'
-)
+ WHERE (FactSource.SourceName='UN2023-USD-GDP-SECTORS' OR FactSource.SourceName='UN2023-POPULATION')
+
 AND
  (
-  (Year(Date)= 1990) AND (GeoSourceName= 'Former USSR')
+  (Year(Date)= 1990) AND (GeoSourceName= 'USSR (Former')
   OR 
-  (Year(Date)= 1990) AND (GeoSourceName='Former Yugoslavia')
+  (Year(Date)= 1990) AND (GeoSourceName='Yugoslavia (Former')
   OR
-  (Year(Date)>= 1990 and Year(date)<=1993) AND (GeoSourceName='Former Ethiopia')
+  (Year(Date)>= 1990 and Year(date)<=1993) AND (GeoSourceName='Ethiopia (Former)')
   OR
-  (Year(Date)= 1990) AND (GeoSourceName='Former Czechoslovakia')
+  (Year(Date)= 1990) AND (GeoSourceName='Czechoslovakia (Former)')
  )
 GO
 

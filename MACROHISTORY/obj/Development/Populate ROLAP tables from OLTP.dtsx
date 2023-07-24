@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Populate ROLAP tables from OLTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="322"
-  DTS:VersionGUID="{9F0FE02E-A730-47CF-894C-163C21E7B2B3}">
+  DTS:VersionBuild="323"
+  DTS:VersionGUID="{D1398BAA-232D-4291-AFCF-61D5ADBAB66F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2086,33 +2086,21 @@
         <NodeLayout
           Size="221,42"
           Id="Package\Copy OLTP to ROLAP Fact File"
-          TopLeft="354,212" />
+          TopLeft="362,111" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="143.82907143013,152.006985197337">
+          TopLeft="232.82907143013,131.503492598669">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="320.67092856987,59.993014802663"
+              EndConnector="129.17092856987,0"
               Start="0,0"
-              End="320.67092856987,52.493014802663">
+              End="121.67092856987,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.9965074013315" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.9965074013315"
-                    Point2="0,29.9965074013315"
-                    Point3="4,29.9965074013315" />
-                  <mssgle:LineSegment
-                    End="316.67092856987,29.9965074013315" />
-                  <mssgle:CubicBezierSegment
-                    Point1="316.67092856987,29.9965074013315"
-                    Point2="320.67092856987,29.9965074013315"
-                    Point3="320.67092856987,33.9965074013315" />
-                  <mssgle:LineSegment
-                    End="320.67092856987,52.493014802663" />
+                    End="121.67092856987,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2194,15 +2182,15 @@
     design-time-name="Package\Populate GeoStandardisedDimensionTable">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="104,42"
-          Id="Package\Populate GeoStandardisedDimensionTable\OLTP"
-          TopLeft="364,157" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="112,42"
           Id="Package\Populate GeoStandardisedDimensionTable\ROLAP"
           TopLeft="571.6,281.2" />
+        <NodeLayout
+          Size="104,42"
+          Id="Package\Populate GeoStandardisedDimensionTable\OLTP"
+          TopLeft="364,157" />
         <EdgeLayout
           Id="Package\Populate GeoStandardisedDimensionTable.Paths[OLE DB Source Output]"
           TopLeft="416.285714285714,199.285714285714">
@@ -2234,7 +2222,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

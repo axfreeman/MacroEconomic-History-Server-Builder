@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Full OLTP Data Import"
   DTS:PackageType="5"
-  DTS:VersionBuild="594"
-  DTS:VersionGUID="{9EED2541-597C-48BB-8EA9-DFAA73E3D5BA}">
+  DTS:VersionBuild="605"
+  DTS:VersionGUID="{4668CD24-CAAE-440C-956B-8777566DCC62}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4690,6 +4690,61 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MPD2020]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Connection Manager for Maddison 2020"
+      DTS:DTSID="{77446BE1-3594-486D-AB5A-D4C900F22099}"
+      DTS:ObjectName="MPD2020">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\DATA\SOURCE\mpd2020.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{C9BCC7CC-F2BF-4000-AD57-E0B69258858D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="year"
+              DTS:DTSID="{BEC25FFD-0B20-41D1-A16C-E6B2C66FB93F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Indicator"
+              DTS:DTSID="{B0D2E945-46B0-4780-A295-60EC93544470}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value"
+              DTS:DTSID="{AC115252-0F7A-4FC9-8AC4-84DCDD3DE370}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[PENN Capital Stock]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{1197C1EF-F57E-4CFA-AE14-CD713279B618}"
@@ -6491,6 +6546,114 @@
               DTS:TextQualified="True"
               DTS:ObjectName="Value Footnotes"
               DTS:DTSID="{E5BAA004-7C3E-4C85-8360-C5B868FC7C56}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UN2023-POPULATION]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E2BD228B-525C-463E-ABED-D486F076CAE1}"
+      DTS:ObjectName="UN2023-POPULATION">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\DATA\SOURCE\UN2023-POPULATION.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{1147F406-21BC-4919-BF20-C059091DE3B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Measure"
+              DTS:DTSID="{2881A08C-C675-4939-A96B-C9070C1C8FAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Year"
+              DTS:DTSID="{7F4047EF-A65D-49F8-BCEB-84AC7E719A5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value"
+              DTS:DTSID="{85950C16-1A1C-44B9-9DAD-0CB6E37242FE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UN2023-USD-GDP-SECTORS]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A4FE4333-CE35-4655-ADDC-6AEE2E23FBE6}"
+      DTS:ObjectName="UN2023-USD-GDP-SECTORS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\afree\Documents\Github\MacroEconomic History\DATA\SOURCE\UN2023-USD-GDP-SECTORS.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{FED1F428-91B9-4E31-B8F1-9A2374D5FD27}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IndicatorName"
+              DTS:DTSID="{7045C25C-53C1-411D-AD50-F329BCF87FA5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Attribute"
+              DTS:DTSID="{A17523A1-DF52-48CC-9B8E-D02E18B00559}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value"
+              DTS:DTSID="{9C635C43-675C-4A10-BED2-5223B5173FB1}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -10086,6 +10249,467 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Maddison2020"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1B1A8FAD-2F39-4325-9885-CDC200D9F427}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Maddison2020"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Maddison2020\Add Source and Date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Source and Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Maddison2020\Add Source and Date.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Maddison2020\Add Source and Date.Inputs[Derived Column Input].Columns[year]"
+                      cachedDataType="ui2"
+                      cachedName="year"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Maddison2020\Add Source and Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)#{Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[year]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)year)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="12"
+                      lineageId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"MADDISON2023"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"MADDISON2023"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Maddison2020\Add Source and Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Maddison2020\FactSource OLTP Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="FactSource OLTP Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Maddison2020\FactSource OLTP Table.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Indicator"
+                      externalMetadataColumnId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[Indicator]" />
+                    <inputColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output].Columns[Source]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Maddison2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Maddison2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Maddison2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Maddison2020\FactSource OLTP Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Maddison2020\mpd2020 csv file"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="mpd2020 csv file"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Maddison2020\mpd2020 csv file.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MPD2020]"
+                  connectionManagerRefId="Package.ConnectionManagers[MPD2020]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      length="255"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[year]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[year]"
+                      name="year"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[Indicator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[Indicator]"
+                      length="255"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[Indicator]"
+                      name="Indicator"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[Value]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].Columns[Value]"
+                      name="Value"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="255"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[year]"
+                      dataType="ui2"
+                      name="year" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[Indicator]"
+                      dataType="wstr"
+                      length="255"
+                      name="Indicator" />
+                    <externalMetadataColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Maddison2020.Paths[Derived Column Output]"
+              endId="Package\Maddison2020\FactSource OLTP Table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Maddison2020\Add Source and Date.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Maddison2020.Paths[Flat File Source Output]"
+              endId="Package\Maddison2020\Add Source and Date.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Maddison2020\mpd2020 csv file.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\OLTP Data Tables Set Up"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -11570,13 +12194,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\UN Population 2021"
+      DTS:refId="Package\UN2023-POPULATION"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{51FBC563-11E5-4043-A46B-5F798A9AB722}"
+      DTS:DTSID="{9390D463-070A-44E9-8ECF-BE3DCA225C66}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="UN Population 2021"
+      DTS:ObjectName="UN2023-POPULATION"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -11584,88 +12208,41 @@
           version="1">
           <components>
             <component
-              refId="Package\UN Population 2021\Add Source, Indicator and Date Field"
+              refId="Package\UN2023-POPULATION\Add Source and Date"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Add Source, Indicator and Date Field"
+              name="Add Source and Date"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Inputs[Derived Column Input]"
+                  refId="Package\UN2023-POPULATION\Add Source and Date.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Inputs[Derived Column Input].Columns[Year]"
-                      cachedDataType="wstr"
-                      cachedLength="4"
+                      refId="Package\UN2023-POPULATION\Add Source and Date.Inputs[Derived Column Input].Columns[Year]"
+                      cachedDataType="ui2"
                       cachedName="Year"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Year]" />
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Year]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output]"
+                  refId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\UN Population 2021\Add Source, Indicator and Date Field.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\UN2023-POPULATION\Add Source and Date.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Source]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="6"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Source]"
-                      name="Source"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"UN2021"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"UN2021"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Indicator]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="10"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Indicator]"
-                      name="Indicator"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">"Population"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">"Population"</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Date]"
+                      refId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output].Columns[Date]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Date]"
+                      lineageId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output].Columns[Date]"
                       name="Date"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -11673,36 +12250,59 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)("01-01-" + #{Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Year]})</property>
+                          name="Expression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)#{Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Year]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + Year)</property>
+                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)Year)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="17"
+                      lineageId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"UN2023-POPULATION"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"UN2023-POPULATION"</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Error Output]"
+                  refId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\UN Population 2021\Add Source, Indicator and Date Field.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\UN2023-POPULATION\Add Source and Date.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -11711,11 +12311,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\UN Population 2021\OLTP Fact Table"
+              refId="Package\UN2023-POPULATION\OLTP FactSource Table"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLTP Fact Table"
+              name="OLTP FactSource Table"
               usesDispositions="true"
               version="4">
               <properties>
@@ -11768,7 +12368,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\UN Population 2021\OLTP Fact Table.Connections[OleDbConnection]"
+                  refId="Package\UN2023-POPULATION\OLTP FactSource Table.Connections[OleDbConnection]"
                   connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
                   connectionManagerRefId="Project.ConnectionManagers[OLTP]"
                   description="The OLE DB runtime connection used to access the database."
@@ -11776,73 +12376,73 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input]"
+                  refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].Columns[Value]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Value]"
                       cachedDataType="r8"
                       cachedName="Value"
-                      externalMetadataColumnId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Value]" />
+                      externalMetadataColumnId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Value]" />
                     <inputColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].Columns[Date]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Date]"
                       cachedDataType="dbDate"
                       cachedName="Date"
-                      externalMetadataColumnId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Date]" />
+                      externalMetadataColumnId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output].Columns[Date]" />
                     <inputColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].Columns[Source]"
-                      cachedDataType="wstr"
-                      cachedLength="6"
-                      cachedName="Source"
-                      externalMetadataColumnId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Source]" />
-                    <inputColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].Columns[Country or Area]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Measure]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Country or Area"
-                      externalMetadataColumnId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Country or Area]" />
+                      cachedName="Measure"
+                      externalMetadataColumnId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Measure]" />
                     <inputColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].Columns[Indicator]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Country]"
                       cachedDataType="wstr"
-                      cachedLength="10"
-                      cachedName="Indicator"
-                      externalMetadataColumnId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
-                      lineageId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output].Columns[Indicator]" />
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="17"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output].Columns[Source]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
                       dataType="i8"
                       name="OLTP_FactID" />
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       dataType="wstr"
                       length="50"
                       name="SourceName" />
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
                       dataType="wstr"
                       length="255"
                       name="GeoSourceName" />
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
                       dataType="wstr"
                       length="255"
                       name="IndicatorSourceCode" />
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
                       name="Date" />
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
                       dataType="r8"
                       name="Value" />
                   </externalMetadataColumns>
@@ -11850,22 +12450,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\UN Population 2021\OLTP Fact Table.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\UN2023-POPULATION\OLTP FactSource Table.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\UN Population 2021\OLTP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\UN2023-POPULATION\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\UN Population 2021\OLTP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\UN2023-POPULATION\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\UN Population 2021\OLTP Fact Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\UN2023-POPULATION\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -11874,19 +12474,19 @@
               </outputs>
             </component>
             <component
-              refId="Package\UN Population 2021\UN2021 Population"
+              refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="4105"
-              name="UN2021 Population"
+              localeId="2057"
+              name="UN2023-POPULATION CSV"
               usesDispositions="true"
               version="1">
               <properties>
                 <property
                   dataType="System.Boolean"
                   description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">true</property>
+                  name="RetainNulls">false</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
@@ -11894,25 +12494,25 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\UN Population 2021\UN2021 Population.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[UN2021 Population]"
-                  connectionManagerRefId="Package.ConnectionManagers[UN2021 Population]"
+                  refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UN2023-POPULATION]"
+                  connectionManagerRefId="Package.ConnectionManagers[UN2023-POPULATION]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output]"
+                  refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Country or Area]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Country]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Country or Area]"
+                      externalMetadataColumnId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Country]"
                       length="255"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Country or Area]"
-                      name="Country or Area"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -11926,13 +12526,33 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Year]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Measure]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Year]"
-                      length="4"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Year]"
+                      externalMetadataColumnId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Measure]"
+                      length="255"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Measure]"
+                      name="Measure"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Year]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Year]"
                       name="Year"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -11947,75 +12567,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Sex]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Sex]"
-                      length="255"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Sex]"
-                      name="Sex"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Record Type]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Record Type]"
-                      length="255"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Record Type]"
-                      name="Record Type"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Reliability]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Reliability]"
-                      length="255"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Reliability]"
-                      name="Reliability"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Value]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Value]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Value]"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].Columns[Value]"
+                      externalMetadataColumnId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].Columns[Value]"
                       name="Value"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -12033,73 +12590,47 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Country or Area]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Country]"
                       dataType="wstr"
                       length="255"
-                      name="Country or Area" />
+                      name="Country" />
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Measure]"
                       dataType="wstr"
-                      length="4"
+                      length="255"
+                      name="Measure" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      dataType="ui2"
                       name="Year" />
                     <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Area]"
-                      dataType="wstr"
-                      length="255"
-                      name="Area" />
-                    <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Sex]"
-                      dataType="wstr"
-                      length="255"
-                      name="Sex" />
-                    <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Record Type]"
-                      dataType="wstr"
-                      length="255"
-                      name="Record Type" />
-                    <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Reliability]"
-                      dataType="wstr"
-                      length="255"
-                      name="Reliability" />
-                    <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Source Year]"
-                      dataType="wstr"
-                      length="255"
-                      name="Source Year" />
-                    <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output].ExternalColumns[Value]"
                       dataType="r8"
                       name="Value" />
-                    <externalMetadataColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output].ExternalColumns[Value Footnotes]"
-                      dataType="wstr"
-                      length="255"
-                      name="Value Footnotes" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Error Output]"
+                  refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="65001"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -12110,15 +12641,476 @@
           </components>
           <paths>
             <path
-              refId="Package\UN Population 2021.Paths[Derived Column Output]"
-              endId="Package\UN Population 2021\OLTP Fact Table.Inputs[OLE DB Destination Input]"
+              refId="Package\UN2023-POPULATION.Paths[Derived Column Output]"
+              endId="Package\UN2023-POPULATION\OLTP FactSource Table.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
-              startId="Package\UN Population 2021\Add Source, Indicator and Date Field.Outputs[Derived Column Output]" />
+              startId="Package\UN2023-POPULATION\Add Source and Date.Outputs[Derived Column Output]" />
             <path
-              refId="Package\UN Population 2021.Paths[Flat File Source Output]"
-              endId="Package\UN Population 2021\Add Source, Indicator and Date Field.Inputs[Derived Column Input]"
+              refId="Package\UN2023-POPULATION.Paths[Flat File Source Output]"
+              endId="Package\UN2023-POPULATION\Add Source and Date.Inputs[Derived Column Input]"
               name="Flat File Source Output"
-              startId="Package\UN Population 2021\UN2021 Population.Outputs[Flat File Source Output]" />
+              startId="Package\UN2023-POPULATION\UN2023-POPULATION CSV.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\UN2023-USD-GDP-SECTORS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{010E465D-462C-4AFD-A32C-9ED9772F1962}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="UN2023-USD-GDP-SECTORS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Source and Date"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Inputs[Derived Column Input].Columns[Attribute]"
+                      cachedDataType="ui2"
+                      cachedName="Attribute"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Attribute]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)#{Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Attribute]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBDATE)("01-01-" + (DT_WSTR,4)Attribute)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output].Columns[Source]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="22"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output].Columns[Source]"
+                      name="Source"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"UN2023-USD-GDP-SECTORS"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"UN2023-USD-GDP-SECTORS"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLTP FactSource Table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSource]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Connections[OleDbConnection]"
+                  connectionManagerID="{442F2917-9C92-411C-B3F4-4301EB05D697}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OLTP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Value]"
+                      cachedDataType="r8"
+                      cachedName="Value"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Value]" />
+                    <inputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[IndicatorName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="IndicatorName"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[IndicatorName]" />
+                    <inputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].Columns[Source]"
+                      cachedDataType="wstr"
+                      cachedLength="22"
+                      cachedName="Source"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output].Columns[Source]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[OLTP_FactID]"
+                      dataType="i8"
+                      name="OLTP_FactID" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="50"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[GeoSourceName]"
+                      dataType="wstr"
+                      length="255"
+                      name="GeoSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[IndicatorSourceCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorSourceCode" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="UN2023-USD-GDP-SECTORS CSV FILE"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UN2023-USD-GDP-SECTORS]"
+                  connectionManagerRefId="Package.ConnectionManagers[UN2023-USD-GDP-SECTORS]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[IndicatorName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[IndicatorName]"
+                      length="255"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[IndicatorName]"
+                      name="IndicatorName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Attribute]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[Attribute]"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Attribute]"
+                      name="Attribute"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Value]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].Columns[Value]"
+                      name="Value"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[IndicatorName]"
+                      dataType="wstr"
+                      length="255"
+                      name="IndicatorName" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[Attribute]"
+                      dataType="ui2"
+                      name="Attribute" />
+                    <externalMetadataColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output].ExternalColumns[Value]"
+                      dataType="r8"
+                      name="Value" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\UN2023-USD-GDP-SECTORS.Paths[Derived Column Output]"
+              endId="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\UN2023-USD-GDP-SECTORS.Paths[Flat File Source Output]"
+              endId="Package\UN2023-USD-GDP-SECTORS\Add Source and Date.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE.Outputs[Flat File Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -16002,6 +16994,22 @@
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\WDI2023" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{5FCBA8EA-63CB-4F72-A655-9FBDF4728901}"
+      DTS:From="Package\UN2023-USD-GDP-SECTORS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\UN2023-POPULATION" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{C6F6B951-9F49-4B4A-93A9-1340A404ED60}"
+      DTS:From="Package\UN2023-POPULATION"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\PENN National Accounts" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{C66AE380-9713-47FA-8A99-A3A38C7882C0}"
@@ -16012,19 +17020,19 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{DCA2580B-5064-4EED-8CB7-967C46ED33E4}"
+      DTS:DTSID="{616ECE01-3EAF-435B-BB06-FBB0CBE06F48}"
       DTS:From="Package\PENN Capital Stock"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\GERG CURRENT LCU" />
+      DTS:To="Package\Maddison2020" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{173F6DD0-0D4C-4B96-93C6-741A3854B4C7}"
-      DTS:From="Package\UN Population 2021"
+      DTS:DTSID="{D51C5313-41ED-4C46-BE24-C287F9769F0E}"
+      DTS:From="Package\JST R6"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\PENN National Accounts" />
+      DTS:To="Package\UN2023-USD-GDP-SECTORS" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
@@ -16052,11 +17060,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{02B6546B-E016-4A01-8BFD-6B5586188C00}"
-      DTS:From="Package\JST R6"
+      DTS:DTSID="{9274C126-303C-4B2B-A22A-D5B9A5E8D799}"
+      DTS:From="Package\Maddison2020"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\UN Population 2021" />
+      DTS:To="Package\GERG CURRENT LCU" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
@@ -16081,11 +17089,11 @@
         <NodeLayout
           Size="177,42"
           Id="Package\GERG CURRENT LCU"
-          TopLeft="139,256" />
+          TopLeft="113,254" />
         <NodeLayout
           Size="172,42"
           Id="Package\GERG POPULATION"
-          TopLeft="372.456904990896,260" />
+          TopLeft="392.456904990896,260" />
         <NodeLayout
           Size="153,42"
           Id="Package\GERG USD GDP"
@@ -16101,19 +17109,23 @@
         <NodeLayout
           Size="169,42"
           Id="Package\PENN Capital Stock"
-          TopLeft="621,129" />
+          TopLeft="345,115" />
         <NodeLayout
           Size="193,42"
           Id="Package\PENN National Accounts"
-          TopLeft="141,129" />
+          TopLeft="783,121" />
         <NodeLayout
           Size="161,42"
           Id="Package\PENN World Data"
-          TopLeft="413,127" />
+          TopLeft="544,118" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\UN Population 2021"
-          TopLeft="1002,23" />
+          Size="183,42"
+          Id="Package\UN2023-POPULATION"
+          TopLeft="1027,117" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\UN2023-USD-GDP-SECTORS"
+          TopLeft="1009,19" />
         <NodeLayout
           Size="123,42"
           Id="Package\WDI2023"
@@ -16167,6 +17179,50 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="1117,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="1027,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-51,0"
+              Start="0,0"
+              End="-43.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-43.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="705,41">
           <EdgeLayout.Curve>
@@ -16189,65 +17245,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="705.5,171">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-478,85"
-              Start="0,0"
-              End="-478,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.5"
-                    Point2="0,42.5"
-                    Point3="-4,42.5" />
-                  <mssgle:LineSegment
-                    End="-474,42.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-474,42.5"
-                    Point2="-478,42.5"
-                    Point3="-478,46.5" />
-                  <mssgle:LineSegment
-                    End="-478,77.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="1088,65">
+          TopLeft="915,40.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-850.5,64"
+              EndConnector="94,0"
               Start="0,0"
-              End="-850.5,56.5">
+              End="86.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="-4,32" />
-                  <mssgle:LineSegment
-                    End="-846.5,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-846.5,32"
-                    Point2="-850.5,32"
-                    Point3="-850.5,36" />
-                  <mssgle:LineSegment
-                    End="-850.5,56.5" />
+                    End="86.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16258,18 +17268,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="574,149">
+          TopLeft="544,137.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="47,0"
+              EndConnector="-30,0"
               Start="0,0"
-              End="39.5,0">
+              End="-22.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="39.5,0" />
+                    End="-22.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16280,18 +17290,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="316,279">
+          TopLeft="290,278">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.456904990896,0"
+              EndConnector="102.456904990896,0"
               Start="0,0"
-              End="48.956904990896,0">
+              End="94.956904990896,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="48.956904990896,0" />
+                    End="94.956904990896,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16302,40 +17312,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="544.456904990896,280.5">
+          TopLeft="564.456904990896,280.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.543095009104,0"
+              EndConnector="89.543095009104,0"
               Start="0,0"
-              End="102.043095009104,0">
+              End="82.043095009104,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="102.043095009104,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="915,42.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="87,0"
-              Start="0,0"
-              End="79.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="79.5,0" />
+                    End="82.043095009104,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16346,18 +17334,66 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="334,149">
+          TopLeft="783,140.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="79,0"
+              EndConnector="-78,0"
               Start="0,0"
-              End="71.5,0">
+              End="-70.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="71.5,0" />
+                    End="-70.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Maddison2020"
+          TopLeft="125,120" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="345,138.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73,0"
+              Start="0,0"
+              End="-65.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-65.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="200,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92"
+              Start="0,0"
+              End="0,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16953,48 +17989,137 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\UN Population 2021">
+    design-time-name="Package\UN2023-POPULATION">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="156,42"
-          Id="Package\UN Population 2021\OLTP Fact Table"
-          TopLeft="502,276" />
+          Size="179,42"
+          Id="Package\UN2023-POPULATION\Add Source and Date"
+          TopLeft="469,120" />
         <NodeLayout
-          Size="253,42"
-          Id="Package\UN Population 2021\Add Source, Indicator and Date Field"
-          TopLeft="461,167" />
+          Size="188,42"
+          Id="Package\UN2023-POPULATION\OLTP FactSource Table"
+          TopLeft="543,310" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\UN Population 2021\UN2021 Population"
-          TopLeft="201,55" />
+          Size="205,42"
+          Id="Package\UN2023-POPULATION\UN2023-POPULATION CSV"
+          TopLeft="186,68" />
         <EdgeLayout
-          Id="Package\UN Population 2021.Paths[Flat File Source Output]"
-          TopLeft="285.5,97">
+          Id="Package\UN2023-POPULATION.Paths[Flat File Source Output]"
+          TopLeft="391,89">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="302,70"
+              EndConnector="78,52"
               Start="0,0"
-              End="302,62.5">
+              End="70.5,52">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31" />
+                    End="35,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
+                    Point1="35,0"
+                    Point2="39,0"
+                    Point3="39,4" />
                   <mssgle:LineSegment
-                    End="298,35" />
+                    End="39,48" />
                   <mssgle:CubicBezierSegment
-                    Point1="298,35"
-                    Point2="302,35"
-                    Point3="302,39" />
+                    Point1="39,48"
+                    Point2="39,52"
+                    Point3="43,52" />
                   <mssgle:LineSegment
-                    End="302,62.5" />
+                    End="70.5,52" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\UN2023-POPULATION.Paths[Derived Column Output]"
+          TopLeft="558.5,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.5,148"
+              Start="0,0"
+              End="78.5,140.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70"
+                    Point2="0,74"
+                    Point3="4,74" />
+                  <mssgle:LineSegment
+                    End="74.5,74" />
+                  <mssgle:CubicBezierSegment
+                    Point1="74.5,74"
+                    Point2="78.5,74"
+                    Point3="78.5,78" />
+                  <mssgle:LineSegment
+                    End="78.5,140.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\UN2023-POPULATION\OLTP FactSource Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\UN2023-USD-GDP-SECTORS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\UN2023-USD-GDP-SECTORS\Add Source and Date"
+          TopLeft="516,36" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table"
+          TopLeft="532,211" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\UN2023-USD-GDP-SECTORS\UN2023-USD-GDP-SECTORS CSV FILE"
+          TopLeft="120,41" />
+        <EdgeLayout
+          Id="Package\UN2023-USD-GDP-SECTORS.Paths[Flat File Source Output]"
+          TopLeft="379,59.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137,0"
+              Start="0,0"
+              End="129.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="129.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17006,19 +18131,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\UN Population 2021.Paths[Derived Column Output]"
-          TopLeft="583.75,209">
+          Id="Package\UN2023-USD-GDP-SECTORS.Paths[Derived Column Output]"
+          TopLeft="605.5,78">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67"
+              EndConnector="20.5,133"
               Start="0,0"
-              End="0,59.5">
+              End="20.5,125.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.5" />
+                    End="0,62.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.5"
+                    Point2="0,66.5"
+                    Point3="4,66.5" />
+                  <mssgle:LineSegment
+                    End="16.5,66.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.5,66.5"
+                    Point2="20.5,66.5"
+                    Point3="20.5,70.5" />
+                  <mssgle:LineSegment
+                    End="20.5,125.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -17033,7 +18170,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\UN Population 2021\OLTP Fact Table">
+    design-time-name="Package\UN2023-USD-GDP-SECTORS\OLTP FactSource Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -17312,6 +18449,107 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\WEO2023\OLTP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Maddison2020">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Maddison2020\mpd2020 csv file"
+          TopLeft="140,66" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Maddison2020\Add Source and Date"
+          TopLeft="140,168" />
+        <EdgeLayout
+          Id="Package\Maddison2020.Paths[Flat File Source Output]"
+          TopLeft="219.5,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,60"
+              Start="0,0"
+              End="10,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="6,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,30"
+                    Point2="10,30"
+                    Point3="10,34" />
+                  <mssgle:LineSegment
+                    End="10,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Maddison2020\FactSource OLTP Table"
+          TopLeft="348,293" />
+        <EdgeLayout
+          Id="Package\Maddison2020.Paths[Derived Column Output]"
+          TopLeft="229.5,210">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="212.5,83"
+              Start="0,0"
+              End="212.5,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="4,41.5" />
+                  <mssgle:LineSegment
+                    End="208.5,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="208.5,41.5"
+                    Point2="212.5,41.5"
+                    Point3="212.5,45.5" />
+                  <mssgle:LineSegment
+                    End="212.5,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Maddison2020\FactSource OLTP Table">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
